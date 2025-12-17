@@ -1,0 +1,109 @@
+/*
+  -------------
+  Button
+  -------------
+*/
+
+/* Button - Variants */
+
+.button-base {
+  @apply inline-flex items-center justify-center rounded border-2 border-black font-medium shadow-sharp transition duration-75 hover:translate-x-px hover:translate-y-px hover:shadow-sharp-pressed focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
+}
+.button-primary {
+  @apply bg-primary-700 text-white border-primary-700;
+}
+.button-secondary {
+  @apply bg-secondary-500 text-black border-secondary-700;
+}
+.button-supporting1 {
+  @apply bg-supporting1-600 text-white border-supporting1-700;
+}
+.button-supporting2 {
+  @apply bg-supporting2-600 text-black border-supporting2-700;
+}
+.button-supporting3 {
+  @apply bg-supporting3-600 text-white border-supporting3-700;
+}
+.button-outline {
+  @apply bg-white text-neutral-900 border-neutral-900;
+}
+.button-ghost {
+  @apply text-neutral-900 hover:bg-neutral-100 focus-visible:ring-neutral-900 border-transparent;
+}
+
+/* Button - Sizes */
+.button-size-sm {
+  @apply rounded px-3 py-1.5 text-sm;
+}
+.button-size-md {
+  @apply rounded-md px-4 py-2 text-base;
+}
+.button-size-lg {
+  @apply rounded-lg px-6 py-3 text-lg;
+}
+.button-size-xl {
+  @apply rounded-xl px-8 py-4 text-xl;
+}
+
+.button-size-square {
+  @apply rounded-md p-1.5 text-base;
+}
+
+/*
+  -------------
+  Card
+  -------------
+*/
+
+/* Card - Variants */
+.card-default {
+  @apply rounded-lg bg-white p-6 shadow-md;
+}
+.card-bordered {
+  @apply rounded-lg border-6 border-dotted border-primary-300 bg-white p-6 transition-colors duration-100 hover:border-primary-400;
+}
+.card-elevated {
+  @apply rounded-lg bg-white p-6 shadow-lg;
+}
+
+/*
+  -------------
+  Tag
+  -------------
+*/
+
+/* Tag - Base */
+.tag-base {
+  @apply inline-flex items-center justify-center rounded-md font-medium;
+}
+
+/* Tag - Variants */
+.tag-primary {
+  @apply bg-primary-100 text-primary-700;
+}
+.tag-secondary {
+  @apply bg-secondary-100 text-secondary-700;
+}
+.tag-supporting1 {
+  @apply bg-supporting1-100 text-supporting1-700;
+}
+.tag-supporting2 {
+  @apply bg-supporting2-100 text-supporting2-700;
+}
+.tag-supporting3 {
+  @apply bg-supporting3-100 text-supporting3-700;
+}
+.tag-neutral {
+  @apply bg-neutral-100 text-neutral-700;
+}
+
+/* Tag - Sizes */
+.tag-size-sm {
+  @apply px-2 py-1 text-xs;
+}
+.tag-size-md {
+  @apply px-3 py-1.5 text-sm;
+}
+.tag-size-lg {
+  @apply px-4 py-2 text-base;
+}

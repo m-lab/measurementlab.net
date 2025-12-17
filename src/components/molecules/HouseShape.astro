@@ -1,0 +1,42 @@
+---
+export interface Props {
+  variant?: 'standard' | 'tall' | 'wide';
+  backgroundColor?: string;
+  borderColor?: string;
+  borderWidth?: number;
+  class?: string;
+}
+
+const {
+  variant = 'standard',
+  backgroundColor = 'bg-white',
+  borderColor,
+  borderWidth = 0,
+  class: className = ''
+} = Astro.props;
+
+// Different clip-path variants for different house shapes
+const variants = {
+  standard: 'polygon(50% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 25%)',
+  tall: 'polygon(50% 0%, 100% 20%, 100% 100%, 0% 100%, 0% 20%)',
+  wide: 'polygon(50% 0%, 100% 30%, 100% 100%, 0% 100%, 0% 30%)'
+};
+
+const clipPath = variants[variant];
+const borderStyle = borderColor && borderWidth
+  ? `border-${borderWidth} ${borderColor}`
+  : '';
+---
+
+<div
+  class={`house-shape p-6 ${backgroundColor} ${borderStyle} ${className}`}
+  style={`clip-path: ${clipPath};`}
+>
+  <slot />
+</div>
+
+<style>
+  .house-shape {
+    position: relative;
+  }
+</style>

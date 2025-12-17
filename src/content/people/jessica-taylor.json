@@ -1,0 +1,10 @@
+{
+  "id": "jessica-taylor",
+  "name": "Jessica Taylor",
+  "headshot": "/src/assets/people/jessica-taylor.png",
+  "title": "Account Executive",
+  "sections": [
+    "Sales",
+    "Community"
+  ]
+}

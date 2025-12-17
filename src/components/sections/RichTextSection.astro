@@ -1,0 +1,19 @@
+---
+
+import SectionLayout from '@layouts/SectionLayout.astro';
+import renderMarkdownWithImages from '@utils/renderMarkdown';
+
+export interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+
+
+const html = await renderMarkdownWithImages(content);
+
+---
+
+<div class="mx-auto prose max-w-3xl">
+  <Fragment set:html={html} />
+</div>

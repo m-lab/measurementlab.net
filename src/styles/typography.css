@@ -1,0 +1,91 @@
+@theme {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-ibm-plex-serif);
+
+  --text-sm: 0.625rem;
+  --text-base: 0.875rem;
+  --text-lg: 1rem;
+  --text-xl: 1.125rem;
+  --text-2xl: 1.4rem;
+  --text-3xl: 1.75rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 2.5rem;
+  --text-6xl: 3.5rem;
+}
+
+/* defines default link styling as a single source of truth */
+@utility link-default {
+  @apply text-secondary-600 underline underline-offset-2 transition-colors hover:text-secondary-800;
+}
+
+/* Link variants for different text sizes */
+@utility link-small {
+  @apply text-sm md:text-sm underline underline-offset-2 text-secondary-600 hover:text-secondary-800 transition-colors;
+}
+
+@utility link-medium {
+  @apply text-sm md:text-base underline underline-offset-2 text-secondary-600 hover:text-secondary-800 transition-colors;
+}
+
+@utility link-large {
+  @apply text-lg md:text-xl underline underline-offset-2 text-secondary-600 hover:text-secondary-800 transition-colors;
+}
+
+/* Bullet list styles */
+@utility list-large {
+  @apply text-lg md:text-xl space-y-2;
+}
+
+@utility list-small {
+  @apply text-sm md:text-sm space-y-1;
+}
+
+@layer utilities {
+  .list-large li::before {
+    content: '▪';
+    margin-right: 0.5rem;
+    @apply text-secondary-600;
+  }
+
+  .list-small li::before {
+    content: '▪';
+    margin-right: 0.5rem;
+    @apply text-secondary-600;
+  }
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans;
+  }
+  h1 {
+    @apply text-4xl md:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h4 {
+    @apply text-base;
+  }
+
+  p {
+    @apply text-sm md:text-base;
+  }
+
+  /* applies default link styling to "a" components that do not have the "data-component" property,
+  so we can manage styling of Links, Buttons etc directly in the component  */
+  a:not([data-component]) {
+    @apply link-default;
+  }
+}

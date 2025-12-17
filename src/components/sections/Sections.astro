@@ -1,0 +1,89 @@
+---
+import ButtonSection from '@components/sections/ButtonSection.astro';
+import CardSection from '@components/sections/CardSection.astro';
+import FlexiSection from '@components/sections/FlexiSection.astro';
+import HeroSection from '@components/sections/HeroSection.astro';
+import PartnersSection from '@components/sections/PartnersSection.astro';
+import PeopleSection from '@components/sections/PeopleSection.astro';
+import RichTextSection from '@components/sections/RichTextSection.astro';
+import SectionLayout from '@layouts/SectionLayout.astro';
+
+const { sectionItems } = Astro.props;
+
+---
+
+{
+  sectionItems.map((section: any) => {
+    const sectionLabel = `section > ${section.type}`;
+
+    const content = (() => {
+      switch (section.type) {
+        case 'button':
+          return (
+            <ButtonSection
+              title={section.title}
+              buttons={section.buttons}
+            />
+          );
+        case 'flexi':
+          return (
+            <FlexiSection
+              title={section.title}
+              description={section.description}
+              sections={section.sections}
+            />
+          );
+        case 'hero':
+          return (
+            <HeroSection
+              title={section.title}
+              subtitle={section.subtitle}
+            />
+          );
+        case 'richText':
+          return (
+            <RichTextSection
+              background={section.background}
+              content={section.content}
+            />
+          );
+        case 'card':
+          return (
+            <CardSection
+              title={section.title}
+              description={section.description}
+              cards={section.cards}
+              buttons={section.buttons}
+            />
+          );
+        case 'people':
+          return (
+            <PeopleSection
+              category={section.category}
+            />
+          );
+        case 'partners':
+          return (
+            <PartnersSection
+              title={section.title}
+              category={section.category}
+            />
+          );
+        default:
+          return null;
+      }
+    })();
+
+    return (
+      <SectionLayout
+        bgColor={section.background?.bgColor}
+        bgType={section.background?.bgType}
+        bgImage={section.backgroundImage}
+        class={section.class}
+        sectionLabel={sectionLabel}
+      >
+        {content}
+      </SectionLayout>
+    );
+  })
+}

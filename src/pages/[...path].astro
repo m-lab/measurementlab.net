@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import HeroSection from '@components/sections/HeroSection.astro';
+import Sections from '@components/sections/Sections.astro';
+import PageLayout from '@layouts/PageLayout.astro';
+import SectionLayout from '@layouts/SectionLayout.astro';
+
+import type { GetStaticPaths } from 'astro';
+
+// Generate static paths from pages collection
+export const getStaticPaths = (async () => {
+  const pages = await getCollection('pages');
+  return pages.map((page) => ({
+    params: { path: page.id },
+    props: { page },
+  }));
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+
+---
+
+<PageLayout title={page.data.title} description={page.data.description}>
+	<SectionLayout bgImage={page.data.heroImage} sectionLabel="hero">
+		<HeroSection title={page.data.title} subtitle={page.data.description} />
+	</SectionLayout>
+
+	<Sections sectionItems={page.data.sections} />
+</PageLayout>

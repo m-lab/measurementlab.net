@@ -1,0 +1,11 @@
+{
+  "id": "emily-rodriguez",
+  "name": "Emily Rodriguez",
+  "headshot": "/src/assets/people/emily-rodriguez.png",
+  "title": "VP of Product",
+  "sections": [
+    "Leadership",
+    "Product",
+    "Community"
+  ]
+}

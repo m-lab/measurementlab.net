@@ -1,0 +1,45 @@
+title: Feature Showcase Page
+permalink: feature-showcase
+description: >-
+  # Feature Showcase
+
+
+  Examples of sections, components, and features of the Draftlab Scaffold
+  template.
+sections:
+  - type: richText
+    background:
+      bgColor: gray
+      bgType: full
+    content: |-
+      # Rich Text
+
+      This is some content
+
+      ![image text](/src/assets/hero.png)
+  - type: button
+    buttons:
+      - variant: primary
+        size: md
+        text: Button 1
+        href: google.com
+      - variant: secondary
+        size: md
+        text: Button 2
+        href: google.com
+  - type: flexi
+    title: This is a Flexi Section!
+    description: Weeeee
+    sections:
+      - type: richText
+        background:
+          bgColor: white
+          bgType: full
+        content: Some text!
+      - type: button
+        title: Buttons
+        buttons:
+          - variant: primary
+            size: md
+            text: Button 1
+            href: google.com

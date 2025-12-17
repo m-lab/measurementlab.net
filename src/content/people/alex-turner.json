@@ -1,0 +1,7 @@
+{
+  "id": "alex-turner",
+  "name": "Alex Turner",
+  "headshot": "/src/assets/people/alex-turner.png",
+  "title": "DevOps Engineer",
+  "sections": ["Engineering", "Community"]
+}

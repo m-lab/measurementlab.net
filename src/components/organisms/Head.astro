@@ -1,0 +1,68 @@
+---
+import { Font } from 'astro:assets';
+import { getEntry } from 'astro:content';
+import { ClientRouter } from "astro:transitions";
+
+// Fetch site config from content collection
+const siteConfigEntry = await getEntry('site', 'config');
+
+if (!siteConfigEntry) {
+  throw new Error('Site configuration not found');
+}
+
+const siteConfig = siteConfigEntry.data;
+
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: ImageMetadata;
+  canonicalURL?: URL;
+}
+
+const {
+  title,
+  description = siteConfig.description,
+  image,
+  canonicalURL,
+} = Astro.props;
+
+// Use the default OG image from content collection if no image provided
+const ogImage = image || siteConfig.defaultOgImage as ImageMetadata;
+const imageURL = ogImage ? new URL(ogImage.src, Astro.url).href : undefined;
+
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href={siteConfig.favicon} />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageURL} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={imageURL} />
+
+<!-- Local Font Declaration -->
+<Font cssVariable="--font-ibm-plex-serif" preload />
+<Font cssVariable="--font-inter" preload />
+
+<ClientRouter />
+
+<!-- Additional head content -->
+<slot />
