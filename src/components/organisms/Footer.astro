@@ -39,23 +39,13 @@ const copyrightText = `© ${currentYear} ${siteConfig.title}.`;
 			<div class="space-y-6">
 				<!-- Logo -->
 				<div>
-					{
-						siteConfig.defaultLogoLight ? (
-							<Image
-								src={siteConfig.defaultLogoLight}
-								alt={siteConfig.title}
-								class="h-12 w-auto"
-							/>
-						) : (
-							<Link
-								href="/"
-								variant="unstyled"
-								class="font-serif text-2xl font-bold text-white"
-							>
-								{siteConfig.title}
-							</Link>
-						)
-					}
+					<Link href="/" variant="unstyled" class="block">
+						<img
+							src="/logo-extended-white.svg"
+							alt={siteConfig.title}
+							class="h-12 w-auto"
+						/>
+					</Link>
 				</div>
 
 				<!-- Description -->
@@ -72,36 +62,30 @@ const copyrightText = `© ${currentYear} ${siteConfig.title}.`;
 				<!-- Menu Section 1 -->
 				{
 					footerNav1 && (
-						<div>
-							<h3 class="mb-4 font-semibold">{footerNav1.data.title}</h3>
-							<ul class="space-y-3">
-								{footerNav1.data.items.map((item) => (
-									<li>
-										<Link href={item.href} variant="footer">
-											{item.label}
-										</Link>
-									</li>
-								))}
-							</ul>
-						</div>
+						<ul class="space-y-3">
+							{footerNav1.data.items.map((item) => (
+								<li>
+									<Link href={item.href} variant="footer">
+										{item.label}
+									</Link>
+								</li>
+							))}
+						</ul>
 					)
 				}
 
 				<!-- Menu Section 2 -->
 				{
 					footerNav2 && (
-						<div>
-							<h3 class="mb-4 font-semibold">{footerNav2.data.title}</h3>
-							<ul class="space-y-3">
-								{footerNav2.data.items.map((item) => (
-									<li>
-										<Link href={item.href} variant="footer">
-											{item.label}
-										</Link>
-									</li>
-								))}
-							</ul>
-						</div>
+						<ul class="space-y-3">
+							{footerNav2.data.items.map((item) => (
+								<li>
+									<Link href={item.href} variant="footer">
+										{item.label}
+									</Link>
+								</li>
+							))}
+						</ul>
 					)
 				}
 			</div>

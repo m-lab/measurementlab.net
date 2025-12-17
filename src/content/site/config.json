@@ -1,7 +1,7 @@
 {
-  "title": "Draftlab Scaffold",
-  "description": "Draftlab Scaffold - A Pretty Good Web Development Starter",
-  "url": "https://scaffold.draftlab.org",
+  "title": "Measurement Lab",
+  "description": "Measure the Internet. Save the data. Make it universally accessible and helpful.",
+  "url": "https://mlab.draftlab.dev",
   "favicon": "/favicon.svg",
   "defaultOgImage": "/src/assets/draftlab-seo.png",
   "defaultLogoLight": "/src/assets/draftlab-logo.png",

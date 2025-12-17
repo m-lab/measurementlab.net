@@ -17,7 +17,7 @@ const {
 
 // Different clip-path variants for different house shapes
 const variants = {
-  standard: 'polygon(50% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 25%)',
+  standard: 'polygon(0 20%, 20% 0, 80% 0, 100% 20%, 100% 100%, 0 100%)',
   tall: 'polygon(50% 0%, 100% 20%, 100% 100%, 0% 100%, 0% 20%)',
   wide: 'polygon(50% 0%, 100% 30%, 100% 100%, 0% 100%, 0% 30%)'
 };
@@ -29,14 +29,14 @@ const borderStyle = borderColor && borderWidth
 ---
 
 <div
-  class={`house-shape p-6 ${backgroundColor} ${borderStyle} ${className}`}
-  style={`clip-path: ${clipPath};`}
+	class={`house-shape p-6 ${backgroundColor} ${borderStyle} ${className}`}
+	style={`clip-path: ${clipPath};`}
 >
-  <slot />
+	<slot />
 </div>
 
 <style>
-  .house-shape {
-    position: relative;
-  }
+	.house-shape {
+		position: relative;
+	}
 </style>

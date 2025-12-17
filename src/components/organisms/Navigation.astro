@@ -39,12 +39,8 @@ const isActive = (href: string) => {
 	<div class="flex items-center gap-10">
 		<!-- Logo/Site Name -->
 		<div class="shrink-0">
-			<Link
-				href="/"
-				variant="unstyled"
-				class="font-sans text-2xl font-bold text-neutral-900 underline decoration-primary-700 decoration-dotted decoration-4 underline-offset-8"
-			>
-				{siteName}
+			<Link href="/" variant="unstyled" class="block">
+				<img src="/logo-short-blue.svg" alt={siteName} class="h-12 w-auto" />
 			</Link>
 		</div>
 
