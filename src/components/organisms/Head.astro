@@ -1,7 +1,6 @@
 ---
 import { Font } from 'astro:assets';
 import { getEntry } from 'astro:content';
-import { ClientRouter } from "astro:transitions";
 
 // Fetch site config from content collection
 const siteConfigEntry = await getEntry('site', 'config');
@@ -61,8 +60,6 @@ const imageURL = ogImage ? new URL(ogImage.src, Astro.url).href : undefined;
 <!-- Local Font Declaration -->
 <Font cssVariable="--font-ibm-plex-serif" preload />
 <Font cssVariable="--font-inter" preload />
-
-<ClientRouter />
 
 <!-- Additional head content -->
 <slot />
