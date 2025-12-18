@@ -1,4 +1,5 @@
 ---
+import Button from '@components/atoms/Button.astro';
 import type { NavLink } from '@components/organisms/Navigation.astro';
 import Navigation from '@components/organisms/Navigation.astro';
 
@@ -26,6 +27,12 @@ const transparentClass = transparent ? 'bg-transparent border-transparent' : '';
 <header class={`${stickyClass} ${className}`}>
 	<Navigation links={links} siteName={siteName} class={transparentClass}>
 		<div slot="actions" class="flex items-center gap-4">
+			<Button
+				as="a"
+				variant="speed"
+				icon="measurement"
+				href="https://speed.measurementlab.net">Speed Test</Button
+			>
 			<slot name="actions" />
 		</div>
 	</Navigation>

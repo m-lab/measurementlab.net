@@ -7,10 +7,10 @@
 /* Button - Variants */
 
 .button-base {
-  @apply inline-flex items-center justify-center border-b-2 font-medium focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
+  @apply inline-flex items-center justify-center gap-2 border-b-2 font-medium focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
 }
 .button-primary {
-  @apply border-primary-700 bg-primary-700 text-white;
+  @apply border-primary-900 bg-primary-700 text-white;
 }
 .button-secondary {
   @apply border-secondary-700 bg-secondary-500 text-black;
@@ -25,7 +25,7 @@
   @apply border-speed-700 bg-speed-600 text-white;
 }
 .button-outline {
-  @apply border-neutral-900 bg-white text-neutral-900;
+  @apply border-neutral-400 bg-neutral-200 text-neutral-900;
 }
 .button-ghost {
   @apply border-transparent text-neutral-900 hover:bg-neutral-100 focus-visible:ring-neutral-900;

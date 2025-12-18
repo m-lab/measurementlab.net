@@ -1,6 +1,11 @@
 ---
+import ArrowDown from '~icons/m-lab/arrow-down'
+import ArrowLong from '~icons/m-lab/arrow-long'
+import MeasurementSmall from '~icons/m-lab/measurement-small'
+
 export interface Props {
   variant?: 'primary' | 'secondary' | 'supporting1' | 'supporting2' | 'speed' | 'outline' | 'ghost';
+  icon?: 'arrowDown' | 'arrowRight' | 'measurement'
   size?: 'sm' | 'md' | 'lg' | 'xl' | 'square';
   as?: 'button' | 'a';
   href?: string;
@@ -14,6 +19,7 @@ const {
   size = 'md',
   as = 'button',
   href,
+  icon,
   type = 'button',
   class: className = '',
   ...props
@@ -40,6 +46,8 @@ const sizes = {
   square: 'button-size-square'
 };
 
+
+
 const classes = `${baseStyles} ${variants[variant as keyof typeof variants]} ${sizes[size as keyof typeof sizes]} ${className}`;
 
 const Tag = as === 'a' ? 'a' : 'button';
@@ -49,11 +57,17 @@ const Tag = as === 'a' ? 'a' : 'button';
 {
 	Tag === 'a' ? (
 		<a data-component href={href} class={classes} {...props}>
+			{icon === 'arrowDown' && <ArrowDown />}
+			{icon === 'measurement' && <MeasurementSmall />}
 			<slot />
+			{icon === 'arrowRight' && <ArrowLong />}
 		</a>
 	) : (
 		<button type={type} class={classes} {...props}>
+			{icon === 'arrowDown' && <ArrowDown />}
+			{icon === 'measurement' && <MeasurementSmall />}
 			<slot />
+			{icon === 'arrowRight' && <ArrowLong />}
 		</button>
 	)
 }
