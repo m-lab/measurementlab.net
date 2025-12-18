@@ -22,6 +22,7 @@ categories:
   - Technology
 publishedDate: 2020-08-05
 ---
+
 NDT measures "bulk transport capacity": the maximum date rate that TCP can
 reliably deliver data using the unreliable IP protocol over an end-to-end
 Internet path. TCP's goal is to send data at exactly the optimal rate for the
@@ -37,22 +38,21 @@ measurements become the majority of the NDT dataset, the M-Lab team is
 considering what we do and do not know about whether and how changes to the
 NDT protocol have affected M-Lab’s longitudinal NDT dataset over time.
 
-
 [ndt7-migration]: {{ site.baseurl}}/blog/migrating-ndt-clients-to-ndt7/
 
 Over the long term we generally see an upward performance trend, almost
 everywhere, almost all the time. This trend is the consequence of multiple
 independent changes to the Internet and our platform:
 
-* Upgrades to the Internet itself: faster links, more capacity;
-* Upgrades and evolution of client connectivity: adding new fast users as
+- Upgrades to the Internet itself: faster links, more capacity;
+- Upgrades and evolution of client connectivity: adding new fast users as
   others retire;
-* Changes in how users self select;
-* Upgrades to TCP;
-* Upgrades to the M-Lab fleet, including faster uplinks and new locations,
+- Changes in how users self select;
+- Upgrades to TCP;
+- Upgrades to the M-Lab fleet, including faster uplinks and new locations,
   switches, servers and OSs;
-* Upgrades to the measurement protocols, including moving to Websockets and BBR;
-* Upgrades to the measurement tool implementations, both new clients and new
+- Upgrades to the measurement protocols, including moving to Websockets and BBR;
+- Upgrades to the measurement tool implementations, both new clients and new
   servers;
 
 Ideally, M-Lab would always measure just the Internet and always avoid
@@ -77,7 +77,7 @@ to support more clients.
 The following table summarizes the changes in each protocol upgrade beginning
 with ndt3 in 2009.
 
-![ndt-table]({{ site.baseurl }}/images/blog/2020-08-05-evolution-of-ndt/ndt-table.png)
+![ndt-table](/src/assets/images/blog/2020-08-05-evolution-of-ndt/ndt-table.png)
 **[1] Upload measurements use the TCP congestion control algorithm of the**
 **client.**
 
@@ -96,17 +96,17 @@ in ndt7. For the most important instruments, web100 and TCP_INFO are
 identical. We are still investigating methods for estimating some of the
 historical web100 instruments from archived TCP_INFO data.
 
-[platform]: {{ site.baseurl }}/blog/the-platform-has-landed/
-[tcp-info-docs]: {{ site.baseurl }}/tests/tcp-info/
+[platform]: /src/assets/blog/the-platform-has-landed/
+[tcp-info-docs]: /src/assets/tests/tcp-info/
 
 Open questions:
 
-* Can we provide mappings of web100 data to TCP_INFO? If so, which metrics are
+- Can we provide mappings of web100 data to TCP_INFO? If so, which metrics are
   the most significant to map?
-* Every past and future kernel change affects some measurements. How do we
+- Every past and future kernel change affects some measurements. How do we
   weigh the value of staying current, relative to changes in the data?
 
-![ndt-kernel]({{ site.baseurl }}/images/blog/2020-08-05-evolution-of-ndt/ndt-kernel.png)
+![ndt-kernel](/src/assets/images/blog/2020-08-05-evolution-of-ndt/ndt-kernel.png)
 **Figure 1: Instrumentation for NDT measurements started with web100**
 **through 2019 when the platform switched to tcp_info.**
 
@@ -134,12 +134,12 @@ TCP evolution on M-Lab data.
 
 Open questions:
 
-* Under what conditions are TCP Reno (ndt3&ndt4) and TCP Cubic (ndt5)
+- Under what conditions are TCP Reno (ndt3&ndt4) and TCP Cubic (ndt5)
   measurements comparable? TCP Cubic and TCP BBR (ndt7)?
-* Can M-Lab's BBR measurement be used to inform the wider community of its
+- Can M-Lab's BBR measurement be used to inform the wider community of its
   importance?
 
-![ndt-tcp]({{ site.baseurl }}/images/blog/2020-08-05-evolution-of-ndt/ndt-tcp.png)
+![ndt-tcp](/src/assets/images/blog/2020-08-05-evolution-of-ndt/ndt-tcp.png)
 **Figure 2: TCP Congestion Control for download measurements used Reno until**
 **2019 when the platform switched to Cubic by default. The ndt7 protocol uses**
 **BBR.**
@@ -165,11 +165,11 @@ from more clients throughout the Internet.
 
 Open questions:
 
-* How do evolving web standards affect NDT measurements?
-* How does the TCP port impact NDT measurements? e.g. due to network policies.
-* How does the protocol impact NDT measurements? E.g. TLS, websocket.
+- How do evolving web standards affect NDT measurements?
+- How does the TCP port impact NDT measurements? e.g. due to network policies.
+- How does the protocol impact NDT measurements? E.g. TLS, websocket.
 
-![ndt-proto]({{ site.baseurl }}/images/blog/2020-08-05-evolution-of-ndt/ndt-proto.png)
+![ndt-proto](/src/assets/images/blog/2020-08-05-evolution-of-ndt/ndt-proto.png)
 **Figure 3: Until 2016, NDT clients used the "raw" protocol. In 2016, to access**
 **more clients through browsers, the websocket protocol was added to the NDT**
 **server. Websocket measurements are now the majority of test volume.**

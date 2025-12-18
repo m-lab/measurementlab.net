@@ -105,11 +105,11 @@ To prevent the collection of bad data, we have [created a workaround](https://gi
 
 To prevent the inclusion of any bad data in our BigQuery tables, the ETL parser now can detect the polluted data ([code](https://github.com/m-lab/etl/pull/393){:target="\_blank"}) and discard them instead of inserting them into BigQuery. We also added monitoring to measure the error rates going forwards.
 
-![Figure 1: Number of polluted PT tests per metro]({{ site.baseurl }}/images/blog/pt*bug_2018_11_figure1.png)
-\_Figure 1: Number of polluted PT tests per metro*
+![Figure 1: Number of polluted PT tests per metro](/src/assets/images/blog/pt*bug_2018_11_figure1.png)
+\_Figure 1: Number of polluted PT tests per metro\*
 
-![Figure 2: Percentage of polluted PT tests per metro]({{ site.baseurl }}/images/blog/pt*bug_2018_11_figure2.png)
-\_Figure 2: Percentage of polluted PT tests per metro*
+![Figure 2: Percentage of polluted PT tests per metro](/src/assets/images/blog/pt*bug_2018_11_figure2.png)
+\_Figure 2: Percentage of polluted PT tests per metro\*
 
 We will soon reprocess our historical archives. By the end of 2018 Q1, all affected PT data should be eliminated from our BigQuery database. M-Lab's raw data will remain untouched, as our raw data reflects the data we actually got from M-Lab servers, not the data we wish we had gotten from M-Lab servers.
 

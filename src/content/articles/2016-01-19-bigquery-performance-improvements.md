@@ -16,9 +16,8 @@ categories:
   - News
 publishedDate: 2016-01-19
 ---
+
 Today, M-Lab is happy to announce the public beta of new M-Lab BigQuery tables. These tables provide substantially improved performance and reduce the difficulty of writing BigQuery SQL.
-
-
 
 ## **Per-project partitioning**
 
@@ -33,7 +32,7 @@ Each table contains data for a single M-Lab project (NDT, NPAD, SideStream, or P
 
 ## **No intermediate snapshots**
 
-Our per-month tables contain every web100 snapshot from each test log.  This has led to user confusion in the past, as most M-Lab users are only interested in the last web100 snapshot (i.e. the final TCP state of the connection).
+Our per-month tables contain every web100 snapshot from each test log. This has led to user confusion in the past, as most M-Lab users are only interested in the last web100 snapshot (i.e. the final TCP state of the connection).
 
 Our new tables exclude intermediate web100 snapshots, allowing users to
 write simpler SQL queries with fewer pitfalls.
@@ -45,4 +44,4 @@ cases.
 
 ## **Migration Guide**
 
-We've published a migration guide to help convert your existing M-Lab BigQuery SQL to take advantage of the new, faster tables. Our data schema has not changed, so converting existing queries is easy and straightforward. See the [Legacy Migration Guide]({{ site.baseurl }}/data/docs/bq/legacymigration) for details.
+We've published a migration guide to help convert your existing M-Lab BigQuery SQL to take advantage of the new, faster tables. Our data schema has not changed, so converting existing queries is easy and straightforward. See the [Legacy Migration Guide](/src/assets/data/docs/bq/legacymigration) for details.

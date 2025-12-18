@@ -17,9 +17,9 @@ categories:
   - News
 publishedDate: 2023-05-08
 ---
+
 After January 2024, M-Lab will no longer support the legacy ndt5+raw protocol or
 mlab-ns.appspot.com service. There are alternatives available for migration now.
-
 
 ## Summary
 
@@ -68,11 +68,11 @@ and retire mlab-ns.appspot.com.
 
 Today, M-Lab supports multiple official and unofficial [ndt7 clients][clients].
 
-* https://github.com/m-lab/ndt7-js (official, javascript)
-* https://github.com/m-lab/ndt7-client-go (official, golang)
-* https://github.com/m-lab/ndt7-client-ios (unofficial, swift)
-* https://github.com/m-lab/ndt7-client-android (unofficial, kotlin)
-* https://github.com/m-lab/ndt7-client-android-java (unofficial, java)
+- https://github.com/m-lab/ndt7-js (official, javascript)
+- https://github.com/m-lab/ndt7-client-go (official, golang)
+- https://github.com/m-lab/ndt7-client-ios (unofficial, swift)
+- https://github.com/m-lab/ndt7-client-android (unofficial, kotlin)
+- https://github.com/m-lab/ndt7-client-android-java (unofficial, java)
 
 All of these clients use the Locate v2 API, so support admission control
 natively and require no customizations.
@@ -92,10 +92,10 @@ If you have exceptional concerns about the retirement of ndt5+raw or
 mlab-ns.appspot.com, [please let us know](mailto:support@measurementlab.net).
 
 [clients]: https://github.com/m-lab/ndt-server#clients
-[intro]: {{ site.baseurl }}/blog/ndt7-introduction
-[evolution]: {{ site.baseurl }}/blog/evolution-of-ndt
-[required]: {{ site.baseurl }}/blog/ndt7-access-tokens
-[locatev2]: {{ site.baseurl }}/develop/locate-v2/
-[gcp]: {{ site.baseurl }}/blog/virtual-sites-gcp/
-[ttc]: {{ site.baseurl }}/blog/2022-mlab-to-the-cloud/
-[migration]: {{ site.baseurl }}/blog/the-platform-has-landed/
+[intro]: /src/assets/blog/ndt7-introduction
+[evolution]: /src/assets/blog/evolution-of-ndt
+[required]: /src/assets/blog/ndt7-access-tokens
+[locatev2]: /src/assets/develop/locate-v2/
+[gcp]: /src/assets/blog/virtual-sites-gcp/
+[ttc]: /src/assets/blog/2022-mlab-to-the-cloud/
+[migration]: /src/assets/blog/the-platform-has-landed/

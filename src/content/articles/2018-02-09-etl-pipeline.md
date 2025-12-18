@@ -17,22 +17,22 @@ categories:
   - News
 publishedDate: 2018-02-09
 ---
+
 Since May 2017, the M-Lab team has been working on an updated, open source pipeline, which pulls raw data from our servers, saves it to Google Cloud Storage, and then parses it into our BigQuery tables. The team is particularly excited about this update because it means that the pipeline no longer relies on closed source libraries.
 
-
-The new open source ETL pipeline is one project in a [larger initiative to update all components of the M-Lab platform]({{ site.baseurl }}/blog/modernizing-mlab/). In this post, we'll talk about our expected timeline for transitioning to our new BigQuery datasets and tables, and invite you to explore the new tables, schema, metadata, and table features. We'll also discuss future planned updates to the tables and their schemas, as we continue work to modernize and update the M-Lab platform software stack.
+The new open source ETL pipeline is one project in a [larger initiative to update all components of the M-Lab platform](/src/assets/blog/modernizing-mlab/). In this post, we'll talk about our expected timeline for transitioning to our new BigQuery datasets and tables, and invite you to explore the new tables, schema, metadata, and table features. We'll also discuss future planned updates to the tables and their schemas, as we continue work to modernize and update the M-Lab platform software stack.
 
 ## Transitioning to New BigQuery Tables - Current Status and Anticipated Timeline
 
-If you've been querying our data lately, you may have noticed some changes. In early [May 2017]({{ site.baseurl }}/blog/transitioning-data-pipeline/) as a part of our pipeline transition work, our team instituted several changes:
+If you've been querying our data lately, you may have noticed some changes. In early [May 2017](/src/assets/blog/transitioning-data-pipeline/) as a part of our pipeline transition work, our team instituted several changes:
 
-* New raw test data is being published to a new storage bucket, [archive-mlab-oti](https://console.cloud.google.com/storage/browser/archive-mlab-oti)
-  * Our team will complete a quality assurance process internally before moving all data to our documented storage bucket, [m-lab](https://console.cloud.google.com/storage/browser/m-lab)
-* Data publication to the BigQuery table `plx.google:m_lab.ndt.all` was paused on May 10, 2017
-* New test data is now being parsed into a new table: `measurement-lab:public.ndt`
-* Data from our previous "fast tables" has been copied to a pair of cloud BigQuery tables:
-  * [measurement-lab:legacy.ndt](https://bigquery.cloud.google.com/table/measurement-lab:legacy.ndt) - contains all data from January 1, 2015 to May 10, 2017
-  * [measurement-lab:legacy.ndt_pre2015](https://bigquery.cloud.google.com/table/measurement-lab:legacy.ndt_pre2015) - contains all data prior to 2015
+- New raw test data is being published to a new storage bucket, [archive-mlab-oti](https://console.cloud.google.com/storage/browser/archive-mlab-oti)
+  - Our team will complete a quality assurance process internally before moving all data to our documented storage bucket, [m-lab](https://console.cloud.google.com/storage/browser/m-lab)
+- Data publication to the BigQuery table `plx.google:m_lab.ndt.all` was paused on May 10, 2017
+- New test data is now being parsed into a new table: `measurement-lab:public.ndt`
+- Data from our previous "fast tables" has been copied to a pair of cloud BigQuery tables:
+  - [measurement-lab:legacy.ndt](https://bigquery.cloud.google.com/table/measurement-lab:legacy.ndt) - contains all data from January 1, 2015 to May 10, 2017
+  - [measurement-lab:legacy.ndt_pre2015](https://bigquery.cloud.google.com/table/measurement-lab:legacy.ndt_pre2015) - contains all data prior to 2015
 
 Data in `measurement-lab:legacy.ndt` and `measurement-lab:legacy.ndt` are identical to the data in `plx.google:m_lab.ndt.all`, but they use a schema that includes the new fields in `measurement-lab:public.ndt`. The table had to be split in two because we are using "date partitioned tables" to improve query efficiency and ease of updates. Currently date-partitioned tables are limited to 2500 partitions, but GCS plans to lift this limit in the near future. M-Lab has created a unified view to allow querying of all data across legacy tables and our new table, which is discussed below.
 
@@ -46,31 +46,31 @@ With this upcoming release, M-Lab will publish more datasets, tables, and views.
 
 Four _storage and processing datasets_ will be published beginning with the v3.1 release:
 
-* **base_tables**
-  * Contains the new raw NDT table
-  * Sidestream and Paris Traceroute tables will be added soon
-  * This dataset will eventually hold all M-Lab data, from 2009 to present
+- **base_tables**
+  - Contains the new raw NDT table
+  - Sidestream and Paris Traceroute tables will be added soon
+  - This dataset will eventually hold all M-Lab data, from 2009 to present
 
-* **batch**
-  * Destination for batch processed data prior to dedupping.
+- **batch**
+  - Destination for batch processed data prior to dedupping.
 
-* **intermediate_vX_Y_Z**
-  * Provides working, intermediate BigQuery Views for each release version
-  * These views adapt data from tables in the **base_tables** dataset to make **release views** available
-  * Intermediate dataset views are publicly visible for transparency, but we discourage most people from using them directly
+- **intermediate_vX_Y_Z**
+  - Provides working, intermediate BigQuery Views for each release version
+  - These views adapt data from tables in the **base_tables** dataset to make **release views** available
+  - Intermediate dataset views are publicly visible for transparency, but we discourage most people from using them directly
 
-* **legacy**
-  * Contains exact copies of the data stored in `plx.google` tables, for use in the intermediate and release views
-  * Will be used in our internal quality assurance process, where we will compare the output of the old pipeline to the output of the new one
-  * A future blog post will address the quality assurance process used in preparing the new pipeline and tables
-  * Original legacy tables are still in `plx.google`, but will be retired ~6 months after the launch of the v3.1 release
+- **legacy**
+  - Contains exact copies of the data stored in `plx.google` tables, for use in the intermediate and release views
+  - Will be used in our internal quality assurance process, where we will compare the output of the old pipeline to the output of the new one
+  - A future blog post will address the quality assurance process used in preparing the new pipeline and tables
+  - Original legacy tables are still in `plx.google`, but will be retired ~6 months after the launch of the v3.1 release
 
 Researchers interested in querying unfiltered NDT data should use the **base_tables**. Sidestream and Paris Traceroute tables will also be added to the **base_tables** dataset in the coming weeks:
 
-* **base_tables**
-  * ndt - `measurement-lab.base_tables.ndt`
-  * _sidestream - `measurement-lab.base_tables.sidestream`_
-  * _traceroute - `measurement-lab.base_tables.traceroute`_
+- **base_tables**
+  - ndt - `measurement-lab.base_tables.ndt`
+  - _sidestream - `measurement-lab.base_tables.sidestream`_
+  - _traceroute - `measurement-lab.base_tables.traceroute`_
 
 ### Recommended Datasets and Views for Most Researcher Queries
 
@@ -78,35 +78,35 @@ The datasets in the previous section outline where raw M-Lab test data will be p
 
 To help researchers during this transition, and for future schema/table changes, we will also begin publishing the following datasets for each new release:
 
-* **rc**
-  * Beta testing version of the next release of views
-  * These views represent the most recent _release-candidate_
+- **rc**
+  - Beta testing version of the next release of views
+  - These views represent the most recent _release-candidate_
 
-* **release_vX_Y_Z**
-  * Contains views of recent stable releases, pinned to those specific releases
+- **release_vX_Y_Z**
+  - Contains views of recent stable releases, pinned to those specific releases
 
-* **release**
-  * An alias to current supported release containing the set of views that most people should use
-  * These views will be updated to include any refinements to the recommended filtering, and may include changes to the schema over time
-  * If using the **release** alias, researchers should be subscribed to the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/forum/#!forum/discuss), where we will announce new releases
-  * M-Lab staff will post upcoming change info to the [M-Lab Discuss group](), and update the view descriptions to reflect the planned changes. Since ALL views eventually either change, or are deprecated and removed, all users, whether using "release" or "release_vX_Y_Z", should either look at the view description for information on how long the views will be supported, or follow discuss list
+- **release**
+  - An alias to current supported release containing the set of views that most people should use
+  - These views will be updated to include any refinements to the recommended filtering, and may include changes to the schema over time
+  - If using the **release** alias, researchers should be subscribed to the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/forum/#!forum/discuss), where we will announce new releases
+  - M-Lab staff will post upcoming change info to the [M-Lab Discuss group](), and update the view descriptions to reflect the planned changes. Since ALL views eventually either change, or are deprecated and removed, all users, whether using "release" or "release_vX_Y_Z", should either look at the view description for information on how long the views will be supported, or follow discuss list
 
 M-Lab recommends using the **release** dataset for most people. This will make future table schema transitions less impactful since queries can be pinned to the release views instead of to a specific table name
 
 Beginning with the upcoming v3.1 release, in the **rc**, **release_vX_Y_Z**, and **release** datasets we will publish the following views:
 
-* _ndt_all_
-* _ndt_all_legacysql_
-* _ndt_downloads_
-* _ndt_downloads_legacysql_
-* _ndt_uploads_
-* _ndt_uploads_legacysql_
+- _ndt_all_
+- _ndt_all_legacysql_
+- _ndt_downloads_
+- _ndt_downloads_legacysql_
+- _ndt_uploads_
+- _ndt_uploads_legacysql_
 
 The views above ending in `_legacysql` require you to use [legacySQL](https://cloud.google.com/bigquery/docs/reference/legacy-sql) queries, and those labeled without it `(standardSQL)` require you the use of [standardSQL](https://cloud.google.com/bigquery/docs/reference/standard-sql/) queries. Additionally, the views which include '_uploads_' or '_downloads_' provide a subset of NDT data that are valid, completed tests which meet the criteria described on our page, [Calculating Common Metrics](https://www.measurementlab.net/data/docs/bq/ndtmetrics/). We highly recommend using standardSQL as this will be required to query all M-Lab tables in the future.
 
 Our v3.1 tables will go into production for NDT, Paris Traceroute, and Sidestream in early 2018. Additionally, we will complete work on our [annotation service](https://github.com/m-lab/annotation-service), which will provide the blacklist_flags field, which tags test rows where infrastructure or other issues may have occurred. The annotation service provides geolocation information for all tests and has been developed as a separate service to be extensible for adding different types of metadata in the future.
 
-A complete version history and changelog for our NDT, NPAD, Paris Traceroute, and Sidestream tables is published under [Data > Schema]({{ site.baseurl }}/data/docs/bq/schema).
+A complete version history and changelog for our NDT, NPAD, Paris Traceroute, and Sidestream tables is published under [Data > Schema](/src/assets/data/docs/bq/schema).
 
 ## Summary of v3.1 Table/Schema and Feature Changes
 
@@ -126,8 +126,8 @@ v3.1 will update the field `log_time` to an actual _timestamp_ formatted field. 
 
 Additionally, two new fields will be added in the table schema for v3.1:
 
-* `task_filename` - the `gs://` archive file in M-Lab’s Google Cloud Storage bucket where the record originated
-* `parse_time`  - indicates when the data row was parsed from raw storage
+- `task_filename` - the `gs://` archive file in M-Lab’s Google Cloud Storage bucket where the record originated
+- `parse_time` - indicates when the data row was parsed from raw storage
 
 v3.1 tables are partitioned by day. This will not affect queries across multiple days, but can be used to interact with the dataset more efficiently. See Google’s BigQuery documentation on querying date-partitioned tables for more information. The views support the partitions efficiently using the virtual partition_date field.
 
@@ -143,4 +143,4 @@ The new open source, cloud based pipeline will make it easier to add new M-Lab h
 
 Once the v3.1 tables are launched, M-Lab will continue working on our platform update, which will include a major change in 2018 in our next major table version (v4_X). One main focus of our broader platform update involves re-instrumenting all experiments and server software from web100 to tcp_info, which we expect to be completed in Q3 - Q4, 2018. This is a major platform change which has been in the planning phases for M-Lab for some time, and will be implemented with great care to maintain the longitudinal validity of our data. We also plan to extend the table annotation service provide the Autonomous System Name (ASN) of the network from which each test originated in upcoming versions. M-Lab uses the open IP to AS database provided by Maxmind to correlate users’ IP addresses to the ISP over which tests are conducted. M-Lab will also account for the date each test was run and the version of the Maxmind database for the corresponding month when re-parsing historical records new table versions.
 
-Lastly, legacy monthly and fast tables will be retired ~6 months following the v3.1 release, which we hope provides researchers and other data users enough time to transition to using the new tables. The fast tables will still remain in our storage for historical record, but will no longer be supported after that time.  We will consult with users to determine whether the legacy monthly tables should be preserved.
+Lastly, legacy monthly and fast tables will be retired ~6 months following the v3.1 release, which we hope provides researchers and other data users enough time to transition to using the new tables. The fast tables will still remain in our storage for historical record, but will no longer be supported after that time. We will consult with users to determine whether the legacy monthly tables should be preserved.

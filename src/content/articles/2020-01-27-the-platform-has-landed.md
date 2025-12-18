@@ -79,11 +79,11 @@ use-cases over time.
 
 Thank you!
 
-[1]: {{ site.baseurl }}/blog/modernizing-mlab
-[2]: {{ site.baseurl }}/blog/mlab-20-platform-migration-update
-[3]: {{ site.baseurl }}/blog/global-pilot-entry
-[4]: {{ site.baseurl }}/blog/global-pilot-success
-[5]: {{ site.baseurl }}/blog/platform-transition-ndt-dataset-tables-views
+[1]: /src/assets/blog/modernizing-mlab
+[2]: /src/assets/blog/mlab-20-platform-migration-update
+[3]: /src/assets/blog/global-pilot-entry
+[4]: /src/assets/blog/global-pilot-success
+[5]: /src/assets/blog/platform-transition-ndt-dataset-tables-views
 [6]: https://www.planet-lab.org/
 [8]: https://www.newamerica.org/oti/
 [9]: https://www.fcc.gov/general/measuring-broadband-america

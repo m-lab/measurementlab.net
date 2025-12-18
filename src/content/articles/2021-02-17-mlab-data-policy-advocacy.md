@@ -19,6 +19,7 @@ categories:
   - Opinion
 publishedDate: 2021-02-17
 ---
+
 For researchers, policy makers, governing bodies, advocacy groups, or anyone who
 wants to understand M-Lab data and how it compares to other internet measurement
 data sets, M-Lab has begun to develop recommendations for appropriate use of our
@@ -33,47 +34,47 @@ improve the Internet, we need to model how it behaves for the user in their
 everyday lives. Furthermore, these models should be built on transparent and
 verifiable data and methods to ensure that users, policy makers, advocates,
 researchers and anyone else with an interest in the future of the Internet, can
-make decisions with the same information. 
+make decisions with the same information.
 
 ## Key Takeaways
 
-* Different goals are best served by different data sources.  No single source
+- Different goals are best served by different data sources. No single source
   is best for all purposes. Many insights arise only when comparing and
   contrasting multiple data sources.
-* The Internet is the interconnection of many independent networks. The portion
+- The Internet is the interconnection of many independent networks. The portion
   of this topology that is measured is a function of client and measurement
-  server placement. 
-  * People measuring to a server within their access ISP's network will assess
+  server placement.
+  - People measuring to a server within their access ISP's network will assess
     only that ISP's network, not the user's connection to the Internet. This
     server placement is called “on-net”
-  * People measuring to a server within a transit provider that "peers" with the
+  - People measuring to a server within a transit provider that "peers" with the
     access ISP will assess the approximate path to content outside of the access
     network. Because the path includes an interconnection, this measurement may
     also assess the quality of the peering between the access ISP and transit
     provider. This server placement is called “off-net”
-  * The FCC MBA Program Technical Index notes, "The use of both on-net and
+  - The FCC MBA Program Technical Index notes, "The use of both on-net and
     off-net nodes provides a measure of confidence in the test results.”
-* M-Lab data is an excellent source for researchers who want: 
-  * open data and transparent methodology
-  * to measure the interconnections between independent networks (the
+- M-Lab data is an excellent source for researchers who want:
+  - open data and transparent methodology
+  - to measure the interconnections between independent networks (the
     “inter” part of the Internet)
-  * full access to extensive, detailed data, rather than broad generalizations
+  - full access to extensive, detailed data, rather than broad generalizations
     i.e.:
-    * break down by ISP, time of day, day of week, IP subnets
-    * break down across different destination transit providers.
-* Compare M-Lab data to other data sources when researchers:
-  * want to measure the last mile connection
-  * are interested in exhaustive data on a specific ISP and
-    * have access to (and trust) proprietary internal data
-    * using proprietary data works for your needs
-  * need controlled or verified client demographic, connectivity, or geolocation
+    - break down by ISP, time of day, day of week, IP subnets
+    - break down across different destination transit providers.
+- Compare M-Lab data to other data sources when researchers:
+  - want to measure the last mile connection
+  - are interested in exhaustive data on a specific ISP and
+    - have access to (and trust) proprietary internal data
+    - using proprietary data works for your needs
+  - need controlled or verified client demographic, connectivity, or geolocation
     data
-* When analyzing and illustrating data:
-  * Don’t oversimplify
-    * Aggregate by ISP in addition to time/date and location
-    * Be aware and illustrate multimodal distributions
-  * Use histogram and logarithmic scales
-  * Take into account, and compensate for, client bias and population drift
+- When analyzing and illustrating data:
+  - Don’t oversimplify
+    - Aggregate by ISP in addition to time/date and location
+    - Be aware and illustrate multimodal distributions
+  - Use histogram and logarithmic scales
+  - Take into account, and compensate for, client bias and population drift
 
 ## Research Considerations
 
@@ -116,7 +117,7 @@ interpretation is easy, but if it is multimodal, or has long tails or high skew,
 it is less obvious how to interpret a mean or median.
 
 Multimodal distributions usually appear because there are several distinct
-populations in the underlying data.  Breaking down data on dimensions like
+populations in the underlying data. Breaking down data on dimensions like
 ASNumber, peak/off-peak, or urban/rural will often allow for clearer
 interpretation.
 
@@ -126,14 +127,14 @@ infrastructure investment. Different ISPs operating in the same geographic area
 may therefore have very different performance characteristics.
 
 Peak/off-peak distinctions are often useful to identify regions or ISPs where
-peak traffic exceeds some internal infrastructure capacity.  Peak hour
+peak traffic exceeds some internal infrastructure capacity. Peak hour
 end-to-end throughput may not match last mile throughput, or off-hour
 throughput, due to queuing at internal switches during peak traffic times.
 
 ### Use histograms and logarithmic scales
 
 Histograms can clearly illustrate more complex distributions, with long tails,
-or multiple groupings of fast or slow clients.  When providing geographic
+or multiple groupings of fast or slow clients. When providing geographic
 visualizations, a complementary histogram can provide greater detail about a
 single geographic area.
 
@@ -153,16 +154,17 @@ how much detail is useful.
 
 Everything changes - sometimes all at once. Trends in the data evolve from a
 combination of:
-* Internet evolution
-* Client population changes
-* M-Lab platform or service changes ([e.g. shifting from Cubic to BBR congestion
-  control]({{ site.baseurl }}/blog/evolution-of-ndt/))
+
+- Internet evolution
+- Client population changes
+- M-Lab platform or service changes ([e.g. shifting from Cubic to BBR congestion
+  control](/src/assets/blog/evolution-of-ndt/))
 
 In aggregate, any change (to the Internet, client population, or service
 software) may lead to improving or declining performance measurements. For
 example, improvement in an area may mean the network is getting better, or it
 may mean a few very fast clients are running a lot of tests, or that households
-with fewer options are being squeezed out.  Declining overall performance
+with fewer options are being squeezed out. Declining overall performance
 measurements may mean an oversubscribed interconnection point, or actually
 reflect growth in service in low income markets or rural areas where service is
 slower.

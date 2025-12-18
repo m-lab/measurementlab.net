@@ -20,11 +20,10 @@ categories:
   - Development
 publishedDate: 2017-08-09
 ---
+
 ## Introduction
 
 As a platform committed to producing empirical data for the public, Measurement Lab (M-Lab) has [historically supplied regulators and other governmental entities](https://www.measurementlab.net/publications/#government--regulatory-filings) with technical facts pertinent rule-making processes. In our [February 2015 submission to the FCC’s Open Internet docket](https://www.measurementlab.net/publications/M-Lab_Interconnection_Study_US.pdf), we committed to research on the state of broadband and performance impact of interconnection in the United States. Earlier this year, the FCC began the process of re-evaluating its authority over broadband Internet services, and [opened a Notice of Proposed Rulemaking](https://apps.fcc.gov/edocs_public/attachmatch/DOC-344614A1.pdf). This blogpost is a shortened version [comments that M-Lab filed in the docket](https://www.fcc.gov/ecfs/filing/10715748225796) regarding its continued research on the impact of interconnection on consumer broadband. The full filing in the FCC docket includes an elaboration of our research with additional supporting evidence and charts.
-
-
 
 In this post, we review historical interconnection congestion episodes that appeared to have had a negative impact on consumer broadband and followed how these relationships had changed since the Open Internet Order. Since our [last blogpost on interconnection over two years ago](https://www.measurementlab.net/blog/interconnection_and_measurement_update/), the relationships between operators have changed, resulting in overall improvement in consumer performance and a notable remediation of congestion episodes covered in our initial reports. Often the improvements are sudden, reversing months long underperformance within days. The remediation of congestion parallels an overall improvement across networks in performance for broadband users, and in our analysis we do not find the same patterns of sustained degradation described in past reports. Our research has demonstrated that interconnection congestion can have a sustained, deleterious impact on consumers that is often reversed as soon as operators resolve the underlying business factors that led to insufficient capacity. The transparency provided by measurement will continue to be important tool in understanding how interconnection will evolve in the United States independent of the outcome of the FCC decision-making process.
 
@@ -38,7 +37,7 @@ In the Interconnection Study, we found a consistent theme across multiple access
 
 <table style="width: 100%;">
   <tr>
-    <td>img alt="Verizon across Internap and Cogent in New York, January 2013 - January 2014, Download Throughput" title="Verizon across Internap and Cogent in New York, January 2013 - January 2014, Download Throughput" src="{{ site.baseurl }}/images/blog/interconnection_update-Verizon-Internap_Cogent-NY.png"></td>
+    <td>img alt="Verizon across Internap and Cogent in New York, January 2013 - January 2014, Download Throughput" title="Verizon across Internap and Cogent in New York, January 2013 - January 2014, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon-Internap_Cogent-NY.png"></td>
   </tr>
   <tr>
     <td style="font-style: italic;">Verizon across Internap and Cogent in New York, January 2013 - January 2014, Download Throughput
@@ -50,11 +49,11 @@ M-Lab has since invested resources to build up its presence in the United States
 
 <table style="width: 100%;">
   <tr>
-    <td><img alt="Verizon across GTT, January 2014 - June 2015, Download Throughput" title="Verizon across GTT, January 2014 - June 2015, Download Throughput" src="{{ site.baseurl }}/images/blog/interconnection_update-Verizon-GTT.png">
+    <td><img alt="Verizon across GTT, January 2014 - June 2015, Download Throughput" title="Verizon across GTT, January 2014 - June 2015, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon-GTT.png">
     </td>
-    <td><img alt="AT&T across GTT, January 2014 - June 2015, Download Throughput" title="AT&T across GTT, January 2014 - June 2015, Download Throughput" src="{{ site.baseurl }}/images/blog/interconnection_update-Verizon-ATT.png">
+    <td><img alt="AT&T across GTT, January 2014 - June 2015, Download Throughput" title="AT&T across GTT, January 2014 - June 2015, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon-ATT.png">
     </td>
-    <td><img alt="Cox across GTT, January 2014 - June 2015, Download Throughput" title="Cox across GTT, January 2014 - June 2015, Download Throughput" src="{{ site.baseurl }}/images/blog/interconnection_update-Verizon-Cox.png">
+    <td><img alt="Cox across GTT, January 2014 - June 2015, Download Throughput" title="Cox across GTT, January 2014 - June 2015, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon-Cox.png">
     </td>
   </tr>
   <tr>
@@ -65,8 +64,8 @@ M-Lab has since invested resources to build up its presence in the United States
 
 Our updated findings showed persistent degradation experienced by customers of a number of major access ISPs across the United States during the first half of 2015. While the ISPs involved in each case differ, the symptoms and patterns of degradation are similar to those detailed in Interconnection Study: decreased download throughput, increased latency, and increased packet loss (compared to the performance through different access ISPs in the same region). In nearly all cases degradation was worse during peak use hours. The congestion events included:
 
-* AT&T, Comcast, Time Warner Cable, and Verizon with GTT Communications (GTT)
-* CenturyLink with Tata Communications (Tata)
+- AT&T, Comcast, Time Warner Cable, and Verizon with GTT Communications (GTT)
+- CenturyLink with Tata Communications (Tata)
 
 In the most severe cases, degradation represented a substantial impediment to accessing certain content for several prominent access ISPs, lasting for months and leading to download throughput speed well below the definition of broadband (at that time, 4 Mbps). While the cases differed in end user impact, the trends were national and were observed on several different transit ISPs, rather than being one problematic network.
 
@@ -78,9 +77,9 @@ The most significant degradation identified in our search was for Comcast users 
 
 <table style="width: 100%;">
   <tr>
-    <td><img alt="Comcast across TATA, January 2016 - April 2017, Diurnal Pattern, Download Throughput" title="Comcast across TATA, January 2016 - April 2017, Diurnal Pattern, Download Throughput" src="{{ site.baseurl }}/images/blog/interconnection_update-Comcast-TATA.png" style="cursor:pointer;">
+    <td><img alt="Comcast across TATA, January 2016 - April 2017, Diurnal Pattern, Download Throughput" title="Comcast across TATA, January 2016 - April 2017, Diurnal Pattern, Download Throughput" src="/src/assets/images/blog/interconnection_update-Comcast-TATA.png" style="cursor:pointer;">
     </td>
-    <td><img alt="Comcast across GTT, January 2016 - April 2017, Diurnal Pattern, Download Throughput" title="Comcast across GTT, January 2016 - April 2017, Diurnal Pattern, Download Throughput" src="{{ site.baseurl }}/images/blog/interconnection_update-Comcast-GTT.png">
+    <td><img alt="Comcast across GTT, January 2016 - April 2017, Diurnal Pattern, Download Throughput" title="Comcast across GTT, January 2016 - April 2017, Diurnal Pattern, Download Throughput" src="/src/assets/images/blog/interconnection_update-Comcast-GTT.png">
     </td>
   </tr>
   <tr>
@@ -91,9 +90,9 @@ The most significant degradation identified in our search was for Comcast users 
 
 <table style="width: 100%;">
   <tr>
-    <td><img alt="Verizon across Level 3, January 2014 - December 2014, Diurnal Pattern, Download Throughput" title="Verizon across Level 3, January 2014 - December 2014, Diurnal Pattern, Download Throughput" src="{{ site.baseurl }}/images/blog/interconnection_update-Verizon_Level3-1.png">
+    <td><img alt="Verizon across Level 3, January 2014 - December 2014, Diurnal Pattern, Download Throughput" title="Verizon across Level 3, January 2014 - December 2014, Diurnal Pattern, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon_Level3-1.png">
     </td>
-    <td><img alt="Verizon across Level 3, January 2015 - December 2015, Diurnal Pattern, Download Throughput" title="Verizon across Level 3, January 2015 - December 2015, Diurnal Pattern, Download Throughput" src="{{ site.baseurl }}/images/blog/interconnection_update-Verizon_Level3-2.png">
+    <td><img alt="Verizon across Level 3, January 2015 - December 2015, Diurnal Pattern, Download Throughput" title="Verizon across Level 3, January 2015 - December 2015, Diurnal Pattern, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon_Level3-2.png">
     </td>
   </tr>
   <tr>
@@ -110,7 +109,7 @@ In several of the episodes covered by M-Lab’s research, the parties involved l
 
 <table style="width: 100%;">
   <tr>
-    <td><img alt="AT&T across GTT, January 2015 - January 2016, Download Throughput" title="AT&T across GTT, January 2015 - January 2016, Download Throughput" src="{{ site.baseurl }}/images/blog/interconnection_update-ATT_GTT.png">
+    <td><img alt="AT&T across GTT, January 2015 - January 2016, Download Throughput" title="AT&T across GTT, January 2015 - January 2016, Download Throughput" src="/src/assets/images/blog/interconnection_update-ATT_GTT.png">
     </td>
   </tr>
   <tr>

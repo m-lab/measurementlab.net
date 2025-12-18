@@ -18,15 +18,16 @@ categories:
   - Technology
 publishedDate: 2020-09-18
 ---
-[Baltimore Data Day](https://bniajfi.org/data_day/){:target="_blank"} is an annual conference bringing together “community leaders, nonprofit organizations, government and civic-minded technologists to explore trends in community-based data and learn how other groups are using data to support and advance constructive change.” This year the 11th annual event expanded to become Baltimore Data Week, celebrating the 20th anniversary of the conference’s host organization, the Baltimore Neighborhood Indicators Alliance (BNIA). As a Baltimorean myself, I was honored to be invited to give a talk about the M-Lab platform and our open data, on the conference’s “Digital Inclusion Day.”
+
+[Baltimore Data Day](https://bniajfi.org/data_day/){:target="\_blank"} is an annual conference bringing together “community leaders, nonprofit organizations, government and civic-minded technologists to explore trends in community-based data and learn how other groups are using data to support and advance constructive change.” This year the 11th annual event expanded to become Baltimore Data Week, celebrating the 20th anniversary of the conference’s host organization, the Baltimore Neighborhood Indicators Alliance (BNIA). As a Baltimorean myself, I was honored to be invited to give a talk about the M-Lab platform and our open data, on the conference’s “Digital Inclusion Day.”
 
 ## Supporting Community - Data Initiatives
 
-The Baltimore Neighborhood Indicators Alliance is at the Jacob France Institute at the University of Baltimore, [whose mission](https://bniajfi.org/about_bnia/){:target="_blank"} is to, “provide open access to meaningful, reliable, and actionable data about, and for, the City of Baltimore and its communities.” BNIA is a member of a national network of organizations called the [Community Indicators Consortium](https://communityindicators.net/){:target="_blank"}, whose mission “advances and supports the development, availability and effective use of community indicators for making measurable and sustainable improvements in quality of community life.” BNIA’s annual Data Science Corps program provides internship opportunities for local undergraduate students to gain experience through data science projects. BNIA’s invitation to present about M-Lab came after their staff contacted us to inquire about our open data, and support for one of their Data Science Corps interns.
+The Baltimore Neighborhood Indicators Alliance is at the Jacob France Institute at the University of Baltimore, [whose mission](https://bniajfi.org/about_bnia/){:target="\_blank"} is to, “provide open access to meaningful, reliable, and actionable data about, and for, the City of Baltimore and its communities.” BNIA is a member of a national network of organizations called the [Community Indicators Consortium](https://communityindicators.net/){:target="\_blank"}, whose mission “advances and supports the development, availability and effective use of community indicators for making measurable and sustainable improvements in quality of community life.” BNIA’s annual Data Science Corps program provides internship opportunities for local undergraduate students to gain experience through data science projects. BNIA’s invitation to present about M-Lab came after their staff contacted us to inquire about our open data, and support for one of their Data Science Corps interns.
 
-The COVID-19 pandemic has exposed what many people and organizations already knew-- that quality, affordable Internet access is not available to everyone equitably, and disparities in access, provider choice, quality of service, and affordability need to be addressed. Digital Inclusion organizations and coalitions at the local and national level have been working hard to provide access to people who are not connected, to address these disparities in this extremely challenging time. For example, the [Baltimore Digital Equity Coalition](https://digitalequitybaltimore.org/about-us/){:target="_blank"}  was formed to respond to the needs that COVID-19 exacerbated, forming a rapid response in key areas: access to devices, greater Internet connectivity, digital skills training and technical support, and advocacy.
+The COVID-19 pandemic has exposed what many people and organizations already knew-- that quality, affordable Internet access is not available to everyone equitably, and disparities in access, provider choice, quality of service, and affordability need to be addressed. Digital Inclusion organizations and coalitions at the local and national level have been working hard to provide access to people who are not connected, to address these disparities in this extremely challenging time. For example, the [Baltimore Digital Equity Coalition](https://digitalequitybaltimore.org/about-us/){:target="\_blank"} was formed to respond to the needs that COVID-19 exacerbated, forming a rapid response in key areas: access to devices, greater Internet connectivity, digital skills training and technical support, and advocacy.
 
-BNIA and their Data Science Corp were looking for baseline data measuring the performance and quality of Internet service across the city, and sought a way to assess the service being provided or improved through the Baltimore Digital Equity Coalition’s initiatives. Data Science Corps members, Ruth Robinson and Priya Kanneboyina, published this [blog post](https://bniajfi.org/2020/09/02/is-baltimore-city-getting-fast-enough-internet-speeds/){:target="_blank"} as a result. Definitely check out the awesome work BNIA and the Data Science Corps are doing.
+BNIA and their Data Science Corp were looking for baseline data measuring the performance and quality of Internet service across the city, and sought a way to assess the service being provided or improved through the Baltimore Digital Equity Coalition’s initiatives. Data Science Corps members, Ruth Robinson and Priya Kanneboyina, published this [blog post](https://bniajfi.org/2020/09/02/is-baltimore-city-getting-fast-enough-internet-speeds/){:target="\_blank"} as a result. Definitely check out the awesome work BNIA and the Data Science Corps are doing.
 
 ## Exploring M-Lab Data by Geography
 
@@ -42,19 +43,19 @@ You can use shapefiles in multiple ways, and with different programs or services
 
 A desktop GIS program is maybe the most common way people interact with shapefiles. QGIS is an open source program, and is akin to the commercial software, ArcGIS from ESRI. Both programs allow you to import “layers” of various data types. First, I created a base map of the US by loading the US Census’ shapefile for Counties.
 
-![Map of United States Counties in QGIS]({{ site.baseurl }}/images/blog/2020-09-14-baltimore/image1.png)
+![Map of United States Counties in QGIS](/src/assets/images/blog/2020-09-14-baltimore/image1.png)
 
 I also added a layer for US States, and filtered to show just Maryland.
 
-![Map of Maryland with surrounding United States Counties in QGIS]({{ site.baseurl }}/images/blog/2020-09-14-baltimore/image2.png)
+![Map of Maryland with surrounding United States Counties in QGIS](/src/assets/images/blog/2020-09-14-baltimore/image2.png)
 
 Finally, I imported BNIA’s shapefile for Baltimore’s community statistical areas.
 
-![Map of BNIA Baltimore City Statistical Areas in QGIS]({{ site.baseurl }}/images/blog/2020-09-14-baltimore/image3.png)
+![Map of BNIA Baltimore City Statistical Areas in QGIS](/src/assets/images/blog/2020-09-14-baltimore/image3.png)
 
 Now we’re ready to add data from M-Lab. That data could take many forms, from aggregate measurements by community area, color coded by the average, median, or other statistic for download or upload speed. M-Lab’s measurement service, NDT, provides a baseline measurement of TCP’s reliability, using a single stream of data. TCP stands for Transmission Communication Protocol and is what computers use to send and receive data over the Internet. Since we’re just exploring at this point to see what is possible, I started with looking at where in the city NDT tests from 2020 have been located in our public dataset.
 
-To obtain the common latitude and longitude coordinates for all tests in 2020 submitted by Marylanders in Baltimore City, I used BigQuery to search M-Lab’s NDT data. If you’re interested in querying our data yourself, sign up your Google account to our access group by following the [M-Lab Quickstart guide]({{ site.baseurl }}/quickstart). We have some [documentation online]({{ site.baseurl }}/data/docs) as well, and you can obtain some sample queries from my [Baltimore Data Week slide deck](https://bit.ly/mlab-baltimore-data-week-2020-07-23). Here is the query I used, which returns a total of 50 common latitude and longitude points:
+To obtain the common latitude and longitude coordinates for all tests in 2020 submitted by Marylanders in Baltimore City, I used BigQuery to search M-Lab’s NDT data. If you’re interested in querying our data yourself, sign up your Google account to our access group by following the [M-Lab Quickstart guide](/src/assets/quickstart). We have some [documentation online](/src/assets/data/docs) as well, and you can obtain some sample queries from my [Baltimore Data Week slide deck](https://bit.ly/mlab-baltimore-data-week-2020-07-23). Here is the query I used, which returns a total of 50 common latitude and longitude points:
 
 ```~sql
 WITH dl AS (
@@ -85,11 +86,11 @@ GROUP BY latitude, longitude
 
 Then I downloaded the results as a CSV file, and imported it as a “Text Delimited Layer” in QGIS. The image below shows those 50 points within Baltimore City.
 
-![Map of BNIA Baltimore City Statistical Areas with common M-Lab test latitude longitude coordinates in 2020 in QGIS]({{ site.baseurl }}/images/blog/2020-09-14-baltimore/image4.png)
+![Map of BNIA Baltimore City Statistical Areas with common M-Lab test latitude longitude coordinates in 2020 in QGIS](/src/assets/images/blog/2020-09-14-baltimore/image4.png)
 
 You’ll note that there is not a geo point within each neighborhood, which means that aggregating M-Lab default data by Baltimore community areas will be informative, but will not be definitive. To further illustrate this issue, I queried NDT data for the three IP addresses that have been assigned to my home Internet connection since May 1, 2020. I hope you’re chuckling right now because, yes, I periodically check what IP address I get assigned. The map below on the left is from the [BNIA website](https://bniajfi.org/) and has my neighborhood, Highlandtown, highlighted in orange. The map on the right adds three points on the map where my IP addresses have been located by M-Lab. None of the points actually land in the Highlandtown community area.
 
-| ![BNIA Map of Baltimore City Statistical Areas with Highlandtown Neighborhood Highlighted]({{ site.baseurl }}/images/blog/2020-09-14-baltimore/image5.png) | ![Map of BNIA Baltimore City Statistical Areas with common M-Lab test latitude longitude coordinates in 2020, and sample points from one household's tests in QGIS]({{ site.baseurl }}/images/blog/2020-09-14-baltimore/image6.png) |
+| ![BNIA Map of Baltimore City Statistical Areas with Highlandtown Neighborhood Highlighted](/src/assets/images/blog/2020-09-14-baltimore/image5.png) | ![Map of BNIA Baltimore City Statistical Areas with common M-Lab test latitude longitude coordinates in 2020, and sample points from one household's tests in QGIS](/src/assets/images/blog/2020-09-14-baltimore/image6.png) |
 
 ### Digging Deeper - What else can M-Lab’s NDT Data tell us about Baltimore Community Areas?
 
@@ -129,6 +130,7 @@ FROM
 GROUP BY community
 ORDER BY community
 ```
+
 <br>
 <div class="table-responsive" markdown="1">
 
@@ -154,15 +156,15 @@ Because M-Lab maintains a public archive of our measurement data, we sacrifice a
 
 ### Piecewise - Public Engagement Web Portal
 
-[Piecewise](https://github.com/m-lab/piecewise){:target="_blank"} is an open-source public engagement portal that collects both user-volunteered survey responses and NDT measurements. Data collected by an instance of Piecewise is visually aggregated on the web and mapped on top of M-Lab's public dataset. Prior to completing the survey and test, each visitor is prompted to “share their location” in the browser. If selected, the application collects a more accurate location, the community running the Piecewise instance collects this information on their server, but only the test results and IP address are sent to M-Lab. Running a Piecewise installation requires a web server that supports [Docker](https://www.docker.com/){:target="_blank"}.
+[Piecewise](https://github.com/m-lab/piecewise){:target="\_blank"} is an open-source public engagement portal that collects both user-volunteered survey responses and NDT measurements. Data collected by an instance of Piecewise is visually aggregated on the web and mapped on top of M-Lab's public dataset. Prior to completing the survey and test, each visitor is prompted to “share their location” in the browser. If selected, the application collects a more accurate location, the community running the Piecewise instance collects this information on their server, but only the test results and IP address are sent to M-Lab. Running a Piecewise installation requires a web server that supports [Docker](https://www.docker.com/){:target="\_blank"}.
 
 ### M-Lab Measure - Chrome Browser Extension
 
-The [M-Lab Measure Chrome browser extension](https://chrome.google.com/webstore/detail/m-lab-measure/leijmacehibmiomcnpaolboihcdepokh?utm_source=chrome-app-launcher-info-dialog){:target="_blank"} provides an extension for the Chrome web browser to run NDT tests. Features include scheduling tests, annotating results, selecting a specific M-Lab server, saving test results in an SQL Lite database in the user’s browser profile, and exporting results to a local CSV file. By annotating results with metadata about each location, service provider, service tier, etc., the extension can be one means of collecting new tests with more geographic accuracy, without having to setup and run a website.
+The [M-Lab Measure Chrome browser extension](https://chrome.google.com/webstore/detail/m-lab-measure/leijmacehibmiomcnpaolboihcdepokh?utm_source=chrome-app-launcher-info-dialog){:target="\_blank"} provides an extension for the Chrome web browser to run NDT tests. Features include scheduling tests, annotating results, selecting a specific M-Lab server, saving test results in an SQL Lite database in the user’s browser profile, and exporting results to a local CSV file. By annotating results with metadata about each location, service provider, service tier, etc., the extension can be one means of collecting new tests with more geographic accuracy, without having to setup and run a website.
 
 ### Murakami - Premise Device Automated Measurement Tool
 
-[Murakami](https://github.com/m-lab/murakami){:target="_blank"} is an application that runs M-Lab and other measurements automatically from a dedicated computer installed on-premise. Many such devices can be installed at locations where a community wants to collect measurements. Ongoing measurements from known locations like community anchor institutions can be collected in a central data archive. For example, M-Lab partnered with Simmons University over the last 2 years on a research program to run Murakami devices within public libraries across the US. By measuring at known locations with specific known metadata like ISP, service tier, street address, etc., this automated approach is more suitable for research because it avoids potential issues such as using solely crowdsourced tests.
+[Murakami](https://github.com/m-lab/murakami){:target="\_blank"} is an application that runs M-Lab and other measurements automatically from a dedicated computer installed on-premise. Many such devices can be installed at locations where a community wants to collect measurements. Ongoing measurements from known locations like community anchor institutions can be collected in a central data archive. For example, M-Lab partnered with Simmons University over the last 2 years on a research program to run Murakami devices within public libraries across the US. By measuring at known locations with specific known metadata like ISP, service tier, street address, etc., this automated approach is more suitable for research because it avoids potential issues such as using solely crowdsourced tests.
 
 ## Conclusion
 

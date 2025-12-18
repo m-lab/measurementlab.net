@@ -17,13 +17,14 @@ categories:
   - News
 publishedDate: 2020-04-08
 ---
+
 Measurement Lab (M-Lab) has been a supportive partner of the FCC’s Measuring Broadband America program since its beginning due to the program’s commitment to openness, open data and transparency which aligns closely with M-Lab’s mission around open data and open source internet measurement. Measurement Lab began hosting the SamKnows server-side measurement tools in 2009.
 
 As of February 14, 2020, Measurement Lab is unable to host the SamKnows experiment due to SamKnows’ decision to not comply with M-Lab’s long-standing open source requirements. To ensure and encourage transparency for the MBA program, we are publishing this post to document the timeline leading up to that decision.
 
 ## Overview of M-Lab Platform Upgrade, 2018 - 2020
 
-From 2008 to 2019, the M-Lab platform used Princeton’s Planet Lab’s vserver technology to manage its infrastructure of off-net servers in Tier 1 data centers around the world. On January 24, 2018 M-Lab published its [plan]({{ site.baseurl }}/blog/modernizing-mlab/) to modernize the platform with several upgrades, including the use of Kubernetes and Docker.
+From 2008 to 2019, the M-Lab platform used Princeton’s Planet Lab’s vserver technology to manage its infrastructure of off-net servers in Tier 1 data centers around the world. On January 24, 2018 M-Lab published its [plan](/src/assets/blog/modernizing-mlab/) to modernize the platform with several upgrades, including the use of Kubernetes and Docker.
 
 The upgrade implemented a technical enforcement of our longstanding commitment to open source by requiring an open source Docker container to run on the platform. The technical requirement was outlined in an Experiment Developer MoU. All experiments were asked to sign the MoU to formalize their usage of the M-Lab platform’s resources.
 
@@ -39,8 +40,8 @@ On February 14, 2020, SamKnows notified Measurement Lab that they were unwilling
 
 ## Summary
 
-Measurement Lab’s open source requirement has existed since 2008, and aligns with the [FCC’s published commitment](https://www.fcc.gov/general/measuring-broadband-america-open-methodology){:target="_blank"} to transparency and open source code in the MBA Program. The new platform software enforces M-Lab’s open source requirement at a technical level, and the lack of an open source server prevents us from hosting the SamKnows experiment.
+Measurement Lab’s open source requirement has existed since 2008, and aligns with the [FCC’s published commitment](https://www.fcc.gov/general/measuring-broadband-america-open-methodology){:target="\_blank"} to transparency and open source code in the MBA Program. The new platform software enforces M-Lab’s open source requirement at a technical level, and the lack of an open source server prevents us from hosting the SamKnows experiment.
 
-Participants in the MBA program should be notified that SamKnows’ decision to not use M-Lab’s off-net servers will result in changes to the infrastructure used in testing. The change should be reflected in the public resources that describes the program’s [open testing methodology](https://www.fcc.gov/general/measuring-broadband-america-open-methodology){:target="_blank"}.
+Participants in the MBA program should be notified that SamKnows’ decision to not use M-Lab’s off-net servers will result in changes to the infrastructure used in testing. The change should be reflected in the public resources that describes the program’s [open testing methodology](https://www.fcc.gov/general/measuring-broadband-america-open-methodology){:target="\_blank"}.
 
 Should SamKnows choose to provide an open source server, we remain open to hosting it on M-Lab infrastructure around the country and around the world. M-Lab’s commitment is to the Measuring Broadband America program and its open source principles. We are able and willing to host any open source test, SamKnows or otherwise.

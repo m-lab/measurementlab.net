@@ -17,6 +17,7 @@ categories:
   - News
 publishedDate: 2022-01-13
 ---
+
 M-Lab is pleased to share our selection of Research Fellows for Spring 2022,
 generously supported by Internet Society. The fellows were selected for the
 merit, rigor, and feasibility of their proposed project as well as their
@@ -40,7 +41,7 @@ for BGP data analysis.
 
 As an M-Lab fellow, Zhang will study control-plane-triggered traffic performance
 degradation by correlating anomalous NDT traffic data with BGP information.
-[Read the full project proposal]({{ site.baseurl }}/publications/research-fellows/2022/2021-mlab-proposal-zhang.pdf). 
+[Read the full project proposal](/src/assets/publications/research-fellows/2022/2021-mlab-proposal-zhang.pdf).
 
 ## Localizing Neutrality Violations | Led by Zeinab Shmeis, supported by Muhammad Abdullah and Pavlos Nikolopoulos
 
@@ -76,7 +77,7 @@ of network security, system design and statistics, with a focus on network
 measurements, neutrality and transparency. For the past year, he has worked on
 group testing algorithms.
 
-During the fellowship, Shmeis and her team will extend the Wehe application to not only detect traffic differentiation practices but localize them as well. [Read the full project proposal]({{ site.baseurl }}/publications/research-fellows/2022/Shmeis_et_al_Proposal.pdf). 
+During the fellowship, Shmeis and her team will extend the Wehe application to not only detect traffic differentiation practices but localize them as well. [Read the full project proposal](/src/assets/publications/research-fellows/2022/Shmeis_et_al_Proposal.pdf).
 
 ## Inferring QoE from active and passive measurements | Sanjay Chandrasekaran
 
@@ -87,4 +88,4 @@ by Vyas Sekar.
 
 As an M-Lab fellow, Chandrasekaran will be focused on understanding the
 relationship between QoE and the metrics we can collect through active and
-passive measurements. [Read the full project proposal]({{ site.baseurl }}/publications/research-fellows/2022/SanjayChandrasekaran_Proposal.pdf).
+passive measurements. [Read the full project proposal](/src/assets/publications/research-fellows/2022/SanjayChandrasekaran_Proposal.pdf).

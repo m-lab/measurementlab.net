@@ -17,16 +17,16 @@ categories:
   - News
 publishedDate: 2019-02-28
 ---
-Code for Science & Society (CS&S) and New America’s Open Technology Institute are excited to announce that Measurement Lab  (M-Lab) is joining CS&S’s Sponsored Projects Program on March 1 after a decade of growth at New America. Measurement Lab has been working in the public interest to measure Internet performance around the world and share data openly since it was launched at New America in 2008, work that will continue and expand at its new institutional home. Read on for more about M-Lab’s history and future plans.
 
+Code for Science & Society (CS&S) and New America’s Open Technology Institute are excited to announce that Measurement Lab (M-Lab) is joining CS&S’s Sponsored Projects Program on March 1 after a decade of growth at New America. Measurement Lab has been working in the public interest to measure Internet performance around the world and share data openly since it was launched at New America in 2008, work that will continue and expand at its new institutional home. Read on for more about M-Lab’s history and future plans.
 
-![Measurement Lab team]({{ site.baseurl }}/images/blog/20190228_mlab_team.png)
+![Measurement Lab team](/src/assets/images/blog/20190228_mlab_team.png)
 
 Measurement Lab (M-Lab) is the largest open Internet measurement platform in the world, hosting Internet-scale measurement experiments and releasing all data into the public domain. M-Lab advances network research and empowers the public with useful information about broadband and mobile connections, enhancing Internet transparency, and helping to promote and sustain a healthy, innovative Internet.
 
 [Code for Science & Society](https://codeforscience.org/){:target="blank"}, the new host of Measurement Lab’s operations, is a small nonprofit dedicated to advancing open technologies in the public interest. They work with partners across research, civic technologies, and new media to support the growth and sustainability of the public interest tech ecosystem.
 
-Measurement Lab comes to Code for Science & Society after recently celebrating its tenth anniversary at New America’s [Open Technology Institute](https://www.newamerica.org/oti/){:target="_blank"}. The M-Lab community and team are thankful for the supportive home that OTI has long provided, but are also excited to join the family of projects at Code for Science & Society, an organization purpose-built for hosting large open source public interest tech projects.
+Measurement Lab comes to Code for Science & Society after recently celebrating its tenth anniversary at New America’s [Open Technology Institute](https://www.newamerica.org/oti/){:target="\_blank"}. The M-Lab community and team are thankful for the supportive home that OTI has long provided, but are also excited to join the family of projects at Code for Science & Society, an organization purpose-built for hosting large open source public interest tech projects.
 
 M-Lab’s work will continue to be supported by a consortium of research, industry, and public interest partners, including OTI, that is focused on fostering, collecting, and publishing open Internet data. M-Lab will also continue to collaborate with organizations all over the world to build out the Internet measurement platform, do research and data studies, and inform policy work by regulators, policymakers, and advocacy organizations.
 

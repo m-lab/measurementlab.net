@@ -18,6 +18,7 @@ categories:
   - Opinion
 publishedDate: 2021-08-18
 ---
+
 Internet performance is often measured by download and upload “speed” but there
 are other metrics that can help measure connectivity, such as latency,
 bufferbloat and a more recently discussed metric: responsiveness. **Join us next
@@ -28,8 +29,8 @@ metrics including:
 **Matt Mathis, Senior Research Scientist, Measurement Lab, Google**
 
 Matt Mathis has been working on Internet performance research and development
-since 1990.  His work includes measurement tools, models and improvements to 
-protocol standards.  He participated in M-Lab from its inception in 2009, and
+since 1990. His work includes measurement tools, models and improvements to
+protocol standards. He participated in M-Lab from its inception in 2009, and
 came to Google in 2010 to find a larger platform on which to stand.
 
 **Dave Taht**
@@ -42,7 +43,7 @@ Internet have been integrated into the Linux, OSX, and IOS kernels, cable
 modems, and many WiFi chips, and he has created and managed Internet improvement
 initiatives such as CeroWrt, [make-wifi-fast][makewififast], cake, and more.
 From these projects we have seen major innovations in congestion control
-algorithms such as BQL, FQ_codel, FQ_pie, and BBR. 
+algorithms such as BQL, FQ_codel, FQ_pie, and BBR.
 
 [bbproject]: https://www.bufferbloat.net/projects/
 [bbnb]: https://blog.tohojo.dk/media/bufferbloat-and-beyond.pdf
@@ -63,7 +64,7 @@ Lab, a fiscally sponsored project of Code for Science & Society.
 
 Our casual conversation will include discussion about the significance of these metrics as well as the challenges their collection presents. We welcome audience questions, answers, challenges, and discussion. The discussion will be technical but no familiarity with M-Lab is required; all we ask is that participants review and respect our [community guidelines][commnuity].
 
-[community]: {{ site.baseurl }}/community-guidelines/
+[community]: /src/assets/community-guidelines/
 
 If you have previously RSVP’d to our community calls, you should have already
 received a calendar invite with a Zoom link included.

@@ -16,39 +16,40 @@ categories:
   - Technology
 publishedDate: 2020-08-27
 ---
+
 Over the past month, M-Lab has published a series of blog posts about ndt7. As of Thursday, August 13th, 2020 roughly 90% of NDT clients using secure websockets have completed the migration from ndt5 to ndt7.
 
-* [Introducing ndt7]({{ site.baseurl }}/blog/ndt7-introduction)
-* [Migrating NDT clients to ndt7]({{ site.baseurl }}/blog/migrating-ndt-clients-to-ndt7)
-* [Evolution of NDT]({{ site.baseurl }}/blog/evolution-of-ndt)
+- [Introducing ndt7](/src/assets/blog/ndt7-introduction)
+- [Migrating NDT clients to ndt7](/src/assets/blog/migrating-ndt-clients-to-ndt7)
+- [Evolution of NDT](/src/assets/blog/evolution-of-ndt)
 
 Below is a screenshot of our internal monitoring for test traffic on August 14th, 2020, showing the ndt7 test count (green, above) in relation to the ndt5 test count (yellow, below).
 
-![NDT Protocol Test Rates (Up, Down)]({{ site.baseurl }}/images/blog/2020-08-27-ndt7/image1.png)
+![NDT Protocol Test Rates (Up, Down)](/src/assets/images/blog/2020-08-27-ndt7/image1.png)
 
 ## Migration Checklist
 
-In our [migration announcement]({{ site.baseurl }}/blog/migrating-ndt-clients-to-ndt7/), we pledged to complete the tasks below prior to the majority migration.
+In our [migration announcement](/src/assets/blog/migrating-ndt-clients-to-ndt7/), we pledged to complete the tasks below prior to the majority migration.
 
 ✅ **The ndt7 data will be published to measurement-lab.raw_ndt.ndt7.**
 
-You can access the published data via BigQuery in the [measurement-lab.raw_ndt.ndt7](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=raw_ndt&t=ndt7&page=table){:target="_blank"} table.
+You can access the published data via BigQuery in the [measurement-lab.raw_ndt.ndt7](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=raw_ndt&t=ndt7&page=table){:target="\_blank"} table.
 
 ✅ **The ndt7 tables will have complete documentation on the M-Lab website.**
 
-On our website we provide general information about NDT, the ndt5 and ndt7 protocols, and documentation of each protocol’s schema - the fields, data types, and descriptions that are stored in BigQuery. The [NDT page on our website]({{ site.baseurl }}/tests/ndt/) includes:
+On our website we provide general information about NDT, the ndt5 and ndt7 protocols, and documentation of each protocol’s schema - the fields, data types, and descriptions that are stored in BigQuery. The [NDT page on our website](/src/assets/tests/ndt/) includes:
 
-* NDT’s history
-* Descriptions of NDT protocols, including [ndt5]({{ site.baseurl }}/tests/ndt/ndt5) and [ndt7]({{ site.baseurl }}/tests/ndt/ndt5)
-* A list of all BigQuery tables and views for NDT protocols, and how to access them
-* Access to the pre-filtered “Helpful” and “Faithful” NDT tables/views that we have designed to suit specific use cases in the M-Lab community
+- NDT’s history
+- Descriptions of NDT protocols, including [ndt5](/src/assets/tests/ndt/ndt5) and [ndt7](/src/assets/tests/ndt/ndt5)
+- A list of all BigQuery tables and views for NDT protocols, and how to access them
+- Access to the pre-filtered “Helpful” and “Faithful” NDT tables/views that we have designed to suit specific use cases in the M-Lab community
 
 ✅ **The ndt7 data will be included in the NDT unified views.**
 
 You can access the NDT unified views in BigQuery
 
-* [measurement-lab.ndt.unified_downloads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_downloads&page=table){:target="_blank"}
-* [measurement-lab.ndt.unified_uploads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_uploads&page=table){:target="_blank"}
+- [measurement-lab.ndt.unified_downloads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_downloads&page=table){:target="\_blank"}
+- [measurement-lab.ndt.unified_uploads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_uploads&page=table){:target="\_blank"}
 
 ✅ **As the migration advances, there will be less ndt5 data and more ndt7 data**
 
@@ -60,13 +61,13 @@ GROUP BY date, instruments
 ORDER BY date
 ```
 
-![Graph of the query results above, showing decreasing ndt5 measurements and increasing ndt7 measurements]({{ site.baseurl }}/images/blog/2020-08-27-ndt7/image2.png)
+![Graph of the query results above, showing decreasing ndt5 measurements and increasing ndt7 measurements](/src/assets/images/blog/2020-08-27-ndt7/image2.png)
 
 ✅ **The charts in the analysis will be reproducible using public tables**
 
 In our entry criteria analysis, we used scatter plots comparing ndt5 and ndt7 performance for the same clients before and after migration. Below we provide example queries using the unified download views to recreate that analysis.
 
-| ![Scatter plot comparing ndt5 and ndt7, reporting client download bandwidth]({{ site.baseurl }}/images/blog/2020-08-27-ndt7/image3.png) | ![Scatter plot comparing ndt5 and ndt7, reporting client minRTT]({{ site.baseurl }}/images/blog/2020-08-27-ndt7/image4.png) |
+| ![Scatter plot comparing ndt5 and ndt7, reporting client download bandwidth](/src/assets/images/blog/2020-08-27-ndt7/image3.png) | ![Scatter plot comparing ndt5 and ndt7, reporting client minRTT](/src/assets/images/blog/2020-08-27-ndt7/image4.png) |
 
 The left plot reports client download bandwidth in Mbps. The right plot reports client minRTT in milliseconds. In both plots, ndt5 metrics are plotted using the x-axis, and ndt7 metrics using the y-axis. Samples are restricted to clients having both 1 measurement before and after the pilot migration and minRTT measurements below 25 msec. In the minRTT subplot, ndt5 clients are much more likely to have higher minRTT values than ndt7 clients.
 
@@ -163,16 +164,16 @@ WHERE
 <br/><br/>
 ✅ **Publish advice for working with the longitudinal history of all NDT data**
 
-In our [Evolution of NDT blog post]({{ site.baseurl }}/blog/evolution-of-ndt), we introduced the nuances of comparing the NDT datasets across significant transitions. Each dataset is internally consistent. Until more research is completed, comparisons of measurements across transition points should be done with care.
+In our [Evolution of NDT blog post](/src/assets/blog/evolution-of-ndt), we introduced the nuances of comparing the NDT datasets across significant transitions. Each dataset is internally consistent. Until more research is completed, comparisons of measurements across transition points should be done with care.
 
 When using data across significant transitions, please indicate the transition in your representation of the data. For example, November 2019 for the platform migration with ndt5 and August 2020 for the migration to ndt7.
 
 ## Final notes
 
-Next, we will continue to develop the NDT7 JavaScript reference client. We will update our blog and mailing list once it is complete. If you are interested in integrating NDT7 using Javascript before the reference client is complete, please feel free to reach out to support@measurementlab.net for support. NDT7 clients must use the [Locate API v2]({{ site.baseurl }}/develop/locate-v2/).
+Next, we will continue to develop the NDT7 JavaScript reference client. We will update our blog and mailing list once it is complete. If you are interested in integrating NDT7 using Javascript before the reference client is complete, please feel free to reach out to support@measurementlab.net for support. NDT7 clients must use the [Locate API v2](/src/assets/develop/locate-v2/).
 
 We will implement an “early exit” feature, which will allow an ndt7 test to terminate as soon as BBR metrics indicate an optimal rate (e.g. using pacing gain).
 
 We will continue to support ndt5 for the near future. When we decide on a definitive date to stop supporting ndt5, we will give the NDT client integration community an ample amount of notice and time to prepare.
 
-The [Evolution of NDT]({{ site.baseurl }}/blog/evolution-of-ndt) introduces a list of open questions that we intend to investigate as transparently as possible and we invite the M-Lab community to help us do so collaboratively. You can read more about our initial ideas and provide feedback on them [by completing this brief survey](https://docs.google.com/forms/d/e/1FAIpQLScIbL03mHmAu1xO_vIaNNjBHLqrMGi3fdyKGiVms270nH3Vcg/viewform){:target="_blank"}. You can also reach out to us directly at support@measurementlab.net.
+The [Evolution of NDT](/src/assets/blog/evolution-of-ndt) introduces a list of open questions that we intend to investigate as transparently as possible and we invite the M-Lab community to help us do so collaboratively. You can read more about our initial ideas and provide feedback on them [by completing this brief survey](https://docs.google.com/forms/d/e/1FAIpQLScIbL03mHmAu1xO_vIaNNjBHLqrMGi3fdyKGiVms270nH3Vcg/viewform){:target="\_blank"}. You can also reach out to us directly at support@measurementlab.net.

@@ -17,7 +17,8 @@ categories:
   - News
 publishedDate: 2019-08-01
 ---
-To make our traceroute data in BigQuery more useful, researchers have sought an easy [way to reconstruct the path of hops][1]{:target="_blank"} for the same test. This task was particularly hard because the schema, which was designed many years ago, put the hops of the same test in different rows.
+
+To make our traceroute data in BigQuery more useful, researchers have sought an easy [way to reconstruct the path of hops][1]{:target="\_blank"} for the same test. This task was particularly hard because the schema, which was designed many years ago, put the hops of the same test in different rows.
 
 To address this need from many of our partners and researchers, M-Lab is delighted to announce that the `traceroute` BigQuery table in the `aggregate` dataset is now available to the public. The new `traceroute` schema has one test per row, and all hops for a single test are inside the same row.
 
@@ -25,11 +26,11 @@ To address this need from many of our partners and researchers, M-Lab is delight
 
 Here is the new schema, which also adds ASN annotation for traceroute source, destination, and hops:
 
-![schema_1]({{ site.baseurl }}/images/blog/2019-08-01-traceroute/schema1.png)
+![schema_1](/src/assets/images/blog/2019-08-01-traceroute/schema1.png)
 
-![schema_2]({{ site.baseurl }}/images/blog/2019-08-01-traceroute/schema2.png)
+![schema_2](/src/assets/images/blog/2019-08-01-traceroute/schema2.png)
 
-![schema_3]({{ site.baseurl }}/images/blog/2019-08-01-traceroute/schema3.png)
+![schema_3](/src/assets/images/blog/2019-08-01-traceroute/schema3.png)
 
 The new BigQuery table preserves all information that was in the previous table, `measurement-lab.base_tables.traceroute`, with better geo-location annotation coverage using time-based Maxmind databases. The geo-location annotation rate for traceroute source and destination are 100%. For traceroute tests since 2017, the geo-location annotation rate for hops almost doubled from ~20% in the BigQuery table, to >40% in current BigQuery table. The ASN annotation rate is about 97%.
 
@@ -39,7 +40,7 @@ Here are some sample queries to access the `traceroute` table with the new schem
 
 ### Count how many traceroute tests per day given a time range
 
-~~~sql
+```sql
 SELECT
   ts,
   COUNT(*) AS num
@@ -52,11 +53,11 @@ FROM (
 )
 GROUP BY ts
 ORDER BY ts DESC
-~~~
+```
 
 ### Count rate of source and destination IP being annotated with Geolocation information
 
-~~~sql
+```sql
 SELECT
   ts,
   COUNTIF(s_long IS NOT NULL AND s_lant IS NOT NULL) / COUNT(*) AS s_geo_success_rate,
@@ -74,11 +75,11 @@ FROM (
 )
 GROUP BY ts
 ORDER BY ts DESC
-~~~
+```
 
 ### Count how many hops were in “New York” per day.
 
-~~~sql
+```sql
 SELECT
   ts,
   COUNTIF(hop_ip IS NOT NULL) AS total_hops,
@@ -98,11 +99,11 @@ FROM (
 )
 GROUP BY ts
 ORDER BY ts DESC
-~~~
+```
 
 ### Count how many hops were in a specific ASN
 
-~~~sql
+```sql
 SELECT
   ts,
   COUNTIF(hop_ip IS NOT NULL) AS total_hops,
@@ -120,11 +121,11 @@ FROM (
 )
 GROUP BY ts
 ORDER BY ts DESC
-~~~
+```
 
 ### Count the annotation rate of ASN for hops
 
-~~~sql
+```sql
 SELECT
   ts,
   COUNTIF(hop_ip IS NOT NULL) AS total_hops,
@@ -142,4 +143,4 @@ FROM (
 )
 GROUP BY ts
 ORDER BY ts DESC
-~~~
+```

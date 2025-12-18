@@ -19,6 +19,7 @@ categories:
   - Development
 publishedDate: 2019-07-01
 ---
+
 M-Lab was pleased to be invited to contribute to the Internet Measurements
 workshop at the [2019 African Internet Summit][ais2019], June 15-16, 2019 in Kampala,
 Uganda. M-Lab tech lead, Peter Boothe, and advisor, Georgia Bullen, presented a
@@ -29,18 +30,20 @@ hands-on tutorial on querying and visualizing performance and routing datasets.
 The two-day workshop featured presentations and hands-on sessions from several
 other Internet measurement initiatives and researchers, including M-Lab:
 
-* [Measuring Web Latency & Rendering performance][web-latency] - Alemnew Asrese,
-Aalto University School of Electrical Engineering
-- [Measuring Mobile Broadband][mobile] - Ahmed Elmokashfi, NORNNet/Simulamet
-* [RIPE Atlas Tutorial & Hands-on Sessions][ripe] presented by Jasper den Hertog and Gerardo Viviers
-* [Internet Disruption Measurements][cipesa] presented by Wairagala Wakabi from
+- [Measuring Web Latency & Rendering performance][web-latency] - Alemnew Asrese,
+  Aalto University School of Electrical Engineering
+
+* [Measuring Mobile Broadband][mobile] - Ahmed Elmokashfi, NORNNet/Simulamet
+
+- [RIPE Atlas Tutorial & Hands-on Sessions][ripe] presented by Jasper den Hertog and Gerardo Viviers
+- [Internet Disruption Measurements][cipesa] presented by Wairagala Wakabi from
   the Collaboration on International ICT Policy for East and Southern Africa
   (CIPESA)
-* [Internet shutdown in Benin - an Internet measurement perspective][benin] - Yazid Akanho
-* [State of the Internet Measurement in Africa][africa-internet] - Musab Isah
-* [Creating a “long-term memory” for the global DNS][dns-memory] - Willem Toorop
-* [Measurement Lab Tutorial & Hands-on Session][mlab] - Georgia Bullen, Peter Boothe
-* [Preparation for the DNS Measurement hackathon][dns-hackathon] - Willem Toorop
+- [Internet shutdown in Benin - an Internet measurement perspective][benin] - Yazid Akanho
+- [State of the Internet Measurement in Africa][africa-internet] - Musab Isah
+- [Creating a “long-term memory” for the global DNS][dns-memory] - Willem Toorop
+- [Measurement Lab Tutorial & Hands-on Session][mlab] - Georgia Bullen, Peter Boothe
+- [Preparation for the DNS Measurement hackathon][dns-hackathon] - Willem Toorop
 
 [web-latency]: https://drive.google.com/file/d/1FsDd43YpC71oD34_SmbmuNI2HLWvHohq/view?usp=sharing
 [mobile]: https://drive.google.com/file/d/1pMZDBr_jhQBPzS3JGtwr3Y-tDmzYGTxK/view?usp=sharing
@@ -64,13 +67,13 @@ M-Lab measurements and platform differ from RIPE, explored what questions could
 be answered with M-Lab data, and identified key areas of interest from
 participants, such as:
 
-* NDT performance measurements
-* Working with ASN data
-* Traceroute data
-* Sidestream data
-* Switch data
+- NDT performance measurements
+- Working with ASN data
+- Traceroute data
+- Sidestream data
+- Switch data
 
-![AIS 2019 workshop photo 4]({{ site.baseurl }}/images/blog/2019-07-01-ais/ais-4.png)
+![AIS 2019 workshop photo 4](/src/assets/images/blog/2019-07-01-ais/ais-4.png)
 
 The tutorial covered various ways to access and use M-Lab data, including SQL
 querying in BigQuery and visualizing data using DataStudio. Of particular note

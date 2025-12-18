@@ -34,7 +34,7 @@ A number of third parties have already begun this process, from regulators to se
 
 With the increased quantity of data resulting from the expanded deployment of NDT clients, M-Lab has been able to look more deeply into how ISP interconnection impacts consumer Internet performance over time and across different networks. This expanded analysis includes new ISP pairs within the United States that had not previously been studied.
 
-In our analysis of this newly-expanded dataset, we used the same approaches used in our October 2014 technical report, [ISP Interconnection and its Impact on Consumer Internet Performance]({{ site.baseurl }}/publications/M-Lab_Interconnection_Study_US.pdf), to analyze performance across ISP pairs during the first half of 2015.
+In our analysis of this newly-expanded dataset, we used the same approaches used in our October 2014 technical report, [ISP Interconnection and its Impact on Consumer Internet Performance](/src/assets/publications/M-Lab_Interconnection_Study_US.pdf), to analyze performance across ISP pairs during the first half of 2015.
 
 Our initial findings show persistent performance degradation experienced by customers of a number of major access ISPs across the United States during the first half of 2015. While the ISPs involved differ, the symptoms and patterns of degradation are similar to those detailed in last year’s Interconnections study: decreased download throughput, increased latency and increased packet loss compared to the performance through different access ISPs in the same region. In nearly all cases degradation was worse during peak use hours. In last year's technical report, we found that peak-hour degradation was an indicator of under-provisioned interconnection capacity whose shortcomings are only felt when traffic grows beyond a certain threshold.
 
@@ -58,7 +58,7 @@ M-Lab’s New York sites received the highest number of tests and experienced mo
 **Verizon over GTT in Washington D.C.**
 In Washington D.C., customers of Verizon experienced severely degraded performance when connecting across GTT. Comcast and Time Warner Cable customers also experienced degradation across GTT, but to a lesser extent.
 
-These episodes and much more data are visualized and publicly available in the [Internet Observatory]({{ site.baseurl }}/observatory/), a dynamic data-visualization tool that allows consumers, policymakers, and researchers to better understand the impact of ISP relationships on their own Internet access and performance. As with all of our research, we invite anyone interested to access the original data and draw their own conclusions. It’s [all published in its complete and raw form, in the public domain.]({{ site.baseurl }}/tests/ndt/)
+These episodes and much more data are visualized and publicly available in the [Internet Observatory](/src/assets/observatory/), a dynamic data-visualization tool that allows consumers, policymakers, and researchers to better understand the impact of ISP relationships on their own Internet access and performance. As with all of our research, we invite anyone interested to access the original data and draw their own conclusions. It’s [all published in its complete and raw form, in the public domain.](/src/assets/tests/ndt/)
 
 Collin Anderson, on behalf of M-Lab researchers
 

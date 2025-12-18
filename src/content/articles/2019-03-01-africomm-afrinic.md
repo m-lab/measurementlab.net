@@ -20,41 +20,42 @@ categories:
   - News
 publishedDate: 2019-03-01
 ---
-![M-Lab and researchers at AFRICOMM-2018]({{ site.baseurl }}/images/blog/africomm-group.jpg)
-*AFRICOMM 2018. Left to right: ￼Amreesh Phokeer (AFRINIC)￼, Josiah Chavula
+
+![M-Lab and researchers at AFRICOMM-2018](/src/assets/images/blog/africomm-group.jpg)
+_AFRICOMM 2018. Left to right: ￼Amreesh Phokeer (AFRINIC)￼, Josiah Chavula
 (University of Capetown), Georgia Bullen (M-Lab), Antoine Delvaux
-(perfSonar), Stephen Soltesz (M-Lab).*
+(perfSonar), Stephen Soltesz (M-Lab)._
 
 In late November 2018, M-Lab was invited to the Internet Measurement Workshop
 at
-[AFRINIC-29](https://meeting.afrinic.net/afrinic-29/about/afrinic-29){:target="_blank"}
+[AFRINIC-29](https://meeting.afrinic.net/afrinic-29/about/afrinic-29){:target="\_blank"}
 in Tunisia and to give a keynote about M-Lab and open internet measurement at
 [AFRICOMM
-2018](http://africommconference2018.eai-conferences.org/){:target="_blank"}
+2018](http://africommconference2018.eai-conferences.org/){:target="\_blank"}
 in Senegal. Both trips were a fantastic opportunity to deepen our
 relationship with researchers focused on the African Internet, learn more
 about how our platform is serving community needs, foster conversation around
 open Internet measurement, and identify opportunities for further
 collaboration, research and tool development to better support the Internet
-measurement, research and policy community in Africa. 
+measurement, research and policy community in Africa.
 
-![AFRINIC-29]({{ site.baseurl }}/images/blog/afrinic-mlab.jpg)
-*AFRINIC-29. Stephen Soltesz (M-Lab) giving a workshop on working with NDT data
-in Africa.*
+![AFRINIC-29](/src/assets/images/blog/afrinic-mlab.jpg)
+_AFRINIC-29. Stephen Soltesz (M-Lab) giving a workshop on working with NDT data
+in Africa._
 
 Award winning research from Amreesh Phokeer and Josiah Chavula (["Revealing
-Latency Clusters in Africa"][african-latency]{:target="_blank"}) highlights
+Latency Clusters in Africa"][african-latency]{:target="\_blank"}) highlights
 how Internet routing in Africa often takes paths outside of the continent,
 significantly impacting end to end latency. To facilitate this type of
 research, by the end of 2019, M-Lab is committed to deploying [CAIDA's
-scamper][scamper]{:target="_blank"} and unifying the BigQuery schema for both
-scamper and [paris-traceroute data][traceroute]{:target="_blank"}.
+scamper][scamper]{:target="\_blank"} and unifying the BigQuery schema for both
+scamper and [paris-traceroute data][traceroute]{:target="\_blank"}.
 
 But you don’t have to wait. You can begin [Exploring the African
-Internet][explore]{:target="_blank"} with M-Lab now. If you have ideas, and
+Internet][explore]{:target="\_blank"} with M-Lab now. If you have ideas, and
 want to talk through how to work with M-Lab data to support your research and
-analysis, join our [discuss list][discuss]{:target="_blank"} or [email the
-team][support]{:target="_blank"}.
+analysis, join our [discuss list][discuss]{:target="\_blank"} or [email the
+team][support]{:target="\_blank"}.
 
 [african-latency]: https://www.afrinic.net/blog/333-revealing-latency-clusters-in-africa
 [scamper]: https://www.caida.org/tools/measurement/scamper/
@@ -63,6 +64,6 @@ team][support]{:target="_blank"}.
 [discuss]: https://groups.google.com/a/measurementlab.net/forum/#!forum/discuss
 [support]: mailto:support@measurementlab.net
 
-![Working at AFRICOMM]({{ site.baseurl }}/images/blog/africomm-working.jpg)
-*AFRICOMM. Internet measurement researchers, brainstorming ideas for working
-with perfSONAR, M-Lab and other tools to answer their research questions.*
+![Working at AFRICOMM](/src/assets/images/blog/africomm-working.jpg)
+_AFRICOMM. Internet measurement researchers, brainstorming ideas for working
+with perfSONAR, M-Lab and other tools to answer their research questions._

@@ -17,6 +17,7 @@ categories:
   - Development
 publishedDate: 2021-03-09
 ---
+
 In our recent [roadmap post][roadmap], we shared a list of milestones that the team is
 working on this and last quarter. Our Datatype migration and Standardized
 Columns milestone references the [gardener service][gardener], which maintains and
@@ -27,7 +28,7 @@ services have annotated measurements with geographic and network information in
 the past and present, and expands on what current work is happening now as
 mentioned in our roadmap post.
 
-[roadmap]: {{ site.baseurl }}/blog/roadmap-update/
+[roadmap]: /src/assets/blog/roadmap-update/
 [gardener]: https://github.com/m-lab/etl-gardener
 [uuid-annotator]: https://github.com/m-lab/annotation-service
 
@@ -38,7 +39,7 @@ Over our history, the M-Lab platform has changed quite a bit. Our post last year
 service over time, and touched on changes to our server instrumentation.
 Similarly, how we have annotated measurements has evolved over this time as well.
 
-[ndt-evolution]: {{ site.baseurl }}/blog/evolution-of-ndt/
+[ndt-evolution]: /src/assets/blog/evolution-of-ndt/
 
 When you choose to run one of the tests M-Lab provides, you're first connected
 to one of our available servers nearest to you, through which the measurement is
@@ -46,36 +47,38 @@ conducted. That server collects the measurement, but actually not much else. As
 measurements are collected, the IP address is used to provide _annotations_ that
 provide more context and usefulness to research and analysis. For example, a big
 part of what makes NDT data interesting and useful are the annotated
-fields allowing people to explore and aggregate by geography. 
+fields allowing people to explore and aggregate by geography.
 
 The values each of our [tests][tests] collect varies depending on the
 measurement service, but as an example, the NDT performance test collects:
 
-* the packet headers collected during the test, used to calculate the
+- the packet headers collected during the test, used to calculate the
   measurement values
-* the measurement values you see at the end of the test
-* the IP address assigned by ISPs to routers, modems, or other on-premises devices
+- the measurement values you see at the end of the test
+- the IP address assigned by ISPs to routers, modems, or other on-premises devices
 
-[tests]: {{ site.baseurl }}/tests/
+[tests]: /src/assets/tests/
 
 The table below describes the historical changes to geographic annotations from
 2009 to the present, as well as changes to the two sources of TCP statistics
 used by M-Lab servers over our history:
 
-| **Geo Annotations** | Dates in use | **TCP Statistics Source** | Dates in use |
-|:-------------------:|:------------:|:-------------------------:|:------------:|
-| **geo1, annotation-service** | 2009-01 - 2017-08 | web100 | 2009-01 - 2019-11 |
-| **geo2, annotation-service** | 2017-09 - 2020-02 | tcpinfo | 2019-11 - present | 
-| **geo2, uuid-annotator**     | 2020-03 - present |  |  |
+|     **Geo Annotations**      |   Dates in use    | **TCP Statistics Source** |   Dates in use    |
+| :--------------------------: | :---------------: | :-----------------------: | :---------------: |
+| **geo1, annotation-service** | 2009-01 - 2017-08 |          web100           | 2009-01 - 2019-11 |
+| **geo2, annotation-service** | 2017-09 - 2020-02 |          tcpinfo          | 2019-11 - present |
+|   **geo2, uuid-annotator**   | 2020-03 - present |                           |                   |
 
 For Geo annotations, there are three time periods of interest:
-* 2009-01 to 2017-08 - maxmind geo1 from annotation-service
-* 2017-09 to 2020-02 - maxmind geo2 from annotation-service
-* 2020-03 to present - maxmind geo2 from uuid-annotator
+
+- 2009-01 to 2017-08 - maxmind geo1 from annotation-service
+- 2017-09 to 2020-02 - maxmind geo2 from annotation-service
+- 2020-03 to present - maxmind geo2 from uuid-annotator
 
 and for the Platform's TCP Statistics, there are two time periods of interest:
-* 2009-01 to 2019-11 - web100 platform
-* 2019-06 to present - tcpinfo platform
+
+- 2009-01 to 2019-11 - web100 platform
+- 2019-06 to present - tcpinfo platform
 
 **geo1** annotations were provided on **web100** datatypes between 2009-01 and
 2017-08, using the **[annotation-service][anno-service]**. This service sourced

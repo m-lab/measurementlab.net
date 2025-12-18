@@ -17,28 +17,29 @@ categories:
   - News
 publishedDate: 2019-12-13
 ---
+
 If you've been following our blog over the last few months, you know M-Lab has been working toward a complete server platform upgrade. As of November 20, 2019, all M-Lab servers are now managed by Kubernetes, running Docker container services for all experiments. This transition has greatly improved our platform management, this post addresses the short term impact on downstream data users and applications, and outlines a temporary solution and our longer term for new NDT tables/views.
 
 ## Platform Transition Timeline
 
-At the end of August, the platform was ready to be fully transitioned. In September and October, we paused the platform upgrade to support the United States Federal Communications Commission's (FCC) annual [Measuring Broadband America program (MBA)](https://www.fcc.gov/general/measuring-broadband-america){:target="_blank"}. For many years, M-Lab has donated space on our servers for use by [SamKnows](https://www.samknows.com/){:target="_blank"}, the FCC's contractor for the MBA program. SamKnows has used the M-Lab platform for the MBA program's "off-net" measurements. Once the official end of the MBA data collection period was announced, the M-Lab team began upgrading the remaining servers in our fleet.
+At the end of August, the platform was ready to be fully transitioned. In September and October, we paused the platform upgrade to support the United States Federal Communications Commission's (FCC) annual [Measuring Broadband America program (MBA)](https://www.fcc.gov/general/measuring-broadband-america){:target="\_blank"}. For many years, M-Lab has donated space on our servers for use by [SamKnows](https://www.samknows.com/){:target="\_blank"}, the FCC's contractor for the MBA program. SamKnows has used the M-Lab platform for the MBA program's "off-net" measurements. Once the official end of the MBA data collection period was announced, the M-Lab team began upgrading the remaining servers in our fleet.
 
 ## Change in NDT data publishing dataset, tables, and views
 
-During the staged rolling upgrade to `ndt-server` from [web100 to tcp_info]({{ site.baseurl }}/blog/modernizing-mlab/), NDT test data were published to two different datasets. Our ETL pipeline made NDT tests collected by the `web100` version of the NDT server available in these BigQuery Views:
+During the staged rolling upgrade to `ndt-server` from [web100 to tcp_info](/src/assets/blog/modernizing-mlab/), NDT test data were published to two different datasets. Our ETL pipeline made NDT tests collected by the `web100` version of the NDT server available in these BigQuery Views:
 
-* `measurement-lab.ndt.recommended`
-* `measurement-lab.ndt.downloads`
-* `measurement-lab.ndt.uploads`
-* `measurement-lab.ndt.web100`
+- `measurement-lab.ndt.recommended`
+- `measurement-lab.ndt.downloads`
+- `measurement-lab.ndt.uploads`
+- `measurement-lab.ndt.web100`
 
 As of Nov. 20, 2019, all new test data is being published to:
 
-* `measurement-lab.ndt.ndt5`
+- `measurement-lab.ndt.ndt5`
 
 And a new view has been created, which stores `tcpinfo` values, and client / server metadata:
 
-* `measurement-lab.ndt.tcpinfo`
+- `measurement-lab.ndt.tcpinfo`
 
 ## Current impact of tcpinfo transition on queries
 
