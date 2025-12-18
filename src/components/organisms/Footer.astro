@@ -24,11 +24,8 @@ const footerNav1 = await getEntry('navigation', 'footer-1');
 const footerNav2 = await getEntry('navigation', 'footer-2');
 
 // Prepare description with fallback logic
-const description = siteConfig.footer?.description || siteConfig.description;
+const description = siteConfig.footer.description ? await renderMarkdown(siteConfig.footer.description) : siteConfig.description;
 
-// Prepare copyright
-const currentYear = new Date().getFullYear();
-const copyrightText = `© ${currentYear} ${siteConfig.title}.`;
 ---
 
 <footer class={`bg-neutral-900 text-white ${className}`}>
@@ -49,9 +46,7 @@ const copyrightText = `© ${currentYear} ${siteConfig.title}.`;
 				</div>
 
 				<!-- Description -->
-				<p class="max-w-md text-neutral-300">
-					{description}
-				</p>
+				<div class="max-w-md text-neutral-300" set:html={description} />
 
 				<!-- Social Links -->
 				<SocialLinks class="justify-start" iconClass="w-5 h-5" />
@@ -94,7 +89,6 @@ const copyrightText = `© ${currentYear} ${siteConfig.title}.`;
 		<!-- Bottom Section: Copyright and footer content -->
 		<div class="border-t border-white/10 pt-8">
 			<div class="space-y-2 text-center *:text-sm">
-				<p class="">{copyrightText}</p>
 				<div
 					class="*:text-sm"
 					set:html={await renderMarkdown(siteConfig.footer.bottom)}

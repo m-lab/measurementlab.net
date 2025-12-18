@@ -1,84 +1,91 @@
 @theme {
   --color-*: initial;
 
-  /* Neutral Palette (grays) */
-  --color-neutral-50: oklch(98.12% 0.003 264.54);
-  --color-neutral-100: oklch(96.35% 0.006 259.5);
-  --color-neutral-200: oklch(92.13% 0.009 257.8);
-  --color-neutral-300: oklch(84.88% 0.016 253.8);
-  --color-neutral-400: oklch(67.29% 0.024 255.3);
-  --color-neutral-500: oklch(52.81% 0.03 254.9);
-  --color-neutral-600: oklch(43.19% 0.027 257.4);
-  --color-neutral-700: oklch(35.98% 0.024 260.2);
-  --color-neutral-800: oklch(29.87% 0.019 260.1);
-  --color-neutral-900: oklch(24.62% 0.012 264.4);
-  --color-neutral-950: oklch(17.14% 0.008 269);
-
-  /* Primary Palette (blues) - Main CTA color is 700 */
-  --color-primary-50: oklch(97.65% 0.011 230.5);
-  --color-primary-100: oklch(95.72% 0.02 229.8);
-  --color-primary-200: oklch(92.95% 0.037 227.2);
-  --color-primary-300: oklch(88.05% 0.064 225.6);
-  --color-primary-400: oklch(82.14% 0.095 227.4);
-  --color-primary-500: oklch(76.41% 0.097 228.3);
-  --color-primary-600: oklch(66.18% 0.088 230);
-  --color-primary-700: oklch(56.32% 0.079 232.5);
-  --color-primary-800: oklch(49.59% 0.068 234.1);
-  --color-primary-900: oklch(42.48% 0.053 236.4);
-  --color-primary-950: oklch(28.72% 0.036 240.1);
-
-  /* Secondary Palette (yellows) - Community offerings */
-  --color-secondary-50: oklch(98.93% 0.015 102.1);
-  --color-secondary-100: oklch(97.67% 0.032 100.5);
-  --color-secondary-200: oklch(96.34% 0.077 98.2);
-  --color-secondary-300: oklch(93.89% 0.126 96.8);
-  --color-secondary-400: oklch(88.71% 0.159 91.7);
-  --color-secondary-500: oklch(82.82% 0.147 85.4);
-  --color-secondary-600: oklch(70.39% 0.123 75.8);
-  --color-secondary-700: oklch(56.98% 0.098 65.1);
-  --color-secondary-800: oklch(49.42% 0.083 58.4);
-  --color-secondary-900: oklch(44.62% 0.07 53.9);
-  --color-secondary-950: oklch(28.52% 0.043 44.8);
-
-  /* Supporting1 Palette (greens) - Research & insights */
-  --color-supporting1-50: oklch(98.14% 0.014 164.3);
-  --color-supporting1-100: oklch(96.36% 0.034 163.5);
-  --color-supporting1-200: oklch(94.18% 0.06 162.8);
-  --color-supporting1-300: oklch(90.16% 0.092 161.5);
-  --color-supporting1-400: oklch(83.92% 0.114 161.2);
-  --color-supporting1-500: oklch(78.02% 0.105 162.4);
-  --color-supporting1-600: oklch(68.88% 0.088 163.8);
-  --color-supporting1-700: oklch(59.38% 0.072 165.1);
-  --color-supporting1-800: oklch(51.28% 0.059 166.2);
-  --color-supporting1-900: oklch(44.59% 0.049 167.3);
-  --color-supporting1-950: oklch(29.66% 0.032 169.4);
-
-  /* Supporting2 Palette (sap greens) */
-  --color-supporting2-50: oklch(97.92% 0.019 122.4);
-  --color-supporting2-100: oklch(96.42% 0.044 121.8);
-  --color-supporting2-200: oklch(94.84% 0.082 121.2);
-  --color-supporting2-300: oklch(92.24% 0.133 120.4);
-  --color-supporting2-400: oklch(88.64% 0.173 119.2);
-  --color-supporting2-500: oklch(82.23% 0.162 118.9);
-  --color-supporting2-600: oklch(72.96% 0.137 118.1);
-  --color-supporting2-700: oklch(59.38% 0.108 117.4);
-  --color-supporting2-800: oklch(51.28% 0.09 117.1);
-  --color-supporting2-900: oklch(44.94% 0.076 116.8);
-  --color-supporting2-950: oklch(29.82% 0.049 116.2);
-
-  /* Supporting3 Palette (purples) - Speed test features */
-  --color-supporting3-50: oklch(97.86% 0.011 310.2);
-  --color-supporting3-100: oklch(95.34% 0.025 309.8);
-  --color-supporting3-200: oklch(92.36% 0.048 309.4);
-  --color-supporting3-300: oklch(87.92% 0.084 308.9);
-  --color-supporting3-400: oklch(80.38% 0.135 308.2);
-  --color-supporting3-500: oklch(74.26% 0.168 307.8);
-  --color-supporting3-600: oklch(68.42% 0.185 307.4);
-  --color-supporting3-700: oklch(60.18% 0.176 306.8);
-  --color-supporting3-800: oklch(53.94% 0.149 306.3);
-  --color-supporting3-900: oklch(47.82% 0.123 305.8);
-  --color-supporting3-950: oklch(36.24% 0.087 305.1);
-
+  /* baseline white and black */
   --color-white: #ffffff;
   --color-black: #000000;
+
+  /* Neutral Palette (grays) - main button is 200 */
+  --color-neutral-50: #F8FAFC;
+  --color-neutral-100: #F1F5F9;
+  --color-neutral-200: #E2E8F0;
+  --color-neutral-300: #CAD5E2;
+  --color-neutral-400: #90A1B9;
+  --color-neutral-500: #62748E;
+  --color-neutral-600: #45556C;
+  --color-neutral-700: #314158;
+  --color-neutral-800: #1D293D;
+  --color-neutral-900: #0F172B;
+  --color-neutral-950: #020618;
+
+  /* Primary Palette (blues) - Main CTA color is 700 */
+  --color-primary-50: #F0F9FF;
+  --color-primary-100: #DFF2FE;
+  --color-primary-200: #B8E6FE;
+  --color-primary-300: #74D4FF;
+  --color-primary-400: #00BCFF;
+  --color-primary-500: #00A6F4;
+  --color-primary-600: #0084D1;
+  --color-primary-700: #0069A8;
+  --color-primary-800: #00598A;
+  --color-primary-900: #024A70;
+  --color-primary-950: #052F4A;
+
+  /* Secondary Palette (yellows) - Community offerings - main button color is 300 */
+  --color-secondary-50: #FEFCE8;
+  --color-secondary-100: #FEF9C2;
+  --color-secondary-200: #FFF085;
+  --color-secondary-300: #FFDF20;
+  --color-secondary-400: #FDC700;
+  --color-secondary-500: #F0B100;
+  --color-secondary-600: #D08700;
+  --color-secondary-700: #A65F00;
+  --color-secondary-800: #894B00;
+  --color-secondary-900: #733E0A;
+  --color-secondary-950: #432004;
+
+  /* Supporting1 Palette (greens) - Research & insights */
+  --color-supporting1-50: #ECFDF5;
+  --color-supporting1-100: #D0FAE5;
+  --color-supporting1-200: #A4F4CF;
+  --color-supporting1-300: #5EE9B5;
+  --color-supporting1-400: #00D492;
+  --color-supporting1-500: #00BC7D;
+  --color-supporting1-600: #009966;
+  --color-supporting1-700: #007A55;
+  --color-supporting1-800: #006045;
+  --color-supporting1-900: #004F3B;
+  --color-supporting1-950: #002C22;
+
+  /* Supporting2 Palette (sap greens) - Research & insights */
+  --color-supporting2-50: #F4FCE4;
+  --color-supporting2-100: #E8F9C6;
+  --color-supporting2-200: #D6F699;
+  --color-supporting2-300: #B8EE55;
+  --color-supporting2-400: #9EE116;
+  --color-supporting2-500: #81CB13;
+  --color-supporting2-600: #68AF0A;
+  --color-supporting2-700: #497D00;
+  --color-supporting2-800: #3C6300;
+  --color-supporting2-900: #35530E;
+  --color-supporting2-950: #192E03;
+
+  /* Speed Palette (purples) - Speed test features - main button is 600 */
+  --color-speed-50: #FAF5FF;
+  --color-speed-100: #F3E8FF;
+  --color-speed-200: #EAD4FF;
+  --color-speed-300: #DBB1FF;
+  --color-speed-400: #C27BFF;
+  --color-speed-500: #AC47FF;
+  --color-speed-600: #9810FA;
+  --color-speed-700: #8200DA;
+  --color-speed-800: #6D11B0;
+  --color-speed-900: #59168B;
+  --color-speed-950: #3C0366;
+
+
+
+  /* warning colors */
+  --color-warning-light: #FB2C36;
+  --color-warning-dark: #C10007;
 }

@@ -1,7 +1,7 @@
 ---
-import HouseShape from '@components/molecules/HouseShape.astro';
-import ZigZagPattern from '@components/atoms/ZigZagPattern.astro';
 import { Image } from 'astro:assets';
+import ZigZagPattern from '@components/atoms/ZigZagPattern.astro';
+import HouseShape from '@components/molecules/HouseShape.astro';
 import type { ImageMetadata } from 'astro';
 
 export interface Props {
@@ -9,7 +9,7 @@ export interface Props {
   subtitle?: string;
   backgroundImage?: ImageMetadata | string;
   icon?: any;
-  variant?: 'primary' | 'secondary' | 'supporting1' | 'supporting2' | 'supporting3';
+  variant?: 'primary' | 'secondary' | 'supporting1' | 'supporting2' | 'speed';
   showZigZag?: boolean;
   zigZagPosition?: 'top' | 'bottom' | 'both';
   class?: string;
@@ -51,11 +51,11 @@ const variantColors = {
     text: 'text-neutral-900',
     zigzag: 'text-supporting2-300'
   },
-  supporting3: {
-    bg: 'bg-supporting3-900',
-    house: 'bg-supporting3-700',
+  speed: {
+    bg: 'bg-speed-900',
+    house: 'bg-speed-700',
     text: 'text-white',
-    zigzag: 'text-supporting3-300'
+    zigzag: 'text-speed-300'
   }
 };
 
@@ -63,96 +63,98 @@ const colors = variantColors[variant];
 ---
 
 <section class={`relative w-full overflow-hidden ${colors.bg} ${className}`}>
-  <!-- Background Image with Overlay -->
-  {
-    backgroundImage && (
-      <div class="absolute inset-0 z-0">
-        {typeof backgroundImage === 'string' ? (
-          <img
-            src={backgroundImage}
-            alt=""
-            class="w-full h-full object-cover opacity-20"
-          />
-        ) : (
-          <Image
-            src={backgroundImage}
-            alt=""
-            class="w-full h-full object-cover opacity-20"
-            widths={[640, 1024, 1280, 1920]}
-            sizes="100vw"
-          />
-        )}
-      </div>
-    )
-  }
+	<!-- Background Image with Overlay -->
+	{
+		backgroundImage && (
+			<div class="absolute inset-0 z-0">
+				{typeof backgroundImage === 'string' ? (
+					<img
+						src={backgroundImage}
+						alt=""
+						class="h-full w-full object-cover opacity-20"
+					/>
+				) : (
+					<Image
+						src={backgroundImage}
+						alt=""
+						class="h-full w-full object-cover opacity-20"
+						widths={[640, 1024, 1280, 1920]}
+						sizes="100vw"
+					/>
+				)}
+			</div>
+		)
+	}
 
-  <!-- Zig-Zag Pattern Top -->
-  {
-    showZigZag && (zigZagPosition === 'top' || zigZagPosition === 'both') && (
-      <div class="relative z-10 w-full">
-        <ZigZagPattern
-          width={2000}
-          height={30}
-          strokeWidth={4}
-          color={colors.zigzag}
-          class="w-full"
-        />
-      </div>
-    )
-  }
+	<!-- Zig-Zag Pattern Top -->
+	{
+		showZigZag && (zigZagPosition === 'top' || zigZagPosition === 'both') && (
+			<div class="relative z-10 w-full">
+				<ZigZagPattern
+					width={2000}
+					height={30}
+					strokeWidth={4}
+					color={colors.zigzag}
+					class="w-full"
+				/>
+			</div>
+		)
+	}
 
-  <!-- Content Container -->
-  <div class="relative z-10 container mx-auto px-6 py-16 md:py-24">
-    <div class="flex flex-col items-center justify-center">
-      <!-- Icon (if provided) -->
-      {
-        Icon && (
-          <div class={`mb-8 ${colors.text}`}>
-            <Icon class="w-24 h-24 md:w-32 md:h-32" />
-          </div>
-        )
-      }
+	<!-- Content Container -->
+	<div class="relative z-10 container mx-auto px-6 py-16 md:py-24">
+		<div class="flex flex-col items-center justify-center">
+			<!-- Icon (if provided) -->
+			{
+				Icon && (
+					<div class={`mb-8 ${colors.text}`}>
+						<Icon class="h-24 w-24 md:h-32 md:w-32" />
+					</div>
+				)
+			}
 
-      <!-- House-shaped Content Block -->
-      <div class="w-full max-w-4xl">
-        <HouseShape
-          variant="standard"
-          backgroundColor={colors.house}
-          class="text-center"
-        >
-          <div class={`space-y-4 ${colors.text}`}>
-            <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold">
-              {title}
-            </h1>
-            {subtitle && (
-              <p class="text-lg md:text-xl lg:text-2xl opacity-90 max-w-2xl mx-auto">
-                {subtitle}
-              </p>
-            )}
+			<!-- House-shaped Content Block -->
+			<div class="w-full max-w-4xl">
+				<HouseShape
+					variant="standard"
+					backgroundColor={colors.house}
+					class="text-center"
+				>
+					<div class={`space-y-4 ${colors.text}`}>
+						<h1 class="text-3xl font-bold md:text-5xl lg:text-6xl">
+							{title}
+						</h1>
+						{
+							subtitle && (
+								<p class="mx-auto max-w-2xl text-lg opacity-90 md:text-xl lg:text-2xl">
+									{subtitle}
+								</p>
+							)
+						}
 
-            <!-- Actions Slot -->
-            <div class="pt-6">
-              <slot name="actions" />
-            </div>
-          </div>
-        </HouseShape>
-      </div>
-    </div>
-  </div>
+						<!-- Actions Slot -->
+						<div class="pt-6">
+							<slot name="actions" />
+						</div>
+					</div>
+				</HouseShape>
+			</div>
+		</div>
+	</div>
 
-  <!-- Zig-Zag Pattern Bottom -->
-  {
-    showZigZag &&
-      (zigZagPosition === 'bottom' || zigZagPosition === 'both') && (
-        <div class="relative z-10 w-full">
-          <ZigZagPattern
-            width={2000}
-            height={30}
-            strokeWidth={4}
-            color={colors.zigzag}
-            class="w-full"
-          />
-        </div>
-      )
-  }
+	<!-- Zig-Zag Pattern Bottom -->
+	{
+		showZigZag &&
+			(zigZagPosition === 'bottom' || zigZagPosition === 'both') && (
+				<div class="relative z-10 w-full">
+					<ZigZagPattern
+						width={2000}
+						height={30}
+						strokeWidth={4}
+						color={colors.zigzag}
+						class="w-full"
+					/>
+				</div>
+			)
+	}
 </section>

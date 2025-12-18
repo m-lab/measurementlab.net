@@ -7,46 +7,46 @@
 /* Button - Variants */
 
 .button-base {
-  @apply inline-flex items-center justify-center rounded border-2 border-black font-medium shadow-sharp transition duration-75 hover:translate-x-px hover:translate-y-px hover:shadow-sharp-pressed focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
+  @apply inline-flex items-center justify-center border-b-2 font-medium focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
 }
 .button-primary {
-  @apply bg-primary-700 text-white border-primary-700;
+  @apply border-primary-700 bg-primary-700 text-white;
 }
 .button-secondary {
-  @apply bg-secondary-500 text-black border-secondary-700;
+  @apply border-secondary-700 bg-secondary-500 text-black;
 }
 .button-supporting1 {
-  @apply bg-supporting1-600 text-white border-supporting1-700;
+  @apply border-supporting1-700 bg-supporting1-600 text-white;
 }
 .button-supporting2 {
-  @apply bg-supporting2-600 text-black border-supporting2-700;
+  @apply border-supporting2-700 bg-supporting2-600 text-black;
 }
-.button-supporting3 {
-  @apply bg-supporting3-600 text-white border-supporting3-700;
+.button-speed {
+  @apply border-speed-700 bg-speed-600 text-white;
 }
 .button-outline {
-  @apply bg-white text-neutral-900 border-neutral-900;
+  @apply border-neutral-900 bg-white text-neutral-900;
 }
 .button-ghost {
-  @apply text-neutral-900 hover:bg-neutral-100 focus-visible:ring-neutral-900 border-transparent;
+  @apply border-transparent text-neutral-900 hover:bg-neutral-100 focus-visible:ring-neutral-900;
 }
 
 /* Button - Sizes */
 .button-size-sm {
-  @apply rounded px-3 py-1.5 text-sm;
+  @apply px-3 py-1.5 text-sm;
 }
 .button-size-md {
-  @apply rounded-md px-4 py-2 text-base;
+  @apply px-4 py-2 text-base;
 }
 .button-size-lg {
-  @apply rounded-lg px-6 py-3 text-lg;
+  @apply px-6 py-3 text-lg;
 }
 .button-size-xl {
-  @apply rounded-xl px-8 py-4 text-xl;
+  @apply px-8 py-4 text-xl;
 }
 
 .button-size-square {
-  @apply rounded-md p-1.5 text-base;
+  @apply p-1.5 text-base;
 }
 
 /*
@@ -90,8 +90,8 @@
 .tag-supporting2 {
   @apply bg-supporting2-100 text-supporting2-700;
 }
-.tag-supporting3 {
-  @apply bg-supporting3-100 text-supporting3-700;
+.tag-speed {
+  @apply bg-speed-100 text-speed-700;
 }
 .tag-neutral {
   @apply bg-neutral-100 text-neutral-700;

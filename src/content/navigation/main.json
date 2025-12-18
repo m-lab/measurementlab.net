@@ -3,21 +3,25 @@
   "title": "Main Navigation",
   "items": [
     {
-      "label": "Home",
-      "href": "/"
-    },
-    {
       "label": "About",
       "href": "/about",
       "description": "Learn more about us"
     },
     {
-      "label": "Community",
-      "href": "/community"
+      "label": "What we do",
+      "href": "/what-we-do"
     },
     {
-      "label": "Articles",
-      "href": "/articles"
+      "label": "Learn",
+      "href": "/learn"
+    },
+    {
+      "label": "Contribute",
+      "href": "/contribute"
+    },
+    {
+      "label": "Partner with us",
+      "href": "/partner-with-us"
     }
   ]
 }

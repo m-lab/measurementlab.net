@@ -1,11 +1,21 @@
 ---
+import { getEntry } from 'astro:content';
 import Button from '@components/atoms/Button.astro';
+import Image from '@components/atoms/Image.astro';
 import Link from '@components/atoms/Link.astro';
 import NavItem from '@components/molecules/NavItem.astro';
 import MobileMenu from '@components/organisms/MobileMenu';
 import RichSearch from '@components/organisms/RichSearch';
 import MagnifyingGlassIcon from '~icons/heroicons/magnifying-glass-20-solid';
+import NavLogo from '/public/logo-short-blue.svg'
 
+
+// Fetch site config
+const siteConfigEntry = await getEntry('site', 'config');
+if (!siteConfigEntry) {
+  throw new Error('Site configuration not found');
+}
+const siteConfig = siteConfigEntry.data;
 
 export interface NavLink {
   href: string;
@@ -22,7 +32,7 @@ export interface Props {
 const {
   links,
   currentPath = Astro.url.pathname,
-  siteName = 'Draftlab Scaffold',
+  siteName = siteConfig.title,
   class: className = '',
 } = Astro.props;
 
@@ -40,7 +50,7 @@ const isActive = (href: string) => {
 		<!-- Logo/Site Name -->
 		<div class="shrink-0">
 			<Link href="/" variant="unstyled" class="block">
-				<img src="/logo-short-blue.svg" alt={siteName} class="h-12 w-auto" />
+				<Image src={NavLogo} alt={siteName} class="h-12 w-auto" />
 			</Link>
 		</div>
 
@@ -61,7 +71,7 @@ const isActive = (href: string) => {
 	<!-- Right side: Actions + Mobile Menu -->
 	<div class="flex items-center gap-4">
 		<!-- Search Button -->
-		<Button variant="outline" size="square" type="button" id="search-button">
+		<Button variant="primary" size="square" type="button" id="search-button">
 			<MagnifyingGlassIcon />
 		</Button>
 

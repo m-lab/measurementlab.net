@@ -13,6 +13,7 @@
     "x": "https://x.com/yourhandle"
   },
   "footer": {
-    "bottom": "Some rights reserved. Background images by [Anna Magenta](https://unsplash.com/@annamagenta82) (Unsplash). People images by [OpenPeeps](https://openpeeps.com/) via [DiceBear](https://www.dicebear.com/)"
+    "description": "Measurement Lab(M-Lab) is a fiscally sponsored project of [Code for Science & Society (CS&S)](https://www.codeforsociety.org/)",
+    "bottom": "All original material on Measurement Lab is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license. M-Lab is a collaborative effort led by researchers in partnership with companies and other institutions."
   }
 }

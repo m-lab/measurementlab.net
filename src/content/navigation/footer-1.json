@@ -3,24 +3,20 @@
   "title": "Footer Nav 1",
   "items": [
     {
-      "label": "Menu Item",
-      "href": "/about"
+      "label": "FAQs",
+      "href": "/"
     },
     {
-      "label": "Menu Item",
-      "href": "/about"
+      "label": "Contact us",
+      "href": "/"
     },
     {
-      "label": "Menu Item",
-      "href": "/about"
+      "label": "Jobs & Opportunities",
+      "href": "/"
     },
     {
-      "label": "Menu Item",
-      "href": "/about"
-    },
-    {
-      "label": "Menu Item",
-      "href": "/about"
+      "label": "Code",
+      "href": "/"
     }
   ]
 }
