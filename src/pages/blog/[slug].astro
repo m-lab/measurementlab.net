@@ -34,7 +34,9 @@ const authors = post.data.authors
 
 // Get related posts
 const allPosts = await getCollection('blog');
-const relatedPosts = post.data.relatedPosts
+
+// First, get manually selected related posts
+let relatedPosts = post.data.relatedPosts
   ? post.data.relatedPosts
       .filter(permalink => permalink !== post.data.permalink) // Don't show current post
       .map((permalink) => {
@@ -58,6 +60,49 @@ const relatedPosts = post.data.relatedPosts
       })
       .filter((post): post is NonNullable<typeof post> => post !== null)
   : [];
+
+// If we have less than 3 related posts, dynamically add more based on tag matching and recency
+if (relatedPosts.length < 3) {
+  const currentTags = new Set(post.data.tags);
+  const manuallySelectedPermalinks = new Set(relatedPosts.map(p => p.data.permalink));
+
+  // Calculate tag matches for all other posts
+  const candidatePosts = allPosts
+    .filter(p =>
+      p.data.permalink !== post.data.permalink && // Not the current post
+      !manuallySelectedPermalinks.has(p.data.permalink) && // Not already manually selected
+      (isDev || p.data.published === 'published') // Only published posts (except in dev)
+    )
+    .map(p => {
+      // Count matching tags
+      const matchingTags = p.data.tags.filter(tag => currentTags.has(tag)).length;
+
+      // Resolve authors
+      const resolvedAuthors = p.data.authors
+        .map((id) => peopleMap.get(id))
+        .filter(Boolean);
+
+      return {
+        ...p,
+        resolvedAuthors,
+        matchingTags
+      };
+    })
+    .sort((a, b) => {
+      // First sort by number of matching tags (descending)
+      if (b.matchingTags !== a.matchingTags) {
+        return b.matchingTags - a.matchingTags;
+      }
+      // Then sort by publish date (most recent first)
+      return b.data.publishedDate.getTime() - a.data.publishedDate.getTime();
+    });
+
+  // Add posts to fill up to 3 total
+  const postsNeeded = 3 - relatedPosts.length;
+  const dynamicPosts = candidatePosts.slice(0, postsNeeded);
+
+  relatedPosts = [...relatedPosts, ...dynamicPosts];
+}
 
 // Format date
 const formatDate = (date: Date) => {
