@@ -68,16 +68,16 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
     }),
   },
   {
-    name: 'Articles',
-    apiEndpoint: '/api/articles.json',
-    urlPrefix: '/articles/',
+    name: 'Blog',
+    apiEndpoint: '/api/blog.json',
+    urlPrefix: '/blog/',
     icon: DocumentIcon,
     modifier: '@',
-    transform: (article: any) => ({
-      id: article.id,
-      name: article.data.title,
-      url: `/articles/${article.slug || article.id}`,
-      imageUrl: article.data.heroImage?.src,
+    transform: (post: any) => ({
+      id: post.id,
+      name: post.data.title,
+      url: `/blog/${post.slug || post.id}`,
+      imageUrl: post.data.heroImage?.src,
     }),
   },
 ];
@@ -132,9 +132,9 @@ export default function RichSearch() {
         categoryDataArrays.forEach((data, index) => {
           const category = SEARCH_CATEGORIES[index];
           const items = data
-            // Filter out unpublished articles if applicable
+            // Filter out unpublished blog posts if applicable
             .filter((item: any) =>
-              category.name === 'Articles'
+              category.name === 'Blog'
                 ? item.data?.published === 'published'
                 : true
             )

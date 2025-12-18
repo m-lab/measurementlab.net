@@ -1,9 +1,7 @@
 {
   "id": "melissa-newcomb",
   "name": "Melissa Newcomb",
-  "headshot": "/src/assets/people/placeholder.png",
+  "headshot": "/src/assets/people/melissa.jpeg",
   "title": "Researcher",
-  "sections": [
-    "Community"
-  ]
+  "sections": ["Community"]
 }

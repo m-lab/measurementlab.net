@@ -26,7 +26,7 @@ export const GET: APIRoute = async ({ params }) => {
 
     // Map entries to include both data and id/slug
     const collectionData = entries.map((entry) => {
-      // For content collections (like articles), include the body
+      // For content collections (like blog), include the body
       if ('body' in entry) {
         return {
           id: entry.id,

@@ -1,9 +1,7 @@
 {
   "id": "georgia-bullen",
   "name": "Georgia Bullen",
-  "headshot": "/src/assets/people/placeholder.png",
+  "headshot": "/src/assets/people/georgia-bullen.png",
   "title": "Senior Researcher",
-  "sections": [
-    "Community"
-  ]
+  "sections": ["Community"]
 }

@@ -46,7 +46,10 @@ const description = siteConfig.footer.description ? await renderMarkdown(siteCon
 				</div>
 
 				<!-- Description -->
-				<div class="max-w-md text-neutral-300" set:html={description} />
+				<div
+					class="prose max-w-md text-neutral-300 prose-invert [&_a]:hover:opacity-80"
+					set:html={description}
+				/>
 
 				<!-- Social Links -->
 				<SocialLinks class="justify-start" iconClass="w-5 h-5" />
@@ -90,7 +93,7 @@ const description = siteConfig.footer.description ? await renderMarkdown(siteCon
 		<div class="border-t border-white/10 pt-8">
 			<div class="space-y-2 text-center *:text-sm">
 				<div
-					class="*:text-sm"
+					class="*:text-sm [&_a]:text-white [&_a]:underline [&_a]:hover:opacity-80"
 					set:html={await renderMarkdown(siteConfig.footer.bottom)}
 				/>
 			</div>

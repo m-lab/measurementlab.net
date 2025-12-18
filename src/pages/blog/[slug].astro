@@ -9,54 +9,54 @@ import SectionLayout from '@layouts/SectionLayout.astro';
 import { isDev } from '@utils/dev';
 
 export async function getStaticPaths() {
-  const articles = await getCollection('articles');
+  const posts = await getCollection('blog');
 
-  // In production, only build published articles. In dev, build all articles.
-  return articles
-    .filter((article) => isDev || article.data.published === 'published')
-    .map((article) => ({
-      params: { slug: article.slug },
-      props: { article },
+  // In production, only build published posts. In dev, build all posts.
+  return posts
+    .filter((post) => isDev || post.data.published === 'published')
+    .map((post) => ({
+      params: { slug: post.slug },
+      props: { post },
     }));
 }
 
-const { article } = Astro.props;
-const { Content } = await article.render();
+const { post } = Astro.props;
+const { Content } = await post.render();
 
 // Fetch all people for author lookups
 const allPeople = await getCollection('people');
 const peopleMap = new Map(allPeople.map((person) => [person.data.id, person.data]));
 
 // Get author details
-const authors = article.data.authors
+const authors = post.data.authors
   .map((id) => peopleMap.get(id))
   .filter(Boolean);
 
-// Get related articles
-const allArticles = await getCollection('articles');
-const relatedArticles = article.data.relatedArticles
-  ? article.data.relatedArticles
-      .filter(permalink => permalink !== article.data.permalink) // Don't show current article
+// Get related posts
+const allPosts = await getCollection('blog');
+const relatedPosts = post.data.relatedPosts
+  ? post.data.relatedPosts
+      .filter(permalink => permalink !== post.data.permalink) // Don't show current post
       .map((permalink) => {
-        const relatedArticle = allArticles.find(
-          (a) => a.data.permalink === permalink && (isDev || a.data.published === 'published')
+        const relatedPost = allPosts.find(
+          (p) => p.data.permalink === permalink && (isDev || p.data.published === 'published')
         );
-        if (!relatedArticle) {
-          console.warn(`Related article not found: ${permalink}`);
+        if (!relatedPost) {
+          console.warn(`Related post not found: ${permalink}`);
           return null;
         }
 
-        // Resolve authors for the related article
-        const relatedAuthors = relatedArticle.data.authors
+        // Resolve authors for the related post
+        const relatedAuthors = relatedPost.data.authors
           .map((id) => peopleMap.get(id))
           .filter(Boolean);
 
         return {
-          ...relatedArticle,
+          ...relatedPost,
           resolvedAuthors: relatedAuthors
         };
       })
-      .filter((article): article is NonNullable<typeof article> => article !== null)
+      .filter((post): post is NonNullable<typeof post> => post !== null)
   : [];
 
 // Format date
@@ -68,15 +68,15 @@ const formatDate = (date: Date) => {
   }).format(date);
 };
 
-const {title, publishedDate, heroImage, tags, published } = article.data
+const {title, publishedDate, heroImage, tags, published } = post.data
 ---
 
 <PageLayout
-	title={article.data.title}
-	description={`Article by ${authors.map((a) => a?.name).join(', ')}`}
+	title={post.data.title}
+	description={`Blog post by ${authors.map((a) => a?.name).join(', ')}`}
 	image={heroImage}
 >
-	<!-- Article Header -->
+	<!-- Post Header -->
 	<SectionLayout bgImage={heroImage} sectionLabel="hero">
 		<HeroSection title={title}>
 			{/* Draft badge (only visible in dev) */}
@@ -124,31 +124,31 @@ const {title, publishedDate, heroImage, tags, published } = article.data
 		</HeroSection>
 	</SectionLayout>
 
-	<!-- Article Content -->
+	<!-- Post Content -->
 	<SectionLayout>
 		<article class="mx-auto prose max-w-4xl py-12 prose-blue">
 			<Content />
 		</article>
 	</SectionLayout>
 
-	<!-- Related Articles Section -->
+	<!-- Related Posts Section -->
 	{
-		relatedArticles.length > 0 && (
+		relatedPosts.length > 0 && (
 			<SectionLayout bgColor="gray">
 				<div class="mx-auto max-w-4xl py-12">
-					<h2 class="mb-8 text-2xl font-bold">Related Articles</h2>
+					<h2 class="mb-8 text-2xl font-bold">Related Posts</h2>
 					<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-						{relatedArticles.map((relatedArticle) => (
+						{relatedPosts.map((relatedPost) => (
 							<Link
 								variant="unstyled"
-								href={`/articles/${relatedArticle.slug}`}
+								href={`/blog/${relatedPost.slug}`}
 								class="flex flex-col overflow-hidden rounded-lg bg-white no-underline transition hover:shadow-lg"
 							>
 								{/* Hero Image */}
-								{relatedArticle.data.heroImage && (
+								{relatedPost.data.heroImage && (
 									<Image
-										src={relatedArticle.data.heroImage}
-										alt={relatedArticle.data.title}
+										src={relatedPost.data.heroImage}
+										alt={relatedPost.data.title}
 										class="h-48 w-full object-cover"
 									/>
 								)}
@@ -157,7 +157,7 @@ const {title, publishedDate, heroImage, tags, published } = article.data
 								<div class="flex flex-col gap-3 p-6">
 									{/* Tags */}
 									<div class="flex flex-wrap gap-2">
-										{relatedArticle.data.tags.slice(0, 2).map((tag) => (
+										{relatedPost.data.tags.slice(0, 2).map((tag) => (
 											<Tag variant="primary" size="sm">
 												{tag}
 											</Tag>
@@ -166,23 +166,23 @@ const {title, publishedDate, heroImage, tags, published } = article.data
 
 									{/* Title */}
 									<h3 class="line-clamp-2 text-lg font-semibold">
-										{relatedArticle.data.title}
+										{relatedPost.data.title}
 									</h3>
 
 									{/* Metadata: Authors and Date */}
 									<div class="mt-auto text-sm text-gray-600">
 										<p>
 											By{' '}
-											{relatedArticle.resolvedAuthors.map((a, i) => (
+											{relatedPost.resolvedAuthors.map((a, i) => (
 												<>
 													{a?.name}
-													{i < relatedArticle.resolvedAuthors.length - 1 &&
+													{i < relatedPost.resolvedAuthors.length - 1 &&
 														', '}
 												</>
 											))}
 										</p>
 										<p class="mt-1 text-xs text-gray-500">
-											{formatDate(relatedArticle.data.publishedDate)}
+											{formatDate(relatedPost.data.publishedDate)}
 										</p>
 									</div>
 								</div>

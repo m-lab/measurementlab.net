@@ -1,9 +1,7 @@
 {
   "id": "pavlos-sermpezis",
   "name": "Pavlos Sermpezis",
-  "headshot": "/src/assets/people/placeholder.png",
+  "headshot": "/src/assets/people/pavlos_sermpezis.jpg",
   "title": "Research Contributor",
-  "sections": [
-    "Community"
-  ]
+  "sections": ["Community"]
 }

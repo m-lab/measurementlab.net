@@ -1,5 +1,5 @@
 import { defineCollection, type ImageFunction, z } from 'astro:content';
-import articleCategories from './categories/articles.json';
+import blogCategories from './categories/blog.json';
 import partnerCategories from './categories/partners.json';
 import peopleCategories from './categories/people.json';
 
@@ -136,7 +136,7 @@ const partnersCollection = defineCollection({
   },
 });
 
-const articlesCollection = defineCollection({
+const blogCollection = defineCollection({
   type: 'content',
   schema: ({ image }) =>
     z.object({
@@ -147,11 +147,11 @@ const articlesCollection = defineCollection({
       published: z.enum(['draft', 'published']),
       tags: z.array(z.string()),
       categories: z
-        .array(z.enum(articleCategories.categories as [string, ...string[]]))
+        .array(z.enum(blogCategories.categories as [string, ...string[]]))
         .optional(),
       publishedDate: z.date(),
       heroImage: image().optional(),
-      relatedArticles: z.array(z.string()).max(3).optional(), // Array of article permalinks (max 3)
+      relatedPosts: z.array(z.string()).max(3).optional(), // Array of blog post permalinks (max 3)
     }),
 });
 
@@ -212,7 +212,7 @@ const categoriesCollection = defineCollection({
 export const collections = {
   people: peopleCollection,
   pages: pagesCollection,
-  articles: articlesCollection,
+  blog: blogCollection,
   site: siteCollection,
   navigation: navigationCollection,
   partners: partnersCollection,

@@ -14,12 +14,12 @@ import SectionLayout from '@layouts/SectionLayout.astro';
 import { isDev } from '@utils/dev';
 
 
-// Fetch all articles
-const allArticles = await getCollection('articles');
+// Fetch all blog posts
+const allPosts = await getCollection('blog');
 
-// Filter articles based on environment: show drafts in dev, only published in production
-const articles = allArticles
-  .filter((article) => isDev || article.data.published === 'published')
+// Filter posts based on environment: show drafts in dev, only published in production
+const posts = allPosts
+  .filter((post) => isDev || post.data.published === 'published')
   .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
 
 // Fetch all people for author lookups
@@ -45,41 +45,41 @@ const formatDate = (date: Date) => {
 ---
 
 <PageLayout
-	title="Articles"
-	description="Explore our latest articles on web development, design, and technology"
+	title="Blog"
+	description="Explore our latest blog posts on measurement, research, and open data"
 >
 	<!-- Header Section -->
 	<SectionLayout bgImage={housesBG} sectionLabel="hero">
 		<HeroSection
-			title="Articles"
-			subtitle="Insights, tutorials, and best practices from our team"
+			title="Blog"
+			subtitle="Insights, research, and updates from the M-Lab team"
 		/>
 	</SectionLayout>
 
-	<!-- Articles Grid -->
+	<!-- Blog Posts Grid -->
 	<SectionLayout>
 		<div class="py-12">
 			{
-				articles.length === 0 ? (
+				posts.length === 0 ? (
 					<div class="py-12 text-center">
 						<p class="text-gray-600 text-lg">
-							No articles published yet. Check back soon!
+							No blog posts published yet. Check back soon!
 						</p>
 					</div>
 				) : (
 					<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-						{articles.map((article) => (
+						{posts.map((post) => (
 							<HouseCard
 								variant="primary"
-								title={article.data.title}
-								description={article.data.excerpt}
+								title={post.data.title}
+								description={post.data.excerpt}
 								class="flex h-full flex-col"
-								image={article.data.heroImage || MlabDefault}
-								href={`/articles/${article.slug}`}
+								image={post.data.heroImage || MlabDefault}
+								href={`/blog/${post.slug}`}
 							>
 								<div class="flex flex-col">
 									{/* Draft badge (only visible in dev) */}
-									{isDev && article.data.published === 'draft' && (
+									{isDev && post.data.published === 'draft' && (
 										<div class="mb-3">
 											<Tag variant="highlight" class="font-bold">
 												DRAFT
@@ -89,15 +89,15 @@ const formatDate = (date: Date) => {
 
 									{/* Tags */}
 									<div class="mb-3 flex flex-wrap gap-2">
-										{article.data.tags.slice(0, 3).map((tag) => (
+										{post.data.tags.slice(0, 3).map((tag) => (
 											<Tag variant="primary">{tag}</Tag>
 										))}
 									</div>
 
 									{/* Metadata */}
 									<div class="mb-4 space-y-1">
-										<p class="">By {getAuthorNames(article.data.authors)}</p>
-										<p class="">{formatDate(article.data.publishedDate)}</p>
+										<p class="">By {getAuthorNames(post.data.authors)}</p>
+										<p class="">{formatDate(post.data.publishedDate)}</p>
 									</div>
 								</div>
 							</HouseCard>
