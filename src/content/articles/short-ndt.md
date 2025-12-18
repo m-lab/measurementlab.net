@@ -31,7 +31,7 @@ These observations have led maintainers of Measurement Lab to investigate option
 ## Evaluating download caps
 
 ![Visualization of a speed test for clients with 200 Mbps, 100 Mbps and 50 Mbps.
-](/src/assets/images/blog/2023-06-shortndt/figure1.png){: width="600"}
+](../../assets/images/blog/2023-06-shortndt/figure1.png){: width="600"}
 
 Figure 1: Visualization of a speed test for clients with 200 Mbps, 100 Mbps and 50 Mbps.
 
@@ -39,60 +39,13 @@ Figure 1 illustrates speed test transfers of a 125 MB object for clients with sp
 
 The table below summarizes the maximum object sizes we consider along with their corresponding target rates. The specific set of object sizes was chosen to model a standard set of Internet speed tiers.
 
-<table>
-  <tr style="background-color:#ADD8E6;">
-   <td><strong>Size</strong>
-   </td>
-   <td>10 MB
-   </td>
-   <td>32 MB
-   </td>
-   <td>40 MB
-   </td>
-   <td>100 MB
-   </td>
-   <td>125 MB
-   </td>
-   <td>188 MB
-   </td>
-   <td>250 MB
-   </td>
-   <td>375 MB
-   </td>
-   <td>625 MB
-   </td>
-   <td>1,250 MB
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Target Rate</strong>
-   </td>
-   <td>8 Mbps
-   </td>
-   <td>25 Mbps
-   </td>
-   <td>32 Mbps
-   </td>
-   <td>80 Mbps
-   </td>
-   <td>100 Mbps
-   </td>
-   <td>150 Mbps
-   </td>
-   <td>200 Mbps
-   </td>
-   <td>300 Mbps
-   </td>
-   <td>500 Mbps
-   </td>
-   <td>1 Gbps
-   </td>
-  </tr>
-</table>
+| **Size** | 10 MB | 32 MB | 40 MB | 100 MB | 125 MB | 188 MB | 250 MB | 375 MB | 625 MB | 1,250 MB |
+|----------|-------|-------|-------|--------|--------|--------|--------|--------|--------|----------|
+| **Target Rate** | 8 Mbps | 25 Mbps | 32 Mbps | 80 Mbps | 100 Mbps | 150 Mbps | 200 Mbps | 300 Mbps | 500 Mbps | 1 Gbps |
 
 ## Data savings vs. download cap
 
-![ Percentage data savings vs. download cap. Percentage savings is computed over all tests in Q1 2023.](/src/assets/images/blog/2023-06-shortndt/figure2.png){: width="600"}
+![ Percentage data savings vs. download cap. Percentage savings is computed over all tests in Q1 2023.](../../assets/images/blog/2023-06-shortndt/figure2.png){: width="600"}
 
 Figure 2. Percentage data savings vs. download cap. Percentage savings is computed over all tests in Q1 2023.
 
@@ -102,7 +55,7 @@ Figure 2 shows the percent of data transferred by NDT tests that would be saved 
 
 We next study the accuracy of NDT tests with different download caps. For this analysis, we analyze traces of existing NDT tests and emulate the bandwidth estimation process if the test had stopped after a fixed amount of data was transferred. We compare this estimated throughput with the throughput that was returned by the full test to study the accuracy of NDT with different sized download caps.
 
-![Percentage error vs. download cap showing the median-95th percentile error for all tests with a given download cap.](/src/assets/images/blog/2023-06-shortndt/figure3.png){: width="600"}
+![Percentage error vs. download cap showing the median-95th percentile error for all tests with a given download cap.](../../assets/images/blog/2023-06-shortndt/figure3.png){: width="600"}
 
 Figure 3. Percentage error vs. download cap showing the median-95th percentile error for all tests with a given download cap.
 
@@ -110,13 +63,13 @@ Figure 3 shows the accuracy of NDT tests for the different size caps. Overall ac
 
 This result may seem to imply that we can use a very small object size (e.g., 100 MB) while maintaining relatively good accuracy, especially if we focus on the median and 75th percentile error. However, as we noted above, accuracy is dependent on the client speed as well as the object size.
 
-![95th percentile error vs. download cap for different client speeds.](/src/assets/images/blog/2023-06-shortndt/figure4.png){: width="600"}
+![95th percentile error vs. download cap for different client speeds.](../../assets/images/blog/2023-06-shortndt/figure4.png){: width="600"}
 
 Figure 4. 95th percentile error vs. download cap for different client speeds.
 
 Figure 4 illustrates the relationship between the download cap and 95th percentile error for different client speeds. While the 95th percentile accuracy is fairly good for client speeds up to 250 Mbps with less than 5% error, the error increases with 95th percentile error of 18-30% for client speeds above 250 Mbps.
 
-![Distribution of client speeds for NDT tests.](/src/assets/images/blog/2023-06-shortndt/figure5.png){: width="600"}
+![Distribution of client speeds for NDT tests.](../../assets/images/blog/2023-06-shortndt/figure5.png){: width="600"}
 
 Figure 5. Distribution of client speeds for NDT tests.
 

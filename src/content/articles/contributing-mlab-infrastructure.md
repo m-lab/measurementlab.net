@@ -20,7 +20,7 @@ publishedDate: 2024-03-18
 ---
 
 We've added a new, flexible set of options to expand and diversify our global fleet of measurement vantage points.
-![Diagram of Infrastructure Options](/src/assets/images/blog/2024-03-infrastructure/infra-options-diagram.png){: width="750"}{:style="display:block; margin-left:auto; margin-right:auto"}
+![Diagram of Infrastructure Options](../../assets/images/blog/2024-03-infrastructure/infra-options-diagram.png){: width="750"}{:style="display:block; margin-left:auto; margin-right:auto"}
 
 ## Motivations
 
@@ -28,7 +28,7 @@ Since M-Lab was founded in 2008, our mission has been to measure the Internet, s
 
 In 2022, we announced our initiative [M-Lab to the Cloud](https://www.measurementlab.net/blog/2022-mlab-to-the-cloud/), our effort to expand our presence in cloud networks. Since that announcement, 35% of our traffic is directed to virtual servers.
 
-![Virtual Server Traffic](/src/assets/images/blog/2024-03-infrastructure/virtual-traffic.png){: width="750"}{:style="display:block; margin-left:auto; margin-right:auto"}
+![Virtual Server Traffic](../../assets/images/blog/2024-03-infrastructure/virtual-traffic.png){: width="750"}{:style="display:block; margin-left:auto; margin-right:auto"}
 
 As a continuation of those efforts, we've added a new, flexible set of options for contributing to M-Lab's infrastructure.**Our goal is to expand and diversify our platform to include more user-relevant pathways.**
 
@@ -36,58 +36,12 @@ As a continuation of those efforts, we've added a new, flexible set of options f
 
 New vantage points can be managed by M-Lab or managed by their host. They can be virtual or physical, and scaled to support either a full site or a minimal site. All options can be placed in “on-net” or “off-net” networks, or in other words, located in edge, access or interconnection points.
 
-<table>
-  <tr>
-   <td><strong>Deployment Option</strong>
-   </td>
-   <td><strong>Summary</strong>
-   </td>
-   <td><strong>Key Feature</strong>
-   </td>
-   <td><strong>Timeline</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Virtual, cloud deployments
-   </td>
-   <td>Sponsored or directly allocated cloud resources, managed by M-Lab
-   </td>
-   <td>Easiest option for cloud providers or organizations without direct access to a network.
-   </td>
-   <td>Available today
-   </td>
-  </tr>
-  <tr>
-   <td>Full Site
-   </td>
-   <td>Multiple colocated servers, managed by M-Lab
-   </td>
-   <td>Redundant support fit for regions with a higher testing demand
-   </td>
-   <td>Available today
-   </td>
-  </tr>
-  <tr>
-   <td>Minimal Site
-   </td>
-   <td>Single server, managed by M-Lab
-   </td>
-   <td>A lighter set of requirements for contributing physical, M-Lab managed servers
-   </td>
-   <td>We are open to Trusted Testers in 2024 Q2 and plan to make this option generally available by 2024 Q3.
-   </td>
-  </tr>
-  <tr>
-   <td>Host Managed
-   </td>
-   <td>Single server, running M-Lab software, managed by the host organization
-   </td>
-   <td>Make it easy for those already managing servers to contribute to the platform
-   </td>
-   <td>We are open to Trusted Testers in 2024 Q3 and plan to make this option generally available by 2024 Q4.
-   </td>
-  </tr>
-</table>
+| Deployment Option | Summary | Key Feature | Timeline |
+|-------------------|---------|-------------|----------|
+| Virtual, cloud deployments | Sponsored or directly allocated cloud resources, managed by M-Lab | Easiest option for cloud providers or organizations without direct access to a network. | Available today |
+| Full Site | Multiple colocated servers, managed by M-Lab | Redundant support fit for regions with a higher testing demand | Available today |
+| Minimal Site | Single server, managed by M-Lab | A lighter set of requirements for contributing physical, M-Lab managed servers | We are open to Trusted Testers in 2024 Q2 and plan to make this option generally available by 2024 Q3. |
+| Host Managed | Single server, running M-Lab software, managed by the host organization | Make it easy for those already managing servers to contribute to the platform | We are open to Trusted Testers in 2024 Q3 and plan to make this option generally available by 2024 Q4. |
 
 For a full overview of specifications, please see our [Contribute](https://www.measurementlab.net/contribute/#host-or-sponsor-an-m-lab-measurement-site) page.
 

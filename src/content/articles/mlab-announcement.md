@@ -20,7 +20,7 @@ publishedDate: 2019-02-28
 
 Code for Science & Society (CS&S) and New America’s Open Technology Institute are excited to announce that Measurement Lab (M-Lab) is joining CS&S’s Sponsored Projects Program on March 1 after a decade of growth at New America. Measurement Lab has been working in the public interest to measure Internet performance around the world and share data openly since it was launched at New America in 2008, work that will continue and expand at its new institutional home. Read on for more about M-Lab’s history and future plans.
 
-![Measurement Lab team](/src/assets/images/blog/20190228_mlab_team.png)
+![Measurement Lab team](../../assets/images/blog/20190228_mlab_team.png)
 
 Measurement Lab (M-Lab) is the largest open Internet measurement platform in the world, hosting Internet-scale measurement experiments and releasing all data into the public domain. M-Lab advances network research and empowers the public with useful information about broadband and mobile connections, enhancing Internet transparency, and helping to promote and sustain a healthy, innovative Internet.
 

@@ -146,7 +146,7 @@ You can perform a similar analysis by following the [instructions to access the 
 
 The following chart shows the number of download and upload NDT tests performed per day.
 
-![Number of download and upload NDT tests per day](/src/assets/images/blog/2020-07-17-covid-northern-italy/chart1.png)
+![Number of download and upload NDT tests per day](../../assets/images/blog/2020-07-17-covid-northern-italy/chart1.png)
 
 It is evident that the number of tests per day surges after 23rd February 2020, which is [two days after the announcement of the “red zone”](https://www.dw.com/en/coronavirus-italy-towns-in-lockdown-after-covid-19-deaths/a-52477823){:target="\_blank"} that placed some municipalities in the province of Lodi under lockdown, along with other provinces in Veneto (not covered in this analysis). We also observed a spike in tests run since 10th March 2020, after [the central Government placed under lockdown most provinces in the North of Italy](https://www.nytimes.com/2020/03/07/world/europe/coronavirus-italy.html){:target="\_blank"} and [subsequently extended the lockdown to the whole country](https://www.cnbc.com/2020/03/10/italy-in-national-lockdown-heres-what-it-means.html){:target=\_blank"}.
 
@@ -158,7 +158,7 @@ We currently do not have a good explanation of why the number of upload tests is
 
 The following chart shows the evolution over time of the percentage of tests for which the measured download speed was lower than a given speed in Mbit/s. When the curve increases, it means that more tests were slower in percentage than before. When it decreases, it means that more tests were faster in percentage than before.
 
-![Percentage of tests where measured download speed was lower than a give speed in Mbit/s](/src/assets/images/blog/2020-07-17-covid-northern-italy/chart2.png)
+![Percentage of tests where measured download speed was lower than a give speed in Mbit/s](../../assets/images/blog/2020-07-17-covid-northern-italy/chart2.png)
 
 Before Italy’s nationwide lockdown, we observe weekly patterns. For example, we notice that the measured performance is worse on weekends, as suggested by measurements collected on 26th January 2020 and 9th February 2020 (both Sundays), in comparison to other days. It remains unclear if this change is related to changes in the population that runs tests, as this would probably require performing beacon analysis.
 
@@ -172,7 +172,7 @@ An NDT result lower than 2.5 Mbit/s indicates that that specific user would like
 
 The following chart shows the evolution over time of the percentage of tests for which the measured upload speed was lower than a given speed in Mbit/s. When the curve increases, it means that more tests were slower in percentage than before. When it decreases, it means that more tests were faster in percentage than before.
 
-![Percentage of tests where measured upload speed was lower than a give speed in Mbit/s](/src/assets/images/blog/2020-07-17-covid-northern-italy/chart3.png)
+![Percentage of tests where measured upload speed was lower than a give speed in Mbit/s](../../assets/images/blog/2020-07-17-covid-northern-italy/chart3.png)
 
 Through the above chart, it is suggested that few NDT users have access to high upload speeds. This is quite likely explained by the asymmetric distribution of bandwidth between download and upload in Italy, but it is also influenced by the population of users that run NDT tests. Anecdotally, one of the authors of this report (Simone Basso) used to have a [Fiber To The Home (FTTH)](https://en.wikipedia.org/wiki/Fiber_to_the_x){:target="\_blank"} Vodafone access link providing 1 Gbit/s in download and 200 Mbit/s in upload. Now, after moving to a less well-provisioned area in Italy, it is [Fiber To The Node (FTTN)](https://en.wikipedia.org/wiki/Fiber_to_the_x){:target="\_blank"} with 100 Mbit/s in download and 20 Mbit/s in upload.
 

@@ -21,7 +21,7 @@ categories:
 publishedDate: 2018-07-21
 ---
 
-![M-Lab 10 Year Anniversary Graphic](/src/assets/images/blog/M_Lab_10Year.png)
+![M-Lab 10 Year Anniversary Graphic](../../assets/images/blog/M_Lab_10Year.png)
 
 - **When:** Aug. 7, 2018 - Aug. 8, 2018, 9AM - 5PM
 - **Where:** New America, 740 15th St NW #900, Washington, D.C. 20005

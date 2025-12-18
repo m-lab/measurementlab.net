@@ -37,7 +37,7 @@ In the Interconnection Study, we found a consistent theme across multiple access
 
 <table style="width: 100%;">
   <tr>
-    <td>img alt="Verizon across Internap and Cogent in New York, January 2013 - January 2014, Download Throughput" title="Verizon across Internap and Cogent in New York, January 2013 - January 2014, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon-Internap_Cogent-NY.png"></td>
+    <td><img alt="Verizon across Internap and Cogent in New York, January 2013 - January 2014, Download Throughput" title="Verizon across Internap and Cogent in New York, January 2013 - January 2014, Download Throughput" src="../../assets/images/blog/interconnection_update-Verizon-Internap_Cogent-NY.png"></td>
   </tr>
   <tr>
     <td style="font-style: italic;">Verizon across Internap and Cogent in New York, January 2013 - January 2014, Download Throughput
@@ -49,11 +49,11 @@ M-Lab has since invested resources to build up its presence in the United States
 
 <table style="width: 100%;">
   <tr>
-    <td><img alt="Verizon across GTT, January 2014 - June 2015, Download Throughput" title="Verizon across GTT, January 2014 - June 2015, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon-GTT.png">
+    <td><img alt="Verizon across GTT, January 2014 - June 2015, Download Throughput" title="Verizon across GTT, January 2014 - June 2015, Download Throughput" src="../../assets/images/blog/interconnection_update-Verizon-GTT.png">
     </td>
-    <td><img alt="AT&T across GTT, January 2014 - June 2015, Download Throughput" title="AT&T across GTT, January 2014 - June 2015, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon-ATT.png">
+    <td><img alt="AT&T across GTT, January 2014 - June 2015, Download Throughput" title="AT&T across GTT, January 2014 - June 2015, Download Throughput" src="../../assets/images/blog/interconnection_update-Verizon-ATT.png">
     </td>
-    <td><img alt="Cox across GTT, January 2014 - June 2015, Download Throughput" title="Cox across GTT, January 2014 - June 2015, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon-Cox.png">
+    <td><img alt="Cox across GTT, January 2014 - June 2015, Download Throughput" title="Cox across GTT, January 2014 - June 2015, Download Throughput" src="../../assets/images/blog/interconnection_update-Verizon-Cox.png">
     </td>
   </tr>
   <tr>
@@ -77,9 +77,9 @@ The most significant degradation identified in our search was for Comcast users 
 
 <table style="width: 100%;">
   <tr>
-    <td><img alt="Comcast across TATA, January 2016 - April 2017, Diurnal Pattern, Download Throughput" title="Comcast across TATA, January 2016 - April 2017, Diurnal Pattern, Download Throughput" src="/src/assets/images/blog/interconnection_update-Comcast-TATA.png" style="cursor:pointer;">
+    <td><img alt="Comcast across TATA, January 2016 - April 2017, Diurnal Pattern, Download Throughput" title="Comcast across TATA, January 2016 - April 2017, Diurnal Pattern, Download Throughput" src="../../assets/images/blog/interconnection_update-Comcast-TATA.png" style="cursor:pointer;">
     </td>
-    <td><img alt="Comcast across GTT, January 2016 - April 2017, Diurnal Pattern, Download Throughput" title="Comcast across GTT, January 2016 - April 2017, Diurnal Pattern, Download Throughput" src="/src/assets/images/blog/interconnection_update-Comcast-GTT.png">
+    <td><img alt="Comcast across GTT, January 2016 - April 2017, Diurnal Pattern, Download Throughput" title="Comcast across GTT, January 2016 - April 2017, Diurnal Pattern, Download Throughput" src="../../assets/images/blog/interconnection_update-Comcast-GTT.png">
     </td>
   </tr>
   <tr>
@@ -90,9 +90,9 @@ The most significant degradation identified in our search was for Comcast users 
 
 <table style="width: 100%;">
   <tr>
-    <td><img alt="Verizon across Level 3, January 2014 - December 2014, Diurnal Pattern, Download Throughput" title="Verizon across Level 3, January 2014 - December 2014, Diurnal Pattern, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon_Level3-1.png">
+    <td><img alt="Verizon across Level 3, January 2014 - December 2014, Diurnal Pattern, Download Throughput" title="Verizon across Level 3, January 2014 - December 2014, Diurnal Pattern, Download Throughput" src="../../assets/images/blog/interconnection_update-Verizon_Level3-1.png">
     </td>
-    <td><img alt="Verizon across Level 3, January 2015 - December 2015, Diurnal Pattern, Download Throughput" title="Verizon across Level 3, January 2015 - December 2015, Diurnal Pattern, Download Throughput" src="/src/assets/images/blog/interconnection_update-Verizon_Level3-2.png">
+    <td><img alt="Verizon across Level 3, January 2015 - December 2015, Diurnal Pattern, Download Throughput" title="Verizon across Level 3, January 2015 - December 2015, Diurnal Pattern, Download Throughput" src="../../assets/images/blog/interconnection_update-Verizon_Level3-2.png">
     </td>
   </tr>
   <tr>
@@ -109,7 +109,7 @@ In several of the episodes covered by M-Lab’s research, the parties involved l
 
 <table style="width: 100%;">
   <tr>
-    <td><img alt="AT&T across GTT, January 2015 - January 2016, Download Throughput" title="AT&T across GTT, January 2015 - January 2016, Download Throughput" src="/src/assets/images/blog/interconnection_update-ATT_GTT.png">
+    <td><img alt="AT&T across GTT, January 2015 - January 2016, Download Throughput" title="AT&T across GTT, January 2015 - January 2016, Download Throughput" src="../../assets/images/blog/interconnection_update-ATT_GTT.png">
     </td>
   </tr>
   <tr>

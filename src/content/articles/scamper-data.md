@@ -43,7 +43,7 @@ GROUP BY ts
 ORDER BY ts ASC
 ```
 
-![tests_change](/src/assets/images/blog/2020-01-30-scamper/tests.png)
+![tests_change](../../assets/images/blog/2020-01-30-scamper/tests.png)
 
 For number of hops in all those tests, we observed the drop of hops during platform rollout process as well due to the same reason described above. After we launched the fixed Docker image in early Jan, 2020, the number of hops jump back and expected to recover over time.
 
@@ -66,7 +66,7 @@ ORDER BY ts ASC
 
 ```
 
-![hops_change](/src/assets/images/blog/2020-01-30-scamper/hop.png)
+![hops_change](../../assets/images/blog/2020-01-30-scamper/hop.png)
 
 We further compare the pool of NDT and the traceroute coverage for those tests by the `UUID` binding:
 

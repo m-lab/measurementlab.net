@@ -161,8 +161,7 @@ FROM ConsistentIPs
 
 The effectiveness of our filtering depends on how many servers are available nearby. Figure 1 defines the region in which each server is the nearest server. In dense regions, cells are small and the filter can finely distinguish between client locations; in sparse regions (e.g., much of Africa), large cells group many cities under the same server, making the filter less selective.
 
-<!-- ![Image](/src/assets/images/blog/2025-05-improving-m-lab-geolocation/voronoi-partition-m-lab-servers.png) -->
-<img src="/src/assets/images/blog/2025-05-improving-m-lab-geolocation/voronoi-partition-m-lab-servers.png" alt="Voronoi M-lab servers" style="width: 100%; height: auto;" />
+![Image](../../assets/images/blog/2025-05-improving-m-lab-geolocation/voronoi-partition-m-lab-servers.png)
 **Figure 1\.** Voronoi partition of the globe overlaid on M-Lab server locations. Each colored cell shows the region of longitude/latitude space closest to its red-dot server by great-circle distance.
 
 To assess the impact of filtering, we computed the number of unique client IPs retained versus removed when applying the consistency criteria on the 1st of April 2025\. The filter excludes 18% of the measured IPs in Africa to 7.88% in South America. These results highlight a trade-off: while filtering improves geolocation reliability, it also reduces coverage, potentially in regions where measurement density is already limited. Therefore, users should really run these queries only if their results hinge on accurate geolocations.

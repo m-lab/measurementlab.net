@@ -35,12 +35,12 @@ Measurement Lab is in the second pilot phase to test a new dynamic method for de
 
 [M-Lab’s platform](https://www.measurementlab.net/status/) consists of more than 400 servers in more than 40 countries and 100 metros. The majority of these servers belong to the “legacy” fleet, whose measurements are already available in [BiqQuery](https://console.cloud.google.com/bigquery?project=measurement-lab), e.g., in the table \``measurement-lab.ndt.ndt7`\`.
 
-<img src="/src/assets/images/blog/2025-07-17_dynamic-data-bq/mlab-servers-legacy-july2025.png" alt="M-Lab servers legacy fleet" style="width: 80%; height: auto;" />
+![M-Lab servers legacy fleet](../../assets/images/blog/2025-07-17_dynamic-data-bq/mlab-servers-legacy-july2025.png)
 **Figure 1**: The “legacy” fleet of M-Lab servers. It consists of more than 370 servers.
 
 A new set of servers, which we call as the _dynamic[^1]_ fleet of servers–including those deployed through the Host Managed Deployment Program–has been gradually rolled out as part of a pilot phase. Although data collection from these servers has been ongoing for the past year, these data have not been publicly available until now.
 
-<img src="/src/assets/images/blog/2025-07-17_dynamic-data-bq/mlab-servers-dynamic-july2025.png" alt="M-Lab servers dynamic fleet" style="width: 80%; height: auto;" />
+![M-Lab servers dynamic fleet](../../assets/images/blog/2025-07-17_dynamic-data-bq/mlab-servers-dynamic-july2025.png)
 **Figure 2**: The “dynamic” fleet of M-Lab servers as of July 2025\. It consists of more than 35 servers in 9 countries.
 
 **Accessing the new data in BigQuery**

@@ -22,13 +22,13 @@ In this blog post I’ll share the slides I presented in a session at the 2018 I
 
 In my first slide, I recapped [OONI](https://ooni.torproject.org/){:target="\_blank"}'s experience with measuring performance of an [emulated DASH flow](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP){:target="\_blank"} in collaboration with [Fight for the Future](https://www.fightforthefuture.org/){:target="\_blank"}. What we did was basically reimplement [Neubot’s DASH test](https://github.com/ooni/spec/blob/696dcbf76e89ae32f53e7f552a524bed41ee0d05/nettests/ts-021-dash.md){:target="\_blank"} in [Measurement Kit](https://github.com/measurement-kit/measurement-kit){:target="\_blank"} (OONI's measurement library) and run experiments.
 
-![Slide 1 image](/src/assets/images/blog/IGF2018-1.png)
+![Slide 1 image](../../assets/images/blog/IGF2018-1.png)
 
 After mentioning that, I went on to describe what I learned from that experience, and from reasoning more in general about measuring network-neutrality-related metrics. I started by providing an historical perspective, to then give an overview of the current landscape.
 
 My second slide, in fact, describes the measurement scenario around the end of the previous decade, where the emergence of Measurement Lab allowed to write Internet measurement experiments that users could run from their computers towards [measurement servers provided by Measurement Lab](http://mlab-ns.appspot.com/admin/map/ipv4/all){:target="\_blank"}. I went on to explain how this measurement infrastructure was excellent to tackle the most pressing measurement issues at the time (i.e. [the performance with which users could access Internet content](/src/assets/publications/understanding-broadband-speed-measurements.pdf) and [the selective throttling of specific peer-to-peer protocols](https://arstechnica.com/uncategorized/2007/11/eff-study-reveals-evidence-of-comcasts-bittorrent-interference/){:target="\_blank"} and, chiefly among them, BitTorrent).
 
-![Slide 2 image](/src/assets/images/blog/IGF2018-2.png)
+![Slide 2 image](../../assets/images/blog/IGF2018-2.png)
 
 Regarding speed measurements, Measurement Lab servers are traditionally located in data centers and [Internet eXchange Points](https://en.wikipedia.org/wiki/Internet_exchange_point){:target="\_blank"} (IXPs) that are close enough to Internet content. So tests like [NDT](https://github.com/ndt-project/ndt){:target="\_blank"} and [Neubot](https://github.com/neubot/neubot){:target="\_blank"} (the blue line in figure) could provide a reasonable proxy of the performance of “using the Internet” (the yellow line in figure).
 
@@ -38,7 +38,7 @@ As for measuring protocol throttling, [Glasnost](http://broadband.mpi-sws.org/tr
 
 The third slide illustrates the current situation (of course, IMO). Here, I emphasize the importance of [Content Delivery Networks](https://en.wikipedia.org/wiki/Content_delivery_network){:target="\_blank"} (CDNs) because interconnection is increasingly becoming one of the most pressing network neutrality issues. Since 2008, [video has been more and more widely used](https://www.webmarketingpros.com/internet-video-to-account-for-80-of-global-traffic-by-2019/){:target="\_blank"}. So content providers and ISPs have used direct interconnections much more frequently, to reduce latency and to better control quality (i.e. losses).
 
-![Slide 3 image](/src/assets/images/blog/IGF2018-3.png)
+![Slide 3 image](../../assets/images/blog/IGF2018-3.png)
 
 In the above figure, the violet line is a direct interconnection between an ISP and a CDN. We have seen several cases where the ISP and the CDN had a peering war, where one party forced the other to take a longer and likely more noisy path (the orange path in figure). One of the first such cases to go mainstream was [the tussle between Comcast and Level 3](https://arstechnica.com/tech-policy/2010/12/comcastlevel3/){:target="\_blank"}. In that case, and in many other cases, the longer route obviously also lowered the quality of the streaming, because of higher round trip times, queueing delays, and/or packet losses.
 

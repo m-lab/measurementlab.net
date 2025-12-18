@@ -18,7 +18,7 @@ categories:
 publishedDate: 2014-11-10
 ---
 
-![RIPE 69 image](/src/assets/images/blog/ripe.png){:.pull-right width="294" height="206"}
+![RIPE 69 image](../../assets/images/blog/ripe.png){:.pull-right width="294" height="206"}
 On Thursday Nov. 6, Collin Anderson gave a talk at the [RIPE meeting](https://ripe69.ripe.net/) in London. Collin has been immersed in the M-Lab data for some time, and helped lead the recently published technical report, [ISP Interconnection and its Impact on Consumer Internet Performance](/src/assets/publications/M-Lab_Interconnection_Study_US.pdf). He presented a lyrical overview of these research findings for the assembled crowd of network operators and researchers, which is archived on the RIPE website.
 
 Video: <https://ripe69.ripe.net/archives/video/10079/>

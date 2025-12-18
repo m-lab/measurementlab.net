@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import housesBG from '@assets/backgrounds/anna-magenta-XUCfqIEudBU-unsplash.jpg'
+import LogoBlue from '@assets/logo-short-blue.svg'
+import MlabDefault from '@assets/mlab-default-card.png'
 import Button from '@components/atoms/Button.astro';
 import Image from '@components/atoms/Image.astro';
 import Tag from '@components/atoms/Tag.astro';
@@ -72,10 +74,10 @@ const formatDate = (date: Date) => {
 								title={article.data.title}
 								description={article.data.excerpt}
 								class="flex h-full flex-col"
-								image={article.data.heroImage}
+								image={article.data.heroImage || MlabDefault}
 								href={`/articles/${article.slug}`}
 							>
-								<div class="flex h-full flex-col p-6">
+								<div class="flex flex-col">
 									{/* Draft badge (only visible in dev) */}
 									{isDev && article.data.published === 'draft' && (
 										<div class="mb-3">
@@ -94,12 +96,8 @@ const formatDate = (date: Date) => {
 
 									{/* Metadata */}
 									<div class="mb-4 space-y-1">
-										<p class="text-gray-600 text-sm">
-											By {getAuthorNames(article.data.authors)}
-										</p>
-										<p class="text-gray-500 text-sm">
-											{formatDate(article.data.publishedDate)}
-										</p>
+										<p class="">By {getAuthorNames(article.data.authors)}</p>
+										<p class="">{formatDate(article.data.publishedDate)}</p>
 									</div>
 								</div>
 							</HouseCard>

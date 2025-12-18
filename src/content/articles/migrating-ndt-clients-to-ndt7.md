@@ -30,7 +30,7 @@ they do, the NDT dataset will shift from predominantly ndt5 to predominantly
 ndt7. As part of assessing our readiness for this larger effort, a pilot was
 started on July 8.
 
-![ndt5-and-ndt7-totals](/src/assets/images/blog/2020-07-24-migrating-ndt-clients-to-ndt7/ndt5-and-ndt7-totals.png)
+![ndt5-and-ndt7-totals](../../assets/images/blog/2020-07-24-migrating-ndt-clients-to-ndt7/ndt5-and-ndt7-totals.png)
 _Figure 1: Total number of ndt5 and ndt7 measurement rows over time. The_
 _total_ndt5 count rows from the measurement-lab.ndt.unified_uploads and_
 _measurement-lab.ndt.unified_downloads views. The total_ndt7 counts rows from_
@@ -67,7 +67,7 @@ The entry criteria use two datasets:
 Together, these datasets allow the comparison of ndt5 and ndt7 measurements
 from the same clients.
 
-![ndt5-vs-ndt7-all](/src/assets/images/blog/2020-07-24-migrating-ndt-clients-to-ndt7/ndt5-vs-ndt7-all.png)
+![ndt5-vs-ndt7-all](../../assets/images/blog/2020-07-24-migrating-ndt-clients-to-ndt7/ndt5-vs-ndt7-all.png)
 _Figure 2: Scatter plots of ndt5 and ndt7 performance._
 
 _The large subplot reports client download bandwidth in Mbps. The small_
@@ -92,7 +92,7 @@ to ndt5, suggesting that BBR does a better job avoiding queuing. Though the
 throughput data is quite noisy, BBR achieves, on average, roughly 44% higher
 throughput than Cubic.
 
-![ndt5-vs-ndt7-minrtt25](/src/assets/images/blog/2020-07-24-migrating-ndt-clients-to-ndt7/ndt5-vs-ndt7-minrtt25.png)
+![ndt5-vs-ndt7-minrtt25](../../assets/images/blog/2020-07-24-migrating-ndt-clients-to-ndt7/ndt5-vs-ndt7-minrtt25.png)
 _Figure 3: Scatter plots of ndt5 and ndt7 performance, like figure 1, with_
 _samples restricted to clients having both minRTT measurements below 25 msec._
 

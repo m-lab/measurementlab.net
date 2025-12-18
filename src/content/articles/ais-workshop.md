@@ -73,7 +73,7 @@ participants, such as:
 - Sidestream data
 - Switch data
 
-![AIS 2019 workshop photo 4](/src/assets/images/blog/2019-07-01-ais/ais-4.png)
+![AIS 2019 workshop photo 4](../../assets/images/blog/2019-07-01-ais/ais-4.png)
 
 The tutorial covered various ways to access and use M-Lab data, including SQL
 querying in BigQuery and visualizing data using DataStudio. Of particular note

@@ -53,7 +53,7 @@ when many clients run a measurement at the same time to the same server, they
 degrade user experience and measurement quality for their own and other
 measurements. See the image below.
 
-![hourly-tests](/src/assets/images/blog/2021-02-12-why-access-tokens/hourly-tests.png)
+![hourly-tests](../../assets/images/blog/2021-02-12-why-access-tokens/hourly-tests.png)
 
 We believe this behavior is the accidental and unfortunate result of
 non-randomized scheduling.

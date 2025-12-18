@@ -38,7 +38,7 @@ The collection problem has been rectified ([github](https://github.com/npad/side
 
 The bad news is that Paris Traceroute data for the M-Lab platform is very sparse for the latter half of 2016 and early 2017. An accounting of daily NDT tests to unique client addresses, and daily Paris Traceroute tests to corresponding addresses shows the following weekly coverage. You can see the uptick in coverage in week 24 and 25, the gradual decrease in coverage in ensuing weeks, and the surge in NDT test counts starting around week 29. The issue was resolved in 2017 week 6 and 7, and you can see the corresponding restoration of test coverage.
 
-![NDT tests and Paris Traceroute tests per week, June 2016 - March 2016](/src/assets/images/blog/pt-brownout-graph.png)
+![NDT tests and Paris Traceroute tests per week, June 2016 - March 2016](../../assets/images/blog/pt-brownout-graph.png)
 
 <div class="table-responsive" markdown="1">
 

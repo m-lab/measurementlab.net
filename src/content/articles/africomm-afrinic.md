@@ -21,7 +21,7 @@ categories:
 publishedDate: 2019-03-01
 ---
 
-![M-Lab and researchers at AFRICOMM-2018](/src/assets/images/blog/africomm-group.jpg)
+![M-Lab and researchers at AFRICOMM-2018](../../assets/images/blog/africomm-group.jpg)
 _AFRICOMM 2018. Left to right: ￼Amreesh Phokeer (AFRINIC)￼, Josiah Chavula
 (University of Capetown), Georgia Bullen (M-Lab), Antoine Delvaux
 (perfSonar), Stephen Soltesz (M-Lab)._
@@ -39,7 +39,7 @@ open Internet measurement, and identify opportunities for further
 collaboration, research and tool development to better support the Internet
 measurement, research and policy community in Africa.
 
-![AFRINIC-29](/src/assets/images/blog/afrinic-mlab.jpg)
+![AFRINIC-29](../../assets/images/blog/afrinic-mlab.jpg)
 _AFRINIC-29. Stephen Soltesz (M-Lab) giving a workshop on working with NDT data
 in Africa._
 
@@ -64,6 +64,6 @@ team][support]{:target="\_blank"}.
 [discuss]: https://groups.google.com/a/measurementlab.net/forum/#!forum/discuss
 [support]: mailto:support@measurementlab.net
 
-![Working at AFRICOMM](/src/assets/images/blog/africomm-working.jpg)
+![Working at AFRICOMM](../../assets/images/blog/africomm-working.jpg)
 _AFRICOMM. Internet measurement researchers, brainstorming ideas for working
 with perfSONAR, M-Lab and other tools to answer their research questions._

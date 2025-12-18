@@ -122,12 +122,12 @@ Detailed graphs from all sites are available here: [ams03][ams03],
 [lga03]: /src/assets/images/blog/2019-07-30-global-pilot-entry/lga03_entry_criteria_2019-07-29.pdf
 [lax02]: /src/assets/images/blog/2019-07-30-global-pilot-entry/lax02_entry_criteria_2019-07-29.pdf
 
-![ams03-before](/src/assets/images/blog/2019-07-30-global-pilot-entry/ams03-before.png)
+![ams03-before](../../assets/images/blog/2019-07-30-global-pilot-entry/ams03-before.png)
 **Test Counts Before Upgrade:** Before upgrading any machine to the new
 platform, all machines (mlab1, mlab2, & mlab3) record roughly the same rate
 of download tests (less than 2% difference over the week).
 
-![ams03-after](/src/assets/images/blog/2019-07-30-global-pilot-entry/ams03-after.png)
+![ams03-after](../../assets/images/blog/2019-07-30-global-pilot-entry/ams03-after.png)
 **Test Counts After Upgrading mlab3:** NDT test rates increased slightly
 (~3%). When breaking down all tests by client type, we found that the new NDT
 server handles WSS+JSON clients better than the web100 NDT server.
@@ -156,14 +156,14 @@ The images below use data from AMS03. We see similar trends from all sites.
 Detailed graphs from all sites are available here: [ams03][ams03],
 [bom02][bom02], [lga03][lga03], [lax02][lax02].
 
-![ams03-decile-before](/src/assets/images/blog/2019-07-30-global-pilot-entry/ams03-decile-before.png)
+![ams03-decile-before](../../assets/images/blog/2019-07-30-global-pilot-entry/ams03-decile-before.png)
 **Deciles per-Day Before Upgrade:** Before the upgrade, we expect typical traffic
 to follow the x=y trendline with minor variations. This analysis compares the
 web100 (mlab2 & mlab3) dataset from two machines at the same site to one
 another. The minor variation is a result of variable client performance and
 that a single client contributes a single measurement.
 
-![ams03-decile-after](/src/assets/images/blog/2019-07-30-global-pilot-entry/ams03-decile-after.png)
+![ams03-decile-after](../../assets/images/blog/2019-07-30-global-pilot-entry/ams03-decile-after.png)
 **Deciles per-Day After Upgrade at AMS03:** Daily deciles between web100 (mlab2)
 ndt5 (mlab3) at AMS03. If performance between the two systems were
 identical, then the decile curves would fall exactly on the trendline. We find most

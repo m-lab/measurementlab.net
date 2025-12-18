@@ -43,15 +43,15 @@ You can use shapefiles in multiple ways, and with different programs or services
 
 A desktop GIS program is maybe the most common way people interact with shapefiles. QGIS is an open source program, and is akin to the commercial software, ArcGIS from ESRI. Both programs allow you to import “layers” of various data types. First, I created a base map of the US by loading the US Census’ shapefile for Counties.
 
-![Map of United States Counties in QGIS](/src/assets/images/blog/2020-09-14-baltimore/image1.png)
+![Map of United States Counties in QGIS](../../assets/images/blog/2020-09-14-baltimore/image1.png)
 
 I also added a layer for US States, and filtered to show just Maryland.
 
-![Map of Maryland with surrounding United States Counties in QGIS](/src/assets/images/blog/2020-09-14-baltimore/image2.png)
+![Map of Maryland with surrounding United States Counties in QGIS](../../assets/images/blog/2020-09-14-baltimore/image2.png)
 
 Finally, I imported BNIA’s shapefile for Baltimore’s community statistical areas.
 
-![Map of BNIA Baltimore City Statistical Areas in QGIS](/src/assets/images/blog/2020-09-14-baltimore/image3.png)
+![Map of BNIA Baltimore City Statistical Areas in QGIS](../../assets/images/blog/2020-09-14-baltimore/image3.png)
 
 Now we’re ready to add data from M-Lab. That data could take many forms, from aggregate measurements by community area, color coded by the average, median, or other statistic for download or upload speed. M-Lab’s measurement service, NDT, provides a baseline measurement of TCP’s reliability, using a single stream of data. TCP stands for Transmission Communication Protocol and is what computers use to send and receive data over the Internet. Since we’re just exploring at this point to see what is possible, I started with looking at where in the city NDT tests from 2020 have been located in our public dataset.
 
@@ -86,11 +86,11 @@ GROUP BY latitude, longitude
 
 Then I downloaded the results as a CSV file, and imported it as a “Text Delimited Layer” in QGIS. The image below shows those 50 points within Baltimore City.
 
-![Map of BNIA Baltimore City Statistical Areas with common M-Lab test latitude longitude coordinates in 2020 in QGIS](/src/assets/images/blog/2020-09-14-baltimore/image4.png)
+![Map of BNIA Baltimore City Statistical Areas with common M-Lab test latitude longitude coordinates in 2020 in QGIS](../../assets/images/blog/2020-09-14-baltimore/image4.png)
 
 You’ll note that there is not a geo point within each neighborhood, which means that aggregating M-Lab default data by Baltimore community areas will be informative, but will not be definitive. To further illustrate this issue, I queried NDT data for the three IP addresses that have been assigned to my home Internet connection since May 1, 2020. I hope you’re chuckling right now because, yes, I periodically check what IP address I get assigned. The map below on the left is from the [BNIA website](https://bniajfi.org/) and has my neighborhood, Highlandtown, highlighted in orange. The map on the right adds three points on the map where my IP addresses have been located by M-Lab. None of the points actually land in the Highlandtown community area.
 
-| ![BNIA Map of Baltimore City Statistical Areas with Highlandtown Neighborhood Highlighted](/src/assets/images/blog/2020-09-14-baltimore/image5.png) | ![Map of BNIA Baltimore City Statistical Areas with common M-Lab test latitude longitude coordinates in 2020, and sample points from one household's tests in QGIS](/src/assets/images/blog/2020-09-14-baltimore/image6.png) |
+| ![BNIA Map of Baltimore City Statistical Areas with Highlandtown Neighborhood Highlighted](../../assets/images/blog/2020-09-14-baltimore/image5.png) | ![Map of BNIA Baltimore City Statistical Areas with common M-Lab test latitude longitude coordinates in 2020, and sample points from one household's tests in QGIS](../../assets/images/blog/2020-09-14-baltimore/image6.png) |
 
 ### Digging Deeper - What else can M-Lab’s NDT Data tell us about Baltimore Community Areas?
 

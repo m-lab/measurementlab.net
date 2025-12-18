@@ -25,7 +25,7 @@ Over the past month, M-Lab has published a series of blog posts about ndt7. As o
 
 Below is a screenshot of our internal monitoring for test traffic on August 14th, 2020, showing the ndt7 test count (green, above) in relation to the ndt5 test count (yellow, below).
 
-![NDT Protocol Test Rates (Up, Down)](/src/assets/images/blog/2020-08-27-ndt7/image1.png)
+![NDT Protocol Test Rates (Up, Down)](../../assets/images/blog/2020-08-27-ndt7/image1.png)
 
 ## Migration Checklist
 
@@ -61,13 +61,13 @@ GROUP BY date, instruments
 ORDER BY date
 ```
 
-![Graph of the query results above, showing decreasing ndt5 measurements and increasing ndt7 measurements](/src/assets/images/blog/2020-08-27-ndt7/image2.png)
+![Graph of the query results above, showing decreasing ndt5 measurements and increasing ndt7 measurements](../../assets/images/blog/2020-08-27-ndt7/image2.png)
 
 ✅ **The charts in the analysis will be reproducible using public tables**
 
 In our entry criteria analysis, we used scatter plots comparing ndt5 and ndt7 performance for the same clients before and after migration. Below we provide example queries using the unified download views to recreate that analysis.
 
-| ![Scatter plot comparing ndt5 and ndt7, reporting client download bandwidth](/src/assets/images/blog/2020-08-27-ndt7/image3.png) | ![Scatter plot comparing ndt5 and ndt7, reporting client minRTT](/src/assets/images/blog/2020-08-27-ndt7/image4.png) |
+| ![Scatter plot comparing ndt5 and ndt7, reporting client download bandwidth](../../assets/images/blog/2020-08-27-ndt7/image3.png) | ![Scatter plot comparing ndt5 and ndt7, reporting client minRTT](../../assets/images/blog/2020-08-27-ndt7/image4.png) |
 
 The left plot reports client download bandwidth in Mbps. The right plot reports client minRTT in milliseconds. In both plots, ndt5 metrics are plotted using the x-axis, and ndt7 metrics using the y-axis. Samples are restricted to clients having both 1 measurement before and after the pilot migration and minRTT measurements below 25 msec. In the minRTT subplot, ndt5 clients are much more likely to have higher minRTT values than ndt7 clients.
 

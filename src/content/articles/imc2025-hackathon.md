@@ -25,7 +25,7 @@ publishedDate: 2025-11-12
 
 M-Lab, [OONI](https://ooni.org/), [IIJ](https://www.iij.ad.jp/en/), [Dioptra Research Group](https://dioptra.io/), [Cloudflare Radar](https://radar.cloudflare.com/), [Reverse Traceroute](https://www.measurementlab.net/tests/reverse_traceroute/), and [IODA](https://ioda.inetintel.cc.gatech.edu/) hosted the [Open Measurement Hackathon](https://conferences.sigcomm.org/imc/2025/events/hackathon/), October 31, 2025, following the [ACM Internet Measurement Conference (IMC) 2025](https://conferences.sigcomm.org/imc/2025/) in Madison, Wisconsin, USA.
 
-<img src="/src/assets/images/blog/2025-11-12-imc2025-hackathon/imc2025_hackathon_logo.png" alt="IMC 2025 hackathon logo" style="width: 40%; height: auto;" />
+![IMC 2025 hackathon logo](../../assets/images/blog/2025-11-12-imc2025-hackathon/imc2025_hackathon_logo.png)
 
 Over 40 participants from academia and industry gathered to _“Measure All the Frights”_, exploring and comparing data from our projects over the eight-hour hackathon. Each host organization suggested potential projects to participants in advance, and those who planned to attend formed teams via Discord or in person to select a project or propose their own ideas. Teams worked on a variety of projects, including:
 
@@ -41,6 +41,6 @@ The event concluded with teams presenting their findings to the group. The [**ha
 
 We’re grateful for everyone who brought their energy and ideas to the IMC 2025 hackathon. We enjoyed meeting you, talking about your research, and appreciate your interest in our open source and open data projects! Thanks as well to [Internet Society](https://www.internetsociety.org/) for sponsoring the venue, beverages, and dinner for those who attended.
 
-<img src="/src/assets/images/blog/2025-11-12-imc2025-hackathon/imc_2025_hackathon_photo2.jpg" alt="IMC 2025 hackathon logo"/>
+![IMC 2025 hackathon logo](../../assets/images/blog/2025-11-12-imc2025-hackathon/imc_2025_hackathon_photo2.jpg)
 
-<img src="/src/assets/images/blog/2025-11-12-imc2025-hackathon/imc_2025_hackathon_photo1.png" alt="IMC 2025 hackathon logo"/>
+![IMC 2025 hackathon logo](../../assets/images/blog/2025-11-12-imc2025-hackathon/imc_2025_hackathon_photo1.png)

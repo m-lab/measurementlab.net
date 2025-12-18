@@ -26,11 +26,11 @@ To address this need from many of our partners and researchers, M-Lab is delight
 
 Here is the new schema, which also adds ASN annotation for traceroute source, destination, and hops:
 
-![schema_1](/src/assets/images/blog/2019-08-01-traceroute/schema1.png)
+![schema_1](../../assets/images/blog/2019-08-01-traceroute/schema1.png)
 
-![schema_2](/src/assets/images/blog/2019-08-01-traceroute/schema2.png)
+![schema_2](../../assets/images/blog/2019-08-01-traceroute/schema2.png)
 
-![schema_3](/src/assets/images/blog/2019-08-01-traceroute/schema3.png)
+![schema_3](../../assets/images/blog/2019-08-01-traceroute/schema3.png)
 
 The new BigQuery table preserves all information that was in the previous table, `measurement-lab.base_tables.traceroute`, with better geo-location annotation coverage using time-based Maxmind databases. The geo-location annotation rate for traceroute source and destination are 100%. For traceroute tests since 2017, the geo-location annotation rate for hops almost doubled from ~20% in the BigQuery table, to >40% in current BigQuery table. The ASN annotation rate is about 97%.
 

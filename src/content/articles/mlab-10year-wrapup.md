@@ -25,22 +25,22 @@ We’ve reached a point in human history where, for many of us, the Internet has
 
 In August 2018, members of the Measurement Lab (M-Lab) community gathered to celebrate the platform’s 10 year anniversary. Measurement Lab provides the largest collection of open Internet performance data on the planet. As a consortium of research, industry, and public-interest partners, M-Lab is dedicated to providing an ecosystem for the open, verifiable measurement of global network performance. One of the most important things about M-Lab is that the community spans across otherwise disparate and disconnected groups: network operators, Internet companies, academic and policy researchers, and government officials., Representatives of these groups rarely have an opportunity to be in the same room and share their work. But M-Lab's success as a public interest technology project can be attributed to this broad community of stakeholders.
 
-![M-Lab Community](/src/assets/images/blog/mlab-community.png)
+![M-Lab Community](../../assets/images/blog/mlab-community.png)
 
-![2009 M-Lab Launch Event](/src/assets/images/blog/mlab-10yearwrap-2009launch.png)
+![2009 M-Lab Launch Event](../../assets/images/blog/mlab-10yearwrap-2009launch.png)
 (_Photo credit: [https://princeton.edu/news/2009/02/18/princeton-computer-scientists-guide-internet-transparency-project](https://princeton.edu/news/2009/02/18/princeton-computer-scientists-guide-internet-transparency-project)_)
 
 When M-Lab was [launched](https://www.princeton.edu/news/2009/02/18/princeton-computer-scientists-guide-internet-transparency-project) ten years ago, there were only 30 or so servers in 12 locations. These anchors of M-Lab, our site partners, are research and education networks, independent IXs, regulators, and [many others](/src/assets/who/#supporting-partners). M-Lab’s global footprint has grown to over 500 servers in over 130 locations, through the support from groups, such as [EETT](https://www.eett.gr/) (Greece), RTR (Austria), [WIDE](http://www.wide.ad.jp/) (Japan), [TopIX](https://www.top-ix.org/en/home-eng/) (Italy), [PHOpenIX](http://phopenix.net/) (Philippines), [CIRA](https://cira.ca/) (Canada), [KENET](https://www.kenet.or.ke/) (Kenya), and [REANNZ](https://reannz.co.nz/) (New Zealand) to name a few.
 
-![10 Years of Community](/src/assets/images/blog/10yr_wrap_image3.png)
+![10 Years of Community](../../assets/images/blog/10yr_wrap_image3.png)
 
-![Today - 500+ Servers in 130+ locations](/src/assets/images/blog/10yr_wrap_image4.png)
+![Today - 500+ Servers in 130+ locations](../../assets/images/blog/10yr_wrap_image4.png)
 
 M-Lab is more than just the platform infrastructure as well — it is also the community of researchers and governments who leverage the data in the academic and policy worlds to better understand the health of the Internet infrastructure or the impact of a new policy or network management practices at Internet scale. When M-Lab started 10 years ago, there was slow growth and adoption of the testing tools, but as integration of the M-Lab tests has become easier, we’ve seen the test volume increase to over 2,000,000 measurements per day.
 
-![10 Years of Data](/src/assets/images/blog/10yr_wrap_image5.png)
+![10 Years of Data](../../assets/images/blog/10yr_wrap_image5.png)
 
-![10 Years of Data, 2](/src/assets/images/blog/10yr_wrap_image6.png)
+![10 Years of Data, 2](../../assets/images/blog/10yr_wrap_image6.png)
 
 In addition to sharing work from the community in breakout sessions, we were honored to have [Vint Cerf kick off the event](https://www.youtube.com/watch?v=54sDgVl0nOU&index=2&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i) with his reflections on why MLab got started in the first place and how it continues to be relevant today. As the Internet has evolved and grown, the challenges of measuring the Internet have evolved as well. With the founders and key community members gathered, we also took the opportunity to brainstorm about solutions to challenges that the community faces in both the long and short term, e.g. mobile measurement, Internet disruptions and anomaly detection, and big data and machine learning. Conversations such as these are critical to thinking about how to be prepared to measure the Internet of the future, and iterate on our measurement approaches today.
 

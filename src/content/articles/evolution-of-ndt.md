@@ -77,7 +77,7 @@ to support more clients.
 The following table summarizes the changes in each protocol upgrade beginning
 with ndt3 in 2009.
 
-![ndt-table](/src/assets/images/blog/2020-08-05-evolution-of-ndt/ndt-table.png)
+![ndt-table](../../assets/images/blog/2020-08-05-evolution-of-ndt/ndt-table.png)
 **[1] Upload measurements use the TCP congestion control algorithm of the**
 **client.**
 
@@ -106,7 +106,7 @@ Open questions:
 - Every past and future kernel change affects some measurements. How do we
   weigh the value of staying current, relative to changes in the data?
 
-![ndt-kernel](/src/assets/images/blog/2020-08-05-evolution-of-ndt/ndt-kernel.png)
+![ndt-kernel](../../assets/images/blog/2020-08-05-evolution-of-ndt/ndt-kernel.png)
 **Figure 1: Instrumentation for NDT measurements started with web100**
 **through 2019 when the platform switched to tcp_info.**
 
@@ -139,7 +139,7 @@ Open questions:
 - Can M-Lab's BBR measurement be used to inform the wider community of its
   importance?
 
-![ndt-tcp](/src/assets/images/blog/2020-08-05-evolution-of-ndt/ndt-tcp.png)
+![ndt-tcp](../../assets/images/blog/2020-08-05-evolution-of-ndt/ndt-tcp.png)
 **Figure 2: TCP Congestion Control for download measurements used Reno until**
 **2019 when the platform switched to Cubic by default. The ndt7 protocol uses**
 **BBR.**
@@ -169,7 +169,7 @@ Open questions:
 - How does the TCP port impact NDT measurements? e.g. due to network policies.
 - How does the protocol impact NDT measurements? E.g. TLS, websocket.
 
-![ndt-proto](/src/assets/images/blog/2020-08-05-evolution-of-ndt/ndt-proto.png)
+![ndt-proto](../../assets/images/blog/2020-08-05-evolution-of-ndt/ndt-proto.png)
 **Figure 3: Until 2016, NDT clients used the "raw" protocol. In 2016, to access**
 **more clients through browsers, the websocket protocol was added to the NDT**
 **server. Websocket measurements are now the majority of test volume.**

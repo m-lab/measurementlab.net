@@ -23,7 +23,7 @@ publishedDate: 2019-03-28
 
 Over the past few years, M-Lab has supported an increasing number of local communities, municipalities, regional coalitions, and others who are interested in understanding the state of broadband service in their area. In every case, communities come to M-Lab because of the openness of our data. Combined with M-Lab's open source code and [community examples](/src/assets/data/tools/#community), we've been able to further support communities in [building](https://mi.broadbandtest.us/){:target=”\_blank”} and running their own [broadband measurement test sites](https://www.speeduplouisville.com/){:target=”\_blank”} and broadband [community surveys](https://ferrycountybroadband.com/){:target=”\_blank”}, to support local outreach, advocacy, and planning.
 
-![Speedup Louisville screenshot](/src/assets/images/blog/speeduplouisville.png)
+![Speedup Louisville screenshot](../../assets/images/blog/speeduplouisville.png)
 
 One of the most recent and impactful municipal efforts in broadband mapping and testing came from Louisville, Kentucky. The city partnered with a local tech startup and M-Lab to produce the website [SpeedUpLouisville.com](https://www.speeduplouisville.com/){:target=”\_blank”}. By integrating M-Lab’s NDT test and aggregating the locally collected results, Louisville was able to direct a part of their fiber buildout funding to better serve areas of the city that were not already well served.
 

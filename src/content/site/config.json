@@ -3,7 +3,7 @@
   "description": "Measure the Internet. Save the data. Make it universally accessible and helpful.",
   "url": "https://mlab.draftlab.dev",
   "favicon": "/favicon.svg",
-  "defaultOgImage": "/src/assets/logo-extended-blue.svg",
+  "defaultOgImage": "/src/assets/mlab-og.png",
   "defaultLogoLight": "/src/assets/logo-extended-blue.svg",
   "social": {
     "bluesky": "#",

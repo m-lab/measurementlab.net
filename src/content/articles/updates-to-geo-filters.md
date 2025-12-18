@@ -33,7 +33,7 @@ Since we began collecting data, M-Lab has used MaxMind's [free GeoLite geoip dat
 
 ## M-Lab’s Geo Annotations
 
-![geo-annotations-table](/src/assets/images/blog/2022-03-updates-to-geo-filters/2022-03-21 GeoAnnotations.png)
+![geo-annotations-table](../../assets/images/blog/2022-03-updates-to-geo-filters/2022-03-21 GeoAnnotations.png)
 
 Since M-Lab data spans 2009 to the present, we had to make a choice when developing our [Unified Views](/src/assets/blog/new-ndt-unified-views/#ndt-unified-views-now-published) - should we mix conventions (i.e. use both “.Region” and “.Subdivision1ISOCode”) or standardize on one? We chose to standardize on the Geo2 ISO3166 conventions. However, our published data has used a mixture of these conventions since 2017-09, when the “Geo2 format” was introduced.
 
