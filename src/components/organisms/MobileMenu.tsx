@@ -91,7 +91,7 @@ export default function MobileMenu({
             <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white p-6">
               <a href="/">
                 <img
-                  src="public/logo-short-blue.svg"
+                  src="/logo-short-blue.svg"
                   height={84}
                   width={84}
                   alt={siteConfig.name}
