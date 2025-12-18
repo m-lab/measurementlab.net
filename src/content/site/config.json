@@ -3,14 +3,14 @@
   "description": "Measure the Internet. Save the data. Make it universally accessible and helpful.",
   "url": "https://mlab.draftlab.dev",
   "favicon": "/favicon.svg",
-  "defaultOgImage": "/src/assets/draftlab-seo.png",
-  "defaultLogoLight": "/src/assets/draftlab-logo.png",
+  "defaultOgImage": "/src/assets/logo-extended-blue.svg",
+  "defaultLogoLight": "/src/assets/logo-extended-blue.svg",
   "social": {
-    "bluesky": "https://bsky.app/yourhandle",
-    "mastodon": "https://mastodon.social/@yourhandle",
-    "github": "https://github.com/draftlab-org/scaffold",
-    "linkedin": "https://linkedin.com/company/yourcompany",
-    "x": "https://x.com/yourhandle"
+    "bluesky": "#",
+    "mastodon": "#",
+    "github": "https://github.com/m-lab",
+    "linkedin": "https://www.linkedin.com/company/measurementlab",
+    "x": "https://x.com/measurementlab"
   },
   "footer": {
     "description": "Measurement Lab(M-Lab) is a fiscally sponsored project of [Code for Science & Society (CS&S)](https://www.codeforsociety.org/)",
