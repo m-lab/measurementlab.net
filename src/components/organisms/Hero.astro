@@ -43,7 +43,7 @@ const containerClasses = `${sizes[size]} ${backgrounds[background]} ${className}
 
 <section class={containerClasses}>
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-		<div class={`mx-auto max-w-3xl ${alignments[align]}`}>
+		<div id="heroContent" class={`mx-auto max-w-3xl ${alignments[align]}`}>
 			<!-- Title -->
 			<Heading level={1} class="mb-6">
 				{title}
@@ -52,7 +52,7 @@ const containerClasses = `${sizes[size]} ${backgrounds[background]} ${className}
 			<!-- Subtitle -->
 			{
 				subtitle && (
-					<Text size="xl" class="mb-8 text-gray-600">
+					<Text size="xl" class="text-gray-600 mb-8">
 						{subtitle}
 					</Text>
 				)
