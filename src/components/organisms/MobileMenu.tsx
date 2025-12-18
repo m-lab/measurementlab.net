@@ -29,7 +29,7 @@ export default function MobileMenu({
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="button-base button-primary inline-flex cursor-pointer items-center justify-center rounded-md p-1"
+        className="button-base button-outline inline-flex cursor-pointer items-center justify-center p-1"
         aria-label="Open menu"
       >
         <svg
@@ -56,7 +56,7 @@ export default function MobileMenu({
       >
         <DialogBackdrop
           transition
-          className="fixed inset-0 bg-gray-900/80 transition-opacity duration-300 ease-linear data-closed:opacity-0"
+          className="bg-gray-900/80 fixed inset-0 transition-opacity duration-300 ease-linear data-closed:opacity-0"
         />
 
         <div className="fixed inset-0 flex">
@@ -88,26 +88,26 @@ export default function MobileMenu({
               </button>
             </div>
 
-            <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
-              <div className="flex h-16 shrink-0 items-center">
-                <a
-                  href="/"
-                  className="font-serif text-2xl font-bold text-gray-900 underline decoration-primary-300 decoration-dotted decoration-4 underline-offset-8"
-                >
-                  {siteConfig.name}
-                </a>
-              </div>
+            <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white p-6">
+              <a href="/">
+                <img
+                  src="public/logo-short-blue.svg"
+                  height={84}
+                  width={84}
+                  alt={siteConfig.name}
+                />
+              </a>
               <nav className="flex flex-1 flex-col">
                 <ul className="flex flex-1 flex-col gap-y-7">
                   <li>
-                    <ul className="-mx-2 space-y-4">
+                    <ul className="space-y-4">
                       {links.map((link) => (
                         <li key={link.href}>
                           <a
                             href={link.href}
-                            className={`group flex gap-x-4 text-xl text-black ${
+                            className={`group flex gap-x-4 text-xl text-black no-underline decoration-neutral-400 underline-offset-8 transition hover:underline ${
                               isActive(link.href)
-                                ? 'underline decoration-primary-300 decoration-dotted decoration-4 underline-offset-8'
+                                ? 'underline decoration-black'
                                 : 'no-underline'
                             }`}
                           >

@@ -222,13 +222,13 @@ export default function RichSearch() {
     >
       <DialogBackdrop
         transition
-        className="fixed inset-0 bg-gray-500/25 transition-opacity data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-100 data-leave:ease-in"
+        className="bg-gray-500/25 fixed inset-0 transition-opacity data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-100 data-leave:ease-in"
       />
 
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto p-4 sm:p-6 md:p-20">
         <DialogPanel
           transition
-          className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-lg border-6 border-dotted border-primary-300 bg-white shadow-lg transition-all data-closed:scale-95 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"
+          className="divide-gray-100 mx-auto max-w-xl transform divide-y overflow-hidden border-2 border-primary-700 bg-neutral-200 shadow-lg transition-all data-closed:scale-95 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"
         >
           <Combobox
             onChange={(item: any) => {
@@ -240,13 +240,13 @@ export default function RichSearch() {
             <div className="grid grid-cols-1">
               <ComboboxInput
                 autoFocus
-                className="col-start-1 row-start-1 h-12 w-full bg-white pr-4 pl-11 text-base text-gray-900 outline-hidden placeholder:text-gray-400 sm:text-sm"
+                className="text-gray-900 placeholder:text-gray-400 col-start-1 row-start-1 h-12 w-full bg-white pr-4 pl-11 text-base outline-hidden sm:text-sm"
                 placeholder="Search..."
                 onChange={(event) => setRawQuery(event.target.value)}
                 onBlur={() => setRawQuery('')}
               />
               <MagnifyingGlassIcon
-                class="pointer-events-none col-start-1 row-start-1 ml-4 size-5 self-center text-gray-400"
+                class="text-gray-400 pointer-events-none col-start-1 row-start-1 ml-4 size-5 self-center"
                 aria-hidden="true"
               />
             </div>
@@ -263,7 +263,7 @@ export default function RichSearch() {
                           className="flex items-center gap-3 px-4 py-2"
                         >
                           <div className="size-6 animate-pulse rounded bg-primary-100" />
-                          <div className="h-4 flex-1 animate-pulse rounded bg-gray-100" />
+                          <div className="bg-gray-100 h-4 flex-1 animate-pulse rounded" />
                         </div>
                       ))}
                     </div>
@@ -290,16 +290,16 @@ export default function RichSearch() {
 
                     return (
                       <li key={category.name}>
-                        <h2 className="text-xs font-semibold tracking-wide text-gray-900 uppercase">
+                        <h2 className="text-gray-900 text-xs font-semibold tracking-wide uppercase">
                           {category.name}
                         </h2>
-                        <ul className="-mx-4 mt-2 text-sm text-gray-700">
+                        <ul className="text-gray-700 -mx-4 mt-2 text-sm">
                           {items.map((item) => (
                             <ComboboxOption
                               as="li"
                               key={item.id}
                               value={item}
-                              className="group flex cursor-pointer items-center rounded px-4 py-2 transition-colors select-none hover:bg-primary-100 data-focus:bg-primary-300 data-focus:outline-hidden"
+                              className="group flex cursor-pointer items-center px-4 py-2 transition-colors select-none hover:bg-primary-100 data-focus:bg-primary-300 data-focus:outline-hidden"
                             >
                               {item.imageUrl ? (
                                 <img
@@ -307,13 +307,13 @@ export default function RichSearch() {
                                   alt=""
                                   className={
                                     category.name === 'People'
-                                      ? 'size-6 flex-none rounded-full border-2 border-gray-200 bg-gray-100'
-                                      : 'aspect-video h-6 flex-none rounded border-2 border-gray-200 bg-gray-100 object-cover'
+                                      ? 'size-6 flex-none border border-neutral-300 bg-neutral-100'
+                                      : 'aspect-video h-6 flex-none border border-neutral-300 bg-neutral-100 object-cover'
                                   }
                                 />
                               ) : (
                                 <Icon
-                                  class="size-6 flex-none text-gray-500 group-data-focus:text-gray-700"
+                                  class="text-gray-500 group-data-focus:text-gray-700 size-6 flex-none"
                                   aria-hidden="true"
                                 />
                               )}
@@ -332,13 +332,13 @@ export default function RichSearch() {
             {!loading && rawQuery === '?' && (
               <div className="px-6 py-14 text-center text-sm sm:px-14">
                 <LifebuoyIcon
-                  class="mx-auto size-6 text-gray-400"
+                  class="text-gray-400 mx-auto size-6"
                   aria-hidden="true"
                 />
-                <p className="mt-4 font-semibold text-gray-900">
+                <p className="text-gray-900 mt-4 font-semibold">
                   Help with searching
                 </p>
-                <p className="mt-2 text-gray-600">
+                <p className="text-gray-600 mt-2">
                   Quickly search through site content and get results divided by
                   category. You can also use search modifiers in the footer to
                   search and show all results from a single category.
@@ -354,25 +354,25 @@ export default function RichSearch() {
               ) && (
                 <div className="px-6 py-14 text-center text-sm sm:px-14">
                   <ExclamationTriangleIcon
-                    class="mx-auto size-6 text-gray-400"
+                    class="text-gray-400 mx-auto size-6"
                     aria-hidden="true"
                   />
-                  <p className="mt-4 font-semibold text-gray-900">
+                  <p className="text-gray-900 mt-4 font-semibold">
                     No results found
                   </p>
-                  <p className="mt-2 text-gray-600">
+                  <p className="text-gray-600 mt-2">
                     We couldn't find anything with that term. Please try again.
                   </p>
                 </div>
               )}
 
-            <div className="flex flex-wrap items-center border-t border-gray-100 bg-gray-50 px-4 py-2.5 text-xs text-gray-600">
+            <div className="border-gray-100 bg-gray-50 text-gray-600 flex flex-wrap items-center border-t px-4 py-2.5 text-xs">
               Type{' '}
               {SEARCH_CATEGORIES.map((category) => (
                 <span key={category.name} className="inline-flex items-center">
                   <kbd
                     className={classNames(
-                      'mx-1 flex size-5 items-center justify-center rounded-sm border-2 bg-white font-semibold sm:mx-2',
+                      'mx-1 flex size-5 items-center justify-center border-b border-neutral-300 bg-neutral-50 font-semibold sm:mx-2',
                       rawQuery.startsWith(category.modifier)
                         ? 'border-primary-400 bg-primary-50 text-primary-700'
                         : 'border-gray-300 text-gray-700'
@@ -387,7 +387,7 @@ export default function RichSearch() {
               ))}
               <kbd
                 className={classNames(
-                  'mx-1 flex size-5 items-center justify-center rounded-sm border-2 bg-white font-semibold sm:mx-2',
+                  'mx-1 flex size-5 items-center justify-center border-b border-neutral-300 bg-neutral-50 font-semibold sm:mx-2',
                   rawQuery === '?'
                     ? 'border-primary-400 bg-primary-50 text-primary-700'
                     : 'border-gray-300 text-gray-700'
