@@ -6,6 +6,7 @@ import HeroSection from '@components/sections/HeroSection.astro';
 import PartnersSection from '@components/sections/PartnersSection.astro';
 import PeopleSection from '@components/sections/PeopleSection.astro';
 import RichTextSection from '@components/sections/RichTextSection.astro';
+import SpeedTestSection from '@components/sections/SpeedTestSection.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 
 const { sectionItems } = Astro.props;
@@ -61,6 +62,13 @@ const { sectionItems } = Astro.props;
 						<PartnersSection
 							title={section.title}
 							category={section.category}
+						/>
+					);
+				case 'speed_test':
+					return (
+						<SpeedTestSection
+							title={section.title}
+							description={section.description}
 						/>
 					);
 				default:
