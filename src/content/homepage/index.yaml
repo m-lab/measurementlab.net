@@ -22,6 +22,10 @@ sections:
     title: What we do
     description: M-Lab provides software integrations, dashboards, measurements,
       data APIs, and more to assist in network measurements.
+  - type: speed_test
+    title: Run an NDT test
+    description: Diagnose the performance of your broadband connection with M-Lab's
+      Network Diagnostics Test (NDT).
   - type: flexi
     background:
       bgColor: gray
@@ -35,7 +39,3 @@ sections:
           bgColor: white
           bgType: full
         content: "![](/src/assets/1.png)"
-  - type: speed_test
-    title: Run an NDT test
-    description: Diagnose the performance of your broadband connection with M-Lab's
-      Network Diagnostics Test (NDT).
