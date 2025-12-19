@@ -1,7 +1,9 @@
 ---
 import { getEntry } from 'astro:content';
 import Sections from '@components/sections/Sections.astro';
+import SectionLayout from '@layouts/SectionLayout.astro';
 import PageLayout from '@layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
 
 // Fetch site config from content collection
 const siteConfigEntry = await getEntry('site', 'config');
@@ -21,8 +23,47 @@ if (!homepageEntry) {
 
 const homepage = homepageEntry.data;
 
+console.log('Homepage content:', homepage);
+
 ---
 
 <PageLayout title={siteConfig.title} description={siteConfig.description}>
-	<Sections sectionItems={homepage.sections} />
+	<SectionLayout
+		maxWidth="7xl"
+		zigzag="primary-dark"
+	>
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center justify-between">
+			<div class="">
+				<h1 class="text-4xl font-semi-bold text-white leading-[140%]">
+					{homepage.title}
+				</h1>
+			</div>
+
+			{homepage.backgroundImage && (
+				<div class="max-w-md mx-auto">
+					<Image
+						src={homepage.backgroundImage}
+						alt="Homepage Background"
+						class="w-full h-auto"
+					/>
+				</div>
+			)}
+		</div>
+
+		{homepage.stats && homepage.stats.length > 0 && (
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+				{homepage.stats.map((stat) => (
+					<div class="flex flex-col items-center text-start">
+						<div class="text-3xl font-bold mb-1">
+							{stat.value}
+						</div>
+						<div class="text-xs text-gray-400">
+							{stat.label}
+						</div>
+					</div>
+				))}
+			</div>
+		)}
+	</SectionLayout>
+	<!-- <Sections sectionItems={homepage.sections} /> -->
 </PageLayout>
