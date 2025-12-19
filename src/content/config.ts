@@ -228,30 +228,6 @@ const categoriesCollection = defineCollection({
   }),
 });
 
-const homepageCollection = defineCollection({
-  type: 'data',
-  schema: ({ image }) => {
-    const homepageSectionsSchema = z.discriminatedUnion('type', [
-      z.object({
-        type: z.literal('homepage_hero'),
-        title: z.string(),
-        backgroundImage: image().optional(),
-        stats: z.array(
-          z.object({
-            label: z.string(),
-            value: z.string(),
-          })
-        ).optional(),
-      }),
-      // Add more homepage section types as needed
-    ]);
-
-    return z.object({
-      sections: z.array(homepageSectionsSchema),
-    });
-  },
-});
-
 export const collections = {
   people: peopleCollection,
   pages: pagesCollection,
@@ -260,5 +236,4 @@ export const collections = {
   navigation: navigationCollection,
   partners: partnersCollection,
   categories: categoriesCollection,
-  homepage: homepageCollection,
 };
