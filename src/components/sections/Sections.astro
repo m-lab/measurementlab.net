@@ -13,78 +13,71 @@ const { sectionItems } = Astro.props;
 ---
 
 {
-  sectionItems.map((section: any) => {
-    const sectionLabel = `section > ${section.type}`;
+	sectionItems.map((section: any) => {
+		const sectionLabel = `section > ${section.type}`;
 
-    const content = (() => {
-      switch (section.type) {
-        case 'button':
-          return (
-            <ButtonSection
-              title={section.title}
-              buttons={section.buttons}
-            />
-          );
-        case 'flexi':
-          return (
-            <FlexiSection
-              title={section.title}
-              description={section.description}
-              sections={section.sections}
-            />
-          );
-        case 'hero':
-          return (
-            <HeroSection
-              title={section.title}
-              subtitle={section.subtitle}
-              background={section.background}
-            />
-          );
-        case 'richText':
-          return (
-            <RichTextSection
-              background={section.background}
-              content={section.content}
-            />
-          );
-        case 'card':
-          return (
-            <CardSection
-              title={section.title}
-              description={section.description}
-              cards={section.cards}
-              buttons={section.buttons}
-            />
-          );
-        case 'people':
-          return (
-            <PeopleSection
-              category={section.category}
-            />
-          );
-        case 'partners':
-          return (
-            <PartnersSection
-              title={section.title}
-              category={section.category}
-            />
-          );
-        default:
-          return null;
-      }
-    })();
+		const content = (() => {
+			switch (section.type) {
+				case 'button':
+					return (
+						<ButtonSection title={section.title} buttons={section.buttons} />
+					);
+				case 'flexi':
+					return (
+						<FlexiSection
+							title={section.title}
+							description={section.description}
+							sections={section.sections}
+						/>
+					);
+				case 'hero':
+					return (
+						<HeroSection
+							title={section.title}
+							subtitle={section.subtitle}
+							background={section.background}
+						/>
+					);
+				case 'richText':
+					return (
+						<RichTextSection
+							background={section.background}
+							content={section.content}
+						/>
+					);
+				case 'card':
+					return (
+						<CardSection
+							title={section.title}
+							description={section.description}
+							cards={section.cards}
+							buttons={section.buttons}
+						/>
+					);
+				case 'people':
+					return <PeopleSection category={section.category} />;
+				case 'partners':
+					return (
+						<PartnersSection
+							title={section.title}
+							category={section.category}
+						/>
+					);
+				default:
+					return null;
+			}
+		})();
 
-    return (
-      <SectionLayout
-        bgColor={section.background?.bgColor}
-        bgType={section.background?.bgType}
-        bgImage={section.backgroundImage}
-        class={section.class}
-        sectionLabel={sectionLabel}
-      >
-        {content}
-      </SectionLayout>
-    );
-  })
+		return (
+			<SectionLayout
+				bgColor={section.background?.color}
+				bgType={section.background?.bgType}
+				bgImage={section.background?.image}
+				class={section.class}
+				sectionLabel={sectionLabel}
+			>
+				{content}
+			</SectionLayout>
+		);
+	})
 }

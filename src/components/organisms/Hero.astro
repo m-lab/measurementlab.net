@@ -1,6 +1,5 @@
 ---
-import Heading from '@components/atoms/Heading.astro';
-import Text from '@components/atoms/Text.astro';
+import HouseCard from '@components/molecules/HouseCard.astro';
 import type { ImageMetadata } from 'astro';
 
 export interface Props {
@@ -43,10 +42,10 @@ const getBackgroundClasses = () => {
   // Base color classes based on style (light/dark) and color
   const colorClasses = {
     light: {
-      primary: 'bg-primary-50',
-      secondary: 'bg-secondary-50',
-      supporting1: 'bg-supporting1-50',
-      supporting2: 'bg-supporting2-50',
+      primary: 'bg-primary-100',
+      secondary: 'bg-secondary-100',
+      supporting1: 'bg-supporting1-100',
+      supporting2: 'bg-supporting2-100',
     },
     dark: {
       primary: 'bg-primary-900 text-white',
@@ -62,9 +61,10 @@ const getBackgroundClasses = () => {
 const containerClasses = `${sizes[size]} ${getBackgroundClasses()} ${className}`;
 ---
 
-<section class={containerClasses}>
+<section id="heroContent" class={containerClasses}>
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-		<div id="heroContent" class={`mx-auto max-w-3xl ${alignments[align]}`}>
+		<!-- <HouseCard title={title} description={subtitle} /> -->
+		<div class={`mx-auto max-w-3xl ${alignments[align]}`}>
 			<!-- Title -->
 			<h1 class="mb-6">
 				{title}
@@ -87,3 +87,9 @@ const containerClasses = `${sizes[size]} ${getBackgroundClasses()} ${className}`
 		</div>
 	</div>
 </section>
+
+<style>
+	#heroContent {
+		mask: conic-gradient(from 45deg at 80px 80px, #000 75%, #0000 0) -80px;
+	}
+</style>

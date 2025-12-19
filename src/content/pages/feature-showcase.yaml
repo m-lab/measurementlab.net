@@ -8,7 +8,6 @@ description: >-
   template.
 sections:
   - type: richText
-    background: primary
     content: |-
       # Rich Text
 
@@ -33,7 +32,6 @@ sections:
     description: Weeeee
     sections:
       - type: richText
-        background: primary
         content: Some text!
       - type: button
         title: Buttons

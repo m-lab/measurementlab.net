@@ -4,7 +4,6 @@ heroImage: /src/assets/backgrounds/anna-magenta-YELG0ZVK5yw-unsplash.jpg
 permalink: what-we-do
 sections:
   - type: richText
-    background: primary
     content: rich text content
   - type: button
     background:
@@ -23,5 +22,4 @@ sections:
     title: Infrastructure
     sections:
       - type: richText
-        background: primary
         content: A global fleet of virtual and physical servers are a fundamental part of how we accomplish high quality and performance of measuring the Internet..

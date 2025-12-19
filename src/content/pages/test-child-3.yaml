@@ -3,5 +3,4 @@ permalink: test-child-3
 
 sections:
   - type: richText
-    background: primary
     content: asd
