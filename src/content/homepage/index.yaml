@@ -24,7 +24,7 @@ sections:
       data APIs, and more to assist in network measurements.
   - type: speed_test
     background:
-      bgColor: white
+      bgColor: primary-dark
       bgType: full
     title: Run an NDT test
     description: Diagnose the performance of your broadband connection with M-Lab's
