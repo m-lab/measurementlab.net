@@ -57,7 +57,7 @@ Now we’re ready to add data from M-Lab. That data could take many forms, from 
 
 To obtain the common latitude and longitude coordinates for all tests in 2020 submitted by Marylanders in Baltimore City, I used BigQuery to search M-Lab’s NDT data. If you’re interested in querying our data yourself, sign up your Google account to our access group by following the [M-Lab Quickstart guide](/src/assets/quickstart). We have some [documentation online](/src/assets/data/docs) as well, and you can obtain some sample queries from my [Baltimore Data Week slide deck](https://bit.ly/mlab-baltimore-data-week-2020-07-23). Here is the query I used, which returns a total of 50 common latitude and longitude points:
 
-```~sql
+```sql
 WITH dl AS (
   SELECT client.geo.latitude AS latitude, client.geo.longitude AS longitude
   FROM `measurement-lab.ndt.unified_downloads`
@@ -98,7 +98,7 @@ As the analysis above shows, aggregating NDT data by geographic areas this small
 
 In BigQuery, I used a more complex query that uses GIS functions to aggregate statistics for each community area. The query below calculates the [5 number summary](https://en.wikipedia.org/wiki/Five-number_summary) for each community area between Jan 1 and June 30, 2020. A subset of the results for download tests are in the table following the query.
 
-```~sql
+```sql
 WITH
 bmore_communities AS (
   SELECT * FROM `measurement-lab.geographies.baltimore_community_statistical_areas`

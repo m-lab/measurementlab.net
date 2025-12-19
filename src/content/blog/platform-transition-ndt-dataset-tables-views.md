@@ -47,7 +47,7 @@ The transition to the new `ndt-server` completed is an accomplishment that our t
 
 To see the impact of this transition in test counts, we can run a query to count the number of tests in each table per day over the timeline of the platform transition, roughly 2019-07-01 through 2019-11-20:
 
-```~sql
+```sql
 #standardSQL
 WITH
 ndt_web100 AS (
@@ -79,7 +79,7 @@ To illustrate the changes brought on by the transition to `tcp_info` and the cur
 
 **Upload results using previous `web100` BigQuery views:**
 
-```~sql
+```sql
 #standardSQL
 SELECT
   test_id,
@@ -105,7 +105,7 @@ ORDER BY partition_date ASC, log_time ASC
 <br>
 **Equivalent Query for Upload results using `ndt5` and `tcpinfo` BigQuery views:**
 
-```~sql
+```sql
 #standardSQL
 SELECT
   ndt5.ParseInfo.TaskFileName AS test_id,
@@ -135,7 +135,7 @@ ORDER BY ndt5.partition_date ASC, ndt5.log_time ASC
 <br>
 **Download results using previous `web100` BigQuery views:**
 
-```~sql
+```sql
 #standardSQL
 SELECT
   test_id,
@@ -162,7 +162,7 @@ ORDER BY partition_date ASC, log_time ASC
 <br>
 **Equivalent Query for Download results using `ndt5` and `tcpinfo` BigQuery views:**
 
-```~sql
+```sql
 #standardSQL
 SELECT
   ndt5.ParseInfo.TaskFileName AS test_id,

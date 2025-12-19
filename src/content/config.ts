@@ -71,7 +71,13 @@ const pagesCollection = defineCollection({
         type: z.literal('hero'),
         title: z.string(),
         subtitle: z.string().optional(),
-        backgroundImage: image().optional(),
+        background: z.object({
+          style: z.enum(['light', 'dark']).default('light'),
+          color: z
+            .enum(['primary', 'secondary', 'supporting1', 'supporting2'])
+            .default('primary'),
+          image: image().optional(),
+        }),
       }),
       SectionCommonSchema.extend({
         type: z.literal('richText'),

@@ -7,6 +7,9 @@ sections:
     subtitle:
       Connect, collaborate, and grow with fellow developers from around the
       world
+    background:
+      style: light
+      color: primary
   - type: richText
     background:
       bgColor: white

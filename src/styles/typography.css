@@ -1,6 +1,7 @@
 @theme {
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-ibm-plex-serif);
+  --font-serif: var(--font-inter);
+  --font-mono: var(--font-ibm-plex-mono);
 
   --text-sm: 0.625rem;
   --text-base: 0.875rem;
@@ -81,6 +82,13 @@
 
   p {
     @apply text-sm md:text-base;
+  }
+
+  body {
+    @apply prose-code:before:hidden prose-code:after:hidden;
+  }
+  code {
+    @apply rounded-sm border border-neutral-300 bg-neutral-200 px-1;
   }
 
   /* applies default link styling to "a" components that do not have the "data-component" property,

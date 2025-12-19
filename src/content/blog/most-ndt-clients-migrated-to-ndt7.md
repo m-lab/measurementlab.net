@@ -53,7 +53,7 @@ You can access the NDT unified views in BigQuery
 
 ✅ **As the migration advances, there will be less ndt5 data and more ndt7 data**
 
-```~sql
+```sql
 SELECT date, IF(node._Instruments="tcpinfo", "ndt5", node._Instruments) AS instruments, COUNT(*) AS total
 FROM `measurement-lab.ndt.unified_downloads`
 WHERE date > date("2020-07-01") AND date < date("2020-08-24")
@@ -71,7 +71,7 @@ In our entry criteria analysis, we used scatter plots comparing ndt5 and ndt7 pe
 
 The left plot reports client download bandwidth in Mbps. The right plot reports client minRTT in milliseconds. In both plots, ndt5 metrics are plotted using the x-axis, and ndt7 metrics using the y-axis. Samples are restricted to clients having both 1 measurement before and after the pilot migration and minRTT measurements below 25 msec. In the minRTT subplot, ndt5 clients are much more likely to have higher minRTT values than ndt7 clients.
 
-```~sql
+```sql
 -- Compare ndt5 measurements during the week before the 10% ndt7 pilot to ndt7
 -- measurements during the week after the 10% pilot.
 WITH ndt7 AS (

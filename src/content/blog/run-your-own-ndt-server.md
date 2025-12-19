@@ -71,7 +71,7 @@ Once the server is up, then also demo how to run NDT client tests from a Docker 
   - This command saves these files: `certs/cert.pem` and `certs/key.pem`
 - Pull and run the latest `ndt-server` image from Measurement Lab's dockerhub:
 
-```~bash
+```bash
 docker run -d --network=host                    \
            --volume `pwd`/certs:/certs:ro       \
            --volume `pwd`/datadir:/datadir      \
@@ -95,7 +95,7 @@ Here we're starting the container in daemon mode. You can also To see the contai
 
 - Get the container's ID:
 
-```~bash
+```bash
 docker ps
 CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS              PORTS               NAMES
 45fec501b4ec        measurementlab/ndt   "/start.sh -cert /ce…"   3 hours ago         Up 3 hours                              lucid_cartwright9
@@ -115,7 +115,7 @@ If you're following the container logs, visit the URLs above, run each test, and
 
 If you want to have the container start automatically when dockerd starts (always run ndt-server across reboots), ensure your docker daemon is enabled `sudo systemctl enable docker`, then use the `--restart=always` flag with docker:
 
-```~bash
+```bash
 docker run -d --restart=always       \
            --network=host              \
            --publish 443:4443          \
@@ -126,7 +126,7 @@ docker run -d --restart=always       \
 
 Test data is saved in the `datadir` you identified when running the container. When running `ndt-server` standalone, each test file is saved in JSON format for `ndt5` protocol tests, and in compressed JSON for `ndt7` protocol tests. The `ndt-server` will automatically archive tests by protocol, year, month, and day using the folder structure below:
 
-```~bash
+```bash
 datadir/
 ├── ndt5
 │   └── 2019
@@ -166,7 +166,7 @@ You can also run `ndt-server` with the same "sidecar" services that M-Lab runs o
 
 Then run our "fullstack" container, `measurementlab/ndt`:
 
-```~bash
+```bash
 docker run --network=host                \
            --volume `pwd`/certs:/certs:ro   \
            --volume `pwd`/datadir:/var/spool/ndt  \
@@ -187,7 +187,7 @@ docker run --network=host                \
 
 When running `ndt-server` with `tcp_info`, `traceroute`, `uuid`, and `packet-headers`, additional directories are saved in your data folder.
 
-```~bash
+```bash
 datadir/
 ├── ndt5
 │   └── 2019

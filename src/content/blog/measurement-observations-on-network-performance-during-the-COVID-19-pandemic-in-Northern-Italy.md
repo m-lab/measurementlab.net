@@ -69,7 +69,7 @@ Our data analysis involved NDT measurements collected between **1st January 2020
 
 To fetch and analyze NDT measurements, we used [M-Lab’s public BigQuery tables](/src/assets/data/). We ran the following query to extract information pertaining to the upload speed and a similar query to extract download information.
 
-```~sql
+```sql
 -- pull the names of the italian provinces
 -- note: the global_gadm36_2 table isn’t publicly advertised. It was pulled
 -- from https://gadm.org and allows us to use BigQuery's GIS functions to

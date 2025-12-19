@@ -16,6 +16,7 @@ categories:
   - News
 publishedDate: 2022-02-16
 ---
+
 Back in 2019, I wrote about how to install the open source `ndt-server` that
 M-Lab uses, on a server of your own. Our goal is that others can use M-Lab's
 tools to measure their own networks. This post is an update, with a couple more
@@ -29,7 +30,7 @@ replicate what our engineering team uses, without having to install and upgrade
 to a non-stock kernel in order to enable TCP BBR.
 
 On our servers, multiple Docker containers that serve each experiment and core
-service are  managed by Kubernetes, but on our self-provisioned `ndt-server`
+service are managed by Kubernetes, but on our self-provisioned `ndt-server`
 we'll just install the base OS, install a TLS/SSL certificate, and then run
 `ndt-server` using the full stack Docker image provided on our Dockerhub. If you
 give this demo a try yourself and need help, reach out to us at
@@ -63,15 +64,15 @@ our servers: `tcp_info`, `traceroute`, `uuid`, and `packet-headers`.
 Once the server is up, then also demo how to run NDT client tests from a Docker
 container to your local server.
 
-* Next, create folders for your certificates and test data: `install -d certs
-  datadir`
-* You can generate your own self-signed certificates, or use a small script
+- Next, create folders for your certificates and test data: `install -d certs
+datadir`
+- You can generate your own self-signed certificates, or use a small script
   included in the `ndt-server` repository,
   [gen_local_test_certs.bash](https://github.com/m-lab/ndt-server/blob/master/gen_local_test_certs.bash).
-  * Save the generated certificates in the `certs/` folder.
-  * If you use `./gen_local_test_certs.bash`, two files are automatically saved:
-    `certs/cert.pem` and `certs/key.pem`  
-* If your server is using a firewall, ensure that the ports (see Docker command
+  - Save the generated certificates in the `certs/` folder.
+  - If you use `./gen_local_test_certs.bash`, two files are automatically saved:
+    `certs/cert.pem` and `certs/key.pem`
+- If your server is using a firewall, ensure that the ports (see Docker command
   below) used by your `ndt-server` are open.
 
 Then run the "fullstack" ndt server container, `measurementlab/ndt`, image from
@@ -79,7 +80,7 @@ Measurement Lab's Dockerhub. Of course, substitute the IP address of your server
 in the command below, and change the ports if desired. Please note that some
 components of the ndt fullstack image must be run as root.
 
-```~bash
+```bash
 sudo docker run -d --network=bridge                \
            -p 8080:8080 -p 4443:4443               \
            -p 3001:3001 -p 3002:3002 -p 3010:3010  \
@@ -95,6 +96,7 @@ sudo docker run -d --network=bridge                \
            -ndt5_addr :3001                        \
            -ndt5_wss_addr :3010
 ```
+
 Here we're starting the container in daemon mode, which results in a container
 ID getting printed to the terminal. For example:
 `2820cd8907550a55fdb5663b6b5718184359d86ab371f277b8f2e8b49fa6562e`.
@@ -119,8 +121,8 @@ We can use the addresses from our container logs to run tests from other clients
 using the available NDT protocols. We'll do that next using two command line
 client libraries:
 
-* [ndt7-client-go](https://github.com/m-lab/ndt7-client-go)
-* [ndt5-client-go](https://github.com/m-lab/ndt5-client-go)
+- [ndt7-client-go](https://github.com/m-lab/ndt7-client-go)
+- [ndt5-client-go](https://github.com/m-lab/ndt5-client-go)
 
 We are using these official command line client libraries, because we include
 them in our [Murakami software](https://github.com/m-lab/murakami), which makes
@@ -129,13 +131,13 @@ Raspberry Pi.
 
 Here are the commands you can use to test the various NDT protocols:
 
-* ndt7, using a TLS encrypted secure websocket: `ndt7-client --no-verify -scheme
-  wss --server 10.10.20.15:4443`
-* ndt7, using an unencrypted websocket: `ndt7-client -scheme ws --server 10.10.20.15:8080`
-* ndt7, plaintext: `ndt7-client -server 10.10.20.15:8080`
-* ndt5, plaintext: `ndt5-client -protocol ndt5 -server 10.10.20.15`
-* ndt5, using a secure websocket: `ndt5-client -protocol ndt5+wss -server 10.10.20.15`
- 
+- ndt7, using a TLS encrypted secure websocket: `ndt7-client --no-verify -scheme
+wss --server 10.10.20.15:4443`
+- ndt7, using an unencrypted websocket: `ndt7-client -scheme ws --server 10.10.20.15:8080`
+- ndt7, plaintext: `ndt7-client -server 10.10.20.15:8080`
+- ndt5, plaintext: `ndt5-client -protocol ndt5 -server 10.10.20.15`
+- ndt5, using a secure websocket: `ndt5-client -protocol ndt5+wss -server 10.10.20.15`
+
 If you're following the container logs in one terminal, and then run each test
 from another computer in your network, you can watch the logs on the server side
 as the tests are conducted.
@@ -145,20 +147,20 @@ as the tests are conducted.
 When running the full stack `ndt-server`, additional directories are saved in
 your data folder, `datadir`:.
 
-```~bash
+```bash
 $ ls datadir/
 pcap  tcpinfo  traceroute
 ```
 
-* NDT test results are saved in `tcpinfo`
-* [Packet header captures](https://www.measurementlab.net/tests/pcap/) for each
+- NDT test results are saved in `tcpinfo`
+- [Packet header captures](https://www.measurementlab.net/tests/pcap/) for each
   test are saved in `pcap`
-* [Traceroutes](https://www.measurementlab.net/tests/traceroute/) from your
+- [Traceroutes](https://www.measurementlab.net/tests/traceroute/) from your
   server back to the IP address of each client initiating a test are saved in `traceroute`
 
 Let's look at some NDT tests:
 
-```~bash
+```bash
 $ ls datadir/tcpinfo/2021/10/28/
 ndt_1635357954_0000000000000021.00000.jsonl.zst
 ndt_1635357954_0000000000000021.00001.jsonl.zst
@@ -180,7 +182,7 @@ has [provided](https://github.com/m-lab/tcp-info/tree/master/cmd/csvtool#readme)
 a tool called `csvtool`:
 
 ```
-go get github.com/m-lab/tcp-info/cmd/csvtool 
+go get github.com/m-lab/tcp-info/cmd/csvtool
 docker run -v $PWD:/data --rm --entrypoint /bin/zstd -it measurementlab/tcp-info:v1.5.3 -cd /
 data/ndt_1635357954_0000000000000032.00000.jsonl.zst | ~/bin/csvtool
 ```
@@ -256,7 +258,7 @@ Copy or move these files into the `certs/` folder on your server.
 And finally, refer to the `.crt` and `.key` filenames and your server's FQDN in
 the `ndt-server` Docker command:
 
-```~bash
+```bash
 docker run -d --network=host                \
            --user `id -u`:`id -g`           \
            --volume `pwd`/certs:/certs:ro   \
@@ -279,8 +281,8 @@ Test file names will now include your domain name as well. For example: `ndt.<my
 Finally, you may want to have the container start automatically when Docker
 starts so the server always starts when the server reboots or restarts.
 
-* Enable Docker: `sudo systemctl enable docker`'
-* Then use the `--restart=always` flag with your Docker command using the
+- Enable Docker: `sudo systemctl enable docker`'
+- Then use the `--restart=always` flag with your Docker command using the
   `--restart=always` flag in the Docker command above
 
 ## Wrap up
