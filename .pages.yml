@@ -296,7 +296,7 @@ content:
     view:
       fields: [title, description]
       primary: title
-    fields:
+    fields: &page_fields
       - name: title
         label: Page Title
         type: string
@@ -354,6 +354,13 @@ content:
           - name: flexi
             label: Flexi Section
             component: flexi_section
+
+  # Homepage collection (extends pages)
+  - name: homepage
+    label: Homepage
+    type: file
+    path: src/content/homepage/index.yaml
+    fields: *page_fields
 
   # People collection
   - name: people

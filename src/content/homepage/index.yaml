@@ -1,0 +1,9 @@
+title: M-Lab Homepage
+description: Measurement Lab provides open internet measurement data
+sections:
+  - type: hero
+    title: Welcome to M-Lab
+    subtitle: Open Internet Measurement
+    background:
+      style: light
+      color: primary
