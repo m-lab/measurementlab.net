@@ -228,6 +228,22 @@ const categoriesCollection = defineCollection({
   }),
 });
 
+const homepageCollection = defineCollection({
+  type: 'data',
+  schema: ({ image }) => 
+    z.object({
+      title: z.string(),
+      backgroundImage: image().optional(),
+      stats: z.array(
+        z.object({
+          label: z.string(),
+          value: z.string(),
+        })
+      )
+    })
+  },
+);
+
 export const collections = {
   people: peopleCollection,
   pages: pagesCollection,
@@ -236,4 +252,5 @@ export const collections = {
   navigation: navigationCollection,
   partners: partnersCollection,
   categories: categoriesCollection,
+  homepage: homepageCollection,
 };
