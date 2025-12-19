@@ -299,6 +299,20 @@ components:
         label: Description
         type: rich-text
 
+  featured_partners_section:
+    type: object
+    fields:
+      - name: background
+        label: Section Background
+        component: background_select
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: rich-text
+
 # Content collections
 content:
   # Pages collection
@@ -431,6 +445,10 @@ content:
           - name: speed_test
             label: Speed Test Section
             component: speed_test_section
+
+          - name: featured_partners
+            label: Featured Partners Section
+            component: featured_partners_section
 
   # People collection
   - name: people

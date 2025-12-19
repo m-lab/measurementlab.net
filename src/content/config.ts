@@ -110,6 +110,11 @@ const createSchemas = (image: ImageFunction) => {
       title: z.string(),
       description: z.string().optional(),
     }),
+    SectionCommonSchema.extend({
+      type: z.literal('featured_partners'),
+      title: z.string(),
+      description: z.string().optional(),
+    }),
   ]);
 
   const flexiSectionSchema = SectionCommonSchema.extend({
