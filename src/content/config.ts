@@ -104,7 +104,12 @@ const createSchemas = (image: ImageFunction) => {
       title: z.string(),
       category: z.string().optional(),
     }),
-    // Add more section types as needed
+    // homepage-specific section types
+    SectionCommonSchema.extend({
+      type: z.literal('speed_test'),
+      title: z.string(),
+      description: z.string().optional(),
+    }),
   ]);
 
   const flexiSectionSchema = SectionCommonSchema.extend({
