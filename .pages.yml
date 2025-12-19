@@ -288,6 +288,9 @@ components:
   speed_test_section:
     type: object
     fields:
+      - name: background
+        label: Section Background
+        component: background_select
       - name: title
         label: Title
         type: string
