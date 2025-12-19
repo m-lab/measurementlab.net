@@ -43,98 +43,101 @@ const createSchemas = (image: ImageFunction) => {
     image: image().optional(),
   });
 
+  const SectionCommonSchema = z.object({
+    background: z
+      .object({
+        color: z
+          .enum([
+            'white',
+            'gray',
+            'primary-light',
+            'primary-mediumm',
+            'primary-dark',
+          ])
+          .default('white'),
+        image: image().optional(),
+      })
+      .optional(),
+  });
+
+  // Sections defined as a union type so they can be used as variable components
+  const sectionsSchema = z.discriminatedUnion('type', [
+    SectionCommonSchema.extend({
+      type: z.literal('hero'),
+      title: z.string(),
+      subtitle: z.string().optional(),
+      zigzag: z
+        .enum([
+          'primary-light',
+          'primary-dark',
+          'secondary-light',
+          'secondary-dark',
+          'supporting1-light',
+          'supporting1-dark',
+          'supporting2-light',
+          'supporting2-dark',
+        ])
+        .optional(),
+    }),
+    SectionCommonSchema.extend({
+      type: z.literal('richText'),
+      content: z.string(),
+    }),
+    SectionCommonSchema.extend({
+      type: z.literal('button'),
+      title: z.string().optional(),
+      buttons: z.array(buttonSchema).optional(),
+    }),
+    SectionCommonSchema.extend({
+      type: z.literal('card'),
+      title: z.string(),
+      description: z.string().optional(),
+      cards: z.array(cardSchema).optional(),
+      buttons: z.array(buttonSchema).optional(),
+    }),
+    SectionCommonSchema.extend({
+      type: z.literal('people'),
+      category: z.string().optional(),
+    }),
+    SectionCommonSchema.extend({
+      type: z.literal('partners'),
+      title: z.string(),
+      category: z.string().optional(),
+    }),
+    // Add more section types as needed
+  ]);
+
+  const flexiSectionSchema = SectionCommonSchema.extend({
+    type: z.literal('flexi'),
+    title: z.string(),
+    description: z.string().optional(),
+    sections: z.array(sectionsSchema),
+  });
+
+  const combinedSectionsSchema = z
+    .union([...sectionsSchema.options, flexiSectionSchema])
+    .array()
+    .optional();
+
   return {
     buttonSchema,
     cardSchema,
     personSchema,
     partnerSchema,
+    sectionsSchema: combinedSectionsSchema,
   };
 };
 
 const pagesCollection = defineCollection({
   type: 'data',
   schema: ({ image }) => {
-    const { buttonSchema, cardSchema } = createSchemas(image);
-
-    const SectionCommonSchema = z.object({
-      background: z
-        .object({
-          color: z
-            .enum([
-              'white',
-              'gray',
-              'primary-light',
-              'primary-mediumm',
-              'primary-dark',
-            ])
-            .default('white'),
-          image: image().optional(),
-        })
-        .optional(),
-    });
-
-    // Sections defined as a union type so they can be used as variable components
-    const sectionsSchema = z.discriminatedUnion('type', [
-      SectionCommonSchema.extend({
-        type: z.literal('hero'),
-        title: z.string(),
-        subtitle: z.string().optional(),
-        zigzag: z
-          .enum([
-            'primary-light',
-            'primary-dark',
-            'secondary-light',
-            'secondary-dark',
-            'supporting1-light',
-            'supporting1-dark',
-            'supporting2-light',
-            'supporting2-dark',
-          ])
-          .optional(),
-      }),
-      SectionCommonSchema.extend({
-        type: z.literal('richText'),
-        content: z.string(),
-      }),
-      SectionCommonSchema.extend({
-        type: z.literal('button'),
-        title: z.string().optional(),
-        buttons: z.array(buttonSchema).optional(),
-      }),
-      SectionCommonSchema.extend({
-        type: z.literal('card'),
-        title: z.string(),
-        description: z.string().optional(),
-        cards: z.array(cardSchema).optional(),
-        buttons: z.array(buttonSchema).optional(),
-      }),
-      SectionCommonSchema.extend({
-        type: z.literal('people'),
-        category: z.string().optional(),
-      }),
-      SectionCommonSchema.extend({
-        type: z.literal('partners'),
-        title: z.string(),
-        category: z.string().optional(),
-      }),
-      // Add more section types as needed
-    ]);
-
-    const flexiSectionSchema = SectionCommonSchema.extend({
-      type: z.literal('flexi'),
-      title: z.string(),
-      description: z.string().optional(),
-      sections: z.array(sectionsSchema),
-    });
+    const { sectionsSchema } = createSchemas(image);
 
     return z.object({
       title: z.string(),
       description: z.string().optional(),
       heroImage: image().optional(),
-      sections: z
-        .union([...sectionsSchema.options, flexiSectionSchema])
-        .array()
-        .optional(),
+      sections: sectionsSchema,
     });
   },
 });
@@ -230,8 +233,10 @@ const categoriesCollection = defineCollection({
 
 const homepageCollection = defineCollection({
   type: 'data',
-  schema: ({ image }) => 
-    z.object({
+  schema: ({ image }) => {
+    const { sectionsSchema } = createSchemas(image);
+
+    return z.object({
       title: z.string(),
       backgroundImage: image().optional(),
       stats: z.array(
@@ -239,10 +244,11 @@ const homepageCollection = defineCollection({
           label: z.string(),
           value: z.string(),
         })
-      )
-    })
+      ),
+      sections: sectionsSchema,
+    });
   },
-);
+});
 
 export const collections = {
   people: peopleCollection,
