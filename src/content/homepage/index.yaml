@@ -1,5 +1,4 @@
-title: Measure the Internet.Save the data.Make it universally accessible and
-  helpful.
+title: Measure the Internet.Save the data.Make it universally accessible and helpful.
 backgroundImage: /src/assets/Group 55-1.png
 stats:
   - label: Internet measurement tests
@@ -16,3 +15,10 @@ sections:
       bgColor: gray
       bgType: full
     title: Latest news
+  - type: card
+    background:
+      bgColor: white
+      bgType: full
+    title: What we do
+    description: M-Lab provides software integrations, dashboards, measurements,
+      data APIs, and more to assist in network measurements.
