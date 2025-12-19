@@ -7,8 +7,7 @@ sections:
     content: rich text content
   - type: button
     background:
-      bgColor: white
-      bgType: full
+      color: white
     title: Buttons
     buttons:
       - variant: primary
@@ -17,8 +16,7 @@ sections:
         href: google.com
   - type: flexi
     background:
-      bgColor: gray
-      bgType: full
+      color: gray
     title: Infrastructure
     sections:
       - type: richText

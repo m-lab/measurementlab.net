@@ -84,9 +84,10 @@ const { sectionItems } = Astro.props;
 
 		return (
 			<SectionLayout
-				bgImage={section.background}
+				bgImage={section.background?.image}
 				class={section.class}
 				sectionLabel={sectionLabel}
+				bgColor={section.background?.color}
 			>
 				{content}
 			</SectionLayout>
