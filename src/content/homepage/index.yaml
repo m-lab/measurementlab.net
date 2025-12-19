@@ -35,3 +35,7 @@ sections:
           bgColor: white
           bgType: full
         content: "![](/src/assets/1.png)"
+  - type: speed_test
+    title: Run an NDT test
+    description: Diagnose the performance of your broadband connection with M-Lab's
+      Network Diagnostics Test (NDT).
