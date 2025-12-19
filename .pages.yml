@@ -288,9 +288,6 @@ components:
   speed_test_section:
     type: object
     fields:
-      - name: background
-        label: Section Background
-        component: background_select
       - name: title
         label: Title
         type: string
@@ -427,16 +424,10 @@ content:
           - name: flexi
             label: Flexi Section
             component: flexi_section
-            
+
           - name: speed_test
             label: Speed Test Section
             component: speed_test_section
-
-          
-          # Add homepage-specific blocks below:
-          # - name: customHomepageSection
-          #   label: Custom Homepage Section
-          #   component: custom_homepage_section
 
   # People collection
   - name: people
