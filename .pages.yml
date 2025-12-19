@@ -284,6 +284,21 @@ components:
         type: string
         description: Filter partners by category (e.g. "sponsor", "technology"). Leave empty to show all partners.
 
+# Homepage-specific components
+  speed_test_section:
+    type: object
+    fields:
+      - name: background
+        label: Section Background
+        component: background_select
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: rich-text
+
 # Content collections
 content:
   # Pages collection
@@ -326,7 +341,7 @@ content:
         required: true
         blockKey: type
         description: Add and arrange page sections in any order
-        blocks: &page_section_blocks
+        blocks:
           - name: hero
             label: Hero Section
             component: hero_section
@@ -355,7 +370,6 @@ content:
             label: Flexi Section
             component: flexi_section
 
-  # Homepage collection (extends pages)
   - name: homepage
     label: Homepage
     type: file
@@ -390,7 +404,35 @@ content:
         blockKey: type
         description: Add and arrange page sections in any order
         blocks:
-          *page_section_blocks
+          - name: richText
+            label: Rich Text Section
+            component: richtext_section
+          
+          - name: button
+            label: Button Section
+            component: button_section
+
+          - name: card
+            label: Card Section
+            component: card_section
+
+          - name: people
+            label: People Section
+            component: people_section
+
+          - name: partners
+            label: Partners Section
+            component: partners_section
+          
+          - name: flexi
+            label: Flexi Section
+            component: flexi_section
+            
+          - name: speed_test
+            label: Speed Test Section
+            component: speed_test_section
+
+          
           # Add homepage-specific blocks below:
           # - name: customHomepageSection
           #   label: Custom Homepage Section
