@@ -14,6 +14,7 @@ export interface Props {
 	bgImage?: ImageMetadata;
 	sectionLabel?: string;
 	zigzag?: string
+	zigzagSize?: { left: number; right: number };
 }
 
 const {
@@ -24,7 +25,8 @@ const {
 	bgColor = 'white',
   bgImage,
 	sectionLabel = 'section',
-	zigzag
+	zigzag,
+	zigzagSize,
 } = Astro.props;
 
 
@@ -72,7 +74,7 @@ const bgClass = backgrounds[bgColor as keyof typeof backgrounds] || "";
 			/>
 		)
 	}
-	{zigzag && <ZigZagPattern style={zigzag} />}
+	{zigzag && <ZigZagPattern style={zigzag} size={zigzagSize} />}
 	<div
 		class={`section-container relative ${containerClass} ${paddingClass}  ${className}`}
 	>

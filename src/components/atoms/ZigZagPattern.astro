@@ -3,10 +3,12 @@ import { Image } from 'astro:assets';
 import ZigZag from '@assets/patterns/zigzag.svg'
 export interface Props {
   style?: string;
+  size?: { left: number; right: number };
 }
 
 const {
   style,
+  size = { left: 450, right: 450}
 } = Astro.props;
 
 const styles = {
@@ -25,6 +27,6 @@ const styles = {
 <div
 	class={`absolute h-full w-full overflow-hidden ${styles[style as keyof typeof styles]}`}
 >
-	<ZigZag width={450} class="absolute top-16 -left-12" />
-	<ZigZag width={450} class="absolute -top-12 right-0 rotate-180" />
+	<ZigZag width={size.left} class="absolute top-16 -left-12" />
+	<ZigZag width={size.right} class="absolute -top-12 right-0 rotate-180" />
 </div>
