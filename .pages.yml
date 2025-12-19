@@ -319,8 +319,7 @@ content:
         type: rich-text
         description: SEO meta description
 
-      - &sections_field
-        name: sections
+      - name: sections
         label: Page Sections
         type: block
         list: true
