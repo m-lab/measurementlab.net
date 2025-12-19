@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Heading from '@components/atoms/Heading.astro';
 import Text from '@components/atoms/Text.astro';
 import { Image } from 'astro:assets';
+import Button from '@components/atoms/Button.astro';
 
 const { title, description } = Astro.props;
 
@@ -34,7 +35,7 @@ const featuredPartners = allPartners.sort((a, b) => (a.data.order || 999) - (b.d
 		</div>
 	</div>
 
-	<div class="order-1 lg:order-2 flex flex-col gap-6">
+	<div class="order-1 lg:order-2 flex flex-col gap-8">
 		{title && (
 			<Heading level={3} class="text-3xl font-bold">
 				{title}
@@ -45,5 +46,12 @@ const featuredPartners = allPartners.sort((a, b) => (a.data.order || 999) - (b.d
 				{description}
 			</Text>
 		)}
+
+    <div>
+      <Button as="a" href="/partner-with-us" variant="primary" icon="arrowRight">
+        Partner with us
+      </Button>
+    </div>
+    
 	</div>
 </div>
