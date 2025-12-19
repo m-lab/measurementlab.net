@@ -13,16 +13,16 @@ if (!siteConfigEntry) {
 const siteConfig = siteConfigEntry.data;
 
 // Fetch homepage content from content collection
-// const homepageEntry = await getEntry('homepage', 'index');
+const homepageEntry = await getEntry('homepage', 'index');
 
-// if (!homepageEntry) {
-//   throw new Error('Homepage content not found');
-// }
+if (!homepageEntry) {
+  throw new Error('Homepage content not found');
+}
 
-// const homepage = homepageEntry.data;
+const homepage = homepageEntry.data;
 
 ---
 
 <PageLayout title={siteConfig.title} description={siteConfig.description}>
-	<!-- <Sections sectionItems={homepage.sections} /> -->
+	<Sections sectionItems={homepage.sections} />
 </PageLayout>
