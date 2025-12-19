@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Heading from '@components/atoms/Heading.astro';
+import Text from '@components/atoms/Text.astro';
+import { Image } from 'astro:assets';
+
+const { title, description } = Astro.props;
+
+// Fetch all partners and filter for featured ones (you can add a featured field later)
+const allPartners = await getCollection('partners');
+const featuredPartners = allPartners.sort((a, b) => (a.data.order || 999) - (b.data.order || 999)).slice(0, 8);
+---
+
+<div class="flex flex-col space-y-8">
+	{title && (
+		<div class="text-center">
+			<Heading level={2} class="text-3xl font-bold mb-4">
+				{title}
+			</Heading>
+			{description && (
+				<Text class="text-lg text-gray-600 max-w-2xl mx-auto">
+					{description}
+				</Text>
+			)}
+		</div>
+	)}
+<!-- 	
+	<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center">
+		{featuredPartners.map((partner) => (
+			<a
+				href={partner.data.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105"
+			>
+				{partner.data.image && (
+					<Image
+						src={partner.data.image}
+						alt={partner.data.name}
+						class="max-h-16 w-auto object-contain"
+					/>
+				)}
+			</a>
+		))}
+	</div> -->
+</div>
