@@ -43,27 +43,23 @@ const Tag = href ? 'a' : 'div';
 	href={href}
 	class={`block transition-all border-neutral-200 text-neutral-600 border-b-4 no-underline duration-200 ${className}`}
 >
-	<div class="flex flex-col *:bg-white">
-		<HouseShape
-			variant={houseVariant}
-			backgroundColor={variantColors[variant]}
-			class="overflow-hidden"
-		>
-			{
-				image && (
-					<Image src={image} alt={imageAlt} class="w-full object-cover" />
-				)
-			}
+	<div id="houseCard" class="flex flex-col *:bg-white">
+		{image && <Image src={image} alt={imageAlt} class="w-full object-cover" />}
 
-			<div class="h-full p-6">
-				<div class="space-y-2 bg-white">
-					<h3 class="text-xl font-bold text-neutral-900 md:text-2xl">
-						{title}
-					</h3>
-					<div set:html={description && (await renderMarkdown(description))} />
-				</div>
-				<slot />
+		<div class="h-full p-6">
+			<div class="space-y-2 bg-white">
+				<h3 class="text-xl font-bold text-neutral-900 md:text-2xl">
+					{title}
+				</h3>
+				<div set:html={description && (await renderMarkdown(description))} />
 			</div>
-		</HouseShape>
+			<slot />
+		</div>
 	</div>
 </Tag>
+
+<style>
+	#houseCard {
+		mask: conic-gradient(from 45deg at 50px 50px, #000 75%, #0000 0) -50px;
+	}
+</style>
