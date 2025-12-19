@@ -50,7 +50,16 @@ const backgrounds = {
 	"primary-dark": 'bg-primary-900'
 };
 
+const textColors = {
+  white: 'text-gray-900',
+	gray: 'text-gray-900',
+  "primary-light": 'text-gray-900',
+  "primary-medium": 'text-white',
+	"primary-dark": 'text-white'
+};
+
 const bgClass = backgrounds[bgColor as keyof typeof backgrounds] || "";
+const textClass = textColors[bgColor as keyof typeof textColors] || "text-gray-900";
 // const sectionBgClass = bgType === 'full' ? bgClass : '';
 // const containerBgClass = bgType === 'contained' ? bgClass : '';
 ---
@@ -76,7 +85,7 @@ const bgClass = backgrounds[bgColor as keyof typeof backgrounds] || "";
 	}
 	{zigzag && <ZigZagPattern style={zigzag} size={zigzagSize} />}
 	<div
-		class={`section-container relative ${containerClass} ${paddingClass}  ${className}`}
+		class={`section-container relative ${containerClass} ${paddingClass} ${textClass} ${className}`}
 	>
 		<slot />
 	</div>
