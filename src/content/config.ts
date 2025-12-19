@@ -51,7 +51,7 @@ const createSchemas = (image: ImageFunction) => {
             'white',
             'gray',
             'primary-light',
-            'primary-mediumm',
+            'primary-medium',
             'primary-dark',
           ])
           .default('white'),

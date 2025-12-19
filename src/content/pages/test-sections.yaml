@@ -5,8 +5,8 @@ sections:
     content: rich text content
   - type: button
     background:
-      bgColor: white
-      bgType: full
+      color: white
+      type: full
     title: Buttons
     buttons:
       - variant: primary
@@ -15,8 +15,8 @@ sections:
         href: google.com
   - type: flexi
     background:
-      bgColor: gray
-      bgType: full
+      color: gray
+      type: full
     title: This is a Flexi Section!
     sections:
       - type: richText

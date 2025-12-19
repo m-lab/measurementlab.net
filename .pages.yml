@@ -141,7 +141,7 @@ components:
   background_select:
     type: object
     fields:
-      - name: bgColor
+      - name: color
         label: Color
         type: select
         options:
@@ -158,7 +158,7 @@ components:
               value: primary-dark
         default: white
         description: Select a section background for this section
-      - name: bgType
+      - name: type
         label: Type
         type: select
         options:

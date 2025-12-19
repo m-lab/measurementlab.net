@@ -12,40 +12,40 @@ stats:
 sections:
   - type: card
     background:
-      bgColor: gray
-      bgType: full
+      color: gray
+      type: full
     title: Latest news
   - type: card
     background:
-      bgColor: white
-      bgType: full
+      color: white
+      type: full
     title: What we do
     description: M-Lab provides software integrations, dashboards, measurements,
       data APIs, and more to assist in network measurements.
   - type: speed_test
     background:
-      bgColor: primary-dark
-      bgType: full
+      color: primary-dark
+      type: full
     title: Run an NDT test
     description: Diagnose the performance of your broadband connection with M-Lab's
       Network Diagnostics Test (NDT).
   - type: flexi
     background:
-      bgColor: gray
-      bgType: full
+      color: gray
+      type: full
     title: Visualisations and more
     description: M-Lab provides software integrations, dashboards, measurements,
       data APIs, and more to assist in network measurements.
     sections:
       - type: richText
         background:
-          bgColor: white
-          bgType: full
+          color: white
+          type: full
         content: "![](/src/assets/1.png)"
   - type: featured_partners
     background:
-      bgColor: white
-      bgType: full
+      color: white
+      type: full
     title: Bringing people together to strengthen the Internet
     description: M-Lab's partners donate the core infrastructure that make
       measurements possible. Join the movement that enables a diversified,
