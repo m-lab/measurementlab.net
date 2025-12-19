@@ -36,3 +36,8 @@ sections:
           size: md
           text: asdfasdf
           href: asdfasdf
+  - type: richText
+    background:
+      bgColor: white
+      bgType: full
+    content: "![](/src/assets/hero.png)Test floated content"
