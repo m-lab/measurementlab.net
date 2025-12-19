@@ -4,6 +4,35 @@ sections:
   - type: hero
     title: Welcome to M-Lab
     subtitle: Open Internet Measurement
+  - type: card
     background:
-      style: light
-      color: primary
+      bgColor: white
+      bgType: full
+    title: What we do
+    description: M-Lab provides software integrations, dashboards, measurements,
+      data APIs, and more to assist in network measurements.
+    cards:
+      - title: Platform
+        content: M-Lab provides tools and data for measuring Internet performance,
+          focusing on speed, latency, and network transparency.
+        button:
+          variant: primary
+          size: md
+          text: Button
+          href: google.com
+      - title: Data and Insights
+        content: M-Lab publishes data for open access, provides analysis support for
+          researchers and is a resource as a consulting
+        button:
+          variant: primary
+          size: md
+          text: asdas
+          href: sdas
+      - title: Community
+        content: M-Lab provides tools and data for measuring Internet performance,
+          focusing on speed, latency, and network transparency.
+        button:
+          variant: primary
+          size: md
+          text: asdfasdf
+          href: asdfasdf
