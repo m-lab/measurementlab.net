@@ -296,7 +296,7 @@ content:
     view:
       fields: [title, description]
       primary: title
-    fields: &page_fields
+    fields:
       - name: title
         label: Page Title
         type: string
@@ -319,14 +319,15 @@ content:
         type: rich-text
         description: SEO meta description
 
-      - name: sections
+      - &sections_field
+        name: sections
         label: Page Sections
         type: block
         list: true
         required: true
         blockKey: type
         description: Add and arrange page sections in any order
-        blocks:
+        blocks: &page_section_blocks
           - name: hero
             label: Hero Section
             component: hero_section
@@ -360,7 +361,31 @@ content:
     label: Homepage
     type: file
     path: src/content/homepage/index.yaml
-    fields: *page_fields
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+        required: true
+        description: The title of the homepage
+
+      - name: description
+        label: Page Description
+        type: rich-text
+        description: SEO meta description
+
+      - name: sections
+        label: Page Sections
+        type: block
+        list: true
+        required: true
+        blockKey: type
+        description: Add and arrange page sections in any order
+        blocks:
+          *page_section_blocks
+          # Add homepage-specific blocks below:
+          # - name: customHomepageSection
+          #   label: Custom Homepage Section
+          #   component: custom_homepage_section
 
   # People collection
   - name: people
