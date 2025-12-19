@@ -68,11 +68,23 @@ const { sectionItems } = Astro.props;
 			}
 		})();
 
+		if (section.type == 'hero') {
+			return (
+				<SectionLayout
+					bgImage={section.background}
+					class={section.class}
+					sectionLabel={sectionLabel}
+					maxWidth="2xl"
+					zigzag={section.zigzag}
+				>
+					{content}
+				</SectionLayout>
+			);
+		}
+
 		return (
 			<SectionLayout
-				bgColor={section.background?.color}
-				bgType={section.background?.bgType}
-				bgImage={section.background?.image}
+				bgImage={section.background}
 				class={section.class}
 				sectionLabel={sectionLabel}
 			>

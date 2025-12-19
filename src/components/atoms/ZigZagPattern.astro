@@ -1,45 +1,30 @@
 ---
+import { Image } from 'astro:assets';
+import ZigZag from '@assets/patterns/zigzag.svg'
 export interface Props {
-  color?: string;
-  width?: number;
-  height?: number;
-  strokeWidth?: number;
-  class?: string;
+  style?: string;
 }
 
 const {
-  color = 'currentColor',
-  width = 200,
-  height = 20,
-  strokeWidth = 3,
-  class: className = ''
+  style,
 } = Astro.props;
 
-// Create a repeating zig-zag pattern
-const viewBoxWidth = 100;
-const viewBoxHeight = 20;
+const styles = {
+  'primary-light': 'bg-primary-100 text-primary-500',
+  'primary-dark': 'bg-primary-800 text-primary-300',
+  'secondary-light': 'bg-secondary-100 text-secondary-500',
+  'secondary-dark': 'bg-secondary-400 text-secondary-200',
+  'supporting1-light': 'bg-supporting1-100 text-supporting1-300',
+  'supporting1-dark': 'bg-supporting1-500 text-supporting1-200',
+  'supporting2-light': 'bg-supporting2-100 text-supporting2-400',
+  'supporting2-dark': 'bg-supporting2-400 text-supporting2-100',
+}
+
 ---
 
-<svg
-  width={width}
-  height={height}
-  viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
-  class={`zigzag-pattern ${className}`}
-  xmlns="http://www.w3.org/2000/svg"
-  preserveAspectRatio="none"
-  aria-hidden="true"
+<div
+	class={`absolute h-full w-full overflow-hidden ${styles[style as keyof typeof styles]}`}
 >
-  <path
-    d="M0,10 L10,0 L20,10 L30,0 L40,10 L50,0 L60,10 L70,0 L80,10 L90,0 L100,10"
-    stroke={color}
-    stroke-width={strokeWidth}
-    fill="none"
-    vector-effect="non-scaling-stroke"
-  />
-</svg>
-
-<style>
-  .zigzag-pattern {
-    display: block;
-  }
-</style>
+	<ZigZag width={450} class="absolute top-16 -left-12" />
+	<ZigZag width={450} class="absolute -top-12 right-0 rotate-180" />
+</div>

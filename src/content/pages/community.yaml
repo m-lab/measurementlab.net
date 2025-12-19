@@ -8,8 +8,7 @@ sections:
       Connect, collaborate, and grow with fellow developers from around the
       world
     background:
-      style: light
-      color: primary
+      color: white
   - type: richText
     content: "## About Our Community
 

@@ -8,14 +8,13 @@ export interface Props {
   title: string;
   subtitle?: string;
 	class?: string;
-	background: {
-		style: 'light' | 'dark';
-		color: 'primary' | 'secondary' | 'supporting1' | 'supporting2';
+	background?: {
+		color: 'white' | 'gray' | 'primary-light' | 'primary-mediumm' | 'primary-dark';
 		image?: ImageMetadata;
 	};
 }
 
-const { title, subtitle, class: className = '', background={style:'light', color:'primary'} } = Astro.props;
+const { title, subtitle, class: className = '', background } = Astro.props;
 ---
 
 <Hero

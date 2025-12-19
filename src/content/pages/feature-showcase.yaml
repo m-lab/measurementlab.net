@@ -26,7 +26,36 @@ sections:
         href: google.com
   - type: hero
     title: Hero
-    subtitle: Hero default
+    subtitle: Hero primary - light
+    zigzag: primary-light
+  - type: hero
+    title: Hero
+    subtitle: Hero primary - dark
+    zigzag: primary-dark
+  - type: hero
+    title: Hero
+    subtitle: Hero secondary - light
+    zigzag: secondary-light
+  - type: hero
+    title: Hero
+    subtitle: Hero secondary - dark
+    zigzag: secondary-dark
+  - type: hero
+    title: Hero
+    subtitle: Hero supporting1 - light
+    zigzag: supporting1-light
+  - type: hero
+    title: Hero
+    subtitle: Hero supporting1 - dark
+    zigzag: supporting1-dark
+  - type: hero
+    title: Hero
+    subtitle: Hero supporting2 - light
+    zigzag: supporting2-light
+  - type: hero
+    title: Hero
+    subtitle: Hero supporting2 - dark
+    zigzag: supporting2-dark
   - type: flexi
     title: This is a Flexi Section!
     description: Weeeee
