@@ -1,14 +1,17 @@
+title: Measure the Internet. Save the data. Make it universally accessible and
+  helpful. Subheading
+stats:
+  - label: Internet measurement tests
+    value: 6+ billion
+  - label: Tests per day
+    value: 4 million
+  - label: Data
+    value: xx TiB
+  - label: Servers
+    value: 400+
 sections:
-  - type: homepage_hero
-    title: Measure the Internet.Save the data.Make it universally accessible and
-      helpful. Subheading
-    backgroundImage: /src/assets/Group 55.png
-    stats:
-      - label: Internet measurement test
-        value: 6+ billion
-      - label: Tests per day
-        value: 4 million
-      - label: Data
-        value: xx TiB
-      - label: Servers
-        value: 400+
+  - type: card
+    background:
+      bgColor: gray
+      bgType: full
+    title: Latest news
