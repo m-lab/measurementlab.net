@@ -284,32 +284,6 @@ components:
         type: string
         description: Filter partners by category (e.g. "sponsor", "technology"). Leave empty to show all partners.
 
-  # Homepage-specific sections
-  homepage_hero_section:
-    type: object
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: backgroundImage
-        label: Background Image
-        type: image
-      - name: stats
-        label: Stats
-        type: object
-        list: true
-        fields:
-          - name: label
-            label: Label
-            type: string
-            required: true
-          - name: value
-            label: Value
-            type: string
-            required: true
-        description: Key statistics to display in the hero section
-
 # Content collections
 content:
   # Pages collection
@@ -387,6 +361,27 @@ content:
     type: file
     path: src/content/homepage/index.yaml
     fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: backgroundImage
+        label: Background Image
+        type: image
+      - name: stats
+        label: Stats
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+            required: true
+          - name: value
+            label: Value
+            type: string
+            required: true
+        description: Key statistics to display in the hero section
       - name: sections
         label: Page Sections
         type: block
@@ -395,10 +390,7 @@ content:
         blockKey: type
         description: Add and arrange page sections in any order
         blocks:
-          # *page_section_blocks
-          - name: homepage_hero
-            label: Hero Section
-            component: homepage_hero_section
+          *page_section_blocks
           # Add homepage-specific blocks below:
           # - name: customHomepageSection
           #   label: Custom Homepage Section
