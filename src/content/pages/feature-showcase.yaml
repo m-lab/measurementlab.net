@@ -8,15 +8,13 @@ description: >-
   template.
 sections:
   - type: richText
-    background:
-      bgColor: gray
-      bgType: full
+    background: primary
     content: |-
       # Rich Text
 
-      This is some content
+      This is some content, and this is an image:
 
-      ![image text](/src/assets/hero.png)
+      ![image text](/src/assets/mlab-og.png)
   - type: button
     buttons:
       - variant: primary
@@ -27,14 +25,15 @@ sections:
         size: md
         text: Button 2
         href: google.com
+  - type: hero
+    title: Hero
+    subtitle: Hero default
   - type: flexi
     title: This is a Flexi Section!
     description: Weeeee
     sections:
       - type: richText
-        background:
-          bgColor: white
-          bgType: full
+        background: primary
         content: Some text!
       - type: button
         title: Buttons

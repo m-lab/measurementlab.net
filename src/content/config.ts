@@ -71,17 +71,20 @@ const pagesCollection = defineCollection({
         type: z.literal('hero'),
         title: z.string(),
         subtitle: z.string().optional(),
-        background: z.object({
-          style: z.enum(['light', 'dark']).default('light'),
-          color: z
-            .enum(['primary', 'secondary', 'supporting1', 'supporting2'])
-            .default('primary'),
-          image: image().optional(),
-        }),
+        background: z
+          .object({
+            style: z.enum(['light', 'dark']).default('light'),
+            color: z
+              .enum(['primary', 'secondary', 'supporting1', 'supporting2'])
+              .default('primary'),
+            image: image().optional(),
+          })
+          .optional(),
       }),
       SectionCommonSchema.extend({
         type: z.literal('richText'),
         content: z.string(),
+        background: z.string().optional(),
       }),
       SectionCommonSchema.extend({
         type: z.literal('button'),

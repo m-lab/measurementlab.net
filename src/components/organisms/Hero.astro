@@ -1,5 +1,4 @@
 ---
-import Button from '@components/atoms/Button.astro';
 import Heading from '@components/atoms/Heading.astro';
 import Text from '@components/atoms/Text.astro';
 import type { ImageMetadata } from 'astro';
@@ -10,8 +9,8 @@ export interface Props {
   align?: 'left' | 'center' | 'right';
   size?: 'default' | 'large';
   background?: {
-    style?: 'light' | 'dark';
-    color?: 'primary' | 'secondary' | 'supporting1' | 'supporting2';
+    style: 'light' | 'dark';
+    color: 'primary' | 'secondary' | 'supporting1' | 'supporting2';
     image?: ImageMetadata;
   };
   class?: string;
@@ -67,18 +66,12 @@ const containerClasses = `${sizes[size]} ${getBackgroundClasses()} ${className}`
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div id="heroContent" class={`mx-auto max-w-3xl ${alignments[align]}`}>
 			<!-- Title -->
-			<Heading level={1} class="mb-6">
+			<h1 class="mb-6">
 				{title}
-			</Heading>
+			</h1>
 
 			<!-- Subtitle -->
-			{
-				subtitle && (
-					<Text size="xl" class="text-gray-600 mb-8">
-						{subtitle}
-					</Text>
-				)
-			}
+			{subtitle && <p class="text-gray-600 mb-8">{subtitle}</p>}
 
 			<!-- Actions Slot -->
 			<!-- <div class="flex flex-wrap justify-center gap-4">

@@ -3,7 +3,5 @@ permalink: test-child-3
 
 sections:
   - type: richText
-    background:
-      bgColor: white
-      bgType: full
+    background: primary
     content: asd

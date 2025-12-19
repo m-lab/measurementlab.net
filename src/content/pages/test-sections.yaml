@@ -2,9 +2,7 @@ title: Test sections
 permalink: test-sections
 sections:
   - type: richText
-    background:
-      bgColor: white
-      bgType: full
+    background: primary
     content: rich text content
   - type: button
     background:
@@ -23,7 +21,5 @@ sections:
     title: This is a Flexi Section!
     sections:
       - type: richText
-        background:
-          bgColor: white
-          bgType: full
+        background: primary
         content: Within the flexi content

@@ -11,9 +11,7 @@ sections:
       style: light
       color: primary
   - type: richText
-    background:
-      bgColor: white
-      bgType: full
+    background: primary
     content: "## About Our Community
 
 
@@ -91,9 +89,7 @@ sections:
     title: Our Community Partners
     # No category specified = show all partners
   - type: richText
-    background:
-      bgColor: gray
-      bgType: full
+    background: primary
     content: "## Join Us Today
 
 
