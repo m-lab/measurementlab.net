@@ -150,8 +150,12 @@ components:
               value: white
             - label: Gray
               value: gray
-            - label: Gradient
-              value: gradient
+            - label: Light Blue
+              value: primary-light
+            - label: Medium Blue
+              value: primary-medium
+            - label: Dark Blue
+              value: primary-dark
         default: white
         description: Select a section background for this section
       - name: bgType
