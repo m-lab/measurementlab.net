@@ -7,8 +7,8 @@ sections:
     subtitle:
       Connect, collaborate, and grow with fellow developers from around the
       world
-    background:
-      color: white
+    zigzag: primary-dark
+
   - type: richText
     content: "## About Our Community
 
