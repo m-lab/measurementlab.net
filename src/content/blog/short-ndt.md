@@ -31,7 +31,7 @@ These observations have led maintainers of Measurement Lab to investigate option
 ## Evaluating download caps
 
 ![Visualization of a speed test for clients with 200 Mbps, 100 Mbps and 50 Mbps.
-](../../assets/images/blog/2023-06-shortndt/figure1.png){: width="600"}
+](../../assets/images/blog/2023-06-shortndt/figure1.png)
 
 Figure 1: Visualization of a speed test for clients with 200 Mbps, 100 Mbps and 50 Mbps.
 
@@ -45,7 +45,7 @@ The table below summarizes the maximum object sizes we consider along with their
 
 ## Data savings vs. download cap
 
-![ Percentage data savings vs. download cap. Percentage savings is computed over all tests in Q1 2023.](../../assets/images/blog/2023-06-shortndt/figure2.png){: width="600"}
+![ Percentage data savings vs. download cap. Percentage savings is computed over all tests in Q1 2023.](../../assets/images/blog/2023-06-shortndt/figure2.png)
 
 Figure 2. Percentage data savings vs. download cap. Percentage savings is computed over all tests in Q1 2023.
 
@@ -55,7 +55,7 @@ Figure 2 shows the percent of data transferred by NDT tests that would be saved 
 
 We next study the accuracy of NDT tests with different download caps. For this analysis, we analyze traces of existing NDT tests and emulate the bandwidth estimation process if the test had stopped after a fixed amount of data was transferred. We compare this estimated throughput with the throughput that was returned by the full test to study the accuracy of NDT with different sized download caps.
 
-![Percentage error vs. download cap showing the median-95th percentile error for all tests with a given download cap.](../../assets/images/blog/2023-06-shortndt/figure3.png){: width="600"}
+![Percentage error vs. download cap showing the median-95th percentile error for all tests with a given download cap.](../../assets/images/blog/2023-06-shortndt/figure3.png)
 
 Figure 3. Percentage error vs. download cap showing the median-95th percentile error for all tests with a given download cap.
 
@@ -63,13 +63,13 @@ Figure 3 shows the accuracy of NDT tests for the different size caps. Overall ac
 
 This result may seem to imply that we can use a very small object size (e.g., 100 MB) while maintaining relatively good accuracy, especially if we focus on the median and 75th percentile error. However, as we noted above, accuracy is dependent on the client speed as well as the object size.
 
-![95th percentile error vs. download cap for different client speeds.](../../assets/images/blog/2023-06-shortndt/figure4.png){: width="600"}
+![95th percentile error vs. download cap for different client speeds.](../../assets/images/blog/2023-06-shortndt/figure4.png)
 
 Figure 4. 95th percentile error vs. download cap for different client speeds.
 
 Figure 4 illustrates the relationship between the download cap and 95th percentile error for different client speeds. While the 95th percentile accuracy is fairly good for client speeds up to 250 Mbps with less than 5% error, the error increases with 95th percentile error of 18-30% for client speeds above 250 Mbps.
 
-![Distribution of client speeds for NDT tests.](../../assets/images/blog/2023-06-shortndt/figure5.png){: width="600"}
+![Distribution of client speeds for NDT tests.](../../assets/images/blog/2023-06-shortndt/figure5.png)
 
 Figure 5. Distribution of client speeds for NDT tests.
 

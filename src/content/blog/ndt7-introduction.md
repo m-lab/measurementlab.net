@@ -3,7 +3,7 @@ permalink: ndt7-introduction
 title: Introducing ndt7
 excerpt: >-
   The new ndt7 protocol for the [Network Diagnostic Tool
-  (NDT)][ndt]{:target="_blank"} is now generally available on the M-Lab
+  (NDT)][ndt] is now generally available on the M-Lab
   platform. Since 2009, NDT has been the premier TCP performance measurement
   service test hosted by M-Lab. During its history on the platform, NDT has
   produced the largest te...
@@ -27,12 +27,12 @@ publishedDate: 2020-07-22
 ---
 
 The new ndt7 protocol for the [Network Diagnostic Tool
-(NDT)][ndt]{:target="\_blank"} is now generally available on the M-Lab
+(NDT)][ndt] is now generally available on the M-Lab
 platform. Since 2009, NDT has been the premier TCP performance measurement
 service test hosted by M-Lab. During its history on the platform, NDT has
 produced the largest test volume to date, spanning the longest history. Since
 late 2018, M-Lab has worked with researcher [Simone
-Basso][simone]{:target="\_blank"} to develop the ndt7 protocol and archival
+Basso][simone] to develop the ndt7 protocol and archival
 data format.
 
 The ndt7 protocol measures the application-level download or upload
@@ -55,8 +55,8 @@ ndt7 client can be implemented in just 151 lines, and a complete JavaScript
 client can be implemented in just 122 lines. We are publishing two reference
 client implementations here:
 
-- [github.com/m-lab/ndt7-client-go][ndt7-client-go]{:target="\_blank"}
-- [github.com/m-lab/ndt7-js][ndt7-js]{:target="\_blank"} (in progress)
+- [github.com/m-lab/ndt7-client-go][ndt7-client-go]
+- [github.com/m-lab/ndt7-js][ndt7-js] (in progress)
 
 On the M-Lab platform, ndt7 uses BBR TCP. BBR is a new congestion control
 algorithm that uses the network more efficiently. It does so by explicitly
@@ -75,7 +75,7 @@ information about current migrations and how this will improve our data and
 affect longitudinal analysis.
 
 For a recent introduction to BBR see: [TCP BBR - Exploring TCP congestion
-control | by Andree Toonk][morebbr]{:target="\_blank"}
+control | by Andree Toonk][morebbr]
 
 [ndt]: /src/assets/tests/ndt/
 [simone]: https://github.com/bassosimone

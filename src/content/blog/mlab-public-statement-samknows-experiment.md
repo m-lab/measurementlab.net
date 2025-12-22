@@ -40,8 +40,8 @@ On February 14, 2020, SamKnows notified Measurement Lab that they were unwilling
 
 ## Summary
 
-Measurement Lab’s open source requirement has existed since 2008, and aligns with the [FCC’s published commitment](https://www.fcc.gov/general/measuring-broadband-america-open-methodology){:target="\_blank"} to transparency and open source code in the MBA Program. The new platform software enforces M-Lab’s open source requirement at a technical level, and the lack of an open source server prevents us from hosting the SamKnows experiment.
+Measurement Lab’s open source requirement has existed since 2008, and aligns with the [FCC’s published commitment](https://www.fcc.gov/general/measuring-broadband-america-open-methodology) to transparency and open source code in the MBA Program. The new platform software enforces M-Lab’s open source requirement at a technical level, and the lack of an open source server prevents us from hosting the SamKnows experiment.
 
-Participants in the MBA program should be notified that SamKnows’ decision to not use M-Lab’s off-net servers will result in changes to the infrastructure used in testing. The change should be reflected in the public resources that describes the program’s [open testing methodology](https://www.fcc.gov/general/measuring-broadband-america-open-methodology){:target="\_blank"}.
+Participants in the MBA program should be notified that SamKnows’ decision to not use M-Lab’s off-net servers will result in changes to the infrastructure used in testing. The change should be reflected in the public resources that describes the program’s [open testing methodology](https://www.fcc.gov/general/measuring-broadband-america-open-methodology).
 
 Should SamKnows choose to provide an open source server, we remain open to hosting it on M-Lab infrastructure around the country and around the world. M-Lab’s commitment is to the Measuring Broadband America program and its open source principles. We are able and willing to host any open source test, SamKnows or otherwise.

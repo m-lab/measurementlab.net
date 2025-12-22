@@ -22,7 +22,7 @@ publishedDate: 2023-04-18
 
 Want to know more about your Internet connection? M-Lab is proud to announce that we are now publishing Cloudflare’s Aggregated Internet Measurement (AIM) dataset, which puts network quality in an end-user context.
 
-![logos](../../assets/images/blog/2023-02-cloudflare/logos.png){: width="750"}
+![logos](../../assets/images/blog/2023-02-cloudflare/logos.png)
 
 M-Lab’s mission is to measure the Internet, save the data, and make it universally accessible and useful. Today we are excited to announce that as part of that mission, we are providing open access to a new dataset from Cloudflare that was designed with the end-user in mind.
 
@@ -30,7 +30,7 @@ M-Lab’s mission is to measure the Internet, save the data, and make it univers
 
 AIM was designed to address the following scenario many of you have either experienced previously or may be experiencing right now: you go visit your family for the holidays and you turn on the WiFi, notice Netflix isn’t loading as fast as it normally does, and you try to figure out why. The first thing you do is you go to speed.cloudflare.com, fast.com, speedtest.net, or even type “speed test” into Google Chrome to measure your Internet. When you do that, you get something that looks like this:
 
-![IMC 2022 participants](../../assets/images/blog/2023-02-cloudflare/speedtest-example.png){: width="750"}
+![IMC 2022 participants](../../assets/images/blog/2023-02-cloudflare/speedtest-example.png)
 
 If you want to see what that looks like for you, try it yourself [here](https://speed.cloudflare.com/). But what do those numbers mean? What is bandwidth and how does it make your Netflix experience better? What is jitter and how does it impact your Zoom calls? What is responsiveness and how does it make your League of Legends game better? There are so many numbers on a speed test page and they are all supposedly very important, but the one thing that isn’t immediately clear is: how do these numbers explain why I can’t watch the newest season of Love is Blind? Do they even explain that at all?
 

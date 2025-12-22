@@ -3,7 +3,7 @@ permalink: covid-19-response-dashboards
 title: Accessible M-Lab NDT data for Internet Performance research during COVID-19
 excerpt: >-
   In response to increased reliance on the Internet during the COVID-19 pandemic
-  Measurement Lab, with the support of Internet Society{:target="_blank"}, is
+  Measurement Lab, with the support of Internet Society, is
   dedicated to making our NDT data more accessible so everyone with an interest
   in Internet Performance can use our data in their research. We s...
 authors:
@@ -18,7 +18,7 @@ categories:
 publishedDate: 2020-05-20
 ---
 
-In response to increased reliance on the Internet during the COVID-19 pandemic Measurement Lab, with the support of [Internet Society](https://www.internetsociety.org){:target="\_blank"}, is dedicated to making our NDT data more accessible so everyone with an interest in Internet Performance can use our data in their research. We started with a [visualization of test count and median download speeds in New York, India, and Sao Paulo](/src/assets/blog/datastudio-covid19-test-rates-increase/#how-measurement-lab’s-open-data-can-be-used-during-covid-19) as an example of what data was available to researchers through BigQuery. Today we are publishing a set of dashboards for the use of researchers who may or may not be comfortable using SQL. Each dashboard is accompanied by a methodology page which describes how the queries are constructed.
+In response to increased reliance on the Internet during the COVID-19 pandemic Measurement Lab, with the support of [Internet Society](https://www.internetsociety.org), is dedicated to making our NDT data more accessible so everyone with an interest in Internet Performance can use our data in their research. We started with a [visualization of test count and median download speeds in New York, India, and Sao Paulo](/src/assets/blog/datastudio-covid19-test-rates-increase/#how-measurement-lab’s-open-data-can-be-used-during-covid-19) as an example of what data was available to researchers through BigQuery. Today we are publishing a set of dashboards for the use of researchers who may or may not be comfortable using SQL. Each dashboard is accompanied by a methodology page which describes how the queries are constructed.
 
 DataStudio also provides the option to export data into a CSV but hovering on a visualization and clicking on the three dots in the right hand corner. We are also happy to provide queries being used, which can serve as a good starting point for early-stage researchers. If you plan to use our NDT data in your research, please feel free to reach out to us for a review or more information. Also, please note that the DataStudio reports may take some time to load, because they're querying our large dataset each time the page is loaded or the selected options have changed.
 

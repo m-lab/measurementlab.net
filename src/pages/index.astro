@@ -1,9 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import { getEntry } from 'astro:content';
 import Sections from '@components/sections/Sections.astro';
-import SectionLayout from '@layouts/SectionLayout.astro';
 import PageLayout from '@layouts/PageLayout.astro';
-import { Image } from 'astro:assets';
+import SectionLayout from '@layouts/SectionLayout.astro';
 
 // Fetch site config from content collection
 const siteConfigEntry = await getEntry('site', 'config');
@@ -31,40 +31,42 @@ const homepage = homepageEntry.data;
 		maxWidth="7xl"
 		zigzag="primary-dark"
 		zigzagSize={{ left: 0, right: 500 }}
-		bgColor='primary-dark'
+		bgColor="primary-dark"
 	>
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center justify-between">
+		<div
+			class="grid grid-cols-1 items-center justify-between gap-8 lg:grid-cols-2"
+		>
 			<div class="">
-				<h1 class="text-4xl font-semi-bold text-white leading-[140%]">
+				<h1 class="font-semi-bold text-4xl leading-[140%] text-white">
 					{homepage.title}
 				</h1>
 			</div>
 
-			{homepage.backgroundImage && (
-				<div class="max-w-md mx-auto">
-					<Image
-						src={homepage.backgroundImage}
-						alt="Homepage Background"
-						class="w-full h-auto"
-					/>
-				</div>
-			)}
+			{
+				homepage.backgroundImage && (
+					<div class="mx-auto max-w-md">
+						<Image
+							src={homepage.backgroundImage}
+							alt="Homepage Background"
+							class="h-auto w-full"
+						/>
+					</div>
+				)
+			}
 		</div>
 
-		{homepage.stats && homepage.stats.length > 0 && (
-			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-				{homepage.stats.map((stat) => (
-					<div class="flex flex-col items-center text-start">
-						<div class="text-3xl font-bold mb-1">
-							{stat.value}
+		{
+			homepage.stats && homepage.stats.length > 0 && (
+				<div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
+					{homepage.stats.map((stat) => (
+						<div class="flex flex-col items-center text-start">
+							<div class="mb-1 text-3xl font-bold">{stat.value}</div>
+							<div class="text-gray-400 text-xs">{stat.label}</div>
 						</div>
-						<div class="text-xs text-gray-400">
-							{stat.label}
-						</div>
-					</div>
-				))}
-			</div>
-		)}
+					))}
+				</div>
+			)
+		}
 	</SectionLayout>
 	<Sections sectionItems={homepage.sections} />
 </PageLayout>

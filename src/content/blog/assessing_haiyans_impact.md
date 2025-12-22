@@ -26,4 +26,4 @@ Keeping this in mind, we are gratified to see the Internet Researchers at RIPE N
 
 We believe that this type of analysis can provide those working to repair Haiyan's damage with a better understanding of how to get populations back online. We also hope that this and similar research it can be used by the broader Internet community to help prepare Internet infrastructure for similar events, ensuring that the Internet is able to serve world populations when they are most in need.
 
-We invite you to [peruse the](https://labs.ripe.net/Members/emileaben/typhoon-haiyan-what-we-see-in-ripestat-and-ripe-atlas){:target="_blank"} [RIPE NCC's finding in their full detail](https://labs.ripe.net/Members/emileaben/typhoon-haiyan-what-we-see-in-ripestat-and-ripe-atlas) on their site.
+We invite you to [peruse the](https://labs.ripe.net/Members/emileaben/typhoon-haiyan-what-we-see-in-ripestat-and-ripe-atlas) [RIPE NCC's finding in their full detail](https://labs.ripe.net/Members/emileaben/typhoon-haiyan-what-we-see-in-ripestat-and-ripe-atlas) on their site.

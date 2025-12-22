@@ -1,4 +1,5 @@
 import { getImage } from 'astro:assets';
+import rehypeExternalLinks from 'rehype-external-links';
 import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
@@ -64,6 +65,10 @@ const createMarkdownProcessor = () => {
   return unified()
     .use(remarkParse)
     .use(remarkRehype)
+    .use(rehypeExternalLinks, {
+      target: '_blank',
+      rel: ['noopener', 'noreferrer'],
+    })
     .use(rehypeStringify, { allowDangerousHtml: true });
 };
 
@@ -74,7 +79,9 @@ export const renderMarkdown = async (markdown: string): Promise<string> => {
 };
 
 // Existing: Markdown with image optimization
-export const renderMarkdownWithImages = async (markdown: string): Promise<string> => {
+export const renderMarkdownWithImages = async (
+  markdown: string
+): Promise<string> => {
   const html = await createMarkdownProcessor()
     .use(processImageNodes)
     .process(markdown);

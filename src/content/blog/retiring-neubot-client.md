@@ -2,7 +2,7 @@
 permalink: retiring-neubot-client
 title: Retiring the Neubot Client
 excerpt: >-
-  Neubot{:target="_blank"} hasn’t been updated in a while{:target="_blank"},
+  Neubot hasn’t been updated in a while,
   but, we decided to keep it available because there were still many active
   users. Now the time has come to say goodbye to the Neubot client, because too
   much time has passed since the latest release. **We recommend all user...
@@ -15,7 +15,7 @@ categories:
   - Technology
 publishedDate: 2019-01-11
 ---
-[Neubot](https://www.neubot.org/){:target="_blank"} hasn’t been updated [in a while](https://github.com/neubot/neubot/releases){:target="_blank"}, but, we decided to keep it available [because there were still many active users](http://streaming.polito.it/neubot/). Now the time has come to say goodbye to the Neubot client, because too much time has passed since the latest release. **We recommend all users to remove Neubot from their computers**, as explained below. If you are interested in running similar tests, you should check out the project I am now working on, called [OONI Probe](https://ooni.torproject.org/){:target="_blank"}.
+[Neubot](https://www.neubot.org/) hasn’t been updated [in a while](https://github.com/neubot/neubot/releases), but, we decided to keep it available [because there were still many active users](http://streaming.polito.it/neubot/). Now the time has come to say goodbye to the Neubot client, because too much time has passed since the latest release. **We recommend all users to remove Neubot from their computers**, as explained below. If you are interested in running similar tests, you should check out the project I am now working on, called [OONI Probe](https://ooni.torproject.org/).
 
 Before getting into the details of why we’re retiring Neubot, let me explain how to uninstall it from your computer. Then I’ll explain our motivations and provide further technical details.
 
@@ -71,12 +71,12 @@ Specifically, here’s what is going to happen in the first quarter of 2019:
 6. After Neubot stops working, Nexa will freeze the Neubot.org blog, and any other dynamic website that may be related to Neubot, replacing it with a static copy. Simone will freeze the main GitHub repository, as well as any other inactive repository, and will make sure that the Nexa Center has ownership of the organisation;
 7. Simone will notify TopIX that the central server (i.e. master.neubot.org) could now be decommissioned. Since this is contacted by all Neubot clients, Nexa will reconfigure that domain to serve a static page from, e.g., its Apache instance. Additionally Nexa will ensure that this domain will be online and owned by Nexa until December, 2023;
 8. Simone will wipe his copies of the Neubot update keys;
-9. Nexa will make sure that the [releases.neubot.org](https://releases.neubot.org/){:target="_blank"} domain (which is used to implement Neubot automatic updates) will be online and owned by Nexa until December, 2023, to ensure that it cannot be squatted by someone else and used to push malicious Neubot updates (in the event that Simone’s update keys have been compromised or that an attack allows to override the verification of the update’s signature).
+9. Nexa will make sure that the [releases.neubot.org](https://releases.neubot.org/) domain (which is used to implement Neubot automatic updates) will be online and owned by Nexa until December, 2023, to ensure that it cannot be squatted by someone else and used to push malicious Neubot updates (in the event that Simone’s update keys have been compromised or that an attack allows to override the verification of the update’s signature).
 10. Nexa will close the mailing list. The archives will be kept.
 
 ## OONI Probe
 
-If I may suggest a replacement for Neubot, please consider installing [OONI Probe](https://ooni.torproject.org/install/){:target="_blank"} (which I currently work on). It is a project that originally focused on network censorship only, but has since also included network performance tests. OONI Probe is powered by the [Measurement Kit](https://github.com/measurement-kit/measurement-kit){:target="_blank"} library that I started contributing to when I was still working at Nexa.
+If I may suggest a replacement for Neubot, please consider installing [OONI Probe](https://ooni.torproject.org/install/) (which I currently work on). It is a project that originally focused on network censorship only, but has since also included network performance tests. OONI Probe is powered by the [Measurement Kit](https://github.com/measurement-kit/measurement-kit) library that I started contributing to when I was still working at Nexa.
 
 We are rolling out new native OONI Probe desktop apps in 2019 that will have some Neubot-like capabilities (such as running the DASH test). Moreover, I am working on a replacement of the NDT network performance test that aims to yield a quick estimate of your network speed, which was one of the design goals of the SpeedTest test originally implemented in Neubot.
 

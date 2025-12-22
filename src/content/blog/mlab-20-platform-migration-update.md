@@ -3,7 +3,7 @@ permalink: mlab-20-platform-migration-update
 title: M-Lab 2.0 Platform Migration Update
 excerpt: >-
   Last year, we outlined our plans to [Modernize the M-Lab
-  Platform][modernize]{:target="_blank"}. This year, we’re bringing them to
+  Platform][modernize]. This year, we’re bringing them to
   life. Here’s a summary of why the platform update is so valuable and what you
   can expect throughout the year. [modernize]:
   /src/assets/blog/modernizing-mlab
@@ -24,7 +24,7 @@ publishedDate: 2019-03-12
 ---
 
 Last year, we outlined our plans to [Modernize the M-Lab
-Platform][modernize]{:target="\_blank"}. This year, we’re bringing them to
+Platform][modernize]. This year, we’re bringing them to
 life. Here’s a summary of why the platform update is so valuable and what you
 can expect throughout the year.
 
@@ -33,9 +33,9 @@ can expect throughout the year.
 ## Advantages
 
 Developing new tools for the modern M-Lab platform is easier than ever. If
-the tool runs in a [Docker container][docker]{:target="\_blank"} (with or
+the tool runs in a [Docker container][docker] (with or
 without `--net=host`), then it can run on M-Lab. GitHub repos connected to
-[Dockerhub.com][dockerhub]{:target="\_blank"} build fresh containers on new
+[Dockerhub.com][dockerhub] build fresh containers on new
 tags. And, with approval from M-Lab staff, kubernetes will safely automate
 the rollout.
 
@@ -55,8 +55,8 @@ measurement space.
 ## Longitudinal Analysis
 
 From 2009-2019, M-Lab NDT and Sidestream measurements have used the
-[web100][web100]{:target="\_blank"} data type. From 2019 forward, the modern
-platform will collect the [tcp-info][tcpinfo]{:target="\_blank"} data type for
+[web100][web100] data type. From 2019 forward, the modern
+platform will collect the [tcp-info][tcpinfo] data type for
 all TCP connections.
 
 We will preserve the ability to perform longitudinal analysis on our 10+
@@ -79,7 +79,7 @@ Right now, we’re bringing together the last 9 months of work starting with a
 quarter of the physical platform. Historically, a fourth of the platform
 served as a “spare” machine at every site (~120 machines). Starting with the
 Kubernetes platform, a small fraction of clients that opt-in to using the
-[M-Lab location service][mlabns]{:target="\_blank"} will be directed to these
+[M-Lab location service][mlabns] will be directed to these
 “canary” machines. With a small fraction of real traffic, we will validate
 that everything works as intended end to end.
 

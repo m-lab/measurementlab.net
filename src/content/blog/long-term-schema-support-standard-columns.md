@@ -23,7 +23,7 @@ Following the M-Lab platform upgrade in Nov. 2019, the development team began a 
 
 ## Motivations for Standard Columns
 
-The primary goal of standard columns is long term support (LTS) for our users. As we make changes to the M-Lab platform, and specifically our [ETL pipeline](https://github.com/m-lab/etl){:target="\_blank"} that parses collected test data from our archive into BigQuery tables, our team is seeking to provide table and view schemas on which our community can depend. To make this happen, our team is working on "Standard, Top-level BigQuery Columns" for all M-Lab platform datatypes, from which stable, LTS schemas for tables and views will be derived. The most immediate, recognizable outcome of this work are the [unified_uploads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_uploads&page=table){:target="\_blank"} and [unified_downloads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_downloads&page=table){:target="\_blank"} views that we blogged about in May.
+The primary goal of standard columns is long term support (LTS) for our users. As we make changes to the M-Lab platform, and specifically our [ETL pipeline](https://github.com/m-lab/etl) that parses collected test data from our archive into BigQuery tables, our team is seeking to provide table and view schemas on which our community can depend. To make this happen, our team is working on "Standard, Top-level BigQuery Columns" for all M-Lab platform datatypes, from which stable, LTS schemas for tables and views will be derived. The most immediate, recognizable outcome of this work are the [unified_uploads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_uploads&page=table) and [unified_downloads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_downloads&page=table) views that we blogged about in May.
 
 ## Enabling Standard, LTS Tables and Views
 
@@ -31,7 +31,7 @@ Several sub-projects are in progress that will enable M-Lab to provide Standard 
 
 ### Universal Gardener Service
 
-Our [etl-gardener](https://github.com/m-lab/etl-gardener/){:target="\_blank"} service maintains and reprocesses M-Lab data. This service is being simplified to create a single deployment across our internal projects, and reduce the number of components in the original pipeline to just the parsers, the gardener service, and job state in Datastore.
+Our [etl-gardener](https://github.com/m-lab/etl-gardener/) service maintains and reprocesses M-Lab data. This service is being simplified to create a single deployment across our internal projects, and reduce the number of components in the original pipeline to just the parsers, the gardener service, and job state in Datastore.
 
 ### Uniform Naming of Services and Data Types
 

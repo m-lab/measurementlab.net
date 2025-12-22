@@ -33,7 +33,7 @@ In our [migration announcement](/src/assets/blog/migrating-ndt-clients-to-ndt7/)
 
 ✅ **The ndt7 data will be published to measurement-lab.raw_ndt.ndt7.**
 
-You can access the published data via BigQuery in the [measurement-lab.raw_ndt.ndt7](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=raw_ndt&t=ndt7&page=table){:target="\_blank"} table.
+You can access the published data via BigQuery in the [measurement-lab.raw_ndt.ndt7](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=raw_ndt&t=ndt7&page=table) table.
 
 ✅ **The ndt7 tables will have complete documentation on the M-Lab website.**
 
@@ -48,8 +48,8 @@ On our website we provide general information about NDT, the ndt5 and ndt7 proto
 
 You can access the NDT unified views in BigQuery
 
-- [measurement-lab.ndt.unified_downloads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_downloads&page=table){:target="\_blank"}
-- [measurement-lab.ndt.unified_uploads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_uploads&page=table){:target="\_blank"}
+- [measurement-lab.ndt.unified_downloads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_downloads&page=table)
+- [measurement-lab.ndt.unified_uploads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_uploads&page=table)
 
 ✅ **As the migration advances, there will be less ndt5 data and more ndt7 data**
 
@@ -176,4 +176,4 @@ We will implement an “early exit” feature, which will allow an ndt7 test to 
 
 We will continue to support ndt5 for the near future. When we decide on a definitive date to stop supporting ndt5, we will give the NDT client integration community an ample amount of notice and time to prepare.
 
-The [Evolution of NDT](/src/assets/blog/evolution-of-ndt) introduces a list of open questions that we intend to investigate as transparently as possible and we invite the M-Lab community to help us do so collaboratively. You can read more about our initial ideas and provide feedback on them [by completing this brief survey](https://docs.google.com/forms/d/e/1FAIpQLScIbL03mHmAu1xO_vIaNNjBHLqrMGi3fdyKGiVms270nH3Vcg/viewform){:target="\_blank"}. You can also reach out to us directly at support@measurementlab.net.
+The [Evolution of NDT](/src/assets/blog/evolution-of-ndt) introduces a list of open questions that we intend to investigate as transparently as possible and we invite the M-Lab community to help us do so collaboratively. You can read more about our initial ideas and provide feedback on them [by completing this brief survey](https://docs.google.com/forms/d/e/1FAIpQLScIbL03mHmAu1xO_vIaNNjBHLqrMGi3fdyKGiVms270nH3Vcg/viewform). You can also reach out to us directly at support@measurementlab.net.

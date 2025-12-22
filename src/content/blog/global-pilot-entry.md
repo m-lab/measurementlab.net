@@ -2,8 +2,8 @@
 permalink: global-pilot-entry
 title: 'M-Lab 2.0 Platform: Global Pilot Entry'
 excerpt: >-
-  For a while, we’ve been developing M-Lab 2.0 [[1][1]{:target="_blank"},
-  [2][2]{:target="_blank"}]. This month, we are launching a global pilot for the
+  For a while, we’ve been developing M-Lab 2.0 [[1][1],
+  [2][2]]. This month, we are launching a global pilot for the
   new software stack. The changes include: * Stock Linux 4.19 LTS kernels with
   modern TCP and Cubic congestion control * Standard instrumentation fo...
 authors:
@@ -22,8 +22,8 @@ categories:
 publishedDate: 2019-07-30
 ---
 
-For a while, we’ve been developing M-Lab 2.0 [[1][1]{:target="\_blank"},
-[2][2]{:target="\_blank"}]. This month, we are launching a global pilot for
+For a while, we’ve been developing M-Lab 2.0 [[1][1],
+[2][2]]. This month, we are launching a global pilot for
 the new software stack. The changes include:
 
 - Stock Linux 4.19 LTS kernels with modern TCP and Cubic congestion control
@@ -44,7 +44,7 @@ performance matches or exceeds the current software stack, and success
 rate for NDT clients has improved for browser-based clients while
 remaining compatible with most earlier NDT clients. Based on these
 measurements, we are launching the new software stack to [one third of the
-production platform][3]{:target="\_blank"}.
+production platform][3].
 
 Of course, we’re not done evaluating the new software stack. Once the
 machines in the global pilot are upgraded, we will compare the performance of
@@ -80,7 +80,7 @@ a preview of what will be possible once the data is generally available.
 # Pilot Entry Criteria
 
 The pilot entry criteria use two datasets:
-[measurement-lab.ndt.web100][web100]{:target="\_blank"} (public) and a new
+[measurement-lab.ndt.web100][web100] (public) and a new
 data type (not yet public) collected by the new NDT server. Both datasets
 allow the calculation of:
 

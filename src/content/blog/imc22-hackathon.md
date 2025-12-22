@@ -19,7 +19,7 @@ Summary of M-Lab's hackathon at IMC 2022!
 
 On Monday, October 24th, 2022, M-Lab had the pleasure of hosting a Hackathon at the 2022 Internet Measurement Conference hosted in Nice, France. Both the hackathon and the conference itself were great opportunities to connect with other researchers and consider how M-Lab can be a resource to the Internet measurement research community.
 
-![IMC 2022 participants](../../assets/images/blog/2022-11-imc-hackathon/imc-participants.png){: width="750"}
+![IMC 2022 participants](../../assets/images/blog/2022-11-imc-hackathon/imc-participants.png)
 
 We hosted 23 participants at our hackathon from a wide range of regions and universities. After a brief overview of M-Lab and how to use our data, participants were asked to identify interesting and important signals in M-Lab’s dataset, which includes NDT data, traceroute data and more. Such signals are compelling to us because they have the potential to be used as training for anomaly detection tools and could also help us identify instances where changes in the data are due to our tools and platform, rather than the network itself.
 
@@ -29,7 +29,7 @@ In only 90 minutes of hacking, our participants came up with some impressive res
 
 Our winning submission was by Gautam Akiwate of Standford University, in which he identified disparities in network performance by continent using NDT data. He organized his submission into six key findings including the following:
 
-![IMC 2022 participants](../../assets/images/blog/2022-11-imc-hackathon/akiwate-analysis.png){: width="750"}
+![IMC 2022 participants](../../assets/images/blog/2022-11-imc-hackathon/akiwate-analysis.png)
 
 You can view all key findings and the underlying queries in the full CoLab [here](https://colab.research.google.com/drive/1xIJZcvyu5UrZ7Vry5gTW4A20BzMAkGhD?usp=sharing#scrollTo=dr8d57Ouh2Wj).
 

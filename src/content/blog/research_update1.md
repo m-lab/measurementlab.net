@@ -44,7 +44,7 @@ Below we show an example of the ToS field in the IP header of packets received f
              0x0020:  8018 202b f194 0000 0101 080a            ...+........
 ```
 
-![Example of ToS field in the IP header of packets received from a Verizon FIOS customers on February 28, 2014 from the data we extracted](../../assets/images/blog/blog1-image2.png){:.inherit-width width="100%"}<br />
+![Example of ToS field in the IP header of packets received from a Verizon FIOS customers on February 28, 2014 from the data we extracted](../../assets/images/blog/blog1-image2.png)<br />
 What does this indicate? It indicates that the recovery from the degradation in performance observed prior to February 2014 may not have been experienced by all consumers.
 
 Why this was applied to M-Lab traffic, or if it was applied more broadly, or if it was applied across all traffic is not clear. What this finding highlights is that network management and the differences in treatment of traffic is instrumental to the performance of consumer access. More importantly it reaffirms the importance of transparency and open data in providing the public with a clear understanding of Internet performance.

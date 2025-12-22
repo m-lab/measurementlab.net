@@ -4,7 +4,7 @@ title: New Traceroute Binary on M-Lab platform
 excerpt: >-
   M-Lab has always committed to provide traceroute data for the tests running on
   M-Lab platform. Since we launched new platform in 2019 Q4, the new traceroute
-  binary, Scamper{:target="_blank"}, replaced Paris Traceroute{:target="_blank"}
+  binary, Scamper, replaced Paris Traceroute
   on all our servers. Our BigQuery table for traceroute now has...
 authors:
   - ya-chang
@@ -19,7 +19,7 @@ categories:
 publishedDate: 2020-01-31
 ---
 
-M-Lab has always committed to provide traceroute data for the tests running on M-Lab platform. Since we launched [new platform](/src/assets/blog/global-pilot-success) in 2019 Q4, the new traceroute binary, [Scamper](https://www.caida.org/tools/measurement/scamper/){:target="\_blank"}, replaced [Paris Traceroute](https://paris-traceroute.net/){:target="\_blank"} on all our servers. Our BigQuery table for traceroute now has unified [schema](/src/assets/blog/traceroute-bq-newdata-available) to cover both the legacy Paris Traceroute test data and new Scamper data. This blog is to analyze the difference between the legacy data and new data.
+M-Lab has always committed to provide traceroute data for the tests running on M-Lab platform. Since we launched [new platform](/src/assets/blog/global-pilot-success) in 2019 Q4, the new traceroute binary, [Scamper](https://www.caida.org/tools/measurement/scamper/), replaced [Paris Traceroute](https://paris-traceroute.net/) on all our servers. Our BigQuery table for traceroute now has unified [schema](/src/assets/blog/traceroute-bq-newdata-available) to cover both the legacy Paris Traceroute test data and new Scamper data. This blog is to analyze the difference between the legacy data and new data.
 
 The legacy data and new data are merged in the same BigQuery table `measurement-lab.aggregate.traceroute`. The easiest way to tell the difference between them is to check the `UUID` field. The legacy data has empty `UUID` field while the new data has a value like “neubot-sb9zt_1576697510_0000000000006A41”.
 

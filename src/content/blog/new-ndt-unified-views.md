@@ -24,8 +24,8 @@ In November 2019, M-Lab reached a milestone after upgrading the operating system
 
 In April 2020, the team published a preliminary release of “unified views” for NDT:
 
-* [measurement-lab.ndt.unified_downloads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_downloads&page=table){:target="_blank"}
-* [measurement-lab.ndt.unified_uploads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_uploads&page=table){:target="_blank"}
+* [measurement-lab.ndt.unified_downloads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_downloads&page=table)
+* [measurement-lab.ndt.unified_uploads](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_uploads&page=table)
 
 We refer to these as “Helpful Views”, since they present the most commonly used fields in NDT data, and only show tests that meet our current, best understanding of test completeness:
 
@@ -47,7 +47,7 @@ We provide the raw views so that researchers can:
 
 ## Most Commonly Used Fields Provided in NDT Unified Views
 
-While NDT does collect very fine grained fields associated with each TCP connection, the vast majority of people querying our data select a small subset of those fields. The NDT unified views provide only the most commonly used fields. You can review the [full schema for NDT unified views](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_downloads&page=table){:target="_blank"}, which consist of the test metrics: Mean Throughput, Minimum Round Trip Time, and Loss Rate; test metadata fields like Client IP address, Test Date, Test Time, and others; and the geographic annotation fields for each test.
+While NDT does collect very fine grained fields associated with each TCP connection, the vast majority of people querying our data select a small subset of those fields. The NDT unified views provide only the most commonly used fields. You can review the [full schema for NDT unified views](https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=unified_downloads&page=table), which consist of the test metrics: Mean Throughput, Minimum Round Trip Time, and Loss Rate; test metadata fields like Client IP address, Test Date, Test Time, and others; and the geographic annotation fields for each test.
 
 For researchers interested in studying not just completed tests, but all types of test conditions-- tests that failed, specific TCP window sizes, etc.-- M-Lab still saves all NDT test data and supports your research with it using the Faithful Views. We also plan to provide additional Helpful Views for advanced users.
 
@@ -56,7 +56,7 @@ For researchers interested in studying not just completed tests, but all types o
 Some new fields are available in the unified views that are worth mentioning:
 
 * **Client & Server ASNumber**
-  * Provides the [Autonomous System Number](https://en.wikipedia.org/wiki/Autonomous_system_(Internet)){:target="_blank"} associated with the client’s connection, and the ASN associated with the connection used by the M-Lab server which conducted the measurement. This field is useful to identify the provider associated with the test IP address.
+  * Provides the [Autonomous System Number](https://en.wikipedia.org/wiki/Autonomous_system_(Internet)) associated with the client’s connection, and the ASN associated with the connection used by the M-Lab server which conducted the measurement. This field is useful to identify the provider associated with the test IP address.
 * **UUID**
   * Provides a Universally Unique Identifier for each test. This field is useful to match or join results from Raw Views that may not be in the Helpful Views.
 * **Congestion Control**

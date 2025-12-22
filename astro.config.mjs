@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig, fontProviders } from 'astro/config';
 import expressiveCode from 'astro-expressive-code';
+import rehypeExternalLinks from 'rehype-external-links';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import Icons from 'unplugin-icons/vite';
 import { siteConfig } from './src/lib/config.ts';
@@ -56,7 +57,18 @@ export default defineConfig({
       }),
     ],
   },
-
+  markdown: {
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          // content: { type: 'text', value: ' 🔗' },
+          target: '_blank',
+          rel: ['noopener', 'noreferrer'],
+        },
+      ],
+    ],
+  },
   integrations: [
     react(),
     sitemap(),

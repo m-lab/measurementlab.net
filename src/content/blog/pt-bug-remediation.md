@@ -27,9 +27,9 @@ The M-Lab team is doing development to work around the bug in several ways:
 - By adding monitoring to our parser so that we can know how much of our raw data is affected at any given time.
 - By reprocessing our historical raw data archives in order to eliminate all bad traceroute data caused by this bug from our BigQuery database.
 
-The developers of Paris Traceroute reached out to us after our initial disclosure and created a version with that one bug fixed which can be found in the [master 2 branch in the official repository](https://github.com/libparistraceroute/libparistraceroute/tree/master2){:target="\_blank"}. We are in the process of upgrading all our systems to this new version of Paris Traceroute.
+The developers of Paris Traceroute reached out to us after our initial disclosure and created a version with that one bug fixed which can be found in the [master 2 branch in the official repository](https://github.com/libparistraceroute/libparistraceroute/tree/master2). We are in the process of upgrading all our systems to this new version of Paris Traceroute.
 
-Through disclosures and analyses like these, M-Lab re-confirms its commitment to open data and open science. Our raw data, warts, bugs, and all, is and will be always [available](https://console.google.com/storage/browser/archive-measurement-lab/){:target="\_blank"}, while our [processed data](https://bigquery.cloud.google.com/dataset/measurement-lab:release){:target="\_blank"} continues to reflect our best understanding of the state of the Internet represented by that raw data.
+Through disclosures and analyses like these, M-Lab re-confirms its commitment to open data and open science. Our raw data, warts, bugs, and all, is and will be always [available](https://console.google.com/storage/browser/archive-measurement-lab/), while our [processed data](https://bigquery.cloud.google.com/dataset/measurement-lab:release) continues to reflect our best understanding of the state of the Internet represented by that raw data.
 
 ## Read More: The bug and its fixes
 
@@ -99,11 +99,11 @@ Using the insight that it is only a particular subset of IP pairs that are probl
 
 ## Remediation
 
-There are two main systems which, when combined, created the Paris Traceroute data in BigQuery. One is the Paris Traceroute codebase that runs on the server, consisting of the Paris Traceroute [code](https://github.com/libparistraceroute/paris-traceroute-OLD){:target="\_blank"} and M-Lab's support [scripts](https://github.com/npad/sidestream/blob/master/paris_rollins.py){:target="\_blank"} that run on the server to support the running of that code. These combine to generate the raw data on the server, which is then saved to [Google Cloud Storage](https://console.cloud.google.com/storage/browser/archive-measurement-lab/paris-traceroute){:target="\_blank"}. The next system is the [ETL pipeline](https://github.com/m-lab/etl){:target="\_blank"}, which parses the raw data from Google Cloud Storage into queryable BigQuery tables.
+There are two main systems which, when combined, created the Paris Traceroute data in BigQuery. One is the Paris Traceroute codebase that runs on the server, consisting of the Paris Traceroute [code](https://github.com/libparistraceroute/paris-traceroute-OLD) and M-Lab's support [scripts](https://github.com/npad/sidestream/blob/master/paris_rollins.py) that run on the server to support the running of that code. These combine to generate the raw data on the server, which is then saved to [Google Cloud Storage](https://console.cloud.google.com/storage/browser/archive-measurement-lab/paris-traceroute). The next system is the [ETL pipeline](https://github.com/m-lab/etl), which parses the raw data from Google Cloud Storage into queryable BigQuery tables.
 
-To prevent the collection of bad data, we have [created a workaround](https://github.com/npad/sidestream/pull/40){:target="\_blank"} in our Paris Traceroute wrapper to bring down the expected number of incidents and that workaround will be deployed to M-Lab servers soon.
+To prevent the collection of bad data, we have [created a workaround](https://github.com/npad/sidestream/pull/40) in our Paris Traceroute wrapper to bring down the expected number of incidents and that workaround will be deployed to M-Lab servers soon.
 
-To prevent the inclusion of any bad data in our BigQuery tables, the ETL parser now can detect the polluted data ([code](https://github.com/m-lab/etl/pull/393){:target="\_blank"}) and discard them instead of inserting them into BigQuery. We also added monitoring to measure the error rates going forwards.
+To prevent the inclusion of any bad data in our BigQuery tables, the ETL parser now can detect the polluted data ([code](https://github.com/m-lab/etl/pull/393)) and discard them instead of inserting them into BigQuery. We also added monitoring to measure the error rates going forwards.
 
 ![Figure 1: Number of polluted PT tests per metro](../../assets/images/blog/pt_bug_2018_11_figure1.png)
 \_Figure 1: Number of polluted PT tests per metro\*
@@ -113,6 +113,6 @@ To prevent the inclusion of any bad data in our BigQuery tables, the ETL parser 
 
 We will soon reprocess our historical archives. By the end of 2018 Q1, all affected PT data should be eliminated from our BigQuery database. M-Lab's raw data will remain untouched, as our raw data reflects the data we actually got from M-Lab servers, not the data we wish we had gotten from M-Lab servers.
 
-The Paris Traceroute Team has fixed the tag collision bug and their [fix is available](https://github.com/libparistraceroute/libparistraceroute/){:target="\_blank"} in the "master2" branch of the official repo. They fixed it by putting the PID of the PT process in the probe packet, and then ensuring that a PT process only considers packets which contain its PID in the returned headers. The new version is in the process of getting packaged up and rolled out to M-Lab servers.
+The Paris Traceroute Team has fixed the tag collision bug and their [fix is available](https://github.com/libparistraceroute/libparistraceroute/) in the "master2" branch of the official repo. They fixed it by putting the PID of the PT process in the probe packet, and then ensuring that a PT process only considers packets which contain its PID in the returned headers. The new version is in the process of getting packaged up and rolled out to M-Lab servers.
 
 In the future, this bug should not recur because it has been eliminated at the source. Nonetheless, we have augmented our wrapper scripts to reduce its occurrence, added monitoring to detect its reappearance, and we have added checks to our processing to help ensure that the bad data is not ever parsed into our BigQuery tables from our data archives old and new.

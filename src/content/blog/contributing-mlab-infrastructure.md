@@ -3,8 +3,7 @@ permalink: contributing-mlab-infrastructure
 title: Contributing to M-Lab's Infrastructure is Easier Than Ever
 excerpt: >-
   We've added a new, flexible set of options to expand and diversify our global
-  fleet of measurement vantage points. {: width="750"}{:style="display:block;
-  margin-left:auto; margin-right:auto"}
+  fleet of measurement vantage points. 
 authors:
   - lai-yi-ohlsen
   - nathan-kinkade
@@ -20,7 +19,7 @@ publishedDate: 2024-03-18
 ---
 
 We've added a new, flexible set of options to expand and diversify our global fleet of measurement vantage points.
-![Diagram of Infrastructure Options](../../assets/images/blog/2024-03-infrastructure/infra-options-diagram.png){: width="750"}{:style="display:block; margin-left:auto; margin-right:auto"}
+![Diagram of Infrastructure Options](../../assets/images/blog/2024-03-infrastructure/infra-options-diagram.png)
 
 ## Motivations
 
@@ -28,7 +27,7 @@ Since M-Lab was founded in 2008, our mission has been to measure the Internet, s
 
 In 2022, we announced our initiative [M-Lab to the Cloud](https://www.measurementlab.net/blog/2022-mlab-to-the-cloud/), our effort to expand our presence in cloud networks. Since that announcement, 35% of our traffic is directed to virtual servers.
 
-![Virtual Server Traffic](../../assets/images/blog/2024-03-infrastructure/virtual-traffic.png){: width="750"}{:style="display:block; margin-left:auto; margin-right:auto"}
+![Virtual Server Traffic](../../assets/images/blog/2024-03-infrastructure/virtual-traffic.png)
 
 As a continuation of those efforts, we've added a new, flexible set of options for contributing to M-Lab's infrastructure.**Our goal is to expand and diversify our platform to include more user-relevant pathways.**
 

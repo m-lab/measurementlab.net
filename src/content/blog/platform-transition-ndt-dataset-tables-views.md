@@ -22,7 +22,7 @@ If you've been following our blog over the last few months, you know M-Lab has b
 
 ## Platform Transition Timeline
 
-At the end of August, the platform was ready to be fully transitioned. In September and October, we paused the platform upgrade to support the United States Federal Communications Commission's (FCC) annual [Measuring Broadband America program (MBA)](https://www.fcc.gov/general/measuring-broadband-america){:target="\_blank"}. For many years, M-Lab has donated space on our servers for use by [SamKnows](https://www.samknows.com/){:target="\_blank"}, the FCC's contractor for the MBA program. SamKnows has used the M-Lab platform for the MBA program's "off-net" measurements. Once the official end of the MBA data collection period was announced, the M-Lab team began upgrading the remaining servers in our fleet.
+At the end of August, the platform was ready to be fully transitioned. In September and October, we paused the platform upgrade to support the United States Federal Communications Commission's (FCC) annual [Measuring Broadband America program (MBA)](https://www.fcc.gov/general/measuring-broadband-america). For many years, M-Lab has donated space on our servers for use by [SamKnows](https://www.samknows.com/), the FCC's contractor for the MBA program. SamKnows has used the M-Lab platform for the MBA program's "off-net" measurements. Once the official end of the MBA data collection period was announced, the M-Lab team began upgrading the remaining servers in our fleet.
 
 ## Change in NDT data publishing dataset, tables, and views
 

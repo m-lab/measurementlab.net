@@ -36,13 +36,13 @@ The panel highlighted many salient points for measuring network performance in p
 
 Finally, the panel highlighted the importance of bringing together policy makers and computer scientists to make progress in this space. While networking researchers can bring deep technical understanding of the data and novel measurement techniques, policy makers are important to help translate this work into practical guidelines with clear bars for network performance. This latter point highlighted an open area where we hope to make strides in the coming year.
 
-![Panelists at M-Lab Tutorial (SIGCOMM 2022)](../../assets/images/blog/2022-09-sigcomm/SIGCOMM2022_1.jpg){: width="750"}
+![Panelists at M-Lab Tutorial (SIGCOMM 2022)](../../assets/images/blog/2022-09-sigcomm/SIGCOMM2022_1.jpg)
 
 ## Best of CCR Session
 
 Measurement Lab’s recent [CCR paper](https://www.measurementlab.net/publications/) was also recognised as one of the Best papers of CCR in the past year and was presented in a special session during the main conference.
 
-![M-Lab presentation in best of CCR session at SIGCOMM](../../assets/images/blog/2022-09-sigcomm/SIGCOMM2022_2.jpg){: width="750"}
+![M-Lab presentation in best of CCR session at SIGCOMM](../../assets/images/blog/2022-09-sigcomm/SIGCOMM2022_2.jpg)
 
 ## Get in Touch!
 

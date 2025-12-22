@@ -3,7 +3,7 @@ permalink: traceroute-bq-newdata-available
 title: New Traceroute Table and Schema Now Available
 excerpt: >-
   To make our traceroute data in BigQuery more useful, researchers have sought
-  an easy [way to reconstruct the path of hops][1]{:target="_blank"} for the
+  an easy [way to reconstruct the path of hops][1] for the
   same test. This task was particularly hard because the schema, which was
   designed many years ago, put the hops of the same test in different rows...
 authors:
@@ -18,7 +18,7 @@ categories:
 publishedDate: 2019-08-01
 ---
 
-To make our traceroute data in BigQuery more useful, researchers have sought an easy [way to reconstruct the path of hops][1]{:target="\_blank"} for the same test. This task was particularly hard because the schema, which was designed many years ago, put the hops of the same test in different rows.
+To make our traceroute data in BigQuery more useful, researchers have sought an easy [way to reconstruct the path of hops][1] for the same test. This task was particularly hard because the schema, which was designed many years ago, put the hops of the same test in different rows.
 
 To address this need from many of our partners and researchers, M-Lab is delighted to announce that the `traceroute` BigQuery table in the `aggregate` dataset is now available to the public. The new `traceroute` schema has one test per row, and all hops for a single test are inside the same row.
 

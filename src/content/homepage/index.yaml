@@ -1,4 +1,4 @@
-title: Measure the Internet.Save the data.Make it universally accessible and helpful.
+title: Measure the Internet. Save the data. Make it universally accessible and helpful.
 backgroundImage: /src/assets/Group 55-1.png
 stats:
   - label: Internet measurement tests
@@ -27,7 +27,8 @@ sections:
       color: primary-dark
       type: full
     title: Run an NDT test
-    description: Diagnose the performance of your broadband connection with M-Lab's
+    description:
+      Diagnose the performance of your broadband connection with M-Lab's
       Network Diagnostics Test (NDT).
   - type: flexi
     background:
@@ -41,7 +42,7 @@ sections:
         background:
           color: white
           type: full
-        content: "![](/src/assets/1.png)"
+        content: '![](/src/assets/1.png)'
   - type: featured_partners
     background:
       color: white

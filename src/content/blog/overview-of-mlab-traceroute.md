@@ -2,7 +2,7 @@
 permalink: overview-of-mlab-traceroute
 title: An Overview of M-Lab’s Traceroute Data
 excerpt: >-
-  ## Summary This blog post is a report on M-Lab’s traceroute data so the
+  This blog post is a report on M-Lab’s traceroute data so the
   community can have a better understanding of what the data we make available
   includes.
 authors:
@@ -47,11 +47,11 @@ The chart below shows:
 - Based on our initial estimate that at least **31%** of all traceroutes is operational data, about **4.5M** traceroutes are of _limited value_ (operational data is generated due to various monitoring connections continuously checking the health of M-Lab nodes.
 - We call the remaining **2M** traceroutes “ambient” data. Ambient data is data triggered by TCP connections to M-Lab servers that are neither for measurement services nor for monitoring.
 
-![image-1png](../../assets/images/blog/2022-06-traceroute/2022-06-08_traceroute_image-1.png){: width="750"}
+![image-1png](../../assets/images/blog/2022-06-traceroute/2022-06-08_traceroute_image-1.png)
 
 Of the 14M traceroutes generated every day, only about **30% are actual traceroute results;** about **70% are cached results**. Currently cached results are configured to be purged after **10 minutes**. As explained earlier, NDT5 and NDT7 measurements generate three and two traceroutes respectively so about ⅔ of NDT5 traceroutes and ½ of NDT7 traceroutes are cached results. Therefore, we generate about **3.5M actual traceroutes per day** (6M x ½ + 1.5M x ⅔) triggered by NDT tests. The chart below shows the overall number of actual versus cached traceroutes.
 
-![image-1png](../../assets/images/blog/2022-06-traceroute/2022-06-08_traceroute_image-2.png){: width="750"}
+![image-1png](../../assets/images/blog/2022-06-traceroute/2022-06-08_traceroute_image-2.png)
 
 Because cached traceroutes are identical to actual traceroutes (other than the metadata line), they do not provide additional information and are considered duplicates.
 
@@ -59,15 +59,15 @@ Finally, note that not all traceroutes make it all the way to the destination. O
 
 In summary, if we define the **lower bound** of **“most valuable” traceroutes** as the percentage of **complete nonduplicate** traceroutes triggered by NDT and the **upper bound** as the percentage of **actual nonduplicate** traceroutes triggered by NDT, then we have about **2.1M to 3.5M** nonduplicate traceroutes per day.
 
-![image-1png](../../assets/images/blog/2022-06-traceroute/2022-06-08_traceroute_image-3.png){: width="750"}
+![image-1png](../../assets/images/blog/2022-06-traceroute/2022-06-08_traceroute_image-3.png)
 
 ## M-Lab Traceroute Data
 
 To get an overall picture of traceroute data, we can examine the charts below that cover the entire range from April 2019 to April 2022. The first chart shows the number of traceroutes run on a daily basis. The second chart shows minimum, maximum, and average durations in seconds.
 
-![image-1png](../../assets/images/blog/2022-06-traceroute/2022-06-08_traceroute_image-4.png){: width="750"}
+![image-1png](../../assets/images/blog/2022-06-traceroute/2022-06-08_traceroute_image-4.png)
 
-![image-1png](../../assets/images/blog/2022-06-traceroute/2022-06-08_traceroute_image-5.png){: width="750"}
+![image-1png](../../assets/images/blog/2022-06-traceroute/2022-06-08_traceroute_image-5.png)
 
 As it can be seen in the above charts, up until the beginning of 2020 the results are jittery and a small faction is unreasonable. For example, there are traceroutes in November and December 2019 with durations between 200,000 and 300,000 seconds (~3-4 days). These anomalies are related to the early versions of `traceroute-caller` when it was being debugged.
 
