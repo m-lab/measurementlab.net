@@ -788,6 +788,7 @@ content:
       - name: relatedPosts
         label: Related Posts
         type: reference
+        required: false
         description: Select up to 3 related blog posts
         options:
           collection: blog
