@@ -820,3 +820,5 @@ content:
       - name: body
         label: Body
         type: rich-text
+        options:
+          media: blog
