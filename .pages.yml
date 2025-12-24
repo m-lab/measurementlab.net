@@ -2,7 +2,16 @@
 # Documentation: https://pagescms.org/docs/configuration/
 
 # Media configuration
-media: src/assets
+# media: src/assets
+media:
+  - name: images
+    label: All Images
+    input: src/assets
+    output: /src/assets
+  - name: blog # Note: 'name' key is required here
+    label: Blog Images
+    input: src/assets
+    output: ../../assets
 
 # Reusable components
 components:
