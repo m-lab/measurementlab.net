@@ -1,0 +1,17 @@
+{
+  "id": "2008-pathdiag-automated-tcp-diagnosis",
+  "title": "Pathdiag: Automated TCP Diagnosis",
+  "description": "Review of the pathdiag test, used to diagnose network performance problems commonly aﬀecting TCP-based applications",
+  "authors": "M. Mathis, J. Heffner, P. O'Neil, P. Siemsen",
+  "year": 2008,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/automated-tcp-diagnosis.pdf"
+    }
+  ],
+  "contributors": [
+    "matt-mathis"
+  ]
+}

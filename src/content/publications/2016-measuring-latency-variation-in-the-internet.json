@@ -1,0 +1,14 @@
+{
+  "id": "2016-measuring-latency-variation-in-the-internet",
+  "title": "Measuring Latency Variation in the Internet",
+  "description": "The authors analyse two complementary datasets to quantify the latency variation experienced by Internet end-users: (i) a large-scale active measurement dataset (from the Measurement Lab Network Diagnostic Tool) which shed light on long-term trends and regional differences; and (ii) passive measurement data from an access aggregation link which is used to analyse the edge links closest to the user. The analysis shows that variation in latency is both common and of significant magnitude, with two thirds of samples exceeding 100 ms of variation. The variation is seen within single connections as well as between connections to the same client. The distribution of experienced latency variation is heavy-tailed, with the most affected clients seeing an order of magnitude larger variation than the least affected. In addition, there are large differences between regions, both within and between continents. Despite consistent improvements in throughput, most regions show no reduction in latency variation over time, and in one region it even increases.",
+  "authors": "Toke Hoiland-Jorgensen et al., CoNEXT '16",
+  "year": 2016,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/2016-hoiland-jorgensen.pdf"
+    }
+  ]
+}

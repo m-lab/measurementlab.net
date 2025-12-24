@@ -1,0 +1,16 @@
+{
+  "id": "2014-challenges-and-issues-on-collecting-and-analyzing-large-volumes-of-network-data-",
+  "title": "Challenges and Issues on Collecting and Analyzing Large Volumes of Network Data Measurements",
+  "authors": "E. Masala, A. Servetti, S. Basso, J. C. De Martin",
+  "year": 2014,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/analyzing-network-data-measurements.pdf"
+    }
+  ],
+  "contributors": [
+    "simone-basso"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "2019-university-of-guelf-broadband-analytics-workshop",
+  "title": "University of Guelf Broadband Analytics Workshop",
+  "description": "The [Regional and Rural Broadband (R2B2) Project](http://www.r2b2project.ca/){:target=\"\\_blank\"} hosted guests from Measurement Lab (M-Lab) which provides the largest collection of open Internet performance data on the planet. The workshop also considers new and existing tools for broadband infrastructure mapping, data visualization and analysis.",
+  "authors": "Chris Ritzo",
+  "year": 2019,
+  "category": "presentation",
+  "externalLinks": [
+    {
+      "label": "Event Description",
+      "url": "https://news.uoguelph.ca/event/broadband-analytics-workshop/"
+    },
+    {
+      "label": "Morning Overview Slides",
+      "url": "https://docs.google.com/presentation/d/1muranZUeHWlV0dmJ6XiRqsEyHxpkYIXlVwesaNFk7pc/edit?usp=sharing"
+    },
+    {
+      "label": "Afternoon Workshop Slides",
+      "url": "https://docs.google.com/presentation/d/1x-kVBudSZaRDJ_GOwvpcCg7B4YK_Dmc7IFiXCxJQkDw/edit?usp=sharing"
+    }
+  ],
+  "contributors": [
+    "chris-ritzo"
+  ]
+}

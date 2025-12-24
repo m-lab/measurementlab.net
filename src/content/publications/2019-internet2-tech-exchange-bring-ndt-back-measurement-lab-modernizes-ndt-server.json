@@ -1,0 +1,22 @@
+{
+  "id": "2019-internet2-tech-exchange-bring-ndt-back-measurement-lab-modernizes-ndt-server",
+  "title": "Internet2 Tech Exchange - Bring NDT Back: Measurement Lab Modernizes NDT Server",
+  "description": "The R&E network community using perfSONAR used to include the Network Diagnostic Tool (NDT), a single stream performance measurement of bulk transport capacity. Many years ago, perfSONAR dropped support for NDT since its dependence on the web100 kernel library required running old, outdated, and hard to secure linux kernels. Measurement Lab (M-Lab) had the same problem, but has continued to host NDT as an Internet measurement service on our global server platform. Over the past two years, M-Lab developers have been working through the technical debt to migrate our platform to Docker containers, managed by Kubernetes, and concurrently have refactored NDT server, and developed reference clients for various languages and operating systems. The new NDT server is 'Docker-ized' and is based on WebSocket and TLS, uses TCP BBR where it is available, and is backward compatible with previous clients. M-Lab anticipates that. by the end of Q3 2019, all our servers worldwide will be running the new NDT version, managed by Kubernetes.",
+  "authors": "Chris Ritzo, Matt Mathis",
+  "year": 2019,
+  "category": "presentation",
+  "externalLinks": [
+    {
+      "label": "Conference Website Session Description",
+      "url": "https://meetings.internet2.edu/2019-technology-exchange/detail/10005563/"
+    },
+    {
+      "label": "View Slides",
+      "url": "https://meetings.internet2.edu/media/medialibrary/2019/12/06/20191212-ritzo-bring-ndt-back_FshWz0j.pdf"
+    }
+  ],
+  "contributors": [
+    "chris-ritzo",
+    "matt-mathis"
+  ]
+}

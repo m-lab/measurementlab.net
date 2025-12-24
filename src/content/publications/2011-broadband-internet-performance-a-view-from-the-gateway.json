@@ -1,0 +1,14 @@
+{
+  "id": "2011-broadband-internet-performance-a-view-from-the-gateway",
+  "title": "Broadband Internet Performance: A View from the Gateway",
+  "description": "Presentation of the first study of network access link performance measured by BISmark by the architects of the BISmark router-based measurement test",
+  "authors": "S. Sundaresan, W. Donato, N. Feamster, R. Teixeira, S. Crawford, A. Pescape",
+  "year": 2011,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/broadband-performance-gateway.pdf"
+    }
+  ]
+}

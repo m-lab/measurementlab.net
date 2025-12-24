@@ -1,0 +1,17 @@
+{
+  "id": "2020-deprecating-the-tcp-macroscopic-model-acm-sigcomm-2020-best-of-ccr-aug-2020",
+  "title": "Deprecating the TCP Macroscopic Model (ACM SIGCOMM 2020, Best of CCR, Aug. 2020)",
+  "authors": "Matt Mathis",
+  "year": 2020,
+  "category": "presentation",
+  "videoLinks": [
+    {
+      "label": "Watch Recording",
+      "url": "https://www.youtube.com/watch?v=1QQXFp5eGgs",
+      "platform": "youtube"
+    }
+  ],
+  "contributors": [
+    "matt-mathis"
+  ]
+}

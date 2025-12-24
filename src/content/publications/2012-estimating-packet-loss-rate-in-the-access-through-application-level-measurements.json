@@ -1,0 +1,17 @@
+{
+  "id": "2012-estimating-packet-loss-rate-in-the-access-through-application-level-measurements",
+  "title": "Estimating Packet Loss Rate in the Access through Application-level Measurements",
+  "description": "A proposed model for estimating packet loss rate by a given connection, using data from the Neubot measurement test",
+  "authors": "S. Basso, M. Meo, A. Servetti, J. C. De Martin",
+  "year": 2012,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/estimating-packet-loss.pdf"
+    }
+  ],
+  "contributors": [
+    "simone-basso"
+  ]
+}

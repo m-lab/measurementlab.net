@@ -1,0 +1,17 @@
+{
+  "id": "2020-act-broadband-hackathon-presentation",
+  "title": "ACT Broadband Hackathon Presentation",
+  "description": "M-Lab Project Director, Lai Yi Ohlsen, presented to the [ACT Broadband](http://actbroadband.online:3000/) Hackathon on 2020-03-14, an overview of the M-Lab platform's tools and tests enabling community-driven data collection of Internet speeds and quality of service.",
+  "authors": "Lai Yi Ohlsen",
+  "year": 2020,
+  "category": "presentation",
+  "externalLinks": [
+    {
+      "label": "View Slides",
+      "url": "https://docs.google.com/presentation/d/1AYaR82CVfZbyvZuX5HmQukkQiGwaLdxK8sHLNWpuvo4/"
+    }
+  ],
+  "contributors": [
+    "lai-yi-ohlsen"
+  ]
+}

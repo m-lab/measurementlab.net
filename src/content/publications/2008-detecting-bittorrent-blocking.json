@@ -1,0 +1,14 @@
+{
+  "id": "2008-detecting-bittorrent-blocking",
+  "title": "Detecting BitTorrent Blocking",
+  "description": "Review of the model used by architects of the Glasnost test to design a test to detect ISP throttling and blocking of the BitTorrent protocol",
+  "authors": "M. Dischinger, A. Mislove, A. Haeberlen, K. P. Gummadi",
+  "year": 2008,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/detecting-bittorrent-blocking.pdf"
+    }
+  ]
+}

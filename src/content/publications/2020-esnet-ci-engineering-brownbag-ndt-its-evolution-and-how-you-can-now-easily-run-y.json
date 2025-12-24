@@ -1,0 +1,24 @@
+{
+  "id": "2020-esnet-ci-engineering-brownbag-ndt-its-evolution-and-how-you-can-now-easily-run-y",
+  "title": "ESnet CI Engineering Brownbag - NDT, its evolution, and how you can now easily run your own server",
+  "description": "On 6/5/2020, M-Lab contributor, Peter Boothe, presented an ESnet CI Engineering Brownbag on the evolution of NDT and how to run your own NDT server.",
+  "authors": "Peter Boothe",
+  "year": 2020,
+  "category": "presentation",
+  "externalLinks": [
+    {
+      "label": "View Slides",
+      "url": "https://drive.google.com/file/d/1ZnSYB528ZMvvB6B5-IhWowPbJLjpdJMT/view?usp=sharing"
+    }
+  ],
+  "videoLinks": [
+    {
+      "label": "Watch Recording",
+      "url": "https://www.youtube.com/watch?v=mf65RLIPYmE&feature=youtu.be",
+      "platform": "youtube"
+    }
+  ],
+  "contributors": [
+    "peter-boothe"
+  ]
+}

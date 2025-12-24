@@ -1,0 +1,22 @@
+{
+  "id": "2017-the-record-route-option-is-an-option",
+  "title": "The Record Route Option is an Option!",
+  "description": "The IPv4 Record Route (RR) Option instructs routers to record their IP addresses in a packet. RR is subject to a nine hop limit and, traditionally, inconsistent support from routers. Recent changes in interdomain connectivity—the so-called \"flattening Internet\"—and new best practices for how routers should handle RR packets suggest that now is a good time to reassess the potential of the RR Option.",
+  "authors": "B. Goodchild, Y. Chiu, H. Lu, R. Hansen, M. Calder, D. Choffnes, W. Lloyd, M. Luckie, E. Katz-Bassett.",
+  "year": 2017,
+  "category": "paper",
+  "externalLinks": [
+    {
+      "label": "Download Paper",
+      "url": "http://www.columbia.edu/~ebk2141/papers/record_route-imc17.pdf"
+    },
+    {
+      "label": "Download Data",
+      "url": "https://storage.cloud.google.com/archive-mlab-oti/misc/rr_data.tar.gz"
+    }
+  ],
+  "venue": "ACM Internet Measurement Conference (IMC), 2017.",
+  "contributors": [
+    "dave-choffnes"
+  ]
+}

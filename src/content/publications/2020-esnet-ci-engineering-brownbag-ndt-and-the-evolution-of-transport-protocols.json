@@ -1,0 +1,24 @@
+{
+  "id": "2020-esnet-ci-engineering-brownbag-ndt-and-the-evolution-of-transport-protocols",
+  "title": "ESnet CI Engineering Brownbag - NDT and the evolution of transport protocols",
+  "description": "On 3/20/2020, M-Lab contributor, Matt Mathis, presented an [ESnet CI Engineering Brownbag](https://www.es.net/science-engagement/ci-engineering-brownbag-series/) on \\_BBR and the evolution of transport protocols_.",
+  "authors": "Matt Mathis",
+  "year": 2020,
+  "category": "presentation",
+  "externalLinks": [
+    {
+      "label": "View Slides & Documents",
+      "url": "https://drive.google.com/open?id=1IgYW_W3nflD_62UViLghKG4VbUCGvK7P"
+    }
+  ],
+  "videoLinks": [
+    {
+      "label": "Watch Recording",
+      "url": "https://youtu.be/fLZEYiSCviE",
+      "platform": "youtube"
+    }
+  ],
+  "contributors": [
+    "matt-mathis"
+  ]
+}

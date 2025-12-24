@@ -1,0 +1,21 @@
+{
+  "id": "2019-hack-for-a-cause-2019",
+  "title": "Hack for a Cause 2019",
+  "description": "M-Lab's Program Management and Community Lead, Chris Ritzo, gave a keynote to kick off Hack for a Cause 2019, April 26-28, 2019 in Eugene, OR. The grand challenge was Speedup America, a web application that aggregates M-Lab data, the NDT speed test, and requests enhanced geolocation within the web browser. The grand challenge was put forward by Lane County government, to encourage innovation to build understanding of broadband availability and quality of service with high geographic accuracy. For M-Lab, Speedup America represents a growing developer community and the use of our public data and open source tools to serve the needs of local and regional governments and municipalities.",
+  "authors": "Chris Ritzo",
+  "year": 2019,
+  "category": "presentation",
+  "externalLinks": [
+    {
+      "label": "2019 Hack for a Cause Challenges",
+      "url": "https://hackforacause.org/challenges-2019"
+    },
+    {
+      "label": "Speedupamerica.com",
+      "url": "https://speedupamerica.com"
+    }
+  ],
+  "contributors": [
+    "chris-ritzo"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "2020-m-lab-internet-measurement-open-source-open-data",
+  "title": "M-Lab : Internet Measurement - Open Source, Open Data",
+  "description": "M-Lab Community Lead, Chris Ritzo, presented remotely to the Network Technologies and Services Evolution work group of the GÉANT GN4-3 project, at their [workshop on Performance Management](https://wiki.geant.org/display/PUB/Performance+Management+Workshop), held in Zagreb on 4th-5th March 2020.",
+  "authors": "Chris Ritzo",
+  "year": 2020,
+  "category": "presentation",
+  "externalLinks": [
+    {
+      "label": "View Slides",
+      "url": "https://docs.google.com/presentation/d/15x5mEawJN_HoVUyinZAMqfeUfqYU2UVpfnNS2zZu0FQ/"
+    }
+  ],
+  "contributors": [
+    "chris-ritzo"
+  ]
+}

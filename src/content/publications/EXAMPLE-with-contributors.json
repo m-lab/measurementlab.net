@@ -1,0 +1,14 @@
+{
+  "id": "EXAMPLE-with-contributors",
+  "title": "Example Publication with M-Lab Contributors",
+  "description": "This is an example showing how to link publications to people in the people collection.",
+  "authors": "Matt Mathis, Stephen Soltesz, Chris Ritzo",
+  "contributors": [
+    "matt-mathis",
+    "stephen-soltesz",
+    "chris-ritzo"
+  ],
+  "year": 2024,
+  "category": "documentation",
+  "tags": ["mlab-team", "example"]
+}

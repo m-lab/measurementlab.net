@@ -1,0 +1,27 @@
+{
+  "id": "2014-isp-interconnection-and-its-impact-on-consumer-internet-performancea-measurement",
+  "title": "ISP Interconnection and Its Impact on Consumer Internet Performance—A Measurement Lab Consortium Technical Report",
+  "description": "- Study methodology referenced on page 35, formerly on code.google.com, may now be found on this website as a [PDF](/publications/2014_mlab_interconnection_methodological_overview.pdf).",
+  "authors": "M-Lab Research Team",
+  "year": 2014,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/isp-interconnection-impact.pdf"
+    }
+  ],
+  "externalLinks": [
+    {
+      "label": "NDT Source Code",
+      "url": "https://github.com/ndt-project/ndt"
+    },
+    {
+      "label": "NDT Test Methodology",
+      "url": "https://github.com/ndt-project/ndt/wiki/NDTTestMethodology"
+    }
+  ],
+  "tags": [
+    "mlab-team"
+  ]
+}

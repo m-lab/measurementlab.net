@@ -1,0 +1,13 @@
+{
+  "id": "2011-shaperprobe-end-to-end-detection-of-isp-traffic-shaping-using-active-methods",
+  "title": "ShaperProbe: End-to-end Detection of ISP Traffic Shaping Using Active Methods",
+  "authors": "P. Kanuparthy, C. Dovrolis",
+  "year": 2011,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/detection-isp-traffic.pdf"
+    }
+  ]
+}

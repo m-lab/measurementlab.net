@@ -1,0 +1,23 @@
+{
+  "id": "2022-m-lab-user-initiated-internet-data-for-the-research-community",
+  "title": "M-Lab: User Initiated Internet Data for the Research Community",
+  "description": "on which researchers have deployed measurement tools. Its mission is to measure the Internet, save the data and make it universally accessible and useful. This paper serves as an update on the MLab platform 10+ years after its initial introduction to the research community. Here, we detail the current state of the M-Lab distributed platform, highlights existing measurements/data available on the platform, and describes opportunities for further engagement between the networking research community and the platform.",
+  "authors": "Phillipa Gill, Christophe Diot, Lai Yi Ohlsen, Matt Mathis, and Stephen Soltesz",
+  "year": 2022,
+  "category": "paper",
+  "externalLinks": [
+    {
+      "label": "Download",
+      "url": "https://ccronline.sigcomm.org/2022/ccr-january-2022/m-lab-user-initiated-internet-data-for-the-research-community/"
+    }
+  ],
+  "tags": [
+    "mlab-team"
+  ],
+  "contributors": [
+    "phillipa-gill",
+    "lai-yi-ohlsen",
+    "matt-mathis",
+    "stephen-soltesz"
+  ]
+}

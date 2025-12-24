@@ -1,0 +1,18 @@
+{
+  "id": "2017-netperftrace-predicting-internet-path-dynamics-and-performance-with-machine-lear",
+  "title": "NETPerfTrace – Predicting Internet Path Dynamics and Performance with Machine Learning",
+  "description": "We study the problem of predicting Internet path changes and path performance using traceroute measurements and machine learning models. Path changes are frequently linked to path inflation and performance degradation, therefore the relevance of the problem. We introduce NETPerfTrace, an Internet Path Tracking system to forecast path changes and path latency variations.",
+  "authors": "Wasserman, Sarah; Casas, Pedro; Cuvelier, Thibaut; Donnet, Benoit",
+  "year": 2017,
+  "category": "paper",
+  "externalLinks": [
+    {
+      "label": "Download PDF",
+      "url": "https://orbi.uliege.be/handle/2268/211667"
+    },
+    {
+      "label": "Download",
+      "url": "https://www.cable.co.uk/about/media-centre/releases/new-worldwide-broadband-speed-league-unveiled-uk-ranks-31/"
+    }
+  ]
+}

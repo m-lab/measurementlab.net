@@ -1,0 +1,14 @@
+{
+  "id": "2017-towards-estimating-the-untapped-potential-a-global-malicious-ddos-mean-capacity-",
+  "title": "Towards estimating the untapped potential: a global malicious DDoS mean capacity estimate",
+  "description": "What is the malicious reflected distributed denial of service (rDDoS) mean potential of the Internet? The authors have been using data from the openNTP project which measures the number of reflectors on the Internet since 2014 until now, and completed a graph that roughly estimates a lower boundary for global rDDoS mean potential across four Internet protocols (IPs); SSDP, NTP, SNMP and open recursive DNS.",
+  "authors": "Eireann Leverett, Aaron Kaplan",
+  "year": 2017,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/Leverett-Kaplan-2017.pdf"
+    }
+  ]
+}

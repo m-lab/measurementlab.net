@@ -1,0 +1,22 @@
+{
+  "id": "2019-supporting-open-internet-research-ietf-105-global-access-to-the-internet-for-all",
+  "title": "Supporting Open Internet Research - IETF 105 - Global Access to the Internet for All (GAIA)",
+  "description": "M-Lab Director, Lai Yi Ohlsen, and Community Lead, Chris Ritzo, presented remotely to the GAIA working group at IETF 105. The talk, \"Supporting Open Internet Research\", provided an introduction to M-Lab tools and data, and how our platform is currently used by researchers.",
+  "authors": "Lai Yi Ohlsen, Chris Ritzo",
+  "year": 2019,
+  "category": "presentation",
+  "externalLinks": [
+    {
+      "label": "IETF, GAIA Agenda",
+      "url": "https://datatracker.ietf.org/doc/agenda-105-gaia/"
+    },
+    {
+      "label": "View Slides",
+      "url": "https://docs.google.com/presentation/d/1RrDep7KFm9H5opGQMRol-s3OsR2fotOJ0-92GBA-nOI/edit?usp=sharing"
+    }
+  ],
+  "contributors": [
+    "lai-yi-ohlsen",
+    "chris-ritzo"
+  ]
+}

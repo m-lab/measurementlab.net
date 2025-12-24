@@ -1,0 +1,14 @@
+{
+  "id": "2012-measuring-internet-performance-when-broadband-is-the-new-pstn",
+  "title": "Measuring Internet Performance When Broadband Is the New PSTN",
+  "description": "Review of M-Lab and other sources of performance measurement data in an era when \"broadband is the new PSTN\"—MIT technical report 2012",
+  "authors": "B. Lehr, S. Bauer, D. Clark",
+  "year": 2012,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/measuring-internet-performance.pdf"
+    }
+  ]
+}

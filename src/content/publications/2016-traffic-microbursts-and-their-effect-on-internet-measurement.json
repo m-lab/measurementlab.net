@@ -1,0 +1,17 @@
+{
+  "id": "2016-traffic-microbursts-and-their-effect-on-internet-measurement",
+  "title": "Traffic Microbursts and their Effect on Internet Measurement",
+  "description": "Report on M-Lab's evaluation of reported site performance degradation in late 2015 due to switch discards caused by microburst traffic.",
+  "authors": "M-Lab Research Team",
+  "year": 2016,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/SwitchDiscardNotice-Final-20160525.pdf"
+    }
+  ],
+  "tags": [
+    "mlab-team"
+  ]
+}

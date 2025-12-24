@@ -1,0 +1,14 @@
+{
+  "id": "2012-unraveling-the-economic-and-political-drivers-of-deep-packet-inspection",
+  "title": "Unraveling the Economic and Political Drivers of Deep Packet Inspection",
+  "description": "Identification and examination of deep packet inspection (DPI) used to throttle and block BitTorrent traffic, using data from M-Lab's Glasnost test.",
+  "authors": "H. Asghari, M. van Eeten, M. Mueller",
+  "year": 2012,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/economic-drivers-deep-packet-inspection.pdf"
+    }
+  ]
+}

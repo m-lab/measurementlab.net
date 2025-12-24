@@ -1,0 +1,17 @@
+{
+  "id": "2012-lifeguard-practical-repair-of-persistent-route-failures",
+  "title": "LIFEGUARD: Practical Repair of Persistent Route Failures",
+  "description": "Examination of long-term network outages using data from measurement tests, and proposal of a system for detection, localization, and remediation",
+  "authors": "E. Katz-Bassett, C. Scott, D. Choffnes, I. Cunha, V. Valancius, N. Feamster, H. Madhyastha, T. Anderson, A. Krishnamurthy",
+  "year": 2012,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/repair-persistent-route-failures.pdf"
+    }
+  ],
+  "contributors": [
+    "dave-choffnes"
+  ]
+}

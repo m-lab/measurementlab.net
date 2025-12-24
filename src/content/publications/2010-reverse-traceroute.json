@@ -1,0 +1,14 @@
+{
+  "id": "2010-reverse-traceroute",
+  "title": "Reverse Traceroute",
+  "description": "Discussion of the model for providing reverse trace information by the architects of the Reverse Traceroute test—NSDI 2010",
+  "authors": "E. Katz-Bassett, H. V. Madhyastha, V. K. Adhikari, C. Scott, J. Sherry, P. van Wesep, T. Anderson, A. Krishnamurthy",
+  "year": 2010,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/reverse-traceroute.pdf"
+    }
+  ]
+}

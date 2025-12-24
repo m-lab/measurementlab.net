@@ -2,8 +2,7 @@ import { defineCollection, type ImageFunction, z } from 'astro:content';
 import blogCategories from './categories/blog.json';
 import partnerCategories from './categories/partners.json';
 import peopleCategories from './categories/people.json';
-
-// TODO: #4 create Publications content collection
+import publicationsCategories from './categories/publications.json';
 
 //  TODO: #5 create Projects content collection
 
@@ -264,6 +263,61 @@ const homepageCollection = defineCollection({
   },
 });
 
+const publicationsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    // Core metadata
+    id: z.string(),
+    title: z.string(),
+    description: z.string().optional(),
+    authors: z.string().optional(), // Official citation string
+    contributors: z.array(z.string()).optional(), // References to people collection IDs
+
+    // Classification
+    year: z.number(),
+    category: z.enum(
+      publicationsCategories.categories as [string, ...string[]]
+    ),
+
+    // Link types - ALL OPTIONAL, SUPPORTS MULTIPLE
+    internalLinks: z
+      .array(
+        z.object({
+          label: z.string(),
+          path: z.string(),
+        })
+      )
+      .optional(),
+
+    externalLinks: z
+      .array(
+        z.object({
+          label: z.string(),
+          url: z.string().url(),
+        })
+      )
+      .optional(),
+
+    videoLinks: z
+      .array(
+        z.object({
+          label: z.string(),
+          url: z.string().url(),
+          platform: z
+            .enum(['youtube', 'vimeo', 'livestream', 'other'])
+            .optional(),
+        })
+      )
+      .optional(),
+
+    // Additional metadata
+    publishedDate: z.coerce.date().optional(),
+    venue: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    order: z.number().optional(),
+  }),
+});
+
 export const collections = {
   people: peopleCollection,
   pages: pagesCollection,
@@ -273,4 +327,5 @@ export const collections = {
   partners: partnersCollection,
   categories: categoriesCollection,
   homepage: homepageCollection,
+  publications: publicationsCollection,
 };

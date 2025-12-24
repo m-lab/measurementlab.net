@@ -1,0 +1,14 @@
+{
+  "id": "2010-glasnost-enabling-end-users-to-detect-trafc-differentiation",
+  "title": "Glasnost: Enabling End Users to Detect Trafﬁc Differentiation",
+  "description": "Description of the rationale behind the Glasnost test and the way it can help expose opaque ISP network management by its architects—NSDI 2010",
+  "authors": "M. Dischinger, M. Marcon, S. Guha, K. P. Gummadi, R. Mahajan, S. Saroiu",
+  "year": 2010,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/enabling-users-detect-traffic.pdf"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "2013-strengthening-measurements-from-the-edges-application-level-packet-loss-rate-est",
+  "title": "Strengthening Measurements from the Edges: Application-level Packet Loss Rate Estimation",
+  "authors": "S. Basso, M. Meo, J. C. De Martin",
+  "year": 2013,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/application-packet-loss-estimation.pdf"
+    }
+  ],
+  "venue": "ACM SIGCOMM Computer Communication Review 2013",
+  "contributors": [
+    "simone-basso"
+  ]
+}

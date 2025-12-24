@@ -1,0 +1,14 @@
+{
+  "id": "2015-analysis-of-end-user-qoe-in-community-networks",
+  "title": "Analysis of End-User QoE in Community Networks",
+  "description": "Community networks are a potential model for the Future Internet, where the users form and operate the network instead of a central, commercial entity. Socio-economic studies show that community networks are an excellent model to develop networking infrastructure commons (as common-pool resources or public goods) that promote sustainable development, with greater effects in less developed areas. The performance of parts of community networks has been studied extensively, often focusing on routing protocols or applications on top of community networks. This work focuses on the end-to-end quality of Internet access in community networks, as a validation of the technical applicability of this concept in under-served regions.",
+  "authors": "Bart Braem, Johan Bergs, Chris Blondia, Leandro Navarro, Sabine Wittevrongel",
+  "year": 2015,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/2015-Braem-et-al.pdf"
+    }
+  ]
+}

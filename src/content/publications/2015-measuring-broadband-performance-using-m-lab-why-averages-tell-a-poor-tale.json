@@ -1,0 +1,14 @@
+{
+  "id": "2015-measuring-broadband-performance-using-m-lab-why-averages-tell-a-poor-tale",
+  "title": "Measuring broadband performance using M-Lab: Why averages tell a poor tale",
+  "description": "Broadband network performance is multi-faceted: it varies by ISP, by content source, by household connection, and by time-of-day. Daily or monthly averages, as published by content providers such as Netflix and Google, do not convey the full picture. In this paper we leverage M-Lab, the world's largest open measurement platform, to characterize broadband performance across Australian households. Our study delves into millions of data samples collected from 96,882 households over four months, and looks beyond averages to make several interesting observations: 1) There is considerable variation amongst households, in terms of their broadband speeds and variability of network performance within a day and across days, and this information is lost when data is averaged across houses; 2) The fluctuations (even for a specific house) are significant, and can exhibit unexpected patterns, such as wide variations from one day to the next, and some clusters of outliers at certain times of the day. 3) By our experimental results, we conclude that neither aggregating by household nor aggregating by day or by hour is a sound measurement strategy. Moreover, our study sheds new perspectives on broadband evaluation by using M-Lab data, and can inspire future study into the underlying reasons of performance variation.",
+  "authors": "Xiaohong Deng, Jordan G Hamilton, Jason Thorne, Vijay Sivaraman",
+  "year": 2015,
+  "category": "paper",
+  "externalLinks": [
+    {
+      "label": "Download",
+      "url": "http://doi.org/10.1109/ATNAC.2015.7366784"
+    }
+  ]
+}

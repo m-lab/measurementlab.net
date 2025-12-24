@@ -1,0 +1,17 @@
+{
+  "id": "2013-visualizing-internet-measurements-data-for-research-purposes-the-neuviz-data-vis",
+  "title": "Visualizing Internet-Measurements Data for Research Purposes: The NeuViz Data Visualization Tool",
+  "description": "Overview of NeuViz, a network measurement visualization tool tailored to work with data from the NeuBot measurement test",
+  "authors": "Giuseppe Futia, Enrico Zimuel, Simone Basso, Juan Carlos De Martin",
+  "year": 2013,
+  "category": "paper",
+  "internalLinks": [
+    {
+      "label": "Download PDF",
+      "path": "publications/neuviz-data-visualization-tool.pdf"
+    }
+  ],
+  "contributors": [
+    "simone-basso"
+  ]
+}

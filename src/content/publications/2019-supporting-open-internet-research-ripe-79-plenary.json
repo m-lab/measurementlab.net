@@ -1,0 +1,21 @@
+{
+  "id": "2019-supporting-open-internet-research-ripe-79-plenary",
+  "title": "Supporting Open Internet Research - RIPE 79 Plenary",
+  "description": "M-Lab Director, Lai Yi Ohlsen, gave a plenary session at RIPE 79, providing an overview of Measurement Lab, our community of users, and how our open source tools and data support researchers around the world.",
+  "authors": "Lai Yi Ohlsen",
+  "year": 2019,
+  "category": "presentation",
+  "externalLinks": [
+    {
+      "label": "View Video",
+      "url": "https://ripe79.ripe.net/archives/video/186/"
+    },
+    {
+      "label": "View Slides",
+      "url": "https://ripe79.ripe.net/presentations/46-M-Lab-Presentation-Outline-RIPE-79.pdf"
+    }
+  ],
+  "contributors": [
+    "lai-yi-ohlsen"
+  ]
+}
