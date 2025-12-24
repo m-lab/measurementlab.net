@@ -8,13 +8,19 @@ description: >-
   template.
 sections:
   - type: richText
+    background:
+      color: white
+      type: full
     content: |-
       # Rich Text
 
       This is some content, and this is an image:
 
-      ![image text](/src/assets/mlab-og.png)
+      ![](/src/assets/logo-extended-blue.svg)
   - type: button
+    background:
+      color: white
+      type: full
     buttons:
       - variant: primary
         size: md
@@ -27,42 +33,43 @@ sections:
   - type: hero
     title: Hero
     subtitle: Hero primary - light
-    zigzag: primary-light
   - type: hero
     title: Hero
     subtitle: Hero primary - dark
-    zigzag: primary-dark
   - type: hero
     title: Hero
     subtitle: Hero secondary - light
-    zigzag: secondary-light
   - type: hero
     title: Hero
     subtitle: Hero secondary - dark
-    zigzag: secondary-dark
   - type: hero
     title: Hero
     subtitle: Hero supporting1 - light
-    zigzag: supporting1-light
   - type: hero
     title: Hero
     subtitle: Hero supporting1 - dark
-    zigzag: supporting1-dark
   - type: hero
     title: Hero
     subtitle: Hero supporting2 - light
-    zigzag: supporting2-light
   - type: hero
     title: Hero
     subtitle: Hero supporting2 - dark
-    zigzag: supporting2-dark
   - type: flexi
+    background:
+      color: white
+      type: full
     title: This is a Flexi Section!
     description: Weeeee
     sections:
       - type: richText
+        background:
+          color: white
+          type: full
         content: Some text!
       - type: button
+        background:
+          color: white
+          type: full
         title: Buttons
         buttons:
           - variant: primary
