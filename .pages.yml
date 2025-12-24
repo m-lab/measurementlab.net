@@ -12,6 +12,7 @@ media:
     label: Blog Images
     input: src/assets
     output: ../../assets
+    path: images
 
 # Reusable components
 components:
