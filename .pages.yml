@@ -750,7 +750,7 @@ content:
 
       - name: excerpt
         label: Excerpt
-        type: string
+        type: text
         description: Short summary of the blog post
 
       - name: authors
