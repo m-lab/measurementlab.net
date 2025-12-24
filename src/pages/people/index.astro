@@ -9,7 +9,10 @@ import PageLayout from '@layouts/PageLayout.astro';
 // Get all people from the collection (images are automatically resolved)
 const peopleEntries = await getCollection('people');
 const people = peopleEntries.map((entry) => entry.data);
+
+// TODO: #3 remove People index page altogether, make it managed via content collections. keep people[id] pages
 ---
+
 
 <PageLayout
 	title="People - Draftlab Scaffold"

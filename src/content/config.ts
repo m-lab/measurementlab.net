@@ -3,6 +3,10 @@ import blogCategories from './categories/blog.json';
 import partnerCategories from './categories/partners.json';
 import peopleCategories from './categories/people.json';
 
+// TODO: #4 create Publications content collection
+
+//  TODO: #5 create Projects content collection
+
 // Helper to create schemas with image support
 const createSchemas = (image: ImageFunction) => {
   // Atoms

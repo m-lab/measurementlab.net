@@ -13,6 +13,7 @@ import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import { isDev } from '@utils/dev';
 
+// TODO: #2 turn blog landing page to a regular content collection page, build conditional logic in [...path.astro] to show blog roll when on /blog
 
 // Fetch all blog posts
 const allPosts = await getCollection('blog');
