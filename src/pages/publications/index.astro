@@ -7,6 +7,7 @@ import HouseCard from '@components/molecules/HouseCard.astro';
 import HeroSection from '@components/sections/HeroSection.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
+import IconDownload from '~icons/heroicons/document-arrow-down-solid'
 
 // Fetch all publications
 const allPublications = await getCollection('publications');
@@ -65,13 +66,15 @@ const getLinkCount = (pub: typeof publications[0]) => {
 					<div class="grid gap-6">
 						{publications.map((pub) => (
 							<HouseCard
-								variant="primary"
+								variant="neutral"
 								title={pub.data.title}
 								description={pub.data.description}
 								class="flex h-full flex-col"
 								href={`/publications/${pub.id}`}
+								width="narrow"
+								cardType="publication"
 							>
-								<div class="flex flex-col gap-3">
+								<div class="flex flex-col gap-3" slot="above-title">
 									{/* Category and Year */}
 									<div class="flex flex-wrap items-center gap-2">
 										<Tag variant="primary">
@@ -83,7 +86,8 @@ const getLinkCount = (pub: typeof publications[0]) => {
 												.slice(0, 2)
 												.map((tag) => <Tag variant="primary">{tag}</Tag>)}
 									</div>
-
+								</div>
+								<div class="flex flex-col gap-3">
 									{/* Authors/Citation */}
 									{pub.data.authors && (
 										<p class="text-gray-700 text-sm">
@@ -91,22 +95,19 @@ const getLinkCount = (pub: typeof publications[0]) => {
 											{pub.data.authors}
 										</p>
 									)}
-
 									{/* Venue */}
 									{pub.data.venue && (
 										<p class="text-gray-700 text-sm">
 											<span class="font-medium">Venue:</span> {pub.data.venue}
 										</p>
 									)}
-
-									{/* Link count indicator */}
-									{getLinkCount(pub) > 0 && (
-										<p class="text-gray-600 text-sm">
-											{getLinkCount(pub)} resource
-											{getLinkCount(pub) !== 1 ? 's' : ''} available
-										</p>
-									)}
 								</div>
+								{pub.data.internalLinks &&
+									pub.data.internalLinks.map((link) => (
+										<a href={link.path} class="inline-flex gap-2">
+											<IconDownload /> {link.label}
+										</a>
+									))}
 							</HouseCard>
 						))}
 					</div>

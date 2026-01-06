@@ -11,8 +11,10 @@ export interface Props {
   description?: string;
   href?: string;
   variant?: 'primary' | 'secondary' | 'supporting1' | 'supporting2' | 'speed' | 'neutral';
-  houseVariant?: 'standard' | 'short' | 'wide';
+  cardType?: 'blog' | 'publication' | 'container';
   class?: string;
+	width?: 'standard' | 'narrow';
+
 }
 
 const {
@@ -22,8 +24,9 @@ const {
   description,
   href,
   variant = 'primary',
-  houseVariant = 'standard',
-  class: className = ''
+  cardType = 'blog',
+  class: className = '',
+	width = 'standard',
 } = Astro.props;
 
 const variantColors = {
@@ -32,15 +35,18 @@ const variantColors = {
   supporting1: 'bg-supporting1-50 hover:bg-supporting1-100',
   supporting2: 'bg-supporting2-50 hover:bg-supporting2-100',
   speed: 'bg-speed-50 hover:bg-speed-100',
-  neutral: 'bg-neutral-50 hover:bg-neutral-100',
+  neutral: 'bg-neutral-100',
 };
 
-const houseVariantStyles = {
+const houseWidthStyles = {
   standard: '',
-  short: '',
+  narrow: 'px-24',
 }
 
-const Tag = href ? 'a' : 'div';
+const Tag = cardType==="blog" ? 'a' : 'div';
+const TitleLink = (cardType!=="blog" && href) ? 'a':'slot';
+
+
 ---
 
 <Tag
@@ -49,7 +55,7 @@ const Tag = href ? 'a' : 'div';
 >
 	<div
 		id="houseCard"
-		class={`flex h-full flex-col gap-6 ${variantColors[variant]} p-4 ${!image && `pt-12`}`}
+		class={`flex h-full flex-col gap-6 ${variantColors[variant]} ${houseWidthStyles[width]} p-4 ${!image && `pt-18`}`}
 	>
 		{
 			image && (
@@ -62,11 +68,19 @@ const Tag = href ? 'a' : 'div';
 				</div>
 			)
 		}
+		<slot name="above-title" />
 
 		{
-			title && (
-				<h3 class="text-xl font-bold text-neutral-900 md:text-2xl">{title}</h3>
-			)
+			title &&
+				(cardType !== 'blog' && href ? (
+					<a href={href}>
+						<h3 class="text-xl font-bold md:text-2xl">{title}</h3>
+					</a>
+				) : (
+					<h3 class="text-xl font-bold text-neutral-900 md:text-2xl">
+						{title}
+					</h3>
+				))
 		}
 
 		<div
