@@ -9,6 +9,7 @@ import {
 } from '@headlessui/react';
 import Fuse from 'fuse.js';
 import { useEffect, useMemo, useState } from 'react';
+import AcademicCapIcon from '~icons/heroicons/academic-cap';
 import DocumentIcon from '~icons/heroicons/document-text';
 import ExclamationTriangleIcon from '~icons/heroicons/exclamation-triangle';
 import FolderIcon from '~icons/heroicons/folder';
@@ -80,6 +81,19 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
       imageUrl: post.data.heroImage?.src,
     }),
   },
+  {
+    name: 'Publications',
+    apiEndpoint: '/api/publications.json',
+    urlPrefix: '/publications/',
+    icon: AcademicCapIcon,
+    modifier: '$',
+    transform: (pub: any) => ({
+      id: pub.id,
+      name: pub.title,
+      url: `/publications/${pub.id}`,
+      imageUrl: undefined, // Publications don't have hero images
+    }),
+  },
 ];
 
 function classNames(...classes: string[]) {
@@ -105,7 +119,7 @@ export default function RichSearch() {
   const [rawQuery, setRawQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(true);
-  const query = rawQuery.toLowerCase().replace(/^[#>@]/, '');
+  const query = rawQuery.toLowerCase().replace(/^[#>@$]/, '');
 
   // Fetch data dynamically from all configured categories
   useEffect(() => {
@@ -290,8 +304,8 @@ export default function RichSearch() {
 
                     return (
                       <li key={category.name}>
-                        <h2 className="text-gray-900 text-xs font-semibold tracking-wide uppercase">
-                          {category.name}
+                        <h2 className="text-gray-900 inline-flex gap-1 text-xs font-semibold tracking-wide uppercase">
+                          <Icon /> {category.name}
                         </h2>
                         <ul className="text-gray-700 -mx-4 mt-2 text-sm">
                           {items.map((item) => (
