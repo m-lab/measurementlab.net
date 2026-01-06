@@ -27,7 +27,7 @@ const {
 } = Astro.props;
 
 const variantColors = {
-  primary: 'bg-primary-50 hover:bg-primary-100',
+  primary: 'bg-white',
   secondary: 'bg-secondary-50 hover:bg-secondary-100',
   supporting1: 'bg-supporting1-50 hover:bg-supporting1-100',
   supporting2: 'bg-supporting2-50 hover:bg-supporting2-100',
@@ -47,7 +47,10 @@ const Tag = href ? 'a' : 'div';
 	href={href}
 	class={`block transition-all border-neutral-200 text-neutral-600 border-b-4 no-underline duration-200 ${className}`}
 >
-	<div id="houseCard" class="flex h-full flex-col gap-6 bg-white p-4">
+	<div
+		id="houseCard"
+		class={`flex h-full flex-col gap-6 ${variantColors[variant]} p-4 ${!image && `pt-12`}`}
+	>
 		{
 			image && (
 				<div class="-m-4 mb-0 max-h-52 overflow-hidden">

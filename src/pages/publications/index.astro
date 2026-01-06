@@ -1,0 +1,117 @@
+---
+import { getCollection } from 'astro:content';
+import housesBG from '@assets/backgrounds/anna-magenta-XUCfqIEudBU-unsplash.jpg'
+import MlabDefault from '@assets/mlab-default-card.png'
+import Tag from '@components/atoms/Tag.astro';
+import HouseCard from '@components/molecules/HouseCard.astro';
+import HeroSection from '@components/sections/HeroSection.astro';
+import PageLayout from '@layouts/PageLayout.astro';
+import SectionLayout from '@layouts/SectionLayout.astro';
+
+// Fetch all publications
+const allPublications = await getCollection('publications');
+
+// Sort publications by year (newest first), then by title
+const publications = allPublications
+  .sort((a, b) => {
+    // First sort by year (descending)
+    if (b.data.year !== a.data.year) {
+      return b.data.year - a.data.year;
+    }
+    // Then sort alphabetically by title
+    return a.data.title.localeCompare(b.data.title);
+  });
+
+// Helper to format category for display
+const formatCategory = (category: string) => {
+  return category
+    .split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};
+
+// Helper to get link count
+const getLinkCount = (pub: typeof publications[0]) => {
+  const internalCount = pub.data.internalLinks?.length || 0;
+  const externalCount = pub.data.externalLinks?.length || 0;
+  const videoCount = pub.data.videoLinks?.length || 0;
+  return internalCount + externalCount + videoCount;
+};
+---
+
+<PageLayout
+	title="Publications"
+	description="Research papers, presentations, and documentation from M-Lab"
+>
+	<!-- Header Section -->
+	<SectionLayout zigzag="primary-light" sectionLabel="hero" maxWidth="2xl">
+		<HeroSection
+			title="Publications"
+			subtitle="Research papers, presentations, and regulatory filings featuring M-Lab data and research"
+		/>
+	</SectionLayout>
+
+	<!-- Publications List -->
+	<SectionLayout maxWidth="4xl">
+		<div class="py-12">
+			{
+				publications.length === 0 ? (
+					<div class="py-12 text-center">
+						<p class="text-gray-600 text-lg">
+							No publications available yet. Check back soon!
+						</p>
+					</div>
+				) : (
+					<div class="grid gap-6">
+						{publications.map((pub) => (
+							<HouseCard
+								variant="primary"
+								title={pub.data.title}
+								description={pub.data.description}
+								class="flex h-full flex-col"
+								href={`/publications/${pub.id}`}
+							>
+								<div class="flex flex-col gap-3">
+									{/* Category and Year */}
+									<div class="flex flex-wrap items-center gap-2">
+										<Tag variant="primary">
+											{formatCategory(pub.data.category)}
+										</Tag>
+										<Tag variant="secondary">{pub.data.year}</Tag>
+										{pub.data.tags &&
+											pub.data.tags
+												.slice(0, 2)
+												.map((tag) => <Tag variant="primary">{tag}</Tag>)}
+									</div>
+
+									{/* Authors/Citation */}
+									{pub.data.authors && (
+										<p class="text-gray-700 text-sm">
+											<span class="font-medium">Authors:</span>{' '}
+											{pub.data.authors}
+										</p>
+									)}
+
+									{/* Venue */}
+									{pub.data.venue && (
+										<p class="text-gray-700 text-sm">
+											<span class="font-medium">Venue:</span> {pub.data.venue}
+										</p>
+									)}
+
+									{/* Link count indicator */}
+									{getLinkCount(pub) > 0 && (
+										<p class="text-gray-600 text-sm">
+											{getLinkCount(pub)} resource
+											{getLinkCount(pub) !== 1 ? 's' : ''} available
+										</p>
+									)}
+								</div>
+							</HouseCard>
+						))}
+					</div>
+				)
+			}
+		</div>
+	</SectionLayout>
+</PageLayout>
