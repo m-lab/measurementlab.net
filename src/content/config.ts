@@ -157,7 +157,19 @@ const pagesCollection = defineCollection({
       title: z.string(),
       description: z.string().optional(),
       heroImage: image().optional(),
-      sections: sectionsSchema,
+      zigzag: z
+        .enum([
+          'primary-light',
+          'primary-dark',
+          'secondary-light',
+          'secondary-dark',
+          'supporting1-light',
+          'supporting1-dark',
+          'supporting2-light',
+          'supporting2-dark',
+        ])
+        .optional(),
+      sections: sectionsSchema.optional(),
     });
   },
 });

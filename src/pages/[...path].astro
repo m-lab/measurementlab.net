@@ -1,5 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
+// Import landing page components
+import BlogLanding from '@components/landing/BlogLanding.astro';
+import PeopleLanding from '@components/landing/PeopleLanding.astro';
+import PublicationsLanding from '@components/landing/PublicationsLanding.astro';
 import HeroSection from '@components/sections/HeroSection.astro';
 import Sections from '@components/sections/Sections.astro';
 import PageLayout from '@layouts/PageLayout.astro';
@@ -18,6 +22,27 @@ export const getStaticPaths = (async () => {
 
 const { page } = Astro.props;
 
+// Detect special landing pages
+const landingComponents = {
+	blog: BlogLanding,
+	publications: PublicationsLanding,
+	people: PeopleLanding,
+} as const;
+
+const LandingComponent =
+	landingComponents[page.id as keyof typeof landingComponents];
+
+// Publications needs wider maxWidth
+const maxWidths = {
+	publications: '4xl',
+} as const;
+
+const listMaxWidth = maxWidths[page.id as keyof typeof maxWidths];
+
+// Filter hero to avoid duplication (hero rendered separately)
+const sections = page.data.sections
+
+
 ---
 
 <PageLayout title={page.data.title} description={page.data.description}>
@@ -25,9 +50,19 @@ const { page } = Astro.props;
 		maxWidth="2xl"
 		bgImage={page.data.heroImage}
 		sectionLabel="hero"
+		zigzag={page.data.zigzag}
 	>
 		<HeroSection title={page.data.title} subtitle={page.data.description} />
 	</SectionLayout>
 
-	<Sections sectionItems={page.data.sections} />
+	<!-- Custom landing page content (only for blog, publications, people)  -->
+	{
+		LandingComponent && (
+			<SectionLayout maxWidth={listMaxWidth}>
+				<LandingComponent />
+			</SectionLayout>
+		)
+	}
+	<!-- Main Page Content (Sections) -->
+	{sections && <Sections sectionItems={sections} />}
 </PageLayout>

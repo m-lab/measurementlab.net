@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import Tag from '@components/atoms/Tag.astro';
+import HouseCard from '@components/molecules/HouseCard.astro';
+import IconDownload from '~icons/heroicons/document-arrow-down-solid';
+
+// Fetch all publications
+const allPublications = await getCollection('publications');
+
+// Sort publications by year (newest first), then by title
+const publications = allPublications.sort((a, b) => {
+	// First sort by year (descending)
+	if (b.data.year !== a.data.year) {
+		return b.data.year - a.data.year;
+	}
+	// Then sort alphabetically by title
+	return a.data.title.localeCompare(b.data.title);
+});
+
+// Helper to format category for display
+const formatCategory = (category: string) => {
+	return category
+		.split('-')
+		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+		.join(' ');
+};
+---
+
+<div class="py-12">
+	{
+		publications.length === 0 ? (
+			<div class="py-12 text-center">
+				<p class="text-gray-600 text-lg">
+					No publications available yet. Check back soon!
+				</p>
+			</div>
+		) : (
+			<div class="grid gap-6">
+				{publications.map((pub) => (
+					<HouseCard
+						variant="neutral"
+						title={pub.data.title}
+						description={pub.data.description}
+						truncateDescription
+						class="flex h-full flex-col"
+						href={`/publications/${pub.id}`}
+						width="narrow"
+						cardType="publication"
+					>
+						<div class="flex flex-col gap-3" slot="above-title">
+							{/* Category and Year */}
+							<div class="flex flex-wrap items-center gap-2">
+								<Tag variant="primary">
+									{formatCategory(pub.data.category)}
+								</Tag>
+								<Tag variant="secondary">{pub.data.year}</Tag>
+								{pub.data.tags &&
+									pub.data.tags
+										.slice(0, 2)
+										.map((tag) => <Tag variant="primary">{tag}</Tag>)}
+							</div>
+						</div>
+						<div class="flex flex-col gap-3">
+							{/* Authors/Citation */}
+							{pub.data.authors && (
+								<p class="text-gray-700 text-sm">
+									<span class="font-medium">Authors:</span>{' '}
+									{pub.data.authors}
+								</p>
+							)}
+							{/* Venue */}
+							{pub.data.venue && (
+								<p class="text-gray-700 text-sm">
+									<span class="font-medium">Venue:</span> {pub.data.venue}
+								</p>
+							)}
+						</div>
+						{pub.data.internalLinks &&
+							pub.data.internalLinks.map((link) => (
+								<a href={`/${link.path}`} class="inline-flex gap-2">
+									<IconDownload /> {link.label}
+								</a>
+							))}
+					</HouseCard>
+				))}
+			</div>
+		)
+	}
+</div>
