@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Link from '@components/atoms/Link.astro'
 import Tag from '@components/atoms/Tag.astro';
-import HeroSection from '@components/sections/HeroSection.astro';
+import Hero from '@components/organisms/Hero.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import { isDev } from '@utils/dev';
@@ -114,6 +114,7 @@ const formatDate = (date: Date) => {
 };
 
 const {title, publishedDate, heroImage, tags, published } = post.data
+
 ---
 
 <PageLayout
@@ -122,8 +123,9 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 	image={heroImage}
 >
 	<!-- Post Header -->
-	<SectionLayout bgImage={heroImage} sectionLabel="hero">
-		<HeroSection title={title}>
+	{heroImage && <SectionLayout bgImage={heroImage} sectionLabel="hero" />}
+	<SectionLayout>
+		<Hero background="transparent" title={title} align="left">
 			{/* Draft badge (only visible in dev) */}
 			{
 				isDev && published === 'draft' && (
@@ -146,7 +148,7 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 			</div>
 
 			{/* Metadata */}
-			<div class="flex flex-wrap items-center gap-4 text-gray-700">
+			<div class="text-gray-700 flex flex-wrap items-center gap-4">
 				<p class="text-base">
 					By <span class="font-medium"
 						>{
@@ -166,12 +168,12 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 					{formatDate(publishedDate)}
 				</p>
 			</div>
-		</HeroSection>
+		</Hero>
 	</SectionLayout>
 
 	<!-- Post Content -->
 	<SectionLayout>
-		<article class="mx-auto prose max-w-4xl py-12 prose-blue">
+		<article class="mx-auto prose prose-a:text-primary-600">
 			<Content />
 		</article>
 	</SectionLayout>
@@ -215,18 +217,17 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 									</h3>
 
 									{/* Metadata: Authors and Date */}
-									<div class="mt-auto text-sm text-gray-600">
+									<div class="text-gray-600 mt-auto text-sm">
 										<p>
 											By{' '}
 											{relatedPost.resolvedAuthors.map((a, i) => (
 												<>
 													{a?.name}
-													{i < relatedPost.resolvedAuthors.length - 1 &&
-														', '}
+													{i < relatedPost.resolvedAuthors.length - 1 && ', '}
 												</>
 											))}
 										</p>
-										<p class="mt-1 text-xs text-gray-500">
+										<p class="text-gray-500 mt-1 text-xs">
 											{formatDate(relatedPost.data.publishedDate)}
 										</p>
 									</div>
@@ -266,7 +267,7 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 
 										<div>
 											<h3 class="mb-1 text-lg font-semibold">{author.name}</h3>
-											<p class="text-sm text-gray-600">{author.title}</p>
+											<p class="text-gray-600 text-sm">{author.title}</p>
 										</div>
 									</Link>
 								)

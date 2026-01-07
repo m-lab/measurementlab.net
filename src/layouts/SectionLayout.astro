@@ -85,7 +85,7 @@ const textClass = textColors[bgColor as keyof typeof textColors] || "text-gray-9
 	}
 	{zigzag && <ZigZagPattern style={zigzag} size={zigzagSize} />}
 	<div
-		class={`section-container relative ${containerClass} ${paddingClass} ${textClass} ${className}`}
+		class={`section-container min-h-96 relative ${containerClass} ${paddingClass} ${textClass} ${className}`}
 	>
 		<slot />
 	</div>

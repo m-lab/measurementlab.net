@@ -1,5 +1,4 @@
 ---
-import HouseCard from '@components/molecules/HouseCard.astro';
 import type { ImageMetadata } from 'astro';
 
 export interface Props {
@@ -7,10 +6,7 @@ export interface Props {
   subtitle?: string;
   align?: 'left' | 'center' | 'right';
   size?: 'default' | 'large';
-  background?: {
-    color: 'white' | 'gray' | 'primary-light' | 'primary-medium' | 'primary-dark';
-    image?: ImageMetadata;
-  };
+  background?: 'white' | 'gray' | 'primary-light' | 'primary-medium' | 'primary-dark' | 'transparent';
   class?: string;
 }
 
@@ -19,7 +15,7 @@ const {
   subtitle,
   align = 'center',
   size = 'default',
-  background = { color: 'white' },
+  background = 'white',
   class: className = '',
 } = Astro.props;
 
@@ -41,15 +37,15 @@ const backgrounds = {
   'primary-light': 'bg-primary-100',
   'primary-medium': 'bg-primary-700 text-white',
   'primary-dark': 'bg-primary-900 text-white',
+  transparent: 'bg-transparent'
 };
 
-const bgClass = backgrounds[background.color] || backgrounds.white;
+const bgClass = backgrounds[background] || backgrounds.white;
 const containerClasses = `${sizes[size]} ${bgClass} ${className}`;
 ---
 
 <div id="heroContent" class={containerClasses}>
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-		<!-- <HouseCard title={title} description={subtitle} /> -->
 		<div class={`mx-auto max-w-3xl ${alignments[align]}`}>
 			<!-- Title -->
 			<h1 class="mb-6">
