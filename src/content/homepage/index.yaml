@@ -10,11 +10,13 @@ stats:
   - label: Servers
     value: 400+
 sections:
-  - type: card
+  - type: blog_roll
     background:
       color: gray
       type: full
-    title: Latest news
+    title: Latest News
+    limit: 3
+    showMore: true
   - type: card
     background:
       color: white

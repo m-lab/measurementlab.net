@@ -118,6 +118,13 @@ const createSchemas = (image: ImageFunction) => {
       title: z.string(),
       description: z.string().optional(),
     }),
+    SectionCommonSchema.extend({
+      type: z.literal('blog_roll'),
+      title: z.string().default('Latest News'),
+      description: z.string().optional(),
+      limit: z.number().min(1).max(12).default(3),
+      showMore: z.boolean().default(false),
+    }),
   ]);
 
   const flexiSectionSchema = SectionCommonSchema.extend({

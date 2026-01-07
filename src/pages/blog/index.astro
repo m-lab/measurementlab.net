@@ -1,48 +1,19 @@
 ---
-import { getCollection } from 'astro:content';
 import housesBG from '@assets/backgrounds/anna-magenta-XUCfqIEudBU-unsplash.jpg'
-import LogoBlue from '@assets/logo-short-blue.svg'
 import MlabDefault from '@assets/mlab-default-card.png'
-import Button from '@components/atoms/Button.astro';
-import Image from '@components/atoms/Image.astro';
 import Tag from '@components/atoms/Tag.astro';
-import Card from '@components/molecules/Card.astro';
 import HouseCard from '@components/molecules/HouseCard.astro';
 import HeroSection from '@components/sections/HeroSection.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
+import { getBlogPosts, prepareBlogPostsCardData } from '@utils/blog';
 import { isDev } from '@utils/dev';
 
 // TODO: #2 turn blog landing page to a regular content collection page, build conditional logic in [...path.astro] to show blog roll when on /blog
 
-// Fetch all blog posts
-const allPosts = await getCollection('blog');
-
-// Filter posts based on environment: show drafts in dev, only published in production
-const posts = allPosts
-  .filter((post) => isDev || post.data.published === 'published')
-  .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
-
-// Fetch all people for author lookups
-const allPeople = await getCollection('people');
-const peopleMap = new Map(allPeople.map((person) => [person.data.id, person.data]));
-
-// Helper to get author names
-const getAuthorNames = (authorIds: string[]) => {
-  return authorIds
-    .map((id) => peopleMap.get(id)?.name)
-    .filter(Boolean)
-    .join(', ');
-};
-
-// Helper to format date
-const formatDate = (date: Date) => {
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  }).format(date);
-};
+// Fetch all blog posts using utilities
+const posts = await getBlogPosts();
+const postsData = await prepareBlogPostsCardData(posts);
 ---
 
 <PageLayout
@@ -61,7 +32,7 @@ const formatDate = (date: Date) => {
 	<SectionLayout>
 		<div class="py-12">
 			{
-				posts.length === 0 ? (
+				postsData.length === 0 ? (
 					<div class="py-12 text-center">
 						<p class="text-gray-600 text-lg">
 							No blog posts published yet. Check back soon!
@@ -69,7 +40,7 @@ const formatDate = (date: Date) => {
 					</div>
 				) : (
 					<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-						{posts.map((post) => (
+						{postsData.map(({ post, authorNames, formattedDate }) => (
 							<HouseCard
 								variant="primary"
 								title={post.data.title}
@@ -97,8 +68,8 @@ const formatDate = (date: Date) => {
 
 									{/* Metadata */}
 									<div class="mb-4 space-y-1">
-										<p class="">By {getAuthorNames(post.data.authors)}</p>
-										<p class="">{formatDate(post.data.publishedDate)}</p>
+										<p class="">By {authorNames}</p>
+										<p class="">{formattedDate}</p>
 									</div>
 								</div>
 							</HouseCard>

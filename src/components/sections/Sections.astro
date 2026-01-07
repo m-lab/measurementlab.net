@@ -1,4 +1,5 @@
 ---
+import BlogRollSection from '@components/sections/BlogRollSection.astro';
 import ButtonSection from '@components/sections/ButtonSection.astro';
 import CardSection from '@components/sections/CardSection.astro';
 import FeaturedPartnersSection from '@components/sections/FeaturedPartnersSection.astro';
@@ -77,6 +78,15 @@ const { sectionItems } = Astro.props;
 						<FeaturedPartnersSection
 							title={section.title}
 							description={section.description}
+						/>
+					);
+				case 'blog_roll':
+					return (
+						<BlogRollSection
+							title={section.title}
+							description={section.description}
+							limit={section.limit}
+							showMore={section.showMore}
 						/>
 					);
 				default:

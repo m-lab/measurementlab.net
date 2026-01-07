@@ -6,6 +6,12 @@ import Tag from '@components/atoms/Tag.astro';
 import Hero from '@components/organisms/Hero.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
+import {
+  formatBlogDate,
+  getPeopleMap,
+  getRelatedPosts, 
+  resolveAuthors
+} from '@utils/blog';
 import { isDev } from '@utils/dev';
 
 export async function getStaticPaths() {
@@ -23,95 +29,13 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
-// Fetch all people for author lookups
-const allPeople = await getCollection('people');
-const peopleMap = new Map(allPeople.map((person) => [person.data.id, person.data]));
+// Get author details and related posts using utilities
+const peopleMap = await getPeopleMap();
+const authors = await resolveAuthors(post.data.authors, peopleMap);
+const relatedPosts = await getRelatedPosts(post, { peopleMap });
 
-// Get author details
-const authors = post.data.authors
-  .map((id) => peopleMap.get(id))
-  .filter(Boolean);
-
-// Get related posts
-const allPosts = await getCollection('blog');
-
-// First, get manually selected related posts
-let relatedPosts = post.data.relatedPosts
-  ? post.data.relatedPosts
-      .filter(permalink => permalink !== post.data.permalink) // Don't show current post
-      .map((permalink) => {
-        const relatedPost = allPosts.find(
-          (p) => p.data.permalink === permalink && (isDev || p.data.published === 'published')
-        );
-        if (!relatedPost) {
-          console.warn(`Related post not found: ${permalink}`);
-          return null;
-        }
-
-        // Resolve authors for the related post
-        const relatedAuthors = relatedPost.data.authors
-          .map((id) => peopleMap.get(id))
-          .filter(Boolean);
-
-        return {
-          ...relatedPost,
-          resolvedAuthors: relatedAuthors
-        };
-      })
-      .filter((post): post is NonNullable<typeof post> => post !== null)
-  : [];
-
-// If we have less than 3 related posts, dynamically add more based on tag matching and recency
-if (relatedPosts.length < 3) {
-  const currentTags = new Set(post.data.tags);
-  const manuallySelectedPermalinks = new Set(relatedPosts.map(p => p.data.permalink));
-
-  // Calculate tag matches for all other posts
-  const candidatePosts = allPosts
-    .filter(p =>
-      p.data.permalink !== post.data.permalink && // Not the current post
-      !manuallySelectedPermalinks.has(p.data.permalink) && // Not already manually selected
-      (isDev || p.data.published === 'published') // Only published posts (except in dev)
-    )
-    .map(p => {
-      // Count matching tags
-      const matchingTags = p.data.tags.filter(tag => currentTags.has(tag)).length;
-
-      // Resolve authors
-      const resolvedAuthors = p.data.authors
-        .map((id) => peopleMap.get(id))
-        .filter(Boolean);
-
-      return {
-        ...p,
-        resolvedAuthors,
-        matchingTags
-      };
-    })
-    .sort((a, b) => {
-      // First sort by number of matching tags (descending)
-      if (b.matchingTags !== a.matchingTags) {
-        return b.matchingTags - a.matchingTags;
-      }
-      // Then sort by publish date (most recent first)
-      return b.data.publishedDate.getTime() - a.data.publishedDate.getTime();
-    });
-
-  // Add posts to fill up to 3 total
-  const postsNeeded = 3 - relatedPosts.length;
-  const dynamicPosts = candidatePosts.slice(0, postsNeeded);
-
-  relatedPosts = [...relatedPosts, ...dynamicPosts];
-}
-
-// Format date
-const formatDate = (date: Date) => {
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  }).format(date);
-};
+// Helper for template
+const formatDate = formatBlogDate;
 
 const {title, publishedDate, heroImage, tags, published } = post.data
 

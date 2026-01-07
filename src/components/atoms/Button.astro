@@ -60,14 +60,14 @@ const Tag = as === 'a' ? 'a' : 'button';
 			{icon === 'arrowDown' && <ArrowDown />}
 			{icon === 'measurement' && <MeasurementSmall />}
 			<slot />
-			{icon === 'arrowRight' && <ArrowLong />}
+			{icon === 'arrowRight' && <ArrowLong style={{ fontSize: '2em' }} />}
 		</a>
 	) : (
 		<button type={type} class={classes} {...props}>
 			{icon === 'arrowDown' && <ArrowDown />}
 			{icon === 'measurement' && <MeasurementSmall />}
 			<slot />
-			{icon === 'arrowRight' && <ArrowLong />}
+			{icon === 'arrowRight' && <ArrowLong style={{ fontSize: '2em' }} />}
 		</button>
 	)
 }
