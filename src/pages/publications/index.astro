@@ -1,7 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import housesBG from '@assets/backgrounds/anna-magenta-XUCfqIEudBU-unsplash.jpg'
-import MlabDefault from '@assets/mlab-default-card.png'
 import Tag from '@components/atoms/Tag.astro';
 import HouseCard from '@components/molecules/HouseCard.astro';
 import HeroSection from '@components/sections/HeroSection.astro';
@@ -45,7 +43,7 @@ const getLinkCount = (pub: typeof publications[0]) => {
 	description="Research papers, presentations, and documentation from M-Lab"
 >
 	<!-- Header Section -->
-	<SectionLayout zigzag="primary-light" sectionLabel="hero" maxWidth="2xl">
+	<SectionLayout zigzag="supporting1-light" sectionLabel="hero" maxWidth="2xl">
 		<HeroSection
 			title="Publications"
 			subtitle="Research papers, presentations, and regulatory filings featuring M-Lab data and research"
@@ -69,6 +67,7 @@ const getLinkCount = (pub: typeof publications[0]) => {
 								variant="neutral"
 								title={pub.data.title}
 								description={pub.data.description}
+								truncateDescription
 								class="flex h-full flex-col"
 								href={`/publications/${pub.id}`}
 								width="narrow"

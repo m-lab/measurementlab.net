@@ -9,6 +9,7 @@ export interface Props {
   imageAlt?: string;
   title?: string;
   description?: string;
+	truncateDescription?: boolean;
   href?: string;
   variant?: 'primary' | 'secondary' | 'supporting1' | 'supporting2' | 'speed' | 'neutral';
   cardType?: 'blog' | 'publication' | 'container';
@@ -22,6 +23,7 @@ const {
   imageAlt = '',
   title,
   description,
+	truncateDescription = false,
   href,
   variant = 'primary',
   cardType = 'blog',
@@ -84,7 +86,7 @@ const TitleLink = (cardType!=="blog" && href) ? 'a':'slot';
 		}
 
 		<div
-			class="grow justify-self-start"
+			class=`grow justify-self-start ${truncateDescription && 'line-clamp-4'}`
 			set:html={description && (await renderMarkdown(description))}
 		/>
 		<slot />
