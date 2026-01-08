@@ -12,7 +12,7 @@ const postsData = await prepareBlogPostsCardData(posts);
 		client:load
 		type="blog"
 		items={postsData}
-		fields={["categories"]}
+		fields={["categories", "tags"]}
 		placeholder="No blog posts published yet. Check back soon!"
 	/>
 </div>
