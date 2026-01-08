@@ -24,12 +24,13 @@ export default function FilterBar({
 	};
 
 	return (
-		<div className="w-full max-w-4xl mx-auto m-6">
-			<div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+		<div className="p-6 bg-neutral-900">
+			
+			<div className="flex flex-row gap-4 w-full items-center max-w-7xl mx-auto">
 			
 				{/* Filter Dropdowns */}
-				<div className="flex flex-wrap gap-3">
-					{fields.map((field) => (
+				{fields.map((field) => (
+					<div className='flex-1'>
 						<FilterDropdown
 							key={field}
 							label={field}
@@ -37,8 +38,8 @@ export default function FilterBar({
 							value={fieldFilters[field]}
 							onChange={(value) => onFieldFilterChange(field, value)}
 						/>
-					))}
-				</div>
+					</div>
+				))}
 
 				{/* Search Input */}
 				<div className="relative flex-1">
