@@ -9,60 +9,15 @@ import { isDev } from '@utils/dev';
 // Fetch all blog posts using utilities
 const posts = await getBlogPosts();
 const postsData = await prepareBlogPostsCardData(posts);
+console.log(postsData);
 ---
 
 <div class="pb-12">
 	<FilterableContent
 		client:load
 		type="blog"
-		items={postsData.map(p => p.post)}
+		items={postsData}
 		fields={["categories"]}
 		placeholder="No blog posts published yet. Check back soon!"
 	/>
-	{
-		postsData.length === 0 ? (
-			<div class="py-12 text-center">
-				<p class="text-gray-600 text-lg">
-					No blog posts published yet. Check back soon!
-				</p>
-			</div>
-		) : (
-			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-				{postsData.map(({ post, authorNames, formattedDate }) => (
-					<HouseCard
-						variant="primary"
-						title={post.data.title}
-						description={post.data.excerpt}
-						class="flex h-full flex-col"
-						image={post.data.heroImage || MlabDefault}
-						href={`/blog/${post.slug}`}
-					>
-						<div class="flex flex-col">
-							{/* Draft badge (only visible in dev) */}
-							{isDev && post.data.published === 'draft' && (
-								<div class="mb-3">
-									<Tag variant="highlight" class="font-bold">
-										DRAFT
-									</Tag>
-								</div>
-							)}
-
-							{/* Tags */}
-							<div class="mb-3 flex flex-wrap gap-2">
-								{post.data.tags.slice(0, 3).map((tag) => (
-									<Tag variant="primary">{tag}</Tag>
-								))}
-							</div>
-
-							{/* Metadata */}
-							<div class="mb-4 space-y-1">
-								<p class="">By {authorNames}</p>
-								<p class="">{formattedDate}</p>
-							</div>
-						</div>
-					</HouseCard>
-				))}
-			</div>
-		)
-	}
 </div>

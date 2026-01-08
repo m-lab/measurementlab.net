@@ -1,15 +1,18 @@
 import { useState, useMemo } from 'react';
 import Fuse from 'fuse.js';
 import FilterBar from './FilterBar';
+import BlogItem from '../Blog/BlogItem';
+import BlogItems from '../Blog/BlogItems';
+import type { BlogPostCardData } from '@utils/blog';
 
 interface FilterableContentProps {
   type: "blog" | "publications";
-	items: any[];
+	items: BlogPostCardData[];
 	fields: string[];
   placeholder?: string;
 }
 
-export default function FilterableContent({ items, fields, placeholder, children }: FilterableContentProps) {
+export default function FilterableContent({ items, type, fields, placeholder }: FilterableContentProps) {
 	const [searchText, setSearchText] = useState('');
 	const [fieldFilters, setFieldFilters] = useState<Record<string, string>>(
 		fields.reduce((acc, field) => ({ ...acc, [field]: 'all' }), {})
@@ -22,7 +25,8 @@ export default function FilterableContent({ items, fields, placeholder, children
 		fields.forEach(field => {
 			const values = new Set<string>();
 			items.forEach(item => {
-				const value = item.data?.[field] || item[field];
+				const value = item.post.data?.[field] || item.post[field];
+				console.log(value);
 				if (Array.isArray(value)) {
 					value.forEach(v => values.add(String(v)));
 				} else if (value) {
@@ -42,7 +46,7 @@ export default function FilterableContent({ items, fields, placeholder, children
 	// Create Fuse instance with configured fields
 	const fuse = useMemo(() => {
 		return new Fuse(items, {
-			keys: ["data.title"],
+			keys: ["post.data.title"],
 			threshold: 0.4, // 0.0 = exact match, 1.0 = match anything
 			includeScore: true,
 			ignoreLocation: true,
@@ -65,7 +69,7 @@ export default function FilterableContent({ items, fields, placeholder, children
 				const filterValue = fieldFilters[field];
 				if (filterValue === 'all') return true;
 
-				const itemValue = item.data?.[field] || item[field];
+				const itemValue = item.post.data?.[field] || item.post[field];
 				if (Array.isArray(itemValue)) {
 					return itemValue.includes(filterValue);
 				}
@@ -76,9 +80,7 @@ export default function FilterableContent({ items, fields, placeholder, children
 		return results;
 	}, [searchText, fieldFilters, fuse, items, fields]);
 
-  console.log('Filtered Items:', filteredItems);
-  
-
+	console.log(filteredItems);
 	return (
 		<div>
 			<FilterBar 
@@ -89,6 +91,7 @@ export default function FilterableContent({ items, fields, placeholder, children
 				fieldOptions={fieldOptions}
 				onFieldFilterChange={handleFieldFilterChange}
 			/>
+			<BlogItems items={filteredItems} />
       {filteredItems.length === 0 && (
         <div className="py-12 text-center">
           <p className="text-gray-600 text-lg">
