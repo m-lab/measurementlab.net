@@ -8,8 +8,8 @@ interface PublicationItemsProps {
 export default function PublicationItems({ items }: PublicationItemsProps) {
 	return (
 		<div className="grid gap-6">
-			{items.map((item) => (
-				<PublicationItem key={item.publication.id} item={item} />
+			{items.map((item, index) => (
+				<PublicationItem key={index} item={item} />
 			))}
 		</div>
 	);

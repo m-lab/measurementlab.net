@@ -1,39 +1,31 @@
 ---
-import { getCollection } from 'astro:content';
-import Tag from '@components/atoms/Tag.astro';
-import HouseCard from '@components/molecules/HouseCard.astro';
-import IconDownload from '~icons/heroicons/document-arrow-down-solid';
+import { getPublications, preparePublicationsCardData } from '@utils/publications';
 import FilterableContent from '@components/organisms/Filter/FilterableContent';
-// Fetch all publications
-const allPublications = await getCollection('publications');
 
-// Sort publications by year (newest first), then by title
-const publications = allPublications.sort((a, b) => {
-	// First sort by year (descending)
-	if (b.data.year !== a.data.year) {
-		return b.data.year - a.data.year;
-	}
-	// Then sort alphabetically by title
-	return a.data.title.localeCompare(b.data.title);
-});
+const publications = await getPublications();
+const publicationsData = await preparePublicationsCardData(publications);
 
-// Helper to format category for display
-const formatCategory = (category: string) => {
-	return category
-		.split('-')
-		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-		.join(' ');
-};
+
+// // Helper to format category for display
+// const formatCategory = (category: string) => {
+// 	return category
+// 		.split('-')
+// 		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+// 		.join(' ');
+// };
+
+// console.log(publicationsData)
+
 ---
-
 <div class="pb-12">
 	<FilterableContent
 		client:load
 		type="publications"
-		items={publications}
-		fields={["categories"]}
+		items={publicationsData}
+		fields={["category", "tags", "year"]}
 		placeholder="No publications available yet. Check back soon!"
 	/>
+<!-- 	
 	{
 		publications.length === 0 ? (
 			<div class="py-12 text-center">
@@ -93,4 +85,5 @@ const formatCategory = (category: string) => {
 			</div>
 		)
 	}
+</div> -->
 </div>

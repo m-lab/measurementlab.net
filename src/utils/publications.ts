@@ -4,7 +4,7 @@ import { getPeopleMap, getPersonNames, type PersonData } from '@utils/people';
 export type Publication = CollectionEntry<'publications'>;
 
 export interface PublicationCardData {
-	publication: Publication;
+	post: Publication;
 	authorNames: string;
 }
 
@@ -35,7 +35,7 @@ export async function preparePublicationCardData(
 	peopleMap?: Map<string, PersonData>
 ): Promise<PublicationCardData> {
 	return {
-		publication,
+		post: publication,
 		authorNames: await getPersonNames(publication.data.contributors, peopleMap),
 	};
 }
@@ -54,14 +54,4 @@ export async function preparePublicationsCardData(
 			preparePublicationCardData(publication, peopleMap)
 		)
 	);
-}
-
-/**
- * Format category for display (e.g., "research-papers" -> "Research Papers")
- */
-export function formatCategory(category: string): string {
-	return category
-		.split('-')
-		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-		.join(' ');
 }

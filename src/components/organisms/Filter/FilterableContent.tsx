@@ -1,14 +1,14 @@
 import { useState, useMemo } from 'react';
 import Fuse from 'fuse.js';
 import FilterBar from './FilterBar';
-import BlogItem from '../Blog/BlogItem';
 import BlogItems from '../Blog/BlogItems';
 import type { BlogPostCardData } from '@utils/blog';
-import SectionLayout from '@layouts/SectionLayout.astro';
+import type { PublicationCardData } from '@utils/publications';
+import PublicationItems from '../Publication/PublicationItems';
 
 interface FilterableContentProps {
   type: "blog" | "publications";
-	items: BlogPostCardData[];
+	items: BlogPostCardData[] | PublicationCardData[];
 	fields: string[];
   placeholder?: string;
 }
@@ -92,7 +92,11 @@ export default function FilterableContent({ items, type, fields, placeholder }: 
 				fieldOptions={fieldOptions}
 				onFieldFilterChange={handleFieldFilterChange}
 			/>
-			<BlogItems items={filteredItems} />
+			
+			{type === 'blog'
+				? <BlogItems items={filteredItems} />
+				: <PublicationItems items={filteredItems} />
+			}
       {filteredItems.length === 0 && (
         <div className="py-12 text-center">
           <p className="text-gray-600 text-lg">
