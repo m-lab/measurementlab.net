@@ -4,6 +4,7 @@ import FilterBar from './FilterBar';
 import BlogItem from '../Blog/BlogItem';
 import BlogItems from '../Blog/BlogItems';
 import type { BlogPostCardData } from '@utils/blog';
+import SectionLayout from '@layouts/SectionLayout.astro';
 
 interface FilterableContentProps {
   type: "blog" | "publications";

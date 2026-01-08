@@ -1,28 +1,19 @@
 import type { BlogPostCardData } from '@utils/blog';
+import MlabDefault from '@assets/mlab-default-card.png';
 
 interface BlogItemProps {
 	item: BlogPostCardData;
-	mlabDefaultImage: any;
 	isDev: boolean;
-	variant?: 'primary' | 'secondary' | 'supporting1' | 'supporting2' | 'speed' | 'neutral';
 }
 
 export default function BlogItem({
 	item,
 	isDev,
-	variant = 'primary',
 }: BlogItemProps) {
-	const variantColors = {
-		primary: 'bg-white',
-		secondary: 'bg-secondary-50 hover:bg-secondary-100',
-		supporting1: 'bg-supporting1-50 hover:bg-supporting1-100',
-		supporting2: 'bg-supporting2-50 hover:bg-supporting2-100',
-		speed: 'bg-speed-50 hover:bg-speed-100',
-		neutral: 'bg-neutral-100',
-	};
 
 	const { authorNames, formattedDate, post } = item;
 
+	const heroImage = post.data.heroImage || MlabDefault;
 	return (
 		<a
 			href={`/blog/${post.slug}`}
@@ -33,20 +24,16 @@ export default function BlogItem({
 			}}
 		>
 			<div
-				className={`flex h-full flex-col gap-6 ${variantColors[variant]} p-4 ${
-					!post.data.heroImage ? 'pt-18' : ''
-				}`}
+				className={`flex h-full flex-col gap-6 bg-white p-4`}
 			>
 				{/* Hero Image */}
-				{post.data.heroImage && (
-					<div className="-m-4 mb-0 max-h-52 overflow-hidden">
-						<img
-							src={post.data.heroImage.src}
-							alt={post.data.title}
-							className="object-cover object-center w-full"
-						/>
-					</div>
-				)}
+				<div className="-m-4 mb-0 max-h-52 overflow-hidden">
+					<img
+						src={heroImage.src}
+						alt={post.data.title}
+						className="object-cover object-center w-full"
+					/>
+				</div>
 
 				{/* Title */}
 				<h3 className="text-xl font-bold text-neutral-900 md:text-2xl">

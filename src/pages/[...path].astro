@@ -32,13 +32,6 @@ const landingComponents = {
 const LandingComponent =
 	landingComponents[page.id as keyof typeof landingComponents];
 
-// Publications needs wider maxWidth
-const maxWidths = {
-	publications: '4xl',
-} as const;
-
-const listMaxWidth = maxWidths[page.id as keyof typeof maxWidths];
-
 // Filter hero to avoid duplication (hero rendered separately)
 const sections = page.data.sections
 
@@ -58,9 +51,7 @@ const sections = page.data.sections
 	<!-- Custom landing page content (only for blog, publications, people)  -->
 	{
 		LandingComponent && (
-			<SectionLayout maxWidth={listMaxWidth}>
-				<LandingComponent />
-			</SectionLayout>
+			<LandingComponent />
 		)
 	}
 	<!-- Main Page Content (Sections) -->
