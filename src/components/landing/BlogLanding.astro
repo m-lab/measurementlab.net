@@ -4,12 +4,10 @@ import Tag from '@components/atoms/Tag.astro';
 import HouseCard from '@components/molecules/HouseCard.astro';
 import FilterableContent from '@components/organisms/Filter/FilterableContent';
 import { getBlogPosts, prepareBlogPostsCardData } from '@utils/blog';
-import { isDev } from '@utils/dev';
 
 // Fetch all blog posts using utilities
 const posts = await getBlogPosts();
 const postsData = await prepareBlogPostsCardData(posts);
-console.log(postsData);
 ---
 
 <div class="pb-12">

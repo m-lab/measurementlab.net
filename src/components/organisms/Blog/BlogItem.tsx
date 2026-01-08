@@ -1,14 +1,14 @@
 import type { BlogPostCardData } from '@utils/blog';
 import MlabDefault from '@assets/mlab-default-card.png';
+import { isDev } from '@utils/dev';
+
 
 interface BlogItemProps {
 	item: BlogPostCardData;
-	isDev: boolean;
 }
 
 export default function BlogItem({
 	item,
-	isDev,
 }: BlogItemProps) {
 
 	const { authorNames, formattedDate, post } = item;

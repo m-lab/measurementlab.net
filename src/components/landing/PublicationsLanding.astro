@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Tag from '@components/atoms/Tag.astro';
 import HouseCard from '@components/molecules/HouseCard.astro';
 import IconDownload from '~icons/heroicons/document-arrow-down-solid';
-
+import FilterableContent from '@components/organisms/Filter/FilterableContent';
 // Fetch all publications
 const allPublications = await getCollection('publications');
 
@@ -26,7 +26,14 @@ const formatCategory = (category: string) => {
 };
 ---
 
-<div class="py-12">
+<div class="pb-12">
+	<FilterableContent
+		client:load
+		type="publications"
+		items={publications}
+		fields={["categories"]}
+		placeholder="No publications available yet. Check back soon!"
+	/>
 	{
 		publications.length === 0 ? (
 			<div class="py-12 text-center">
