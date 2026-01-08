@@ -1,10 +1,11 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { getPeopleMap, getPersonNames, type PersonData } from '@utils/people';
 
 export type Publication = CollectionEntry<'publications'>;
 
 export interface PublicationCardData {
 	publication: Publication;
-	formattedYear: string;
+	authorNames: string;
 }
 
 /**
@@ -24,15 +25,35 @@ export async function getPublications() {
 }
 
 /**
- * Prepare publications data for card display
+ * Prepare publication data for card rendering
+ * @param publication - The publication
+ * @param peopleMap - Optional pre-built people map
+ * @returns Data ready for card rendering
  */
-export function preparePublicationsCardData(
-	publications: Publication[]
-): PublicationCardData[] {
-	return publications.map((publication) => ({
+export async function preparePublicationCardData(
+	publication: Publication,
+	peopleMap?: Map<string, PersonData>
+): Promise<PublicationCardData> {
+	return {
 		publication,
-		formattedYear: publication.data.year.toString(),
-	}));
+		authorNames: await getPersonNames(publication.data.contributors, peopleMap),
+	};
+}
+
+/**
+ * Prepare multiple publications for card rendering (more efficient)
+ * @param publications - Array of publications
+ * @returns Array of data ready for card rendering
+ */
+export async function preparePublicationsCardData(
+	publications: Publication[]
+): Promise<PublicationCardData[]> {
+	const peopleMap = await getPeopleMap();
+	return Promise.all(
+		publications.map((publication) =>
+			preparePublicationCardData(publication, peopleMap)
+		)
+	);
 }
 
 /**

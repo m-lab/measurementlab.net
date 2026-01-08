@@ -1,17 +1,9 @@
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import { isDev } from '@utils/dev';
+import { getPeopleMap, getPersonNames, resolvePeople, type PersonData } from '@utils/people';
 
 export type BlogPost = CollectionEntry<'blog'>;
-export type Person = CollectionEntry<'people'>;
-
-export interface PersonData {
-  id: string;
-  name: string;
-  title?: string;
-  headshot?: any;
-  [key: string]: any;
-}
 
 export interface BlogPostCardData {
   post: BlogPost;
@@ -65,50 +57,6 @@ export async function getBlogPosts(options?: GetBlogPostsOptions): Promise<BlogP
 }
 
 /**
- * Creates a map of people by ID for quick lookups
- * @returns Map of person ID to person data
- */
-export async function getPeopleMap(): Promise<Map<string, PersonData>> {
-  const allPeople = await getCollection('people');
-  return new Map(
-    allPeople.map((person) => [person.data.id, person.data as PersonData])
-  );
-}
-
-/**
- * Resolves author IDs to author names
- * @param authorIds - Array of author IDs
- * @param peopleMap - Optional pre-built people map (for performance)
- * @returns Comma-separated author names
- */
-export async function getAuthorNames(
-  authorIds: string[],
-  peopleMap?: Map<string, PersonData>
-): Promise<string> {
-  const map = peopleMap ?? await getPeopleMap();
-  return authorIds
-    .map((id) => map.get(id)?.name)
-    .filter(Boolean)
-    .join(', ');
-}
-
-/**
- * Resolves author IDs to full author data
- * @param authorIds - Array of author IDs
- * @param peopleMap - Optional pre-built people map
- * @returns Array of resolved author data
- */
-export async function resolveAuthors(
-  authorIds: string[],
-  peopleMap?: Map<string, PersonData>
-): Promise<PersonData[]> {
-  const map = peopleMap ?? await getPeopleMap();
-  return authorIds
-    .map((id) => map.get(id))
-    .filter((person): person is PersonData => person !== undefined);
-}
-
-/**
  * Formats a date for blog display
  * @param date - The date to format
  * @param options - Intl.DateTimeFormat options
@@ -139,7 +87,7 @@ export async function prepareBlogPostCardData(
 ): Promise<BlogPostCardData> {
   return {
     post,
-    authorNames: await getAuthorNames(post.data.authors, peopleMap),
+    authorNames: await getPersonNames(post.data.authors, peopleMap),
     formattedDate: formatBlogDate(post.data.publishedDate),
   };
 }
@@ -177,24 +125,23 @@ export async function getRelatedPosts(
   let relatedPosts: BlogPostWithAuthors[] = [];
 
   if (currentPost.data.relatedPosts) {
-    const manualPosts = currentPost.data.relatedPosts
-      .filter(permalink => permalink !== currentPost.data.permalink)
-      .map(permalink => {
-        const post = allPosts.find(p => p.data.permalink === permalink);
-        if (!post) {
-          console.warn(`Related post not found: ${permalink}`);
-          return null;
-        }
-        return {
-          ...post,
-          resolvedAuthors: post.data.authors
-            .map(id => peopleMap.get(id))
-            .filter((p): p is PersonData => p !== undefined)
-        };
-      })
-      .filter((post): post is BlogPostWithAuthors => post !== null);
+    const manualPosts = await Promise.all(
+      currentPost.data.relatedPosts
+        .filter(permalink => permalink !== currentPost.data.permalink)
+        .map(async permalink => {
+          const post = allPosts.find(p => p.data.permalink === permalink);
+          if (!post) {
+            console.warn(`Related post not found: ${permalink}`);
+            return null;
+          }
+          return {
+            ...post,
+            resolvedAuthors: await resolvePeople(post.data.authors, peopleMap)
+          };
+        })
+    );
 
-    relatedPosts = manualPosts;
+    relatedPosts = manualPosts.filter((post): post is BlogPostWithAuthors => post !== null);
   }
 
   // Fill remaining slots with tag-based recommendations
@@ -204,30 +151,31 @@ export async function getRelatedPosts(
       relatedPosts.map(p => p.data.permalink)
     );
 
-    const candidatePosts = allPosts
-      .filter(p =>
-        p.data.permalink !== currentPost.data.permalink &&
-        !manuallySelectedPermalinks.has(p.data.permalink)
-      )
-      .map(p => {
-        const matchingTags = p.data.tags.filter(tag => currentTags.has(tag)).length;
-        return {
-          ...p,
-          resolvedAuthors: p.data.authors
-            .map(id => peopleMap.get(id))
-            .filter((person): person is PersonData => person !== undefined),
-          matchingTags
-        };
-      })
-      .sort((a, b) => {
-        if (b.matchingTags !== a.matchingTags) {
-          return b.matchingTags - a.matchingTags;
-        }
-        return b.data.publishedDate.getTime() - a.data.publishedDate.getTime();
-      });
+    const candidatePosts = await Promise.all(
+      allPosts
+        .filter(p =>
+          p.data.permalink !== currentPost.data.permalink &&
+          !manuallySelectedPermalinks.has(p.data.permalink)
+        )
+        .map(async p => {
+          const matchingTags = p.data.tags.filter(tag => currentTags.has(tag)).length;
+          return {
+            ...p,
+            resolvedAuthors: await resolvePeople(p.data.authors, peopleMap),
+            matchingTags
+          };
+        })
+    );
+
+    const sortedCandidates = candidatePosts.sort((a, b) => {
+      if (b.matchingTags !== a.matchingTags) {
+        return b.matchingTags - a.matchingTags;
+      }
+      return b.data.publishedDate.getTime() - a.data.publishedDate.getTime();
+    });
 
     const postsNeeded = limit - relatedPosts.length;
-    relatedPosts = [...relatedPosts, ...candidatePosts.slice(0, postsNeeded)];
+    relatedPosts = [...relatedPosts, ...sortedCandidates.slice(0, postsNeeded)];
   }
 
   return relatedPosts;
