@@ -225,11 +225,11 @@ components:
       - name: buttons
         label: Buttons
         type: object
+        list: true
         fields:
           - name: button
             label: Button
             component: button
-            list: true
 
   card_section:
     type: object
