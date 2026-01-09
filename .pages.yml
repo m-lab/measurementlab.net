@@ -12,8 +12,8 @@ media:
     output: /src/assets
   - name: blog # Note: 'name' key is required here
     label: Blog Images
-    input: src/assets/blog
-    output: ../../assets/blog
+    input: src/assets/images/blog
+    output: ../../assets/images/blog
     path: images
 
 ##########################
