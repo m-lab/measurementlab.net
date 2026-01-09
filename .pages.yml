@@ -12,9 +12,9 @@ media:
     output: /src/assets
   - name: blog # Note: 'name' key is required here
     label: Blog Images
-    input: src/assets/images/blog
-    output: ../../assets/images/blog
-    path: images
+    input: src/assets
+    output: ../../assets
+    path: images/blog
 
 ##########################
 # Reusable components
