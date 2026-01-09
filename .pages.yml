@@ -689,7 +689,7 @@ content:
     type: collection
     path: src/content/navigation
     format: json
-    filename: '{{fields.slug}}'
+    filename: '{{fields.slug}}.json'
     view:
       fields: [title]
       primary: title
