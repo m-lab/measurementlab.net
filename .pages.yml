@@ -222,9 +222,10 @@ components:
       - name: buttons
         label: Buttons
         type: object
-        list: true
-        component: button
-        description: Buttons
+        fields:
+          - name: button
+            label: Button
+            component: button
 
   card_section:
     type: object
@@ -242,15 +243,19 @@ components:
       - name: cards
         label: Cards
         type: object
-        list: true
-        component: card
-        description: Grid of content cards
+        fields:
+          - name: card
+            label: Card
+            component: card
+            description: Grid of content cards
       - name: buttons
         label: Action Buttons
         type: object
-        list: true
-        component: button
-        description: Buttons at the bottom of the section
+        fields:
+          - name: button
+            label: Button
+            component: button
+            description: Buttons at the bottom of the section
 
   flexi_section:
     type: object
@@ -266,11 +271,12 @@ components:
         label: Description
         type: rich-text
       - name: sections
-        label: Sections
         type: object
-        list: true
-        component: section
-        description: Nested sections within this flexi section
+        fields:
+          - name: section
+            label: Section
+            component: section
+            description: Nested sections within this flexi section
 
   people_section:
     type: object
