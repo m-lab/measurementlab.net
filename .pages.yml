@@ -198,7 +198,7 @@ components:
       - name: backgroundImage
         label: Background Image
         type: image
-        description: Optional hero background image (absolute path, e.g. /src/assets/hero-bg.jpg)
+        description: Optional hero background image
 
   richtext_section:
     type: object
@@ -229,6 +229,7 @@ components:
           - name: button
             label: Button
             component: button
+            list: true
 
   card_section:
     type: object
