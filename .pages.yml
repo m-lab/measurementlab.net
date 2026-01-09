@@ -1,7 +1,9 @@
 # Pages CMS Configuration
 # Documentation: https://pagescms.org/docs/configuration/
 
+##########################
 # Media configuration
+##########################
 # media: src/assets
 media:
   - name: images
@@ -14,7 +16,9 @@ media:
     output: ../../assets
     path: images
 
+##########################
 # Reusable components
+##########################
 components:
   # Button component
   button:
@@ -139,7 +143,7 @@ components:
       - name: richText
         label: Rich Text Section
         component: richtext_section
-      
+
       - name: button
         label: Button Section
         component: button_section
@@ -147,7 +151,7 @@ components:
       - name: card
         label: Card Section
         component: card_section
-  
+
   background_select:
     type: object
     fields:
@@ -179,7 +183,6 @@ components:
               value: contained
         default: full
         description: Select the background type for this section
-      
 
   # Section components for block variants
   hero_section:
@@ -304,7 +307,7 @@ components:
         type: string
         description: Filter partners by category (e.g. "sponsor", "technology"). Leave empty to show all partners.
 
-# Homepage-specific components
+  # Homepage-specific components
   speed_test_section:
     type: object
     fields:
@@ -333,8 +336,76 @@ components:
         label: Description
         type: rich-text
 
+##########################
 # Content collections
+##########################
 content:
+  # Homepage
+  - name: homepage
+    label: Homepage
+    type: file
+    path: src/content/homepage/index.yaml
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: backgroundImage
+        label: Background Image
+        type: image
+      - name: stats
+        label: Stats
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+            required: true
+          - name: value
+            label: Value
+            type: string
+            required: true
+        description: Key statistics to display in the hero section
+      - name: sections
+        label: Page Sections
+        type: block
+        list: true
+        required: true
+        blockKey: type
+        description: Add and arrange page sections in any order
+        blocks:
+          - name: richText
+            label: Rich Text Section
+            component: richtext_section
+
+          - name: button
+            label: Button Section
+            component: button_section
+
+          - name: card
+            label: Card Section
+            component: card_section
+
+          - name: people
+            label: People Section
+            component: people_section
+
+          - name: partners
+            label: Partners Section
+            component: partners_section
+
+          - name: flexi
+            label: Flexi Section
+            component: flexi_section
+
+          - name: speed_test
+            label: Speed Test Section
+            component: speed_test_section
+
+          - name: featured_partners
+            label: Featured Partners Section
+            component: featured_partners_section
   # Pages collection
   - name: pages
     label: Pages
@@ -383,7 +454,7 @@ content:
           - name: richText
             label: Rich Text Section
             component: richtext_section
-          
+
           - name: button
             label: Button Section
             component: button_section
@@ -399,76 +470,10 @@ content:
           - name: partners
             label: Partners Section
             component: partners_section
-          
+
           - name: flexi
             label: Flexi Section
             component: flexi_section
-
-  - name: homepage
-    label: Homepage
-    type: file
-    path: src/content/homepage/index.yaml
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: backgroundImage
-        label: Background Image
-        type: image
-      - name: stats
-        label: Stats
-        type: object
-        list: true
-        fields:
-          - name: label
-            label: Label
-            type: string
-            required: true
-          - name: value
-            label: Value
-            type: string
-            required: true
-        description: Key statistics to display in the hero section
-      - name: sections
-        label: Page Sections
-        type: block
-        list: true
-        required: true
-        blockKey: type
-        description: Add and arrange page sections in any order
-        blocks:
-          - name: richText
-            label: Rich Text Section
-            component: richtext_section
-          
-          - name: button
-            label: Button Section
-            component: button_section
-
-          - name: card
-            label: Card Section
-            component: card_section
-
-          - name: people
-            label: People Section
-            component: people_section
-
-          - name: partners
-            label: Partners Section
-            component: partners_section
-          
-          - name: flexi
-            label: Flexi Section
-            component: flexi_section
-
-          - name: speed_test
-            label: Speed Test Section
-            component: speed_test_section
-
-          - name: featured_partners
-            label: Featured Partners Section
-            component: featured_partners_section
 
   # People collection
   - name: people
@@ -766,8 +771,8 @@ content:
         options:
           collection: people
           multiple: true
-          value: "{id}"
-          label: "{fields.name}"
+          value: '{id}'
+          label: '{fields.name}'
 
       - name: published
         label: Status
@@ -809,9 +814,9 @@ content:
           collection: blog
           required: false
           multiple: true
-          value: "{permalink}"
-          label: "{title}"
-          image: "{fields.heroImage}"
+          value: '{permalink}'
+          label: '{title}'
+          image: '{fields.heroImage}'
       - name: categories
         label: Categories
         type: select
@@ -820,9 +825,8 @@ content:
           fetch:
             url: https://scaffold.draftlab.org/api/categories.json
             results: blog.categories
-            value: "{name}"
-            label: "{name}"
-            
+            value: '{name}'
+            label: '{name}'
 
       - name: body
         label: Body
