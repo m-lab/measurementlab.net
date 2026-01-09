@@ -3,18 +3,22 @@
   "title": "Footer Nav 2",
   "items": [
     {
+      "type": "internal",
       "label": "Discussion group",
       "href": "/"
     },
     {
+      "type": "internal",
       "label": "M-Lab policies",
       "href": "/"
     },
     {
+      "type": "internal",
       "label": "Privacy policy",
       "href": "/about"
     },
     {
+      "type": "internal",
       "label": "Acceptable use policy",
       "href": "/about"
     }

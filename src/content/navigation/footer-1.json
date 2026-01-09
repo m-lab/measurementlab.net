@@ -3,18 +3,22 @@
   "title": "Footer Nav 1",
   "items": [
     {
+      "type": "internal",
       "label": "FAQs",
       "href": "/"
     },
     {
+      "type": "internal",
       "label": "Contact us",
       "href": "/"
     },
     {
+      "type": "internal",
       "label": "Jobs & Opportunities",
       "href": "/"
     },
     {
+      "type": "internal",
       "label": "Code",
       "href": "/"
     }

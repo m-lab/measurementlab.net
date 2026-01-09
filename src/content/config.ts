@@ -239,18 +239,31 @@ const siteCollection = defineCollection({
     }),
 });
 
+const navigationItem = z.object({
+  type: z.enum(['internal', 'external']),
+  label: z.string(),
+  href: z.string(),
+  description: z.string().optional(),
+  subNavs: z
+    .array(
+      z
+        .object({
+          type: z.enum(['internal', 'external']),
+          label: z.string(),
+          href: z.string(),
+          description: z.string().optional(),
+        })
+        .optional()
+    )
+    .optional(),
+});
+
 const navigationCollection = defineCollection({
   type: 'data',
   schema: z.object({
     slug: z.string(),
     title: z.string(),
-    items: z.array(
-      z.object({
-        label: z.string(),
-        href: z.string(),
-        description: z.string().optional(),
-      })
-    ),
+    items: z.array(navigationItem),
   }),
 });
 

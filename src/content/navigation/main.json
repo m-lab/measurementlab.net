@@ -3,23 +3,28 @@
   "title": "Main Navigation",
   "items": [
     {
+      "type": "internal",
       "label": "About",
       "href": "/about",
       "description": "Learn more about us"
     },
     {
+      "type": "internal",
       "label": "What we do",
       "href": "/what-we-do"
     },
     {
+      "type": "internal",
       "label": "Learn",
       "href": "/learn"
     },
     {
+      "type": "internal",
       "label": "Contribute",
       "href": "/contribute"
     },
     {
+      "type": "internal",
       "label": "Partner with us",
       "href": "/partner-with-us"
     }
