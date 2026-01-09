@@ -805,7 +805,7 @@ content:
         label: Hero Image
         type: image
         options:
-          media: images
+          media: blog
         description: Featured image for the blog post
 
       - name: relatedPosts
