@@ -8,10 +8,12 @@ import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import {
   formatBlogDate,
-  getPeopleMap,
   getRelatedPosts, 
-  resolveAuthors
 } from '@utils/blog';
+import {
+  getPeopleMap,
+  resolvePeople
+} from '@utils/people';
 import { isDev } from '@utils/dev';
 
 export async function getStaticPaths() {
@@ -31,7 +33,7 @@ const { Content } = await post.render();
 
 // Get author details and related posts using utilities
 const peopleMap = await getPeopleMap();
-const authors = await resolveAuthors(post.data.authors, peopleMap);
+const authors = await resolvePeople(post.data.authors, peopleMap);
 const relatedPosts = await getRelatedPosts(post, { peopleMap });
 
 // Helper for template
