@@ -15,6 +15,7 @@ interface FilterableContentProps {
 
 export default function FilterableContent({ items, type, fields, placeholder }: FilterableContentProps) {
 	const [searchText, setSearchText] = useState('');
+	const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'alphabetical'>('newest');
 	const [fieldFilters, setFieldFilters] = useState<Record<string, string>>(
 		fields.reduce((acc, field) => ({ ...acc, [field]: 'all' }), {})
 	);
@@ -81,12 +82,52 @@ export default function FilterableContent({ items, type, fields, placeholder }: 
 		return results;
 	}, [searchText, fieldFilters, fuse, items, fields]);
 
-	console.log(filteredItems);
+	// Sort filtered items
+	const sortedItems = useMemo(() => {
+		const sorted = [...filteredItems];
+		
+		if (sortBy === 'alphabetical') {
+			sorted.sort((a, b) => {
+				const titleA = a.post.data.title.toLowerCase();
+				const titleB = b.post.data.title.toLowerCase();
+				return titleA.localeCompare(titleB);
+			});
+		} else if (sortBy === 'newest') {
+			sorted.sort((a, b) => {
+				if (type === 'blog') {
+					const dateA = (a as BlogPostCardData).post.data.publishedDate;
+					const dateB = (b as BlogPostCardData).post.data.publishedDate;
+					return dateB.getTime() - dateA.getTime();
+				} else {
+					const yearA = (a as PublicationCardData).publication.data.year;
+					const yearB = (b as PublicationCardData).publication.data.year;
+					return yearB - yearA;
+				}
+			});
+		} else if (sortBy === 'oldest') {
+			sorted.sort((a, b) => {
+				if (type === 'blog') {
+					const dateA = (a as BlogPostCardData).post.data.publishedDate;
+					const dateB = (b as BlogPostCardData).post.data.publishedDate;
+					return dateA.getTime() - dateB.getTime();
+				} else {
+					const yearA = (a as PublicationCardData).publication.data.year;
+					const yearB = (b as PublicationCardData).publication.data.year;
+					return yearA - yearB;
+				}
+			});
+		}
+		
+		return sorted;
+	}, [filteredItems, sortBy, type]);
+
 	return (
 		<div>
 			<FilterBar 
 				searchText={searchText} 
-				setSearchText={setSearchText} 
+				setSearchText={setSearchText}
+				sortBy={sortBy}
+				setSortBy={setSortBy}
 				fields={fields}
 				fieldFilters={fieldFilters}
 				fieldOptions={fieldOptions}
@@ -94,10 +135,10 @@ export default function FilterableContent({ items, type, fields, placeholder }: 
 			/>
 			
 			{type === 'blog'
-				? <BlogItems items={filteredItems} />
-				: <PublicationItems items={filteredItems} />
+				? <BlogItems items={sortedItems} />
+				: <PublicationItems items={sortedItems} />
 			}
-      {filteredItems.length === 0 && (
+      {sortedItems.length === 0 && (
         <div className="py-12 text-center">
           <p className="text-gray-600 text-lg">
             {placeholder || 'No items match your search.'}
