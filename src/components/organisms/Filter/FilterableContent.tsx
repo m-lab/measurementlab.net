@@ -6,12 +6,16 @@ import type { BlogPostCardData } from '@utils/blog';
 import type { PublicationCardData } from '@utils/publications';
 import PublicationItems from '../Publication/PublicationItems';
 
+type FilterableContentType = 'blog' | 'publications';
+type FilterableContentItem = BlogPostCardData | PublicationCardData;
+
 interface FilterableContentProps {
-  type: "blog" | "publications";
-	items: BlogPostCardData[] | PublicationCardData[];
+  type: FilterableContentType;
+	items: FilterableContentItem[];
 	fields: string[];
   placeholder?: string;
 }
+
 
 export default function FilterableContent({ items, type, fields, placeholder }: FilterableContentProps) {
 	const [searchText, setSearchText] = useState('');
@@ -28,7 +32,6 @@ export default function FilterableContent({ items, type, fields, placeholder }: 
 			const values = new Set<string>();
 			items.forEach(item => {
 				const value = item.post.data?.[field] || item.post[field];
-				console.log(value);
 				if (Array.isArray(value)) {
 					value.forEach(v => values.add(String(v)));
 				} else if (value) {
@@ -55,6 +58,26 @@ export default function FilterableContent({ items, type, fields, placeholder }: 
 		});
 	}, [items]);
 
+	const sortFunction = useMemo(() => {		
+		const dateKey = type === 'blog' ? 'publishedDate' : 'year';
+
+		if (sortBy === 'alphabetical') {
+			return (a: FilterableContentItem, b: FilterableContentItem) => {
+				const titleA = a.post.data.title.toLowerCase();
+				const titleB = b.post.data.title.toLowerCase();
+				return titleA.localeCompare(titleB);
+			};
+		} else if (sortBy === 'oldest') {
+			return (a: FilterableContentItem, b: FilterableContentItem) => {
+				return a.post.data[dateKey] - b.post.data[dateKey];
+			};
+		} else {
+			return (a: FilterableContentItem, b: FilterableContentItem) => {
+				return b.post.data[dateKey] - a.post.data[dateKey];
+			};
+		}
+	}, [sortBy, type]);
+
 	// Filter items using Fuse.js for fuzzy search and field filters
 	const filteredItems = useMemo(() => {
 		let results = items;
@@ -66,60 +89,22 @@ export default function FilterableContent({ items, type, fields, placeholder }: 
 		}
 
 		// Apply field filters
-		results = results.filter(item => {
-			return fields.every(field => {
-				const filterValue = fieldFilters[field];
-				if (filterValue === 'all') return true;
+		return results
+			.filter(item => {
+				return fields.every(field => {
+					const filterValue = fieldFilters[field];
+					if (filterValue === 'all') return true;
 
-				const itemValue = item.post.data?.[field] || item.post[field];
-				if (Array.isArray(itemValue)) {
-					return itemValue.includes(filterValue);
-				}
-				return String(itemValue) === filterValue;
-			});
-		});
+					const itemValue = item.post.data?.[field] || item.post[field];
+					if (Array.isArray(itemValue)) {
+						return itemValue.includes(filterValue);
+					}
+					return String(itemValue) === filterValue;
+				});
+			})
+			.sort(sortFunction)
 
-		return results;
-	}, [searchText, fieldFilters, fuse, items, fields]);
-
-	// Sort filtered items
-	const sortedItems = useMemo(() => {
-		const sorted = [...filteredItems];
-		
-		if (sortBy === 'alphabetical') {
-			sorted.sort((a, b) => {
-				const titleA = a.post.data.title.toLowerCase();
-				const titleB = b.post.data.title.toLowerCase();
-				return titleA.localeCompare(titleB);
-			});
-		} else if (sortBy === 'newest') {
-			sorted.sort((a, b) => {
-				if (type === 'blog') {
-					const dateA = (a as BlogPostCardData).post.data.publishedDate;
-					const dateB = (b as BlogPostCardData).post.data.publishedDate;
-					return dateB.getTime() - dateA.getTime();
-				} else {
-					const yearA = (a as PublicationCardData).publication.data.year;
-					const yearB = (b as PublicationCardData).publication.data.year;
-					return yearB - yearA;
-				}
-			});
-		} else if (sortBy === 'oldest') {
-			sorted.sort((a, b) => {
-				if (type === 'blog') {
-					const dateA = (a as BlogPostCardData).post.data.publishedDate;
-					const dateB = (b as BlogPostCardData).post.data.publishedDate;
-					return dateA.getTime() - dateB.getTime();
-				} else {
-					const yearA = (a as PublicationCardData).publication.data.year;
-					const yearB = (b as PublicationCardData).publication.data.year;
-					return yearA - yearB;
-				}
-			});
-		}
-		
-		return sorted;
-	}, [filteredItems, sortBy, type]);
+	}, [searchText, fieldFilters, fuse, items, fields, sortFunction]);
 
 	return (
 		<div>
@@ -135,10 +120,10 @@ export default function FilterableContent({ items, type, fields, placeholder }: 
 			/>
 			
 			{type === 'blog'
-				? <BlogItems items={sortedItems} />
-				: <PublicationItems items={sortedItems} />
+				? <BlogItems items={filteredItems} />
+				: <PublicationItems items={filteredItems} />
 			}
-      {sortedItems.length === 0 && (
+      {filteredItems.length === 0 && (
         <div className="py-12 text-center">
           <p className="text-gray-600 text-lg">
             {placeholder || 'No items match your search.'}
