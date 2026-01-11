@@ -30,7 +30,7 @@ export default function FilterBar({
 	};
 
 	return (
-		<div className="p-6 bg-neutral-900">
+		<div className="px-6 py-2 bg-neutral-900">
 			<div className="flex flex-row gap-4 w-full items-center max-w-7xl mx-auto">
 				{/* Filter Dropdowns */}
 				{fields.map((field) => (

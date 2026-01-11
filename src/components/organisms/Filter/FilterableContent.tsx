@@ -7,7 +7,7 @@ import type { PublicationCardData } from '@utils/publications';
 import PublicationItems from '../Publication/PublicationItems';
 
 type FilterableContentType = 'blog' | 'publications';
-type FilterableContentItem = BlogPostCardData | PublicationCardData;
+export type FilterableContentItem = BlogPostCardData | PublicationCardData;
 
 interface FilterableContentProps {
   type: FilterableContentType;
@@ -118,11 +118,12 @@ export default function FilterableContent({ items, type, fields, placeholder }: 
 				fieldOptions={fieldOptions}
 				onFieldFilterChange={handleFieldFilterChange}
 			/>
-			
-			{type === 'blog'
-				? <BlogItems items={filteredItems} />
-				: <PublicationItems items={filteredItems} />
-			}
+			<div className="py-12">
+				{type === 'blog'
+					? <BlogItems items={filteredItems as BlogPostCardData[]} />
+					: <PublicationItems items={filteredItems as PublicationCardData[]} />
+				}
+			</div>
       {filteredItems.length === 0 && (
         <div className="py-12 text-center">
           <p className="text-gray-600 text-lg">
