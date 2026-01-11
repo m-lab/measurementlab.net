@@ -5,6 +5,8 @@ import FilterDropdown from './FilterDropdown';
 interface FilterBarProps {
 	searchText: string;
 	setSearchText: (value: string) => void;
+	sortBy: 'newest' | 'oldest' | 'alphabetical';
+	setSortBy: (value: 'newest' | 'oldest' | 'alphabetical') => void;
 	fields: string[];
 	fieldFilters: Record<string, string>;
 	fieldOptions: Record<string, string[]>;
@@ -13,7 +15,9 @@ interface FilterBarProps {
 
 export default function FilterBar({ 
 	searchText, 
-	setSearchText, 
+	setSearchText,
+	sortBy,
+	setSortBy,
 	fields,
 	fieldFilters,
 	fieldOptions,
@@ -28,11 +32,12 @@ export default function FilterBar({
 			
 			<div className="flex flex-row gap-4 w-full items-center max-w-7xl mx-auto">
 			
+				
+
 				{/* Filter Dropdowns */}
 				{fields.map((field) => (
-					<div className='flex-1'>
+					<div key={field} className='flex-1'>
 						<FilterDropdown
-							key={field}
 							label={field}
 							options={fieldOptions[field] || []}
 							value={fieldFilters[field]}
@@ -40,6 +45,16 @@ export default function FilterBar({
 						/>
 					</div>
 				))}
+
+				{/* Sort Dropdown */}
+				<div className='flex-1'>
+					<FilterDropdown
+						label="Sort"
+						options={['newest', 'oldest', 'alphabetical']}
+						value={sortBy}
+						onChange={(value) => setSortBy(value as 'newest' | 'oldest' | 'alphabetical')}
+					/>
+				</div>
 
 				{/* Search Input */}
 				<div className="relative flex-1">
