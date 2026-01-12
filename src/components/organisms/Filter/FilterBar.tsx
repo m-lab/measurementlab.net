@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { Input } from '@headlessui/react';
 import MagnifyingGlassIcon from '~icons/heroicons/magnifying-glass-20-solid';
+import XMarkIcon from '~icons/heroicons/x-mark-20-solid';
 import FilterDropdown from './FilterDropdown';
 
 interface FilterBarProps {
@@ -30,11 +32,11 @@ export default function FilterBar({
 	};
 
 	return (
-		<div className="px-6 py-2 bg-neutral-900">
-			<div className="flex flex-row gap-4 w-full items-center max-w-7xl mx-auto">
+		<div className="px-6 py-8 bg-neutral-900">
+			<div className="flex flex-col md:flex-row gap-4 md:gap-10 w-full items-stretch md:items-center max-w-7xl mx-auto">
 				{/* Filter Dropdowns */}
 				{fields.map((field) => (
-					<div key={field} className='flex-2'>
+					<div key={field} className='flex-1 md:flex-2'>
 						<FilterDropdown
 							label={field}
 							options={fieldOptions[field] || []}
@@ -43,9 +45,10 @@ export default function FilterBar({
 						/>
 					</div>
 				))}
-
+				<span className="uppercase font-bold text-lg text-neutral-50">Sort:</span>
 				{/* Sort Dropdown */}
-				<div className='flex-2'>
+				<div className='flex-1 md:flex-2 space-between flex gap-4 items-center'>
+					
 					<FilterDropdown
 						label="Sort"
 						options={['newest', 'oldest', 'alphabetical']}
@@ -58,52 +61,40 @@ export default function FilterBar({
 				{/* Search Input */}
 				<div className="relative flex items-center justify-end flex-1">
 					<div className="relative flex items-center justify-end">
-						{/* Animated Icon */}
-						<div 
-							className={`absolute flex items-center justify-center transition-all duration-300 ease-in-out z-10 ${
-								isSearchExpanded 
-									? 'left-3 w-5 h-5' 
-									: 'right-0 w-10 h-10 bg-white rounded-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
-							}`}
-							style={{
-								pointerEvents: isSearchExpanded ? 'none' : 'auto'
-							}}
-						>
-							<button
-								onClick={() => setIsSearchExpanded(true)}
-								className={`flex items-center justify-center transition-opacity duration-300 ${
-									isSearchExpanded ? 'opacity-0 pointer-events-none' : 'opacity-100 w-10 h-10'
+						{/* Input field */}
+						<div className="relative flex items-center">
+							<Input
+								type="text"
+								value={searchText}
+								onChange={(e) => handleSearchChange(e.target.value)}
+								placeholder="Search"
+								className={`border-y-4 border-t-transparent border-b-neutral-300 bg-neutral-200 px-3 py-2 pl-10 pr-12 text-neutral-700 placeholder-neutral-700 focus:outline-none focus:border-b-primary-60 transition-all duration-300 ease-in-out origin-right ${
+									isSearchExpanded 
+										? 'opacity-100' 
+										: 'w-0 p-0 opacity-0 pointer-events-none'
 								}`}
-								aria-label="Expand search"
-							>
-								<MagnifyingGlassIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-							</button>
+								style={{
+									transformOrigin: 'right center'
+								}}
+								autoFocus={isSearchExpanded}
+							/>
 							{isSearchExpanded && (
-								<MagnifyingGlassIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+								<MagnifyingGlassIcon 
+									className="absolute left-3 h-5 w-5 text-neutral-700 pointer-events-none" 
+									aria-hidden="true" 
+								/>
 							)}
 						</div>
-						
-						{/* Input field */}
-						<input
-							type="text"
-							value={searchText}
-							onChange={(e) => handleSearchChange(e.target.value)}
-							onBlur={() => {
-								if (!searchText) {
-									setIsSearchExpanded(false);
-								}
-							}}
-							placeholder="Search posts..."
-							className={`block rounded-md border-0 bg-white py-2.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6 transition-all duration-300 ease-in-out origin-right ${
-								isSearchExpanded 
-									? 'w-96 pl-10 pr-3 opacity-100' 
-									: 'w-0 pl-0 pr-0 opacity-0 pointer-events-none'
-							}`}
-							style={{
-								transformOrigin: 'right center'
-							}}
-							autoFocus={isSearchExpanded}
-						/>
+						<button
+							onClick={() => setIsSearchExpanded(!isSearchExpanded)}
+							className={`button-primary flex items-center justify-center w-12 h-12 transition-opacity duration-300 cursor-pointer ${isSearchExpanded ? 'bg-color-transparent' : ''}`}
+							aria-label="Expand search"
+						>
+							{isSearchExpanded
+								? (<XMarkIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />)
+								: (<MagnifyingGlassIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />)
+							}
+						</button>
 					</div>
 				</div>
 			</div>
