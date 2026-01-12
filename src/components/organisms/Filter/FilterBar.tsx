@@ -58,19 +58,20 @@ export default function FilterBar({
 				</div>
 
 				{/* Search Input */}
-				<div className="relative flex items-center justify-end flex-1">
-					<div className="relative flex items-center justify-end">
+				<div className="flex items-center">
 						{/* Input field */}
-						<div className="relative flex items-center">
+						<div className={`relative flex items-center overflow-hidden transition-all duration-300 ease-in-out ${
+							isSearchExpanded ? 'w-64' : 'w-0'
+						}`}>
 							<Input
 								type="text"
 								value={searchText}
 								onChange={(e) => handleSearchChange(e.target.value)}
 								placeholder="Search"
-								className={`border-y-4 border-t-transparent border-b-neutral-300 bg-neutral-200 px-3 py-2 pl-10 pr-12 text-neutral-700 placeholder-neutral-700 focus:outline-none focus:border-b-primary-600 transition-all duration-300 ease-in-out origin-right ${
+								className={`border-y-4 border-t-transparent border-b-neutral-300 bg-neutral-200 px-3 py-2 pl-10 pr-12 text-neutral-700 placeholder-neutral-700 focus:outline-none focus:border-b-primary-600 transition-opacity duration-300 ease-in-out w-full ${
 									isSearchExpanded 
 										? 'opacity-100' 
-										: 'w-0 p-0 opacity-0 pointer-events-none'
+										: 'opacity-0 pointer-events-none'
 								}`}
 								style={{
 									transformOrigin: 'right center'
@@ -95,7 +96,6 @@ export default function FilterBar({
 							}
 						</button>
 					</div>
-				</div>
 			</div>
 		</div>
 	);
