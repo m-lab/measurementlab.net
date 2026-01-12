@@ -30,7 +30,7 @@ export default function PublicationItem({ item }: PublicationItemProps) {
 				maskPosition: '-50px',
 			}}
 		>
-			<div className="flex h-full flex-col gap-6 bg-white p-4">
+			<div className="flex h-full flex-col gap-6 bg-neutral-100 py-12 px-16">
 				{/* Category, Year, and Tags */}
 				<div className="flex flex-wrap items-center gap-2">
 					<span className="tag-base tag-primary tag-size-sm">
