@@ -1,6 +1,12 @@
 import { Select } from '@headlessui/react';
 import ChevronDownIcon from '~icons/heroicons/chevron-down-20-solid';
 
+const FIELD_LABELS: Record<string, {singular: string, plural: string}> = {
+  category: {singular: 'Category', plural: 'Categories'},
+  tags: {singular: 'Tag', plural: 'Tags'},
+  year: {singular: 'Year', plural: 'Years'},
+};
+
 interface FilterDropdownProps {
   label: string;
   options: string[];
@@ -16,7 +22,7 @@ export default function FilterDropdown({
   onChange,
   showAllOption = true,
 }: FilterDropdownProps) {
-  const allLabel = `All ${label}`;
+  const allLabel = `All ${FIELD_LABELS[label]?.plural || label}`;
   const allOptions = showAllOption ? [allLabel, ...options] : options;
 
   return (
