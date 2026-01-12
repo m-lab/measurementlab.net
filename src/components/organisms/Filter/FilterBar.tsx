@@ -45,10 +45,9 @@ export default function FilterBar({
 						/>
 					</div>
 				))}
-				<span className="uppercase font-bold text-lg text-neutral-50">Sort:</span>
 				{/* Sort Dropdown */}
 				<div className='flex-1 md:flex-2 space-between flex gap-4 items-center'>
-					
+					<span className="uppercase font-bold text-lg text-neutral-50">Sort:</span>
 					<FilterDropdown
 						label="Sort"
 						options={['newest', 'oldest', 'alphabetical']}
@@ -68,7 +67,7 @@ export default function FilterBar({
 								value={searchText}
 								onChange={(e) => handleSearchChange(e.target.value)}
 								placeholder="Search"
-								className={`border-y-4 border-t-transparent border-b-neutral-300 bg-neutral-200 px-3 py-2 pl-10 pr-12 text-neutral-700 placeholder-neutral-700 focus:outline-none focus:border-b-primary-60 transition-all duration-300 ease-in-out origin-right ${
+								className={`border-y-4 border-t-transparent border-b-neutral-300 bg-neutral-200 px-3 py-2 pl-10 pr-12 text-neutral-700 placeholder-neutral-700 focus:outline-none focus:border-b-primary-600 transition-all duration-300 ease-in-out origin-right ${
 									isSearchExpanded 
 										? 'opacity-100' 
 										: 'w-0 p-0 opacity-0 pointer-events-none'
