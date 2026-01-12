@@ -30,9 +30,9 @@ export default function FilterDropdown({
           <option
             key={option}
             value={option === allLabel ? 'all' : option}
-            className="bg-white text-gray-900 capitalize"
+            className="bg-white text-gray-900"
           >
-            {option}
+            {option.charAt(0).toUpperCase() + option.slice(1)}
           </option>
         ))}
       </Select>
