@@ -6,6 +6,11 @@ import type { BlogPostCardData } from '@utils/blog';
 import type { PublicationCardData } from '@utils/publications';
 import PublicationItems from '../Publication/PublicationItems';
 
+const PLACEHOLDER_TYPE_LABEL: Record<FilterableContentType, string> = {
+	blog: 'blog posts',
+	publications: 'publications',
+};
+
 type FilterableContentType = 'blog' | 'publications';
 export type FilterableContentItem = BlogPostCardData | PublicationCardData;
 
@@ -13,16 +18,18 @@ interface FilterableContentProps {
   type: FilterableContentType;
 	items: FilterableContentItem[];
 	fields: string[];
-  placeholder?: string;
 }
 
 
-export default function FilterableContent({ items, type, fields, placeholder }: FilterableContentProps) {
+export default function FilterableContent({ items, type, fields }: FilterableContentProps) {
 	const [searchText, setSearchText] = useState('');
 	const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'alphabetical'>('newest');
 	const [fieldFilters, setFieldFilters] = useState<Record<string, string>>(
 		fields.reduce((acc, field) => ({ ...acc, [field]: 'all' }), {})
 	);
+	const hasFiltersSet = useMemo(() => {
+		return !!searchText || Object.values(fieldFilters).some(value => value !== 'all');
+	}, [searchText, fieldFilters]);
 
 	// Get unique values for each field from items
 	const fieldOptions = useMemo(() => {
@@ -127,7 +134,9 @@ export default function FilterableContent({ items, type, fields, placeholder }: 
       {filteredItems.length === 0 && (
         <div className="py-12 text-center">
           <p className="text-gray-600 text-lg">
-            {placeholder || 'No items match your search.'}
+						{hasFiltersSet 
+							? `No ${PLACEHOLDER_TYPE_LABEL[type]} match your search.`
+							: `No ${PLACEHOLDER_TYPE_LABEL[type]} published yet. Check back soon!`}
           </p>
         </div>
       )}
