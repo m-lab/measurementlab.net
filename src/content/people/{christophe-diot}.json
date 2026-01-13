@@ -1,0 +1,10 @@
+{
+  "id": "christophe-diot",
+  "name": "Christophe Diot",
+  "headshot": "/src/assets/people/christophe.png",
+  "title": "Principal Engineer",
+  "affiliation": "Google",
+  "sections": [
+    "Maintainers"
+  ]
+}
