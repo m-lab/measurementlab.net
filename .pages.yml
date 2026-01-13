@@ -494,7 +494,7 @@ content:
     type: collection
     path: src/content/people
     format: json
-    filename: '{id}.json'
+    filename: '{fields.id}.json'
     view:
       fields: [headshot, name, title]
       primary: name
@@ -532,7 +532,7 @@ content:
         type: string
         required: false
         description: Optional external link
-      
+
       - name: sections
         label: Sections
         type: select
