@@ -1,0 +1,10 @@
+{
+  "id": "larry-peterson",
+  "name": "Larry Peterson",
+  "headshot": "/src/assets/people/larry-peterson.jpg",
+  "affiliation": "Princeton University",
+  "url": "https://www.cs.princeton.edu/~llp/",
+  "sections": [
+    "Maintainers"
+  ]
+}
