@@ -1,6 +1,7 @@
 import type { BlogPostCardData } from '@utils/blog';
 import MlabDefault from '@assets/mlab-default-card.png';
 import { isDev } from '@utils/dev';
+import Tag from '@components/atoms/Tag';
 
 
 interface BlogItemProps {
@@ -53,18 +54,16 @@ export default function BlogItem({
 					{/* Draft badge (only visible in dev) */}
 					{isDev && post.data.published === 'draft' && (
 						<div className="mb-3">
-							<span className="tag-base tag-highlight tag-size-sm font-bold">
+							<Tag variant="highlight" className="font-bold">
 								DRAFT
-							</span>
+							</Tag>
 						</div>
 					)}
 
 					{/* Tags */}
 					<div className="mb-3 flex flex-wrap gap-2">
 						{post.data.tags.slice(0, 3).map((tag) => (
-							<span key={tag} className="tag-base tag-primary tag-size-sm">
-								{tag}
-							</span>
+							<Tag variant="primary">{tag}</Tag>
 						))}
 					</div>
 
