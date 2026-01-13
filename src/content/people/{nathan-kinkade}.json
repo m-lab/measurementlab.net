@@ -1,0 +1,10 @@
+{
+  "id": "nathan-kinkade",
+  "name": "Nathan Kinkade",
+  "headshot": "/src/assets/people/nathan.jpg",
+  "title": "Platform Engineer",
+  "affiliation": "Code for Science & Society",
+  "sections": [
+    "Maintainers"
+  ]
+}
