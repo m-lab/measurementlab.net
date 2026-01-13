@@ -1,0 +1,10 @@
+{
+  "id": "arthur-terry",
+  "name": "Arthur Terry",
+  "headshot": "/src/assets/people/arthur.png",
+  "title": "Program Manager",
+  "affiliation": "Google",
+  "sections": [
+    "Maintainers"
+  ]
+}
