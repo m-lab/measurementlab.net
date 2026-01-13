@@ -1,5 +1,5 @@
 ---
-import Button from '@components/atoms/Button.astro';
+import Button from '@components/atoms/Button.tsx';
 import Heading from '@components/atoms/Heading.astro';
 import Text from '@components/atoms/Text.astro';
 
@@ -68,7 +68,7 @@ const descColor = background === 'blue' || background === 'gradient' ? 'text-blu
 									: 'primary'
 							}
 							size="lg"
-							class={
+							className={
 								background === 'blue' || background === 'gradient'
 									? 'hover:text-blue-600 border-white text-white hover:bg-white'
 									: ''
@@ -86,7 +86,7 @@ const descColor = background === 'blue' || background === 'gradient' ? 'text-blu
 							href={secondaryAction.href}
 							variant="ghost"
 							size="lg"
-							class={
+							className={
 								background === 'blue' || background === 'gradient'
 									? 'text-white hover:bg-white/10'
 									: ''

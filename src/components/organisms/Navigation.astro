@@ -1,6 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
-import Button from '@components/atoms/Button.astro';
+import Button from '@components/atoms/Button.tsx';
 import Image from '@components/atoms/Image.astro';
 import Link from '@components/atoms/Link.astro';
 import NavItem from '@components/molecules/NavItem.astro';
@@ -75,7 +75,7 @@ const isActive = (href: string) => {
 			variant="outline"
 			type="button"
 			id="search-button"
-			class="cursor-pointer"
+			className="cursor-pointer"
 		>
 			<MagnifyingGlassIcon />
 		</Button>
