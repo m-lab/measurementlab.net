@@ -511,6 +511,7 @@ content:
       - name: headshot
         label: Headshot
         type: image
+        media: images
         options:
           path: people
         required: true
