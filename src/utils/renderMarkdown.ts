@@ -5,7 +5,6 @@ import rehypeSlug from 'rehype-slug';
 import rehypeExtractToc, { type TocEntry } from '@stefanprobst/rehype-extract-toc';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
-import remarkToc from 'remark-toc';
 import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
 
