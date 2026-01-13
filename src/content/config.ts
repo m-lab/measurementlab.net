@@ -31,7 +31,10 @@ const createSchemas = (image: ImageFunction) => {
     id: z.string(),
     name: z.string(),
     headshot: image(),
-    title: z.string(),
+    title: z.string().optional(),
+    affiliation: z.string().optional(),
+    extraInfo: z.string().optional(),
+    url: z.string().optional(),
     sections: z.array(
       z.enum(peopleCategories.categories as [string, ...string[]])
     ),

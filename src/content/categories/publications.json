@@ -1,10 +1,5 @@
 {
   "id": "publications",
-  "name": "Publications",
-  "categories": [
-    "paper",
-    "regulatory-filing",
-    "presentation",
-    "documentation"
-  ]
+  "name": "Publication Categories",
+  "categories": ["paper", "regulatory-filing", "presentation", "documentation"]
 }

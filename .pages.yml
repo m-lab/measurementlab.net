@@ -96,11 +96,23 @@ components:
         label: Headshot
         type: image
         required: true
-        description: Absolute path from root (e.g. /src/assets/people/john-doe.png)
-      - name: title
-        label: Job Title
+      - name: affiliation
+        label: Affiliation
         type: string
-        required: true
+        required: false
+      - name: extraInfo
+        label: Other/Previous Affiliations
+        type: string
+        required: false
+      - name: url
+        label: Link
+        type: string
+        required: false
+        description: Optional external link
+      - name: title
+        label: Role
+        type: string
+        required: false
       - name: sections
         label: Sections
         type: string
@@ -492,28 +504,46 @@ content:
         type: string
         required: true
         description: Unique identifier (slug format, e.g. john-doe)
-
       - name: name
         label: Name
         type: string
         required: true
-
       - name: headshot
         label: Headshot
         type: image
         required: true
-        description: Absolute path from root (e.g. /src/assets/people/john-doe.png)
-
-      - name: title
-        label: Job Title
+      - name: affiliation
+        label: Affiliation
         type: string
-        required: true
-
+        required: false
+      - name: extraInfo
+        label: Other/Previous Affiliations
+        type: string
+        required: false
+      - name: url
+        label: Link
+        type: string
+        required: false
+        description: Optional external link
+      - name: title
+        label: Role
+        type: string
+        required: false
       - name: sections
-        label: Sections/Departments
+        label: Sections
         type: string
         list: true
-        description: Tags like "Leadership", "Engineering", etc. Must match categories defined in Categories > people
+        description: Department/section tags (e.g. Leadership, Engineering)
+      - name: sections
+        label: Sections
+        type: select
+        options:
+          multiple: true
+          fetch:
+            url: https://scaffold.draftlab.org/api/categories.json
+            results: people.categories
+            value: '{name}'
+            label: '{name}'
 
   # Partners collection
   - name: partners
