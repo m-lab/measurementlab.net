@@ -2,18 +2,12 @@
 
 import renderMarkdownWithImages from '@utils/renderMarkdown';
 import TOC from '@components/organisms/TOC.tsx';
+import type { TocEntry } from '@stefanprobst/rehype-extract-toc';
 
 export interface Props {
   content: string;
   background?: string;
   withTOC?: boolean;
-}
-
-interface TocEntry {
-	value: string;
-	depth: number;
-	id?: string;
-	children?: Array<TocEntry>;
 }
 
 const { content, withTOC = true } = Astro.props;
