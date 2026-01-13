@@ -1,6 +1,7 @@
 import type { PublicationCardData } from '@utils/publications';
 // import { formatCategory } from '@utils/publications';
 import IconDownload from '~icons/heroicons/document-arrow-down-solid';
+import Tag from '@components/atoms/Tag';
 
 interface PublicationItemProps {
 	item: PublicationCardData;
@@ -33,17 +34,16 @@ export default function PublicationItem({ item }: PublicationItemProps) {
 			<div className="flex h-full flex-col gap-6 bg-neutral-100 py-12 px-16">
 				{/* Category, Year, and Tags */}
 				<div className="flex flex-wrap items-center gap-2">
-					<span className="tag-base tag-primary tag-size-sm">
+					<Tag variant="primary">
 						{formatCategory(post.data.category)}
-					</span>
-					<span className="tag-base tag-secondary tag-size-sm">
-						{post.data.year}
-					</span>
+					</Tag>
+					<Tag variant="secondary">{post.data.year}</Tag>
+
 					{post.data.tags &&
 						post.data.tags.slice(0, 2).map((tag) => (
-							<span key={tag} className="tag-base tag-primary tag-size-sm">
+							<Tag key={tag} variant="primary">
 								{tag}
-							</span>
+							</Tag>
 						))}
 				</div>
 
