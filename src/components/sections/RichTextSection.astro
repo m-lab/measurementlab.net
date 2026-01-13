@@ -10,7 +10,7 @@ export interface Props {
   withTOC?: boolean;
 }
 
-const { content, withTOC = true } = Astro.props;
+const { content, withTOC = false } = Astro.props;
 
 const { html, toc } = (await renderMarkdownWithImages(content, withTOC));
 

@@ -84,13 +84,11 @@ const createMarkdownProcessor = (withTOC = false) => {
   return processor;
 };
 
-// New: Plain markdown rendering (no image processing)
 export const renderMarkdown = async (markdown: string, withTOC = false): Promise<{html: string, toc?: Array<TocEntry>}> => {
   const html = await createMarkdownProcessor(withTOC).process(markdown);
   return { html: String(html), toc: html.data.toc };
 };
 
-// Existing: Markdown with image optimization
 export const renderMarkdownWithImages = async (
   markdown: string,
   withTOC = false
@@ -100,10 +98,7 @@ export const renderMarkdownWithImages = async (
     .use(processImageNodes)
     .process(markdown);
 
-  console.log(html)
-
   return ({ html: String(html), toc: html.data.toc });
 };
 
-// Default export for backward compatibility
 export default renderMarkdownWithImages;

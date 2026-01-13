@@ -87,6 +87,7 @@ const createSchemas = (image: ImageFunction) => {
     }),
     SectionCommonSchema.extend({
       type: z.literal('richText'),
+      withTOC: z.boolean().optional().default(false),
       content: z.string(),
     }),
     SectionCommonSchema.extend({

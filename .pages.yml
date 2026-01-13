@@ -215,7 +215,6 @@ components:
   richtext_section:
     type: object
     fields:
-      
       - name: background
         label: Section Background
         component: background_select
