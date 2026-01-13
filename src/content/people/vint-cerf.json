@@ -1,0 +1,11 @@
+{
+  "id": "vint-cerf",
+  "name": "Vint Cerf",
+  "headshot": "/src/assets/people/vint-cerf.png",
+  "affiliation": "Google",
+  "url": "https://ai.google/research/people/author32412",
+  "sections": [
+    "Experiment Review Committee",
+    "M-Lab Founders"
+  ]
+}
