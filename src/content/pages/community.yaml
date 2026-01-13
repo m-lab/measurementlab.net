@@ -1,144 +1,103 @@
 title: Welcome to our Community
+permalink: community
 description: Join our vibrant community of developers, contributors, and partners
-heroImage: /src/assets/backgrounds/anna-magenta-YELG0ZVK5yw-unsplash.jpg
 sections:
   - type: hero
     title: This is a hero section
-    subtitle:
-      Connect, collaborate, and grow with fellow developers from around the
-      world
-    zigzag: primary-dark
-
+    subtitle: Connect, collaborate, and grow with fellow developers from around the world
   - type: richText
-    content: "# Sine invisi
+    background:
+      color: white
+      type: full
+    withTOC: true
+    content: >-
+      # Sine invisi
+
 
       ## Prohibete verteris
 
-      Lorem markdownum Caeneus prospiciunt adest: et Rhodon meditataque vix parte
-      `dongle` carbasa sonum, **et** vix occumbere quos scopulo paelicis. Mare meo.
-      Dei *nuntia adeunt* conceperat pennas sinusque et quid.
 
-      Mea numinis cognoscere tibi; exorata moriemur virorum. Quid motu reliquit
-      currus! Cava tamen flumina credere. Sit Elateia habebas obstrusaque tanti est
-      subiectaque quod iam, nunc? Non certa et me vada *gravisque tantis*.
+      Lorem markdownum Caeneus prospiciunt adest: et Rhodon meditataque vix
+      parte `dongle` carbasa sonum, **et** vix occumbere quos scopulo paelicis.
+      Mare meo. Dei _nuntia adeunt_ conceperat pennas sinusque et quid. Mea
+      numinis cognoscere tibi; exorata moriemur virorum. Quid motu reliquit
+      currus! Cava tamen flumina credere. Sit Elateia habebas obstrusaque tanti
+      est subiectaque quod iam, nunc? Non certa et me vada _gravisque tantis_.
+
 
       ## Quod famulas deos servat
 
-      Omnia atque, cognita et Iovem, aere praeduraque illum cum augurium, prorae.
-      Tulit ponere, ligo pugnae candida aureus Perseus sedes.
 
-          packThickE(hacker_dslam_multiplatform, terabyte_bittorrent_table);
-          page.overclocking.powerpoint(drive(dot + dram_dual, bar), fiRamEmoticon,
-                  qwerty);
-          nui_rate_qwerty.impression_cyberbullying.framework_p(bluetooth + -2 +
-                  minicomputer_client_dock, cdn.scrolling_smm(cyberspace, page_bar));
-          middlewareSimplexPlay(5, image_architecture_javascript);
-          bsod_php -= koffice_newsgroup_android(spoolSimplexHfs, southbridge);
+      Omnia atque, cognita et Iovem, aere praeduraque illum cum augurium,
+      prorae. Tulit ponere, ligo pugnae candida aureus Perseus sedes.
+      packThickE(hacker\_dslam\_multiplatform, terabyte\_bittorrent\_table);
+      page.overclocking.powerpoint(drive(dot + dram\_dual, bar), fiRamEmoticon,
+      qwerty);
+      nui\_rate\_qwerty.impression\_cyberbullying.framework\_p(bluetooth + -2 +
+      minicomputer\_client\_dock, cdn.scrolling\_smm(cyberspace, page\_bar));
+      middlewareSimplexPlay(5, image\_architecture\_javascript); bsod\_php -=
+      koffice\_newsgroup\_android(spoolSimplexHfs, southbridge);
+
 
       ## Pedes sollertius te inque
 
-      Siculo sit cervos luserat et fluminis, cum desint. In et exacta **marmora**, suo
-      et rustice Orchomenosque possim talia vestigia mulcebunt oblita! Huius
-      *deficiunt* vicisse eris amnis, amor, si eram forte at quam illum iaculum et
-      profundum catenis pabula insania. Non arma Hyaleque, que laudis solent similis;
-      una robore docendam iuvat certe acta forti nepotis, genitore tenentibus.
+
+      Siculo sit cervos luserat et fluminis, cum desint. In et exacta
+      **marmora**, suo et rustice Orchomenosque possim talia vestigia mulcebunt
+      oblita! Huius _deficiunt_ vicisse eris amnis, amor, si eram forte at quam
+      illum iaculum et profundum catenis pabula insania. Non arma Hyaleque, que
+      laudis solent similis; una robore docendam iuvat certe acta forti nepotis,
+      genitore tenentibus.
+
 
       ## Dextra prodigiosa est
 
-      Ne vulgus sanguine opprimere manusque adorat Saturnia, nec qui nuda moenibus
-      luserit omnia, secundo: mater. Tibi caedis, me viret est ut caelo, **inde
-      demum** virgo nostraque auctore `system` gratia in pictis insopitumque ponit,
-      *parabat*. Qua gravem telum populisque et caelum utramque vanam, sit mihi nec
-      contentus **tua Amorum**, sumus ab.
 
-      Thebae doleamne corpora. Ruit somnia ritu ore decent, ore caelum quaeque meque
-      exululat. Restare conponitur quoque facit in staret superatus stare `dotFull`
-      faciat, et postquam nomen.
+      Ne vulgus sanguine opprimere manusque adorat Saturnia, nec qui nuda
+      moenibus luserit omnia, secundo: mater. Tibi caedis, me viret est ut
+      caelo, **inde demum** virgo nostraque auctore `system` gratia in pictis
+      insopitumque ponit, _parabat_. Qua gravem telum populisque et caelum
+      utramque vanam, sit mihi nec contentus **tua Amorum**, sumus ab. Thebae
+      doleamne corpora. Ruit somnia ritu ore decent, ore caelum quaeque meque
+      exululat. Restare conponitur quoque facit in staret superatus stare
+      `dotFull` faciat, et postquam nomen.
+
 
       ## About Our Community
 
 
-      Our community is built on the principles of collaboration, innovation, and mutual
-      support.
-
-      Whether you're a beginner or an experienced developer, there's a place for you
-      here.
+      Our community is built on the principles of collaboration, innovation, and
+      mutual support. Whether you're a beginner or an experienced developer,
+      there's a place for you here.
 
 
       We believe in:
 
-      - **Open collaboration** - Working together to solve problems
 
-      - **Continuous learning** - Sharing knowledge and growing together
+      *   **Open collaboration** - Working together to solve problems
 
-      - **Inclusive culture** - Welcoming everyone regardless of background
+      *   **Continuous learning** - Sharing knowledge and growing together
 
-      "
-  - type: card
-    title: Get Involved
-    description: There are many ways to participate in our community
-    cards:
-      - title: Contribute Code
-        content:
-          Help build and improve our projects by contributing code, fixing bugs,
-          and adding features.
-        button:
-          text: Contribute
-          variant: primary
-          size: md
-          href: /contribute
-      - title: Join Discussions
-        content:
-          Share your ideas, ask questions, and help others in our community forums
-          and chat channels.
-        button:
-          text: Join
-          variant: secondary
-          size: md
-          href: /discussions
-      - title: Write Documentation
-        content:
-          Improve our docs by writing tutorials, guides, and helping others understand
-          our tools.
-        button:
-          text: Learn More
-          variant: primary
-          size: md
-          href: /docs
-    buttons:
-      - variant: primary
-        text: Get Started
-        size: lg
-        href: /get-started
-  - type: card
-    title: Community Resources
-    description: Quick links to helpful resources
-    buttons:
-      - variant: primary
-        text: Forum
-        size: md
-        href: /forum
-      - variant: secondary
-        text: Discord
-        size: md
-        href: /discord
-      - variant: primary
-        size: md
-        text: Newsletter
-        href: /newsletter
+      *   **Inclusive culture** - Welcoming everyone regardless of background
   - type: people
+    background:
+      color: white
+      type: full
     category: Community
   - type: partners
+    background:
+      color: white
+      type: full
     title: Our Community Partners
-    # No category specified = show all partners
   - type: richText
-    content: "## Join Us Today
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: >-
+      ## Join Us Today
 
 
-      Ready to become part of our community? Sign up for our newsletter, join our Discord
-      server,
-
-      or start contributing on GitHub. We can't wait to see what we'll build together!
-
-      "
-permalink: community
+      Ready to become part of our community? Sign up for our newsletter, join
+      our Discord server, or start contributing on GitHub. We can't wait to see
+      what we'll build together!
