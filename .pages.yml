@@ -553,8 +553,8 @@ content:
     format: json
     filename: '{fields.id}.json'
     view:
-      fields: [image, name, affiliation, category]
-      sort: [category, name]
+      fields: [image, name, affiliation, categories]
+      sort: [categories, name]
       primary: name
     fields:
       - name: id
@@ -581,7 +581,7 @@ content:
         type: select
         required: true
         options:
-          multiple: false
+          multiple: true
           fetch:
             url: https://mlab.draftlab.dev/api/categories.json
             results: partners.categories
