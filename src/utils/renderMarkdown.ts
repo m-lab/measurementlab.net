@@ -3,6 +3,7 @@ import rehypeExternalLinks from 'rehype-external-links';
 import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
+import remarkToc from 'remark-toc';
 import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
 
@@ -61,9 +62,14 @@ const processImageNodes = () => async (tree: any) => {
 };
 
 // Extract base markdown processor (no image processing)
-const createMarkdownProcessor = () => {
-  return unified()
-    .use(remarkParse)
+const createMarkdownProcessor = (withTOC = false) => {
+  const processor = unified().use(remarkParse);
+  
+  if (withTOC) {
+    processor.use(remarkToc);
+  }
+  
+  return processor
     .use(remarkRehype)
     .use(rehypeExternalLinks, {
       target: '_blank',
@@ -73,18 +79,20 @@ const createMarkdownProcessor = () => {
 };
 
 // New: Plain markdown rendering (no image processing)
-export const renderMarkdown = async (markdown: string): Promise<string> => {
-  const html = await createMarkdownProcessor().process(markdown);
+export const renderMarkdown = async (markdown: string, withTOC = false): Promise<string> => {
+  const html = await createMarkdownProcessor(withTOC).process(markdown);
   return String(html);
 };
 
 // Existing: Markdown with image optimization
 export const renderMarkdownWithImages = async (
-  markdown: string
+  markdown: string,
+  withTOC = false
 ): Promise<string> => {
-  const html = await createMarkdownProcessor()
+  
+  const html = await createMarkdownProcessor(withTOC)
     .use(processImageNodes)
-    .process(markdown);
+    .process("## Contents\n\n" + markdown);
   return String(html);
 };
 

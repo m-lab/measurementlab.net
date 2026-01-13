@@ -1,17 +1,17 @@
 ---
 
-import SectionLayout from '@layouts/SectionLayout.astro';
 import renderMarkdownWithImages from '@utils/renderMarkdown';
 
 export interface Props {
   content: string;
-  background?: string
+  background?: string;
+  withTOC?: boolean;
 }
 
-const { content } = Astro.props;
+const { content, withTOC = true } = Astro.props;
 
+const html = await renderMarkdownWithImages(content, withTOC);
 
-const html = await renderMarkdownWithImages(content);
 
 ---
 
