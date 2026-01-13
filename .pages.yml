@@ -511,6 +511,8 @@ content:
       - name: headshot
         label: Headshot
         type: image
+        options:
+          path: people
         required: true
       - name: affiliation
         label: Affiliation
@@ -852,7 +854,7 @@ content:
         options:
           multiple: true
           fetch:
-            url: https://scaffold.draftlab.org/api/categories.json
+            url: https://mlab.draftlab.dev/api/categories.json
             results: blog.categories
             value: '{name}'
             label: '{name}'
