@@ -553,7 +553,7 @@ content:
     format: json
     filename: '{fields.id}.json'
     view:
-      fields: [name, affiliation, category]
+      fields: [image, name, affiliation, category]
       primary: name
     fields:
       - name: id
