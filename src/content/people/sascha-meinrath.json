@@ -2,9 +2,11 @@
   "id": "sascha-meinrath",
   "name": "Sascha Meinrath",
   "headshot": "/src/assets/people/sascha-meinrath.jpg",
-  "affiliation": "X-Lab",
+  "affiliation": "Penn State/X-Lab",
+  "extraInfo": "OTI",
   "url": "https://thexlab.org",
   "sections": [
-    "Experiment Review Committee"
+    "Experiment Review Committee",
+    "M-Lab Founders"
   ]
 }
