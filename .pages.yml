@@ -556,6 +556,7 @@ content:
       fields: [image, name, affiliation, category]
       sort: [category, name]
       primary: name
+      layout: tree
     fields:
       - name: id
         label: ID
