@@ -54,9 +54,7 @@ export default function PublicationItem({ item }: PublicationItemProps) {
 
 				{/* Description */}
 				{post.data.description && (
-					<p className="grow line-clamp-3 text-neutral-600">
-						{post.data.description}
-					</p>
+					<p className="grow line-clamp-3 text-neutral-600" dangerouslySetInnerHTML={{ __html: post.data.description }} />
 				)}
 
 				{/* Content Slot Area */}

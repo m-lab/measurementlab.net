@@ -40,13 +40,12 @@ export default function BlogItem({
 					{post.data.title}
 				</h3>
 
-				{/* Description/Excerpt */}
-				{post.data.excerpt && (
+				{/* Description placeholder */}
+			
 					<div
 						className="grow justify-self-start line-clamp-4 text-neutral-600"
-						dangerouslySetInnerHTML={{ __html: post.data.excerpt }}
+						style={{ content: '""' }}
 					/>
-				)}
 
 				{/* Content Slot Area */}
 				<div className="flex flex-col">

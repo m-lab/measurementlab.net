@@ -1,5 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { getPeopleMap, getPersonNames, type PersonData } from '@utils/people';
+import { renderMarkdown } from '@utils/renderMarkdown';
 
 export type Publication = CollectionEntry<'publications'>;
 
@@ -34,8 +35,18 @@ export async function preparePublicationCardData(
 	publication: Publication,
 	peopleMap?: Map<string, PersonData>
 ): Promise<PublicationCardData> {
+	const renderedDescription = publication.data.description
+		? await renderMarkdown(publication.data.description)
+		: undefined;
+
 	return {
-		post: publication,
+		post: {
+			...publication,
+			data: {
+				...publication.data,
+				description: renderedDescription,
+			},
+		},
 		authorNames: await getPersonNames(publication.data.contributors, peopleMap),
 	};
 }
