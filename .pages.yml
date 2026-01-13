@@ -496,7 +496,7 @@ content:
     format: json
     filename: '{{fields.id}}.json'
     view:
-      fields: [name, title]
+      fields: [headshot, name, title]
       primary: name
     fields:
       - name: id
