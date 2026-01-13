@@ -1,0 +1,10 @@
+{
+  "id": "philippa-gill",
+  "name": "Phillipa Gill",
+  "headshot": "/src/assets/people/phillipa.png",
+  "title": "Research Scientist",
+  "affiliation": "Google",
+  "sections": [
+    "Maintainers"
+  ]
+}
