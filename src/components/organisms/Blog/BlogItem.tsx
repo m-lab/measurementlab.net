@@ -14,7 +14,6 @@ export default function BlogItem({
 
 	const { authorNames, formattedDate, post } = item;
 
-	const heroImage = post.data.heroImage || MlabDefault;
 	return (
 		<a
 			href={`/blog/${post.slug}`}
@@ -30,7 +29,7 @@ export default function BlogItem({
 				{/* Hero Image */}
 				<div className="-m-4 mb-0 max-h-52 overflow-hidden">
 					<img
-						src={heroImage.src}
+						src={post.data.heroImage?.src}
 						alt={post.data.title}
 						className="object-cover object-center w-full"
 					/>
