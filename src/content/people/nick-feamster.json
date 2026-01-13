@@ -1,0 +1,10 @@
+{
+  "id": "nick-feamster",
+  "name": "Nick Feamster",
+  "headshot": "/src/assets/people/nick-feamster.png",
+  "affiliation": "University of Chicago",
+  "url": "https://people.cs.uchicago.edu/~feamster/",
+  "sections": [
+    "Experiment Review Committee"
+  ]
+}
