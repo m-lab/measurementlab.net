@@ -201,6 +201,7 @@ const blogCollection = defineCollection({
       title: z.string(),
       excerpt: z.string().optional(),
       authors: z.array(z.string()), // References to people collection IDs
+      externalAuthors: z.string().optional(), // Comma-separated external author names
       published: z.enum(['draft', 'published']),
       tags: z.array(z.string()),
       categories: z

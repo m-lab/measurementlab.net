@@ -7,8 +7,8 @@ excerpt: >-
   life. Here’s a summary of why the platform update is so valuable and what you
   can expect throughout the year. [modernize]:
   /src/assets/blog/modernizing-mlab
-authors:
-  - stephen-soltesz
+authors: []
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - platform

@@ -59,3 +59,28 @@ export async function resolvePeople(
 		.map((id) => map.get(id))
 		.filter((person): person is PersonData => person !== undefined);
 }
+
+/**
+ * Combines internal author names (from people collection) and external author names
+ * @param personIds - Array of person IDs (internal authors)
+ * @param externalAuthors - Comma-separated string of external author names
+ * @param peopleMap - Optional pre-built people map
+ * @returns Comma-separated string of all author names (internal first, then external)
+ */
+export async function getAllAuthorNames(
+	personIds: string[] | undefined,
+	externalAuthors: string | undefined,
+	peopleMap?: Map<string, PersonData>
+): Promise<string> {
+	const internalNames = await getPersonNames(personIds, peopleMap);
+
+	if (!externalAuthors) {
+		return internalNames;
+	}
+
+	if (!internalNames) {
+		return externalAuthors;
+	}
+
+	return `${internalNames}, ${externalAuthors}`;
+}

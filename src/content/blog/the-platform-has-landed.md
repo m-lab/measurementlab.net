@@ -5,8 +5,8 @@ excerpt: >-
   After years of planning and steady development, the new M-Lab 2.0 platform has
   landed. We want to express special thanks to those who have supported the
   project and helped us get here.
-authors:
-  - stephen-soltesz
+authors: []
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - platform

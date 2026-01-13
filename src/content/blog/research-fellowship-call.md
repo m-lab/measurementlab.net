@@ -9,7 +9,7 @@ excerpt: >-
   da...
 authors:
   - lai-yi-ohlsen
-  - phillipa-gill
+externalAuthors: "Phillipa Gill"
 published: published
 tags:
   - research

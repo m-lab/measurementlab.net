@@ -11,9 +11,8 @@ excerpt: >-
   internet infrastructure and technology in the wake of the COVID-19 pandemic.
   As part...
 authors:
-  - simone-basso
   - chris-ritzo
-  - maria-xynou
+externalAuthors: "Simone Basso, Maria Xynou"
 published: published
 tags:
   - data

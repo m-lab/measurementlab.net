@@ -4,8 +4,8 @@ title: Requiring access tokens for ndt7
 excerpt: >-
   Starting October 7th, 2020, the ndt7 server on the M-Lab platform will require
   access tokens issued by the Locate API v2 to run a measurement.
-authors:
-  - stephen-soltesz
+authors: []
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - ndt

@@ -9,7 +9,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
   - matt-mathis
-  - stephen-soltesz
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - ndt

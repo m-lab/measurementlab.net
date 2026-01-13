@@ -7,8 +7,8 @@ excerpt: >-
   to better understand the impact of ISP relationships on Internet access and
   performance. The Observatory provides easier access to M-Lab’s rich dataset
   ...
-authors:
-  - collin-anderson
+authors: []
+externalAuthors: "Collin Anderson"
 published: published
 tags:
   - interconnection

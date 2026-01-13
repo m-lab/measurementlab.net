@@ -6,8 +6,8 @@ excerpt: >-
   [2][2]]. This month, we are launching a global pilot for the
   new software stack. The changes include: * Stock Linux 4.19 LTS kernels with
   modern TCP and Cubic congestion control * Standard instrumentation fo...
-authors:
-  - stephen-soltesz
+authors: []
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - platform

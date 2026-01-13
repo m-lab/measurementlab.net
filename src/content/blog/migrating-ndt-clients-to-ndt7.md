@@ -9,9 +9,8 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
   - chris-ritzo
-  - greg-russell
   - matt-mathis
-  - stephen-soltesz
+externalAuthors: "Greg Russell, Stephen Soltesz"
 published: published
 tags:
   - ndt

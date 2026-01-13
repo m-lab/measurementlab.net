@@ -8,8 +8,8 @@ excerpt: >-
   are excited to announce that Measurement Lab (M-Lab) is joining CS&S’s
   Sponsored Projects Program on March 1 after a decade of growth at New America.
   Measurement Lab has been working in the public interest to measure In...
-authors:
-  - mlab-team
+authors: []
+externalAuthors: "M-Lab Team"
 published: published
 tags:
   - community

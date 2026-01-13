@@ -8,8 +8,7 @@ excerpt: >-
   appropriate use of our data in their analyses and reports.
 authors:
   - lai-yi-ohlsen
-  - greg-russell
-  - stephen-soltesz
+externalAuthors: "Greg Russell, Stephen Soltesz"
 published: published
 tags:
   - research

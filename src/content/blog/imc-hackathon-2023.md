@@ -4,7 +4,7 @@ title: Join us at the IMC 2023 Hackathon on Network Interference using Open Data
 excerpt: Are you attending the Internet Measurement Conference (IMC) 2023?
 authors:
   - lai-yi-ohlsen
-  - katherine-townsend
+externalAuthors: "Katherine Townsend"
 published: published
 tags:
   - data

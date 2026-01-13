@@ -6,8 +6,8 @@ excerpt: >-
   conference with a tutorial and conference talk in the Best of CCR session.
   This post overviews M-Lab’s activities at SIGCOMM and includes references for
   the tutorial materials.
-authors:
-  - phillipa-gill
+authors: []
+externalAuthors: "Phillipa Gill"
 published: published
 tags:
   - ndt

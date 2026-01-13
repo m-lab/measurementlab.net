@@ -8,8 +8,8 @@ excerpt: >-
   an updated version of the Network Diagnostic Tool (NDT), M-Lab’s most widely
   deployed performance measurement test. In addition to improved stability, the
   updated version of NDT makes it possible to measure network perfo...
-authors:
-  - collin-anderson
+authors: []
+externalAuthors: "Collin Anderson"
 published: published
 tags:
   - consumer-internet

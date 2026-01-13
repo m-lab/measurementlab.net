@@ -6,8 +6,8 @@ excerpt: >-
   data hosted in BigQuery was affected by a bug that caused duplicates to appear
   in our dataset. Queries against M-Lab’s BigQuery dataset performed between May
   2014 and April 2015 were impacted. The raw files in our Google ...
-authors:
-  - michael-lynch
+authors: []
+externalAuthors: "Michael Lynch"
 published: published
 tags:
   - data

@@ -8,9 +8,8 @@ excerpt: >-
   information. Maintainers of Measurement Lab are investigating options to
   limit...
 authors:
-  - phillipa-gill
   - cristina-leon
-  - katherine-townsend
+externalAuthors: "Phillipa Gill, Katherine Townsend"
 published: published
 tags:
   - ndt

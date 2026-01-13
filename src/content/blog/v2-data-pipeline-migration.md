@@ -7,8 +7,8 @@ excerpt: >-
   are updating the ndt5, switch, and tcpinfo schemas, removing obsolete views,
   and renaming some views in preparation for improving ease of use and
   documenta...
-authors:
-  - stephen-soltesz
+authors: []
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - pipeline

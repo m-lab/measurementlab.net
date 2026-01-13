@@ -5,8 +5,8 @@ excerpt: >-
   After January 2024, M-Lab will no longer support the legacy ndt5+raw protocol
   or mlab-ns.appspot.com service. There are alternatives available for migration
   now.
-authors:
-  - stephen-soltesz
+authors: []
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - platform

@@ -6,8 +6,8 @@ excerpt: >-
   the new M-Lab website! After years of directing our energy and resources
   toward expanding our measurement platform and furthering the state of open
   network research, we finally got around to redecorating. We hope that ...
-authors:
-  - mlab-team
+authors: []
+externalAuthors: "M-Lab Team"
 published: published
 tags: []
 categories:

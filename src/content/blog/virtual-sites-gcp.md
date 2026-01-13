@@ -6,8 +6,8 @@ excerpt: >-
   running ndt-server in all 35 GCP regions.
 authors:
   - lai-yi-ohlsen
-  - phillipa-gill
   - nathan-kinkade
+externalAuthors: "Phillipa Gill"
 published: published
 tags:
   - platform

@@ -8,8 +8,8 @@ excerpt: >-
   Impact on Consumer Internet Performance, we shared review copies with members
   of the research community, broadening the set of eyes on our methods and
   challenging our assertions. We received valuable feedback that allowed ...
-authors:
-  - collin-anderson
+authors: []
+externalAuthors: "Collin Anderson"
 published: published
 tags:
   - research

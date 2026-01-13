@@ -6,8 +6,8 @@ excerpt: >-
   run network measurements. Currently, most users run tests either directly from
   the M-Lab website, or through a 3rd party integration. Over the years, many
   users have requested the ability to run tests on a regular basis, ...
-authors:
-  - ross-schulman-and-simone-basso
+authors: []
+externalAuthors: "Ross Schulman, Simone Basso"
 published: published
 tags:
   - data

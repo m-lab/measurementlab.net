@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import { getImage, type ImageMetadata } from 'astro:assets';
 import MlabDefault from '@assets/mlab-default-card.png';
 import { isDev } from '@utils/dev';
-import { getPeopleMap, getPersonNames, resolvePeople, type PersonData } from '@utils/people';
+import { getPeopleMap, getPersonNames, resolvePeople, getAllAuthorNames, type PersonData } from '@utils/people';
 
 export type BlogPost = CollectionEntry<'blog'>;
 
@@ -98,7 +98,11 @@ export async function prepareBlogPostCardData(
         heroImage: optimizedImage as ImageMetadata,
       },
     },
-    authorNames: await getPersonNames(post.data.authors, peopleMap),
+    authorNames: await getAllAuthorNames(
+      post.data.authors,
+      post.data.externalAuthors,
+      peopleMap
+    ),
     formattedDate: formatBlogDate(post.data.publishedDate),
   };
 }

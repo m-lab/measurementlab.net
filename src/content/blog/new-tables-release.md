@@ -6,8 +6,8 @@ excerpt: >-
   Today, M-Lab is pleased to announce that the beta test was successful. The
   new, faster-performing tables will be M-Lab's new standard BigQuery tables.
   Before we move on to specifics, when we say faster performing, we me...
-authors:
-  - michael-lynch
+authors: []
+externalAuthors: "Michael Lynch"
 published: published
 tags:
   - bigquery

@@ -5,8 +5,8 @@ excerpt: >-
   Guest blog post by Michael Wezl (Full Professor at University of Oslo, Norway)
   discussing the use of Measurement Lab’s Neubot data to research Internet
   congestion control.
-authors:
-  - michael-welzl
+authors: []
+externalAuthors: "Michael Welzl"
 published: published
 tags:
   - guest

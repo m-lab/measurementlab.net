@@ -6,8 +6,8 @@ excerpt: >-
   increase in switch discards at sites with 10Gbps equipment connected to 1Gbps
   uplinks. We used our switch telemetry data to assess whether there were any
   negative consequences for tests contained in our SideStream or ND...
-authors:
-  - stephen-soltesz
+authors: []
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - data

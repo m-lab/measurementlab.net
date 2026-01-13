@@ -6,8 +6,8 @@ excerpt: >-
   clarity on how to access Traceroute data in BigQuery, as well as solicited
   feedback from the community on proposed changes to the traceroute output
   format.
-authors:
-  - saied-kazemi
+authors: []
+externalAuthors: "Saied Kazemi"
 published: published
 tags:
   - traceroute

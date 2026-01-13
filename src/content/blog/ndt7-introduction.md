@@ -10,8 +10,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
   - matt-mathis
-  - stephen-soltesz
-  - simone-basso
+externalAuthors: "Stephen Soltesz, Simone Basso"
 published: published
 tags:
   - ndt

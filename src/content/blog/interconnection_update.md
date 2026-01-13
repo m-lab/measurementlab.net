@@ -6,8 +6,8 @@ excerpt: >-
   public, Measurement Lab (M-Lab) has historically supplied regulators and other
   governmental entities with technical facts pertinent rule-making processes. In
   our February 2015 submission to the FCC’s Open Internet docket,...
-authors:
-  - collin-anderson
+authors: []
+externalAuthors: "Collin Anderson"
 published: published
 tags:
   - interconnection

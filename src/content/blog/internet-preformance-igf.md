@@ -7,8 +7,8 @@ excerpt: >-
   Discriminatory Practices", along with some extra comments
   that occurred to me after delivering the talk, when preparing this follow-up
   bl...
-authors:
-  - simone-basso
+authors: []
+externalAuthors: "Simone Basso"
 published: published
 tags:
   - igf

@@ -7,7 +7,7 @@ excerpt: >-
   following, please comment on the relevant Github issues.
 authors:
   - lai-yi-ohlsen
-  - stephen-soltesz
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - ndt7

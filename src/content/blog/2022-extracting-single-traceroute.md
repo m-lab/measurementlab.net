@@ -5,8 +5,8 @@ excerpt: >-
   In response to community feedback, we've developed a proof of concept tool
   that examines and extracts single-paths <code>scamper</code>‘s MDA
   traceroutes.
-authors:
-  - saied-kazemi
+authors: []
+externalAuthors: "Saied Kazemi"
 published: published
 tags:
   - traceroute

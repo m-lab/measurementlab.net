@@ -6,8 +6,8 @@ excerpt: >-
   (University of Capetown), Georgia Bullen (M-Lab), Antoine Delvaux (perfSonar),
   Stephen Soltesz (M-Lab).* In late November 2018, M-Lab was invited to the
   Internet Measurement Workshop at AFRINIC-29 in Tuni...
-authors:
-  - stephen-soltesz
+authors: []
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - event

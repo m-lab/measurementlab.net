@@ -1,8 +1,8 @@
 ---
 permalink: traceroute-bq-newdata-temporary-stop
 title: Traceroute BigQuery Table New Data Temporarily Halted for Schema Change
-authors:
-  - ya-chang
+authors: []
+externalAuthors: "Ya Chang"
 published: published
 tags:
   - data

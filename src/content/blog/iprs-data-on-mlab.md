@@ -4,10 +4,8 @@ title: IP Route Survey (IPRS) data published in M-Lab
 excerpt: >-
   We are excited to announce that the Dioptra research group at Sorbonne
   University is making its IP Route Survey (IPRS) available on M-Lab.
-authors:
-  - timur-friedman
-  - saied-kazemi
-  - elena-nardi
+authors: []
+externalAuthors: "Timur Friedman, Saied Kazemi, Elena Nardi"
 published: published
 tags:
   - data

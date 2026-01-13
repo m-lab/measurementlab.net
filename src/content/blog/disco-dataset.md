@@ -6,8 +6,8 @@ excerpt: >-
   M-Lab server and site uplink. Originally designed to detect switch discards
   from [server traffic microbursts][microbursts], we now support the *DIS*card
   *CO*llection (a.k.a. DISCO) dataset as a standard M-Lab BigQuery ...
-authors:
-  - stephen-soltesz
+authors: []
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - data

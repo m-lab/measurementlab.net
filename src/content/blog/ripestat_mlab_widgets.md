@@ -6,10 +6,8 @@ excerpt: >-
   bandwidth distribution among Internet users within a specific country or
   network?* - *How are active users of a specific network geographically
   spread?* - *How are active users spread within a specific IP address block?*
-authors:
-  - tiziana-refice
-  - vasco-asturiano
-  - robert-kisteleki
+authors: []
+externalAuthors: "Tiziana Refice, Vasco Asturiano, Robert Kisteleki"
 published: published
 tags:
   - visualization

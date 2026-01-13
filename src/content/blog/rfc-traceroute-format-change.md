@@ -6,8 +6,8 @@ excerpt: >-
   as a sidecar service running on M-Lab servers. Its purpose is to collect
   traceroute data to any remote IP address after it closes its TCP connection to
   an M-Lab server. TRC uses the scamper tool for running traceroutes.
-authors:
-  - saied-kazemi
+authors: []
+externalAuthors: "Saied Kazemi"
 published: published
 tags:
   - traceroute

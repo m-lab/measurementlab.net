@@ -1,12 +1,12 @@
 ---
 permalink: overview-of-mlab-traceroute
-title: An Overview of M-Lab’s Traceroute Data
+title: An Overview of M-Lab's Traceroute Data
 excerpt: >-
-  This blog post is a report on M-Lab’s traceroute data so the
+  This blog post is a report on M-Lab's traceroute data so the
   community can have a better understanding of what the data we make available
   includes.
-authors:
-  - saied-kazemi
+authors: []
+externalAuthors: "Saied Kazemi"
 published: published
 tags:
   - traceroute

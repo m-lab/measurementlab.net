@@ -6,8 +6,8 @@ excerpt: >-
   an easy [way to reconstruct the path of hops][1] for the
   same test. This task was particularly hard because the schema, which was
   designed many years ago, put the hops of the same test in different rows...
-authors:
-  - ya-chang
+authors: []
+externalAuthors: "Ya Chang"
 published: published
 tags:
   - data

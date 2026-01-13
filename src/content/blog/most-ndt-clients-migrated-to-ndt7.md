@@ -7,7 +7,7 @@ excerpt: >-
   websockets have completed the migration from ndt5 to ndt7.
 authors:
   - lai-yi-ohlsen
-  - stephen-soltesz
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - ndt

@@ -7,7 +7,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
   - nathan-kinkade
-  - stephen-soltesz
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - platform

@@ -7,8 +7,8 @@ excerpt: >-
   results for their own servers. After a full investigation these patterns were
   found to have been caused by the unique confluence of several specific
   conditio...
-authors:
-  - collin-anderson
+authors: []
+externalAuthors: "Collin Anderson"
 published: published
 tags:
   - microbursts

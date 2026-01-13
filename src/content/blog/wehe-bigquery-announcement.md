@@ -5,11 +5,8 @@ excerpt: >-
   M-Lab and the Wehe team are pleased to announce that Wehe data is available
   for open access in BigQuery.
 authors:
-  - dave-choffnes
-  - phillipa-gill
-  - zeinab-shmeis
-  - katherine-townsend
   - lai-yi-ohlsen
+externalAuthors: "Dave Choffnes, Phillipa Gill, Zeinab Shmeis, Katherine Townsend"
 published: published
 tags:
   - wehe

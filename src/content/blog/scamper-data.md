@@ -6,8 +6,8 @@ excerpt: >-
   M-Lab platform. Since we launched new platform in 2019 Q4, the new traceroute
   binary, Scamper, replaced Paris Traceroute
   on all our servers. Our BigQuery table for traceroute now has...
-authors:
-  - ya-chang
+authors: []
+externalAuthors: "Ya Chang"
 published: published
 tags:
   - data

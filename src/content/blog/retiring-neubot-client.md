@@ -6,8 +6,8 @@ excerpt: >-
   but, we decided to keep it available because there were still many active
   users. Now the time has come to say goodbye to the Neubot client, because too
   much time has passed since the latest release. **We recommend all user...
-authors:
-  - simone-basso
+authors: []
+externalAuthors: "Simone Basso"
 published: published
 tags:
   - neubot

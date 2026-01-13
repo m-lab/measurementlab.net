@@ -6,9 +6,8 @@ excerpt: >-
   selection and data annotation and how researchers can leverage metadata about
   the server selection to identify potentially erroneous client geolocation
   results in the annotated data.
-authors:
-  - loqman-salamatian
-  - phillipa-gill
+authors: []
+externalAuthors: "Loqman Salamatian, Phillipa Gill"
 published: published
 tags:
   - data

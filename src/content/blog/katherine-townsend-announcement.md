@@ -6,7 +6,7 @@ excerpt: >-
   our team as our new Director.
 authors:
   - lai-yi-ohlsen
-  - katherine-townsend
+externalAuthors: "Katherine Townsend"
 published: published
 tags:
   - leadership

@@ -7,8 +7,8 @@ excerpt: >-
   saved our datasets, tables, and views in BigQuery historically, and
   recommended tables and views for most researchers to use. At that time we
   also...
-authors:
-  - stephen-soltesz
+authors: []
+externalAuthors: "Stephen Soltesz"
 published: published
 tags:
   - data
