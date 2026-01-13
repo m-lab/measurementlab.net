@@ -1,6 +1,7 @@
 ---
 
 import renderMarkdownWithImages from '@utils/renderMarkdown';
+import TOC from '@components/organisms/TOC.tsx';
 
 export interface Props {
   content: string;
@@ -8,13 +9,39 @@ export interface Props {
   withTOC?: boolean;
 }
 
+interface TocEntry {
+	value: string;
+	depth: number;
+	id?: string;
+	children?: Array<TocEntry>;
+}
+
 const { content, withTOC = true } = Astro.props;
 
-const html = (await renderMarkdownWithImages(content, withTOC))?.html;
+const { html, toc } = (await renderMarkdownWithImages(content, withTOC));
 
+// Count total entries including nested children
+const countTocEntries = (entries: TocEntry[]): number => {
+	return entries.reduce((count, entry) => {
+		return count + 1 + (entry.children ? countTocEntries(entry.children) : 0);
+	}, 0);
+};
 
+const totalEntries = toc && Array.isArray(toc) ? countTocEntries(toc) : 0;
+const showTOC = withTOC && !!toc && totalEntries > 5;
 ---
 
-<div class="mx-auto prose max-w-3xl">
-	<Fragment set:html={html} />
+<div class="relative max-w-7xl mx-auto">
+  <div class={`${showTOC ? 'md:flex md:justify-center md:gap-8' : ''}`}>
+    {showTOC && (
+      <div class="hidden md:block md:w-[200px] md:flex-shrink-0">
+        <TOC entries={toc} client:load />
+      </div>
+    )}
+    
+    <div class={`prose max-w-3xl ${showTOC ? '' : 'mx-auto'}`}>
+      <Fragment set:html={html} />
+    </div>
+  </div>
 </div>
+

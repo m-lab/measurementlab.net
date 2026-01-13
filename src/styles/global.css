@@ -5,3 +5,7 @@
 @import './breakpoints.css';
 @import './components.css';
 @plugin '@tailwindcss/typography';
+
+html {
+  scroll-behavior: smooth;
+}
