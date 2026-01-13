@@ -531,12 +531,8 @@ content:
         required: false
       - name: sections
         label: Sections
-        type: string
-        list: true
-        description: Department/section tags (e.g. Leadership, Engineering)
-      - name: sections
-        label: Sections
         type: select
+        required: true
         options:
           multiple: true
           fetch:
