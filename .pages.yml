@@ -581,7 +581,7 @@ content:
         type: select
         required: true
         options:
-          multiple: true
+          multiple: false
           fetch:
             url: https://mlab.draftlab.dev/api/categories.json
             results: partners.categories
