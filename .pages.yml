@@ -555,8 +555,8 @@ content:
     view:
       fields: [image, name, affiliation, category]
       sort: [category, name]
+      search: [name, affiliation]
       primary: name
-      layout: tree
     fields:
       - name: id
         label: ID
