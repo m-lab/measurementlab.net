@@ -2,6 +2,11 @@
   "id": "aisha-patel",
   "name": "Aisha Patel",
   "headshot": "/src/assets/people/aisha-patel.png",
+  "affiliation": "Happy NGO",
   "title": "Senior Software Engineer",
-  "sections": ["Engineering", "Product", "Community"]
+  "sections": [
+    "Engineering",
+    "Product",
+    "Marketing"
+  ]
 }
