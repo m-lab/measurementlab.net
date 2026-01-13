@@ -515,6 +515,10 @@ content:
           media: images
           path: people
         required: true
+      - name: title
+        label: Role
+        type: string
+        required: false
       - name: affiliation
         label: Affiliation
         type: string
@@ -528,10 +532,7 @@ content:
         type: string
         required: false
         description: Optional external link
-      - name: title
-        label: Role
-        type: string
-        required: false
+      
       - name: sections
         label: Sections
         type: select
