@@ -1,5 +1,7 @@
 import type { TocEntry } from '@stefanprobst/rehype-extract-toc';
 
+const NAVBAR_HEIGHT = 96; // Height of the fixed navbar in pixels
+
 export interface TOCProps {
 	entries: TocEntry[];
 }
@@ -7,11 +9,29 @@ export interface TOCProps {
 function TocEntryComponent({ entry }: { entry: TocEntry }) {
 	const indent = (entry.depth - 1) * 16; // 16px per depth level
 
+	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+		if (entry.id) {
+			e.preventDefault();
+			const element = document.getElementById(entry.id);
+			if (element) {
+				const navbarHeight = NAVBAR_HEIGHT;
+				const elementPosition = element.getBoundingClientRect().top;
+				const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+				window.scrollTo({
+					top: offsetPosition,
+					behavior: 'smooth'
+				});
+			}
+		}
+	};
+
 	return (
 		<>
 			{entry.id ? (
 				<a
 					href={`#${entry.id}`}
+					onClick={handleClick}
 					className="block py-1 hover:text-primary-600 transition-colors"
 					style={{ paddingLeft: `${indent}px` }}
 				>
