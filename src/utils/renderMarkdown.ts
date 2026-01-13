@@ -1,6 +1,8 @@
 import { getImage } from 'astro:assets';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeStringify from 'rehype-stringify';
+import rehypeSlug from 'rehype-slug';
+import rehypeExtractToc, { type TocEntry } from '@stefanprobst/rehype-extract-toc';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import remarkToc from 'remark-toc';
@@ -63,37 +65,45 @@ const processImageNodes = () => async (tree: any) => {
 
 // Extract base markdown processor (no image processing)
 const createMarkdownProcessor = (withTOC = false) => {
-  const processor = unified().use(remarkParse);
-  
-  if (withTOC) {
-    processor.use(remarkToc);
-  }
-  
-  return processor
+  const processor = unified()
+    .use(remarkParse)
     .use(remarkRehype)
+    
     .use(rehypeExternalLinks, {
       target: '_blank',
       rel: ['noopener', 'noreferrer'],
     })
     .use(rehypeStringify, { allowDangerousHtml: true });
+    
+
+  if (withTOC) {
+    return processor
+      .use(rehypeExtractToc)
+      .use(rehypeSlug);
+  } 
+  
+  return processor;
 };
 
 // New: Plain markdown rendering (no image processing)
-export const renderMarkdown = async (markdown: string, withTOC = false): Promise<string> => {
+export const renderMarkdown = async (markdown: string, withTOC = false): Promise<{html: string, toc?: Array<TocEntry>}> => {
   const html = await createMarkdownProcessor(withTOC).process(markdown);
-  return String(html);
+  return { html: String(html), toc: html.data.toc };
 };
 
 // Existing: Markdown with image optimization
 export const renderMarkdownWithImages = async (
   markdown: string,
   withTOC = false
-): Promise<string> => {
+): Promise<{html: string, toc?: Array<TocEntry>}> => {
   
   const html = await createMarkdownProcessor(withTOC)
     .use(processImageNodes)
-    .process("## Contents\n\n" + markdown);
-  return String(html);
+    .process(markdown);
+
+  console.log(html)
+
+  return ({ html: String(html), toc: html.data.toc });
 };
 
 // Default export for backward compatibility

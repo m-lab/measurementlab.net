@@ -36,7 +36,7 @@ export async function preparePublicationCardData(
 	peopleMap?: Map<string, PersonData>
 ): Promise<PublicationCardData> {
 	const renderedDescription = publication.data.description
-		? await renderMarkdown(publication.data.description)
+		? (await renderMarkdown(publication.data.description))?.html
 		: undefined;
 
 	return {

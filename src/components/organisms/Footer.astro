@@ -24,7 +24,7 @@ const footerNav1 = await getEntry('navigation', 'footer-1');
 const footerNav2 = await getEntry('navigation', 'footer-2');
 
 // Prepare description with fallback logic
-const description = siteConfig.footer.description ? await renderMarkdown(siteConfig.footer.description) : siteConfig.description;
+const description = siteConfig.footer.description ? (await renderMarkdown(siteConfig.footer.description))?.html : siteConfig.description;
 
 ---
 
@@ -94,7 +94,7 @@ const description = siteConfig.footer.description ? await renderMarkdown(siteCon
 			<div class="space-y-2 text-center *:text-sm">
 				<div
 					class="*:text-sm [&_a]:text-white [&_a]:underline [&_a]:hover:opacity-80"
-					set:html={await renderMarkdown(siteConfig.footer.bottom)}
+					set:html={(await renderMarkdown(siteConfig.footer.bottom))?.html}
 				/>
 			</div>
 		</div>

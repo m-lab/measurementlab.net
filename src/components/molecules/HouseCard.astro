@@ -87,7 +87,7 @@ const TitleLink = (cardType!=="blog" && href) ? 'a':'slot';
 
 		<div
 			class=`grow justify-self-start ${truncateDescription && 'line-clamp-4'}`
-			set:html={description && (await renderMarkdown(description))}
+			set:html={description && (await renderMarkdown(description))?.html}
 		/>
 		<slot />
 	</div>
