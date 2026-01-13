@@ -513,7 +513,7 @@ content:
         type: image
         options:
           media: images
-          path: /people
+          path: images/people
         required: true
       - name: affiliation
         label: Affiliation
