@@ -34,7 +34,7 @@ const showTOC = withTOC && !!toc && totalEntries > 5;
 <div class="relative max-w-7xl mx-auto">
   <div class={`${showTOC ? 'md:flex md:justify-center md:gap-8' : ''}`}>
     {showTOC && (
-      <div class="hidden md:block md:w-[200px] md:flex-shrink-0">
+      <div class="hidden md:block md:w-[200px] md:shrink-0">
         <TOC entries={toc} client:load />
       </div>
     )}

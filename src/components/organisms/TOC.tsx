@@ -31,10 +31,8 @@ function TocEntryComponent({ entry }: { entry: TocEntry }) {
 }
 
 export default function TOC({ entries }: TOCProps) {
-
-  console.log(entries);
 	return (
-		<aside className="lg:sticky lg:top-8 lg:self-start">
+		<aside className="lg:sticky lg:top-25 lg:self-start">
 			<nav className="text-sm">
 				<h2 className="font-bold text-lg mb-4">Table of Contents</h2>
 				<div className="space-y-1">
