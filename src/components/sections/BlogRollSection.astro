@@ -2,6 +2,8 @@
 import MlabDefault from '@assets/mlab-default-card.png';
 import Button from '@components/atoms/Button.tsx';
 import Tag from '@components/atoms/Tag.astro';
+import { renderMarkdown } from '@utils/renderMarkdown';
+import HouseCardReact from '@components/molecules/HouseCard.tsx';
 import HouseCard from '@components/molecules/HouseCard.astro';
 import { getBlogPosts, prepareBlogPostsCardData } from '@utils/blog';
 import { isDev } from '@utils/dev';
@@ -23,6 +25,7 @@ const {
 // Fetch posts using utilities (automatically filters drafts based on environment)
 const posts = await getBlogPosts({ limit });
 const postsData = await prepareBlogPostsCardData(posts);
+
 ---
 
 <div class="py-12">
@@ -46,8 +49,9 @@ const postsData = await prepareBlogPostsCardData(posts);
 					<HouseCard
 						variant="primary"
 						title={post.data.title}
+						description={post.data.excerpt}
 						class="flex h-full flex-col"
-						image={post.data.heroImage || MlabDefault}
+						image={post.data.heroImage}
 						href={`/blog/${post.slug}`}
 					>
 						<div class="flex flex-col">
@@ -74,6 +78,55 @@ const postsData = await prepareBlogPostsCardData(posts);
 							</div>
 						</div>
 					</HouseCard>
+				))}
+			</div>
+		)
+	}
+
+	{
+		postsData.length === 0 ? (
+			<div class="py-12 text-center">
+				<p class="text-gray-600 text-lg">
+					No blog posts published yet. Check back soon!
+				</p>
+			</div>
+		) : (
+			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+				{postsData.map(({ post, authorNames, formattedDate }) => (
+					<HouseCardReact
+						client:load
+						variant="primary"
+						title={post.data.title}
+						description={post.data.excerpt}
+						className="flex h-full flex-col"
+						image={post.data.heroImage}
+						imageAlt={post.data.title}
+						href={`/blog/${post.slug}`}
+					>
+						<div class="flex flex-col">
+							{/* Draft badge (only visible in dev) */}
+							{isDev && post.data.published === 'draft' && (
+								<div class="mb-3">
+									<Tag variant="highlight" class="font-bold">
+										DRAFT
+									</Tag>
+								</div>
+							)}
+
+							{/* Tags */}
+							<div class="mb-3 flex flex-wrap gap-2">
+								{post.data.tags.slice(0, 3).map((tag) => (
+									<Tag variant="primary">{tag}</Tag>
+								))}
+							</div>
+
+							{/* Metadata */}
+							<div class="mb-4 space-y-1">
+								<p class="">By {authorNames}</p>
+								<p class="text-neutral-400">{formattedDate}</p>
+							</div>
+						</div>
+					</HouseCardReact>
 				))}
 			</div>
 		)

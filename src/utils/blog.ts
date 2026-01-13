@@ -1,5 +1,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
+import { getImage, type ImageMetadata } from 'astro:assets';
+import MlabDefault from '@assets/mlab-default-card.png';
 import { isDev } from '@utils/dev';
 import { getPeopleMap, getPersonNames, resolvePeople, type PersonData } from '@utils/people';
 
@@ -85,8 +87,17 @@ export async function prepareBlogPostCardData(
   post: BlogPost,
   peopleMap?: Map<string, PersonData>
 ): Promise<BlogPostCardData> {
+  const imageToProcess = post.data.heroImage || MlabDefault;
+  const optimizedImage = await getImage({ src: imageToProcess });
+
   return {
-    post,
+    post: {
+      ...post,
+      data: {
+        ...post.data,
+        heroImage: optimizedImage.src as any,
+      },
+    },
     authorNames: await getPersonNames(post.data.authors, peopleMap),
     formattedDate: formatBlogDate(post.data.publishedDate),
   };
