@@ -215,9 +215,14 @@ components:
   richtext_section:
     type: object
     fields:
+      
       - name: background
         label: Section Background
         component: background_select
+      - name: withTOC
+        label: Include Table of Contents
+        type: boolean
+        default: false
       - name: content
         label: Content
         type: rich-text
