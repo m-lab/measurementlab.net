@@ -1,0 +1,11 @@
+{
+  "id": "roberto-dauria",
+  "name": "Roberto D'Auria",
+  "headshot": "/src/assets/people/roberto.jpg",
+  "affiliation": "Code for Science & Society",
+  "url": "https://www.codeforsociety.org/",
+  "title": "Platform Engineer",
+  "sections": [
+    "Maintainers"
+  ]
+}
