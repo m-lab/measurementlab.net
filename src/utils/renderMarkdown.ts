@@ -77,8 +77,8 @@ const createMarkdownProcessor = (withTOC = false) => {
 
   if (withTOC) {
     return processor
-      .use(rehypeExtractToc)
-      .use(rehypeSlug);
+      .use(rehypeSlug)
+      .use(rehypeExtractToc);
   } 
   
   return processor;
