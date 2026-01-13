@@ -551,9 +551,9 @@ content:
     type: collection
     path: src/content/partners
     format: json
-    filename: '{{fields.id}}.json'
+    filename: '{fields.id}.json'
     view:
-      fields: [name, category, affiliation]
+      fields: [name, affiliation, category]
       primary: name
     fields:
       - name: id
@@ -570,41 +570,27 @@ content:
       - name: affiliation
         label: Affiliation
         type: string
-        description: e.g. "Platinum Sponsor", "Technology Partner"
 
       - name: url
         label: Website URL
         type: string
-        description: Partner's website URL
 
-      - name: category
+      - name: categories
         label: Category
         type: select
         required: true
         options:
-          values:
-            - label: Sponsor
-              value: sponsor
-            - label: Infrastructure
-              value: infrastructure
-            - label: Community
-              value: community
-            - label: Technology
-              value: technology
-            - label: Media
-              value: media
-        description: Partner category for filtering. Must match categories defined in Categories > partners
+          multiple: true
+          fetch:
+            url: https://mlab.draftlab.dev/api/categories.json
+            results: partners.categories
+            value: '{name}'
+            label: '{name}'
 
       - name: image
         label: Logo
         type: image
         description: Absolute path to partner logo (e.g. /src/assets/partners/logo.png)
-
-      - name: order
-        label: Display Order
-        type: number
-        default: 999
-        description: Lower numbers appear first (1, 2, 3...)
 
   # Categories collection
   - name: categories
@@ -612,7 +598,7 @@ content:
     type: collection
     path: src/content/categories
     format: json
-    filename: '{{fields.id}}.json'
+    filename: '{fields.id}.json'
     view:
       fields: [name, id]
       primary: name

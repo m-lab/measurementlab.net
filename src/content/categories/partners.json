@@ -1,11 +1,5 @@
 {
   "id": "partners",
   "name": "Partner Categories",
-  "categories": [
-    "sponsor",
-    "infrastructure",
-    "community",
-    "technology",
-    "media"
-  ]
+  "categories": ["Supporting Research Projects", "Supporting Partners"]
 }
