@@ -494,7 +494,7 @@ content:
     type: collection
     path: src/content/people
     format: json
-    filename: '{{fields.id}}.json'
+    filename: '{fields.id}.json'
     view:
       fields: [headshot, name, title]
       primary: name
