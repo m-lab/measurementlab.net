@@ -511,8 +511,8 @@ content:
       - name: headshot
         label: Headshot
         type: image
-        media: images
         options:
+          media: images
           path: people
         required: true
       - name: affiliation
