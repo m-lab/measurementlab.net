@@ -1,0 +1,10 @@
+{
+  "id": "stephen-stuart",
+  "name": "Stephen Stuart",
+  "headshot": "/src/assets/people/stephen-stuart.png",
+  "affiliation": "Google",
+  "url": "https://research.google/people/StephenStuart/",
+  "sections": [
+    "Maintainers"
+  ]
+}
