@@ -536,7 +536,7 @@ content:
         options:
           multiple: true
           fetch:
-            url: https://scaffold.draftlab.org/api/categories.json
+            url: https://mlab.draftlab.dev/api/categories.json
             results: people.categories
             value: '{name}'
             label: '{name}'
