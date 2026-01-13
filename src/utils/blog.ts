@@ -96,6 +96,7 @@ export async function prepareBlogPostCardData(
       data: {
         ...post.data,
         heroImage: optimizedImage as ImageMetadata,
+        description: renderedDescription,
       },
     },
     authorNames: await getAllAuthorNames(
