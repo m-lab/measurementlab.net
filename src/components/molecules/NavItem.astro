@@ -15,7 +15,7 @@ const {
   class: className = '',
 } = Astro.props;
 
-const { href, label, children } = item;
+const { href, label, type, children } = item;
 
 const activeStyles = active
   ? 'underline decoration-2'
@@ -27,7 +27,7 @@ const classes = `no-underline hover:underline transition transition-300 underlin
 {children ? (
 	<NavItemDropdown label={label} items={children} class={className} client:load />
 ) : (
-	<Link href={href} variant="nav" className={classes} external={href.startsWith('http')}>
+	<Link href={href} variant="nav" className={classes} external={type === 'external'}>
 		{label}
 	</Link>
 )}

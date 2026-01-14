@@ -13,6 +13,7 @@ type NavigationItem =
 export interface NavItem {
   href: string;
   label: string;
+  type?: 'internal' | 'external';
   children?: Array<{ href: string; label: string }>;
 }
 
@@ -43,6 +44,7 @@ export const convertNavigationItems = (items: NavigationItem[]): NavItem[] => {
       return {
         href: resolveFlexibleLink(item.link),
         label: item.link.label,
+        type: item.link.type
       };
     } else {
       // Dropdown menu - include children
@@ -52,6 +54,7 @@ export const convertNavigationItems = (items: NavigationItem[]): NavItem[] => {
         children: item.links.map(link => ({
           href: resolveFlexibleLink(link),
           label: link.label,
+          type: link.type
         })),
       };
     }

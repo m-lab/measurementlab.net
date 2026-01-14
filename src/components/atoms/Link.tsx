@@ -25,7 +25,7 @@ export default function Link({
   children,
   ...props
 }: LinkProps) {
-  const classes = `${variants[variant]} ${className} flex items-center justify-start gap-1`;
+  const classes = `${variants[variant]} ${className} flex items-center`;
   const externalProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 
   return (

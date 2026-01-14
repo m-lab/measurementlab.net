@@ -9,14 +9,12 @@ interface MobileMenuProps {
   currentPath?: string;
 }
 
-const MobileMenuItem = ({ item, isActive }: { item: NavItem; isActive: boolean }) => {
-  const isExternal = item.href.startsWith('http://') || item.href.startsWith('https://');
-  
+const MobileMenuItem = ({ item, isActive }: { item: NavItem; isActive: boolean }) => {  
   return (
     <li key={item.href}>
       <Link
         href={item.href}
-        external={isExternal}
+        external={item.type === 'external'}
         variant="nav"
         className={`group text-black no-underline decoration-neutral-400 underline-offset-8 transition hover:underline ${
           isActive

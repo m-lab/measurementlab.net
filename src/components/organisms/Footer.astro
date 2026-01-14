@@ -68,7 +68,7 @@ const description = siteConfig.footer.description ? (await renderMarkdown(siteCo
 						<ul class="space-y-3">
 							{footerNav1Items.map((item) => (
 								<li>
-									<Link href={item.href} variant="footer" external={item.href.startsWith('http')}>
+									<Link href={item.href} variant="footer" external={item.type === 'external'}>
 										{item.label}
 									</Link>
 								</li>
@@ -83,7 +83,7 @@ const description = siteConfig.footer.description ? (await renderMarkdown(siteCo
 						<ul class="space-y-3">
 							{footerNav2Items.map((item) => (
 								<li>
-									<Link href={item.href} variant="footer" external={item.href.startsWith('http')}>
+									<Link href={item.href} variant="footer" external={item.type === 'external'}>
 										{item.label}
 									</Link>
 								</li>
