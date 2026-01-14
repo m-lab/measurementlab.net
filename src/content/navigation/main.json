@@ -13,7 +13,8 @@
     },
     {
       "type": "internal",
-      "label": "Learn"
+      "label": "Learn",
+      "pageRef": "null"
     },
     {
       "type": "internal",
@@ -26,7 +27,7 @@
     {
       "type": "internal",
       "label": "Test Internal",
-      "pageRef": "Feature Showcase Page"
+      "pageRef": "Test child 3"
     },
     {
       "type": "external",
