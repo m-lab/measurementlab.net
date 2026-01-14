@@ -2,26 +2,33 @@ import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import { siteConfig } from '@lib/config';
 import { useState } from 'react';
 import type { NavItem } from '@utils/navigation';
+import Link from '@components/atoms/Link';
 
 interface MobileMenuProps {
   items: NavItem[];
   currentPath?: string;
 }
 
-const MobileMenuItem = ({ item, isActive }: { item: NavItem; isActive: boolean }) => (
-  <li key={item.href}>
-    <a
-      href={item.href}
-      className={`group flex gap-x-4 text-xl text-black no-underline decoration-neutral-400 underline-offset-8 transition hover:underline ${
-        isActive
-          ? 'underline decoration-black'
-          : 'no-underline'
-      }`}
-    >
-      {item.label}
-    </a>
-  </li>
-);
+const MobileMenuItem = ({ item, isActive }: { item: NavItem; isActive: boolean }) => {
+  const isExternal = item.href.startsWith('http://') || item.href.startsWith('https://');
+  
+  return (
+    <li key={item.href}>
+      <Link
+        href={item.href}
+        external={isExternal}
+        variant="nav"
+        className={`group text-black no-underline decoration-neutral-400 underline-offset-8 transition hover:underline ${
+          isActive
+            ? 'underline decoration-black'
+            : 'no-underline'
+        }`}
+      >
+        {item.label}
+      </Link>
+    </li>
+  );
+};
 
 export default function MobileMenu({
   items,
