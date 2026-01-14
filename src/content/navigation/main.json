@@ -27,7 +27,7 @@
     {
       "type": "internal",
       "label": "Test Internal",
-      "pageRef": "Test child 3"
+      "pageRef": "feature-showcase"
     },
     {
       "type": "external",
