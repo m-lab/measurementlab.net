@@ -8,6 +8,21 @@ interface MobileMenuProps {
   currentPath?: string;
 }
 
+const MobileMenuItem = ({ item, isActive }: { item: NavItem; isActive: boolean }) => (
+  <li key={item.href}>
+    <a
+      href={item.href}
+      className={`group flex gap-x-4 text-xl text-black no-underline decoration-neutral-400 underline-offset-8 transition hover:underline ${
+        isActive
+          ? 'underline decoration-black'
+          : 'no-underline'
+      }`}
+    >
+      {item.label}
+    </a>
+  </li>
+);
+
 export default function MobileMenu({
   items,
   currentPath = '/',
@@ -98,18 +113,20 @@ export default function MobileMenu({
                   <li>
                     <ul className="space-y-4">
                       {items.map((item) => (
-                        <li key={item.href}>
-                          <a
-                            href={item.href}
-                            className={`group flex gap-x-4 text-xl text-black no-underline decoration-neutral-400 underline-offset-8 transition hover:underline ${
-                              isActive(item.href)
-                                ? 'underline decoration-black'
-                                : 'no-underline'
-                            }`}
-                          >
-                            {item.label}
-                          </a>
-                        </li>
+                        <>
+                          <MobileMenuItem item={item} isActive={isActive(item.href)} />
+                          {item.children?.length > 0 && (
+                            <ul className="mt-2 ml-6 space-y-4">
+                              {item.children.map((child) => (
+                                <MobileMenuItem
+                                  key={child.href}
+                                  item={child}
+                                  isActive={isActive(child.href)}
+                                />
+                              ))}
+                            </ul>
+                          )}
+                        </>
                       ))}
                     </ul>
                   </li>
