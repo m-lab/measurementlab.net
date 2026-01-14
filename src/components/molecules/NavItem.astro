@@ -1,19 +1,21 @@
 ---
 import Link from '@components/atoms/Link.astro';
+import NavItemDropdown from '@components/molecules/NavItemDropdown';
+import type { NavItem as TNavItem } from '@utils/navigation';
 
 export type Props = {
-  href: string;
+  item: TNavItem;
   active?: boolean;
-  label: string;
   class?: string;
 }
 
 const {
-  href,
+  item,
   active = false,
-  label,
   class: className = '',
 } = Astro.props;
+
+const { href, label, children } = item;
 
 const activeStyles = active
   ? 'underline decoration-2'
@@ -22,7 +24,10 @@ const activeStyles = active
 const classes = `no-underline hover:underline transition transition-300 underline-offset-20 inline-flex items-center px-3 py-2  ${activeStyles} ${className}`;
 ---
 
-<Link href={href} variant="nav" class={classes}>
-	{label}
-	<slot />
-</Link>
+{children ? (
+	<NavItemDropdown label={label} items={children} class={className} client:load />
+) : (
+	<Link href={href} variant="nav" class={classes}>
+		{label}
+	</Link>
+)}

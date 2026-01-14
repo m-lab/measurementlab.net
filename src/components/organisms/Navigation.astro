@@ -56,8 +56,7 @@ console.log('items:', items);
 			{
 				items.map((item) => (
 					<NavItem
-						href={item.href}
-						label={item.label}
+						item={item}
 						active={isActive(item.href)}
 					/>
 				))
