@@ -5,28 +5,33 @@
     {
       "type": "internal",
       "label": "About",
-      "href": "/about",
       "description": "Learn more about us"
     },
     {
       "type": "internal",
-      "label": "What we do",
-      "href": "/what-we-do"
+      "label": "What we do"
     },
     {
       "type": "internal",
-      "label": "Learn",
-      "href": "/learn"
+      "label": "Learn"
     },
     {
       "type": "internal",
-      "label": "Contribute",
-      "href": "/contribute"
+      "label": "Contribute"
     },
     {
       "type": "internal",
-      "label": "Partner with us",
-      "href": "/partner-with-us"
+      "label": "Partner with us"
+    },
+    {
+      "type": "internal",
+      "label": "Test Internal",
+      "pageRef": "Feature Showcase Page"
+    },
+    {
+      "type": "external",
+      "label": "Test External",
+      "externalUrl": "https://example.com"
     }
   ]
 }
