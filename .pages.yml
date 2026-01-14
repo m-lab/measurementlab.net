@@ -164,6 +164,55 @@ components:
         label: Card Section
         component: card_section
 
+  # Navigation Menu Item component
+  navigation_menu_item:
+    type: block
+    blockKey: type
+    description: Navigation link that can reference an internal page or external URL
+    blocks:
+      - name: internal
+        label: Internal Page Link
+        fields:
+          - name: label
+            label: Link Label
+            type: string
+            required: true
+            description: Text displayed for the link
+          - name: pageRef
+            label: Page Reference
+            type: reference
+            required: true
+            options:
+              collection: pages
+              value: '{id}'
+              label: '{fields.title}'
+            description: Select a page from the pages collection
+          - name: description
+            label: Description
+            type: string
+            description: Optional description for accessibility
+
+      - name: external
+        label: External Link
+        fields:
+          - name: label
+            label: Link Label
+            type: string
+            required: true
+            description: Text displayed for the link
+          - name: externalUrl
+            label: External URL
+            type: string
+            required: true
+            description: Full URL (e.g. https://example.com)
+            pattern:
+              message: "Must be a valid URL starting with http:// or https://"
+              regex: '^https?://.+'
+          - name: description
+            label: Description
+            type: string
+            description: Optional description for accessibility
+
   background_select:
     type: object
     fields:
@@ -735,26 +784,9 @@ content:
 
       - name: items
         label: Menu Items
-        type: object
+        component: navigation_menu_item
         list: true
         required: true
-        fields:
-          - name: label
-            label: Link Label
-            type: string
-            required: true
-            description: Text displayed for the link
-
-          - name: href
-            label: URL
-            type: string
-            required: true
-            description: Link destination (e.g. / or /about)
-
-          - name: description
-            label: Description
-            type: string
-            description: Optional description for accessibility
 
   # Blog collection
   - name: blog
