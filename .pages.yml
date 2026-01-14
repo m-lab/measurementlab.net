@@ -184,8 +184,8 @@ components:
             required: true
             options:
               collection: pages
-              value: {permalink}
-              label: "{title} ({permalink})"
+              value: "{permalink}"
+              label: "{title}"
             description: Select a page from the pages collection
           - name: description
             label: Description
