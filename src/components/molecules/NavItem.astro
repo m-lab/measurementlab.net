@@ -27,7 +27,7 @@ const classes = `no-underline hover:underline transition transition-300 underlin
 {children ? (
 	<NavItemDropdown label={label} items={children} class={className} client:load />
 ) : (
-	<Link href={href} variant="nav" class={classes}>
+	<Link href={href} variant="nav" class={classes} external={href.startsWith('http')}>
 		{label}
 	</Link>
 )}
