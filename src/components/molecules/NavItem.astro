@@ -1,5 +1,5 @@
 ---
-import Link from '@components/atoms/Link.astro';
+import Link from '@components/atoms/Link';
 import NavItemDropdown from '@components/molecules/NavItemDropdown';
 import type { NavItem as TNavItem } from '@utils/navigation';
 
@@ -27,7 +27,7 @@ const classes = `no-underline hover:underline transition transition-300 underlin
 {children ? (
 	<NavItemDropdown label={label} items={children} class={className} client:load />
 ) : (
-	<Link href={href} variant="nav" class={classes} external={href.startsWith('http')}>
+	<Link href={href} variant="nav" className={classes} external={href.startsWith('http')}>
 		{label}
 	</Link>
 )}

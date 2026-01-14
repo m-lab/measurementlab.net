@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { getEntry } from 'astro:content';
-import Link from '@components/atoms/Link.astro';
+import Link from '@components/atoms/Link';
 import SocialLinks from '@components/molecules/SocialLinks.astro';
 import { renderMarkdown } from '@utils/renderMarkdown';
 import { convertNavigationItems } from '@utils/navigation';
@@ -41,7 +41,7 @@ const description = siteConfig.footer.description ? (await renderMarkdown(siteCo
 			<div class="space-y-6">
 				<!-- Logo -->
 				<div>
-					<Link href="/" variant="unstyled" class="block">
+					<Link href="/" variant="unstyled" className="block">
 						<img
 							src="/logo-extended-white.svg"
 							alt={siteConfig.title}

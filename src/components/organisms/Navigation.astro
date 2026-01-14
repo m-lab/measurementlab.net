@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content';
 import Button from '@components/atoms/Button.tsx';
 import Image from '@components/atoms/Image.astro';
-import Link from '@components/atoms/Link.astro';
+import Link from '@components/atoms/Link';
 import NavItem from '@components/molecules/NavItem.astro';
 import MobileMenu from '@components/organisms/MobileMenu';
 import RichSearch from '@components/organisms/RichSearch';
@@ -46,13 +46,13 @@ console.log('items:', items);
 	<div class="flex items-center gap-10">
 		<!-- Logo/Site Name -->
 		<div class="shrink-0">
-			<Link href="/" variant="unstyled" class="block">
+			<Link href="/" variant="unstyled" className="block">
 				<Image src={NavLogo} alt={siteName} class="h-12 w-auto" />
 			</Link>
 		</div>
 
 		<!-- Navigation Links -->
-		<div class="hidden items-center space-x-1 md:flex">
+		<div class="hidden items-center space-x-1 md:flex gap-8">
 			{
 				items.map((item) => (
 					<NavItem

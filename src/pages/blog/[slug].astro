@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import Link from '@components/atoms/Link.astro'
+import Link from '@components/atoms/Link'
 import Tag from '@components/atoms/Tag';
 import Hero from '@components/organisms/Hero.astro';
 import PageLayout from '@layouts/PageLayout.astro';
@@ -124,7 +124,7 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 							<Link
 								variant="unstyled"
 								href={`/blog/${relatedPost.slug}`}
-								class="flex flex-col overflow-hidden rounded-lg bg-white no-underline transition hover:shadow-lg"
+								clasName="flex flex-col overflow-hidden rounded-lg bg-white no-underline transition hover:shadow-lg"
 							>
 								{/* Hero Image */}
 								{relatedPost.data.heroImage && (
@@ -193,7 +193,7 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 									<Link
 										variant="unstyled"
 										href={`/people/${author.id}`}
-										class="flex gap-4 rounded-lg bg-white p-6 no-underline transition hover:shadow-sm"
+										className="flex gap-4 rounded-lg bg-white p-6 no-underline transition hover:shadow-sm"
 									>
 										{author.headshot && (
 											<Image

@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Button from '@components/atoms/Button.tsx';
-import Link from '@components/atoms/Link.astro';
+import Link from '@components/atoms/Link';
 import Tag from '@components/atoms/Tag';
 import HeroSection from '@components/sections/HeroSection.astro';
 import PageLayout from '@layouts/PageLayout.astro';
@@ -268,7 +268,7 @@ const { title, year, category, authors, venue, tags } = pub.data;
 									<Link
 										variant="unstyled"
 										href={`/people/${contributor.id}`}
-										class="flex gap-4 rounded-lg bg-white p-6 no-underline transition hover:shadow-sm"
+										className="flex gap-4 rounded-lg bg-white p-6 no-underline transition hover:shadow-sm"
 									>
 										{contributor.headshot && (
 											<Image
@@ -304,7 +304,7 @@ const { title, year, category, authors, venue, tags } = pub.data;
 							<Link
 								variant="unstyled"
 								href={`/publications/${relatedPub.id}`}
-								class="block rounded-lg bg-white p-6 no-underline transition hover:shadow-lg"
+								classHame="block rounded-lg bg-white p-6 no-underline transition hover:shadow-lg"
 							>
 								{/* Title and Tags */}
 								<div class="mb-3 flex flex-wrap items-start justify-between gap-2">

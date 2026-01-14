@@ -1,5 +1,6 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/react';
 import ChevronDownIcon from '~icons/heroicons/chevron-down-20-solid';
+import Link from '@components/atoms/Link';
 
 interface NavItemDropdownProps {
 	label: string;
@@ -17,17 +18,19 @@ export default function NavItemDropdown({ label, items, class: className = '' }:
 
 			<MenuItems className="absolute left-0 mt-2 w-56 origin-top-left bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
 				<div className="py-1">
-					{items.map((item) => (
-						<MenuItem key={item.href}>
+					{items.map(({ href, label}) => (
+						<MenuItem key={href}>
 							{({ focus }) => (
-								<a
-									href={item.href}
+								<Link
+									href={href}
+									variant="nav"
+									external={href.startsWith('http')}
 									className={`${
 										focus ? 'bg-primary-100' : ''
-									} block px-4 py-2 text-xl transition-colors no-underline focus:outline-none text-neutral-900`}
+									} block px-4 py-2 transition-colors no-underline focus:outline-none text-neutral-900`}
 								>
-									{item.label}
-								</a>
+									{label}
+								</Link>
 							)}
 						</MenuItem>
 					))}
