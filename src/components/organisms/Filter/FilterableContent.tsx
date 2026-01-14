@@ -24,11 +24,11 @@ interface FilterableContentProps {
 export default function FilterableContent({ items, type, fields }: FilterableContentProps) {
 	const [searchText, setSearchText] = useState('');
 	const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'alphabetical'>('newest');
-	const [fieldFilters, setFieldFilters] = useState<Record<string, string>>(
-		fields.reduce((acc, field) => ({ ...acc, [field]: 'all' }), {})
+	const [fieldFilters, setFieldFilters] = useState<Record<string, string[]>>(
+		fields.reduce((acc, field) => ({ ...acc, [field]: [] }), {})
 	);
 	const hasFiltersSet = useMemo(() => {
-		return !!searchText || Object.values(fieldFilters).some(value => value !== 'all');
+		return !!searchText || Object.values(fieldFilters).some(value => value.length > 0);
 	}, [searchText, fieldFilters]);
 
 	// Get unique values for each field from items
@@ -51,7 +51,7 @@ export default function FilterableContent({ items, type, fields }: FilterableCon
 		return options;
 	}, [items, fields]);
 
-	const handleFieldFilterChange = (field: string, value: string) => {
+	const handleFieldFilterChange = (field: string, value: string[]) => {
 		setFieldFilters(prev => ({ ...prev, [field]: value }));
 	};
 
@@ -99,14 +99,16 @@ export default function FilterableContent({ items, type, fields }: FilterableCon
 		return results
 			.filter(item => {
 				return fields.every(field => {
-					const filterValue = fieldFilters[field];
-					if (filterValue === 'all') return true;
+					const filterValues = fieldFilters[field];
+					if (!filterValues || filterValues.length === 0) return true;
 
 					const itemValue = item.post.data?.[field] || item.post[field];
 					if (Array.isArray(itemValue)) {
-						return itemValue.includes(filterValue);
+						// If item has array, check if any filter value is in the item's array
+						return filterValues.some(filterVal => itemValue.includes(filterVal));
 					}
-					return String(itemValue) === filterValue;
+					// If item has single value, check if it matches any filter value
+					return filterValues.includes(String(itemValue));
 				});
 			})
 			.sort(sortFunction)
