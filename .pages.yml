@@ -185,7 +185,7 @@ components:
             options:
               collection: pages
               value: {permalink}
-              label: {title}
+              label: "{title} ({permalink})"
             description: Select a page from the pages collection
           - name: description
             label: Description
