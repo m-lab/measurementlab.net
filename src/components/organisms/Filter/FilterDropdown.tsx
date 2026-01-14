@@ -57,7 +57,7 @@ export default function FilterDropdown(props: FilterDropdownProps) {
           </span>
         </ListboxButton>
         
-        <ListboxOptions className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <ListboxOptions className="absolute z-10 mt-1 max-h-60 w-full overflow-auto bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           {options.map((option) => (
             <ListboxOption
               key={option}
