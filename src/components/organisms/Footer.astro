@@ -4,6 +4,7 @@ import { getEntry } from 'astro:content';
 import Link from '@components/atoms/Link.astro';
 import SocialLinks from '@components/molecules/SocialLinks.astro';
 import { renderMarkdown } from '@utils/renderMarkdown';
+import { convertNavigationItems } from '@utils/navigation';
 
 // Fetch all data internally - no props needed except className
 export interface Props {
@@ -22,6 +23,10 @@ const siteConfig = siteConfigEntry.data;
 // Fetch footer navigation menus
 const footerNav1 = await getEntry('navigation', 'footer-1');
 const footerNav2 = await getEntry('navigation', 'footer-2');
+
+// Convert navigation items to NavItem format
+const footerNav1Items = footerNav1 ? convertNavigationItems(footerNav1.data.items) : [];
+const footerNav2Items = footerNav2 ? convertNavigationItems(footerNav2.data.items) : [];
 
 // Prepare description with fallback logic
 const description = siteConfig.footer.description ? (await renderMarkdown(siteConfig.footer.description))?.html : siteConfig.description;
@@ -59,9 +64,9 @@ const description = siteConfig.footer.description ? (await renderMarkdown(siteCo
 			<div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
 				<!-- Menu Section 1 -->
 				{
-					footerNav1 && (
+					footerNav1Items.length > 0 && (
 						<ul class="space-y-3">
-							{footerNav1.data.items.map((item) => (
+							{footerNav1Items.map((item) => (
 								<li>
 									<Link href={item.href} variant="footer">
 										{item.label}
@@ -74,9 +79,9 @@ const description = siteConfig.footer.description ? (await renderMarkdown(siteCo
 
 				<!-- Menu Section 2 -->
 				{
-					footerNav2 && (
+					footerNav2Items.length > 0 && (
 						<ul class="space-y-3">
-							{footerNav2.data.items.map((item) => (
+							{footerNav2Items.map((item) => (
 								<li>
 									<Link href={item.href} variant="footer">
 										{item.label}
