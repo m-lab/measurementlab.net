@@ -23,7 +23,7 @@
           "externalUrl": "https://example.com"
         },
         {
-          "type": "internal",
+        "type": "internal",
           "label": "About link 4",
           "pageRef": "publications"
         }
@@ -59,7 +59,7 @@
       "link": {
         "type": "internal",
         "label": "Partner with us",
-        "pageRef": "what-we-do"
+        "pageRef": "partner"
       }
     }
   ]

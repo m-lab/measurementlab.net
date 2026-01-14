@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import ArrowTopRightOnSquareIcon from '~icons/heroicons/arrow-top-right-on-square-20-solid';
 
 export interface LinkProps {
   href: string;
@@ -24,12 +25,13 @@ export default function Link({
   children,
   ...props
 }: LinkProps) {
-  const classes = `${variants[variant]} ${className}`;
+  const classes = `${variants[variant]} ${className} flex items-center`;
   const externalProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 
   return (
     <a data-component href={href} className={classes} {...externalProps} {...props}>
-      {children}
+     <span>{children}</span>
+      {external && <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 ml-1" aria-hidden="true" />}
     </a>
   );
 }

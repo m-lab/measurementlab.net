@@ -29,9 +29,9 @@
     {
       "type": "single",
       "link": {
-        "type": "internal",
+        "type": "external",
         "label": "Code",
-        "pageRef": ""
+        "externalUrl": "http://google.com//"
       }
     }
   ]
