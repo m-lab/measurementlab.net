@@ -212,6 +212,38 @@ components:
             type: string
             description: Optional description for accessibility
 
+  # Navigation Menu Item - single link or dropdown with multiple links
+  navigation_menu_item:
+    type: block
+    blockKey: type
+    description: Navigation item that can be a single link or a dropdown menu with multiple links
+    blocks:
+      - name: single
+        label: Single Link
+        fields:
+          - name: link
+            label: Link
+            component: flexible_link
+            required: true
+            description: A single navigation link
+
+      - name: dropdown
+        label: Dropdown Menu
+        fields:
+          - name: label
+            label: Menu Label
+            type: string
+            required: true
+            description: Text displayed for the dropdown menu
+          - name: links
+            label: Menu Links
+            component: flexible_link
+            list: true
+            required: true
+            description: List of links in the dropdown menu
+
+  
+
   background_select:
     type: object
     fields:
@@ -783,7 +815,7 @@ content:
 
       - name: items
         label: Menu Items
-        component: flexible_link
+        component: navigation_menu_item
         list: true
         required: true
 
