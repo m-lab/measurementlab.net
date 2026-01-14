@@ -14,16 +14,18 @@ const PLACEHOLDER_TYPE_LABEL: Record<FilterableContentType, string> = {
 type FilterableContentType = 'blog' | 'publications';
 export type FilterableContentItem = BlogPostCardData | PublicationCardData;
 
+export const SORT_OPTIONS = ['newest', 'oldest', 'alphabetical'];
+export type SortOption = typeof SORT_OPTIONS[number];
+
 interface FilterableContentProps {
   type: FilterableContentType;
 	items: FilterableContentItem[];
 	fields: string[];
 }
 
-
 export default function FilterableContent({ items, type, fields }: FilterableContentProps) {
 	const [searchText, setSearchText] = useState('');
-	const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'alphabetical'>('newest');
+	const [sortBy, setSortBy] = useState<SortOption>(SORT_OPTIONS[0]);
 	const [fieldFilters, setFieldFilters] = useState<Record<string, string[]>>(
 		fields.reduce((acc, field) => ({ ...acc, [field]: [] }), {})
 	);
@@ -87,6 +89,7 @@ export default function FilterableContent({ items, type, fields }: FilterableCon
 
 	// Filter items using Fuse.js for fuzzy search and field filters
 	const filteredItems = useMemo(() => {
+		console.log('sort is', sortBy);
 		let results = items;
 
 		// Apply text search first

@@ -3,12 +3,14 @@ import { Input } from '@headlessui/react';
 import MagnifyingGlassIcon from '~icons/heroicons/magnifying-glass-20-solid';
 import XMarkIcon from '~icons/heroicons/x-mark-20-solid';
 import FilterDropdown from './FilterDropdown';
+import type { SortOption } from './FilterableContent';
+import { SORT_OPTIONS } from './FilterableContent';
 
 interface FilterBarProps {
 	searchText: string;
 	setSearchText: (value: string) => void;
-	sortBy: 'newest' | 'oldest' | 'alphabetical';
-	setSortBy: (value: 'newest' | 'oldest' | 'alphabetical') => void;
+	sortBy: SortOption;
+	setSortBy: (value: SortOption) => void;
 	fields: string[];
 	fieldFilters: Record<string, string[]>;
 	fieldOptions: Record<string, string[]>;
@@ -42,6 +44,7 @@ const FilterBar = ({
 							options={fieldOptions[field] || []}
 							value={fieldFilters[field]}
 							onChange={(value) => onFieldFilterChange(field, value)}
+							multiple={true}
 						/>
 					</div>
 				))}
@@ -50,16 +53,15 @@ const FilterBar = ({
 					<span className="uppercase font-bold text-lg text-neutral-50">Sort:</span>
 					<FilterDropdown
 						label="Sort"
-						options={['newest', 'oldest', 'alphabetical']}
-						value={[sortBy]}
-						onChange={(value) => setSortBy(value[0] as 'newest' | 'oldest' | 'alphabetical')}
+						options={[...SORT_OPTIONS]}
+						value={sortBy}
+						onChange={(value) => setSortBy(value as SortOption)}
 						showAllOption={false}
+						multiple={false}
 					/>
 				</div>
-
 				{/* Search Input */}
-				<div className="flex items-center">
-					{/* Input field */}
+				<div className="flex items-center space-x-2 ml-auto">
 					<div className={`relative flex items-center overflow-hidden transition-all duration-300 ease-in-out ${
 						isSearchExpanded ? 'w-64' : 'w-0'
 					}`}>
