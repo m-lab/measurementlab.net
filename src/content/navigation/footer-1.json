@@ -3,24 +3,36 @@
   "title": "Footer Nav 1",
   "items": [
     {
-      "type": "internal",
-      "label": "FAQs",
-      "href": "/"
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "FAQs",
+        "pageRef": ""
+      }
     },
     {
-      "type": "internal",
-      "label": "Contact us",
-      "href": "/"
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "Contact us",
+        "pageRef": ""
+      }
     },
     {
-      "type": "internal",
-      "label": "Jobs & Opportunities",
-      "href": "/"
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "Jobs & Opportunities",
+        "pageRef": ""
+      }
     },
     {
-      "type": "internal",
-      "label": "Code",
-      "href": "/"
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "Code",
+        "pageRef": ""
+      }
     }
   ]
 }
