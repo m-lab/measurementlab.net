@@ -15,7 +15,7 @@ import type { GetStaticPaths } from 'astro';
 export const getStaticPaths = (async () => {
   const pages = await getCollection('pages');
   return pages.map((page) => ({
-    params: { path: page.id },
+    params: { path: page.data.permalink },
     props: { page },
   }));
 }) satisfies GetStaticPaths;
@@ -49,11 +49,7 @@ const sections = page.data.sections
 	</SectionLayout>
 
 	<!-- Custom landing page content (only for blog, publications, people)  -->
-	{
-		LandingComponent && (
-			<LandingComponent />
-		)
-	}
+	{LandingComponent && <LandingComponent />}
 	<!-- Main Page Content (Sections) -->
 	{sections && <Sections sectionItems={sections} />}
 </PageLayout>

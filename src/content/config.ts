@@ -161,6 +161,7 @@ const pagesCollection = defineCollection({
       title: z.string(),
       description: z.string().optional(),
       heroImage: image().optional(),
+      permalink: z.string(),
       zigzag: z
         .enum([
           'primary-light',
