@@ -1,19 +1,15 @@
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import { siteConfig } from '@lib/config';
 import { useState } from 'react';
-
-export interface NavLink {
-  href: string;
-  label: string;
-}
+import type { NavItem } from '@utils/navigation';
 
 interface MobileMenuProps {
-  links: NavLink[];
+  items: NavItem[];
   currentPath?: string;
 }
 
 export default function MobileMenu({
-  links,
+  items,
   currentPath = '/',
 }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -101,17 +97,17 @@ export default function MobileMenu({
                 <ul className="flex flex-1 flex-col gap-y-7">
                   <li>
                     <ul className="space-y-4">
-                      {links.map((link) => (
-                        <li key={link.href}>
+                      {items.map((item) => (
+                        <li key={item.href}>
                           <a
-                            href={link.href}
+                            href={item.href}
                             className={`group flex gap-x-4 text-xl text-black no-underline decoration-neutral-400 underline-offset-8 transition hover:underline ${
-                              isActive(link.href)
+                              isActive(item.href)
                                 ? 'underline decoration-black'
                                 : 'no-underline'
                             }`}
                           >
-                            {link.label}
+                            {item.label}
                           </a>
                         </li>
                       ))}

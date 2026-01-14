@@ -8,7 +8,7 @@ import MobileMenu from '@components/organisms/MobileMenu';
 import RichSearch from '@components/organisms/RichSearch';
 import MagnifyingGlassIcon from '~icons/heroicons/magnifying-glass-20-solid';
 import NavLogo from '/public/logo-short-blue.svg'
-
+import type { NavItem as TNavItem } from '@utils/navigation';
 
 // Fetch site config
 const siteConfigEntry = await getEntry('site', 'config');
@@ -17,20 +17,15 @@ if (!siteConfigEntry) {
 }
 const siteConfig = siteConfigEntry.data;
 
-export interface NavLink {
-  href: string;
-  label: string;
-}
-
 export interface Props {
-  links: NavLink[];
+  items: TNavItem[];
   currentPath?: string;
   siteName?: string;
   class?: string;
 }
 
 const {
-  links,
+  items,
   currentPath = Astro.url.pathname,
   siteName = siteConfig.title,
   class: className = '',
@@ -40,6 +35,8 @@ const isActive = (href: string) => {
   if (href === '/') return currentPath === '/';
   return currentPath.startsWith(href);
 };
+
+console.log('items:', items);
 ---
 
 <nav
@@ -57,11 +54,11 @@ const isActive = (href: string) => {
 		<!-- Navigation Links -->
 		<div class="hidden items-center space-x-1 md:flex">
 			{
-				links.map((link) => (
+				items.map((item) => (
 					<NavItem
-						href={link.href}
-						label={link.label}
-						active={isActive(link.href)}
+						href={item.href}
+						label={item.label}
+						active={isActive(item.href)}
 					/>
 				))
 			}
@@ -85,7 +82,7 @@ const isActive = (href: string) => {
 
 		<!-- Mobile Menu -->
 		<div class="md:hidden">
-			<MobileMenu client:load links={links} currentPath={currentPath} />
+			<MobileMenu client:load items={items} currentPath={currentPath} />
 		</div>
 	</div>
 </nav>

@@ -244,24 +244,34 @@ const siteCollection = defineCollection({
     }),
 });
 
-const navigationItem = z.object({
-  type: z.enum(['internal', 'external']),
-  label: z.string(),
-  href: z.string(),
-  description: z.string().optional(),
-  subNavs: z
-    .array(
-      z
-        .object({
-          type: z.enum(['internal', 'external']),
-          label: z.string(),
-          href: z.string(),
-          description: z.string().optional(),
-        })
-        .optional()
-    )
-    .optional(),
-});
+// Flexible link schema - can be internal page ref or external URL
+const flexibleLink = z.discriminatedUnion('type', [
+  z.object({
+    type: z.literal('internal'),
+    label: z.string(),
+    pageRef: z.string(), // Reference to pages collection (permalink)
+    description: z.string().optional(),
+  }),
+  z.object({
+    type: z.literal('external'),
+    label: z.string(),
+    externalUrl: z.string().url(),
+    description: z.string().optional(),
+  }),
+]);
+
+// Navigation item schema - single link or dropdown menu
+const navigationItem = z.discriminatedUnion('type', [
+  z.object({
+    type: z.literal('single'),
+    link: flexibleLink,
+  }),
+  z.object({
+    type: z.literal('dropdown'),
+    label: z.string(),
+    links: z.array(flexibleLink),
+  }),
+]);
 
 const navigationCollection = defineCollection({
   type: 'data',

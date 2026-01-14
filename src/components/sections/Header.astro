@@ -1,11 +1,11 @@
 ---
 import Button from '@components/atoms/Button.tsx';
-import type { NavLink } from '@components/organisms/Navigation.astro';
+import type { NavItem } from '@utils/navigation';
 import Navigation from '@components/organisms/Navigation.astro';
 
 
 export interface Props {
-  links: NavLink[];
+  items: NavItem[];
   siteName?: string;
   transparent?: boolean;
   sticky?: boolean;
@@ -13,7 +13,7 @@ export interface Props {
 }
 
 const {
-  links,
+  items,
   siteName,
   transparent = false,
   sticky = false,
@@ -25,7 +25,7 @@ const transparentClass = transparent ? 'bg-transparent border-transparent' : '';
 ---
 
 <header class={`${stickyClass} ${className}`}>
-	<Navigation links={links} siteName={siteName} class={transparentClass}>
+	<Navigation items={items} siteName={siteName} class={transparentClass}>
 		<div slot="actions" class="flex items-center gap-4">
 			<Button
 				as="a"
