@@ -164,11 +164,10 @@ components:
         label: Card Section
         component: card_section
 
-  # Navigation Menu Item component
-  navigation_menu_item:
+  flexible_link:
     type: block
     blockKey: type
-    description: Navigation link that can reference an internal page or external URL
+    description: Link that can reference an internal page or external URL
     blocks:
       - name: internal
         label: Internal Page Link
@@ -784,7 +783,7 @@ content:
 
       - name: items
         label: Menu Items
-        component: navigation_menu_item
+        component: flexible_link
         list: true
         required: true
 
