@@ -3,36 +3,64 @@
   "title": "Main Navigation",
   "items": [
     {
-      "type": "internal",
+      "type": "dropdown",
       "label": "About",
-      "description": "Learn more about us"
+      "links": [
+        {
+          "type": "internal",
+          "label": "People",
+          "pageRef": "people"
+        },
+        {
+          "type": "internal",
+          "label": "About link 2",
+          "pageRef": "feature-showcase",
+          "description": "lorem ipsum"
+        },
+        {
+          "type": "external",
+          "label": "About link 3",
+          "externalUrl": "https://example.com"
+        },
+        {
+          "type": "internal",
+          "label": "About link 4",
+          "pageRef": "publications"
+        }
+      ]
     },
     {
-      "type": "internal",
-      "label": "What we do"
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "What we do",
+        "pageRef": "what-we-do"
+      }
     },
     {
-      "type": "internal",
-      "label": "Learn",
-      "pageRef": "null"
+      "type": "single",
+      "link": {
+        "type": "external",
+        "label": "Learn",
+        "externalUrl": "https://example.com",
+        "description": "Lorem ipsum"
+      }
     },
     {
-      "type": "internal",
-      "label": "Contribute"
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "Contribute",
+        "pageRef": "community"
+      }
     },
     {
-      "type": "internal",
-      "label": "Partner with us"
-    },
-    {
-      "type": "internal",
-      "label": "Test Internal",
-      "pageRef": "feature-showcase"
-    },
-    {
-      "type": "external",
-      "label": "Test External",
-      "externalUrl": "https://example.com"
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "Partner with us",
+        "pageRef": "what-we-do"
+      }
     }
   ]
 }
