@@ -89,7 +89,6 @@ export default function FilterableContent({ items, type, fields }: FilterableCon
 
 	// Filter items using Fuse.js for fuzzy search and field filters
 	const filteredItems = useMemo(() => {
-		console.log('sort is', sortBy);
 		let results = items;
 
 		// Apply text search first
