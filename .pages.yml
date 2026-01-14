@@ -185,7 +185,7 @@ components:
             options:
               collection: pages
               value: '{id}'
-              label: '{fields.title}'
+              label: '{id}'
             description: Select a page from the pages collection
           - name: description
             label: Description
