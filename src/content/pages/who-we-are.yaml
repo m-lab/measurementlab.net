@@ -1,5 +1,5 @@
 title: Who We Are
-permalink: who-we-are
+permalink: who
 description: M-Lab is an open source project with contributors from civil
   society organizations, educational institutions, and private sector companies,
   and is a fiscally sponsored project of Code for Science & Society.
@@ -9,7 +9,8 @@ sections:
       color: primary-light
       type: full
     withTOC: false
-    content: M-Lab is a community-based open source project made possible by every
+    content:
+      M-Lab is a community-based open source project made possible by every
       contributor who runs a measurement, and from supporters from civil society
       organizations, educational institutions, and private sector companies
       dedicating time, expertise, and financial resources. M-Lab operates as a

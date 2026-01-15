@@ -35,6 +35,7 @@ const LandingComponent =
 // Filter hero to avoid duplication (hero rendered separately)
 const sections = page.data.sections
 
+const zigzag = (!page.data.heroImage && !page.data.zigzag) ? 'primary-light' : page.data.zigzag
 
 ---
 
@@ -43,7 +44,7 @@ const sections = page.data.sections
 		maxWidth="2xl"
 		bgImage={page.data.heroImage}
 		sectionLabel="hero"
-		zigzag={page.data.zigzag}
+		zigzag={zigzag}
 	>
 		<HeroSection title={page.data.title} subtitle={page.data.description} />
 	</SectionLayout>
