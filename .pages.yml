@@ -579,6 +579,7 @@ content:
     path: src/content/people
     format: json
     filename: '{fields.id}.json'
+    subfolders: false
     view:
       fields: [headshot, name, title, affiliation]
       primary: name
@@ -794,6 +795,7 @@ content:
     path: src/content/navigation
     format: json
     filename: '{{fields.slug}}.json'
+    subfolders: false
     view:
       fields: [title]
       primary: title
@@ -827,6 +829,7 @@ content:
     type: collection
     path: src/content/blog
     filename: '{{fields.permalink}}.md'
+    subfolders: false
     view:
       fields: [heroImage, title, publishedDate, published]
       primary: title
