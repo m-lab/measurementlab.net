@@ -17,12 +17,6 @@ export interface Props {
 const { title, subtitle, class: className = '', background } = Astro.props;
 ---
 
-<Hero
-	title={title}
-	subtitle={subtitle}
-	size="default"
-	class={className}
-	background={background}
->
+<Hero title={title} subtitle={subtitle} size="default" class={className}>
 	<slot />
 </Hero>
