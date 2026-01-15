@@ -1,25 +1,49 @@
 title: Who We Are
-description: M-Lab is an open source project with contributors from civil society organizations, educational institutions, and private sector companies, and is a fiscally sponsored project of Code for Science & Society.
-heroImage: /src/assets/backgrounds/anna-magenta-vKhd5bnnolg-unsplash.jpg
-permalink: about
+permalink: who-we-are
+description: M-Lab is an open source project with contributors from civil
+  society organizations, educational institutions, and private sector companies,
+  and is a fiscally sponsored project of Code for Science & Society.
 sections:
   - type: richText
-    background: { color: primary-light }
-    content: |-
-
-      M-Lab is a community-based open source project made possible by every contributor who runs a measurement, and from supporters from civil society organizations, educational institutions, and private sector companies dedicating time, expertise, and financial resources. M-Lab operates as a not-for-profit as and is a fiscally sponsored project of Code for Science & Society. Learn how to [get involved](/contribute).
-
+    background:
+      color: primary-light
+      type: full
+    withTOC: false
+    content: M-Lab is a community-based open source project made possible by every
+      contributor who runs a measurement, and from supporters from civil society
+      organizations, educational institutions, and private sector companies
+      dedicating time, expertise, and financial resources. M-Lab operates as a
+      not-for-profit as and is a fiscally sponsored project of Code for Science
+      & Society. Learn how to [get involved](/contribute).
   - type: people
+    background:
+      color: white
+      type: full
     category: Maintainers
   - type: people
+    background:
+      color: white
+      type: full
     category: Experiment Review Committee
   - type: people
+    background:
+      color: white
+      type: full
     category: Advisory Committee
   - type: people
+    background:
+      color: white
+      type: full
     category: M-Lab Founders
   - type: partners
+    background:
+      color: white
+      type: full
     title: Supporting Research Projects
     category: Supporting Research Projects
   - type: partners
+    background:
+      color: white
+      type: full
     title: Supporting Partners
     category: Supporting Partners
