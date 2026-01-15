@@ -636,6 +636,7 @@ content:
     path: src/content/partners
     format: json
     filename: '{fields.id}.json'
+    subfolders: false
     view:
       fields: [image, name, affiliation, category]
       sort: [category, name]
@@ -685,6 +686,7 @@ content:
     path: src/content/categories
     format: json
     filename: '{fields.id}.json'
+    subfolders: false
     view:
       fields: [name, id]
       primary: name
