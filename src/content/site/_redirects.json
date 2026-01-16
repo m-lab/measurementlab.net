@@ -1,19 +1,33 @@
 {
   "redirects": [
-    {
-      "from": "faq",
-      "to": "https://support.measurementlab.net/help/en-us",
-      "status": 302
-    },
-    {
-      "from": "data/docs/bq/legacymigration",
-      "to": "learn",
-      "status": 301
-    },
-    {
-      "from": "data/docs/bq/ndtmetrics",
-      "to": "tests/ndt/web100",
-      "status": 301
-    }
+    { "from": "faq", "to": "https://support.measurementlab.net/help/en-us", "status": 302 },
+    { "from": "data/docs/bq/legacymigration", "to": "learn", "status": 301 },
+    { "from": "data/docs/bq/ndtmetrics", "to": "tests/ndt/web100", "status": 301 },
+    { "from": "data/bq/examples", "to": "data/docs/bq/examples", "status": 301 },
+    { "from": "data/docs/bq/examples", "to": "learn", "status": 301 },
+    { "from": "data/bq/legacymigration", "to": "data/docs/bq/legacymigration", "status": 301 },
+    { "from": "data/bq/quickstart", "to": "data/docs/bq/quickstart", "status": 301 },
+    { "from": "data/bq/schema", "to": "data/docs/bq/schema", "status": 301 },
+    { "from": "data/docs/bq/schema/ndt", "to": "tests/ndt", "status": 301 },
+    { "from": "data/docs/bq/schema/sidestream", "to": "tests/sidestream/#sidestream-schema", "status": 301 },
+    { "from": "data/docs/bq/schema/traceroute", "to": "tests/traceroute/#traceroute-schema", "status": 301 },
+    { "from": "data/gcs", "to": "data/docs/gcs", "status": 301 },
+    { "from": "infrastructure", "to": "status", "status": 301 },
+    { "from": "learn/glossary", "to": "learn", "status": 301 },
+    { "from": "learn/internet", "to": "learn", "status": 301 },
+    { "from": "measurement-lab-tools", "to": "tests", "status": 301 },
+    { "from": "observatory", "to": "visualizations", "status": 301 },
+    { "from": "quickstart", "to": "data/docs/bq/quickstart", "status": 301 },
+    { "from": "tools/bismark", "to": "tests/bismark", "status": 301 },
+    { "from": "tools/glasnost", "to": "tests/glasnost", "status": 301 },
+    { "from": "tools/mobiperf", "to": "tests/mobiperf", "status": 301 },
+    { "from": "tools/ndt", "to": "tests/ndt", "status": 301 },
+    { "from": "tools/neubot", "to": "tests/neubot", "status": 301 },
+    { "from": "tools/ooni", "to": "tests/ooni", "status": 301 },
+    { "from": "tools/paris_traceroute", "to": "tests/paris_traceroute", "status": 301 },
+    { "from": "tools/pathload2", "to": "tests/pathload2", "status": 301 },
+    { "from": "tools/sidestream", "to": "tests/sidestream", "status": 301 },
+    { "from": "tools/windrider", "to": "tests/windrider", "status": 301 },
+    { "from": "tools", "to": "tests", "status": 301 }
   ]
 }
