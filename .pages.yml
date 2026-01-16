@@ -788,6 +788,39 @@ content:
             type: string
             description: Full URL to your YouTube channel
 
+  # Redirects configuration
+  - name: redirects
+    label: Redirects
+    type: file
+    path: src/content/site/_redirects.json
+    fields:
+      - name: redirects
+        label: Redirects
+        type: object
+        list: true
+        fields:
+          - name: from
+            label: From Path
+            type: string
+            required: true
+            description: "Old URL path without leading slash (e.g., old-page or blog/old-post)"
+          - name: to
+            label: To Path/URL
+            type: string
+            required: true
+            description: "New path without leading slash (e.g., new-page) or full external URL (https://...)"
+          - name: status
+            label: Status Code
+            type: select
+            default: 301
+            options:
+              values:
+                - label: "301 - Permanent Redirect"
+                  value: 301
+                - label: "302 - Temporary Redirect"
+                  value: 302
+            description: "301 for permanent moves, 302 for temporary redirects"
+
   # Navigation menus
   - name: navigation
     label: Navigation Menus

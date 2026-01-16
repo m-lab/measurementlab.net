@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "from": "faq",
+      "to": "https://support.measurementlab.net/help/en-us",
+      "status": 302
+    },
+    {
+      "from": "data/docs/bq/legacymigration",
+      "to": "learn",
+      "status": 301
+    },
+    {
+      "from": "data/docs/bq/ndtmetrics",
+      "to": "tests/ndt/web100",
+      "status": 301
+    }
+  ]
+}

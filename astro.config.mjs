@@ -11,9 +11,23 @@ import rehypeExternalLinks from 'rehype-external-links';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import Icons from 'unplugin-icons/vite';
 import { siteConfig } from './src/lib/config.ts';
+import redirectsData from './src/content/site/_redirects.json';
+
+// Transform redirects array to Astro's format
+// Internal paths get leading slash added, external URLs stay as-is
+const redirects = redirectsData.redirects.reduce(
+  (acc, { from, to, status }) => {
+    const fromPath = `/${from}`;
+    const toPath = to.startsWith('http') ? to : `/${to}`;
+    acc[fromPath] = status ? { destination: toPath, status } : toPath;
+    return acc;
+  },
+  /** @type {Record<string, string | { destination: string; status: number }>} */ ({})
+);
 
 // https://astro.build/config
 export default defineConfig({
+  redirects,
   site: siteConfig.url,
   devToolbar: {
     enabled: false,
