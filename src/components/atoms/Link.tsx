@@ -3,7 +3,7 @@ import ArrowTopRightOnSquareIcon from '~icons/heroicons/arrow-top-right-on-squar
 
 export interface LinkProps {
   href: string;
-  variant?: 'default' | 'nav' | 'footer' | 'unstyled';
+  variant?: 'default' | 'nav' | 'footer' | 'unstyled' | 'toc';
   external?: boolean;
   className?: string;
   children: ReactNode;
@@ -15,6 +15,7 @@ const variants = {
   nav: 'text-xl',
   footer: 'text-white text-sm hover:underline underline-offset-4 transition',
   unstyled: '',
+  toc: '',
 };
 
 export default function Link({
@@ -26,12 +27,25 @@ export default function Link({
   ...props
 }: LinkProps) {
   const classes = `${variants[variant]} ${className} flex items-center`;
-  const externalProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+  const externalProps = external
+    ? { target: '_blank', rel: 'noopener noreferrer' }
+    : {};
 
   return (
-    <a data-component href={href} className={classes} {...externalProps} {...props}>
-     <span>{children}</span>
-      {external && <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 ml-1" aria-hidden="true" />}
+    <a
+      data-component
+      href={href}
+      className={classes}
+      {...externalProps}
+      {...props}
+    >
+      <span>{children}</span>
+      {external && (
+        <ArrowTopRightOnSquareIcon
+          class="ml-1 inline-block h-4 w-4"
+          aria-hidden="true"
+        />
+      )}
     </a>
   );
 }

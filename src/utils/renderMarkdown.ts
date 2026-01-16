@@ -1,8 +1,10 @@
 import { getImage } from 'astro:assets';
+import rehypeExtractToc, {
+  type TocEntry,
+} from '@stefanprobst/rehype-extract-toc';
 import rehypeExternalLinks from 'rehype-external-links';
-import rehypeStringify from 'rehype-stringify';
 import rehypeSlug from 'rehype-slug';
-import rehypeExtractToc, { type TocEntry } from '@stefanprobst/rehype-extract-toc';
+import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
@@ -63,42 +65,46 @@ const processImageNodes = () => async (tree: any) => {
 };
 
 // Extract base markdown processor (no image processing)
-const createMarkdownProcessor = (withTOC = false) => {
+const createMarkdownProcessor = (withTOC = false, id?: string) => {
   const processor = unified()
     .use(remarkParse)
     .use(remarkRehype)
-    
+
     .use(rehypeExternalLinks, {
       target: '_blank',
       rel: ['noopener', 'noreferrer'],
     })
     .use(rehypeStringify, { allowDangerousHtml: true });
-    
 
   if (withTOC) {
     return processor
-      .use(rehypeSlug)
+      .use(rehypeSlug, { prefix: `${id}-` })
       .use(rehypeExtractToc);
-  } 
-  
+  }
+
   return processor;
 };
 
-export const renderMarkdown = async (markdown: string, withTOC = false): Promise<{html: string, toc?: Array<TocEntry>}> => {
-  const html = await createMarkdownProcessor(withTOC).process(markdown);
+export const renderMarkdown = async (
+  markdown: string,
+  withTOC = false,
+  id?: string
+): Promise<{ html: string; toc?: Array<TocEntry> }> => {
+  const html = await createMarkdownProcessor(withTOC, id).process(markdown);
   return { html: String(html), toc: html.data.toc };
 };
 
 export const renderMarkdownWithImages = async (
   markdown: string,
-  withTOC = false
-): Promise<{html: string, toc?: Array<TocEntry>}> => {
-  
-  const html = await createMarkdownProcessor(withTOC)
+  withTOC = false,
+  id?: string
+): Promise<{ html: string; toc?: Array<TocEntry> }> => {
+  const html = await createMarkdownProcessor(withTOC, id)
     .use(processImageNodes)
     .process(markdown);
+  console.log(html);
 
-  return ({ html: String(html), toc: html.data.toc });
+  return { html: String(html), toc: html.data.toc };
 };
 
 export default renderMarkdownWithImages;

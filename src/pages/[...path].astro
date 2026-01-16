@@ -54,3 +54,10 @@ const zigzag = (!page.data.heroImage && !page.data.zigzag) ? 'primary-light' : p
 	<!-- Main Page Content (Sections) -->
 	{sections && <Sections sectionItems={sections} />}
 </PageLayout>
+
+<script>
+	const toc = document.querySelector('aside#toc');
+	if (toc) {
+		console.log('TOC aside is present');
+	}
+</script>

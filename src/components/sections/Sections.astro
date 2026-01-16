@@ -13,11 +13,13 @@ import SectionLayout from '@layouts/SectionLayout.astro';
 
 const { sectionItems } = Astro.props;
 
+let richTextCounter = 0;
 ---
 
 {
 	sectionItems.map((section: any) => {
 		const sectionLabel = `section > ${section.type}`;
+		// const richTextId = section.type === 'richText' ? `text-section-${++richTextCounter}` : undefined;
 
 		const content = (() => {
 			switch (section.type) {
@@ -42,8 +44,10 @@ const { sectionItems } = Astro.props;
 						/>
 					);
 				case 'richText':
+					const richTextId = `text-section-${++richTextCounter}`;
 					return (
 						<RichTextSection
+							id={richTextId}
 							background={section.background}
 							content={section.content}
 							withTOC={section.withTOC}
