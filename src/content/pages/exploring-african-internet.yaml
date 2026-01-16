@@ -1,0 +1,9 @@
+title: Exploring African Internet
+permalink: data/docs/analysis/exploring-african-internet
+sections:
+  - type: richText
+    background:
+      color: white
+    withTOC: false
+    content: |
+      {% jupyter_notebook "/notebooks/exploring-african-internet.ipynb" %}

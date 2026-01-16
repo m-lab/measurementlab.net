@@ -1,0 +1,21 @@
+---
+import HeroSection from '@components/sections/HeroSection.astro';
+import PageLayout from '@layouts/PageLayout.astro';
+import SectionLayout from '@layouts/SectionLayout.astro';
+
+
+
+
+---
+
+<PageLayout
+	title="This page is missing"
+	description="Unfortunately we cannot find this page."
+>
+	<SectionLayout maxWidth="2xl" sectionLabel="hero" zigzag="primary-light">
+		<HeroSection
+			title="404"
+			subtitle="Unfortunately we cannot find this page."
+		/>
+	</SectionLayout>
+</PageLayout>
