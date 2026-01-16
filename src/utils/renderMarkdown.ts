@@ -102,7 +102,6 @@ export const renderMarkdownWithImages = async (
   const html = await createMarkdownProcessor(withTOC, id)
     .use(processImageNodes)
     .process(markdown);
-  console.log(html);
 
   return { html: String(html), toc: html.data.toc };
 };

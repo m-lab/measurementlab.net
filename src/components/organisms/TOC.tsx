@@ -61,7 +61,7 @@ function TocEntryComponent({
       {entry.depth < 2 &&
         entry.children?.map((child) => (
           <TocEntryComponent
-            key={entry.id}
+            key={`toc-${child.id}`}
             entry={child}
             currentActiveRef={currentActiveRef}
           />
@@ -134,7 +134,7 @@ export default function TOC({ entries, id }: TOCProps) {
         <div className="space-y-1">
           {entries.map((entry) => (
             <TocEntryComponent
-              key={`${id}-${entry.id}`}
+              key={`toc-${entry.id}`}
               entry={entry}
               currentActiveRef={currentActiveRef}
             />
