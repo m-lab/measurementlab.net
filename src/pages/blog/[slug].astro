@@ -12,7 +12,7 @@ import {
 } from '@utils/blog';
 import { isDev } from '@utils/dev';
 import {
-  getAllAuthorNames, 
+  getAllAuthorNames,
   getPeopleMap,
   resolvePeople
 } from '@utils/people';
@@ -55,9 +55,13 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 	image={heroImage}
 >
 	<!-- Post Header -->
-	{heroImage && <SectionLayout bgImage={heroImage} sectionLabel="hero" />}
-	<SectionLayout>
-		<Hero background="transparent" title={title} align="left">
+	<SectionLayout
+		maxWidth="4xl"
+		bgImage={heroImage}
+		zigzag="primary-light"
+		sectionLabel="hero"
+	>
+		<Hero title={title} align="left">
 			{/* Draft badge (only visible in dev) */}
 			{
 				isDev && published === 'draft' && (
@@ -80,28 +84,30 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 			</div>
 
 			{/* Metadata */}
-			<div class="text-gray-700 flex flex-wrap items-center gap-4">
+			<div class="flex flex-wrap items-center gap-4 text-neutral-500">
 				<p class="text-base">
-					By <span class="font-medium"
-						>{
-							authors.map((a, i) => (
-								<>
-									<Link variant="unstyled" href={`/people/${a?.id}`}>
-										{a?.name}
-									</Link>
-									{(i < authors.length - 1 || post.data.externalAuthors) &&
-										' • '}
-								</>
-							))
-						}
-						{
-							post.data.externalAuthors && (
-								<span>{post.data.externalAuthors}</span>
-							)
-						}</span
-					>
+					By
+					{
+						authors.map((a, i) => (
+							<>
+								<Link
+									variant="unstyled"
+									className="inline-flex transition hover:text-neutral-800"
+									href={`/people/${a?.id}`}
+								>
+									{a?.name}
+								</Link>
+								{(i < authors.length - 1 || post.data.externalAuthors) && ' • '}
+							</>
+						))
+					}
+					{
+						post.data.externalAuthors && (
+							<span>{post.data.externalAuthors}</span>
+						)
+					}
 				</p>
-				<span class="text-gray-400">•</span>
+				<span class="">•</span>
 				<p class="text-base">
 					{formatDate(publishedDate)}
 				</p>

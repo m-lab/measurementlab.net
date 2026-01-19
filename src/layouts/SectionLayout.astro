@@ -62,6 +62,8 @@ const bgClass = backgrounds[bgColor as keyof typeof backgrounds] || "";
 const textClass = textColors[bgColor as keyof typeof textColors] || "text-gray-900";
 // const sectionBgClass = bgType === 'full' ? bgClass : '';
 // const containerBgClass = bgType === 'contained' ? bgClass : '';
+
+console.log(bgImage)
 ---
 
 <section
@@ -73,6 +75,8 @@ const textClass = textColors[bgColor as keyof typeof textColors] || "text-gray-9
 			>{sectionLabel}</span
 		>
 	</DevOnly>
+	{zigzag && !bgImage && <ZigZagPattern style={zigzag} size={zigzagSize} />}
+
 	{
 		bgImage && (
 			<Image
@@ -83,7 +87,6 @@ const textClass = textColors[bgColor as keyof typeof textColors] || "text-gray-9
 			/>
 		)
 	}
-	{zigzag && <ZigZagPattern style={zigzag} size={zigzagSize} />}
 	<div
 		class={`section-container relative ${containerClass} ${paddingClass} ${textClass} ${className}`}
 	>
