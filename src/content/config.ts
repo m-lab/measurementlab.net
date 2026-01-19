@@ -311,6 +311,23 @@ const homepageCollection = defineCollection({
   },
 });
 
+const testsCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      permalink: z.string(),
+      title: z.string(),
+      description: z.string().optional(),
+      parentTest: z.string().optional(), // For nested tests (e.g., /tests/ndt/ for ndt5)
+      status: z
+        .enum(['current', 'retired', 'core-service', 'retired-core-service'])
+        .optional(),
+      icon: image().optional(), // Icon image for tests index page
+      order: z.number().optional().default(999),
+      showInIndex: z.boolean().optional().default(true),
+    }),
+});
+
 const publicationsCollection = defineCollection({
   type: 'data',
   schema: z.object({
@@ -376,4 +393,5 @@ export const collections = {
   categories: categoriesCollection,
   homepage: homepageCollection,
   publications: publicationsCollection,
+  tests: testsCollection,
 };

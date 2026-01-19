@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import BlogLanding from '@components/landing/BlogLanding.astro';
 import PeopleLanding from '@components/landing/PeopleLanding.astro';
 import PublicationsLanding from '@components/landing/PublicationsLanding.astro';
+import TestsLanding from '@components/landing/TestsLanding.astro';
 import HeroSection from '@components/sections/HeroSection.astro';
 import Sections from '@components/sections/Sections.astro';
 import PageLayout from '@layouts/PageLayout.astro';
@@ -27,6 +28,7 @@ const landingComponents = {
 	blog: BlogLanding,
 	publications: PublicationsLanding,
 	people: PeopleLanding,
+	tests: TestsLanding,
 } as const;
 
 const LandingComponent =
@@ -48,11 +50,11 @@ const zigzag = (!page.data.heroImage && !page.data.zigzag) ? 'primary-light' : p
 	>
 		<HeroSection title={page.data.title} subtitle={page.data.description} />
 	</SectionLayout>
+	<!-- Main Page Content (Sections) -->
+	{sections && <Sections sectionItems={sections} />}
 
 	<!-- Custom landing page content (only for blog, publications, people)  -->
 	{LandingComponent && <LandingComponent />}
-	<!-- Main Page Content (Sections) -->
-	{sections && <Sections sectionItems={sections} />}
 </PageLayout>
 
 <script>

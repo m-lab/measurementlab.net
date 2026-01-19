@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+import Card from '@components/molecules/Card.astro';
+import SectionLayout from '@layouts/SectionLayout.astro';
+import { getTests, prepareTestsCardData, statusLabels, type Test } from '@utils/tests';
+
+// Get all tests that should show in the index
+const tests = await getTests();
+const testsData = await prepareTestsCardData(tests);
+
+// Group tests by status
+type StatusKey = NonNullable<Test['data']['status']>;
+const statusGroups: Record<StatusKey, { title: string; description: string; tests: typeof testsData }> = {
+  current: {
+    title: 'Current Tests',
+    description: 'Active measurement tests currently running on the M-Lab platform.',
+    tests: [],
+  },
+  'core-service': {
+    title: 'Core Services',
+    description: 'Essential services that support all M-Lab measurements.',
+    tests: [],
+  },
+  retired: {
+    title: 'Retired Tests',
+    description: 'Tests that are no longer actively running on the M-Lab platform.',
+    tests: [],
+  },
+  'retired-core-service': {
+    title: 'Retired Core Services',
+    description: 'Core services that have been superseded by newer implementations.',
+    tests: [],
+  },
+};
+
+// Sort tests into groups
+testsData.forEach((testData) => {
+  const status = testData.test.data.status || 'current';
+  if (statusGroups[status]) {
+    statusGroups[status].tests.push(testData);
+  }
+});
+
+// Filter out empty groups and maintain order
+const orderedStatuses: StatusKey[] = ['current', 'core-service', 'retired', 'retired-core-service'];
+const activeGroups = orderedStatuses
+  .filter((status) => statusGroups[status].tests.length > 0)
+  .map((status) => ({ status, ...statusGroups[status] }));
+---
+
+<div class="pb-12">
+	{
+		activeGroups.map((group, groupIndex) => (
+			<div class={groupIndex > 0 ? 'border-gray-200 mt-12 border-t pt-8' : ''}>
+				<div class="mb-6">
+					<h2 class="mb-2 text-2xl font-bold">{group.title}</h2>
+					<p class="text-gray-600">{group.description}</p>
+				</div>
+
+				<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+					{group.tests.map(({ test, optimizedIcon }) => (
+						<a
+							href={test.data.permalink}
+							class="block transition-transform hover:scale-[1.02]"
+						>
+							<Card variant="elevated" padding="lg" class="h-full">
+								<div class="flex items-start gap-4">
+									{optimizedIcon && (
+										<div class="shrink-0">
+											<Image
+												src={optimizedIcon}
+												alt=""
+												width={48}
+												height={48}
+												class="h-12 w-12 object-contain"
+											/>
+										</div>
+									)}
+									<div>
+										<h3 class="mb-2 text-lg font-semibold">
+											{test.data.title}
+										</h3>
+										{test.data.description && (
+											<p class="text-gray-600 text-sm">
+												{test.data.description}
+											</p>
+										)}
+									</div>
+								</div>
+							</Card>
+						</a>
+					))}
+				</div>
+			</div>
+		))
+	}
+</div>
