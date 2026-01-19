@@ -51,7 +51,7 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
     transform: (page: any) => ({
       id: page.id,
       name: page.title,
-      url: `/${page.id}`,
+      url: `/${page.permalink}`,
       imageUrl: page.heroImage?.src,
     }),
   },
