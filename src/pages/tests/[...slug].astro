@@ -61,7 +61,7 @@ breadcrumbs.push({
 
 // Status badge styling
 const statusStyles = {
-  current: 'bg-green-100 text-green-800',
+  current: 'bg-neutral-600 text-white',
   'core-service': 'bg-blue-100 text-blue-800',
   retired: 'bg-gray-100 text-gray-800',
   'retired-core-service': 'bg-gray-100 text-gray-800',
@@ -83,15 +83,11 @@ const statusLabels = {
 				{
 					breadcrumbs.map((crumb, index) => (
 						<li class="flex items-center gap-2">
-							{index > 0 && <span class="text-gray-400">/</span>}
+							{index > 0 && <span class="text-neutral-400">/</span>}
 							{index === breadcrumbs.length - 1 ? (
-								<span class="text-gray-600">{crumb.label}</span>
+								<span class="text-neutral-600">{crumb.label}</span>
 							) : (
-								<Link
-									href={crumb.href}
-									variant="unstyled"
-									class="text-primary-600 hover:underline"
-								>
+								<Link href={crumb.href} variant="crumb">
 									{crumb.label}
 								</Link>
 							)}
@@ -103,12 +99,12 @@ const statusLabels = {
 	</SectionLayout>
 
 	<!-- Hero Section -->
-	<SectionLayout>
-		<Hero background="transparent" title={test.data.title} align="left">
+	<SectionLayout maxWidth="4xl" zigzag="supporting1-light">
+		<Hero title={test.data.title} align="left">
 			{
 				test.data.status && (
 					<span
-						class={`inline-block rounded-full px-3 py-1 text-sm font-medium ${statusStyles[test.data.status]}`}
+						class={`inline-block rounded-md px-3 py-1 text-sm font-medium uppercase ${statusStyles[test.data.status]}`}
 					>
 						{statusLabels[test.data.status]}
 					</span>
@@ -116,7 +112,7 @@ const statusLabels = {
 			}
 			{
 				test.data.description && (
-					<p class="text-gray-600 mt-4 text-lg">{test.data.description}</p>
+					<p class="text-gray-600 mt-4">{test.data.description}</p>
 				)
 			}
 		</Hero>
@@ -125,17 +121,15 @@ const statusLabels = {
 	<!-- Sub-navigation for nested tests -->
 	{
 		childTests.length > 0 && (
-			<SectionLayout bgColor="gray" padding={false}>
-				<nav class="px-4 py-4 sm:px-6 lg:px-8">
+			<SectionLayout bgColor="gray">
+				<h3 class="font-semibold">Related tests:</h3>
+				<nav class="pt-2">
 					<div class="flex flex-wrap gap-2">
-						<span class="text-gray-700 text-sm font-medium">Related:</span>
 						{childTests.map((child) => (
-							<Link
-								href={child.data.permalink}
-								variant="unstyled"
-								class="rounded-md bg-white px-3 py-1 text-sm text-primary-600 shadow-sm hover:bg-primary-50"
-							>
-								{child.data.title}
+							<Link href={child.data.permalink} variant="unstyled" class="">
+								<span class="rounded-md bg-white px-3 py-1 text-sm text-primary-600 shadow-sm hover:bg-primary-50">
+									{child.data.title}
+								</span>
 							</Link>
 						))}
 					</div>
@@ -146,9 +140,7 @@ const statusLabels = {
 
 	<!-- Main Content -->
 	<SectionLayout>
-		<article
-			class="mx-auto prose max-w-none prose-headings:scroll-mt-20 prose-a:text-primary-600"
-		>
+		<article class="mx-auto prose prose-a:text-primary-600">
 			<Content />
 		</article>
 	</SectionLayout>

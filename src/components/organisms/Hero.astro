@@ -53,7 +53,7 @@ const containerClasses = `${sizes[size]} ${bgClass} ${className}`;
 			</h1>
 
 			<!-- Subtitle -->
-			{subtitle && <p class="text-gray-600 mb-8">{subtitle}</p>}
+			{subtitle && <p class="text-gray-600">{subtitle}</p>}
 
 			<!-- Actions Slot -->
 			<!-- <div class="flex flex-wrap justify-center gap-4">
@@ -63,9 +63,7 @@ const containerClasses = `${sizes[size]} ${bgClass} ${className}`;
 			</div> -->
 
 			<!-- Additional Content Slot -->
-			<div class="mt-12">
-				<slot />
-			</div>
+			<slot class="mt-12" />
 		</div>
 	</div>
 </div>

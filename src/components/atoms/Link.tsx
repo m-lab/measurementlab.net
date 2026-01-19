@@ -3,7 +3,7 @@ import ArrowTopRightOnSquareIcon from '~icons/heroicons/arrow-top-right-on-squar
 
 export interface LinkProps {
   href: string;
-  variant?: 'default' | 'nav' | 'footer' | 'unstyled' | 'toc';
+  variant?: 'default' | 'nav' | 'footer' | 'unstyled' | 'toc' | 'crumb';
   external?: boolean;
   className?: string;
   children: ReactNode;
@@ -16,6 +16,7 @@ const variants = {
   footer: 'text-white text-sm hover:underline underline-offset-4 transition',
   unstyled: '',
   toc: '',
+  crumb: 'hover:underline underline-offset-4 transition',
 };
 
 export default function Link({

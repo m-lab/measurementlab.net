@@ -8,14 +8,14 @@ import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import {
   formatBlogDate,
-  getRelatedPosts, 
+  getRelatedPosts,
 } from '@utils/blog';
-import {
-  getPeopleMap,
-  resolvePeople,
-  getAllAuthorNames
-} from '@utils/people';
 import { isDev } from '@utils/dev';
+import {
+  getAllAuthorNames, 
+  getPeopleMap,
+  resolvePeople
+} from '@utils/people';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -62,7 +62,7 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 			{
 				isDev && published === 'draft' && (
 					<div class="mb-4">
-						<Tag variant="highlight" size="md" class="font-bold">
+						<Tag variant="highlight" size="md" className="font-bold">
 							DRAFT
 						</Tag>
 					</div>
@@ -89,13 +89,16 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 									<Link variant="unstyled" href={`/people/${a?.id}`}>
 										{a?.name}
 									</Link>
-									{(i < authors.length - 1 || post.data.externalAuthors) && ' • '}
+									{(i < authors.length - 1 || post.data.externalAuthors) &&
+										' • '}
 								</>
 							))
 						}
-						{post.data.externalAuthors && (
-							<span>{post.data.externalAuthors}</span>
-						)}</span
+						{
+							post.data.externalAuthors && (
+								<span>{post.data.externalAuthors}</span>
+							)
+						}</span
 					>
 				</p>
 				<span class="text-gray-400">•</span>
@@ -162,7 +165,10 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 												</>
 											))}
 											{relatedPost.data.externalAuthors && (
-												<>{relatedPost.resolvedAuthors.length > 0 ? ', ' : ''}{relatedPost.data.externalAuthors}</>
+												<>
+													{relatedPost.resolvedAuthors.length > 0 ? ', ' : ''}
+													{relatedPost.data.externalAuthors}
+												</>
 											)}
 										</p>
 										<p class="text-gray-500 mt-1 text-xs">
