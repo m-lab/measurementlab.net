@@ -1,5 +1,5 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content';
 import Link from '@components/atoms/Link';
 import Hero from '@components/organisms/Hero.astro';
 import PageLayout from '@layouts/PageLayout.astro';
@@ -76,83 +76,107 @@ const statusLabels = {
 ---
 
 <PageLayout title={test.data.title} description={test.data.description}>
-  <!-- Breadcrumbs -->
-  <SectionLayout padding={false}>
-    <nav class="px-4 py-4 sm:px-6 lg:px-8" aria-label="Breadcrumb">
-      <ol class="flex flex-wrap items-center gap-2 text-sm">
-        {breadcrumbs.map((crumb, index) => (
-          <li class="flex items-center gap-2">
-            {index > 0 && <span class="text-gray-400">/</span>}
-            {index === breadcrumbs.length - 1 ? (
-              <span class="text-gray-600">{crumb.label}</span>
-            ) : (
-              <Link href={crumb.href} variant="unstyled" class="text-primary-600 hover:underline">
-                {crumb.label}
-              </Link>
-            )}
-          </li>
-        ))}
-      </ol>
-    </nav>
-  </SectionLayout>
+	<!-- Breadcrumbs -->
+	<SectionLayout padding={false}>
+		<nav class="px-4 py-4 sm:px-6 lg:px-8" aria-label="Breadcrumb">
+			<ol class="flex flex-wrap items-center gap-2 text-sm">
+				{
+					breadcrumbs.map((crumb, index) => (
+						<li class="flex items-center gap-2">
+							{index > 0 && <span class="text-gray-400">/</span>}
+							{index === breadcrumbs.length - 1 ? (
+								<span class="text-gray-600">{crumb.label}</span>
+							) : (
+								<Link
+									href={crumb.href}
+									variant="unstyled"
+									class="text-primary-600 hover:underline"
+								>
+									{crumb.label}
+								</Link>
+							)}
+						</li>
+					))
+				}
+			</ol>
+		</nav>
+	</SectionLayout>
 
-  <!-- Hero Section -->
-  <SectionLayout>
-    <Hero background="transparent" title={test.data.title} align="left">
-      {test.data.status && (
-        <span
-          class={`inline-block rounded-full px-3 py-1 text-sm font-medium ${statusStyles[test.data.status]}`}
-        >
-          {statusLabels[test.data.status]}
-        </span>
-      )}
-      {test.data.description && (
-        <p class="mt-4 text-lg text-gray-600">{test.data.description}</p>
-      )}
-    </Hero>
-  </SectionLayout>
+	<!-- Hero Section -->
+	<SectionLayout>
+		<Hero background="transparent" title={test.data.title} align="left">
+			{
+				test.data.status && (
+					<span
+						class={`inline-block rounded-full px-3 py-1 text-sm font-medium ${statusStyles[test.data.status]}`}
+					>
+						{statusLabels[test.data.status]}
+					</span>
+				)
+			}
+			{
+				test.data.description && (
+					<p class="text-gray-600 mt-4 text-lg">{test.data.description}</p>
+				)
+			}
+		</Hero>
+	</SectionLayout>
 
-  <!-- Sub-navigation for nested tests -->
-  {childTests.length > 0 && (
-    <SectionLayout bgColor="gray" padding={false}>
-      <nav class="px-4 py-4 sm:px-6 lg:px-8">
-        <div class="flex flex-wrap gap-2">
-          <span class="text-sm font-medium text-gray-700">Related:</span>
-          {childTests.map((child) => (
-            <Link
-              href={child.data.permalink}
-              variant="unstyled"
-              class="rounded-md bg-white px-3 py-1 text-sm text-primary-600 shadow-sm hover:bg-primary-50"
-            >
-              {child.data.title}
-            </Link>
-          ))}
-        </div>
-      </nav>
-    </SectionLayout>
-  )}
+	<!-- Sub-navigation for nested tests -->
+	{
+		childTests.length > 0 && (
+			<SectionLayout bgColor="gray" padding={false}>
+				<nav class="px-4 py-4 sm:px-6 lg:px-8">
+					<div class="flex flex-wrap gap-2">
+						<span class="text-gray-700 text-sm font-medium">Related:</span>
+						{childTests.map((child) => (
+							<Link
+								href={child.data.permalink}
+								variant="unstyled"
+								class="rounded-md bg-white px-3 py-1 text-sm text-primary-600 shadow-sm hover:bg-primary-50"
+							>
+								{child.data.title}
+							</Link>
+						))}
+					</div>
+				</nav>
+			</SectionLayout>
+		)
+	}
 
-  <!-- Main Content -->
-  <SectionLayout>
-    <article class="prose prose-headings:scroll-mt-20 prose-a:text-primary-600 mx-auto max-w-none">
-      <Content />
-    </article>
-  </SectionLayout>
+	<!-- Main Content -->
+	<SectionLayout>
+		<article
+			class="mx-auto prose max-w-none prose-headings:scroll-mt-20 prose-a:text-primary-600"
+		>
+			<Content />
+		</article>
+	</SectionLayout>
 
-  <!-- Back navigation -->
-  <SectionLayout>
-    <div class="border-t border-gray-200 pt-8">
-      <div class="flex flex-wrap gap-4">
-        {parentTest ? (
-          <Link href={parentTest.data.permalink} variant="unstyled" class="text-primary-600 hover:underline">
-            &larr; Back to {parentTest.data.title}
-          </Link>
-        ) : (
-          <Link href="/tests/" variant="unstyled" class="text-primary-600 hover:underline">
-            &larr; Back to All Tests
-          </Link>
-        )}
-      </div>
-    </div>
-  </SectionLayout>
+	<!-- Back navigation -->
+	<SectionLayout>
+		<div class="border-gray-200 border-t pt-8">
+			<div class="flex flex-wrap gap-4">
+				{
+					parentTest ? (
+						<Link
+							href={parentTest.data.permalink}
+							variant="unstyled"
+							class="text-primary-600 hover:underline"
+						>
+							&larr; Back to {parentTest.data.title}
+						</Link>
+					) : (
+						<Link
+							href="/tests/"
+							variant="unstyled"
+							class="text-primary-600 hover:underline"
+						>
+							&larr; Back to All Tests
+						</Link>
+					)
+				}
+			</div>
+		</div>
+	</SectionLayout>
 </PageLayout>

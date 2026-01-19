@@ -4,12 +4,16 @@ import type { HTMLAttributes } from 'astro/types';
 export interface Props extends HTMLAttributes<'div'> {
   variant?: 'default' | 'bordered' | 'elevated';
   padding?: 'none' | 'sm' | 'md' | 'lg';
+  href?: string;
+  external?: boolean;
   class?: string;
 }
 
 const {
   variant = 'default',
   padding = 'md',
+  href,
+  external = false,
   class: className = '',
   ...props
 } = Astro.props;
@@ -27,9 +31,20 @@ const paddings = {
   lg: 'p-8',
 };
 
-const classes = `rounded-lg ${variants[variant]} ${paddings[padding]} ${className}`;
+const linkClasses = href ? 'block no-underline hover:no-underline text-inherit font-normal hover:shadow-lg transition' : '';
+const classes = `rounded-md ${variants[variant]} ${paddings[padding]} ${linkClasses} ${className}`.trim();
+
+const externalProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 ---
 
-<div class={classes} {...props}>
-  <slot />
-</div>
+{
+	href ? (
+		<a href={href} class={classes} {...externalProps} {...props}>
+			<slot />
+		</a>
+	) : (
+		<div class={classes} {...props}>
+			<slot />
+		</div>
+	)
+}

@@ -1,16 +1,16 @@
 ---
 import { Image } from 'astro:assets';
+import Link from '@components/atoms/Link';
 import Card from '@components/molecules/Card.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
-import { getTests, prepareTestsCardData, statusLabels, type Test } from '@utils/tests';
+import { getTests, type Test } from '@utils/tests';
 
 // Get all tests that should show in the index
 const tests = await getTests();
-const testsData = await prepareTestsCardData(tests);
 
 // Group tests by status
 type StatusKey = NonNullable<Test['data']['status']>;
-const statusGroups: Record<StatusKey, { title: string; description: string; tests: typeof testsData }> = {
+const statusGroups: Record<StatusKey, { title: string; description: string; tests: typeof tests }> = {
   current: {
     title: 'Current Tests',
     description: 'Active measurement tests currently running on the M-Lab platform.',
@@ -34,10 +34,10 @@ const statusGroups: Record<StatusKey, { title: string; description: string; test
 };
 
 // Sort tests into groups
-testsData.forEach((testData) => {
-  const status = testData.test.data.status || 'current';
+tests.forEach((test) => {
+  const status = test.data.status || 'current';
   if (statusGroups[status]) {
-    statusGroups[status].tests.push(testData);
+    statusGroups[status].tests.push(test);
   }
 });
 
@@ -50,48 +50,46 @@ const activeGroups = orderedStatuses
 
 <div class="pb-12">
 	{
-		activeGroups.map((group, groupIndex) => (
-			<div class={groupIndex > 0 ? 'border-gray-200 mt-12 border-t pt-8' : ''}>
+		activeGroups.map((group) => (
+			<SectionLayout maxWidth="4xl" sectionLabel={`section > ${group.title}`}>
 				<div class="mb-6">
 					<h2 class="mb-2 text-2xl font-bold">{group.title}</h2>
 					<p class="text-gray-600">{group.description}</p>
 				</div>
 
-				<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-					{group.tests.map(({ test, optimizedIcon }) => (
-						<a
+				<div class="grid gap-6 sm:grid-cols-2">
+					{group.tests.map((test) => (
+						<Card
+							variant="elevated"
+							padding="lg"
+							class="h-full"
 							href={test.data.permalink}
-							class="block transition-transform hover:scale-[1.02]"
 						>
-							<Card variant="elevated" padding="lg" class="h-full">
-								<div class="flex items-start gap-4">
-									{optimizedIcon && (
-										<div class="shrink-0">
-											<Image
-												src={optimizedIcon}
-												alt=""
-												width={48}
-												height={48}
-												class="h-12 w-12 object-contain"
-											/>
-										</div>
-									)}
-									<div>
-										<h3 class="mb-2 text-lg font-semibold">
-											{test.data.title}
-										</h3>
-										{test.data.description && (
-											<p class="text-gray-600 text-sm">
-												{test.data.description}
-											</p>
-										)}
+							<div class="flex items-start gap-4">
+								{test.data.icon && (
+									<div class="shrink-0">
+										<Image
+											src={test.data.icon}
+											alt=""
+											width={96}
+											height={96}
+											class="h-24 w-24 object-contain"
+										/>
 									</div>
+								)}
+								<div>
+									<h3 class="mb-1 text-lg font-semibold">{test.data.title}</h3>
+									{test.data.description && (
+										<p class="text-sm text-neutral-600">
+											{test.data.description}
+										</p>
+									)}
 								</div>
-							</Card>
-						</a>
+							</div>
+						</Card>
 					))}
 				</div>
-			</div>
+			</SectionLayout>
 		))
 	}
 </div>
