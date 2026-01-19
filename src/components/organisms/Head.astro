@@ -1,6 +1,7 @@
 ---
 import { Font } from 'astro:assets';
 import { getEntry } from 'astro:content';
+import { ClientRouter } from 'astro:transitions';
 
 // Fetch site config from content collection
 const siteConfigEntry = await getEntry('site', 'config');
@@ -60,6 +61,15 @@ const imageURL = ogImage ? new URL(ogImage.src, Astro.url).href : undefined;
 <!-- Local Font Declaration -->
 <Font cssVariable="--font-ibm-plex-mono" preload />
 <Font cssVariable="--font-inter" preload />
+
+<!-- View Transitions -->
+<ClientRouter />
+<style is:inline>
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 100ms;
+	}
+</style>
 
 <!-- Additional head content -->
 <slot />
