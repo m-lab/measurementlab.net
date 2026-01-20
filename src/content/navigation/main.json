@@ -23,7 +23,7 @@
           "externalUrl": "https://example.com"
         },
         {
-        "type": "internal",
+          "type": "internal",
           "label": "About link 4",
           "pageRef": "publications"
         }
@@ -33,8 +33,8 @@
       "type": "single",
       "link": {
         "type": "internal",
-        "label": "What we do",
-        "pageRef": "what-we-do"
+        "label": "Tests",
+        "pageRef": "tests"
       }
     },
     {
