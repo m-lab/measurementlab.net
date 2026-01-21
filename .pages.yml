@@ -959,3 +959,71 @@ content:
         type: rich-text
         options:
           media: blog
+
+  # Tests collection
+  - name: tests
+    label: Tests
+    type: collection
+    path: src/content/tests
+    format: md
+    filename: '{fields.slug}.md'
+    subfolders: true
+    view:
+      fields: [icon, title, status, order]
+      sort: [order, title]
+      primary: title
+    fields:
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+        description: URL-friendly identifier (e.g. ndt, wehe, traceroute)
+        pattern:
+          {
+            message: "Must be a web-safe string like 'ndt' or 'reverse_traceroute'.",
+            regex: '^[a-zA-Z0-9_-]*$',
+          }
+
+      - name: permalink
+        label: Permalink
+        type: string
+        required: true
+        description: Full URL path (e.g. /tests/ndt/)
+
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: Display name of the test
+
+      - name: description
+        label: Description
+        type: text
+        description: Brief description of what the test measures
+
+      - name: status
+        label: Status
+        type: select
+        required: true
+        default: current
+        options:
+          values:
+            - label: Current
+              value: current
+            - label: Deprecated
+              value: deprecated
+
+      - name: icon
+        label: Icon
+        type: image
+        description: Test icon image (e.g. /src/assets/images/tests/ndt.png)
+
+      - name: order
+        label: Display Order
+        type: number
+        description: Order in which the test appears in listings (lower numbers first)
+
+      - name: body
+        label: Content
+        type: rich-text
+        description: Full documentation for the test
