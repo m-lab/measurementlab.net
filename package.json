@@ -29,6 +29,7 @@
     "canvas-confetti": "^1.9.4",
     "fuse.js": "^7.1.0",
     "marked": "^17.0.1",
+    "pa11y-reporter-html": "^2.0.0",
     "prettier-plugin-astro": "^0.14.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

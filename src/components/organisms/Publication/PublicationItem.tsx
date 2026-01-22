@@ -21,9 +21,8 @@ export default function PublicationItem({ item }: PublicationItemProps) {
   const { post, authorNames } = item;
 
   return (
-    <a
-      href={`/publications/${post.id}`}
-      className="block border-b-4 border-neutral-200 text-neutral-600 no-underline transition-all duration-200"
+    <div
+      className="block border-b-4 border-neutral-200 transition-all duration-200"
       style={{
         maskImage: 'conic-gradient(from 45deg at 50px 50px, #000 75%, #0000 0)',
         maskPosition: '-50px',
@@ -43,10 +42,15 @@ export default function PublicationItem({ item }: PublicationItemProps) {
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-neutral-900 md:text-2xl">
-          {post.data.title}
-        </h3>
 
+        <h3 className="text-xl font-bold md:text-2xl">
+          <a
+            href={`/publications/${post.id}`}
+            className="block text-neutral-900 no-underline transition-all hover:text-primary-600"
+          >
+            {post.data.title}
+          </a>
+        </h3>
         {/* Description */}
         {post.data.description && (
           <p
@@ -90,6 +94,6 @@ export default function PublicationItem({ item }: PublicationItemProps) {
           )}
         </div>
       </div>
-    </a>
+    </div>
   );
 }

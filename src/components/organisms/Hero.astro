@@ -44,7 +44,7 @@ const bgClass = backgrounds[background] || backgrounds.white;
 const containerClasses = `${sizes[size]} ${bgClass} ${className}`;
 ---
 
-<div id="heroContent" class={containerClasses}>
+<div class:list={["hero-content", containerClasses]}>
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class={`mx-auto max-w-3xl ${alignments[align]}`}>
 			<!-- Title -->
@@ -69,7 +69,7 @@ const containerClasses = `${sizes[size]} ${bgClass} ${className}`;
 </div>
 
 <style>
-	#heroContent {
+	.hero-content {
 		mask: conic-gradient(from 45deg at 50px 50px, #000 75%, #0000 0) -50px;
 	}
 </style>

@@ -8,6 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig, fontProviders } from 'astro/config';
 import expressiveCode from 'astro-expressive-code';
 import rehypeExternalLinks from 'rehype-external-links';
+import { rehypeTableAlign } from './src/lib/rehype-table-align.ts';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import Icons from 'unplugin-icons/vite';
 import redirectsData from './src/content/site/_redirects.json';
@@ -83,6 +84,7 @@ export default defineConfig({
           rel: ['noopener', 'noreferrer'],
         },
       ],
+      rehypeTableAlign,
     ],
   },
   integrations: [

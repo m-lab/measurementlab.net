@@ -24,11 +24,11 @@ DataStudio also provides the option to export data into a CSV but hovering on a 
 
 ## US Dashboard
 
-<iframe src="https://datastudio.google.com/embed/reporting/1djtGEuqV4Qwrj26GQTN_xzp3rsMYYcmv/page/YW8NB" frameborder="0" style="width:100%; height:800px; border:0" allowfullscreen></iframe>
+<iframe title="US Dashboard" src="https://datastudio.google.com/embed/reporting/1djtGEuqV4Qwrj26GQTN_xzp3rsMYYcmv/page/YW8NB" frameborder="0" style="width:100%; height:800px; border:0" allowfullscreen></iframe>
 
 ## Global Dashboard
 
-<iframe src="https://datastudio.google.com/embed/reporting/12XddYj7__cZOaBF2RwplImw_ZdQQ5Nuw/page/9GTNB" frameborder="0" style="width:100%; height:800px; border:0" allowfullscreen></iframe>
+<iframe title="Global Dashboard" src="https://datastudio.google.com/embed/reporting/12XddYj7__cZOaBF2RwplImw_ZdQQ5Nuw/page/9GTNB" frameborder="0" style="width:100%; height:800px; border:0" allowfullscreen></iframe>
 
 ## Feedback
 

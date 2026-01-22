@@ -56,8 +56,7 @@ const TitleLink = (cardType!=="blog" && href) ? 'a':'slot';
 	class={`block transition-all border-neutral-200 text-neutral-600 border-b-4 no-underline duration-200 ${className}`}
 >
 	<div
-		id="houseCard"
-		class={`flex h-full flex-col gap-6 ${variantColors[variant]} ${houseWidthStyles[width]} p-4 ${!image && `pt-18`}`}
+		class={`houseCard flex h-full flex-col gap-6 ${variantColors[variant]} ${houseWidthStyles[width]} p-4 ${!image && `pt-18`}`}
 	>
 		{
 			image && (
@@ -94,7 +93,7 @@ const TitleLink = (cardType!=="blog" && href) ? 'a':'slot';
 </Tag>
 
 <style>
-	#houseCard {
+	.houseCard {
 		mask: conic-gradient(from 45deg at 50px 50px, #000 75%, #0000 0) -50px;
 	}
 </style>

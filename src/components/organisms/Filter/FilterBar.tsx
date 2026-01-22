@@ -71,6 +71,7 @@ const FilterBar = ({
           >
             <Input
               type="text"
+              aria-label="Search area"
               value={searchText}
               onChange={(e) => handleSearchChange(e.target.value)}
               placeholder="Search"
