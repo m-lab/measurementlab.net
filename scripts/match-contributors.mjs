@@ -144,7 +144,7 @@ function processPublications() {
       publication.contributors = contributors;
 
       if (!DRY_RUN) {
-        fs.writeFileSync(filepath, JSON.stringify(publication, null, 2) + '\n');
+        fs.writeFileSync(filepath, `${JSON.stringify(publication, null, 2)}\n`);
       }
     }
   }

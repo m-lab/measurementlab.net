@@ -6,9 +6,9 @@ import Link from '@components/atoms/Link';
 import NavItem from '@components/molecules/NavItem.astro';
 import MobileMenu from '@components/organisms/MobileMenu';
 import RichSearch from '@components/organisms/RichSearch';
+import type { NavItem as TNavItem } from '@utils/navigation';
 import MagnifyingGlassIcon from '~icons/heroicons/magnifying-glass-20-solid';
 import NavLogo from '/public/logo-short-blue.svg'
-import type { NavItem as TNavItem } from '@utils/navigation';
 
 // Fetch site config
 const siteConfigEntry = await getEntry('site', 'config');
@@ -54,10 +54,7 @@ const isActive = (href: string) => {
 		<div class="hidden items-center space-x-1 md:flex">
 			{
 				items.map((item) => (
-					<NavItem
-						item={item}
-						active={isActive(item.href)}
-					/>
+					<NavItem item={item} active={isActive(item.href)} />
 				))
 			}
 		</div>

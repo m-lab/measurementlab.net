@@ -1,149 +1,158 @@
-import { useState, useMemo } from 'react';
-import Fuse from 'fuse.js';
-import FilterBar from './FilterBar';
-import BlogItems from '../Blog/BlogItems';
 import type { BlogPostCardData } from '@utils/blog';
 import type { PublicationCardData } from '@utils/publications';
+import Fuse from 'fuse.js';
+import { useMemo, useState } from 'react';
+import BlogItems from '../Blog/BlogItems';
 import PublicationItems from '../Publication/PublicationItems';
+import FilterBar from './FilterBar';
 
 const PLACEHOLDER_TYPE_LABEL: Record<FilterableContentType, string> = {
-	blog: 'blog posts',
-	publications: 'publications',
+  blog: 'blog posts',
+  publications: 'publications',
 };
 
 type FilterableContentType = 'blog' | 'publications';
 export type FilterableContentItem = BlogPostCardData | PublicationCardData;
 
 export const SORT_OPTIONS = ['newest', 'oldest', 'alphabetical'];
-export type SortOption = typeof SORT_OPTIONS[number];
+export type SortOption = (typeof SORT_OPTIONS)[number];
 
 interface FilterableContentProps {
   type: FilterableContentType;
-	items: FilterableContentItem[];
-	fields: string[];
+  items: FilterableContentItem[];
+  fields: string[];
 }
 
-export default function FilterableContent({ items, type, fields }: FilterableContentProps) {
-	const [searchText, setSearchText] = useState('');
-	const [sortBy, setSortBy] = useState<SortOption>(SORT_OPTIONS[0]);
-	const [fieldFilters, setFieldFilters] = useState<Record<string, string[]>>(
-		fields.reduce((acc, field) => ({ ...acc, [field]: [] }), {})
-	);
-	const hasFiltersSet = useMemo(() => {
-		return !!searchText || Object.values(fieldFilters).some(value => value.length > 0);
-	}, [searchText, fieldFilters]);
+export default function FilterableContent({
+  items,
+  type,
+  fields,
+}: FilterableContentProps) {
+  const [searchText, setSearchText] = useState('');
+  const [sortBy, setSortBy] = useState<SortOption>(SORT_OPTIONS[0]);
+  const [fieldFilters, setFieldFilters] = useState<Record<string, string[]>>(
+    fields.reduce((acc, field) => ({ ...acc, [field]: [] }), {})
+  );
+  const hasFiltersSet = useMemo(() => {
+    return (
+      !!searchText ||
+      Object.values(fieldFilters).some((value) => value.length > 0)
+    );
+  }, [searchText, fieldFilters]);
 
-	// Get unique values for each field from items
-	const fieldOptions = useMemo(() => {
-		const options: Record<string, string[]> = {};
-		
-		fields.forEach(field => {
-			const values = new Set<string>();
-			items.forEach(item => {
-				const value = item.post.data?.[field] || item.post[field];
-				if (Array.isArray(value)) {
-					value.forEach(v => values.add(String(v)));
-				} else if (value) {
-					values.add(String(value));
-				}
-			});
-			options[field] = Array.from(values).sort();
-		});
-		
-		return options;
-	}, [items, fields]);
+  // Get unique values for each field from items
+  const fieldOptions = useMemo(() => {
+    const options: Record<string, string[]> = {};
 
-	const handleFieldFilterChange = (field: string, value: string[]) => {
-		setFieldFilters(prev => ({ ...prev, [field]: value }));
-	};
+    fields.forEach((field) => {
+      const values = new Set<string>();
+      items.forEach((item) => {
+        const value = item.post.data?.[field] || item.post[field];
+        if (Array.isArray(value)) {
+          value.forEach((v) => values.add(String(v)));
+        } else if (value) {
+          values.add(String(value));
+        }
+      });
+      options[field] = Array.from(values).sort();
+    });
 
-	// Create Fuse instance with configured fields
-	const fuse = useMemo(() => {
-		return new Fuse(items, {
-			keys: ["post.data.title"],
-			threshold: 0.4, // 0.0 = exact match, 1.0 = match anything
-			includeScore: true,
-			ignoreLocation: true,
-		});
-	}, [items]);
+    return options;
+  }, [items, fields]);
 
-	const sortFunction = useMemo(() => {		
-		const dateKey = type === 'blog' ? 'publishedDate' : 'year';
+  const handleFieldFilterChange = (field: string, value: string[]) => {
+    setFieldFilters((prev) => ({ ...prev, [field]: value }));
+  };
 
-		if (sortBy === 'alphabetical') {
-			return (a: FilterableContentItem, b: FilterableContentItem) => {
-				const titleA = a.post.data.title.toLowerCase();
-				const titleB = b.post.data.title.toLowerCase();
-				return titleA.localeCompare(titleB);
-			};
-		} else if (sortBy === 'oldest') {
-			return (a: FilterableContentItem, b: FilterableContentItem) => {
-				return a.post.data[dateKey] - b.post.data[dateKey];
-			};
-		} else {
-			return (a: FilterableContentItem, b: FilterableContentItem) => {
-				return b.post.data[dateKey] - a.post.data[dateKey];
-			};
-		}
-	}, [sortBy, type]);
+  // Create Fuse instance with configured fields
+  const fuse = useMemo(() => {
+    return new Fuse(items, {
+      keys: ['post.data.title'],
+      threshold: 0.4, // 0.0 = exact match, 1.0 = match anything
+      includeScore: true,
+      ignoreLocation: true,
+    });
+  }, [items]);
 
-	// Filter items using Fuse.js for fuzzy search and field filters
-	const filteredItems = useMemo(() => {
-		let results = items;
+  const sortFunction = useMemo(() => {
+    const dateKey = type === 'blog' ? 'publishedDate' : 'year';
 
-		// Apply text search first
-		if (searchText) {
-			const fuseResults = fuse.search(searchText);
-			results = fuseResults.map(result => result.item);
-		}
+    if (sortBy === 'alphabetical') {
+      return (a: FilterableContentItem, b: FilterableContentItem) => {
+        const titleA = a.post.data.title.toLowerCase();
+        const titleB = b.post.data.title.toLowerCase();
+        return titleA.localeCompare(titleB);
+      };
+    } else if (sortBy === 'oldest') {
+      return (a: FilterableContentItem, b: FilterableContentItem) => {
+        return a.post.data[dateKey] - b.post.data[dateKey];
+      };
+    } else {
+      return (a: FilterableContentItem, b: FilterableContentItem) => {
+        return b.post.data[dateKey] - a.post.data[dateKey];
+      };
+    }
+  }, [sortBy, type]);
 
-		// Apply field filters
-		return results
-			.filter(item => {
-				return fields.every(field => {
-					const filterValues = fieldFilters[field];
-					if (!filterValues || filterValues.length === 0) return true;
+  // Filter items using Fuse.js for fuzzy search and field filters
+  const filteredItems = useMemo(() => {
+    let results = items;
 
-					const itemValue = item.post.data?.[field] || item.post[field];
-					if (Array.isArray(itemValue)) {
-						// If item has array, check if any filter value is in the item's array
-						return filterValues.some(filterVal => itemValue.includes(filterVal));
-					}
-					// If item has single value, check if it matches any filter value
-					return filterValues.includes(String(itemValue));
-				});
-			})
-			.sort(sortFunction)
+    // Apply text search first
+    if (searchText) {
+      const fuseResults = fuse.search(searchText);
+      results = fuseResults.map((result) => result.item);
+    }
 
-	}, [searchText, fieldFilters, fuse, items, fields, sortFunction]);
+    // Apply field filters
+    return results
+      .filter((item) => {
+        return fields.every((field) => {
+          const filterValues = fieldFilters[field];
+          if (!filterValues || filterValues.length === 0) return true;
 
-	return (
-		<div>
-			<FilterBar 
-				searchText={searchText} 
-				setSearchText={setSearchText}
-				sortBy={sortBy}
-				setSortBy={setSortBy}
-				fields={fields}
-				fieldFilters={fieldFilters}
-				fieldOptions={fieldOptions}
-				onFieldFilterChange={handleFieldFilterChange}
-			/>
-			<div className="py-12">
-				{type === 'blog'
-					? <BlogItems items={filteredItems as BlogPostCardData[]} />
-					: <PublicationItems items={filteredItems as PublicationCardData[]} />
-				}
-			</div>
+          const itemValue = item.post.data?.[field] || item.post[field];
+          if (Array.isArray(itemValue)) {
+            // If item has array, check if any filter value is in the item's array
+            return filterValues.some((filterVal) =>
+              itemValue.includes(filterVal)
+            );
+          }
+          // If item has single value, check if it matches any filter value
+          return filterValues.includes(String(itemValue));
+        });
+      })
+      .sort(sortFunction);
+  }, [searchText, fieldFilters, fuse, items, fields, sortFunction]);
+
+  return (
+    <div>
+      <FilterBar
+        searchText={searchText}
+        setSearchText={setSearchText}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        fields={fields}
+        fieldFilters={fieldFilters}
+        fieldOptions={fieldOptions}
+        onFieldFilterChange={handleFieldFilterChange}
+      />
+      <div className="py-12">
+        {type === 'blog' ? (
+          <BlogItems items={filteredItems as BlogPostCardData[]} />
+        ) : (
+          <PublicationItems items={filteredItems as PublicationCardData[]} />
+        )}
+      </div>
       {filteredItems.length === 0 && (
         <div className="py-12 text-center">
           <p className="text-gray-600 text-lg">
-						{hasFiltersSet 
-							? `No ${PLACEHOLDER_TYPE_LABEL[type]} match your search.`
-							: `No ${PLACEHOLDER_TYPE_LABEL[type]} published yet. Check back soon!`}
+            {hasFiltersSet
+              ? `No ${PLACEHOLDER_TYPE_LABEL[type]} match your search.`
+              : `No ${PLACEHOLDER_TYPE_LABEL[type]} published yet. Check back soon!`}
           </p>
         </div>
       )}
-		</div>
-	);
+    </div>
+  );
 }

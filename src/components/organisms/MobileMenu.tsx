@@ -1,15 +1,21 @@
+import Link from '@components/atoms/Link';
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import { siteConfig } from '@lib/config';
-import { useState } from 'react';
 import type { NavItem } from '@utils/navigation';
-import Link from '@components/atoms/Link';
+import { useState } from 'react';
 
 interface MobileMenuProps {
   items: NavItem[];
   currentPath?: string;
 }
 
-const MobileMenuItem = ({ item, isActive }: { item: NavItem; isActive: boolean }) => {  
+const MobileMenuItem = ({
+  item,
+  isActive,
+}: {
+  item: NavItem;
+  isActive: boolean;
+}) => {
   return (
     <li key={item.href}>
       <Link
@@ -17,9 +23,7 @@ const MobileMenuItem = ({ item, isActive }: { item: NavItem; isActive: boolean }
         external={item.type === 'external'}
         variant="nav"
         className={`group text-black no-underline decoration-neutral-400 underline-offset-8 transition hover:underline ${
-          isActive
-            ? 'underline decoration-black'
-            : 'no-underline'
+          isActive ? 'underline decoration-black' : 'no-underline'
         }`}
       >
         {item.label}
@@ -119,8 +123,11 @@ export default function MobileMenu({
                     <ul className="space-y-4">
                       {items.map((item) => (
                         <>
-                          <MobileMenuItem item={item} isActive={isActive(item.href)} />
-                          {item.children?.length > 0 && (
+                          <MobileMenuItem
+                            item={item}
+                            isActive={isActive(item.href)}
+                          />
+                          {item.children && item.children.length > 0 && (
                             <ul className="mt-2 ml-6 space-y-4">
                               {item.children.map((child) => (
                                 <MobileMenuItem

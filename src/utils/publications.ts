@@ -1,28 +1,28 @@
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content';
 import { getPeopleMap, getPersonNames, type PersonData } from '@utils/people';
 import { renderMarkdown } from '@utils/renderMarkdown';
 
 export type Publication = CollectionEntry<'publications'>;
 
 export interface PublicationCardData {
-	post: Publication;
-	authorNames: string;
+  post: Publication;
+  authorNames: string;
 }
 
 /**
  * Get all publications sorted by year (newest first), then alphabetically by title
  */
 export async function getPublications() {
-	const allPublications = await getCollection('publications');
-	
-	return allPublications.sort((a, b) => {
-		// First sort by year (descending)
-		if (b.data.year !== a.data.year) {
-			return b.data.year - a.data.year;
-		}
-		// Then sort alphabetically by title
-		return a.data.title.localeCompare(b.data.title);
-	});
+  const allPublications = await getCollection('publications');
+
+  return allPublications.sort((a, b) => {
+    // First sort by year (descending)
+    if (b.data.year !== a.data.year) {
+      return b.data.year - a.data.year;
+    }
+    // Then sort alphabetically by title
+    return a.data.title.localeCompare(b.data.title);
+  });
 }
 
 /**
@@ -32,23 +32,23 @@ export async function getPublications() {
  * @returns Data ready for card rendering
  */
 export async function preparePublicationCardData(
-	publication: Publication,
-	peopleMap?: Map<string, PersonData>
+  publication: Publication,
+  peopleMap?: Map<string, PersonData>
 ): Promise<PublicationCardData> {
-	const renderedDescription = publication.data.description
-		? (await renderMarkdown(publication.data.description))?.html
-		: undefined;
+  const renderedDescription = publication.data.description
+    ? (await renderMarkdown(publication.data.description))?.html
+    : undefined;
 
-	return {
-		post: {
-			...publication,
-			data: {
-				...publication.data,
-				description: renderedDescription,
-			},
-		},
-		authorNames: await getPersonNames(publication.data.contributors, peopleMap),
-	};
+  return {
+    post: {
+      ...publication,
+      data: {
+        ...publication.data,
+        description: renderedDescription,
+      },
+    },
+    authorNames: await getPersonNames(publication.data.contributors, peopleMap),
+  };
 }
 
 /**
@@ -57,12 +57,12 @@ export async function preparePublicationCardData(
  * @returns Array of data ready for card rendering
  */
 export async function preparePublicationsCardData(
-	publications: Publication[]
+  publications: Publication[]
 ): Promise<PublicationCardData[]> {
-	const peopleMap = await getPeopleMap();
-	return Promise.all(
-		publications.map((publication) =>
-			preparePublicationCardData(publication, peopleMap)
-		)
-	);
+  const peopleMap = await getPeopleMap();
+  return Promise.all(
+    publications.map((publication) =>
+      preparePublicationCardData(publication, peopleMap)
+    )
+  );
 }

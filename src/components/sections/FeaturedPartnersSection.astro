@@ -1,9 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import Button from '@components/atoms/Button.tsx';
 import Heading from '@components/atoms/Heading.astro';
 import Text from '@components/atoms/Text.astro';
-import { Image } from 'astro:assets';
-import Button from '@components/atoms/Button.tsx';
 
 const { title, description } = Astro.props;
 
@@ -13,45 +13,49 @@ const allPartners = await getCollection('partners');
 const featuredPartners = allPartners.sort((a, b) => (a.data.order || 999) - (b.data.order || 999)).slice(0, 9);
 ---
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 	<div class="order-2 lg:order-1">
-		<div class="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center">
-			{featuredPartners.map((partner) => (
-				<a
-					href={partner.data.url}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="flex items-center justify-center p-4 transition-all duration-300 hover:scale-105"
-				>
-					{partner.data.image && (
-						<Image
-							src={partner.data.image}
-							alt={partner.data.name}
-							class="max-h-16 w-auto object-contain"
-						/>
-					)}
-				</a>
-			))}
+		<div class="grid grid-cols-2 items-center gap-4 sm:grid-cols-3">
+			{
+				featuredPartners.map((partner) => (
+					<a
+						href={partner.data.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center justify-center p-4 transition-all duration-300 hover:scale-105"
+					>
+						{partner.data.image && (
+							<Image
+								src={partner.data.image}
+								alt={partner.data.name}
+								class="max-h-16 w-auto object-contain"
+							/>
+						)}
+					</a>
+				))
+			}
 		</div>
 	</div>
 
-	<div class="order-1 lg:order-2 flex flex-col gap-8">
-		{title && (
-			<Heading level={3} class="text-3xl font-bold">
-				{title}
-			</Heading>
-		)}
-		{description && (
-			<Text class="text-lg text-gray-600">
-				{description}
-			</Text>
-		)}
+	<div class="order-1 flex flex-col gap-8 lg:order-2">
+		{
+			title && (
+				<Heading level={3} class="text-3xl font-bold">
+					{title}
+				</Heading>
+			)
+		}
+		{description && <Text class="text-gray-600 text-lg">{description}</Text>}
 
-    <div>
-      <Button as="a" href="/partner-with-us" variant="primary" icon="arrowRight">
-        Partner with us
-      </Button>
-    </div>
-    
+		<div>
+			<Button
+				as="a"
+				href="/partner-with-us"
+				variant="primary"
+				icon="arrowRight"
+			>
+				Partner with us
+			</Button>
+		</div>
 	</div>
 </div>

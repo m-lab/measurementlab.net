@@ -3,8 +3,8 @@ import { Image } from 'astro:assets';
 import { getEntry } from 'astro:content';
 import Link from '@components/atoms/Link';
 import SocialLinks from '@components/molecules/SocialLinks.astro';
-import { renderMarkdown } from '@utils/renderMarkdown';
 import { convertNavigationItems } from '@utils/navigation';
+import { renderMarkdown } from '@utils/renderMarkdown';
 
 // Fetch all data internally - no props needed except className
 export interface Props {
@@ -42,11 +42,14 @@ const description = siteConfig.footer.description ? (await renderMarkdown(siteCo
 				<!-- Logo -->
 				<div>
 					<Link href="/" variant="unstyled" className="block">
-						<img
-							src="/logo-extended-white.svg"
-							alt={siteConfig.title}
-							class="h-12 w-auto"
-						/>
+						{
+							siteConfig.defaultLogoDark && (
+								<Image
+									src={siteConfig.defaultLogoDark}
+									alt={siteConfig.title}
+								/>
+							)
+						}
 					</Link>
 				</div>
 
@@ -68,7 +71,11 @@ const description = siteConfig.footer.description ? (await renderMarkdown(siteCo
 						<ul class="space-y-3">
 							{footerNav1Items.map((item) => (
 								<li>
-									<Link href={item.href} variant="footer" external={item.type === 'external'}>
+									<Link
+										href={item.href}
+										variant="footer"
+										external={item.type === 'external'}
+									>
 										{item.label}
 									</Link>
 								</li>
@@ -83,7 +90,11 @@ const description = siteConfig.footer.description ? (await renderMarkdown(siteCo
 						<ul class="space-y-3">
 							{footerNav2Items.map((item) => (
 								<li>
-									<Link href={item.href} variant="footer" external={item.type === 'external'}>
+									<Link
+										href={item.href}
+										variant="footer"
+										external={item.type === 'external'}
+									>
 										{item.label}
 									</Link>
 								</li>

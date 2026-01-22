@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 import matter from 'gray-matter';
 
 interface ValidationResult {
@@ -194,7 +194,7 @@ function main() {
   }
 
   // Summary
-  console.log('\n' + '='.repeat(60));
+  console.log(`\n${'='.repeat(60)}`);
   console.log('Validation Summary');
   console.log('='.repeat(60));
   console.log(`Total Articles: ${files.length}`);
@@ -210,7 +210,7 @@ function main() {
   console.log(`Articles with Errors: ${articlesWithErrors}`);
 
   // Category distribution
-  console.log('\n' + '-'.repeat(60));
+  console.log(`\n${'-'.repeat(60)}`);
   console.log('Category Distribution:');
   const categoryCount: { [key: string]: number } = {};
 
@@ -239,7 +239,7 @@ function main() {
     return !!data.excerpt;
   }).length;
 
-  console.log('\n' + '-'.repeat(60));
+  console.log(`\n${'-'.repeat(60)}`);
   console.log('Excerpt Statistics:');
   console.log(`  With Excerpt: ${articlesWithExcerpt}`);
   console.log(`  Without Excerpt: ${files.length - articlesWithExcerpt}`);

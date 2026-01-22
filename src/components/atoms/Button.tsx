@@ -1,10 +1,21 @@
-import type { ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from 'react';
 import ArrowDown from '~icons/m-lab/arrow-down';
 import ArrowLong from '~icons/m-lab/arrow-long';
 import MeasurementSmall from '~icons/m-lab/measurement-small';
 
 type BaseProps = {
-  variant?: 'primary' | 'secondary' | 'supporting1' | 'supporting2' | 'speed' | 'outline' | 'ghost';
+  variant?:
+    | 'primary'
+    | 'secondary'
+    | 'supporting1'
+    | 'supporting2'
+    | 'speed'
+    | 'outline'
+    | 'ghost';
   icon?: 'arrowDown' | 'arrowRight' | 'measurement';
   size?: 'sm' | 'md' | 'lg' | 'xl' | 'square';
   className?: string;

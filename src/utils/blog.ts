@@ -1,9 +1,14 @@
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
-import { getImage, type ImageMetadata } from 'astro:assets';
 import MlabDefault from '@assets/mlab-default-card.png';
 import { isDev } from '@utils/dev';
-import { getPeopleMap, getPersonNames, resolvePeople, getAllAuthorNames, type PersonData } from '@utils/people';
+import {
+  getAllAuthorNames,
+  getPeopleMap,
+  type PersonData,
+  resolvePeople,
+} from '@utils/people';
+import type { ImageMetadata } from 'astro';
 
 export type BlogPost = CollectionEntry<'blog'>;
 
@@ -34,7 +39,9 @@ export interface GetRelatedPostsOptions {
  * @param options - Configuration options
  * @returns Filtered and sorted blog posts
  */
-export async function getBlogPosts(options?: GetBlogPostsOptions): Promise<BlogPost[]> {
+export async function getBlogPosts(
+  options?: GetBlogPostsOptions
+): Promise<BlogPost[]> {
   const allPosts = await getCollection('blog');
   const shouldFilterDrafts = options?.filterDrafts ?? !isDev;
 
@@ -48,7 +55,8 @@ export async function getBlogPosts(options?: GetBlogPostsOptions): Promise<BlogP
   filtered = filtered.sort((a, b) => {
     let comparison = 0;
     if (sortBy === 'date') {
-      comparison = a.data.publishedDate.getTime() - b.data.publishedDate.getTime();
+      comparison =
+        a.data.publishedDate.getTime() - b.data.publishedDate.getTime();
     } else {
       comparison = a.data.title.localeCompare(b.data.title);
     }
@@ -74,7 +82,9 @@ export function formatBlogDate(
     day: 'numeric',
   };
 
-  return new Intl.DateTimeFormat('en-US', options ?? defaultOptions).format(date);
+  return new Intl.DateTimeFormat('en-US', options ?? defaultOptions).format(
+    date
+  );
 }
 
 /**
@@ -87,15 +97,14 @@ export async function prepareBlogPostCardData(
   post: BlogPost,
   peopleMap?: Map<string, PersonData>
 ): Promise<BlogPostCardData> {
-  const imageToProcess = post.data.heroImage || MlabDefault;
-  const optimizedImage = await getImage({ src: imageToProcess });
+  const heroImage = post.data.heroImage || MlabDefault;
 
   return {
     post: {
       ...post,
       data: {
         ...post.data,
-        heroImage: optimizedImage as ImageMetadata,
+        heroImage: heroImage as ImageMetadata,
       },
     },
     authorNames: await getAllAuthorNames(
@@ -134,7 +143,7 @@ export async function getRelatedPosts(
 ): Promise<BlogPostWithAuthors[]> {
   const limit = options?.limit ?? 3;
   const allPosts = await getBlogPosts();
-  const peopleMap = options?.peopleMap ?? await getPeopleMap();
+  const peopleMap = options?.peopleMap ?? (await getPeopleMap());
 
   // Get manually selected posts
   let relatedPosts: BlogPostWithAuthors[] = [];
@@ -142,42 +151,47 @@ export async function getRelatedPosts(
   if (currentPost.data.relatedPosts) {
     const manualPosts = await Promise.all(
       currentPost.data.relatedPosts
-        .filter(permalink => permalink !== currentPost.data.permalink)
-        .map(async permalink => {
-          const post = allPosts.find(p => p.data.permalink === permalink);
+        .filter((permalink) => permalink !== currentPost.data.permalink)
+        .map(async (permalink) => {
+          const post = allPosts.find((p) => p.data.permalink === permalink);
           if (!post) {
             console.warn(`Related post not found: ${permalink}`);
             return null;
           }
           return {
             ...post,
-            resolvedAuthors: await resolvePeople(post.data.authors, peopleMap)
+            resolvedAuthors: await resolvePeople(post.data.authors, peopleMap),
           };
         })
     );
 
-    relatedPosts = manualPosts.filter((post): post is BlogPostWithAuthors => post !== null);
+    relatedPosts = manualPosts.filter(
+      (post): post is BlogPostWithAuthors => post !== null
+    );
   }
 
   // Fill remaining slots with tag-based recommendations
   if (relatedPosts.length < limit) {
     const currentTags = new Set(currentPost.data.tags);
     const manuallySelectedPermalinks = new Set(
-      relatedPosts.map(p => p.data.permalink)
+      relatedPosts.map((p) => p.data.permalink)
     );
 
     const candidatePosts = await Promise.all(
       allPosts
-        .filter(p =>
-          p.data.permalink !== currentPost.data.permalink &&
-          !manuallySelectedPermalinks.has(p.data.permalink)
+        .filter(
+          (p) =>
+            p.data.permalink !== currentPost.data.permalink &&
+            !manuallySelectedPermalinks.has(p.data.permalink)
         )
-        .map(async p => {
-          const matchingTags = p.data.tags.filter(tag => currentTags.has(tag)).length;
+        .map(async (p) => {
+          const matchingTags = p.data.tags.filter((tag) =>
+            currentTags.has(tag)
+          ).length;
           return {
             ...p,
             resolvedAuthors: await resolvePeople(p.data.authors, peopleMap),
-            matchingTags
+            matchingTags,
           };
         })
     );

@@ -72,7 +72,7 @@ function extractLinks(text) {
 
   while ((match = linkRegex.exec(text))) {
     const label = cleanLegacySyntax(match[1]);
-    let url = cleanLegacySyntax(match[2]);
+    const url = cleanLegacySyntax(match[2]);
 
     // Skip empty labels or URLs
     if (!label || !url) continue;
@@ -248,7 +248,7 @@ function parsePublicationsFile(content) {
       // Extract year
       const yearMatch = yearHeader.match(/\b(19|20)\d{2}\b/);
       if (yearMatch) {
-        currentYear = parseInt(yearMatch[0]);
+        currentYear = parseInt(yearMatch[0], 10);
       } else if (!yearHeader.includes('{:.no_toc}')) {
         // If no year found and not a marker, skip
         continue;
@@ -258,7 +258,7 @@ function parsePublicationsFile(content) {
       const pubSections = yearSection.split(/^### /m).filter(s => s.trim());
 
       for (let i = 1; i < pubSections.length; i++) {
-        const pubText = '### ' + pubSections[i];
+        const pubText = `### ${pubSections[i]}`;
 
         try {
           const publication = parsePublication(pubText, currentCategory, currentYear || new Date().getFullYear());
@@ -329,7 +329,7 @@ async function migrate() {
         continue;
       }
 
-      fs.writeFileSync(filepath, JSON.stringify(pub, null, 2) + '\n');
+      fs.writeFileSync(filepath, `${JSON.stringify(pub, null, 2)}\n`);
       written++;
     }
 

@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import { execSync } from 'node:child_process';
-import fs from 'node:fs';
 
 const affectedFiles = [
   '2014_interconnection_report.md',
@@ -82,7 +81,7 @@ for (const file of affectedFiles) {
         idSelectors
       });
     }
-  } catch (error) {
+  } catch (_error) {
     // File might not have changes
   }
 }

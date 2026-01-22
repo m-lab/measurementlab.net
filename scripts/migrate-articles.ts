@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 import matter from 'gray-matter';
 import yaml from 'js-yaml';
 
@@ -23,7 +23,7 @@ interface NewFrontmatter {
   publishedDate: string;
 }
 
-const VALID_CATEGORIES = [
+const _VALID_CATEGORIES = [
   'Technology',
   'Development',
   'Design',
@@ -52,14 +52,14 @@ function extractExcerpt(content: string): { excerpt: string | undefined; cleaned
   excerpt = excerpt.replace(/!\[.*?\]\(.*?\)/g, '');
 
   // Convert links to text
-  excerpt = excerpt.replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1');
+  excerpt = excerpt.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
 
   // Clean up whitespace
   excerpt = excerpt.replace(/\s+/g, ' ').trim();
 
   // Limit length
   if (excerpt.length > 300) {
-    excerpt = excerpt.substring(0, 297) + '...';
+    excerpt = `${excerpt.substring(0, 297)}...`;
   }
 
   // Remove the <!--more--> marker from content
@@ -293,7 +293,7 @@ function main() {
     }
   }
 
-  console.log('\n' + '='.repeat(60));
+  console.log(`\n${'='.repeat(60)}`);
   console.log(`Summary: ${successful} successful, ${failed} failed`);
   console.log('='.repeat(60));
 

@@ -49,8 +49,8 @@ function fixYamlIndentation(content) {
     // Fix indentation in excerpt field
     if (inFrontmatter && inExcerpt) {
       // If line starts with 3 spaces, change to 2 spaces
-      if (line.match(/^   /)) {
-        fixedLines.push(line.replace(/^   /, '  '));
+      if (line.match(/^ {3}/)) {
+        fixedLines.push(line.replace(/^ {3}/, '  '));
         continue;
       }
     }

@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 import matter from 'gray-matter';
 
 interface Person {
@@ -42,7 +42,7 @@ function getAuthorArticleCount(authorId: string, authorMapping: { [name: string]
           }
         }
       }
-    } catch (error) {
+    } catch (_error) {
       // Skip
     }
   }
@@ -117,12 +117,12 @@ function createAuthorFiles() {
       sections: ['Community'],
     };
 
-    fs.writeFileSync(filePath, JSON.stringify(person, null, 2) + '\n');
+    fs.writeFileSync(filePath, `${JSON.stringify(person, null, 2)}\n`);
     console.log(`✓ Created ${id} (${articleCount} articles) - ${person.title}`);
     created++;
   }
 
-  console.log('\n' + '='.repeat(60));
+  console.log(`\n${'='.repeat(60)}`);
   console.log(`Summary: ${created} created, ${skipped} skipped`);
   console.log('='.repeat(60));
 

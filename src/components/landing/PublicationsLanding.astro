@@ -1,6 +1,6 @@
 ---
-import { getPublications, preparePublicationsCardData } from '@utils/publications';
 import FilterableContent from '@components/organisms/Filter/FilterableContent';
+import { getPublications, preparePublicationsCardData } from '@utils/publications';
 
 const publications = await getPublications();
 const publicationsData = await preparePublicationsCardData(publications);
@@ -15,11 +15,12 @@ const publicationsData = await preparePublicationsCardData(publications);
 
 
 ---
+
 <div class="pb-12">
 	<FilterableContent
 		client:load
 		type="publications"
 		items={publicationsData}
-		fields={["category", "tags", "year"]}
+		fields={['category', 'tags', 'year']}
 	/>
 </div>

@@ -1,6 +1,6 @@
 ---
-import SectionLayout from '@layouts/SectionLayout.astro';
 import Sections from '@components/sections/Sections.astro';
+import SectionLayout from '@layouts/SectionLayout.astro';
 
 export interface SectionType {
   type: string;
@@ -26,7 +26,6 @@ const { title, description, sections = [] } = Astro.props;
 		</div>
 
 		<!-- Sections -->
-    <Sections sectionItems={sections} />
-
+		<Sections sectionItems={sections} />
 	</div>
 </SectionLayout>

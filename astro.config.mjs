@@ -10,8 +10,8 @@ import expressiveCode from 'astro-expressive-code';
 import rehypeExternalLinks from 'rehype-external-links';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import Icons from 'unplugin-icons/vite';
-import { siteConfig } from './src/lib/config.ts';
 import redirectsData from './src/content/site/_redirects.json';
+import { siteConfig } from './src/lib/config.ts';
 
 // Transform redirects array to Astro's format
 // Internal paths get leading slash added, external URLs stay as-is
@@ -19,10 +19,12 @@ const redirects = redirectsData.redirects.reduce(
   (acc, { from, to, status }) => {
     const fromPath = `/${from}`;
     const toPath = to.startsWith('http') ? to : `/${to}`;
-    acc[fromPath] = status ? { destination: toPath, status } : toPath;
+    acc[fromPath] = status
+      ? { destination: toPath, status: /** @type {300 | 301 | 302 | 303 | 304 | 307 | 308} */ (status) }
+      : toPath;
     return acc;
   },
-  /** @type {Record<string, string | { destination: string; status: number }>} */ ({})
+  /** @type {Record<string, string | { destination: string; status: 300 | 301 | 302 | 303 | 304 | 307 | 308 }>} */ ({})
 );
 
 // https://astro.build/config
