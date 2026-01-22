@@ -31,7 +31,7 @@ export default function FilterableContent({
   const [searchText, setSearchText] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>(SORT_OPTIONS[0]);
   const [fieldFilters, setFieldFilters] = useState<Record<string, string[]>>(
-    fields.reduce((acc, field) => ({ ...acc, [field]: [] }), {})
+    Object.fromEntries(fields.map((field) => [field, []]))
   );
   const hasFiltersSet = useMemo(() => {
     return (
@@ -47,9 +47,13 @@ export default function FilterableContent({
     fields.forEach((field) => {
       const values = new Set<string>();
       items.forEach((item) => {
-        const value = item.post.data?.[field] || item.post[field];
+        const value =
+          (item.post.data as Record<string, unknown>)?.[field] ||
+          (item.post as Record<string, unknown>)[field];
         if (Array.isArray(value)) {
-          value.forEach((v) => values.add(String(v)));
+          value.forEach((v) => {
+            values.add(String(v));
+          });
         } else if (value) {
           values.add(String(value));
         }
@@ -60,8 +64,9 @@ export default function FilterableContent({
     return options;
   }, [items, fields]);
 
-  const handleFieldFilterChange = (field: string, value: string[]) => {
-    setFieldFilters((prev) => ({ ...prev, [field]: value }));
+  const handleFieldFilterChange = (field: string, value: string | string[]) => {
+    const normalizedValue = Array.isArray(value) ? value : [value];
+    setFieldFilters((prev) => ({ ...prev, [field]: normalizedValue }));
   };
 
   // Create Fuse instance with configured fields
@@ -75,7 +80,12 @@ export default function FilterableContent({
   }, [items]);
 
   const sortFunction = useMemo(() => {
-    const dateKey = type === 'blog' ? 'publishedDate' : 'year';
+    const getDateValue = (item: FilterableContentItem): number => {
+      if ('publishedDate' in item.post.data) {
+        return (item.post.data.publishedDate as Date).getTime();
+      }
+      return (item.post.data as { year: number }).year;
+    };
 
     if (sortBy === 'alphabetical') {
       return (a: FilterableContentItem, b: FilterableContentItem) => {
@@ -83,16 +93,12 @@ export default function FilterableContent({
         const titleB = b.post.data.title.toLowerCase();
         return titleA.localeCompare(titleB);
       };
-    } else if (sortBy === 'oldest') {
-      return (a: FilterableContentItem, b: FilterableContentItem) => {
-        return a.post.data[dateKey] - b.post.data[dateKey];
-      };
-    } else {
-      return (a: FilterableContentItem, b: FilterableContentItem) => {
-        return b.post.data[dateKey] - a.post.data[dateKey];
-      };
     }
-  }, [sortBy, type]);
+    const multiplier = sortBy === 'oldest' ? 1 : -1;
+    return (a: FilterableContentItem, b: FilterableContentItem) => {
+      return multiplier * (getDateValue(a) - getDateValue(b));
+    };
+  }, [sortBy]);
 
   // Filter items using Fuse.js for fuzzy search and field filters
   const filteredItems = useMemo(() => {
@@ -111,7 +117,9 @@ export default function FilterableContent({
           const filterValues = fieldFilters[field];
           if (!filterValues || filterValues.length === 0) return true;
 
-          const itemValue = item.post.data?.[field] || item.post[field];
+          const itemValue =
+            (item.post.data as Record<string, unknown>)?.[field] ||
+            (item.post as Record<string, unknown>)[field];
           if (Array.isArray(itemValue)) {
             // If item has array, check if any filter value is in the item's array
             return filterValues.some((filterVal) =>
