@@ -1,6 +1,18 @@
 # Measurement Lab Website
 
+![M-Lab Logo](src/assets/logo-short-blue.svg)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d1ac7ad2-4922-4de9-bcad-4d71368fdb49/deploy-status)](https://app.netlify.com/projects/mlab-dev/deploys)
+
 The official website for [Measurement Lab](https://measurementlab.net), an open-source project providing Internet performance measurement tools and data.
+
+## Screenshots
+
+![Homepage](src/assets/screenshots/homepage.png)
+
+![Tests Page](src/assets/screenshots/tests-page.png)
+
+![Blog Page](src/assets/screenshots/blog-page.png)
 
 ## Quick Start
 
@@ -41,17 +53,17 @@ src/
 
 All content lives in `src/content/` with type-safe schemas defined in `src/content/config.ts`.
 
-| Collection      | Format   | Purpose                                                  |
-| --------------- | -------- | -------------------------------------------------------- |
-| `pages/`        | YAML     | Static pages (about, contact, policies, etc.)            |
-| `blog/`         | Markdown | Blog posts with frontmatter                              |
-| `publications/` | JSON     | Research publications, papers, presentations             |
-| `people/`       | JSON     | Team member profiles                                     |
-| `partners/`     | JSON     | Partner organizations                                    |
-| `tests/`        | Markdown | M-Lab test documentation                                 |
-| `navigation/`   | JSON     | Menu structure (main.json, footer-1.json, footer-2.json) |
-| `site/`         | JSON     | Global site configuration (config.json, _redirects.json) |
-| `homepage/`     | YAML     | Homepage-specific content                                |
+| Collection      | Format   | Purpose                                                       |
+| --------------- | -------- | ------------------------------------------------------------- |
+| `pages/`        | YAML     | Static pages (about, contact, policies, etc.)                 |
+| `blog/`         | Markdown | Blog posts with frontmatter                                   |
+| `publications/` | JSON     | Research publications, papers, presentations                  |
+| `people/`       | JSON     | Team member profiles                                          |
+| `partners/`     | JSON     | Partner organizations                                         |
+| `tests/`        | Markdown | M-Lab test documentation                                      |
+| `navigation/`   | JSON     | Menu structure (main.json, footer-1.json, footer-2.json)      |
+| `site/`         | JSON     | Global site configuration (config.json, \_redirects.json)     |
+| `homepage/`     | YAML     | Homepage-specific content                                     |
 | `categories/`   | JSON     | Category definitions for blog, people, partners, publications |
 
 ## Page Sections
@@ -60,18 +72,18 @@ Pages use a flexible section-based system. Each page YAML file contains a `secti
 
 ### Available Section Types
 
-| Type               | Component               | Purpose                                          |
-| ------------------ | ----------------------- | ------------------------------------------------ |
-| `hero`             | HeroSection             | Page title with optional zigzag background       |
-| `richText`         | RichTextSection         | Markdown content with optional table of contents |
-| `button`           | ButtonSection           | Call-to-action buttons                           |
-| `card`             | CardSection             | Card grid layouts                                |
-| `people`           | PeopleSection           | Team member listings (filtered by category)      |
-| `partners`         | PartnersSection         | Partner organization display                     |
-| `blog_roll`        | BlogRollSection         | Latest blog posts (configurable limit)           |
-| `speed_test`       | SpeedTestSection        | M-Lab speed test widget                          |
-| `featured_partners`| FeaturedPartnersSection | Partner spotlight                                |
-| `flexi`            | FlexiSection            | Nested section container                         |
+| Type                | Component               | Purpose                                          |
+| ------------------- | ----------------------- | ------------------------------------------------ |
+| `hero`              | HeroSection             | Page title with optional zigzag background       |
+| `richText`          | RichTextSection         | Markdown content with optional table of contents |
+| `button`            | ButtonSection           | Call-to-action buttons                           |
+| `card`              | CardSection             | Card grid layouts                                |
+| `people`            | PeopleSection           | Team member listings (filtered by category)      |
+| `partners`          | PartnersSection         | Partner organization display                     |
+| `blog_roll`         | BlogRollSection         | Latest blog posts (configurable limit)           |
+| `speed_test`        | SpeedTestSection        | M-Lab speed test widget                          |
+| `featured_partners` | FeaturedPartnersSection | Partner spotlight                                |
+| `flexi`             | FlexiSection            | Nested section container                         |
 
 ### Section Backgrounds
 
@@ -79,8 +91,8 @@ All sections support a `background` property:
 
 ```yaml
 background:
-  color: white  # Options: white, gray, primary-light, primary-medium, primary-dark
-  image: /src/assets/my-image.jpg  # Optional background image
+  color: white # Options: white, gray, primary-light, primary-medium, primary-dark
+  image: /src/assets/my-image.jpg # Optional background image
 ```
 
 ### Zigzag Decorations
@@ -88,9 +100,10 @@ background:
 Hero sections support zigzag decorative backgrounds:
 
 ```yaml
-zigzag: primary-light  # Options: primary-light, primary-dark, secondary-light,
-                       # secondary-dark, supporting1-light, supporting1-dark,
-                       # supporting2-light, supporting2-dark
+zigzag:
+  primary-light # Options: primary-light, primary-dark, secondary-light,
+  # secondary-dark, supporting1-light, supporting1-dark,
+  # supporting2-light, supporting2-dark
 ```
 
 ## Navigation Structure
@@ -102,6 +115,7 @@ Navigation is defined in JSON files in `src/content/navigation/`:
 - **footer-2.json** - Second footer column
 
 Navigation items can be:
+
 - **Single links** - Direct link to a page or external URL
 - **Dropdowns** - Menu with multiple links
 
@@ -111,12 +125,12 @@ Links can reference internal pages by `pageRef` (using the page's permalink) or 
 
 Categories are defined in `src/content/categories/` and control filtering/grouping:
 
-| File | Used For | Values |
-|------|----------|--------|
-| `blog.json` | Blog post categories | Technology, Development, Design, Product, Business, Tutorial, News, Opinion |
-| `people.json` | Team member sections | Maintainers, Experiment Review Committee, Advisory Committee, M-Lab Founders |
-| `partners.json` | Partner groupings | Supporting Research Projects, Supporting Partners |
-| `publications.json` | Publication types | paper, regulatory-filing, presentation, documentation |
+| File                | Used For             | Values                                                                       |
+| ------------------- | -------------------- | ---------------------------------------------------------------------------- |
+| `blog.json`         | Blog post categories | Technology, Development, Design, Product, Business, Tutorial, News, Opinion  |
+| `people.json`       | Team member sections | Maintainers, Experiment Review Committee, Advisory Committee, M-Lab Founders |
+| `partners.json`     | Partner groupings    | Supporting Research Projects, Supporting Partners                            |
+| `publications.json` | Publication types    | paper, regulatory-filing, presentation, documentation                        |
 
 ## Deployment
 
@@ -141,6 +155,7 @@ CMS configuration is defined in `.pages.yml` at the project root.
 ### Direct File Editing
 
 You can also edit content files directly in the repository. This is useful for:
+
 - Bulk changes
 - Complex edits not supported by the CMS
 - Working offline
@@ -175,6 +190,7 @@ Your markdown content here...
 ```
 
 **Required fields:**
+
 - `permalink` - URL slug (no leading slash)
 - `title` - Post title
 - `authors` - Array of people IDs from `src/content/people/`
@@ -183,6 +199,7 @@ Your markdown content here...
 - `publishedDate` - Date in YYYY-MM-DD format
 
 **Optional fields:**
+
 - `excerpt` - Short description for previews
 - `categories` - Array from: Technology, Development, Design, Product, Business, Tutorial, News, Opinion
 - `heroImage` - Path to hero image
@@ -243,12 +260,14 @@ Create a new `.json` file in `src/content/people/`:
 ```
 
 **Required fields:**
+
 - `id` - Unique identifier (should match filename without extension)
 - `name` - Display name
 - `headshot` - Path to headshot image
 - `sections` - Array from: Maintainers, Experiment Review Committee, Advisory Committee, M-Lab Founders
 
 **Optional fields:**
+
 - `title` - Job title
 - `affiliation` - Organization name
 - `extraInfo` - Additional info
@@ -270,11 +289,13 @@ Create a new `.json` file in `src/content/partners/`:
 ```
 
 **Required fields:**
+
 - `id` - Unique identifier
 - `name` - Organization name
 - `category` - Either "Supporting Research Projects" or "Supporting Partners"
 
 **Optional fields:**
+
 - `url` - Partner website
 - `image` - Path to logo image
 - `affiliation` - Additional affiliation info
@@ -306,12 +327,14 @@ Create a new `.json` file in `src/content/publications/`:
 ```
 
 **Required fields:**
+
 - `id` - Unique identifier
 - `title` - Publication title
 - `year` - Publication year
 - `category` - One of: paper, regulatory-filing, presentation, documentation
 
 **Optional fields:**
+
 - `description` - Brief summary
 - `authors` - Citation string for all authors
 - `contributors` - Array of people IDs from `src/content/people/` (for M-Lab team members)
@@ -330,8 +353,8 @@ Create a new `.md` file in `src/content/tests/`:
 ```markdown
 ---
 permalink: /tests/my-test/
-title: "My Test"
-description: "Brief description of the test"
+title: 'My Test'
+description: 'Brief description of the test'
 status: current
 icon: /src/assets/images/tests/my-test.png
 order: 10
@@ -344,10 +367,12 @@ Full markdown documentation for the test...
 ```
 
 **Required fields:**
+
 - `permalink` - URL path (should start with `/tests/`)
 - `title` - Test name
 
 **Optional fields:**
+
 - `description` - Brief description
 - `status` - One of: current, retired, core-service, retired-core-service
 - `icon` - Path to icon image for tests index
