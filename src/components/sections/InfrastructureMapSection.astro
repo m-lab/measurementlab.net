@@ -89,18 +89,13 @@ const { title = 'Infrastructure Map' } = Astro.props;
 		mapboxgl.accessToken =
 			'pk.eyJ1IjoibS1sYWIiLCJhIjoiY2xsdmN2NXBuMTl1ZDNmcGh1ZmxmaGwzcSJ9.3xXvAS4T6tZoahEeevGa4A';
 
-		// Disable telemetry to avoid CORS issues with events.mapbox.com
-		// @ts-ignore - config exists but isn't in types
-		if (mapboxgl.config) {
-			// @ts-ignore
-			mapboxgl.config.EVENTS_URL = '';
-		}
-
 		const map = new mapboxgl.Map({
 			container: 'infrastructure-map',
 			style: 'mapbox://styles/mapbox/dark-v10',
 			center: [5, 17],
 			zoom: 1.2,
+			// Disable performance telemetry to reduce CORS issues with events.mapbox.com
+			performanceMetricsCollection: false,
 			collectResourceTiming: false,
 		});
 
