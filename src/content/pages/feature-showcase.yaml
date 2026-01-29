@@ -1,41 +1,38 @@
 title: Internet Quality Barometer (IQB)
 permalink: feature-showcase
 published: true
-description: >-
-  # What are the goals of IQB?
-
-
-  *   Shift the conversation around Internet Quality beyond “speed"
-      
-  *   Help decision-makers make sense of the data
-      
-  *   Use existing, openly available datasets as complementary sources
-      
-  *   Advocate for the collection of more nuanced metrics
-      
-
-  # Background & Motivation for IQB
-
-
-  *   Internet use cases are growing complex where traditional metrics like
-  “speed” fail to capture the full scope of quality.
-      
-  *   With various methods for measuring Internet quality are available, it is
-  unclear how to effectively integrate them with one another.
-      
-  *   While a single metric for optimization offers ‘accessibility’ and ‘data
-  application’ benefits, there is no consensus on what that metric should
-  encompass.
 sections:
   - type: richText
     background:
       color: white
       type: full
     withTOC: true
-    content: |-
-      # Rich Text
+    content: >-
+      # What are the goals of IQB?
 
-      This is some content, and this is an image:
+
+      *   Shift the conversation around Internet Quality beyond “speed"
+          
+      *   Help decision-makers make sense of the data
+          
+      *   Use existing, openly available datasets as complementary sources
+          
+      *   Advocate for the collection of more nuanced metrics
+          
+
+      # Background & Motivation for IQB
+
+
+      *   Internet use cases are growing complex where traditional metrics like
+      “speed” fail to capture the full scope of quality.
+          
+      *   With various methods for measuring Internet quality are available, it
+      is unclear how to effectively integrate them with one another.
+          
+      *   While a single metric for optimization offers ‘accessibility’ and
+      ‘data application’ benefits, there is no consensus on what that metric
+      should encompass.
+          
 
       ![image text](/src/assets/mlab-og.png)
   - type: button
