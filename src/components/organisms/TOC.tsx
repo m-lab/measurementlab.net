@@ -127,7 +127,7 @@ export default function TOC({ entries, id }: TOCProps) {
 
   return (
     <aside id={id} className="md:sticky md:top-25 md:self-start">
-      <nav className="text-sm">
+      <nav className="text-[12px]">
         <h2 className="mb-2 border-b border-neutral-200 text-lg font-bold">
           Table of Contents
         </h2>
