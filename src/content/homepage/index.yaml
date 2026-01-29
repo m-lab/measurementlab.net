@@ -27,6 +27,12 @@ sections:
     cards:
       card:
         title: What we do
+        content: Founded in 2009, Measurement Lab (M-Lab) is an open platform for
+          studying Internet performance and neutrality over time. We provide
+          public, transparent data to empower researchers, policymakers, and
+          open Internet advocates to make informed decisions about Internet
+          infrastructure and policies. M-Lab is a fiscally sponsored project of
+          the Code for Science & Society.
         button:
           variant: primary
           size: md
