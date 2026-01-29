@@ -36,14 +36,14 @@ sections:
         button:
           variant: primary
           size: md
-          text: XXX
-          href: XXXX
+          text: "Get Involved "
+          href: "/contribute "
     buttons:
       button:
         variant: primary
         size: md
-        text: ssss
-        href: sss
+        text: FAQ
+        href: /frequently-asked-questions
   - type: speed_test
     background:
       color: primary-dark
