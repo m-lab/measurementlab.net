@@ -5,6 +5,7 @@ import rehypeExtractToc, {
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
+import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
@@ -68,6 +69,7 @@ const processImageNodes = () => async (tree: any) => {
 const createMarkdownProcessor = (withTOC = false, id?: string) => {
   const processor = unified()
     .use(remarkParse)
+    .use(remarkGfm) // Adds support for tables, strikethrough, task lists, etc.
     .use(remarkRehype)
 
     .use(rehypeExternalLinks, {
