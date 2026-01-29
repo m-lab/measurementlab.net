@@ -73,38 +73,39 @@ const { title = 'Infrastructure Map' } = Astro.props;
 	rel="stylesheet"
 	href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
 />
+<script is:inline src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 
-<script>
-	// @ts-ignore - mapbox-gl types are available at runtime via @types/mapbox-gl
-	import mapboxgl from 'mapbox-gl';
-
-	function initMap() {
-		const container = document.getElementById('infrastructure-map');
+<script is:inline>
+	function initInfrastructureMap() {
+		var container = document.getElementById('infrastructure-map');
 		if (!container) return;
 
 		// Check if map is already initialized
 		if (container.dataset.mapInitialized === 'true') return;
 		container.dataset.mapInitialized = 'true';
 
+		// Wait for mapboxgl to be available
+		if (typeof mapboxgl === 'undefined') {
+			setTimeout(initInfrastructureMap, 100);
+			return;
+		}
+
 		mapboxgl.accessToken =
 			'pk.eyJ1IjoibS1sYWIiLCJhIjoiY2xsdmN2NXBuMTl1ZDNmcGh1ZmxmaGwzcSJ9.3xXvAS4T6tZoahEeevGa4A';
 
-		const map = new mapboxgl.Map({
+		var map = new mapboxgl.Map({
 			container: 'infrastructure-map',
 			style: 'mapbox://styles/mapbox/dark-v10',
 			center: [5, 17],
 			zoom: 1.2,
-			// Disable performance telemetry to reduce CORS issues with events.mapbox.com
-			performanceMetricsCollection: false,
-			collectResourceTiming: false,
 		});
 
-		const url =
+		var url =
 			'https://locate.measurementlab.net/v2/siteinfo/registrations?format=geo&exp=ndt';
 
-		map.on('load', () => {
-			const tenG = ['==', ['get', 'uplink'], '10g'];
-			const oneG = ['==', ['get', 'uplink'], '1g'];
+		map.on('load', function () {
+			var tenG = ['==', ['get', 'uplink'], '10g'];
+			var oneG = ['==', ['get', 'uplink'], '1g'];
 
 			map.addSource('mlab-sites', {
 				type: 'geojson',
@@ -172,66 +173,73 @@ const { title = 'Infrastructure Map' } = Astro.props;
 				},
 			});
 
-			const clusterPopup = new mapboxgl.Popup({
+			var clusterPopup = new mapboxgl.Popup({
 				className: 'cluster-popup',
 			});
 
-			const pointPopup = new mapboxgl.Popup({
+			var pointPopup = new mapboxgl.Popup({
 				className: 'point-popup',
 			});
 
-			map.on('click', 'clusters', (e: mapboxgl.MapLayerMouseEvent) => {
-				const features = map.queryRenderedFeatures(e.point, {
+			map.on('click', 'clusters', function (e) {
+				var features = map.queryRenderedFeatures(e.point, {
 					layers: ['clusters'],
 				});
-				const clusterId = features[0].properties?.cluster_id;
-				const pointCount = features[0].properties?.point_count;
-				const clusterSource = map.getSource(
-					'mlab-sites'
-				) as mapboxgl.GeoJSONSource;
+				var clusterId = features[0].properties.cluster_id;
+				var pointCount = features[0].properties.point_count;
+				var clusterSource = map.getSource('mlab-sites');
 
 				clusterSource.getClusterLeaves(
 					clusterId,
 					pointCount,
 					0,
-					(
-						err: Error | null,
-						aFeatures: mapboxgl.MapboxGeoJSONFeature[] | null
-					) => {
+					function (err, aFeatures) {
 						if (err || !aFeatures) return;
 
-						let desc = '';
-						for (let c = 0; c < aFeatures.length; c++) {
-							const props = aFeatures[c].properties;
+						var desc = '';
+						for (var c = 0; c < aFeatures.length; c++) {
+							var props = aFeatures[c].properties;
 							desc +=
-								`<div class='pod-popup'><h4>${props?.machine}</h4>` +
-								`Org: ${props?.org}<br>` +
-								`Type: ${props?.type}<br>` +
-								`Uplink: ${props?.uplink}</div>`;
+								"<div class='pod-popup'><h4>" +
+								props.machine +
+								'</h4>' +
+								'Org: ' +
+								props.org +
+								'<br>' +
+								'Type: ' +
+								props.type +
+								'<br>' +
+								'Uplink: ' +
+								props.uplink +
+								'</div>';
 						}
 
-						const coordinates = e.lngLat;
+						var coordinates = e.lngLat;
 						clusterPopup.setLngLat(coordinates).setHTML(desc).addTo(map);
 					}
 				);
 			});
 
-			map.on('click', 'unclustered-point', (e: mapboxgl.MapLayerMouseEvent) => {
+			map.on('click', 'unclustered-point', function (e) {
 				if (!e.features || e.features.length === 0) return;
 
-				const feature = e.features[0];
-				const geometry = feature.geometry as {
-					type: 'Point';
-					coordinates: number[];
-				};
-				const coordinates = geometry.coordinates.slice() as [number, number];
-				const props = feature.properties;
+				var feature = e.features[0];
+				var coordinates = feature.geometry.coordinates.slice();
+				var props = feature.properties;
 
-				const description =
-					`<div class='pod-popup'><h4>${props?.machine}</h4>` +
-					`Org: ${props?.org}<br>` +
-					`Type: ${props?.type}<br>` +
-					`Uplink: ${props?.uplink}</div>`;
+				var description =
+					"<div class='pod-popup'><h4>" +
+					props.machine +
+					'</h4>' +
+					'Org: ' +
+					props.org +
+					'<br>' +
+					'Type: ' +
+					props.type +
+					'<br>' +
+					'Uplink: ' +
+					props.uplink +
+					'</div>';
 
 				// Handle world wrapping
 				while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
@@ -242,19 +250,19 @@ const { title = 'Infrastructure Map' } = Astro.props;
 			});
 
 			// Cursor changes on hover
-			map.on('mouseenter', 'clusters', () => {
+			map.on('mouseenter', 'clusters', function () {
 				map.getCanvas().style.cursor = 'pointer';
 			});
 
-			map.on('mouseleave', 'clusters', () => {
+			map.on('mouseleave', 'clusters', function () {
 				map.getCanvas().style.cursor = '';
 			});
 
-			map.on('mouseenter', 'unclustered-point', () => {
+			map.on('mouseenter', 'unclustered-point', function () {
 				map.getCanvas().style.cursor = 'pointer';
 			});
 
-			map.on('mouseleave', 'unclustered-point', () => {
+			map.on('mouseleave', 'unclustered-point', function () {
 				map.getCanvas().style.cursor = '';
 			});
 		});
@@ -262,11 +270,11 @@ const { title = 'Infrastructure Map' } = Astro.props;
 
 	// Initialize on DOMContentLoaded
 	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', initMap);
+		document.addEventListener('DOMContentLoaded', initInfrastructureMap);
 	} else {
-		initMap();
+		initInfrastructureMap();
 	}
 
 	// Re-initialize on Astro page transitions
-	document.addEventListener('astro:page-load', initMap);
+	document.addEventListener('astro:page-load', initInfrastructureMap);
 </script>
