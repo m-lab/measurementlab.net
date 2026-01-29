@@ -68,9 +68,9 @@ sections:
 
 
       *   [Data Documentation](https://www.measurementlab.net/data/docs)
-          
+
       *   [Developer Guide](https://www.measurementlab.net/develop)
-          
+
 
       ### How can companies or other organizations get involved and support
       M-Lab?
@@ -83,17 +83,17 @@ sections:
 
       *   By providing hardware to grow the M-Lab platform, and donating the
       cost of network connectivity and hosting.
-          
+
       *   By contributing resources for data storage, aggregation, and
       publication.
-          
+
       *   By providing data analysis or by presenting data in graphic form.
-          
+
       *   By embedding an M-Lab client tool in an application or service,
       allowing M-Lab to reach more people and generate more data.
-          
+
       *   By providing direct financial support.
-          
+
 
       If you'd like to get involved as an M-Lab supporting partner,
       [contact](http://www.measurementlab.net/contact) the M-Lab team and join
@@ -344,14 +344,14 @@ sections:
 
       *   Try running the test again. Perhaps an unusual network issue caused
       the problem.
-          
+
       *   Try running the test from a different location. For example, if it
       failed at your home, does the test work at a coffee shop?
-          
+
       *   If the test doesn't start or never completes, is your connection
       behind a firewall? This may be the case at some workplaces where the
       network is actively managed.
-          
+
 
       If none of the above solves the issue you are experiencing, you can report
       a bug by emailing
@@ -363,13 +363,13 @@ sections:
 
 
       *   Your operating system
-          
+
       *   Your browser name and version
-          
+
       *   The name of the test that is not working
-          
+
       *   Any error messages you have received
-          
+
 
       M-Lab support will usually reply within five business days. You can also
       ask other M-Lab users about the issue you are reporting in the
@@ -393,10 +393,10 @@ sections:
 
       *   client: This is the software that runs on the user's machine and shows
       the user their speed results.
-          
+
       *   server: This is the computer on the Internet to which the client
       connects to complete the test.
-          
+
 
       A test generates data between the client and the server, and measures
       performance between these two points. The location of these two points is
@@ -495,32 +495,21 @@ sections:
       latency and topology of the path between the client and server; and,
       whether the application or protocol is manipulated or discriminated
       against in transit.
-          
+
       *   Connection Data: Information necessary to characterize performance
       data including the Internet Protocol (IP) address of the client that
       conducted the measurement and the date and time of the test.
-          
+
       *   Metadata: Descriptive information about the user's environment to
       support analysis of measurement data. Metadata varies by experiment and
       client but may include the name and version of the web browser software,
       software application, or operating system used to conduct the test.
-          
+
 
       Specific information on what type of data is collected by each M-Lab test
       and how it can be accessed is available on our [tests
       page](https://www.measurementlab.net/tests).
-  - type: partners
-    background:
-      color: white
-      type: full
-    title: Supporters
-    category: Supporting Partners
-  - type: richText
-    background:
-      color: white
-      type: full
-    withTOC: true
-    content: >-
+
       ### Who is collecting data? Where is it stored?
 
 
@@ -638,3 +627,9 @@ sections:
       [Privacy](https://www.measurementlab.net/privacy/) Policies. M-Lab lists
       known integrations of our tests on our [Data Tools
       page.](https://www.measurementlab.net/data/tools/)
+  - type: partners
+    background:
+      color: white
+      type: full
+    title: Supporters
+    category: Supporting Partners
