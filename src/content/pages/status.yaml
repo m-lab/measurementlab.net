@@ -5,7 +5,7 @@ sections:
   - type: richText
     background:
       color: white
-    withTOC: true
+    withTOC: false
     content: |
       # M-Lab Platform Status
 
@@ -15,11 +15,14 @@ sections:
 
       If you are a network provider interested in hosting an M-Lab measurement site, please [review our requirements](/contribute/#host-or-sponsor-an-m-lab-measurement-site) and fill out our [Infrastructure Contribution Form](https://docs.google.com/forms/d/e/1FAIpQLSe1wXKfQ0VIt_hZFatCwCaoOeeDpRv3JZDM_eAmIaksMuwB4g/viewform?usp=sf_link).
 
-      ## Infrastructure Map
-
+  - type: infrastructureMap
+  - type: richText
+    background:
+      color: white
+    withTOC: false
+    content: |
       The M-Lab infrastructure map displays basic information about platform servers around the world. Clusters of M-Lab servers are displayed as dark-blue and light-blue circles with a count of servers in the center. Clicking on a cluster will display a pop up with info about each server in the cluster. Single small dots show locations with only one server. Clicking on a single marker will display a pop up with info about that server. Double-click on the map to zoom in, or scroll in and out to zoom.
 
-      *Note: The interactive infrastructure map requires a custom component implementation.*
 
       ## M-Lab Locate Service
 

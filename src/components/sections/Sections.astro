@@ -5,6 +5,7 @@ import CardSection from '@components/sections/CardSection.astro';
 import FeaturedPartnersSection from '@components/sections/FeaturedPartnersSection.astro';
 import FlexiSection from '@components/sections/FlexiSection.astro';
 import HeroSection from '@components/sections/HeroSection.astro';
+import InfrastructureMapSection from '@components/sections/InfrastructureMapSection.astro';
 import PartnersSection from '@components/sections/PartnersSection.astro';
 import PeopleSection from '@components/sections/PeopleSection.astro';
 import RichTextSection from '@components/sections/RichTextSection.astro';
@@ -94,6 +95,8 @@ let richTextCounter = 0;
 							showMore={section.showMore}
 						/>
 					);
+				case 'infrastructureMap':
+					return <InfrastructureMapSection title={section.title} />;
 				default:
 					return null;
 			}

@@ -1,0 +1,269 @@
+---
+import Heading from '@components/atoms/Heading.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Infrastructure Map' } = Astro.props;
+---
+
+<div class="infrastructure-map-section">
+	{
+		title && (
+			<Heading level={2} class="mb-6 text-2xl font-bold">
+				{title}
+			</Heading>
+		)
+	}
+	<div id="infrastructure-map" class="h-125 w-full overflow-hidden rounded-lg">
+	</div>
+</div>
+
+<style>
+	/* Mapbox popup styles */
+	:global(#infrastructure-map .mapboxgl-popup-content) {
+		background: #1a1a2e;
+		color: #fff;
+		border-radius: 8px;
+		padding: 0;
+		max-height: 300px;
+		overflow-y: auto;
+	}
+
+	:global(.mapboxgl-popup-close-button) {
+		color: #fff;
+		font-size: 18px;
+		padding: 4px 8px;
+	}
+
+	:global(.mapboxgl-popup-close-button:hover) {
+		background: rgba(255, 255, 255, 0.1);
+	}
+
+	:global(.cluster-popup .mapboxgl-popup-content),
+	:global(.point-popup .mapboxgl-popup-content) {
+		min-width: 200px;
+	}
+
+	:global(.pod-popup) {
+		padding: 12px 16px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	:global(.pod-popup:last-child) {
+		border-bottom: none;
+	}
+
+	:global(.pod-popup h4) {
+		margin: 0 0 8px 0;
+		font-size: 14px;
+		font-weight: 600;
+		color: #deebf7;
+	}
+
+	:global(.pod-popup) {
+		font-size: 12px;
+		line-height: 1.5;
+		color: #ccc;
+	}
+</style>
+
+<link
+	rel="stylesheet"
+	href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
+/>
+
+<script>
+	// @ts-ignore - mapbox-gl types are available at runtime via @types/mapbox-gl
+	import mapboxgl from 'mapbox-gl';
+
+	function initMap() {
+		const container = document.getElementById('infrastructure-map');
+		if (!container) return;
+
+		// Check if map is already initialized
+		if (container.dataset.mapInitialized === 'true') return;
+		container.dataset.mapInitialized = 'true';
+
+		mapboxgl.accessToken =
+			'pk.eyJ1IjoibS1sYWIiLCJhIjoiY2xsdmN2NXBuMTl1ZDNmcGh1ZmxmaGwzcSJ9.3xXvAS4T6tZoahEeevGa4A';
+
+		const map = new mapboxgl.Map({
+			container: 'infrastructure-map',
+			style: 'mapbox://styles/mapbox/dark-v10',
+			center: [5, 17],
+			zoom: 1.2,
+		});
+
+		const url =
+			'https://locate.measurementlab.net/v2/siteinfo/registrations?format=geo&exp=ndt';
+
+		map.on('load', () => {
+			const tenG = ['==', ['get', 'uplink'], '10g'];
+			const oneG = ['==', ['get', 'uplink'], '1g'];
+
+			map.addSource('mlab-sites', {
+				type: 'geojson',
+				data: url,
+				cluster: true,
+				clusterRadius: 1,
+				clusterProperties: {
+					oneG: ['+', ['case', oneG, 1, 0]],
+					tenG: ['+', ['case', tenG, 1, 0]],
+				},
+			});
+
+			map.addLayer({
+				id: 'clusters',
+				type: 'circle',
+				source: 'mlab-sites',
+				filter: ['has', 'point_count'],
+				paint: {
+					'circle-radius': ['step', ['get', 'point_count'], 7, 3, 11, 6, 15],
+					'circle-color': [
+						'step',
+						['get', 'point_count'],
+						'#deebf7',
+						3,
+						'#9ecae1',
+						6,
+						'#3182bd',
+					],
+				},
+			});
+
+			map.addLayer({
+				id: 'cluster-count',
+				type: 'symbol',
+				source: 'mlab-sites',
+				filter: ['has', 'point_count'],
+				layout: {
+					'text-field': '{point_count_abbreviated}',
+					'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+					'text-size': 12,
+				},
+			});
+
+			map.addLayer({
+				id: 'unclustered-point',
+				type: 'circle',
+				source: 'mlab-sites',
+				filter: ['!', ['has', 'point_count']],
+				paint: {
+					'circle-radius': 7,
+					'circle-color': '#deebf7',
+					'circle-stroke-width': 0,
+				},
+			});
+
+			map.addLayer({
+				id: 'unclustered-count',
+				type: 'symbol',
+				source: 'mlab-sites',
+				filter: ['!', ['has', 'point_count']],
+				layout: {
+					'text-field': '1',
+					'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+					'text-size': 12,
+				},
+			});
+
+			const clusterPopup = new mapboxgl.Popup({
+				className: 'cluster-popup',
+			});
+
+			const pointPopup = new mapboxgl.Popup({
+				className: 'point-popup',
+			});
+
+			map.on('click', 'clusters', (e: mapboxgl.MapLayerMouseEvent) => {
+				const features = map.queryRenderedFeatures(e.point, {
+					layers: ['clusters'],
+				});
+				const clusterId = features[0].properties?.cluster_id;
+				const pointCount = features[0].properties?.point_count;
+				const clusterSource = map.getSource(
+					'mlab-sites'
+				) as mapboxgl.GeoJSONSource;
+
+				clusterSource.getClusterLeaves(
+					clusterId,
+					pointCount,
+					0,
+					(
+						err: Error | null,
+						aFeatures: mapboxgl.MapboxGeoJSONFeature[] | null
+					) => {
+						if (err || !aFeatures) return;
+
+						let desc = '';
+						for (let c = 0; c < aFeatures.length; c++) {
+							const props = aFeatures[c].properties;
+							desc +=
+								`<div class='pod-popup'><h4>${props?.machine}</h4>` +
+								`Org: ${props?.org}<br>` +
+								`Type: ${props?.type}<br>` +
+								`Uplink: ${props?.uplink}</div>`;
+						}
+
+						const coordinates = e.lngLat;
+						clusterPopup.setLngLat(coordinates).setHTML(desc).addTo(map);
+					}
+				);
+			});
+
+			map.on('click', 'unclustered-point', (e: mapboxgl.MapLayerMouseEvent) => {
+				if (!e.features || e.features.length === 0) return;
+
+				const feature = e.features[0];
+				const geometry = feature.geometry as {
+					type: 'Point';
+					coordinates: number[];
+				};
+				const coordinates = geometry.coordinates.slice() as [number, number];
+				const props = feature.properties;
+
+				const description =
+					`<div class='pod-popup'><h4>${props?.machine}</h4>` +
+					`Org: ${props?.org}<br>` +
+					`Type: ${props?.type}<br>` +
+					`Uplink: ${props?.uplink}</div>`;
+
+				// Handle world wrapping
+				while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+					coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+				}
+
+				pointPopup.setLngLat(coordinates).setHTML(description).addTo(map);
+			});
+
+			// Cursor changes on hover
+			map.on('mouseenter', 'clusters', () => {
+				map.getCanvas().style.cursor = 'pointer';
+			});
+
+			map.on('mouseleave', 'clusters', () => {
+				map.getCanvas().style.cursor = '';
+			});
+
+			map.on('mouseenter', 'unclustered-point', () => {
+				map.getCanvas().style.cursor = 'pointer';
+			});
+
+			map.on('mouseleave', 'unclustered-point', () => {
+				map.getCanvas().style.cursor = '';
+			});
+		});
+	}
+
+	// Initialize on DOMContentLoaded
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initMap);
+	} else {
+		initMap();
+	}
+
+	// Re-initialize on Astro page transitions
+	document.addEventListener('astro:page-load', initMap);
+</script>

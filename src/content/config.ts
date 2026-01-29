@@ -129,6 +129,11 @@ const createSchemas = (image: ImageFunction) => {
       limit: z.number().min(1).max(12).default(3),
       showMore: z.boolean().default(false),
     }),
+    // status map section for /status page
+    SectionCommonSchema.extend({
+      type: z.literal('infrastructureMap'),
+      title: z.string().default('Infrastructure Map'),
+    }),
   ]);
 
   const flexiSectionSchema = SectionCommonSchema.extend({
