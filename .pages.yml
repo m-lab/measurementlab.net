@@ -433,6 +433,18 @@ components:
         label: Description
         type: rich-text
 
+  infrastructure_map_section:
+    type: object
+    fields:
+      - name: background
+        label: Section Background
+        component: background_select
+      - name: title
+        label: Title
+        type: string
+        default: Infrastructure Map
+        description: Title displayed above the map
+
 ##########################
 # Content collections
 ##########################
@@ -577,6 +589,10 @@ content:
           - name: flexi
             label: Flexi Section
             component: flexi_section
+
+          - name: infrastructureMap
+            label: Infrastructure Map Section
+            component: infrastructure_map_section
 
   # People collection
   - name: people
