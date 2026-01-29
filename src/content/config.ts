@@ -162,6 +162,7 @@ const pagesCollection = defineCollection({
       description: z.string().optional(),
       heroImage: image().optional(),
       permalink: z.string(),
+      published: z.boolean().default(true),
       zigzag: z
         .enum([
           'primary-light',

@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 // Import landing page components
 import BlogLanding from '@components/landing/BlogLanding.astro';
 import PeopleLanding from '@components/landing/PeopleLanding.astro';
@@ -9,12 +8,14 @@ import HeroSection from '@components/sections/HeroSection.astro';
 import Sections from '@components/sections/Sections.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
+import { getPages } from '@utils/pages';
 
 import type { GetStaticPaths } from 'astro';
 
 // Generate static paths from pages collection
+// In production, only published pages are built
 export const getStaticPaths = (async () => {
-  const pages = await getCollection('pages');
+  const pages = await getPages();
   return pages.map((page) => ({
     params: { path: page.data.permalink },
     props: { page },

@@ -531,6 +531,12 @@ content:
           }
         required: true
 
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+        description: Whether this page is published and visible on the site
+
       - name: description
         label: Page Description
         type: rich-text

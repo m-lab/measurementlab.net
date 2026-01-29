@@ -1,5 +1,6 @@
 title: About
 permalink: about
+published: true
 sections:
   - type: richText
     background:
