@@ -509,8 +509,18 @@ sections:
       Specific information on what type of data is collected by each M-Lab test
       and how it can be accessed is available on our [tests
       page](https://www.measurementlab.net/tests).
-
-
+  - type: partners
+    background:
+      color: white
+      type: full
+    title: Supporters
+    category: Supporting Partners
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: true
+    content: >-
       ### Who is collecting data? Where is it stored?
 
 
@@ -628,9 +638,3 @@ sections:
       [Privacy](https://www.measurementlab.net/privacy/) Policies. M-Lab lists
       known integrations of our tests on our [Data Tools
       page.](https://www.measurementlab.net/data/tools/)
-  - type: partners
-    background:
-      color: white
-      type: full
-    title: Supporters
-    category: Supporting Partners
