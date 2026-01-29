@@ -1,14 +1,37 @@
-title: Feature Showcase Page
+title: Internet Quality Barometer (IQB)
 permalink: feature-showcase
 published: true
 description: >-
-  # Feature Showcase
+  # What are the goals of IQB?
 
 
-  Examples of sections, components, and features of the Draftlab Scaffold
-  template.
+  *   Shift the conversation around Internet Quality beyond “speed"
+      
+  *   Help decision-makers make sense of the data
+      
+  *   Use existing, openly available datasets as complementary sources
+      
+  *   Advocate for the collection of more nuanced metrics
+      
+
+  # Background & Motivation for IQB
+
+
+  *   Internet use cases are growing complex where traditional metrics like
+  “speed” fail to capture the full scope of quality.
+      
+  *   With various methods for measuring Internet quality are available, it is
+  unclear how to effectively integrate them with one another.
+      
+  *   While a single metric for optimization offers ‘accessibility’ and ‘data
+  application’ benefits, there is no consensus on what that metric should
+  encompass.
 sections:
   - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: true
     content: |-
       # Rich Text
 
@@ -16,57 +39,47 @@ sections:
 
       ![image text](/src/assets/mlab-og.png)
   - type: button
+    background:
+      color: white
+      type: full
     buttons:
-      - variant: primary
-        size: md
-        text: Button 1
-        href: google.com
-      - variant: secondary
-        size: md
-        text: Button 2
-        href: google.com
+      - button:
+          variant: primary
+          size: md
+          text: Read the Full Report
+          href: /iqb-full-report
+      - button:
+          variant: primary
+          size: md
+          text: "Check out the prototype "
+          href: /iqb-prototype
   - type: hero
     title: Hero
     subtitle: Hero primary - light
-    zigzag: primary-light
   - type: hero
     title: Hero
     subtitle: Hero primary - dark
-    zigzag: primary-dark
   - type: hero
     title: Hero
     subtitle: Hero secondary - light
-    zigzag: secondary-light
   - type: hero
     title: Hero
     subtitle: Hero secondary - dark
-    zigzag: secondary-dark
   - type: hero
     title: Hero
     subtitle: Hero supporting1 - light
-    zigzag: supporting1-light
   - type: hero
     title: Hero
     subtitle: Hero supporting1 - dark
-    zigzag: supporting1-dark
   - type: hero
     title: Hero
     subtitle: Hero supporting2 - light
-    zigzag: supporting2-light
   - type: hero
     title: Hero
     subtitle: Hero supporting2 - dark
-    zigzag: supporting2-dark
   - type: flexi
+    background:
+      color: white
+      type: full
     title: This is a Flexi Section!
     description: Weeeee
-    sections:
-      - type: richText
-        content: Some text!
-      - type: button
-        title: Buttons
-        buttons:
-          - variant: primary
-            size: md
-            text: Button 1
-            href: google.com
