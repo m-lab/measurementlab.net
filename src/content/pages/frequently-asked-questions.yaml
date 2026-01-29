@@ -628,3 +628,9 @@ sections:
       [Privacy](https://www.measurementlab.net/privacy/) Policies. M-Lab lists
       known integrations of our tests on our [Data Tools
       page.](https://www.measurementlab.net/data/tools/)
+  - type: partners
+    background:
+      color: white
+      type: full
+    title: Supporters
+    category: Supporting Partners
