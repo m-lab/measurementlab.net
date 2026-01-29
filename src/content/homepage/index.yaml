@@ -1,4 +1,5 @@
-title: Measure the Internet. Save the data. Make it universally accessible and helpful.
+title: Measure the Internet. Save the data. Make it universally accessible and
+  helpful.
 backgroundImage: /src/assets/Group 55-1.png
 stats:
   - label: Internet measurement tests
@@ -6,31 +7,43 @@ stats:
   - label: Tests per day
     value: 4 million
   - label: Data
-    value: xx TiB
+    value: "9 PB "
   - label: Servers
     value: 400+
 sections:
-  - type: blog_roll
-    background:
-      color: gray
-      type: full
-    title: Latest News
-    limit: 3
-    showMore: true
   - type: card
     background:
       color: white
       type: full
     title: What we do
-    description: M-Lab provides software integrations, dashboards, measurements,
-      data APIs, and more to assist in network measurements.
+    description: >-
+      Founded in 2009, Measurement Lab (M-Lab) is an open platform for studying
+      Internet performance and neutrality over time. We provide public,
+      transparent data to empower researchers, policymakers, and open Internet
+      advocates to make informed decisions about Internet infrastructure and
+      policies.  
+        
+      M-Lab is a fiscally sponsored project of the Code for Science & Society.
+    cards:
+      card:
+        title: What we do
+        button:
+          variant: primary
+          size: md
+          text: XXX
+          href: XXXX
+    buttons:
+      button:
+        variant: primary
+        size: md
+        text: ssss
+        href: sss
   - type: speed_test
     background:
       color: primary-dark
       type: full
     title: Run an NDT test
-    description:
-      Diagnose the performance of your broadband connection with M-Lab's
+    description: Diagnose the performance of your broadband connection with M-Lab's
       Network Diagnostics Test (NDT).
   - type: flexi
     background:
@@ -39,12 +52,6 @@ sections:
     title: Visualisations and more
     description: M-Lab provides software integrations, dashboards, measurements,
       data APIs, and more to assist in network measurements.
-    sections:
-      - type: richText
-        background:
-          color: white
-          type: full
-        content: '![](/src/assets/1.png)'
   - type: featured_partners
     background:
       color: white
