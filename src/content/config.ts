@@ -140,7 +140,7 @@ const createSchemas = (image: ImageFunction) => {
     type: z.literal('flexi'),
     title: z.string(),
     description: z.string().optional(),
-    sections: z.array(sectionsSchema),
+    sections: z.array(sectionsSchema).optional(),
   });
 
   const combinedSectionsSchema = z
