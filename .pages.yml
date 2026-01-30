@@ -320,12 +320,8 @@ components:
         required: false
       - name: buttons
         label: Buttons
-        type: object
+        component: button
         list: true
-        fields:
-          - name: button
-            label: Button
-            component: button
 
   card_section:
     type: object
@@ -342,20 +338,14 @@ components:
         type: rich-text
       - name: cards
         label: Cards
-        type: object
-        fields:
-          - name: card
-            label: Card
-            component: card
-            description: Grid of content cards
+        component: card
+        list: true
+        description: Grid of content cards
       - name: buttons
         label: Action Buttons
-        type: object
-        fields:
-          - name: button
-            label: Button
-            component: button
-            description: Buttons at the bottom of the section
+        component: button
+        list: true
+        description: Buttons at the bottom of the section
 
   flexi_section:
     type: object
@@ -371,12 +361,10 @@ components:
         label: Description
         type: rich-text
       - name: sections
-        type: object
-        fields:
-          - name: section
-            label: Section
-            component: section
-            description: Nested sections within this flexi section
+        label: Nested Sections
+        component: section
+        list: true
+        description: Nested sections within this flexi section
 
   people_section:
     type: object

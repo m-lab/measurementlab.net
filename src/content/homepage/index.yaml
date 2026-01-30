@@ -25,8 +25,7 @@ sections:
         
       M-Lab is a fiscally sponsored project of the Code for Science & Society.
     cards:
-      card:
-        title: What we do
+      - title: What we do
         content: Founded in 2009, Measurement Lab (M-Lab) is an open platform for
           studying Internet performance and neutrality over time. We provide
           public, transparent data to empower researchers, policymakers, and
@@ -39,8 +38,7 @@ sections:
           text: "Get Involved "
           href: "/contribute "
     buttons:
-      button:
-        variant: primary
+      - variant: primary
         size: md
         text: FAQ
         href: /frequently-asked-questions
@@ -58,6 +56,7 @@ sections:
     title: Visualisations and more
     description: M-Lab provides software integrations, dashboards, measurements,
       data APIs, and more to assist in network measurements.
+    sections: []
   - type: featured_partners
     background:
       color: white

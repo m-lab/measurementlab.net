@@ -40,16 +40,14 @@ sections:
       color: white
       type: full
     buttons:
-      - button:
-          variant: primary
-          size: md
-          text: Read the Full Report
-          href: /iqb-full-report
-      - button:
-          variant: primary
-          size: md
-          text: "Check out the prototype "
-          href: /iqb-prototype
+      - variant: primary
+        size: md
+        text: Read the Full Report
+        href: /iqb-full-report
+      - variant: primary
+        size: md
+        text: "Check out the prototype "
+        href: /iqb-prototype
   - type: hero
     title: Hero
     subtitle: Hero primary - light
@@ -80,3 +78,4 @@ sections:
       type: full
     title: This is a Flexi Section!
     description: Weeeee
+    sections: []
