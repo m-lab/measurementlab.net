@@ -511,7 +511,7 @@ content:
     format: yaml
     filename: '{fields.permalink}.yaml'
     view:
-      fields: [title, description]
+      fields: [title, description, published]
       primary: title
     fields:
       - name: title
