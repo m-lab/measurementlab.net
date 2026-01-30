@@ -883,7 +883,7 @@ content:
     label: Blog
     type: collection
     path: src/content/blog
-    filename: '{{fields.permalink}}.md'
+    filename: '{fields.permalink}.md'
     subfolders: false
     view:
       fields: [heroImage, title, publishedDate, published]
