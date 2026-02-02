@@ -35,7 +35,7 @@ sections:
         content: A large-scale Internet measurement data, consolidated into an open,
           accessible pipeline.
         button:
-          variant: primary
+          variant: secondary
           size: md
           text: Dive into the Data
           href: /data
@@ -43,7 +43,7 @@ sections:
         content: Provide technical advice, hold convenings, and bring together
           stakeholders to foster knowledge exchange and collaboration.
         button:
-          variant: secondary
+          variant: primary
           size: md
           text: Join the Community
           href: /community/
