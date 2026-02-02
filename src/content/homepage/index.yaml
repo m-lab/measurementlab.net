@@ -45,8 +45,8 @@ sections:
         button:
           variant: secondary
           size: md
-          text: test
-          href: /contact
+          text: Join the Community
+          href: /community/
     buttons:
       - variant: primary
         size: md
