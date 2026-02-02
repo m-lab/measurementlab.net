@@ -37,8 +37,8 @@ sections:
         button:
           variant: primary
           size: md
-          text: "Get Involved "
-          href: "/contribute "
+          text: Dive into the Data
+          href: /data
       - title: Community Engagement
         content: Provide technical advice, hold convenings, and bring together
           stakeholders to foster knowledge exchange and collaboration.
