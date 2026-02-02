@@ -13,7 +13,7 @@
         },
         {
           "type": "internal",
-          "label": "Programs",
+          "label": "Internet Quality Barometer ",
           "pageRef": "feature-showcase",
           "description": "lorem ipsum"
         },
@@ -24,7 +24,7 @@
         },
         {
           "type": "internal",
-          "label": "About link 4",
+          "label": "Publications",
           "pageRef": "publications"
         }
       ]
