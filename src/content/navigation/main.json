@@ -19,8 +19,8 @@
         },
         {
           "type": "external",
-          "label": "Policies",
-          "externalUrl": "https://example.com"
+          "label": "Run a Speedtest ",
+          "externalUrl": "https://speed.measurementlab.net/"
         },
         {
           "type": "internal",
