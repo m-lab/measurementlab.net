@@ -13,13 +13,13 @@
         },
         {
           "type": "internal",
-          "label": "Internet Quality Barometer ",
+          "label": "Programs",
           "pageRef": "feature-showcase",
           "description": "lorem ipsum"
         },
         {
           "type": "external",
-          "label": "About link 3",
+          "label": "Policies",
           "externalUrl": "https://example.com"
         },
         {
