@@ -39,8 +39,9 @@ sections:
           size: md
           text: "Get Involved "
           href: "/contribute "
-      - title: Third test card
-        content: This is test content
+      - title: Community Engagement
+        content: Provide technical advice, hold convenings, and bring together
+          stakeholders to foster knowledge exchange and collaboration.
         button:
           variant: secondary
           size: md
