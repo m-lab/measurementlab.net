@@ -900,8 +900,8 @@ content:
       - name: authors
         label: Authors
         type: reference
-        required: false
-        default: '[]'
+        required: true
+        default: []
         options:
           collection: people
           required: false
