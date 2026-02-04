@@ -30,30 +30,6 @@
       ]
     },
     {
-      "type": "single",
-      "link": {
-        "type": "internal",
-        "label": "Tests",
-        "pageRef": "tests"
-      }
-    },
-    {
-      "type": "single",
-      "link": {
-        "type": "internal",
-        "label": "Contribute",
-        "pageRef": "community"
-      }
-    },
-    {
-      "type": "single",
-      "link": {
-        "type": "internal",
-        "label": "Partner with us",
-        "pageRef": "partner"
-      }
-    },
-    {
       "type": "dropdown",
       "label": "Data",
       "links": [
@@ -78,6 +54,30 @@
           "pageRef": "data/tools"
         }
       ]
+    },
+    {
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "Tests",
+        "pageRef": "tests"
+      }
+    },
+    {
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "Contribute",
+        "pageRef": "community"
+      }
+    },
+    {
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "Partner with us",
+        "pageRef": "partner"
+      }
     }
   ]
 }
