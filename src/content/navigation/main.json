@@ -40,15 +40,6 @@
     {
       "type": "single",
       "link": {
-        "type": "external",
-        "label": "Learn",
-        "externalUrl": "https://example.com",
-        "description": "Lorem ipsum"
-      }
-    },
-    {
-      "type": "single",
-      "link": {
         "type": "internal",
         "label": "Contribute",
         "pageRef": "community"
@@ -61,6 +52,32 @@
         "label": "Partner with us",
         "pageRef": "partner"
       }
+    },
+    {
+      "type": "dropdown",
+      "label": "Data",
+      "links": [
+        {
+          "type": "internal",
+          "label": "Overview",
+          "pageRef": "data"
+        },
+        {
+          "type": "internal",
+          "label": "Docs",
+          "pageRef": "data/docs"
+        },
+        {
+          "type": "internal",
+          "label": "Platform Status",
+          "pageRef": "status"
+        },
+        {
+          "type": "internal",
+          "label": "Tools",
+          "pageRef": "data/tools"
+        }
+      ]
     }
   ]
 }
