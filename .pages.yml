@@ -901,7 +901,7 @@ content:
         label: Authors
         type: reference
         required: false
-        default: []
+        default: '[]'
         options:
           collection: people
           required: false
