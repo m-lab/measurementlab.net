@@ -907,6 +907,7 @@ content:
           multiple: true
           value: '{id}'
           label: '{fields.name}'
+          default: []
 
       - name: externalAuthors
         label: External Authors
