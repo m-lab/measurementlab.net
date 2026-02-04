@@ -208,10 +208,12 @@ const blogCollection = defineCollection({
       permalink: z.string(),
       title: z.string(),
       excerpt: z.string().optional(),
-      authors: z.array(z.string()), // References to people collection IDs
+      authors: z.array(z.string()).optional(), // References to people collection IDs
       externalAuthors: z.string().optional(), // Comma-separated external author names
       published: z.enum(['draft', 'published']),
-      categories: z.array(z.enum(blogCategories.categories as [string, ...string[]])),
+      categories: z.array(
+        z.enum(blogCategories.categories as [string, ...string[]])
+      ),
       publishedDate: z.date(),
       heroImage: image().optional(),
       relatedPosts: z.array(z.string()).max(3).optional(), // Array of blog post permalinks (max 3)
