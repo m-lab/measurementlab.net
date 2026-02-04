@@ -74,7 +74,7 @@ sections:
     subtitle: Hero supporting2 - dark
   - type: flexi
     background:
-      color: white
+      color: primary-dark
       type: full
     title: This is a Flexi Section!
     description: Weeeee
