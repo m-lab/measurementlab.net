@@ -903,6 +903,7 @@ content:
         required: false
         options:
           collection: people
+          required: false
           multiple: true
           value: '{id}'
           label: '{fields.name}'
