@@ -8,17 +8,15 @@ excerpt: 'Internet paths are often asymmetric: packets from A to B usually take
 authors: []
 externalAuthors: "Loqman Salamatian"
 published: published
-tags:
-  - data
-  - community
-  - research
-  - bigquery
-  - traceroute
+categories:
+  - Data
+  - Community
+  - Research
+  - Bigquery
+  - Traceroute
 publishedDate: 2025-11-13
 relatedPosts:
   - mlab-ripe
-categories:
-  - Tutorial
 heroImage: ../../assets/backgrounds/anna-magenta-YELG0ZVK5yw-unsplash.jpg
 ---
 

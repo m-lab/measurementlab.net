@@ -9,6 +9,7 @@ import ChevronDownIcon from '~icons/heroicons/chevron-down-20-solid';
 
 const FIELD_LABELS: Record<string, { singular: string; plural: string }> = {
   category: { singular: 'Category', plural: 'Categories' },
+  categories: { singular: 'Category', plural: 'Categories' },
   tags: { singular: 'Tag', plural: 'Tags' },
   year: { singular: 'Year', plural: 'Years' },
 };

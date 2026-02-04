@@ -6,12 +6,10 @@ authors:
   - lai-yi-ohlsen
   - cristina-leon
 published: published
-tags:
-  - event
-  - data
-  - hackathon
 categories:
-  - News
+  - Event
+  - Data
+  - Hackathon
 publishedDate: 2022-11-02
 ---
 

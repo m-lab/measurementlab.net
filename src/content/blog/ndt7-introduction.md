@@ -12,16 +12,14 @@ authors:
   - matt-mathis
 externalAuthors: "Stephen Soltesz, Simone Basso"
 published: published
-tags:
-  - ndt
-  - ndt7
-  - research
-  - bbr
-  - tcp-info
-  - platform
-  - kernel
 categories:
-  - News
+  - NDT
+  - NDT7
+  - Research
+  - BBR
+  - TCP_INFO
+  - Platform
+  - Kernel
 publishedDate: 2020-07-22
 ---
 

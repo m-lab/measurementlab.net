@@ -9,13 +9,11 @@ excerpt: >-
 authors: []
 externalAuthors: "Michael Lynch"
 published: published
-tags:
-  - bigquery
-  - gcs
-  - performance
-  - data
 categories:
-  - Technology
+  - Bigquery
+  - GCS
+  - Performance
+  - Data
 publishedDate: 2016-03-17
 ---
 

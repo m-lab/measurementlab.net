@@ -11,17 +11,15 @@ excerpt: >-
 authors: []
 externalAuthors: "Collin Anderson"
 published: published
-tags:
-  - consumer-internet
-  - data-analysis
-  - interconnection
-  - observatory
-  - open-source
-  - research
-  - transparency
-  - visualization
 categories:
-  - News
+  - Consumer Internet
+  - Data Analysis
+  - Interconnection
+  - Observatory
+  - Open Source
+  - Research
+  - Transparency
+  - Visualization
 publishedDate: 2015-06-24
 ---
 

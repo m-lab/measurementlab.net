@@ -8,11 +8,9 @@ authors:
   - lai-yi-ohlsen
 externalAuthors: "Katherine Townsend"
 published: published
-tags:
-  - leadership
-  - announcement
 categories:
-  - News
+  - Leadership
+  - Announcement
 publishedDate: 2023-01-17
 ---
 Measurement Lab is pleased to announce the addition of Katherine Townsend to our team as our new Director.

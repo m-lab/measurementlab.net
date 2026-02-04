@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - paris-traceroute
-  - bug
-  - platform
 categories:
-  - News
+  - Paris Traceroute
+  - Bug
+  - Platform
 publishedDate: 2018-11-12
 ---
 

@@ -11,11 +11,9 @@ excerpt: >-
 authors:
   - meredith-whittaker
 published: published
-tags:
-  - data-analysis
-  - ripe
 categories:
-  - Technology
+  - Data Analysis
+  - RIPE
 publishedDate: 2013-11-27
 ---
 Typhoon Haiyan was a tragedy, and its human and ecological impact rightly deserve the bulk of our attention and concern.

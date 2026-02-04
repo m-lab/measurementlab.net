@@ -10,12 +10,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - bug
-  - upgrades
-  - developer
 categories:
-  - News
+  - Bug
+  - Upgrades
+  - Developer
 publishedDate: 2020-04-22
 ---
 A bug fix was recently deployed to M-Lab's NDT JavaScript client code resolving user support reports of consistently higher than expected upload measurements reported in the browser for tests run via speed.measurementlab.net. M-Lab recommends that any third parties who integrate the NDT test in JavaScript to check and/or update their client code if their integration is based on M-Lab's JavaScript test in the [speed.measurementlab.net codebase](https://github.com/m-lab/mlab-speedtest).

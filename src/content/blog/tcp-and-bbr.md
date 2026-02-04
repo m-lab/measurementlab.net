@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - georgia-bullen
 published: published
-tags:
-  - tcp
-  - bbr
-  - traffic-congestion
 categories:
-  - Technology
+  - TCP
+  - BBR
+  - Traffic Congestion
 publishedDate: 2016-11-30
 ---
 

@@ -6,8 +6,10 @@ authors:
   - melissa-newcomb
   - pavlos-sermpezis
 published: published
-tags:
-  - "research, community, publications "
+categories:
+  - Research
+  - Community
+  - Publications
 publishedDate: 2026-01-29
 relatedPosts:
   - iqb

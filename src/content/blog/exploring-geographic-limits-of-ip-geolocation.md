@@ -9,13 +9,11 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - ndt
-  - bigquery
-  - data
-  - gis
 categories:
-  - Technology
+  - NDT
+  - Bigquery
+  - Data
+  - GIS
 publishedDate: 2020-09-18
 ---
 

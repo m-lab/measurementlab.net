@@ -9,10 +9,8 @@ excerpt: >-
 authors: []
 externalAuthors: "Simone Basso"
 published: published
-tags:
-  - neubot
 categories:
-  - Technology
+  - Neubot
 publishedDate: 2019-01-11
 ---
 [Neubot](https://www.neubot.org/) hasn’t been updated [in a while](https://github.com/neubot/neubot/releases), but, we decided to keep it available [because there were still many active users](http://streaming.polito.it/neubot/). Now the time has come to say goodbye to the Neubot client, because too much time has passed since the latest release. **We recommend all users to remove Neubot from their computers**, as explained below. If you are interested in running similar tests, you should check out the project I am now working on, called [OONI Probe](https://ooni.torproject.org/).

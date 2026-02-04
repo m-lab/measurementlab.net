@@ -9,10 +9,8 @@ excerpt: >-
 authors:
   - nathan-kinkade
 published: published
-tags:
-  - platform
 categories:
-  - News
+  - Platform
 publishedDate: 2020-05-07
 ---
 If you have integrated NDT into a client that does not use our Locate Service, please be aware of the following change. If your NDT client uses our Locate Service, you should not notice a change.

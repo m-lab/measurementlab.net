@@ -9,15 +9,13 @@ excerpt: >-
 authors: []
 externalAuthors: "Collin Anderson"
 published: published
-tags:
-  - interconnection
-  - research
-  - observatory
-  - data
-  - data-analysis
-  - research
 categories:
-  - Development
+  - Interconnection
+  - Research
+  - Observatory
+  - Data
+  - Data Analysis
+  - Research
 publishedDate: 2017-08-09
 ---
 

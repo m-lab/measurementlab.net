@@ -10,12 +10,10 @@ authors:
   - georgia-bullen
   - chris-ritzo
 published: published
-tags:
-  - data
-  - data-analysis
-  - visualization
 categories:
-  - News
+  - Data
+  - Data Analysis
+  - Visualization
 publishedDate: 2019-04-01
 ---
 

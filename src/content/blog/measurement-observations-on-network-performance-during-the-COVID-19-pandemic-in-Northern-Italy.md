@@ -14,13 +14,11 @@ authors:
   - chris-ritzo
 externalAuthors: "Simone Basso, Maria Xynou"
 published: published
-tags:
-  - data
-  - bigquery
-  - research
-  - covid19
 categories:
-  - Development
+  - Data
+  - Bigquery
+  - Research
+  - Covid19
 publishedDate: 2020-07-17
 ---
 

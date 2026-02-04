@@ -9,12 +9,10 @@ excerpt: >-
 authors: []
 externalAuthors: "Ross Schulman, Simone Basso"
 published: published
-tags:
-  - data
-  - open-source
-  - research
 categories:
-  - Development
+  - Data
+  - Open Source
+  - Research
 publishedDate: 2018-04-05
 ---
 The Measurement Lab team has always tried to make it as easy as possible to run network measurements. Currently, most users run tests either directly from [the M-Lab website](https://www.measurementlab.net/tests/), or through a 3rd party integration. Over the years, many users have requested the ability to run tests on a regular basis, e.g. daily or weekly to collect data over time. Today, we’re releasing a tool that will help you do just that.

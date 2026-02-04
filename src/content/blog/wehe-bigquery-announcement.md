@@ -8,12 +8,10 @@ authors:
   - lai-yi-ohlsen
 externalAuthors: "Dave Choffnes, Phillipa Gill, Zeinab Shmeis, Katherine Townsend"
 published: published
-tags:
-  - wehe
-  - data
-  - bigquery
 categories:
-  - Development
+  - Wehe
+  - Data
+  - Bigquery
 publishedDate: 2023-09-28
 ---
 M-Lab and the Wehe team are pleased to announce that Wehe data is available for open access in BigQuery. 

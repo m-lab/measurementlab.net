@@ -11,13 +11,11 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - ndt
-  - research
-  - bigquery
-  - data
 categories:
-  - Technology
+  - NDT
+  - Research
+  - Bigquery
+  - Data
 publishedDate: 2022-02-09
 ---
 A while back, our team [published some analysis recommendations]({{ site.baseurl

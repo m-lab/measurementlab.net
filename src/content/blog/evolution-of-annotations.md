@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - research
-  - data
-  - pipeline
 categories:
-  - Development
+  - Research
+  - Data
+  - Pipeline
 publishedDate: 2021-03-09
 ---
 

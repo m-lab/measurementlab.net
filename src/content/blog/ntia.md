@@ -11,11 +11,9 @@ authors:
   - lai-yi-ohlsen
   - chris-ritzo
 published: published
-tags:
-  - ndt
-  - digital-inclusion
 categories:
-  - Technology
+  - NDT
+  - Digital Inclusion
 publishedDate: 2021-07-15
 ---
 

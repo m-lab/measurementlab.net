@@ -9,11 +9,9 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - covid19
-  - community
 categories:
-  - Opinion
+  - Covid19
+  - Community
 publishedDate: 2020-04-03
 ---
 

@@ -9,11 +9,9 @@ authors:
   - lai-yi-ohlsen
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - ndt
-  - ndt7
 categories:
-  - Technology
+  - NDT
+  - NDT7
 publishedDate: 2020-08-27
 ---
 

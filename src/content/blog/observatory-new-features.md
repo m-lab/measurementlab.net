@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - observatory
-  - features
-  - visualization
 categories:
-  - News
+  - Observatory
+  - Features
+  - Visualization
 publishedDate: 2014-11-03
 ---
 

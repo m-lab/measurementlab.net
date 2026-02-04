@@ -12,14 +12,12 @@ authors:
   - matt-mathis
 externalAuthors: "Greg Russell, Stephen Soltesz"
 published: published
-tags:
-  - ndt
-  - ndt7
-  - research
-  - bbr
-  - tcp-info
 categories:
-  - Technology
+  - NDT
+  - NDT7
+  - Research
+  - BBR
+  - TCP_INFO
 publishedDate: 2020-07-24
 ---
 

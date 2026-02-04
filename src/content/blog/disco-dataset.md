@@ -9,16 +9,14 @@ excerpt: >-
 authors: []
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - data
-  - data-analysis
-  - bigquery
-  - research
-  - microbursts
-  - switch-discard
-  - performance
 categories:
-  - News
+  - Data
+  - Data Analysis
+  - Bigquery
+  - Research
+  - Microbursts
+  - Switch Discard
+  - Performance
 publishedDate: 2018-07-20
 ---
 

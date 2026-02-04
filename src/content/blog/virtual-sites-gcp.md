@@ -9,12 +9,10 @@ authors:
   - nathan-kinkade
 externalAuthors: "Phillipa Gill"
 published: published
-tags:
-  - platform
-  - cloud
-  - announcement
 categories:
-  - News
+  - Platform
+  - Cloud
+  - Announcement
 publishedDate: 2023-04-24
 ---
 

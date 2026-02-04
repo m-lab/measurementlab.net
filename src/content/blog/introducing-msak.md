@@ -9,11 +9,9 @@ excerpt: >-
 authors:
   - roberto-dauria
 published: published
-tags:
-  - platform
-  - announcement
 categories:
-  - News
+  - Platform
+  - Announcement
 publishedDate: 2023-07-26
 ---
 Since its inception, M-Lab's flagship **bulk transport capacity** (BTC) measurement protocol, NDT, has always been using a single TCP stream. While this allowed us to get detailed diagnostic data about the user's connection, over time many have expressed concerns about the ability of the single-stream approach to also effectively fill the link and double as a measurement of **link capacity**. 

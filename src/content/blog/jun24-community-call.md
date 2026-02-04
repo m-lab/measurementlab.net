@@ -8,12 +8,10 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - community
-  - traceroute
-  - research
 categories:
-  - Technology
+  - Community
+  - Traceroute
+  - Research
 publishedDate: 2024-06-05
 ---
 Join our monthly community call on June 6, 2024 at 11am ET to discuss [Dioptra’s](https://dioptra.io/) recent work on fast-mda-traceroute and considerations that have gone into its design and testing.

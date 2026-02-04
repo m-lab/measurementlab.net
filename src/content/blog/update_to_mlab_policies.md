@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - policies
-  - gdpr
-  - privacy
 categories:
-  - News
+  - Policies
+  - GDPR
+  - Privacy
 publishedDate: 2019-07-19
 ---
 

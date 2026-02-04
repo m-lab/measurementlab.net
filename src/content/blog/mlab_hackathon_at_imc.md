@@ -7,14 +7,12 @@ excerpt: >-
 authors:
   - cristina-leon
 published: published
-tags:
-  - ndt
-  - bigquery
-  - data
-  - event
-  - research
 categories:
-  - News
+  - NDT
+  - Bigquery
+  - Data
+  - Event
+  - Research
 publishedDate: 2022-08-31
 ---
 Come analyze Internet performance data with M-Lab at [ACM Internet Measurement Conference 2022](https://conferences.sigcomm.org/imc/2022/)!

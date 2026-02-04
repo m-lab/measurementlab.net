@@ -10,12 +10,10 @@ authors:
   - lai-yi-ohlsen
 externalAuthors: "Greg Russell, Stephen Soltesz"
 published: published
-tags:
-  - research
-  - policy
-  - advocacy
 categories:
-  - Opinion
+  - Research
+  - Policy
+  - Advocacy
 publishedDate: 2021-02-17
 ---
 

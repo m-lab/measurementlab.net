@@ -9,14 +9,12 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - ndt
-  - research
-  - bigquery
-  - data
-  - tutorial
 categories:
-  - Technology
+  - NDT
+  - Research
+  - Bigquery
+  - Data
+  - Tutorial
 publishedDate: 2022-02-14
 ---
 In this second “analysis recommendations in context” post, we will explore the

@@ -8,15 +8,13 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - partnership
-  - data
-  - bigquery
-  - aim
-  - cloudflare
-  - announcement
 categories:
-  - News
+  - Partnership
+  - Data
+  - Bigquery
+  - Aim
+  - Cloudflare
+  - Announcement
 publishedDate: 2023-04-18
 ---
 

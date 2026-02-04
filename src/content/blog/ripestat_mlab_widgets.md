@@ -9,12 +9,10 @@ excerpt: >-
 authors: []
 externalAuthors: "Tiziana Refice, Vasco Asturiano, Robert Kisteleki"
 published: published
-tags:
-  - visualization
-  - data-analysis
-  - ripe
 categories:
-  - News
+  - Visualization
+  - Data Analysis
+  - RIPE
 publishedDate: 2013-09-30
 ---
 

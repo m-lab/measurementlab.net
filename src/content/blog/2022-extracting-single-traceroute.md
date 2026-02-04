@@ -8,12 +8,10 @@ excerpt: >-
 authors: []
 externalAuthors: "Saied Kazemi"
 published: published
-tags:
-  - traceroute
-  - research
-  - data
 categories:
-  - Technology
+  - Traceroute
+  - Research
+  - Data
 publishedDate: 2022-07-22
 ---
 In response to community feedback, we've developed a proof of concept tool that examines and extracts single-paths <code>scamper</code>‘s MDA traceroutes. 

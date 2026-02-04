@@ -7,13 +7,11 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - research
-  - data
-  - pipeline
-  - annotations
 categories:
-  - News
+  - Research
+  - Data
+  - Pipeline
+  - Annotations
 publishedDate: 2022-03-24
 ---
 

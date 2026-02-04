@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - platform
-  - open-source
-  - community
 categories:
-  - News
+  - Platform
+  - Open Source
+  - Community
 publishedDate: 2020-04-08
 ---
 

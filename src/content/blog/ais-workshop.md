@@ -11,12 +11,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - data
-  - data-analysis
-  - community
 categories:
-  - Development
+  - Data
+  - Data Analysis
+  - Community
 publishedDate: 2019-07-01
 ---
 

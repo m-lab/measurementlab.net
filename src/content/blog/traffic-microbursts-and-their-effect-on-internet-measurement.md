@@ -10,14 +10,12 @@ excerpt: >-
 authors: []
 externalAuthors: "Collin Anderson"
 published: published
-tags:
-  - microbursts
-  - switch-discard
-  - performance
-  - data
-  - platform
 categories:
-  - Technology
+  - Microbursts
+  - Switch Discard
+  - Performance
+  - Data
+  - Platform
 publishedDate: 2016-05-25
 ---
 

@@ -7,13 +7,11 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - community
-  - data
-  - learning
-  - analysis
 categories:
-  - Development
+  - Community
+  - Data
+  - Learning
+  - Analysis
 publishedDate: 2023-07-20
 ---
 Join us for M-Lab's next Community Office Hours on July 20, 2023 at 11:00am EDT! 

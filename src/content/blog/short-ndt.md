@@ -11,11 +11,9 @@ authors:
   - cristina-leon
 externalAuthors: "Phillipa Gill, Katherine Townsend"
 published: published
-tags:
-  - ndt
-  - data
 categories:
-  - News
+  - NDT
+  - Data
 publishedDate: 2023-06-26
 ---
 

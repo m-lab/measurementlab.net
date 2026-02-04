@@ -7,12 +7,10 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - community
-  - privacy
-  - research
 categories:
-  - Opinion
+  - Community
+  - Privacy
+  - Research
 publishedDate: 2022-02-28
 ---
 Presentation on the benefits and challenges of M-Lab’s collection of IP addresses and feedback solicitation for potential alternatives 

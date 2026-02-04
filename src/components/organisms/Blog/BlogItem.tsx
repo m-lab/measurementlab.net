@@ -51,11 +51,11 @@ export default function BlogItem({ item }: BlogItemProps) {
             </div>
           )}
 
-          {/* Tags */}
+          {/* Categories */}
           <div className="mb-3 flex flex-wrap gap-2">
-            {post.data.tags.slice(0, 3).map((tag) => (
-              <Tag variant="primary" key={tag}>
-                {tag}
+            {post.data.categories.slice(0, 3).map((category) => (
+              <Tag variant="primary" key={category}>
+                {category}
               </Tag>
             ))}
           </div>

@@ -8,12 +8,10 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - community
-  - internet-quality
-  - research
 categories:
-  - Opinion
+  - Community
+  - Internet Quality
+  - Research
 publishedDate: 2024-03-26
 ---
 Interested in metrics that measure an Internet connection's quality from the end user perspective? Join us at our April M-Lab Community Call on April 4, 2042 at 11am EDT. 

@@ -8,11 +8,9 @@ excerpt: >-
 authors: []
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - platform
-  - community
 categories:
-  - Development
+  - Platform
+  - Community
 publishedDate: 2020-01-27
 ---
 

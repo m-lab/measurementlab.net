@@ -8,12 +8,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - bigquery
-  - performance
-  - data
 categories:
-  - News
+  - Bigquery
+  - Performance
+  - Data
 publishedDate: 2016-01-19
 ---
 

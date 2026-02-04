@@ -9,12 +9,10 @@ excerpt: >-
 authors: []
 externalAuthors: "Ya Chang"
 published: published
-tags:
-  - data
-  - paris-traceroute
-  - community
 categories:
-  - News
+  - Data
+  - Paris Traceroute
+  - Community
 publishedDate: 2019-08-01
 ---
 

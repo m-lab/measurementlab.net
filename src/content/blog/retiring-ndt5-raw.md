@@ -8,13 +8,11 @@ excerpt: >-
 authors: []
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - platform
-  - ndt
-  - ndt5
-  - announcement
 categories:
-  - News
+  - Platform
+  - NDT
+  - Ndt5
+  - Announcement
 publishedDate: 2023-05-08
 ---
 

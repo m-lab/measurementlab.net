@@ -9,10 +9,8 @@ excerpt: >-
 authors: []
 externalAuthors: "Saied Kazemi"
 published: published
-tags:
-  - traceroute
 categories:
-  - Technology
+  - Traceroute
 publishedDate: 2022-02-02
 ---
 Two recent disucssions on Traceroute on our [M-Lab Discuss

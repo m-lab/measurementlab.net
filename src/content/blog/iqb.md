@@ -9,11 +9,9 @@ authors:
   - melissa-newcomb
   - lai-yi-ohlsen
 published: published
-tags:
-  - publication
-  - announcement
 categories:
-  - News
+  - Publication
+  - Announcement
 publishedDate: 2025-06-30
 ---
 

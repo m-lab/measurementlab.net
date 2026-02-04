@@ -11,11 +11,9 @@ authors:
   - lai-yi-ohlsen
 externalAuthors: "Phillipa Gill"
 published: published
-tags:
-  - research
-  - fellowship
 categories:
-  - Opinion
+  - Research
+  - Fellowship
 publishedDate: 2021-11-04
 ---
 How can M-Lab’s data and platform be used to improve the experience of the

@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - covid19
-  - community
-  - data
 categories:
-  - Development
+  - Covid19
+  - Community
+  - Data
 publishedDate: 2020-05-20
 ---
 

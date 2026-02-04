@@ -7,11 +7,9 @@ excerpt: >-
 authors: []
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - ndt
-  - ndt7
 categories:
-  - Technology
+  - NDT
+  - NDT7
 publishedDate: 2021-02-12
 ---
 

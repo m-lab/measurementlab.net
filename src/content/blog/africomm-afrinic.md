@@ -9,15 +9,13 @@ excerpt: >-
 authors: []
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - event
-  - community
-  - bigquery
-  - research
-  - data
-  - paris-traceroute
 categories:
-  - News
+  - Event
+  - Community
+  - Bigquery
+  - Research
+  - Data
+  - Paris Traceroute
 publishedDate: 2019-03-01
 ---
 

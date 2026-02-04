@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - data
-  - ndt
-  - schema
 categories:
-  - News
+  - Data
+  - NDT
+  - Schema
 publishedDate: 2019-12-13
 ---
 

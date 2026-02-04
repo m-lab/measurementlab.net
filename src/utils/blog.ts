@@ -172,7 +172,7 @@ export async function getRelatedPosts(
 
   // Fill remaining slots with tag-based recommendations
   if (relatedPosts.length < limit) {
-    const currentTags = new Set(currentPost.data.tags);
+    const currentCategories = new Set(currentPost.data.categories);
     const manuallySelectedPermalinks = new Set(
       relatedPosts.map((p) => p.data.permalink)
     );
@@ -185,20 +185,20 @@ export async function getRelatedPosts(
             !manuallySelectedPermalinks.has(p.data.permalink)
         )
         .map(async (p) => {
-          const matchingTags = p.data.tags.filter((tag) =>
-            currentTags.has(tag)
+          const matchingCategories = p.data.categories.filter((cat) =>
+            currentCategories.has(cat)
           ).length;
           return {
             ...p,
             resolvedAuthors: await resolvePeople(p.data.authors, peopleMap),
-            matchingTags,
+            matchingCategories,
           };
         })
     );
 
     const sortedCandidates = candidatePosts.sort((a, b) => {
-      if (b.matchingTags !== a.matchingTags) {
-        return b.matchingTags - a.matchingTags;
+      if (b.matchingCategories !== a.matchingCategories) {
+        return b.matchingCategories - a.matchingCategories;
       }
       return b.data.publishedDate.getTime() - a.data.publishedDate.getTime();
     });

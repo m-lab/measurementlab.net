@@ -10,11 +10,9 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - data
-  - visualization
 categories:
-  - Development
+  - Data
+  - Visualization
 publishedDate: 2020-05-20
 ---
 

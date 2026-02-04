@@ -11,12 +11,10 @@ authors:
   - pavlos-sermpezis
   - melissa-newcomb
 published: published
-tags:
-  - event
-  - censorship-measurement
-  - community
 categories:
-  - News
+  - Event
+  - Censorship Measurement
+  - Community
 publishedDate: 2025-07-15
 ---
 

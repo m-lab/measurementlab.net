@@ -5,10 +5,8 @@ excerpt: A note from Lai Yi Ohlsen to the Measurement Lab community.
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - announcement
 categories:
-  - News
+  - Announcement
 publishedDate: 2022-05-31
 ---
 

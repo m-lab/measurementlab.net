@@ -9,13 +9,11 @@ excerpt: >-
 authors: []
 externalAuthors: "Loqman Salamatian, Phillipa Gill"
 published: published
-tags:
-  - data
-  - accuracy
-  - research
-  - community
 categories:
-  - Development
+  - Data
+  - Accuracy
+  - Research
+  - Community
 publishedDate: 2025-05-27
 ---
 

@@ -10,11 +10,9 @@ authors:
   - peter-boothe
   - georgia-bullen
 published: published
-tags:
-  - speed
-  - accuracy
 categories:
-  - Technology
+  - Speed
+  - Accuracy
 publishedDate: 2019-03-26
 ---
 

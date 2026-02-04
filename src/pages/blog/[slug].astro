@@ -45,7 +45,7 @@ const relatedPosts = await getRelatedPosts(post, { peopleMap });
 // Helper for template
 const formatDate = formatBlogDate;
 
-const {title, publishedDate, heroImage, tags, published } = post.data
+const {title, publishedDate, heroImage, categories, published } = post.data
 
 ---
 
@@ -72,12 +72,12 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 					</div>
 				)
 			}
-			{/* Tags */}
+			{/* Categories */}
 			<div class="mb-4 flex flex-wrap gap-2">
 				{
-					tags.map((tag) => (
+					categories.map((category) => (
 						<Tag variant="primary" size="md">
-							{tag}
+							{category}
 						</Tag>
 					))
 				}
@@ -146,11 +146,11 @@ const {title, publishedDate, heroImage, tags, published } = post.data
 
 								{/* Card Content */}
 								<div class="flex flex-col gap-3 p-6">
-									{/* Tags */}
+									{/* Categories */}
 									<div class="flex flex-wrap gap-2">
-										{relatedPost.data.tags.slice(0, 2).map((tag) => (
+										{relatedPost.data.categories.slice(0, 2).map((category) => (
 											<Tag variant="primary" size="sm">
-												{tag}
+												{category}
 											</Tag>
 										))}
 									</div>

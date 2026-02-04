@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - matt-mathis
 published: published
-tags:
-  - bigquery
-  - research
-  - data
 categories:
-  - Development
+  - Bigquery
+  - Research
+  - Data
 publishedDate: 2022-08-05
 ---
 Monday August 15th we will be updating the NDT unified views to provide

@@ -10,13 +10,11 @@ excerpt: >-
 authors: []
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - pipeline
-  - ndt
-  - traceroute
-  - data
 categories:
-  - Technology
+  - Pipeline
+  - NDT
+  - Traceroute
+  - Data
 publishedDate: 2022-02-10
 ---
 If you typically use the `measurement-lab.ndt.unified_uploads` or

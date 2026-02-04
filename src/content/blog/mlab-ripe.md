@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - interconnection
-  - research
-  - ripe
 categories:
-  - Opinion
+  - Interconnection
+  - Research
+  - RIPE
 publishedDate: 2014-11-10
 ---
 

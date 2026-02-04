@@ -13,13 +13,11 @@ authors:
   - melissa-newcomb
   - pavlos-sermpezis
 published: published
-tags:
-  - event
-  - community
-  - research
-  - data
 categories:
-  - News
+  - Event
+  - Community
+  - Research
+  - Data
 publishedDate: 2025-11-12
 ---
 

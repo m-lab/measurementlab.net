@@ -9,11 +9,9 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - ndt-server
-  - tutorial
 categories:
-  - News
+  - NDT Server
+  - Tutorial
 publishedDate: 2022-02-16
 ---
 

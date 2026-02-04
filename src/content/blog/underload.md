@@ -8,12 +8,10 @@ excerpt: >-
 authors: []
 externalAuthors: "Michael Welzl"
 published: published
-tags:
-  - guest
-  - research
-  - neubot
 categories:
-  - Opinion
+  - Guest
+  - Research
+  - Neubot
 publishedDate: 2022-09-20
 ---
 

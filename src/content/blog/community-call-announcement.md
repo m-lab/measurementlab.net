@@ -9,13 +9,11 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - community
-  - latency
-  - bufferbloat
-  - responsiveness
 categories:
-  - Opinion
+  - Community
+  - Latency
+  - Bufferbloat
+  - Responsiveness
 publishedDate: 2021-08-18
 ---
 

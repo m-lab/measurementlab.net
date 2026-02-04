@@ -7,13 +7,11 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - community
-  - data
-  - learning
-  - analysis
 categories:
-  - News
+  - Community
+  - Data
+  - Learning
+  - Analysis
 publishedDate: 2023-06-16
 ---
 Are you new to M-Lab data? Do you have questions about how to use it or how it can fit into your research? 

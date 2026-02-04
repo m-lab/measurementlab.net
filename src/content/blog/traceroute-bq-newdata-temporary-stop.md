@@ -4,12 +4,10 @@ title: Traceroute BigQuery Table New Data Temporarily Halted for Schema Change
 authors: []
 externalAuthors: "Ya Chang"
 published: published
-tags:
-  - data
-  - data-analysis
-  - community
 categories:
-  - News
+  - Data
+  - Data Analysis
+  - Community
 publishedDate: 2019-06-26
 ---
 

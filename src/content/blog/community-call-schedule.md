@@ -9,10 +9,8 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - community
 categories:
-  - Opinion
+  - Community
 publishedDate: 2021-03-03
 ---
 

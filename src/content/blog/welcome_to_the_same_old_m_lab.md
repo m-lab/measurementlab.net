@@ -9,9 +9,7 @@ excerpt: >-
 authors: []
 externalAuthors: "M-Lab Team"
 published: published
-tags: []
-categories:
-  - Technology
+categories: []
 publishedDate: 2013-08-05
 ---
 

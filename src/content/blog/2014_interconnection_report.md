@@ -12,13 +12,11 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - research
-  - interconnection
-  - consumer-internet
-  - performance
 categories:
-  - News
+  - Research
+  - Interconnection
+  - Consumer Internet
+  - Performance
 publishedDate: 2014-10-28
 ---
 

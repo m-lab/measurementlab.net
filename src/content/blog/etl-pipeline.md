@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - pipeline
-  - bigquery
-  - versioning
 categories:
-  - News
+  - Pipeline
+  - Bigquery
+  - Versioning
 publishedDate: 2018-02-09
 ---
 

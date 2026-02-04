@@ -9,10 +9,8 @@ excerpt: >-
 authors: []
 externalAuthors: "Saied Kazemi"
 published: published
-tags:
-  - traceroute
 categories:
-  - Technology
+  - Traceroute
 publishedDate: 2022-01-10
 ---
 M-Lab’s [traceroute-caller](https://github.com/m-lab/traceroute-caller/) (TRC)

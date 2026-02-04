@@ -8,10 +8,8 @@ authors:
   - lai-yi-ohlsen
   - georgia-bullen
 published: published
-tags:
-  - annual-review
 categories:
-  - Technology
+  - Annual Review
 publishedDate: 2023-12-21
 ---
 2023 was a big year! Here’s a summary of what we were up to and what's coming up next. 

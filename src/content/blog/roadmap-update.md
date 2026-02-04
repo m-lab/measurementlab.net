@@ -9,10 +9,8 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - roadmap
 categories:
-  - News
+  - Roadmap
 publishedDate: 2020-11-02
 ---
 

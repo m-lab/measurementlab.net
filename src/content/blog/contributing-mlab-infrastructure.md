@@ -9,12 +9,10 @@ authors:
   - nathan-kinkade
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - platform
-  - infrastructure
-  - contribution
 categories:
-  - Development
+  - Platform
+  - Infrastructure
+  - Contribution
 publishedDate: 2024-03-18
 ---
 

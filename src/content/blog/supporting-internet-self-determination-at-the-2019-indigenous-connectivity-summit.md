@@ -13,10 +13,8 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - community
 categories:
-  - Opinion
+  - Community
 publishedDate: 2019-10-25
 ---
 

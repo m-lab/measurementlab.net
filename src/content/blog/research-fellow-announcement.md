@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - fellowship
-  - research
-  - announcement
 categories:
-  - News
+  - Fellowship
+  - Research
+  - Announcement
 publishedDate: 2022-01-13
 ---
 

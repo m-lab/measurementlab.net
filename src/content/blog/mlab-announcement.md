@@ -11,10 +11,8 @@ excerpt: >-
 authors: []
 externalAuthors: "M-Lab Team"
 published: published
-tags:
-  - community
 categories:
-  - News
+  - Community
 publishedDate: 2019-02-28
 ---
 

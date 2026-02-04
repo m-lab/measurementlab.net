@@ -9,11 +9,9 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - community
-  - ndt
 categories:
-  - Technology
+  - Community
+  - NDT
 publishedDate: 2021-12-06
 ---
 At TPRC 2021, Dave Clark and Sare Wedeman presented “[Measurement, Meaning and

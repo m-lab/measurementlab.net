@@ -8,11 +8,9 @@ authors:
   - lai-yi-ohlsen
   - melissa-newcomb
 published: published
-tags:
-  - leadership
-  - announcement
 categories:
-  - News
+  - Leadership
+  - Announcement
 publishedDate: 2024-06-20
 ---
 Measurement Lab is pleased to announce the addition of Melissa Newcomb to our team as our new Senior Program Manager.

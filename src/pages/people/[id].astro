@@ -200,10 +200,10 @@ const formatDate = (date: Date) => {
 								href={`/blog/${post.slug}`}
 							>
 								<div class="flex flex-col">
-									{/* Tags */}
+									{/* Categories */}
 									<div class="mb-3 flex flex-wrap gap-2">
-										{post.data.tags?.slice(0, 3).map((tag) => (
-											<Tag variant="primary">{tag}</Tag>
+										{post.data.categories?.slice(0, 3).map((category) => (
+											<Tag variant="primary">{category}</Tag>
 										))}
 									</div>
 

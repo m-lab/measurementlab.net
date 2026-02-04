@@ -9,14 +9,12 @@ excerpt: >-
 authors:
   - georgia-bullen
 published: published
-tags:
-  - dataviz
-  - visualization
-  - observatory
-  - data
-  - open-source
 categories:
-  - Development
+  - DataViz
+  - Visualization
+  - Observatory
+  - Data
+  - Open Source
 publishedDate: 2016-10-04
 ---
 

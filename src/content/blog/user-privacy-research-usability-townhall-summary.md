@@ -8,12 +8,10 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - community
-  - privacy
-  - research
 categories:
-  - Opinion
+  - Community
+  - Privacy
+  - Research
 publishedDate: 2022-03-18
 ---
 On March 16 we hosted a town hall discussion regarding M-Lab’s collection of IP addresses and asked for feedback on potential alternatives. We are accepting comments on the techniques we proposed until April 1.  

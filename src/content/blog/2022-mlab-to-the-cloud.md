@@ -7,12 +7,10 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - cloud
-  - platform
-  - announcement
 categories:
-  - News
+  - Cloud
+  - Platform
+  - Announcement
 publishedDate: 2022-07-27
 ---
 M-Lab is excited to announce “M-Lab to the Cloud”, beginning with our pilot deployment of NDT servers on cloud infrastructure.

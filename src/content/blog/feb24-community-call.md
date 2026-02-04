@@ -11,12 +11,10 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - community
-  - internet-quality
-  - research
 categories:
-  - Opinion
+  - Community
+  - Internet Quality
+  - Research
 publishedDate: 2024-01-23
 ---
 Access to high speed Internet does not necessarily mean access to high quality Internet. But if not speed then what? How *should* we measure Internet quality? Join our monthly community call on February 1, 2024 at 11am ET to discuss and contribute to our latest research initiative, sponsored by Internet Society Foundation. 

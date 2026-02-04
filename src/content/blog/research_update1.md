@@ -11,12 +11,10 @@ excerpt: >-
 authors: []
 externalAuthors: "Collin Anderson"
 published: published
-tags:
-  - research
-  - tos
-  - interconnection
 categories:
-  - News
+  - Research
+  - ToS
+  - Interconnection
 publishedDate: 2014-10-31
 ---
 

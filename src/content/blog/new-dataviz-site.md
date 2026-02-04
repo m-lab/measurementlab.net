@@ -9,11 +9,9 @@ excerpt: >-
 authors:
   - georgia-bullen
 published: published
-tags:
-  - data
-  - visualization
 categories:
-  - News
+  - Data
+  - Visualization
 publishedDate: 2017-03-07
 ---
 

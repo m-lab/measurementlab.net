@@ -9,9 +9,7 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags: []
-categories:
-  - Technology
+categories: []
 publishedDate: 2014-03-10
 ---
 

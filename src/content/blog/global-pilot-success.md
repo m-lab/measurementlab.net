@@ -9,16 +9,14 @@ excerpt: >-
 authors:
   - peter-boothe
 published: published
-tags:
-  - platform
-  - research
-  - data
-  - kernel
-  - open-source
-  - performance
-  - tcp-info
 categories:
-  - Technology
+  - Platform
+  - Research
+  - Data
+  - Kernel
+  - Open Source
+  - Performance
+  - TCP_INFO
 publishedDate: 2019-10-14
 ---
 We deployed [the new M-Lab platform to 1/3rd of the M-Lab fleet](/blog/global-pilot-entry), and now we

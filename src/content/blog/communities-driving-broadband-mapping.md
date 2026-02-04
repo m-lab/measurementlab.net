@@ -11,13 +11,11 @@ authors:
   - georgia-bullen
   - chris-ritzo
 published: published
-tags:
-  - broadband
-  - community
-  - speed
-  - mapping
 categories:
-  - Opinion
+  - Broadband
+  - Community
+  - Speed
+  - Mapping
 publishedDate: 2019-03-28
 ---
 

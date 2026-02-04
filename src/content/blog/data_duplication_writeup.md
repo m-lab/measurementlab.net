@@ -9,11 +9,9 @@ excerpt: >-
 authors: []
 externalAuthors: "Michael Lynch"
 published: published
-tags:
-  - data
-  - transparency
 categories:
-  - Development
+  - Data
+  - Transparency
 publishedDate: 2015-04-24
 ---
 

@@ -10,12 +10,10 @@ excerpt: >-
 authors: []
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - data
-  - bigquery
-  - schema
 categories:
-  - Development
+  - Data
+  - Bigquery
+  - Schema
 publishedDate: 2019-05-02
 ---
 

@@ -11,11 +11,9 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - data
-  - community
 categories:
-  - Development
+  - Data
+  - Community
 publishedDate: 2019-10-04
 ---
 

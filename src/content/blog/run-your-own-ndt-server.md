@@ -9,14 +9,12 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - data
-  - open-source
-  - performance
-  - tcp-info
-  - ndt-server
 categories:
-  - Technology
+  - Data
+  - Open Source
+  - Performance
+  - TCP_INFO
+  - NDT Server
 publishedDate: 2019-11-26
 ---
 

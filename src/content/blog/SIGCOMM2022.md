@@ -9,14 +9,12 @@ excerpt: >-
 authors: []
 externalAuthors: "Phillipa Gill"
 published: published
-tags:
-  - ndt
-  - bigquery
-  - data
-  - event
-  - research
 categories:
-  - News
+  - NDT
+  - Bigquery
+  - Data
+  - Event
+  - Research
 publishedDate: 2022-09-14
 ---
 

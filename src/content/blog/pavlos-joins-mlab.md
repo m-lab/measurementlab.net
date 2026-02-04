@@ -10,11 +10,9 @@ authors:
   - georgia-bullen
   - melissa-newcomb
 published: published
-tags:
-  - leadership
-  - announcement
 categories:
-  - News
+  - Leadership
+  - Announcement
 publishedDate: 2025-04-21
 ---
 

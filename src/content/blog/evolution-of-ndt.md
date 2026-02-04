@@ -11,15 +11,13 @@ authors:
   - matt-mathis
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - ndt
-  - ndt7
-  - research
-  - bbr
-  - tcp-info
-  - web100
 categories:
-  - Technology
+  - NDT
+  - NDT7
+  - Research
+  - BBR
+  - TCP_INFO
+  - Web100
 publishedDate: 2020-08-05
 ---
 

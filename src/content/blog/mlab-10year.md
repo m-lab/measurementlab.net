@@ -9,15 +9,13 @@ excerpt: >-
 authors:
   - georgia-bullen
 published: published
-tags:
-  - event
-  - community
-  - bigquery
-  - research
-  - data
-  - performance
 categories:
-  - News
+  - Event
+  - Community
+  - Bigquery
+  - Research
+  - Data
+  - Performance
 publishedDate: 2018-07-21
 ---
 

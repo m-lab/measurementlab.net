@@ -10,12 +10,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - ndt
-  - bigquery
-  - data
 categories:
-  - Technology
+  - NDT
+  - Bigquery
+  - Data
 publishedDate: 2020-05-07
 ---
 In November 2019, M-Lab reached a milestone after upgrading the operating system, virtualization, and TCP measurement instrumentation running on our servers worldwide. The upgrade also included a completely re-written ndt-server, providing backward compatibility to old clients, as well as the new ndt7 protocol. With the change in system architecture and the changes to ndt-server, our team wanted to provide unified, longitudinal views of the data in BigQuery that embed the provenance for all tests.

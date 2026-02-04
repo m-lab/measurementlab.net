@@ -9,11 +9,9 @@ authors:
   - lai-yi-ohlsen
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - ndt7
-  - ndt-server
 categories:
-  - News
+  - NDT7
+  - NDT Server
 publishedDate: 2021-06-29
 ---
 In the past month we’ve made several improvements to ndt-server, ndt7-client-js,

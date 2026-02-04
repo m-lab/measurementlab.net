@@ -7,14 +7,12 @@ excerpt: >-
 authors: []
 externalAuthors: "Timur Friedman, Saied Kazemi, Elena Nardi"
 published: published
-tags:
-  - data
-  - partnership
-  - bigquery
-  - traceroute
-  - announcement
 categories:
-  - News
+  - Data
+  - Partnership
+  - Bigquery
+  - Traceroute
+  - Announcement
 publishedDate: 2025-06-16
 ---
 We are excited to announce that the Dioptra research group at Sorbonne University is making its [IP Route Survey (IPRS) available on M-Lab](https://www.measurementlab.net/tests/iprs/). 

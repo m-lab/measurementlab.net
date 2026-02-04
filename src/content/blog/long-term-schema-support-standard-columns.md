@@ -10,12 +10,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - data
-  - bigquery
-  - schema
 categories:
-  - Development
+  - Data
+  - Bigquery
+  - Schema
 publishedDate: 2020-07-15
 ---
 

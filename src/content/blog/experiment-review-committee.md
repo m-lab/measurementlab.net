@@ -7,11 +7,9 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - governance
-  - experiment-review-committee
 categories:
-  - Technology
+  - Governance
+  - Experiment Review Committee
 publishedDate: 2021-10-29
 ---
 The M-Lab Experiment Review Committee met on October 21, 2021. The following is

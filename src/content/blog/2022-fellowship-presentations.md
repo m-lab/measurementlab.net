@@ -7,12 +7,10 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - fellowship
-  - research
-  - community
 categories:
-  - Opinion
+  - Fellowship
+  - Research
+  - Community
 publishedDate: 2022-06-28
 ---
 Come learn about the exciting research that the M-Lab Fellows completed during their fellowship! 

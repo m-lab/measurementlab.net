@@ -8,12 +8,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - paris-traceroute
-  - bug
-  - platform
 categories:
-  - Development
+  - Paris Traceroute
+  - Bug
+  - Platform
 publishedDate: 2018-01-24
 ---
 In December 2017, M-Lab was notified of oddities in the Paris Traceroute data. Upon investigation, a bug in the Paris Traceroute code was identified. The bug caused bad measurement data in 2.7% of the traceroutes since July 2016.

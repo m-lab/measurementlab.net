@@ -10,16 +10,14 @@ excerpt: >-
 authors: []
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - platform
-  - research
-  - data
-  - kernel
-  - open-source
-  - performance
-  - tcp-info
 categories:
-  - News
+  - Platform
+  - Research
+  - Data
+  - Kernel
+  - Open Source
+  - Performance
+  - TCP_INFO
 publishedDate: 2019-03-12
 ---
 

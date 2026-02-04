@@ -5,12 +5,10 @@ excerpt: Recordings of the 2022 M-Lab Fellowship Presentations and Reports.
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - fellowship
-  - research
-  - community
 categories:
-  - Opinion
+  - Fellowship
+  - Research
+  - Community
 publishedDate: 2022-07-14
 ---
 

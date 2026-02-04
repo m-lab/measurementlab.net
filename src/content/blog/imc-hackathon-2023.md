@@ -6,12 +6,10 @@ authors:
   - lai-yi-ohlsen
 externalAuthors: "Katherine Townsend"
 published: published
-tags:
-  - data
-  - event
-  - research
 categories:
-  - News
+  - Data
+  - Event
+  - Research
 publishedDate: 2023-08-28
 ---
 Are you attending the [Internet Measurement Conference (IMC) 2023](https://conferences.sigcomm.org/imc/2023/)?

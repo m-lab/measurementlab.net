@@ -10,11 +10,9 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - wehe
-  - platform
 categories:
-  - Development
+  - Wehe
+  - Platform
 publishedDate: 2021-01-25
 ---
 

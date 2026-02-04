@@ -10,11 +10,9 @@ excerpt: >-
 authors: []
 externalAuthors: "Simone Basso"
 published: published
-tags:
-  - igf
-  - event
 categories:
-  - News
+  - IGF
+  - Event
 publishedDate: 2019-02-12
 ---
 

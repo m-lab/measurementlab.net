@@ -9,10 +9,8 @@ excerpt: >-
 authors:
   - georgia-bullen
 published: published
-tags:
-  - community
 categories:
-  - Opinion
+  - Community
 publishedDate: 2019-03-04
 ---
 

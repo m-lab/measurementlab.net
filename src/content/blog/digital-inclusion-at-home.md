@@ -9,14 +9,12 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 published: published
-tags:
-  - digital-inclusion
-  - survey
-  - speed
-  - community
-  - covid19
 categories:
-  - Opinion
+  - Digital Inclusion
+  - Survey
+  - Speed
+  - Community
+  - Covid19
 publishedDate: 2020-03-20
 ---
 

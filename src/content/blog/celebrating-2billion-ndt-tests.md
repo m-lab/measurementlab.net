@@ -9,10 +9,8 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - data
 categories:
-  - Development
+  - Data
 publishedDate: 2019-09-18
 ---
 

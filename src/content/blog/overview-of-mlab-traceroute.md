@@ -8,12 +8,10 @@ excerpt: >-
 authors: []
 externalAuthors: "Saied Kazemi"
 published: published
-tags:
-  - traceroute
-  - research
-  - data
 categories:
-  - Technology
+  - Traceroute
+  - Research
+  - Data
 publishedDate: 2022-06-08
 ---
 

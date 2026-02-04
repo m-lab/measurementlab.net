@@ -9,16 +9,14 @@ excerpt: >-
 authors: []
 externalAuthors: "Stephen Soltesz"
 published: published
-tags:
-  - data
-  - data-analysis
-  - bigquery
-  - research
-  - microbursts
-  - switch-discard
-  - performance
 categories:
-  - Technology
+  - Data
+  - Data Analysis
+  - Bigquery
+  - Research
+  - Microbursts
+  - Switch Discard
+  - Performance
 publishedDate: 2018-09-10
 ---
 On February 1st, 2018, during a regular data quality review, we identified an

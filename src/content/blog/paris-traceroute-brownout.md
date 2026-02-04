@@ -9,12 +9,10 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - data
-  - paris-traceroute
-  - platform
 categories:
-  - Development
+  - Data
+  - Paris Traceroute
+  - Platform
 publishedDate: 2017-04-09
 ---
 

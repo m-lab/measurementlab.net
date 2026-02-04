@@ -9,13 +9,11 @@ excerpt: >-
 authors:
   - chris-ritzo
 published: published
-tags:
-  - ndt
-  - ookla
-  - data
-  - statistics
 categories:
-  - Technology
+  - NDT
+  - Ookla
+  - Data
+  - Statistics
 publishedDate: 2022-01-24
 ---
 When thinking about broadband in the United States, the first thing people

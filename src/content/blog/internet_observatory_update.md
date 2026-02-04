@@ -10,12 +10,10 @@ excerpt: >-
 authors: []
 externalAuthors: "Collin Anderson"
 published: published
-tags:
-  - interconnection
-  - research
-  - observatory
 categories:
-  - News
+  - Interconnection
+  - Research
+  - Observatory
 publishedDate: 2015-02-12
 ---
 

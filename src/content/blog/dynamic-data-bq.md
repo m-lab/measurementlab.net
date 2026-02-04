@@ -12,13 +12,11 @@ authors:
   - pavlos-sermpezis
   - melissa-newcomb
 published: published
-tags:
-  - data
-  - bigquery
-  - ndt7
-  - announcement
 categories:
-  - News
+  - Data
+  - Bigquery
+  - NDT7
+  - Announcement
 publishedDate: 2025-07-15
 ---
 
