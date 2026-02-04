@@ -900,11 +900,18 @@ content:
       - name: authors
         label: Authors
         type: reference
+        required: false
         options:
           collection: people
           multiple: true
           value: '{id}'
           label: '{fields.name}'
+
+      - name: externalAuthors
+        label: External Authors
+        type: string
+        required: false
+        description: Add any external authors here
 
       - name: published
         label: Status
