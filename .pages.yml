@@ -901,13 +901,14 @@ content:
         label: Authors
         type: reference
         required: false
+        default: []
         options:
           collection: people
           required: false
           multiple: true
           value: '{id}'
           label: '{fields.name}'
-          default: []
+          
 
       - name: externalAuthors
         label: External Authors
