@@ -7,9 +7,10 @@ import {
   DialogBackdrop,
   DialogPanel,
 } from '@headlessui/react';
-import Fuse from 'fuse.js';
-import { useEffect, useMemo, useState } from 'react';
+import Fuse, { type FuseResult } from 'fuse.js';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AcademicCapIcon from '~icons/heroicons/academic-cap';
+import ChevronRightIcon from '~icons/heroicons/chevron-right-16-solid';
 import DocumentIcon from '~icons/heroicons/document-text';
 import ExclamationTriangleIcon from '~icons/heroicons/exclamation-triangle';
 import FolderIcon from '~icons/heroicons/folder';
@@ -23,6 +24,7 @@ type SearchResult = {
   url: string;
   category: string;
   imageUrl?: string;
+  content?: string;
 };
 
 // Type for unplugin-icons components which use 'class' instead of 'className'
@@ -40,6 +42,28 @@ type CategoryConfig = {
   transform: (item: any) => Omit<SearchResult, 'category'>;
 };
 
+// Strip markdown/MDX syntax to produce plaintext for search indexing
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/^import\s+.*$/gm, '') // MDX imports
+    .replace(/^export\s+.*$/gm, '') // MDX exports
+    .replace(/<[^>]+>/g, '') // HTML/JSX tags
+    .replace(/```[\s\S]*?```/g, '') // fenced code blocks
+    .replace(/`([^`]*)`/g, '$1') // inline code
+    .replace(/!\[.*?\]\(.*?\)/g, '') // images
+    .replace(/\[([^\]]*)\]\(.*?\)/g, '$1') // links → keep text
+    .replace(/^#{1,6}\s+/gm, '') // headings
+    .replace(/(\*\*|__)(.*?)\1/g, '$2') // bold
+    .replace(/(\*|_)(.*?)\1/g, '$2') // italic
+    .replace(/^\s*[-*+]\s+/gm, '') // unordered list markers
+    .replace(/^\s*\d+\.\s+/gm, '') // ordered list markers
+    .replace(/^>\s+/gm, '') // blockquotes
+    .replace(/---+/g, '') // horizontal rules
+    .replace(/\n{2,}/g, ' ') // collapse blank lines
+    .replace(/\s+/g, ' ') // normalize whitespace
+    .trim();
+}
+
 // Configuration for search categories
 const SEARCH_CATEGORIES: CategoryConfig[] = [
   {
@@ -48,12 +72,27 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
     urlPrefix: '/',
     icon: FolderIcon,
     modifier: '#',
-    transform: (page: any) => ({
-      id: page.id,
-      name: page.title,
-      url: `/${page.permalink}`,
-      imageUrl: page.heroImage?.src,
-    }),
+    transform: (page: any) => {
+      const parts: string[] = [];
+      if (page.description) parts.push(page.description);
+      if (page.sections) {
+        page.sections
+          .filter((s: any) => s.type === 'richText' && s.content)
+          .forEach((s: any) => {
+            parts.push(s.content);
+          });
+      }
+      return {
+        id: page.id,
+        name: page.title,
+        url: `/${page.permalink}`,
+        imageUrl: page.heroImage?.src,
+        content:
+          parts.length > 0
+            ? stripMarkdown(parts.join(' ')).slice(0, 2000)
+            : undefined,
+      };
+    },
   },
   {
     name: 'People',
@@ -74,12 +113,21 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
     urlPrefix: '/blog/',
     icon: DocumentIcon,
     modifier: '@',
-    transform: (post: any) => ({
-      id: post.id,
-      name: post.data.title,
-      url: `/blog/${post.slug || post.id}`,
-      imageUrl: post.data.heroImage?.src,
-    }),
+    transform: (post: any) => {
+      const parts: string[] = [];
+      if (post.data.excerpt) parts.push(post.data.excerpt);
+      if (post.body) parts.push(post.body);
+      return {
+        id: post.id,
+        name: post.data.title,
+        url: `/blog/${post.slug || post.id}`,
+        imageUrl: post.data.heroImage?.src,
+        content:
+          parts.length > 0
+            ? stripMarkdown(parts.join(' ')).slice(0, 2000)
+            : undefined,
+      };
+    },
   },
   {
     name: 'Publications',
@@ -92,6 +140,7 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
       name: pub.title,
       url: `/publications/${pub.id}`,
       imageUrl: undefined, // Publications don't have hero images
+      content: pub.description || undefined,
     }),
   },
 ];
@@ -100,26 +149,65 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-// Helper function to create fuzzy search results
-function fuzzySearch(
-  items: SearchResult[],
-  query: string,
-  threshold: number = 0.4
-): SearchResult[] {
-  const fuse = new Fuse(items, {
-    keys: ['name'],
-    threshold,
-    includeScore: true,
-  });
-  return fuse.search(query).map((result) => result.item);
+type Snippet = { before: string; match: string; after: string };
+
+// Extract a snippet of ~80 chars around the first content match
+function getMatchSnippet(
+  result: FuseResult<SearchResult>,
+  queryStr: string
+): Snippet | null {
+  const text = result.item.content;
+  if (!text) return null;
+
+  // Prefer exact substring match — most meaningful for the user
+  const idx = text.toLowerCase().indexOf(queryStr.toLowerCase());
+  if (idx !== -1) {
+    const snippetStart = Math.max(0, idx - 40);
+    const snippetEnd = Math.min(text.length, idx + queryStr.length + 40);
+    return {
+      before: `${snippetStart > 0 ? '...' : ''}${text.slice(snippetStart, idx)}`,
+      match: text.slice(idx, idx + queryStr.length),
+      after: `${text.slice(idx + queryStr.length, snippetEnd)}${snippetEnd < text.length ? '...' : ''}`,
+    };
+  }
+
+  // Fallback: use the longest Fuse match index (skips trivial single-char hits)
+  const contentMatch = result.matches?.find(
+    (m: { key?: string }) => m.key === 'content'
+  );
+  if (contentMatch?.indices?.length) {
+    const longest = contentMatch.indices.reduce((best, cur) =>
+      cur[1] - cur[0] > best[1] - best[0] ? cur : best
+    );
+    const [start, end] = longest;
+    const snippetStart = Math.max(0, start - 40);
+    const snippetEnd = Math.min(text.length, end + 1 + 40);
+    return {
+      before: `${snippetStart > 0 ? '...' : ''}${text.slice(snippetStart, start)}`,
+      match: text.slice(start, end + 1),
+      after: `${text.slice(end + 1, snippetEnd)}${snippetEnd < text.length ? '...' : ''}`,
+    };
+  }
+
+  return null;
 }
 
 export default function RichSearch() {
   const [open, setOpen] = useState(false);
   const [rawQuery, setRawQuery] = useState('');
+  const [debouncedRawQuery, setDebouncedRawQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(true);
-  const query = rawQuery.toLowerCase().replace(/^[#>@$]/, '');
+
+  // Debounce the query to avoid running Fuse on every keystroke
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const updateDebouncedQuery = useCallback((value: string) => {
+    clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => setDebouncedRawQuery(value), 150);
+  }, []);
+  useEffect(() => () => clearTimeout(debounceRef.current), []);
+
+  const query = debouncedRawQuery.toLowerCase().replace(/^[#>@$]/, '');
 
   // Fetch data dynamically from all configured categories
   useEffect(() => {
@@ -190,9 +278,36 @@ export default function RichSearch() {
     };
   }, []);
 
-  // Dynamically filter results for each category
-  const filteredResultsByCategory = useMemo(() => {
+  // Memoize Fuse instances per category — rebuilt only when results change
+  const fuseInstancesRef = useRef<Record<string, Fuse<SearchResult>>>({});
+  const prevResultsRef = useRef<SearchResult[]>([]);
+
+  if (results !== prevResultsRef.current) {
+    prevResultsRef.current = results;
+    const instances: Record<string, Fuse<SearchResult>> = {};
+    SEARCH_CATEGORIES.forEach((category) => {
+      const categoryResults = results.filter(
+        (r) => r.category === category.name
+      );
+      instances[category.name] = new Fuse(categoryResults, {
+        keys: [
+          { name: 'name', weight: 2 },
+          { name: 'content', weight: 1 },
+        ],
+        threshold: 0.4,
+        ignoreLocation: true,
+        includeMatches: true,
+        includeScore: true,
+        minMatchCharLength: 3,
+      });
+    });
+    fuseInstancesRef.current = instances;
+  }
+
+  // Dynamically filter results for each category, with content match snippets
+  const { filteredResultsByCategory, snippets } = useMemo(() => {
     const filtered: Record<string, SearchResult[]> = {};
+    const newSnippets: Record<string, Snippet> = {};
 
     SEARCH_CATEGORIES.forEach((category) => {
       const categoryResults = results.filter(
@@ -200,7 +315,7 @@ export default function RichSearch() {
       );
 
       // If modifier is used, show all items from that category
-      if (rawQuery === category.modifier) {
+      if (debouncedRawQuery === category.modifier) {
         filtered[category.name] = categoryResults;
         return;
       }
@@ -212,18 +327,33 @@ export default function RichSearch() {
 
       if (
         query === '' ||
-        otherModifiers.some((mod) => rawQuery.startsWith(mod))
+        otherModifiers.some((mod) => debouncedRawQuery.startsWith(mod))
       ) {
         filtered[category.name] = [];
         return;
       }
 
-      // Otherwise, use fuzzy search
-      filtered[category.name] = fuzzySearch(categoryResults, query);
+      // Use memoized Fuse instance for fuzzy search with content
+      const fuse = fuseInstancesRef.current[category.name];
+      if (!fuse) {
+        filtered[category.name] = [];
+        return;
+      }
+
+      const fuseResults = fuse.search(query);
+      filtered[category.name] = fuseResults.map((r) => r.item);
+
+      // Extract snippets for content matches
+      fuseResults.forEach((r) => {
+        const snippet = getMatchSnippet(r, query);
+        if (snippet) {
+          newSnippets[r.item.id] = snippet;
+        }
+      });
     });
 
-    return filtered;
-  }, [rawQuery, query, results]);
+    return { filteredResultsByCategory: filtered, snippets: newSnippets };
+  }, [debouncedRawQuery, query, results]);
 
   return (
     <Dialog
@@ -232,6 +362,7 @@ export default function RichSearch() {
       onClose={() => {
         setOpen(false);
         setRawQuery('');
+        setDebouncedRawQuery('');
       }}
     >
       <DialogBackdrop
@@ -254,10 +385,16 @@ export default function RichSearch() {
             <div className="grid grid-cols-1">
               <ComboboxInput
                 autoFocus
-                className="text-gray-900 placeholder:text-gray-400 col-start-1 row-start-1 h-12 w-full bg-white pr-4 pl-11 text-base outline-hidden sm:text-sm"
+                className="text-gray-900 placeholder:text-gray-400 col-start-1 row-start-1 h-12 w-full bg-white pr-4 pl-11 outline-hidden sm:text-sm md:text-base"
                 placeholder="Search..."
-                onChange={(event) => setRawQuery(event.target.value)}
-                onBlur={() => setRawQuery('')}
+                onChange={(event) => {
+                  setRawQuery(event.target.value);
+                  updateDebouncedQuery(event.target.value);
+                }}
+                onBlur={() => {
+                  setRawQuery('');
+                  setDebouncedRawQuery('');
+                }}
               />
               <MagnifyingGlassIcon
                 class="text-gray-400 pointer-events-none col-start-1 row-start-1 ml-4 size-5 self-center"
@@ -307,13 +444,13 @@ export default function RichSearch() {
                         <h2 className="text-gray-900 inline-flex gap-1 text-xs font-semibold tracking-wide uppercase">
                           <Icon /> {category.name}
                         </h2>
-                        <ul className="text-gray-700 -mx-4 mt-2 text-sm">
+                        <ul className="text-gray-700 -mx-4 mt-2">
                           {items.map((item) => (
                             <ComboboxOption
                               as="li"
                               key={item.id}
                               value={item}
-                              className="group flex cursor-pointer items-center px-4 py-2 transition-colors select-none hover:bg-primary-100 data-focus:bg-primary-300 data-focus:outline-hidden"
+                              className="group flex cursor-pointer items-center px-4 py-2 transition-colors select-none data-focus:bg-primary-300 data-focus:outline-hidden"
                             >
                               {item.imageUrl ? (
                                 <img
@@ -331,9 +468,24 @@ export default function RichSearch() {
                                   aria-hidden="true"
                                 />
                               )}
-                              <span className="ml-3 flex-auto truncate">
-                                {item.name}
-                              </span>
+                              <div className="ml-3 min-w-0 flex-auto">
+                                <span className="block truncate text-base">
+                                  {item.name}
+                                </span>
+                                {snippets[item.id] && (
+                                  <div className="text-gray-500 block truncate pt-1 text-sm">
+                                    {snippets[item.id].before}
+                                    <span className="text-gray-700 font-semibold">
+                                      {snippets[item.id].match}
+                                    </span>
+                                    {snippets[item.id].after}
+                                  </div>
+                                )}
+                              </div>
+                              <div className="text-neutral-500">
+                                {' '}
+                                <ChevronRightIcon />
+                              </div>
                             </ComboboxOption>
                           ))}
                         </ul>
