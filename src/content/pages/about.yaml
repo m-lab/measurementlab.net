@@ -31,16 +31,6 @@ sections:
       Internet performance
           
 
-      ## What is M-Lab's mission?
-
-
-      M-Lab aims to advance Internet research by empowering consumers with
-      useful information about their Internet performance. By providing free,
-      open Internet measurement data, researchers, regulators, advocacy groups,
-      and the general public can get a better sense of how the Internet is
-      working for them, and how to maintain and improve it for the future.
-
-
       ## Why Measurement Lab?
 
 
@@ -102,3 +92,13 @@ sections:
       Technology Institute](https://www.newamerica.org/oti), the [PlanetLab
       Consortium](https://www.planet-lab.org/), Google, and a group of academic
       researchers.
+  - type: flexi
+    background:
+      color: primary-medium
+      type: full
+    title: M-Lab's Mission
+    description: M-Lab aims to advance Internet research by empowering consumers
+      with useful information about their Internet performance. By providing
+      free, open Internet measurement data, researchers, regulators, advocacy
+      groups, and the general public can get a better sense of how the Internet
+      is working for them, and how to maintain and improve it for the future.
