@@ -1,6 +1,7 @@
-title: Programs
-permalink: programs
+title: Projects
+permalink: projects
 published: true
+description: Landing page for M-Lab flagship projects.
 sections:
   - type: richText
     background:
@@ -32,9 +33,6 @@ sections:
       *   While a single metric for optimization offers ‘accessibility’ and
       ‘data application’ benefits, there is no consensus on what that metric
       should encompass.
-          
-
-      ![image text](/src/assets/mlab-og.png)
   - type: button
     background:
       color: white
