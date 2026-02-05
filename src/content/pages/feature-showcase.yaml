@@ -8,8 +8,13 @@ sections:
       color: white
       type: full
     withTOC: true
-    content: '**Internet Quality Barometer** \- shifting the conversation around
-      Internet Quality beyond “speed"'
+    content: >-
+      **Internet Quality Barometer** \- shifting the conversation around
+      Internet Quality beyond “speed."
+
+
+      **Open Measurement Gathering** - bringing together open Internet
+      measurement groups to exchange knowledge and support Internet freedom.
   - type: button
     background:
       color: white
@@ -27,10 +32,6 @@ sections:
         size: md
         text: "Check out the prototype "
         href: https://iqb.mlab-sandbox.measurementlab.net/IQB_Map
-  - type: hero
-    title: IQB Score
-    subtitle: Hero primary - light
-    backgroundImage: /src/assets/IQB Score.svg
   - type: hero
     title: Hero
     subtitle: Hero primary - dark
