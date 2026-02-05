@@ -8,8 +8,12 @@ sections:
       color: white
       type: full
     withTOC: true
-    content: '**Internet Quality Barometer** - shifting the conversation around
-      Internet Quality beyond “speed."'
+    content: >-
+      **Internet Quality Barometer** - shifting the conversation around Internet
+      Quality beyond “speed."
+
+
+      ![](/src/assets/images/iqb/Speed%20test%20to%20IQB%20score.svg)
   - type: button
     background:
       color: white
@@ -31,9 +35,9 @@ sections:
       color: white
       type: full
     withTOC: true
-    content: Open Measurement Gatherings (OMG) - bringing together open Internet
-      measurement groups to strengthen ties, exchange knowledge, and support
-      Internet freedom.
+    content: "**Open Measurement Gatherings (OMG)** - bringing together open
+      Internet measurement groups to strengthen ties, exchange knowledge, and
+      support Internet freedom."
   - type: hero
     title: Hero
     subtitle: Hero secondary - light
