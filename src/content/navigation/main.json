@@ -8,24 +8,23 @@
       "links": [
         {
           "type": "internal",
-          "label": "People",
-          "pageRef": "people"
+          "label": "Who We Are",
+          "pageRef": "who"
         },
         {
           "type": "internal",
-          "label": "Programs",
-          "pageRef": "programs",
-          "description": "lorem ipsum"
-        },
-        {
-          "type": "external",
-          "label": "Run a Speedtest ",
-          "externalUrl": "https://speed.measurementlab.net/"
+          "label": "Projects",
+          "pageRef": "programs"
         },
         {
           "type": "internal",
           "label": "Publications",
           "pageRef": "publications"
+        },
+        {
+          "type": "external",
+          "label": "Run a Speedtest ",
+          "externalUrl": "https://speed.measurementlab.net/"
         }
       ]
     },
