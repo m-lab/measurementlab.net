@@ -1,0 +1,10 @@
+title: OMG
+permalink: omg
+published: true
+sections:
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: \[fill in\]
