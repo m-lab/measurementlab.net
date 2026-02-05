@@ -1,5 +1,9 @@
 {
   "id": "partners",
   "name": "Partner Categories",
-  "categories": ["Supporting Research Projects", "Supporting Partners"]
+  "categories": [
+    "Supporting Research Projects",
+    "Supporting Partners",
+    "OMG Partners"
+  ]
 }
