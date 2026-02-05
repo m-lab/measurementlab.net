@@ -266,7 +266,7 @@ sections:
 
               
 
-      # M-Lab Data Documentation
+      ## M-Lab Data Documentation
 
 
       Here we document how to work with M-Lab data, covering some of the most
@@ -275,7 +275,7 @@ sections:
       us](mailto:support@measurementlab.net).
 
 
-      ## Querying BigQuery (Basic)
+      ### Querying BigQuery (Basic)
 
 
       The links below provide the basics of querying M-Lab data.
@@ -286,7 +286,7 @@ sections:
       *   [M-Lab Dataset Schemas and Changelog](/data/docs/bq/schema/)
           
 
-      ## Querying BigQuery (Advanced)
+      ### Querying BigQuery (Advanced)
 
 
       For researchers and others interested in advanced querying techniques, we
