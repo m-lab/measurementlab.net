@@ -7,7 +7,7 @@ sections:
     background:
       color: white
       type: full
-    withTOC: true
+    withTOC: false
     content: >-
       **Internet Quality Barometer** - shifting the conversation around Internet
       Quality beyond “speed."
@@ -34,10 +34,14 @@ sections:
     background:
       color: white
       type: full
-    withTOC: true
-    content: "**Open Measurement Gatherings (OMG)** - bringing together open
-      Internet measurement groups to strengthen ties, exchange knowledge, and
-      support Internet freedom."
+    withTOC: false
+    content: >-
+      **Open Measurement Gatherings (OMG)** - bringing together open Internet
+      measurement groups to strengthen ties, exchange knowledge, and support
+      Internet freedom.
+
+
+      ![](/src/assets/omg/file%201.png)
   - type: hero
     title: Hero
     subtitle: Hero secondary - light
