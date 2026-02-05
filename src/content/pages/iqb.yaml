@@ -34,3 +34,12 @@ sections:
       *   While a single metric for optimization offers ‘accessibility’ and
       ‘data application’ benefits, there is no consensus on what that metric
       should encompass.
+  - type: button
+    background:
+      color: gray
+      type: full
+    buttons:
+      - variant: primary
+        size: md
+        text: Check out the Prototype
+        href: https://iqb.mlab-sandbox.measurementlab.net/IQB_Map
