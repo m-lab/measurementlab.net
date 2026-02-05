@@ -26,7 +26,7 @@ sections:
       - variant: primary
         size: md
         text: "Check out the prototype "
-        href: /iqb-prototype
+        href: https://iqb.mlab-sandbox.measurementlab.net/IQB_Map
   - type: hero
     title: IQB Score
     subtitle: Hero primary - light
