@@ -41,9 +41,15 @@ sections:
     buttons:
       - variant: primary
         size: md
-        text: Check out the Prototype
-        href: https://iqb.mlab-sandbox.measurementlab.net/IQB_Map
-      - variant: primary
-        size: md
         text: "Read the full report! "
         href: /iqb-full-report
+      - variant: primary
+        size: md
+        text: Check out the Prototype
+        href: https://iqb.mlab-sandbox.measurementlab.net/IQB_Map
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: "![](/src/assets/images/IQB%20Score.svg)"
