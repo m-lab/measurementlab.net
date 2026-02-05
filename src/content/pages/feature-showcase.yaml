@@ -47,8 +47,9 @@ sections:
         text: "Check out the prototype "
         href: /iqb-prototype
   - type: hero
-    title: Hero
+    title: IQB Score
     subtitle: Hero primary - light
+    backgroundImage: /src/assets/IQB Score.svg
   - type: hero
     title: Hero
     subtitle: Hero primary - dark
