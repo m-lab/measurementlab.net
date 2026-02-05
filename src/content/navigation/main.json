@@ -30,22 +30,22 @@
     },
     {
       "type": "dropdown",
-      "label": "Data",
+      "label": "What We Do",
       "links": [
-        {
-          "type": "internal",
-          "label": "Overview",
-          "pageRef": "data"
-        },
-        {
-          "type": "internal",
-          "label": "Docs",
-          "pageRef": "data/docs"
-        },
         {
           "type": "internal",
           "label": "Platform Status",
           "pageRef": "status"
+        },
+        {
+          "type": "internal",
+          "label": "Data",
+          "pageRef": "data"
+        },
+        {
+          "type": "internal",
+          "label": "Tests",
+          "pageRef": "data/docs"
         },
         {
           "type": "internal",
