@@ -44,13 +44,13 @@
         },
         {
           "type": "internal",
-          "label": "Tests",
-          "pageRef": "data/docs"
+          "label": "Tools",
+          "pageRef": "data/tools"
         },
         {
           "type": "internal",
-          "label": "Tools",
-          "pageRef": "data/tools"
+          "label": "Tests",
+          "pageRef": "tests"
         }
       ]
     },
@@ -58,8 +58,8 @@
       "type": "single",
       "link": {
         "type": "internal",
-        "label": "Tests",
-        "pageRef": "tests"
+        "label": "Learn",
+        "pageRef": "blog"
       }
     },
     {
