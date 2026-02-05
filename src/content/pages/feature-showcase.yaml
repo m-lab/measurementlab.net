@@ -30,7 +30,7 @@ sections:
     background:
       color: white
       type: full
-    withTOC: false
+    withTOC: true
     content: Open Measurement Gatherings (OMG) - bringing together open Internet
       measurement groups to strengthen ties, exchange knowledge, and support
       Internet freedom.
