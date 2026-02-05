@@ -8,3 +8,9 @@ sections:
       type: full
     withTOC: false
     content: \[fill in\]
+  - type: partners
+    background:
+      color: white
+      type: full
+    title: OMG Groups
+    category: "omg "
