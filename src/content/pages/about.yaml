@@ -75,7 +75,7 @@ sections:
       understand the state and quality of the Internet.
   - type: richText
     background:
-      color: primary-dark
+      color: primary-light
       type: full
     withTOC: false
     content: >-
