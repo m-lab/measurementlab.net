@@ -26,6 +26,14 @@ sections:
   - type: hero
     title: Hero
     subtitle: Hero primary - dark
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: Open Measurement Gatherings (OMG) - bringing together open Internet
+      measurement groups to strengthen ties, exchange knowledge, and support
+      Internet freedom.
   - type: hero
     title: Hero
     subtitle: Hero secondary - light
@@ -50,11 +58,3 @@ sections:
       type: full
     title: This is a Flexi Section!
     description: Weeeee
-  - type: richText
-    background:
-      color: white
-      type: full
-    withTOC: false
-    content: Open Measurement Gatherings (OMG) - bringing together open Internet
-      measurement groups to strengthen ties, exchange knowledge, and support
-      Internet freedom.
