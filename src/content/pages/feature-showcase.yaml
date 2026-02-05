@@ -17,6 +17,10 @@ sections:
     buttons:
       - variant: primary
         size: md
+        text: Learn more about the IQB project
+        href: /iqb
+      - variant: primary
+        size: md
         text: Read the Full Report
         href: /iqb-full-report
       - variant: primary
