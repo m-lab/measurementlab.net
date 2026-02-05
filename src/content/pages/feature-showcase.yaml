@@ -8,7 +8,8 @@ sections:
       color: white
       type: full
     withTOC: true
-    content: \[fill in\]
+    content: '**Internet Quality Barometer** \- shifting the conversation around
+      Internet Quality beyond “speed"'
   - type: button
     background:
       color: white
