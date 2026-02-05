@@ -16,11 +16,19 @@ sections:
 
 
       *   Archival Data
+          
           *   M-Lab publishes raw output from many measurement tests on Google Cloud Storage as file archives.
+              
           *   See [M-Lab Archival Data documentation](/data/docs/archival-data) for more information.
+
+              
       *   Google BigQuery
+          
           *   M-Lab parses data for a subset of tests and publishes the data on BigQuery so that users can run SQL queries on the data.
+              
           *   See [M-Lab BigQuery QuickStart](/data/docs/bq/quickstart) for more information.
+
+              
 
       Some M-Lab hosted tests do not use our ETL pipeline. Data for these tests
       are published independently by the test developers.
@@ -37,111 +45,280 @@ sections:
 
 
       *   [NDT](/tests/ndt)
+          
           *   Network Diagnostic Tool (NDT) measures characteristics of a TCP connection under heavy load.
+              
           *   NDT data is processed by the M-Lab ETL Pipeline.
+              
           *   More technical information is available on [GitHub](https://github.com/ndt-project/ndt).
+              
           *   Protocols: [ndt7](/tests/ndt/ndt7), [ndt5](/tests/ndt/ndt5), [web100](/tests/ndt/web100)
+              
           *   [NDT Raw Data](https://console.developers.google.com/storage/browser/archive-measurement-lab/ndt/) - [NDT Data in BigQuery](/tests/ndt/#ndt-data-in-bigquery)
+
+              
       *   [Neubot DASH](/tests/neubot)
+          
           *   Neubot measured the Internet in order to gather data useful to study broadband performance, network neutrality, and Internet censorship.
+              
           *   More information is available at [Nexa Center](https://neubot.nexacenter.org/) and [GitHub](https://github.com/neubot).
+              
           *   [Neubot Raw Data](https://console.developers.google.com/storage/browser/archive-measurement-lab/neubot/)
+
+              
       *   [Reverse Traceroute](/tests/reverse_traceroute)
+          
           *   Reverse traceroute measures the network path back to a user from selected network endpoints, and provides a rich source of information on network routing and topology.
+              
           *   Reverse Traceroute data is not processed by the M-Lab ETL Pipeline.
+              
           *   More information is available at [Reverse Traceroute](https://research.cs.washington.edu/networking/astronomy/reverse-traceroute.html)
+              
           *   [Reverse Traceroute Raw Data](https://console.cloud.google.com/storage/browser/archive-measurement-lab/autoload/v1/revtr)
+
+              
       *   [WeHe](/tests/wehe)
+          
           *   Wehe uses your device to exchange Internet traffic recorded from real, popular apps like YouTube and Spotify, and attempts to tell you whether your ISP is giving different performance to an app's network traffic.
+              
           *   More information is available from the [WeHe website](https://dd.meddle.mobi/) and [GitHub](https://dd.meddle.mobi/codeanddata.html).
+              
           *   [WeHe Raw Data](https://console.cloud.google.com/storage/browser/archive-measurement-lab/wehe/)
+
+              
       *   [IPRS](/tests/iprs)
+          
           *   The IP Route Survey (IPRS) is a continuous survey of IP-level routing across the internet.
+              
           *   IPRS data is not processed by the M-Lab ETL Pipeline.
+              
           *   More information is available from the [IPRS home page](https://iprs.dioptra.io/)
+              
           *   [IPRS Data](/tests/iprs/#data)
+
+              
       *   [MSAK](/tests/msak)
+          
           *   MSAK (Measurement Swiss-Army Knife) is a measurement service hosted by M-Lab that implements a configurable Websocket-based throughput measurement protocol capable of multi-stream tests, and a UDP-based latency measurement protocol.
+              
           *   More technical information is available on [GitHub](https://github.com/m-lab/msak/).
+              
           *   [MSAK Data](https://console.cloud.google.com/storage/browser/archive-measurement-lab/autoload/v1/msak)
+
+              
 
       ## Current M-Lab Core Services and Platform Data
 
 
       *   [Packet Headers](/tests/pcap)
+          
           *   Collects packet headers for all incoming TCP flows and saves each stream of packet header captures into a per-stream .pcap file.
+              
           *   More information is available on [Github](https://github.com/m-lab/packet-headers).
+              
           *   Packet Headers Raw Data.
+
+              
       *   [TCP INFO](/tests/tcp-info)
+          
           *   Collects statistics about the TCP connections running on the M-Lab platform using tcp-info.
+              
           *   More information is available on [Github](https://github.com/m-lab/tcp-info).
+              
           *   [TCP INFO Raw Data](/tests/tcp-info/#tcp-info-data-in-raw-format).
+
+              
       *   [Traceroute](/tests/traceroute)
+          
           *   M-Lab uses the Scamper traceroute tool from CAIDA to collect statistics about the TCP connections running on the M-Lab platform using tcp-info.
+              
           *   More information is available from [CAIDA](https://www.caida.org/tools/measurement/scamper/).
+              
           *   [Traceroute Raw Data](/tests/traceroute/#traceroute-data-in-raw-format).
+              
           *   [Traceroute Data in BigQuery](/tests/traceroute/#traceroute-data-in-bigquery)
+
+              
       *   [M-Lab Utilization Telemetry Data](/tests/utilization)
+          
           *   Since June 2016, M-Lab has collected high resolution switch telemetry for each M-Lab server and site uplink and published it in the _utilization_ dataset.
+              
           *   More information is available in the [blog post announcing this dataset](/blog/disco-dataset/#new-disco-switch-telemetry-dataset) provides more information about the _utilization_ dataset.
+              
           *   [M-Lab _utilization_ Raw Data](https://console.developers.google.com/storage/browser/archive-measurement-lab/utilization/)
+              
           *   [M-Lab _utilization_ Data in BigQuery](/tests/utilization)
+
+              
 
       ## Historical Data Sets (Inactive/Retired Tests)
 
 
       *   [BISmark](/tests/bismark)
+          
           *   BISmark measures Internet service provider (ISP) performance and traffic inside home networks.
+              
           *   BISmark data is not processed by the M-Lab ETL Pipeline.
+              
           *   More information is available on the [Project BISmark website](http://projectbismark.net/) and on the [Project BISmark Open Development Portal](http://projectbismark.github.io/)
+              
           *   [BISmark Raw Data](http://uploads.projectbismark.net/)
+
+              
       *   [Glasnost](/tests/glasnost)
+          
           *   Glasnost detected prioritization or censorship of network traffic.
+              
           *   More information is available at [MPI SWS](http://broadband.mpi-sws.org/transparency/bttest-mlab.php) and [GitHub](https://github.com/marcelscode/glasnost).
+              
           *   [Glasnost Raw Data (archived)](https://console.developers.google.com/storage/browser/archive-measurement-lab/glasnost/)
+
+              
       *   [MobiPerf](/tests/mobiperf)
+          
           *   MobiPerf is an open source application for measuring network performance on mobile platforms.
+              
           *   MobiPerf data is not processed by the M-Lab ETL Pipeline.
+              
           *   More information is available on the [MobiPerf website](http://www.mobiperf.com/)
+              
           *   [MobiPerf Raw Data](https://console.cloud.google.com/storage/browser/archive-measurement-lab/mobiperf)
+
+              
       *   [NPAD](/tests/npad)
+          
           *   Network Path and Application Diagnosis (NPAD) diagnoses issues in a network path that can degrade network performance.
+              
           *   NPAD data is processed by the M-Lab ETL Pipeline.
+              
           *   More information is available from archived [UCAR](https://web.archive.org/web/20180714140225/https://www.ucar.edu/npad/) pages and [GitHub](https://github.com/npad/npad).
+              
           *   [NPAD Raw Data](https://console.developers.google.com/storage/browser/archive-measurement-lab/npad/)
+
+              
       *   [OONI](/tests/ooni)
+          
           *   OONI measures censorship, surveillance, and traffic manipulation on the Internet.
+              
           *   OONI data is not processed by the M-Lab ETL Pipeline.
+              
           *   More information is available at [OONI](https://ooni.torproject.org/)
+              
           *   [OONI Raw Data](https://console.developers.google.com/storage/browser/archive-measurement-lab/ooni/)
+
+              
       *   [Pathload2](/tests/pathload2)
+          
           *   Pathload2 measured the available bandwidth of an Internet connection.
+              
           *   More information is available at [https://code.google.com/p/pathload2-gatech/](https://code.google.com/p/pathload2-gatech/).
+              
           *   [Pathload2 Raw Data (archived)](https://console.developers.google.com/storage/browser/archive-measurement-lab/pathload2/)
+
+              
       *   [SamKnows](/tests/samknows)
+          
           *   The SamKnows performance testing platform is used by the USA's Federal Communications Commission (FCC), European Commission, UK government (Ofcom), Brazilian government (Anatel), Singapore's IDA and other government-backed studies worldwide.
+              
           *   SamKnows infrastructure includes off-net test servers hosted by M-Lab, and the M-Lab and SamKnows teams coordinate regularly to support the various regulatory reporting periods of data collection conducted by SamKnows.
+              
           *   SamKnows data is not processed by the M-Lab ETL Pipeline.
+              
           *   More information is available at the [SamKnows website](https://www.samknows.com/)
+
+              
       *   [ShaperProbe](/tests/shaperprobe)
+          
           *   ShaperProbe detected prioritization of network traffic.
+              
           *   [Shaperprobe Raw Data (archived)](https://console.developers.google.com/storage/browser/archive-measurement-lab/shaperprobe/)
+
+              
       *   [Windrider](/tests/windrider)
+          
           *   WindRider attempted to detect whether your mobile provider was performing application- or service-specific differentiation.
+
+              
 
       ## Retired M-Lab Core Services
 
 
       *   [Paris Traceroute](/tests/paris_traceroute)
+          
           *   Paris Traceroute maps network topology between two points on the Internet.
+              
           *   Paris Traceroute data is processed by the M-Lab ETL Pipeline.
+              
           *   More information is available at [Paris Traceroute](http://www.paris-traceroute.net/)
+              
           *   [Paris Traceroute Raw Data](https://console.developers.google.com/storage/browser/archive-measurement-lab/paris-traceroute/) - [Paris Traceroute BigQuery Dataset](https://bigquery.cloud.google.com/table/measurement-lab:base_tables.traceroute)
+
+              
       *   [SideStream](/tests/sidestream)
+          
           *   SideStream collects TCP state information about completed TCP connections on a system.
+              
           *   Sidestream data is processed by the M-Lab ETL Pipeline.
+              
           *   More information is available on [Github](https://github.com/npad/sidestream).
+              
           *   [Sidestream Raw Data](https://console.developers.google.com/storage/browser/archive-measurement-lab/sidestream/) - [Sidestream BigQuery Dataset](https://bigquery.cloud.google.com/dataset/measurement-lab:sidestream)
+
+              
+
+      # M-Lab Data Documentation
+
+
+      Here we document how to work with M-Lab data, covering some of the most
+      common topics, from basic to advanced use. If you have questions beyond
+      what is covered here, please [contact
+      us](mailto:support@measurementlab.net).
+
+
+      ## Querying BigQuery (Basic)
+
+
+      The links below provide the basics of querying M-Lab data.
+
+
+      *   [BigQuery QuickStart](/data/docs/bq/quickstart/)
+          
+      *   [M-Lab Dataset Schemas and Changelog](/data/docs/bq/schema/)
+          
+
+      ## Querying BigQuery (Advanced)
+
+
+      For researchers and others interested in advanced querying techniques, we
+      provide some guidance on some common use cases in the advanced BigQuery
+      topics below.
+
+
+      ### Accessing Raw Data via GCS
+
+
+      Advanced users may also be interested in obtaining raw M-Lab test data for
+      detailed analyses. For example, TCP packet captures are conducted for each
+      NDT test, and are only available in M-Lab's raw data archives.
+
+
+      *   [M-Lab Data in Google Cloud Storage](/data/docs/gcs/)
+          
+
+      ### Querying the DISCO Switch Dataset
+
+
+      *   [DISCO dataset](/blog/disco-dataset/)
+          
+
+      ### Analyses
+
+
+      *   [Discard Analysis 2018](/data/docs/analysis/discard-analysis-2018/)
+          
+      *   [Exploring the African
+      Internet](/data/docs/analysis/exploring-african-internet/)
+          
 
       ## Data License and Citing M-Lab Data
 
