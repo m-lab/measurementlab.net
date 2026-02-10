@@ -1,11 +1,11 @@
 ---
 permalink: iqb-prototype-v1
 title: Measurement Lab completes first prototype for IQB Framework
-excerpt: "[insert details about IQB prototype, repo, library] "
+excerpt: '[insert details about IQB prototype, repo, library] '
 authors:
   - melissa-newcomb
   - pavlos-sermpezis
-published: published
+published: draft
 categories:
   - Research
   - Community

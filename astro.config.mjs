@@ -1,5 +1,6 @@
 // @ts-check
 
+import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
 import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
@@ -7,12 +8,13 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig, fontProviders } from 'astro/config';
 import expressiveCode from 'astro-expressive-code';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
-import { rehypeTableAlign } from './src/lib/rehype-table-align.ts';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import Icons from 'unplugin-icons/vite';
 import redirectsData from './src/content/site/_redirects.json';
 import { siteConfig } from './src/lib/config.ts';
+import { rehypeTableAlign } from './src/lib/rehype-table-align.ts';
 
 // Transform redirects array to Astro's format
 // Internal paths get leading slash added, external URLs stay as-is
@@ -21,7 +23,12 @@ const redirects = redirectsData.redirects.reduce(
     const fromPath = `/${from}`;
     const toPath = to.startsWith('http') ? to : `/${to}`;
     acc[fromPath] = status
-      ? { destination: toPath, status: /** @type {300 | 301 | 302 | 303 | 304 | 307 | 308} */ (status) }
+      ? {
+          destination: toPath,
+          status: /** @type {300 | 301 | 302 | 303 | 304 | 307 | 308} */ (
+            status
+          ),
+        }
       : toPath;
     return acc;
   },
@@ -76,6 +83,7 @@ export default defineConfig({
   },
   markdown: {
     rehypePlugins: [
+      rehypeHeadingIds,
       [
         rehypeExternalLinks,
         {
@@ -85,6 +93,24 @@ export default defineConfig({
         },
       ],
       rehypeTableAlign,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: 'append',
+          headingProperties: { class: 'heading-anchor-group' },
+          properties: {
+            class: 'heading-anchor',
+            ariaHidden: true,
+            tabIndex: -1,
+          },
+          content: {
+            type: 'element',
+            tagName: 'span',
+            properties: { class: 'heading-anchor-icon' },
+            children: [{ type: 'text', value: '#' }],
+          },
+        },
+      ],
     ],
   },
   integrations: [

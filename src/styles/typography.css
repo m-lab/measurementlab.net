@@ -91,9 +91,26 @@
     @apply rounded-sm border border-neutral-300 bg-neutral-200 px-1;
   }
 
+  /* Heading anchor links - show # on hover */
+  .heading-anchor {
+    @apply ml-2 opacity-0 transition-opacity;
+  }
+  .heading-anchor-icon {
+    @apply text-primary-600;
+  }
+
+  .heading-anchor-group:hover .heading-anchor,
+  .heading-anchor:focus-visible {
+    @apply opacity-50;
+  }
+
+  .heading-anchor:hover {
+    @apply opacity-100;
+  }
+
   /* applies default link styling to "a" components that do not have the "data-component" property,
   so we can manage styling of Links, Buttons etc directly in the component  */
-  a:not([data-component]) {
+  a:not([data-component]):not(.heading-anchor) {
     @apply link-default;
   }
 }

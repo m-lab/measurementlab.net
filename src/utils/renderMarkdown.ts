@@ -2,6 +2,7 @@ import { getImage } from 'astro:assets';
 import rehypeExtractToc, {
   type TocEntry,
 } from '@stefanprobst/rehype-extract-toc';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
@@ -71,18 +72,30 @@ const createMarkdownProcessor = (withTOC = false, id?: string) => {
     .use(remarkParse)
     .use(remarkGfm) // Adds support for tables, strikethrough, task lists, etc.
     .use(remarkRehype)
+    .use(rehypeSlug, { prefix: `${id}-` });
 
+  // Extract TOC before autolink headings appends the # symbol
+  if (withTOC) {
+    processor.use(rehypeExtractToc);
+  }
+
+  processor
+    .use(rehypeAutolinkHeadings, {
+      behavior: 'append',
+      headingProperties: { class: 'heading-anchor-group' },
+      properties: { class: 'heading-anchor', ariaHidden: true, tabIndex: -1 },
+      content: {
+        type: 'element',
+        tagName: 'span',
+        properties: { class: 'heading-anchor-icon' },
+        children: [{ type: 'text', value: '#' }],
+      },
+    })
     .use(rehypeExternalLinks, {
       target: '_blank',
       rel: ['noopener', 'noreferrer'],
     })
     .use(rehypeStringify, { allowDangerousHtml: true });
-
-  if (withTOC) {
-    return processor
-      .use(rehypeSlug, { prefix: `${id}-` })
-      .use(rehypeExtractToc);
-  }
 
   return processor;
 };
