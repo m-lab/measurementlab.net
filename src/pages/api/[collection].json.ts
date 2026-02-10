@@ -1,5 +1,6 @@
 import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
+import { isVisible } from '@utils/content';
 import { collections } from '../../content/config';
 
 // Get collection names from the config - single source of truth
@@ -22,7 +23,15 @@ export const GET: APIRoute = async ({ params }) => {
 
   try {
     // Fetch all entries from the specified collection
-    const entries = await getCollection(collection as keyof typeof collections);
+    const allEntries = await getCollection(collection as keyof typeof collections);
+
+    // Filter by visibility for collections that have a status field
+    const entries = allEntries.filter((entry) => {
+      if ('status' in entry.data) {
+        return isVisible(entry as { data: { status?: string } });
+      }
+      return true;
+    });
 
     // Map entries to include both data and id/slug
     const collectionData = entries.map((entry) => {
