@@ -1,5 +1,6 @@
 ---
 import Button from '@components/atoms/Button.tsx';
+import Heading from '@components/atoms/Heading.astro';
 
 export interface ButtonType {
   variant: string;
@@ -26,7 +27,7 @@ const {
 	{
 		title && (
 			<div class="mb-12 text-center">
-				{title && <h2 class="mb-4">{title}</h2>}
+				{title && <Heading level={2} class="mb-4">{title}</Heading>}
 			</div>
 		)
 	}

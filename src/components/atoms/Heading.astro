@@ -1,7 +1,10 @@
 ---
+import { slugify } from '@utils/slugify';
+
 export interface Props {
   level: 1 | 2 | 3 | 4 | 5 | 6;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  anchor?: boolean;
   class?: string;
   [key: string]: any;
 }
@@ -9,11 +12,12 @@ export interface Props {
 const {
   level,
   as,
+  anchor,
   class: className = '',
   ...props
 } = Astro.props;
 
-const Tag = as || `h${level}`;
+const Tag = (as || `h${level}`) as keyof typeof styles;
 
 const styles = {
   h1: 'text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight',
@@ -24,9 +28,21 @@ const styles = {
   h6: 'text-base md:text-lg lg:text-xl font-medium',
 };
 
-const classes = `${styles[Tag]} ${className}`;
+// Default: anchor is true for h1/h2, false otherwise
+const showAnchor = anchor ?? (level <= 2);
+
+const slotContent = await Astro.slots.render('default');
+const textContent = slotContent.replace(/<[^>]*>/g, '').trim();
+const slug = showAnchor ? slugify(textContent) : undefined;
+
+const classes = `${showAnchor ? 'heading-anchor-group ' : ''}${styles[Tag]} ${className}`.trim();
 ---
 
-<Tag class={classes} {...props}>
+<Tag class={classes} id={slug} {...props}>
   <slot />
+  {showAnchor && slug && (
+    <a class="heading-anchor" aria-hidden="true" tabindex="-1" href={`#${slug}`}>
+      <span class="heading-anchor-icon">#</span>
+    </a>
+  )}
 </Tag>

@@ -1,5 +1,6 @@
 ---
 import Button from '@components/atoms/Button.tsx';
+import Heading from '@components/atoms/Heading.astro';
 import Image from '@components/atoms/Image.astro';
 import Card from '@components/molecules/Card.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
@@ -40,7 +41,7 @@ const {
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<!-- Section Header -->
 		<div class="mb-12 text-center">
-			<h2 class="mb-4">{title}</h2>
+			<Heading level={2} class="mb-4">{title}</Heading>
 			{description && <p class="text-gray-600">{description}</p>}
 		</div>
 
