@@ -41,7 +41,9 @@ const processImageNodes = () => async (tree: any) => {
     }
 
     // Get the imported image from our glob map
-    const importedImage = images[src];
+    // Decode URL-encoded paths (e.g. %20 for spaces) to match glob keys
+    const decodedSrc = decodeURIComponent(src);
+    const importedImage = images[decodedSrc] ?? images[src];
 
     if (!importedImage) {
       console.warn(`Image not found in /src/assets: ${src}`);
