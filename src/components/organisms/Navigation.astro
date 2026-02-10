@@ -6,6 +6,7 @@ import Link from '@components/atoms/Link';
 import NavItem from '@components/molecules/NavItem.astro';
 import MobileMenu from '@components/organisms/MobileMenu';
 import RichSearch from '@components/organisms/RichSearch';
+import { isPreview } from '@utils/dev';
 import type { NavItem as TNavItem } from '@utils/navigation';
 import MagnifyingGlassIcon from '~icons/heroicons/magnifying-glass-20-solid';
 import NavLogo from '/public/logo-short-blue.svg'
@@ -39,15 +40,26 @@ const isActive = (href: string) => {
 ---
 
 <nav
-	class={`p-6 w-full bg-neutral-50 flex justify-between items-center ${className}`}
+	class={`p-6 w-full bg-neutral-50 flex justify-between items-center  ${className}`}
 >
 	<!-- Left side: Logo + Nav Links -->
 	<div class="flex items-center gap-10">
 		<!-- Logo/Site Name -->
 		<div class="shrink-0">
 			<Link href="/" variant="unstyled" className="block">
-				<Image src={NavLogo} alt={siteName} class="h-12 w-auto" />
+				<Image
+					src={NavLogo}
+					alt={siteName}
+					class={`h-12 w-auto ${isPreview ? 'grayscale' : ''}`}
+				/>
 			</Link>
+			{
+				isPreview && (
+					<span class="mt-1 block text-center text-xs font-semibold text-neutral-500 uppercase">
+						Preview
+					</span>
+				)
+			}
 		</div>
 
 		<!-- Navigation Links -->
