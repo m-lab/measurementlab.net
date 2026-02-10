@@ -1,6 +1,7 @@
 title: Contact M-Lab
 permalink: contact
 status: published
+zigzag: secondary-light
 sections:
   - type: richText
     background:
@@ -16,10 +17,9 @@ sections:
 
 
       Search our answers to commonly asked questions on our [FAQ
-      page](/frequently-asked-questions)
-      [](frequently-asked-questions)or email us at
-      [support@measurementlab.net](mailto:support@measurementlab.net) and our
-      team will get back to you.
+      page](/frequently-asked-questions) [](frequently-asked-questions)or email
+      us at [support@measurementlab.net](mailto:support@measurementlab.net) and
+      our team will get back to you.
 
 
       If you are interested in discussing your question or issue with others in
