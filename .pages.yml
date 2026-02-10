@@ -419,6 +419,30 @@ components:
         label: Description
         type: rich-text
 
+  blog_roll_section:
+    type: object
+    fields:
+      - name: background
+        label: Section Background
+        component: background_select
+      - name: title
+        label: Title
+        type: string
+        default: Latest News
+      - name: description
+        label: Description
+        type: rich-text
+      - name: limit
+        label: Number of Posts
+        type: number
+        default: 3
+        description: How many blog posts to show (1–12)
+      - name: showMore
+        label: Show "More" Button
+        type: boolean
+        default: false
+        description: Display a link to the full blog
+
   infrastructure_map_section:
     type: object
     fields:
@@ -493,6 +517,10 @@ content:
           - name: flexi
             label: Flexi Section
             component: flexi_section
+
+          - name: blog_roll
+            label: Blog Roll Section
+            component: blog_roll_section
 
           - name: speed_test
             label: Speed Test Section
@@ -575,6 +603,10 @@ content:
           - name: flexi
             label: Flexi Section
             component: flexi_section
+
+          - name: blog_roll
+            label: Blog Roll Section
+            component: blog_roll_section
 
           - name: infrastructureMap
             label: Infrastructure Map Section
