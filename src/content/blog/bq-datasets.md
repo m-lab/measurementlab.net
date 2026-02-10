@@ -9,7 +9,7 @@ excerpt: >-
   also...
 authors: []
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - Data
   - Bigquery

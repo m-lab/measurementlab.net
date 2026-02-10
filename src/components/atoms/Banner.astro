@@ -1,0 +1,22 @@
+---
+export interface Props {
+	message: string;
+	color?: 'primary' | 'secondary' | 'supporting1' | 'supporting2' | 'neutral';
+}
+
+const { message, color = 'secondary' } = Astro.props;
+
+const colorStyles = {
+	primary: 'border-primary-300 bg-primary-50 text-primary-800',
+	secondary: 'border-secondary-300 bg-secondary-50 text-secondary-800',
+	supporting1: 'border-supporting1-300 bg-supporting1-50 text-supporting1-800',
+	supporting2: 'border-supporting2-300 bg-supporting2-50 text-supporting2-800',
+	neutral: 'border-neutral-300 bg-neutral-50 text-neutral-800',
+};
+---
+
+<div
+	class={`mx-auto max-w-5xl shadow-sm border p-4 my-4 ${colorStyles[color]}`}
+>
+	<p class="">{message}</p>
+</div>

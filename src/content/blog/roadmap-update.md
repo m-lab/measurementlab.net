@@ -8,7 +8,7 @@ excerpt: >-
   milestones and tasks every ~6 months, with regular internal meetings and up...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Roadmap
 publishedDate: 2020-11-02

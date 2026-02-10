@@ -1,7 +1,8 @@
 ---
 permalink: /tests/ndt/views/examples/
 title: "NDT Unified Views Example Queries"
-status: current
+status: published
+testStatus: current
 parentTest: /tests/ndt/
 showInIndex: false
 ---

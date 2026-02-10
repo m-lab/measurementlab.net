@@ -6,7 +6,7 @@ excerpt: >-
   filters.
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Research
   - Data

@@ -10,7 +10,7 @@ excerpt: >-
   updated version of NDT makes it possible to measure network perfo...
 authors: []
 externalAuthors: "Collin Anderson"
-published: published
+status: published
 categories:
   - Consumer Internet
   - Data Analysis

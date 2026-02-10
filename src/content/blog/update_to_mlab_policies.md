@@ -8,7 +8,7 @@ excerpt: >-
   modernization update that will be rolled out this fall. This post outlin...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Policies
   - GDPR

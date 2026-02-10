@@ -7,13 +7,14 @@ import HouseCard from '@components/molecules/HouseCard.astro';
 import Hero from '@components/organisms/Hero.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
+import { isVisible } from '@utils/content';
 import { siteConfig } from '@lib/config';
 import type { GetStaticPaths } from 'astro';
 
 // Generate static paths for all people
 export const getStaticPaths = (async () => {
   const peopleEntries = await getCollection('people');
-  return peopleEntries.map((entry) => ({
+  return peopleEntries.filter((entry) => isVisible(entry)).map((entry) => ({
     params: { id: entry.data.id },
     props: { person: entry.data },
   }));

@@ -11,7 +11,7 @@ excerpt: >-
   measurement...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Research
   - Interconnection

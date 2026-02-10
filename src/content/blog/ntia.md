@@ -10,7 +10,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
   - chris-ritzo
-published: published
+status: published
 categories:
   - NDT
   - Digital Inclusion

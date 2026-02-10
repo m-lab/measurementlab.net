@@ -9,7 +9,7 @@ excerpt: >-
   adapted the Piecew...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Data
   - Data Analysis

@@ -9,7 +9,7 @@ excerpt: >-
   bl...
 authors: []
 externalAuthors: "Simone Basso"
-published: published
+status: published
 categories:
   - IGF
   - Event

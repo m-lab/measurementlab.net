@@ -8,7 +8,7 @@ excerpt: >-
   </div> As COVID-19's impact increases globally, more people are ...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Digital Inclusion
   - Survey

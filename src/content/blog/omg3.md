@@ -10,7 +10,7 @@ excerpt: >-
 authors:
   - pavlos-sermpezis
   - melissa-newcomb
-published: published
+status: published
 categories:
   - Event
   - Censorship Measurement

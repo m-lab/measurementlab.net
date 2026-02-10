@@ -1,8 +1,9 @@
 ---
 permalink: /tests/pathload2/
 title: "Pathload2"
+status: published
 description: "Tested the available bandwidth of an Internet connection until it was decommissioned from the M-Lab platform on 12/21/2012. However, the data and source code are still available."
-status: retired
+testStatus: retired
 icon: /src/assets/images/tests/pathload2.png
 order: 7
 ---

@@ -9,7 +9,7 @@ excerpt: >-
 authors:
   - georgia-bullen
   - melissa-newcomb
-published: published
+status: published
 categories:
   - Leadership
   - Announcement

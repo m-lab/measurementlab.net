@@ -8,7 +8,7 @@ excerpt: >-
   internal staff interested using M-Lab data to help answer broad research...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories: []
 publishedDate: 2014-03-10
 ---

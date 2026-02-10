@@ -8,7 +8,7 @@ excerpt: >-
   M-Lab experiments will be changing soon.
 authors:
   - nathan-kinkade
-published: published
+status: published
 categories:
   - Platform
 publishedDate: 2020-05-07

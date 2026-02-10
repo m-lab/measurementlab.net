@@ -10,7 +10,7 @@ excerpt: >-
   about the data. These recommendations are intended to provide guidanc...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - NDT
   - Research

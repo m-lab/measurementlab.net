@@ -6,6 +6,18 @@ import publicationsCategories from './categories/publications.json';
 
 //  TODO: #5 create Projects content collection
 
+// Shared status field for content visibility across all collections
+const statusSchema = z.enum(['draft', 'published', 'archived']).default('draft');
+
+// Shared color palette enum matching the site's design tokens
+const colorPaletteSchema = z.enum([
+  'primary',
+  'secondary',
+  'supporting1',
+  'supporting2',
+  'neutral',
+]);
+
 // Helper to create schemas with image support
 const createSchemas = (image: ImageFunction) => {
   // Atoms
@@ -38,6 +50,7 @@ const createSchemas = (image: ImageFunction) => {
     sections: z.array(
       z.enum(peopleCategories.categories as [string, ...string[]])
     ),
+    status: statusSchema,
   });
 
   //  Partner
@@ -167,7 +180,7 @@ const pagesCollection = defineCollection({
       description: z.string().optional(),
       heroImage: image().optional(),
       permalink: z.string(),
-      published: z.boolean().default(true),
+      status: statusSchema,
       zigzag: z
         .enum([
           'primary-light',
@@ -197,6 +210,7 @@ const partnersCollection = defineCollection({
     return partnerSchema.extend({
       id: z.string(),
       order: z.number().optional().default(999),
+      status: statusSchema,
     });
   },
 });
@@ -210,7 +224,7 @@ const blogCollection = defineCollection({
       excerpt: z.string().optional(),
       authors: z.array(z.string()).optional(), // References to people collection IDs
       externalAuthors: z.string().optional(), // Comma-separated external author names
-      published: z.enum(['draft', 'published']),
+      status: statusSchema,
       categories: z.array(
         z.enum(blogCategories.categories as [string, ...string[]])
       ),
@@ -247,6 +261,10 @@ const siteCollection = defineCollection({
         description: z.string().optional(),
         bottom: z.string(),
       }),
+      archivedBanner: z.object({
+        message: z.string(),
+        color: colorPaletteSchema,
+      }).optional(),
     }),
 });
 
@@ -324,9 +342,10 @@ const testsCollection = defineCollection({
       title: z.string(),
       description: z.string().optional(),
       parentTest: z.string().optional(), // For nested tests (e.g., /tests/ndt/ for ndt5)
-      status: z
+      testStatus: z
         .enum(['current', 'retired', 'core-service', 'retired-core-service'])
         .optional(),
+      status: statusSchema,
       icon: image().optional(), // Icon image for tests index page
       order: z.number().optional().default(999),
       showInIndex: z.boolean().optional().default(true),
@@ -339,6 +358,7 @@ const publicationsCollection = defineCollection({
     // Core metadata
     id: z.string(),
     title: z.string(),
+    status: statusSchema,
     description: z.string().optional(),
     authors: z.string().optional(), // Official citation string
     contributors: z.array(z.string()).optional(), // References to people collection IDs

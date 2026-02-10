@@ -8,7 +8,7 @@ excerpt: >-
   spread?* - *How are active users spread within a specific IP address block?*
 authors: []
 externalAuthors: "Tiziana Refice, Vasco Asturiano, Robert Kisteleki"
-published: published
+status: published
 categories:
   - Visualization
   - Data Analysis

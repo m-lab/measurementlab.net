@@ -10,7 +10,7 @@ authors:
   - lai-yi-ohlsen
   - matt-mathis
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - NDT
   - NDT7

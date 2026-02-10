@@ -8,7 +8,7 @@ authors:
   - lai-yi-ohlsen
   - nathan-kinkade
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - Platform
   - Infrastructure

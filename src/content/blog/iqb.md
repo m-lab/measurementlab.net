@@ -8,7 +8,7 @@ authors:
   - pavlos-sermpezis
   - melissa-newcomb
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Publication
   - Announcement

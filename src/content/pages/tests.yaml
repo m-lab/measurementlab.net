@@ -1,6 +1,6 @@
 title: Internet Measurement Tests
 permalink: tests
-published: true
+status: published
 description: M-Lab hosts a number of measurement tests, allowing you to check for everything from network speed and latency to blocking and throttling. Explore them below, and run a test to learn more about your connection.
 zigzag: 'supporting2-light'
 sections:

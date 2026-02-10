@@ -5,7 +5,7 @@ excerpt: Are you attending the Internet Measurement Conference (IMC) 2023?
 authors:
   - lai-yi-ohlsen
 externalAuthors: "Katherine Townsend"
-published: published
+status: published
 categories:
   - Data
   - Event

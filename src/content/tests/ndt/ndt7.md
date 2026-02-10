@@ -1,7 +1,8 @@
 ---
 permalink: /tests/ndt/ndt7/
 title: 'ndt7 Protocol - NDT (Network Diagnostic Tool)'
-status: current
+status: published
+testStatus: current
 parentTest: /tests/ndt/
 showInIndex: false
 ---

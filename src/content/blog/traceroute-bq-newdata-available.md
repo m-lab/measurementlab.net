@@ -8,7 +8,7 @@ excerpt: >-
   designed many years ago, put the hops of the same test in different rows...
 authors: []
 externalAuthors: "Ya Chang"
-published: published
+status: published
 categories:
   - Data
   - Paris Traceroute

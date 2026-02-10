@@ -6,7 +6,7 @@ excerpt: >-
   can fit into your research?
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Community
   - Data

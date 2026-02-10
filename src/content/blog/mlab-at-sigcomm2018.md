@@ -7,7 +7,7 @@ excerpt: >-
   the projects we're hoping to work on with folks on the hackathon wiki.
 authors:
   - georgia-bullen
-published: published
+status: published
 categories:
   - Event
   - Community

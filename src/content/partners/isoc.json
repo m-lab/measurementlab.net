@@ -3,5 +3,6 @@
   "name": "Internet Society",
   "url": "https://www.internetsociety.org/",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/isoc_logo.png"
+  "image": "/src/assets/partners/isoc_logo.png",
+  "status": "published"
 }

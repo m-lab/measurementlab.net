@@ -3,5 +3,6 @@
   "name": "Consorci de Serveis Universitaris de Catalunya (CSUC)",
   "url": "http://www.csuc.cat/en",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/csuc_logo.png"
+  "image": "/src/assets/partners/csuc_logo.png",
+  "status": "published"
 }

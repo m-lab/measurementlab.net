@@ -8,7 +8,7 @@ excerpt: >-
   showcase how the platform has evolved, learn from you about how ...
 authors:
   - georgia-bullen
-published: published
+status: published
 categories:
   - Event
   - Community

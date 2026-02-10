@@ -8,7 +8,7 @@ excerpt: >-
   next Wednesday, August 25, 2021 from 11am-12:30pm Eastern** for a conv...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Community
   - Latency

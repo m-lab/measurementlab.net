@@ -8,7 +8,7 @@ excerpt: >-
   groups are using data to support and advance constructive change.” Th...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - NDT
   - Bigquery

@@ -8,7 +8,7 @@ excerpt: >-
   does not constitute a regression, then we can roll out the new platf...
 authors:
   - peter-boothe
-published: published
+status: published
 categories:
   - Platform
   - Research

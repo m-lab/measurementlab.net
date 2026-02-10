@@ -1,7 +1,8 @@
 ---
 permalink: /tests/ndt/views/custom/
 title: "Creating Custom Unified Views or Subqueries for Your Own Research"
-status: current
+status: published
+testStatus: current
 parentTest: /tests/ndt/
 showInIndex: false
 ---

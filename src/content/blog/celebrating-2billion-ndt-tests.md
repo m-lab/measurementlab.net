@@ -8,7 +8,7 @@ excerpt: >-
   and the beginning of the second quarter of 2019, and we are on tr...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Data
 publishedDate: 2019-09-18

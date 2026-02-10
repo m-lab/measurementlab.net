@@ -6,7 +6,7 @@ excerpt: >-
   access tokens issued by the Locate API v2 to run a measurement.
 authors: []
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - NDT
   - NDT7

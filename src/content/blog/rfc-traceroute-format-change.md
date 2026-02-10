@@ -8,7 +8,7 @@ excerpt: >-
   an M-Lab server. TRC uses the scamper tool for running traceroutes.
 authors: []
 externalAuthors: "Saied Kazemi"
-published: published
+status: published
 categories:
   - Traceroute
 publishedDate: 2022-01-10

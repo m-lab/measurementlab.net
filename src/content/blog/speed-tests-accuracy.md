@@ -9,7 +9,7 @@ excerpt: >-
 authors:
   - peter-boothe
   - georgia-bullen
-published: published
+status: published
 categories:
   - Speed
   - Accuracy

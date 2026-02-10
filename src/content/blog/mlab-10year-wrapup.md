@@ -8,7 +8,7 @@ excerpt: >-
   countries (and parts of this one), the Internet remains unaffordable, u...
 authors:
   - georgia-bullen
-published: published
+status: published
 categories:
   - Event
   - Community

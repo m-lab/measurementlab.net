@@ -1,7 +1,8 @@
 ---
 permalink: /tests/ndt/views/migrate/
 title: "Migrating Queries from Previous to Current NDT Unified Views"
-status: current
+status: published
+testStatus: current
 parentTest: /tests/ndt/
 showInIndex: false
 ---

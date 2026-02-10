@@ -1,8 +1,9 @@
 ---
 permalink: /tests/mobiperf/
 title: "MobiPerf"
+status: published
 description: "Measured network performance on mobile platforms."
-status: retired
+testStatus: retired
 icon: /src/assets/images/tests/mobile.png
 order: 6
 ---

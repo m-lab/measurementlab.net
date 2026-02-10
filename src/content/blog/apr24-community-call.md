@@ -7,7 +7,7 @@ excerpt: >-
   2042 at 11am EDT.
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Community
   - Internet Quality

@@ -7,7 +7,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 externalAuthors: "Katherine Townsend"
-published: published
+status: published
 categories:
   - Leadership
   - Announcement

@@ -8,7 +8,7 @@ excerpt: >-
   2014 and April 2015 were impacted. The raw files in our Google ...
 authors: []
 externalAuthors: "Michael Lynch"
-published: published
+status: published
 categories:
   - Data
   - Transparency

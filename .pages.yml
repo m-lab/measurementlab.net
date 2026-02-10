@@ -3,7 +3,6 @@
 # Documentation: https://pagescms.org/docs/configuration/
 # ============================================================================
 
-
 # ============================================================================
 # MEDIA
 # ============================================================================
@@ -18,7 +17,6 @@ media:
     output: ../../assets
     path: images/blog
 
-
 # ============================================================================
 # REUSABLE COMPONENTS
 #
@@ -26,7 +24,6 @@ media:
 # collections via `component: <name>`.
 # ============================================================================
 components:
-
   # --------------------------------------------------------------------------
   # Primitives (button, card, background, link)
   # --------------------------------------------------------------------------
@@ -505,12 +502,10 @@ components:
         label: Description
         type: rich-text
 
-
 # ============================================================================
 # CONTENT COLLECTIONS
 # ============================================================================
 content:
-
   # --------------------------------------------------------------------------
   # Homepage (singleton)
   # --------------------------------------------------------------------------
@@ -586,7 +581,7 @@ content:
     format: yaml
     filename: '{fields.permalink}.yaml'
     view:
-      fields: [title, description, published]
+      fields: [title, description, status]
       primary: title
     fields:
       - name: title
@@ -604,11 +599,20 @@ content:
             regex: '^[a-zA-Z0-9_-]*$',
           }
         required: true
-      - name: published
-        label: Published
-        type: boolean
-        default: true
-        description: Whether this page is published and visible on the site
+      - name: status
+        label: Status
+        type: select
+        required: true
+        default: draft
+        options:
+          values:
+            - label: Draft
+              value: draft
+            - label: Published
+              value: published
+            - label: Archived
+              value: archived
+        description: Draft content is only visible on the preview site. New content defaults to Draft.
       - name: description
         label: Page Description
         type: rich-text
@@ -686,7 +690,7 @@ content:
     filename: '{fields.id}.json'
     subfolders: false
     view:
-      fields: [headshot, name, title, affiliation]
+      fields: [headshot, name, title, affiliation, status]
       primary: name
     fields:
       - name: id
@@ -698,6 +702,20 @@ content:
         label: Name
         type: string
         required: true
+      - name: status
+        label: Status
+        type: select
+        required: true
+        default: draft
+        options:
+          values:
+            - label: Draft
+              value: draft
+            - label: Published
+              value: published
+            - label: Archived
+              value: archived
+        description: Draft content is only visible on the preview site. New content defaults to Draft.
       - name: headshot
         label: Headshot
         type: image
@@ -745,7 +763,7 @@ content:
     filename: '{fields.id}.json'
     subfolders: false
     view:
-      fields: [image, name, affiliation, category]
+      fields: [image, name, affiliation, category, status]
       sort: [category, name]
       search: [name, affiliation]
       primary: name
@@ -759,6 +777,20 @@ content:
         label: Partner Name
         type: string
         required: true
+      - name: status
+        label: Status
+        type: select
+        required: true
+        default: draft
+        options:
+          values:
+            - label: Draft
+              value: draft
+            - label: Published
+              value: published
+            - label: Archived
+              value: archived
+        description: Draft content is only visible on the preview site. New content defaults to Draft.
       - name: affiliation
         label: Affiliation
         type: string
@@ -821,7 +853,7 @@ content:
     filename: '{fields.permalink}.md'
     subfolders: false
     view:
-      fields: [heroImage, title, publishedDate, published]
+      fields: [heroImage, title, publishedDate, status]
       primary: title
     fields:
       - name: permalink
@@ -859,7 +891,7 @@ content:
         type: string
         required: false
         description: Add any external authors here
-      - name: published
+      - name: status
         label: Status
         type: select
         required: true
@@ -870,6 +902,9 @@ content:
               value: draft
             - label: Published
               value: published
+            - label: Archived
+              value: archived
+        description: Draft content is only visible on the preview site. New content defaults to Draft.
       - name: publishedDate
         label: Published Date
         type: date
@@ -922,7 +957,7 @@ content:
     filename: '{fields.slug}.md'
     subfolders: true
     view:
-      fields: [icon, title, status, order]
+      fields: [icon, title, testStatus, status, order]
       sort: [order, title]
       primary: title
     fields:
@@ -950,17 +985,35 @@ content:
         label: Description
         type: text
         description: Brief description of what the test measures
-      - name: status
-        label: Status
+      - name: testStatus
+        label: Test Status
         type: select
-        required: true
         default: current
         options:
           values:
             - label: Current
               value: current
-            - label: Deprecated
-              value: deprecated
+            - label: Core Service
+              value: core-service
+            - label: Retired
+              value: retired
+            - label: Retired Core Service
+              value: retired-core-service
+        description: The operational status of this test on the M-Lab platform
+      - name: status
+        label: Status
+        type: select
+        required: true
+        default: draft
+        options:
+          values:
+            - label: Draft
+              value: draft
+            - label: Published
+              value: published
+            - label: Archived
+              value: archived
+        description: Draft content is only visible on the preview site. New content defaults to Draft.
       - name: icon
         label: Icon
         type: image
@@ -1042,6 +1095,34 @@ content:
             label: YouTube URL
             type: string
             description: Full URL to your YouTube channel
+      - name: archivedBanner
+        label: Archived Banner
+        type: object
+        description: Banner shown on archived pages
+        fields:
+          - name: message
+            label: Message
+            type: string
+            required: true
+            description: Text displayed in the archived page banner
+          - name: color
+            label: Color
+            type: select
+            required: true
+            default: secondary
+            options:
+              values:
+                - label: Primary (Blue)
+                  value: primary
+                - label: Secondary (Yellow)
+                  value: secondary
+                - label: Supporting 1 (Green)
+                  value: supporting1
+                - label: Supporting 2 (Sap Green)
+                  value: supporting2
+                - label: Neutral (Gray)
+                  value: neutral
+            description: Color palette for the banner
 
   # --------------------------------------------------------------------------
   # Redirects (singleton)

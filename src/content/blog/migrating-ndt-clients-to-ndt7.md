@@ -11,7 +11,7 @@ authors:
   - chris-ritzo
   - matt-mathis
 externalAuthors: "Greg Russell, Stephen Soltesz"
-published: published
+status: published
 categories:
   - NDT
   - NDT7

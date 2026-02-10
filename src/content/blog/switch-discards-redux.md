@@ -8,7 +8,7 @@ excerpt: >-
   negative consequences for tests contained in our SideStream or ND...
 authors: []
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - Data
   - Data Analysis

@@ -10,7 +10,7 @@ excerpt: >-
   challenging our assertions. We received valuable feedback that allowed ...
 authors: []
 externalAuthors: "Collin Anderson"
-published: published
+status: published
 categories:
   - Research
   - ToS

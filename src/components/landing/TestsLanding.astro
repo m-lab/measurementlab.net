@@ -8,8 +8,8 @@ import { getTests, type Test } from '@utils/tests';
 // Get all tests that should show in the index
 const tests = await getTests();
 
-// Group tests by status
-type StatusKey = NonNullable<Test['data']['status']>;
+// Group tests by testStatus
+type StatusKey = NonNullable<Test['data']['testStatus']>;
 const statusGroups: Record<StatusKey, { title: string; description: string; tests: typeof tests }> = {
   current: {
     title: 'Current Tests',
@@ -35,7 +35,7 @@ const statusGroups: Record<StatusKey, { title: string; description: string; test
 
 // Sort tests into groups
 tests.forEach((test) => {
-  const status = test.data.status || 'current';
+  const status = test.data.testStatus || 'current';
   if (statusGroups[status]) {
     statusGroups[status].tests.push(test);
   }

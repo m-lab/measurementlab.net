@@ -9,7 +9,7 @@ excerpt: >-
   conditio...
 authors: []
 externalAuthors: "Collin Anderson"
-published: published
+status: published
 categories:
   - Microbursts
   - Switch Discard

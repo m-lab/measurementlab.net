@@ -1,7 +1,8 @@
 ---
 permalink: /tests/traceroute/
 title: "Traceroute"
-status: core-service
+status: published
+testStatus: core-service
 description: "Collects network path information for every connection to the M-Lab platform."
 icon: /src/assets/images/tests/traceroute.png
 ---

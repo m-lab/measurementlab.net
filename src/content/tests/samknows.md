@@ -1,8 +1,9 @@
 ---
 permalink: /tests/samknows/
 title: "SamKnows"
+status: published
 description: "M-Lab hosted the off-net servers for SamKnows performance testing used in the FCC's Measuring Broadband America Program from 2009-2019."
-status: retired
+testStatus: retired
 icon: /src/assets/images/tests/samknows.png
 order: 8
 ---

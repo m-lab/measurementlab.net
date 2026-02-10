@@ -8,7 +8,7 @@ excerpt: >-
   been a ton of work, and our team is excited to now complete the migration...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Data
   - Open Source

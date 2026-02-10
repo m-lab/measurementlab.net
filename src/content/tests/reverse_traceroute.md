@@ -1,8 +1,9 @@
 ---
 permalink: /tests/reverse_traceroute/
 title: "Reverse Traceroute"
+status: published
 description: "Measures the network path back to a user from selected network endpoints."
-status: current
+testStatus: current
 icon: /src/assets/images/tests/arrow-swoop.png
 order: 12
 ---

@@ -4,7 +4,7 @@ title: M-Lab Fellowship Presentation Videos and Reports
 excerpt: Recordings of the 2022 M-Lab Fellowship Presentations and Reports.
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Fellowship
   - Research

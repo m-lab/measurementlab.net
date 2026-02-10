@@ -10,7 +10,7 @@ excerpt: >-
 authors:
   - cristina-leon
 externalAuthors: "Phillipa Gill, Katherine Townsend"
-published: published
+status: published
 categories:
   - NDT
   - Data

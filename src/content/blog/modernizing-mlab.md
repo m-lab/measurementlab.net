@@ -9,7 +9,7 @@ excerpt: >-
   administ...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Upgrades
   - Virtualization

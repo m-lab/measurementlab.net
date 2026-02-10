@@ -3,5 +3,6 @@
   "name": "TOP-IX Consortium Logo",
   "url": "http://www.top-ix.org/",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/top-ix.png"
+  "image": "/src/assets/partners/top-ix.png",
+  "status": "published"
 }

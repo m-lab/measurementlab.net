@@ -8,7 +8,7 @@ excerpt: >-
   the internal monitoring metrics we posted last week. They show data about t...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Covid19
   - Community

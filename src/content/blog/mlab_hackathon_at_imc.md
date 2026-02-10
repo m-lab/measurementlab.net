@@ -6,7 +6,7 @@ excerpt: >-
   Conference 2022!
 authors:
   - cristina-leon
-published: published
+status: published
 categories:
   - NDT
   - Bigquery

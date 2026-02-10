@@ -10,7 +10,7 @@ excerpt: >-
   opportunity to learn more about the amazing work that MERIT, ind...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Data
   - Community

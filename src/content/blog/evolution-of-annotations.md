@@ -8,7 +8,7 @@ excerpt: >-
   which maintains and reprocesses M-Lab data, as well as the [UUID annotato...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Research
   - Data

@@ -1,6 +1,6 @@
 title: Test sections
 permalink: test-sections
-published: true
+status: published
 sections:
   - type: richText
     content: rich text content

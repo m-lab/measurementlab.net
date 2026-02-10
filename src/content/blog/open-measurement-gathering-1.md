@@ -9,7 +9,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
   - melissa-newcomb
-published: published
+status: published
 categories:
   - Event
   - Censorship Measurement

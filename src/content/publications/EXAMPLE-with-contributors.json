@@ -10,5 +10,9 @@
   ],
   "year": 2024,
   "category": "documentation",
-  "tags": ["mlab-team", "example"]
+  "tags": [
+    "mlab-team",
+    "example"
+  ],
+  "status": "published"
 }

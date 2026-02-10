@@ -11,7 +11,7 @@ authors:
   - nathan-kinkade
   - pavlos-sermpezis
   - melissa-newcomb
-published: published
+status: published
 categories:
   - Data
   - Bigquery

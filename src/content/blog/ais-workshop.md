@@ -10,7 +10,7 @@ excerpt: >-
   presented a hands-on tutorial on querying and visualizing performanc...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Data
   - Data Analysis

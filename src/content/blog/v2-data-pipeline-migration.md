@@ -9,7 +9,7 @@ excerpt: >-
   documenta...
 authors: []
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - Pipeline
   - NDT

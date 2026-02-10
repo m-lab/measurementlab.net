@@ -1,7 +1,8 @@
 ---
 permalink: /tests/traceroute/scamper1/
 title: "scamper1 Schema"
-status: core-service
+status: published
+testStatus: core-service
 parentTest: /tests/traceroute/
 showInIndex: false
 ---

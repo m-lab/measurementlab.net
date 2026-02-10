@@ -10,7 +10,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 externalAuthors: "Phillipa Gill"
-published: published
+status: published
 categories:
   - Research
   - Fellowship

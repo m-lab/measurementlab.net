@@ -1,7 +1,8 @@
 ---
 permalink: /tests/ndt/
 title: "NDT (Network Diagnostic Tool)"
-status: current
+status: published
+testStatus: current
 description: "Tests your connection speed, and provides a sophisticated diagnosis of problems limiting speed."
 icon: /src/assets/images/tests/ndt.png
 ---

@@ -8,7 +8,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - NDT
   - NDT7

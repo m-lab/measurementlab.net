@@ -1,8 +1,9 @@
 ---
 permalink: /tests/bismark/
 title: "BISmark"
+status: published
 description: "Allowed people to host a home router that also tests network performance over time."
-status: retired
+testStatus: retired
 icon: /src/assets/images/tests/neubot.png
 order: 1
 ---

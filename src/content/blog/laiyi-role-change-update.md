@@ -4,7 +4,7 @@ title: M-Lab Leadership Transition
 excerpt: A note from Lai Yi Ohlsen to the Measurement Lab community.
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Announcement
 publishedDate: 2022-05-31

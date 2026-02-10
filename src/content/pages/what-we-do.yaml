@@ -2,7 +2,7 @@ title: Platform
 description: M-Lab offers widely used tests like the Network Diagnostic Tool (NDT) to analyze download and upload speeds while maintaining an open database for researchers, policymakers, and the public.
 heroImage: /src/assets/backgrounds/anna-magenta-YELG0ZVK5yw-unsplash.jpg
 permalink: what-we-do
-published: true
+status: published
 sections:
   - type: richText
     content: rich text content

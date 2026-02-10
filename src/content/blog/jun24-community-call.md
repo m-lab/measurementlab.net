@@ -7,7 +7,7 @@ excerpt: >-
   into its design and testing.
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Community
   - Traceroute

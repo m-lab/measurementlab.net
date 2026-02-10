@@ -8,7 +8,7 @@ excerpt: >-
   performance. We will be releasing additional features and views a...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Observatory
   - Features

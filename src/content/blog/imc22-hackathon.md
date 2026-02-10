@@ -5,7 +5,7 @@ excerpt: Summary of M-Lab's hackathon at IMC 2022!
 authors:
   - lai-yi-ohlsen
   - cristina-leon
-published: published
+status: published
 categories:
   - Event
   - Data

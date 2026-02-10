@@ -1,8 +1,9 @@
 ---
 permalink: /tests/iprs/
 title: "IP Route Survey (IPRS)"
+status: published
 description: "An initiative to continuously monitor IP-level routing across the internet."
-status: current
+testStatus: current
 icon: /src/assets/images/tests/traceroute.png
 order: 10
 showInIndex: false

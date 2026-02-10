@@ -8,7 +8,7 @@ excerpt: >-
   our February 2015 submission to the FCC’s Open Internet docket,...
 authors: []
 externalAuthors: "Collin Anderson"
-published: published
+status: published
 categories:
   - Interconnection
   - Research

@@ -8,7 +8,7 @@ excerpt: >-
   source(s) and the context of what each contains. We emphasized the ...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - NDT
   - Research

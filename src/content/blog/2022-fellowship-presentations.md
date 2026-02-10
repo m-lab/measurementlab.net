@@ -6,7 +6,7 @@ excerpt: >-
   their fellowship!
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Fellowship
   - Research

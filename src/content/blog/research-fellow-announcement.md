@@ -8,7 +8,7 @@ excerpt: >-
   research's relevance to improvement for end-user Internet performance. ...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Fellowship
   - Research

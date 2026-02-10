@@ -3,5 +3,6 @@
   "name": "Victoria University of Welligton Logo",
   "url": "http://www.victoria.ac.nz/home",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/victoria.png"
+  "image": "/src/assets/partners/victoria.png",
+  "status": "published"
 }

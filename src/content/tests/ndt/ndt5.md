@@ -1,7 +1,8 @@
 ---
 permalink: /tests/ndt/ndt5/
 title: 'ndt5 Data - NDT (Network Diagnostic Tool)'
-status: current
+status: published
+testStatus: current
 parentTest: /tests/ndt/
 showInIndex: false
 ---

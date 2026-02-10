@@ -8,7 +8,7 @@ excerpt: >-
   Traceroute measurements beginning in June 2016. At the peak of the ...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Data
   - Paris Traceroute

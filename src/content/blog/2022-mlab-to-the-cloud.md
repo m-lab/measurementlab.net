@@ -6,7 +6,7 @@ excerpt: >-
   deployment of NDT servers on cloud infrastructure.
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Cloud
   - Platform

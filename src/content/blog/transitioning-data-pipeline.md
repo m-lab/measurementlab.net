@@ -8,7 +8,7 @@ excerpt: >-
   has served us well for many years, but it's been showing its age recen...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Bigquery
   - Data

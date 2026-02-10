@@ -3,5 +3,6 @@
   "name": "Mozilla Foundation",
   "url": "https://www.mozilla.org/",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/moz-logo-bw-rgb.jpg"
+  "image": "/src/assets/partners/moz-logo-bw-rgb.jpg",
+  "status": "published"
 }

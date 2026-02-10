@@ -10,7 +10,7 @@ excerpt: >-
   discuss and contribute to our latest research initiative, sponsored by I...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Community
   - Internet Quality

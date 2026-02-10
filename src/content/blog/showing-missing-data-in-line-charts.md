@@ -8,7 +8,7 @@ excerpt: >-
   out via support@measurementlab.net if you are interested in helping with...
 authors:
   - georgia-bullen
-published: published
+status: published
 categories:
   - DataViz
   - Visualization

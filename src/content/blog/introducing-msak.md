@@ -8,7 +8,7 @@ excerpt: >-
   over time many have expressed concerns about the ability of the single-s...
 authors:
   - roberto-dauria
-published: published
+status: published
 categories:
   - Platform
   - Announcement

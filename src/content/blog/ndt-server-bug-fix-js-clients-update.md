@@ -9,7 +9,7 @@ excerpt: >-
   integrate the NDT test in J...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Bug
   - Upgrades

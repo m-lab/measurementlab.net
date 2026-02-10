@@ -1,8 +1,9 @@
 ---
 permalink: /tests/npad/
 title: "NPAD (Network Path & Application Diagnostics)"
+status: published
 description: "Diagnosed common problems that impact last-mile broadband networks."
-status: retired
+testStatus: retired
 icon: /src/assets/images/tests/npad.png
 order: 4
 ---

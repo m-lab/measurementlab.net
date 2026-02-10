@@ -8,7 +8,7 @@ excerpt: >-
   mission around open data and open source internet measurement. Measu...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Platform
   - Open Source

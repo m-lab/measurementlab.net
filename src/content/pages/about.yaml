@@ -1,6 +1,6 @@
 title: About
 permalink: about
-published: true
+status: published
 sections:
   - type: flexi
     background:

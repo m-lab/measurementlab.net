@@ -1,7 +1,8 @@
 ---
 permalink: /tests/sidestream/
 title: "SideStream"
-status: retired-core-service
+status: published
+testStatus: retired-core-service
 description: "Collected web100 statistics about the TCP connections running on the M-Lab 1.0 platform."
 icon: /src/assets/images/tests/sidestream.png
 ---

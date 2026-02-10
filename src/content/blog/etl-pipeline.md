@@ -8,7 +8,7 @@ excerpt: >-
   excited about this update because it means that the pipeline no longe...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Pipeline
   - Bigquery

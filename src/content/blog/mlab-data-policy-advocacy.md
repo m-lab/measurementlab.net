@@ -9,7 +9,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 externalAuthors: "Greg Russell, Stephen Soltesz"
-published: published
+status: published
 categories:
   - Research
   - Policy

@@ -1,9 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import Image from '@components/atoms/Image.astro';
+import { isVisible } from '@utils/content';
 
-// Get all people from the collection (images are automatically resolved)
-const peopleEntries = await getCollection('people');
+// Get all people from the collection, filtered by visibility
+const peopleEntries = (await getCollection('people')).filter(entry => isVisible(entry));
 const people = peopleEntries.map((entry) => entry.data);
 ---
 

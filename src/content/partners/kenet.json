@@ -3,5 +3,6 @@
   "name": "KENET - Kenya Education Network",
   "url": "https://www.kenet.or.ke/",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/kenet.png"
+  "image": "/src/assets/partners/kenet.png",
+  "status": "published"
 }

@@ -8,7 +8,7 @@ excerpt: >-
   understand whether our shared infrastructure can handle the unprecedente...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Covid19
   - Community

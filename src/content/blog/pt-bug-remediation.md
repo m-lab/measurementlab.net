@@ -8,7 +8,7 @@ excerpt: >-
   2.7% of the traceroutes since July 2016.
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Paris Traceroute
   - Bug

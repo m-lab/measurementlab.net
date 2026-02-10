@@ -8,7 +8,7 @@ excerpt: >-
   March 31st!
 authors:
   - georgia-bullen
-published: published
+status: published
 categories:
   - Community
 publishedDate: 2019-03-04

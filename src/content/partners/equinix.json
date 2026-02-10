@@ -3,5 +3,6 @@
   "name": "Equinix",
   "url": "https://www.equinix.com/",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/equinix.png"
+  "image": "/src/assets/partners/equinix.png",
+  "status": "published"
 }

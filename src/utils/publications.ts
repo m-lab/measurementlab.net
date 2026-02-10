@@ -1,4 +1,5 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
+import { isVisible } from '@utils/content';
 import { getPeopleMap, getPersonNames, type PersonData } from '@utils/people';
 import { renderMarkdown } from '@utils/renderMarkdown';
 
@@ -15,7 +16,7 @@ export interface PublicationCardData {
 export async function getPublications() {
   const allPublications = await getCollection('publications');
 
-  return allPublications.sort((a, b) => {
+  return allPublications.filter((pub) => isVisible(pub)).sort((a, b) => {
     // First sort by year (descending)
     if (b.data.year !== a.data.year) {
       return b.data.year - a.data.year;

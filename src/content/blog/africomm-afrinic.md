@@ -8,7 +8,7 @@ excerpt: >-
   Internet Measurement Workshop at AFRINIC-29 in Tuni...
 authors: []
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - Event
   - Community

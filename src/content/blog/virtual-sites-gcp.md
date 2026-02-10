@@ -8,7 +8,7 @@ authors:
   - lai-yi-ohlsen
   - nathan-kinkade
 externalAuthors: "Phillipa Gill"
-published: published
+status: published
 categories:
   - Platform
   - Cloud

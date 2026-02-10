@@ -8,7 +8,7 @@ excerpt: >-
   on all our servers. Our BigQuery table for traceroute now has...
 authors: []
 externalAuthors: "Ya Chang"
-published: published
+status: published
 categories:
   - Data
   - Paris Traceroute

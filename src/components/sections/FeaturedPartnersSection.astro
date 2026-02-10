@@ -4,11 +4,12 @@ import { getCollection } from 'astro:content';
 import Button from '@components/atoms/Button.tsx';
 import Heading from '@components/atoms/Heading.astro';
 import Text from '@components/atoms/Text.astro';
+import { isVisible } from '@utils/content';
 
 const { title, description } = Astro.props;
 
 // Fetch all partners and filter for featured ones (you can add a featured field later)
-const allPartners = await getCollection('partners');
+const allPartners = (await getCollection('partners')).filter(p => isVisible(p));
 // TODO: Add a 'featured' field to the partner schema and filter accordingly
 const featuredPartners = allPartners.sort((a, b) => (a.data.order || 999) - (b.data.order || 999)).slice(0, 9);
 ---

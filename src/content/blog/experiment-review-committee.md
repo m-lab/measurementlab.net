@@ -6,7 +6,7 @@ excerpt: >-
   is a summary of our discussion.
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Governance
   - Experiment Review Committee

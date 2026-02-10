@@ -2,5 +2,6 @@
   "id": "ilsr",
   "name": "Institute for Local Self-Reliance",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/ilsr_logo-1.png"
+  "image": "/src/assets/partners/ilsr_logo-1.png",
+  "status": "published"
 }

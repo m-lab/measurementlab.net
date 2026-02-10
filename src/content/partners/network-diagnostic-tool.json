@@ -4,5 +4,6 @@
   "affiliation": "Internet2",
   "url": "http://www.internet2.edu/",
   "category": "Supporting Research Projects",
-  "image": "/src/assets/partners/network-diagnostic-test.jpg"
+  "image": "/src/assets/partners/network-diagnostic-test.jpg",
+  "status": "published"
 }

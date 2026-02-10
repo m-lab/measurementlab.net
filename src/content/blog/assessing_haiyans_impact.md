@@ -10,7 +10,7 @@ excerpt: >-
   measurement data to analyze the health of Philippines' core Internet infr...
 authors:
   - meredith-whittaker
-published: published
+status: published
 categories:
   - Data Analysis
   - RIPE

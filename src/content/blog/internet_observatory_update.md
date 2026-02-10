@@ -9,7 +9,7 @@ excerpt: >-
   ...
 authors: []
 externalAuthors: "Collin Anderson"
-published: published
+status: published
 categories:
   - Interconnection
   - Research

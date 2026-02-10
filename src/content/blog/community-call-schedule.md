@@ -8,7 +8,7 @@ excerpt: >-
   Wednesday of every month and every meeting will take place at 11am ...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Community
 publishedDate: 2021-03-03

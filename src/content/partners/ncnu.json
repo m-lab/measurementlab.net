@@ -3,5 +3,6 @@
   "name": "National Chi Nan University",
   "url": "https://www.csie.ncnu.edu.tw/Default.aspx?CID=2",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/ncnu_logo.png"
+  "image": "/src/assets/partners/ncnu_logo.png",
+  "status": "published"
 }

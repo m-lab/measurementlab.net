@@ -10,7 +10,7 @@ excerpt: >-
   Measurement Lab has been working in the public interest to measure In...
 authors: []
 externalAuthors: "M-Lab Team"
-published: published
+status: published
 categories:
   - Community
 publishedDate: 2019-02-28

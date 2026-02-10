@@ -9,7 +9,7 @@ excerpt: >-
 authors:
   - georgia-bullen
   - chris-ritzo
-published: published
+status: published
 categories:
   - Data
   - Data Analysis

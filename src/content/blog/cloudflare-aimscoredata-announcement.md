@@ -7,7 +7,7 @@ excerpt: >-
   dataset, which puts network quality in an end-user context.
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Partnership
   - Data

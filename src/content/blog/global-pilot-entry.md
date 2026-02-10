@@ -8,7 +8,7 @@ excerpt: >-
   modern TCP and Cubic congestion control * Standard instrumentation fo...
 authors: []
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - Platform
   - Research

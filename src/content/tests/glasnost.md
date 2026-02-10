@@ -1,8 +1,9 @@
 ---
 permalink: /tests/glasnost/
 title: "Glasnost"
+status: published
 description: "Glasnost tested for application-specific blocking or throttling, and was decommissioned on 07/07/2017. The source code is still available."
-status: retired
+testStatus: retired
 icon: /src/assets/images/tests/glasnost.png
 order: 2
 ---

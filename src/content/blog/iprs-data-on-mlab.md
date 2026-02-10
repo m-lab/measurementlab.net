@@ -6,7 +6,7 @@ excerpt: >-
   University is making its IP Route Survey (IPRS) available on M-Lab.
 authors: []
 externalAuthors: "Timur Friedman, Saied Kazemi, Elena Nardi"
-published: published
+status: published
 categories:
   - Data
   - Partnership

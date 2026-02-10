@@ -1,8 +1,9 @@
 ---
 permalink: /tests/shaperprobe/
 title: "Shaperprobe"
+status: published
 description: "Shaperprobe attempted to measure traffic shaping. Shaperpobe was decommissioned from the M-Lab fleet on 5/11/2015."
-status: retired
+testStatus: retired
 icon: /src/assets/images/tests/arrow-swoop.png
 order: 9
 ---

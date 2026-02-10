@@ -8,7 +8,7 @@ excerpt: >-
   users have requested the ability to run tests on a regular basis, ...
 authors: []
 externalAuthors: "Ross Schulman, Simone Basso"
-published: published
+status: published
 categories:
   - Data
   - Open Source

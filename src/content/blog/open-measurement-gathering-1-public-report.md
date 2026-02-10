@@ -4,7 +4,7 @@ title: Public Report for First Open Measurement Gathering (OMG)
 authors:
   - lai-yi-ohlsen
   - melissa-newcomb
-published: published
+status: published
 categories:
   - Event
   - Censorship Measurement

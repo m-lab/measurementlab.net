@@ -1,8 +1,9 @@
 ---
 permalink: /tests/ooni/
 title: "OONI Probe"
+status: published
 description: "Measured specific use cases of network interference."
-status: retired
+testStatus: retired
 icon: /src/assets/images/tests/ooni.png
 order: 5
 ---

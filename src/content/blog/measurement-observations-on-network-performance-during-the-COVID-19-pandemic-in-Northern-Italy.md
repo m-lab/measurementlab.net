@@ -13,7 +13,7 @@ excerpt: >-
 authors:
   - chris-ritzo
 externalAuthors: "Simone Basso, Maria Xynou"
-published: published
+status: published
 categories:
   - Data
   - Bigquery

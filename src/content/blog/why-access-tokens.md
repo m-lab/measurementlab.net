@@ -6,7 +6,7 @@ excerpt: >-
   access token issued by the Locate API v2.
 authors: []
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - NDT
   - NDT7

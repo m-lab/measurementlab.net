@@ -1,8 +1,9 @@
 ---
 permalink: /tests/windrider/
 title: "Windrider"
+status: published
 description: "Attempted to detect whether a mobile provider was performing application or service specific differentiation until it was decommissioned on 01/17/2013. The source code is still available."
-status: retired
+testStatus: retired
 icon: /src/assets/images/tests/mobile.png
 order: 10
 ---

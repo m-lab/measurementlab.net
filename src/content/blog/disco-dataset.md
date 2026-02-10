@@ -8,7 +8,7 @@ excerpt: >-
   *CO*llection (a.k.a. DISCO) dataset as a standard M-Lab BigQuery ...
 authors: []
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - Data
   - Data Analysis

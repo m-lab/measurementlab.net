@@ -4,6 +4,7 @@ import Heading from '@components/atoms/Heading.astro';
 import type { Person as PersonType } from '@components/organisms/Person.astro';
 import Person from '@components/organisms/Person.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
+import { isVisible } from '@utils/content';
 
 export interface Props {
   category?: string;
@@ -11,8 +12,8 @@ export interface Props {
 }
 
 const { category } = Astro.props;
-// Query all people from the collection
-const peopleEntries = await getCollection('people');
+// Query all people from the collection, filtered by visibility
+const peopleEntries = (await getCollection('people')).filter(entry => isVisible(entry));
 const allPeople: PersonType[] = peopleEntries.map((entry) => entry.data);
 
 // If category specified, filter by that category; otherwise show all

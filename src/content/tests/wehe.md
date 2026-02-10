@@ -1,8 +1,9 @@
 ---
 permalink: /tests/wehe/
 title: "Wehe"
+status: published
 description: "Wehe uses your device to exchange Internet traffic recorded from real, popular apps like YouTube and Spotify, and attempts to tell you whether your ISP is giving different performance to an app's network traffic."
-status: current
+testStatus: current
 icon: /src/assets/images/tests/wehe.png
 order: 11
 ---

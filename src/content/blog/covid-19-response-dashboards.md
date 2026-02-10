@@ -8,7 +8,7 @@ excerpt: >-
   in Internet Performance can use our data in their research. We s...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Covid19
   - Community

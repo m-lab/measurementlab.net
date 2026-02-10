@@ -7,7 +7,7 @@ excerpt: >-
   difficulty of writing BigQuery SQL.
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Bigquery
   - Performance

@@ -8,7 +8,7 @@ excerpt: >-
   Wednesday, December 15, 2021 from 11am-12:00 pm Eastern for a prese...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Community
   - NDT

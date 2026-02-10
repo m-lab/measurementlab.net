@@ -6,7 +6,7 @@ excerpt: >-
   addresses and feedback solicitation for potential alternatives
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Community
   - Privacy

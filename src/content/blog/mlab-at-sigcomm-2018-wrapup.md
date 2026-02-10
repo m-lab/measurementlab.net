@@ -8,7 +8,7 @@ excerpt: >-
   faculty, students, and industry professionals from around the world to f...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Event
   - Community

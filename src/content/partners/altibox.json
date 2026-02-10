@@ -3,5 +3,6 @@
   "name": "Altibox",
   "url": "https://www.altibox.no/",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/altibox.png"
+  "image": "/src/assets/partners/altibox.png",
+  "status": "published"
 }

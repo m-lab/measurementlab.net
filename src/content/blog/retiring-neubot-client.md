@@ -8,7 +8,7 @@ excerpt: >-
   much time has passed since the latest release. **We recommend all user...
 authors: []
 externalAuthors: "Simone Basso"
-published: published
+status: published
 categories:
   - Neubot
 publishedDate: 2019-01-11

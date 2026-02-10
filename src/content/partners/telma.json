@@ -3,5 +3,6 @@
   "name": "Telma",
   "url": "https://www.telma.mg/",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/telma.svg"
+  "image": "/src/assets/partners/telma.svg",
+  "status": "published"
 }

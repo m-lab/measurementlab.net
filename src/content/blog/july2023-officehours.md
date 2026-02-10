@@ -6,7 +6,7 @@ excerpt: >-
   EDT!
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Community
   - Data

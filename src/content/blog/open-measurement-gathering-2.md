@@ -8,7 +8,7 @@ excerpt: >-
   Intelligence Lab. For the second convening, the OMG groups focused on de...
 authors:
   - melissa-newcomb
-published: published
+status: published
 categories:
   - Event
   - Censorship Measurement

@@ -12,7 +12,7 @@ excerpt: >-
   Pu'u...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Community
 publishedDate: 2019-10-25

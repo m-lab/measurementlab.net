@@ -8,7 +8,7 @@ excerpt: >-
   were developed in the 1980s. The Transmission Control Protocol (T...
 authors:
   - georgia-bullen
-published: published
+status: published
 categories:
   - TCP
   - BBR

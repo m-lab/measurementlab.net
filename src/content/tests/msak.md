@@ -1,8 +1,9 @@
 ---
 permalink: /tests/msak/
 title: "MSAK"
+status: published
 description: "MSAK (Measurement Swiss-Army Knife) implements a configurable Websocket-based throughput measurement protocol, and a UDP-based latency measurement protocol."
-status: current
+testStatus: current
 icon: /src/assets/images/tests/ndt.png
 order: 13
 ---

@@ -12,7 +12,7 @@ authors:
   - chris-ritzo
   - melissa-newcomb
   - pavlos-sermpezis
-published: published
+status: published
 categories:
   - Event
   - Community

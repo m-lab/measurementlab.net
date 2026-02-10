@@ -8,7 +8,7 @@ excerpt: >-
   network research, we finally got around to redecorating. We hope that ...
 authors: []
 externalAuthors: "M-Lab Team"
-published: published
+status: published
 categories: []
 publishedDate: 2013-08-05
 ---

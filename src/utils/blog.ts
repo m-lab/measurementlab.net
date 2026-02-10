@@ -1,7 +1,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import MlabDefault from '@assets/mlab-default-card.png';
-import { isDev } from '@utils/dev';
+import { isVisible } from '@utils/content';
 import {
   getAllAuthorNames,
   getPeopleMap,
@@ -24,7 +24,7 @@ export interface BlogPostWithAuthors extends BlogPost {
 
 export interface GetBlogPostsOptions {
   limit?: number;
-  filterDrafts?: boolean;
+  filterByStatus?: boolean;
   sortBy?: 'date' | 'title';
   sortOrder?: 'asc' | 'desc';
 }
@@ -43,10 +43,10 @@ export async function getBlogPosts(
   options?: GetBlogPostsOptions
 ): Promise<BlogPost[]> {
   const allPosts = await getCollection('blog');
-  const shouldFilterDrafts = options?.filterDrafts ?? !isDev;
+  const shouldFilter = options?.filterByStatus ?? true;
 
-  let filtered = shouldFilterDrafts
-    ? allPosts.filter((post) => post.data.published === 'published')
+  let filtered = shouldFilter
+    ? allPosts.filter((post) => isVisible(post))
     : allPosts;
 
   const sortBy = options?.sortBy ?? 'date';

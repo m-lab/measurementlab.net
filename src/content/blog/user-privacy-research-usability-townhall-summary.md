@@ -7,7 +7,7 @@ excerpt: >-
   accepting comments on the techniques we proposed until April 1.
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Community
   - Privacy

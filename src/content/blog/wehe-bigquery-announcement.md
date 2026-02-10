@@ -7,7 +7,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
 externalAuthors: "Dave Choffnes, Phillipa Gill, Zeinab Shmeis, Katherine Townsend"
-published: published
+status: published
 categories:
   - Wehe
   - Data

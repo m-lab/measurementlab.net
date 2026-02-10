@@ -7,7 +7,7 @@ excerpt: >-
   traceroutes.
 authors: []
 externalAuthors: "Saied Kazemi"
-published: published
+status: published
 categories:
   - Traceroute
   - Research

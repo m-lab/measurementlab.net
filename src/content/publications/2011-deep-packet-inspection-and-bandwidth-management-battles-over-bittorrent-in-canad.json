@@ -4,5 +4,6 @@
   "description": "Examination of DPI use by Internet service providers to enable throttling or blocking of BitTorrent uploads or downloads—TPRC 2011",
   "authors": "M. L. Mueller, H. Asghari",
   "year": 2011,
-  "category": "paper"
+  "category": "paper",
+  "status": "published"
 }

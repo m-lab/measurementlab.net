@@ -3,5 +3,6 @@
   "name": "HEAnet",
   "url": "http://www.heanet.ie/",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/heanet.png"
+  "image": "/src/assets/partners/heanet.png",
+  "status": "published"
 }

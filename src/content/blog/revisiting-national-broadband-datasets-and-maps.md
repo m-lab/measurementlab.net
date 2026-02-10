@@ -8,7 +8,7 @@ excerpt: >-
   of “speed” in assessing broadband service goes all the way to the top- ...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - NDT
   - Ookla

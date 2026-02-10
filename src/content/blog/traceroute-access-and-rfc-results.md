@@ -8,7 +8,7 @@ excerpt: >-
   format.
 authors: []
 externalAuthors: "Saied Kazemi"
-published: published
+status: published
 categories:
   - Traceroute
 publishedDate: 2022-02-02

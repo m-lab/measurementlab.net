@@ -8,7 +8,7 @@ excerpt: >-
   report, ISP Interconnection and its Impact on Consumer Internet Perform...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Interconnection
   - Research

@@ -8,7 +8,7 @@ excerpt: >-
   M-Lab and provide that data to the public domain for research, analysi...
 authors:
   - georgia-bullen
-published: published
+status: published
 categories:
   - Data
   - Visualization

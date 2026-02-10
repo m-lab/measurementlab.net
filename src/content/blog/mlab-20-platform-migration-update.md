@@ -9,7 +9,7 @@ excerpt: >-
   /src/assets/blog/modernizing-mlab
 authors: []
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - Platform
   - Research

@@ -8,7 +8,7 @@ excerpt: >-
   container services for all experiments. This transition has greatly impro...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Data
   - NDT

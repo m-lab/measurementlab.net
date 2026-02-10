@@ -8,7 +8,7 @@ excerpt: >-
   pipeline, data schemas, community tools, best practice analyses, communi...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Community
 publishedDate: 2021-03-05

@@ -7,7 +7,7 @@ excerpt: >-
   now.
 authors: []
 externalAuthors: "Stephen Soltesz"
-published: published
+status: published
 categories:
   - Platform
   - NDT

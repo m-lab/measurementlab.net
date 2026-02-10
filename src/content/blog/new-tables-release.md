@@ -8,7 +8,7 @@ excerpt: >-
   Before we move on to specifics, when we say faster performing, we me...
 authors: []
 externalAuthors: "Michael Lynch"
-published: published
+status: published
 categories:
   - Bigquery
   - GCS

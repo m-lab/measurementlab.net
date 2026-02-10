@@ -9,7 +9,7 @@ excerpt: >-
   ...
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - Data
   - Bigquery

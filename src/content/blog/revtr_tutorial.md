@@ -6,7 +6,7 @@ excerpt: "Internet paths are often asymmetric: packets from A to B usually take
   walks through a reproducible case study using **Reverse Traceroute (RevTr)**
   to compare forward and reverse paths for NDT speed tests."
 externalAuthors: Loqman Salamatian
-published: published
+status: published
 publishedDate: 2025-11-13
 heroImage: ../../assets/backgrounds/anna-magenta-YELG0ZVK5yw-unsplash.jpg
 relatedPosts:

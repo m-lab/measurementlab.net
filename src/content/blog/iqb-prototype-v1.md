@@ -5,7 +5,7 @@ excerpt: '[insert details about IQB prototype, repo, library] '
 authors:
   - melissa-newcomb
   - pavlos-sermpezis
-published: draft
+status: draft
 categories:
   - Research
   - Community

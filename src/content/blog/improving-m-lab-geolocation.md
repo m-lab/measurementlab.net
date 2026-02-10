@@ -8,7 +8,7 @@ excerpt: >-
   results in the annotated data.
 authors: []
 externalAuthors: "Loqman Salamatian, Phillipa Gill"
-published: published
+status: published
 categories:
   - Data
   - Accuracy

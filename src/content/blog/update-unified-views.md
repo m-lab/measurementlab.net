@@ -8,7 +8,7 @@ excerpt: >-
   change enables interested researchers to better understand MLab’s data ...
 authors:
   - matt-mathis
-published: published
+status: published
 categories:
   - Bigquery
   - Research

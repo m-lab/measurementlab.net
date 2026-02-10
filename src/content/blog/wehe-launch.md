@@ -9,7 +9,7 @@ excerpt: >-
   serv...
 authors:
   - lai-yi-ohlsen
-published: published
+status: published
 categories:
   - Wehe
   - Platform

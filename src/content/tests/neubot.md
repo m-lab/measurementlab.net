@@ -1,8 +1,9 @@
 ---
 permalink: /tests/neubot/
 title: "Neubot"
+status: published
 description: "DASH is designed to measure the quality of tested networks by emulating a video streaming player."
-status: current
+testStatus: current
 icon: /src/assets/images/tests/neubot.png
 order: 3
 ---

@@ -3,5 +3,6 @@
   "name": "Serbian open eXchange (SOX)",
   "url": "https://www.sox.rs/",
   "category": "Supporting Partners",
-  "image": "/src/assets/partners/sox.png"
+  "image": "/src/assets/partners/sox.png",
+  "status": "published"
 }

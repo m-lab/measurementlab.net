@@ -1,5 +1,6 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import type { ImageMetadata } from 'astro';
+import { isVisible } from '@utils/content';
 
 export type Test = CollectionEntry<'tests'>;
 
@@ -10,7 +11,7 @@ export interface TestCardData {
 
 export interface GetTestsOptions {
   includeHidden?: boolean;
-  status?: Test['data']['status'];
+  testStatus?: Test['data']['testStatus'];
 }
 
 /**
@@ -21,12 +22,14 @@ export interface GetTestsOptions {
 export async function getTests(options?: GetTestsOptions): Promise<Test[]> {
   const allTests = await getCollection('tests');
 
-  let filtered = options?.includeHidden
-    ? allTests
-    : allTests.filter((test) => test.data.showInIndex !== false);
+  let filtered = allTests.filter((test) => isVisible(test));
 
-  if (options?.status) {
-    filtered = filtered.filter((test) => test.data.status === options.status);
+  if (!options?.includeHidden) {
+    filtered = filtered.filter((test) => test.data.showInIndex !== false);
+  }
+
+  if (options?.testStatus) {
+    filtered = filtered.filter((test) => test.data.testStatus === options.testStatus);
   }
 
   return filtered.sort((a, b) => {

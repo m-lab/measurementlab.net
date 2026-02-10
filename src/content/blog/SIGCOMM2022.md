@@ -8,7 +8,7 @@ excerpt: >-
   the tutorial materials.
 authors: []
 externalAuthors: "Phillipa Gill"
-published: published
+status: published
 categories:
   - NDT
   - Bigquery

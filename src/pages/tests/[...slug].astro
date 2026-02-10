@@ -1,16 +1,18 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, getEntry } from 'astro:content';
+import Banner from '@components/atoms/Banner.astro';
 import Link from '@components/atoms/Link';
 import Hero from '@components/organisms/Hero.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
+import { isVisible } from '@utils/content';
 
 type TestEntry = CollectionEntry<'tests'>;
 
 export async function getStaticPaths() {
   const tests = await getCollection('tests');
 
-  return tests.map((test) => {
+  return tests.filter((test) => isVisible(test)).map((test) => {
     // Convert permalink to slug: /tests/ndt/ -> ndt, /tests/ndt/ndt5/ -> ndt/ndt5
     const slug = test.data.permalink
       .replace(/^\/tests\//, '')
@@ -59,20 +61,23 @@ breadcrumbs.push({
   href: test.data.permalink,
 });
 
-// Status badge styling
-const statusStyles = {
+// Test status badge styling
+const testStatusStyles = {
   current: 'bg-neutral-600 text-white',
   'core-service': 'bg-blue-100 text-blue-800',
   retired: 'bg-gray-100 text-gray-800',
   'retired-core-service': 'bg-gray-100 text-gray-800',
 };
 
-const statusLabels = {
+const testStatusLabels = {
   current: 'Current',
   'core-service': 'Core Service',
   retired: 'Retired',
   'retired-core-service': 'Retired Core Service',
 };
+
+const siteConfig = await getEntry('site', 'config');
+const archivedBanner = siteConfig?.data.archivedBanner;
 ---
 
 <PageLayout title={test.data.title} description={test.data.description}>
@@ -102,11 +107,11 @@ const statusLabels = {
 	<SectionLayout maxWidth="4xl" zigzag="supporting1-light">
 		<Hero title={test.data.title} align="left">
 			{
-				test.data.status && (
+				test.data.testStatus && (
 					<span
-						class={`inline-block rounded-md px-3 py-1 text-sm font-medium uppercase ${statusStyles[test.data.status]}`}
+						class={`inline-block rounded-md px-3 py-1 text-sm font-medium uppercase ${testStatusStyles[test.data.testStatus]}`}
 					>
-						{statusLabels[test.data.status]}
+						{testStatusLabels[test.data.testStatus]}
 					</span>
 				)
 			}
@@ -117,6 +122,7 @@ const statusLabels = {
 			}
 		</Hero>
 	</SectionLayout>
+	{test.data.status === 'archived' && archivedBanner && <Banner message={archivedBanner.message} color={archivedBanner.color} />}
 
 	<!-- Sub-navigation for nested tests -->
 	{

@@ -8,7 +8,7 @@ excerpt: >-
   more features.
 authors:
   - chris-ritzo
-published: published
+status: published
 categories:
   - NDT Server
   - Tutorial
