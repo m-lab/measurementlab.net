@@ -292,6 +292,28 @@ components:
         label: Background Image
         type: image
         description: Optional hero background image
+      - name: zigzag
+        label: Zigzag Pattern
+        type: select
+        options:
+          values:
+            - label: Primary Light
+              value: primary-light
+            - label: Primary Dark
+              value: primary-dark
+            - label: Secondary Light
+              value: secondary-light
+            - label: Secondary Dark
+              value: secondary-dark
+            - label: Supporting 1 Light
+              value: supporting1-light
+            - label: Supporting 1 Dark
+              value: supporting1-dark
+            - label: Supporting 2 Light
+              value: supporting2-light
+            - label: Supporting 2 Dark
+              value: supporting2-dark
+        description: Decorative zigzag pattern style for the hero section
 
   # -- Rich Text --
   richtext_section:
@@ -591,6 +613,28 @@ content:
         label: Page Description
         type: rich-text
         description: SEO meta description
+      - name: zigzag
+        label: Zigzag Pattern
+        type: select
+        options:
+          values:
+            - label: Primary Light
+              value: primary-light
+            - label: Primary Dark
+              value: primary-dark
+            - label: Secondary Light
+              value: secondary-light
+            - label: Secondary Dark
+              value: secondary-dark
+            - label: Supporting 1 Light
+              value: supporting1-light
+            - label: Supporting 1 Dark
+              value: supporting1-dark
+            - label: Supporting 2 Light
+              value: supporting2-light
+            - label: Supporting 2 Dark
+              value: supporting2-dark
+        description: Decorative zigzag pattern applied to the page hero. Used when no hero image is set.
       - name: sections
         label: Page Sections
         type: block
