@@ -613,6 +613,10 @@ content:
         label: Page Description
         type: rich-text
         description: SEO meta description
+      - name: heroImage
+        label: Hero Image
+        type: image
+        description: Background image for the page hero. When set, the zigzag pattern is not shown.
       - name: zigzag
         label: Zigzag Pattern
         type: select
