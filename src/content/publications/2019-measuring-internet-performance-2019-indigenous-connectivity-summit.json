@@ -1,7 +1,7 @@
 {
   "id": "2019-measuring-internet-performance-2019-indigenous-connectivity-summit",
   "title": "Measuring Internet Performance - 2019 Indigenous Connectivity Summit",
-  "description": "M-Lab Community Lead, Chris Ritzo, co-presented with May Lynn Lee from [Cybera](https://www.cybera.ca/){:target=\"\\_blank\"}, a breakout session on measuring Internet performance at the 2019 Indigenous Connectivity Summit. Both M-Lab and Cybera are involved in similar premise device-based measurement initiatives with community anchor institutions in the United States and Canada respectively.",
+  "description": "M-Lab Community Lead, Chris Ritzo, co-presented with May Lynn Lee from [Cybera](https://www.cybera.ca/), a breakout session on measuring Internet performance at the 2019 Indigenous Connectivity Summit. Both M-Lab and Cybera are involved in similar premise device-based measurement initiatives with community anchor institutions in the United States and Canada respectively.",
   "authors": "May Lynn Lee, Cybera; Chris Ritzo, Measurement Lab",
   "year": 2019,
   "category": "presentation",
@@ -18,9 +18,6 @@
       "platform": "livestream"
     }
   ],
-  "contributors": [
-    "chris-ritzo",
-    "mlab-team"
-  ],
+  "contributors": ["chris-ritzo", "mlab-team"],
   "status": "published"
 }

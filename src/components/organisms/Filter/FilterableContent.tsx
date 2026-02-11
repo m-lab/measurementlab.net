@@ -58,7 +58,13 @@ export default function FilterableContent({
           values.add(String(value));
         }
       });
-      options[field] = Array.from(values).sort();
+      const sorted = Array.from(values);
+      if (field === 'year') {
+        sorted.sort((a, b) => Number(b) - Number(a));
+      } else {
+        sorted.sort();
+      }
+      options[field] = sorted;
     });
 
     return options;

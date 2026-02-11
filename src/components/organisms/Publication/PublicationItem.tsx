@@ -60,10 +60,10 @@ export default function PublicationItem({ item }: PublicationItemProps) {
         )}
 
         {/* Content Slot Area */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 border-t border-neutral-300 pt-2">
           {/* Authors from citation string or resolved contributors */}
           {(post.data.authors || authorNames) && (
-            <p className="text-gray-700 text-sm">
+            <p className="text-gray-700 text-base">
               <span className="font-medium">Authors:</span>{' '}
               {post.data.authors || authorNames}
             </p>
@@ -71,14 +71,14 @@ export default function PublicationItem({ item }: PublicationItemProps) {
 
           {/* Venue */}
           {post.data.venue && (
-            <p className="text-gray-700 text-sm">
+            <p className="text-gray-700 text-base">
               <span className="font-medium">Venue:</span> {post.data.venue}
             </p>
           )}
 
           {/* Internal Links */}
           {post.data.internalLinks && (
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 pt-2">
               {post.data.internalLinks.map((link, index) => (
                 <a
                   key={`${link.path}:${index}`}
