@@ -16,6 +16,10 @@ media:
     input: src/assets
     output: ../../assets
     path: images/blog
+  - name: publications
+    label: Publication Files
+    input: public/publications
+    output: publications
 
 # ============================================================================
 # REUSABLE COMPONENTS
@@ -1066,6 +1070,149 @@ content:
         type: rich-text
         description: Full documentation for the test
 
+  # --------------------------------------------------------------------------
+  # Publications
+  # --------------------------------------------------------------------------
+  - name: publications
+    label: Publications
+    type: collection
+    path: src/content/publications
+    format: json
+    filename: '{fields.id}.json'
+    subfolders: false
+    view:
+      fields: [title, category, year, status]
+      sort: [year, title]
+      search: [title, authors, description]
+      primary: title
+    fields:
+      - name: id
+        label: ID
+        type: string
+        required: true
+        description: Unique identifier (e.g. 2022-the-ukrainian-internet)
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: status
+        label: Status
+        type: select
+        required: true
+        default: draft
+        options:
+          values:
+            - label: Draft
+              value: draft
+            - label: Published
+              value: published
+            - label: Archived
+              value: archived
+        description: Draft content is only visible on the preview site. New content defaults to Draft.
+      - name: description
+        label: Description
+        type: text
+        description: Brief summary of the publication
+      - name: authors
+        label: Authors
+        type: string
+        description: Official citation string (e.g. "Jane Doe, John Smith")
+      - name: contributors
+        label: M-Lab Contributors
+        type: reference
+        options:
+          collection: people
+          required: false
+          multiple: true
+          value: '{id}'
+          label: '{fields.name}'
+        description: Link to people in the M-Lab team
+      - name: year
+        label: Year
+        type: number
+        required: true
+        description: Publication year
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          multiple: false
+          fetch:
+            url: https://mlab.draftlab.dev/api/categories.json
+            results: publications.categories
+            value: '{name}'
+            label: '{name}'
+      - name: internalLinks
+        label: Internal Links
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+            required: true
+          - name: path
+            label: File
+            type: file
+            required: true
+            options:
+              media: publications
+            description: Upload or select a file from the publications folder
+      - name: externalLinks
+        label: External Links
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+            required: true
+          - name: url
+            label: URL
+            type: string
+            required: true
+            description: Full URL (e.g. https://example.com/paper.pdf)
+      - name: videoLinks
+        label: Video Links
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+            required: true
+          - name: url
+            label: URL
+            type: string
+            required: true
+          - name: platform
+            label: Platform
+            type: select
+            options:
+              values:
+                - label: YouTube
+                  value: youtube
+                - label: Vimeo
+                  value: vimeo
+                - label: Livestream
+                  value: livestream
+                - label: Other
+                  value: other
+      - name: publishedDate
+        label: Published Date
+        type: date
+        options:
+          format: yyyy-MM-dd
+        description: Exact publication date (optional, year is used for sorting)
+      - name: venue
+        label: Venue
+        type: string
+        description: Conference, journal, or event name
+      - name: tags
+        label: Tags
+        type: string
+        list: true
   # --------------------------------------------------------------------------
   # Site Settings (singleton)
   # --------------------------------------------------------------------------

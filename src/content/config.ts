@@ -412,7 +412,6 @@ const publicationsCollection = defineCollection({
     publishedDate: z.coerce.date().optional(),
     venue: z.string().optional(),
     tags: z.array(z.string()).optional(),
-    order: z.number().optional(),
   }),
 });
 
