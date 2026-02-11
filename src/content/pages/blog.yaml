@@ -2,9 +2,9 @@ title: Blog
 permalink: blog
 status: published
 description: Insights, research, and updates from the M-Lab team
-zigzag: secondary-dark
+zigzag: supporting1-light
 sections:
   - type: hero
-    title: test
-    subtitle: test
-    zigzag: secondary-dark
+    title: Pages CMS made me do this
+    subtitle: =(
+    zigzag: supporting1-light
