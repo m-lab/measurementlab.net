@@ -78,13 +78,3 @@ sections:
       color: white
       type: full
     title: test
-    cards:
-      - title: tes
-        content: test
-        color: secondary
-        icon: insights
-        button:
-          variant: secondary
-          size: md
-          text: test
-          href: test
