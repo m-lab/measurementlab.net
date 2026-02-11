@@ -1,5 +1,10 @@
 title: Blog
-description: Insights, research, and updates from the M-Lab team
-heroImage: /src/assets/backgrounds/anna-magenta-XUCfqIEudBU-unsplash.jpg
 permalink: blog
 status: published
+description: Insights, research, and updates from the M-Lab team
+zigzag: secondary-dark
+sections:
+  - type: hero
+    title: test
+    subtitle: test
+    zigzag: secondary-dark
