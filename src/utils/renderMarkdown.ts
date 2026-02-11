@@ -5,6 +5,8 @@ import rehypeExtractToc, {
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
+import rehypeExpressiveCode from 'rehype-expressive-code';
+import rehypeRaw from 'rehype-raw';
 import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
@@ -73,7 +75,7 @@ const createMarkdownProcessor = (withTOC = false, id?: string) => {
   const processor = unified()
     .use(remarkParse)
     .use(remarkGfm) // Adds support for tables, strikethrough, task lists, etc.
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeSlug, { prefix: `${id}-` });
 
   // Extract TOC before autolink headings appends the # symbol
@@ -97,7 +99,17 @@ const createMarkdownProcessor = (withTOC = false, id?: string) => {
       target: '_blank',
       rel: ['noopener', 'noreferrer'],
     })
-    .use(rehypeStringify, { allowDangerousHtml: true });
+    .use(rehypeRaw)
+    .use(rehypeExpressiveCode, {
+      themes: ['catppuccin-frappe'],
+      defaultProps: {
+        wrap: true,
+        overridesByLang: {
+          'bash,ps,sh': { preserveIndent: false },
+        },
+      },
+    })
+    .use(rehypeStringify);
 
   return processor;
 };

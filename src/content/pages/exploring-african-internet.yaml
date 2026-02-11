@@ -1,4 +1,4 @@
-title: Exploring African Internet
+title: "Exploring African Internet"
 permalink: data/docs/analysis/exploring-african-internet
 status: published
 sections:
@@ -7,4 +7,600 @@ sections:
       color: white
     withTOC: false
     content: |
-      {% jupyter_notebook "/notebooks/exploring-african-internet.ipynb" %}
+      [Download Jupyter Notebook](/notebooks/exploring-african-internet.ipynb)
+
+      # Exploring NDT & Paris-Traceroute in Africa
+
+      This Jupyter notebook visualizes M-Lab test data in Africa. Using BigQuery, we select NDT or paris-traceroute data from clients in Africa. Then, using a world map from Natural Earth and the GeoDataFrame Python packages, we plot the African data using geolocation hints from the data.
+
+      This notebook may be downloaded from the GitHub repository for the [M-Lab website](https://github.com/m-lab/website/raw/main/notebooks/exploring-african-internet.ipynb).
+
+      ### Setup
+
+      To do this, we need to install and configure some local dependencies first.
+
+      * Install [Jupyter](http://jupyter.org/install)
+      * Install [gcloud SDK](https://cloud.google.com/sdk/downloads) 
+      * Setup gcloud SDK
+
+      ```
+      # Authenticate your account.
+      gcloud auth login
+
+      # Set application default credentials.
+      gcloud auth application-default login
+
+      # Set default project.
+      gcloud config set project measurement-lab
+      ```
+
+      * Install [google-cloud-bigquery](https://pypi.org/project/google-cloud-bigquery/) package:
+
+      ```
+      pip install --upgrade google-cloud-bigquery
+      ```
+
+      * Install [GeoPandas](http://geopandas.org/install.html) and dependencies
+
+      ```
+      pip install geopandas PySAL descartes
+      ```
+
+      * Start Jupyter
+
+      ```
+      jupyter-notebook
+      ```
+
+      ### References
+
+      * Matplotlib - https://matplotlib.org/contents.html
+      * Pandas - https://pandas.pydata.org/pandas-docs/stable/api.html 
+      * BigQuery - https://cloud.google.com/bigquery/docs/reference/standard-sql/functions-and-operators 
+      * GeoPandas - http://geopandas.org/index.html
+
+
+      ```python
+      %matplotlib inline
+      import os
+
+      import matplotlib.pyplot as plt
+      import pandas as pd
+      import geopandas as gpd
+      import collections
+      import urllib2
+      import json
+      from shapely import geometry
+
+      # Ignore warnings from various packages.
+      import warnings
+      warnings.filterwarnings("ignore")
+
+      # Set project explicitly in the environment to suppress some warnings.
+      os.environ["GOOGLE_CLOUD_PROJECT"] = "measurement-lab"
+
+      # Load M-Lab site metadata including site latitude & longitude.
+      mlab_sites_url = 'https://storage.googleapis.com/operator-mlab-oti/metadata/v0/current/mlab-site-stats.json'
+
+      # Load the Natural Earth country shapes file.
+      worldmap_url = 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_50m_admin_0_countries.geojson'
+
+      # Short list of metros in Africa, for convenience.
+      african_metros = ['tun', 'jnb', 'cpt', 'mpm', 'tnr', 'los', 'nbo', 'acc']
+
+      # Number of colors to use when coloring maps.
+      colors = 10
+
+      # Default figure size. W x H.
+      figsize = (16, 10)
+      ```
+
+
+      ```python
+      # Depends on: pip install --upgrade google-cloud-bigquery
+      from google.cloud import bigquery
+
+      def run_query(query, project='measurement-lab'):
+          client = bigquery.Client(project=project)
+          job = client.query(query)
+
+          results = collections.defaultdict(list)
+          for row in job.result(timeout=600):
+              for key in row.keys():
+                  results[key].append(row.get(key))
+
+          return pd.DataFrame(results)
+      ```
+
+
+      ```python
+      # Load shape data.
+      globe_raw = gpd.read_file(worldmap_url)
+
+      # Select the global information (except Antarctica).
+      globe = globe_raw[['iso_a2', 'continent', 'geometry']].to_crs('+proj=longlat')
+      globe = globe[globe.continent != 'Antarctica']
+      # Add a new column with a default value of zero to show countries without data.
+      globe['default'] = 0
+
+      # Select only Africa.
+      africa = globe[globe.continent == 'Africa'].copy()
+      africa['default'] = 0
+      africa.sample(5)
+      ```
+
+
+
+
+      <div>
+      <style scoped>
+          .dataframe tbody tr th:only-of-type {
+              vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+              vertical-align: top;
+          }
+
+          .dataframe thead th {
+              text-align: right;
+          }
+      </style>
+      <table border="1" class="dataframe">
+        <thead>
+          <tr style="text-align: right;">
+            <th></th>
+            <th>iso_a2</th>
+            <th>continent</th>
+            <th>geometry</th>
+            <th>default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>124</th>
+            <td>LY</td>
+            <td>Africa</td>
+            <td>POLYGON ((25.15048828125001 31.65498046875, 25...</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <th>49</th>
+            <td>CV</td>
+            <td>Africa</td>
+            <td>(POLYGON ((-24.30825195312497 14.8562988281249...</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <th>142</th>
+            <td>ML</td>
+            <td>Africa</td>
+            <td>POLYGON ((4.227636718750006 19.1427734375, 4.2...</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <th>239</th>
+            <td>ZM</td>
+            <td>Africa</td>
+            <td>POLYGON ((32.919921875 -9.407421875000011, 32....</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <th>223</th>
+            <td>UG</td>
+            <td>Africa</td>
+            <td>POLYGON ((33.90322265625002 -1.002050781250006...</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+
+
+      # NDT in Africa
+
+      How many NDT tests are clients in Africa running to M-Lab servers?
+
+      By default, the [M-Lab naming service](https://mlab-ns.appspot.com) directs clients to the geographically closest M-Lab server. The idea is to use geographic proximity as a proxy for network proximity. So, we expect to see more tests near M-Lab servers.
+
+      For a given day, the query below counts all tests from clients in Africa. At the same time we calculate the average download rate per country for all clients.
+
+
+      ```python
+      rates_df = run_query("""
+      SELECT
+        connection_spec.client_geolocation.country_name as country_name,
+        connection_spec.client_geolocation.country_code as country_code,
+        COUNT(*) as count,
+        AVG(8 * (web100_log_entry.snap.HCThruOctetsAcked /
+            (web100_log_entry.snap.SndLimTimeRwin +
+             web100_log_entry.snap.SndLimTimeCwnd +
+             web100_log_entry.snap.SndLimTimeSnd))) AS download_Mbps
+
+      FROM
+        `measurement-lab.ndt.base`
+      WHERE
+            TIMESTAMP_TRUNC(log_time, DAY) = TIMESTAMP("2018-11-16")
+        AND connection_spec.client_geolocation.continent_code = "AF"
+
+        AND connection_spec.data_direction = 1
+        AND web100_log_entry.snap.HCThruOctetsAcked >= 8192
+        AND (web100_log_entry.snap.SndLimTimeRwin +
+          web100_log_entry.snap.SndLimTimeCwnd +
+          web100_log_entry.snap.SndLimTimeSnd) >= 9000000
+        AND (web100_log_entry.snap.SndLimTimeRwin +
+          web100_log_entry.snap.SndLimTimeCwnd +
+          web100_log_entry.snap.SndLimTimeSnd) < 600000000
+        AND web100_log_entry.snap.CongSignals > 0
+        AND (web100_log_entry.snap.State = 1 OR
+          (web100_log_entry.snap.State >= 5 AND
+          web100_log_entry.snap.State <= 11))
+
+      GROUP BY
+        country_code, country_name
+
+      HAVING
+        count > 100
+
+      ORDER BY
+       country_name, country_code, count desc
+      """)
+      ```
+
+
+      ```python
+      # Now `rates_df` contains all results from the BigQuery results in the form of a Pandas DataFrame.
+      rates_df.sample(5)
+      ```
+
+
+
+
+      <div>
+      <style scoped>
+          .dataframe tbody tr th:only-of-type {
+              vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+              vertical-align: top;
+          }
+
+          .dataframe thead th {
+              text-align: right;
+          }
+      </style>
+      <table border="1" class="dataframe">
+        <thead>
+          <tr style="text-align: right;">
+            <th></th>
+            <th>count</th>
+            <th>country_code</th>
+            <th>country_name</th>
+            <th>download_Mbps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>0</th>
+            <td>385</td>
+            <td>DZ</td>
+            <td>Algeria</td>
+            <td>1.787968</td>
+          </tr>
+          <tr>
+            <th>1</th>
+            <td>481</td>
+            <td>EG</td>
+            <td>Egypt</td>
+            <td>1.942897</td>
+          </tr>
+          <tr>
+            <th>5</th>
+            <td>3001</td>
+            <td>MA</td>
+            <td>Morocco</td>
+            <td>5.918805</td>
+          </tr>
+          <tr>
+            <th>10</th>
+            <td>217</td>
+            <td>UG</td>
+            <td>Uganda</td>
+            <td>2.270746</td>
+          </tr>
+          <tr>
+            <th>7</th>
+            <td>12824</td>
+            <td>ZA</td>
+            <td>South Africa</td>
+            <td>9.959014</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+
+
+
+      ```python
+      # Merge the africa dataframe with the rates_df using the 2-letter country codes in both.
+      rates_merged = africa.merge(rates_df, left_on='iso_a2', right_on='country_code')
+      rates_merged.sample(5)
+      ```
+
+
+
+
+      <div>
+      <style scoped>
+          .dataframe tbody tr th:only-of-type {
+              vertical-align: middle;
+          }
+
+          .dataframe tbody tr th {
+              vertical-align: top;
+          }
+
+          .dataframe thead th {
+              text-align: right;
+          }
+      </style>
+      <table border="1" class="dataframe">
+        <thead>
+          <tr style="text-align: right;">
+            <th></th>
+            <th>iso_a2</th>
+            <th>continent</th>
+            <th>geometry</th>
+            <th>default</th>
+            <th>count</th>
+            <th>country_code</th>
+            <th>country_name</th>
+            <th>download_Mbps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>EG</td>
+            <td>Africa</td>
+            <td>POLYGON ((34.19814453125002 31.322607421875, 3...</td>
+            <td>0</td>
+            <td>481</td>
+            <td>EG</td>
+            <td>Egypt</td>
+            <td>1.942897</td>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td>MA</td>
+            <td>Africa</td>
+            <td>POLYGON ((-4.628320312499966 35.20639648437501...</td>
+            <td>0</td>
+            <td>3001</td>
+            <td>MA</td>
+            <td>Morocco</td>
+            <td>5.918805</td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>KE</td>
+            <td>Africa</td>
+            <td>(POLYGON ((40.99443359375002 -2.15839843749998...</td>
+            <td>0</td>
+            <td>1702</td>
+            <td>KE</td>
+            <td>Kenya</td>
+            <td>5.796839</td>
+          </tr>
+          <tr>
+            <th>8</th>
+            <td>TZ</td>
+            <td>Africa</td>
+            <td>(POLYGON ((39.711328125 -7.977441406250024, 39...</td>
+            <td>0</td>
+            <td>120</td>
+            <td>TZ</td>
+            <td>Tanzania</td>
+            <td>1.249333</td>
+          </tr>
+          <tr>
+            <th>10</th>
+            <td>ZA</td>
+            <td>Africa</td>
+            <td>(POLYGON ((37.85693359375003 -46.9442382812499...</td>
+            <td>0</td>
+            <td>12824</td>
+            <td>ZA</td>
+            <td>South Africa</td>
+            <td>9.959014</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+
+
+      ### Test Counts
+
+
+      ```python
+      # First, plot the plain African map with all countries represented.
+      ax0 = africa.plot(column='default', color='white', edgecolor='lightgrey', figsize=figsize)
+      # Next, plot the merged rates dataframe on top of the base map. Only countries with data will be shown.
+      _ = rates_merged.plot(ax=ax0, column='count', cmap='Blues', scheme='Fisher_Jenks',
+                            k=colors, legend=True, legend_kwds={"loc": 3}, edgecolor='lightgrey')
+      ```
+
+
+      ![](/notebooks/exploring-african-internet_files/exploring-african-internet_9_0.png)
+
+
+      ### M-Lab Metro Locations
+
+      While the map above highlights countries where *users* are running NDT tests, it does not reveal the location of M-Lab servers used to run those tests.
+
+      To add M-Lab server locations to the map, next we will load the M-Lab site configuration for Africa.
+
+
+      ```python
+      # Download the M-Lab site configuration.
+      response = urllib2.urlopen(mlab_sites_url)
+      sites = json.loads(response.read())
+
+      # Collect all sites in Africa, creating a geometry.Point for each one.
+      all_map = {}
+      africa_map = {}
+      for row in sites:
+          metro = row['site'][0:3]
+          all_map[metro] = (metro, geometry.Point(row['longitude'], row['latitude']))
+          if metro in african_metros:
+              africa_map[metro] = all_map[metro]
+
+      # Convert the dict into a GeoDataFrame.
+      all_locations = gpd.GeoDataFrame(pd.DataFrame.from_dict(
+          all_map, orient='index', columns=['metro', 'location']), geometry='location')
+      africa_locations = gpd.GeoDataFrame(pd.DataFrame.from_dict(
+          africa_map, orient='index', columns=['metro', 'location']), geometry='location')
+      ```
+
+
+      ```python
+      print africa_locations.keys()
+      ```
+
+          Index([u'metro', u'location'], dtype='object')
+
+
+      ### Test Counts With M-Lab Metro Locations
+
+
+      ```python
+      # Repeat the steps for plotting Africa test counts.
+      ax0 = africa.plot(column='default', color='white', edgecolor='lightgrey', figsize=figsize)
+      ax1 = rates_merged.plot(ax=ax0, column='count', cmap='Blues', scheme='Fisher_Jenks',
+                              k=colors, legend=True, legend_kwds={"loc": 3}, edgecolor='lightgrey')
+      # Add the M-Lab metro locations.
+      africa_locations.plot(ax=ax1, color='red', markersize=20)
+      _ = ax1.set_title('NDT Test Counts and M-Lab Metro Locations')
+      ```
+
+
+      ![](/notebooks/exploring-african-internet_files/exploring-african-internet_14_0.png)
+
+
+      ### NDT Test Rates
+
+
+      ```python
+      f, ax = plt.subplots(1, 2, figsize=figsize)
+
+      ax0 = africa.plot(ax=ax[0], column='default', color='white', edgecolor='lightgrey', figsize=figsize)
+      ax1 = rates_merged.plot(ax=ax0, column='count', cmap='Blues', scheme='Fisher_Jenks',
+                              k=colors, legend=True, legend_kwds={"loc": 3}, edgecolor='lightgrey')
+      africa_locations.plot(ax=ax1, color='red', markersize=20)
+
+      ax0 = africa.plot(ax=ax[1], column='default', color='white', edgecolor='lightgrey', figsize=figsize)
+      ax2 = rates_merged.plot(ax=ax0, column='download_Mbps', cmap='Greens', scheme='Fisher_Jenks',
+                              k=colors, legend=True, legend_kwds={"loc": 3}, edgecolor='lightgrey')
+      africa_locations.plot(ax=ax2, color='red', markersize=20)
+
+      _ = ax1.set_title('Test Counts')
+      _ = ax2.set_title('Download Rates (Mbps)')
+      ```
+
+
+      ![](/notebooks/exploring-african-internet_files/exploring-african-internet_16_0.png)
+
+
+      # Paris-Traceroute in Africa
+
+      How are clients in Africa routed to M-Lab servers?
+
+      Every time a client machine contacts and M-Lab server, the server starts a paris-traceroute from the M-lab server to the client remote IP. Each paris-traceroute hop is annotated with geo-location metadata for the intermediate router IP address, including the country. 
+
+      For a given day, the query below counts the hops in all countries visited between all clients in Africa and the African M-Lab server they contacted. The query is limited to NDT tests (ports 3010 and 3001).
+
+
+      ```python
+      df_hops = {}
+      for metro in african_metros:
+          print metro,
+          df_hops[metro] = run_query("""
+      SELECT 
+        paris_traceroute_hop.dest_geolocation.country_code as dest_country_code,
+        COUNT(*) as hops
+
+      FROM
+        `measurement-lab.traceroute.base`
+
+      WHERE
+            TIMESTAMP_TRUNC(log_time, DAY) = TIMESTAMP("2018-11-16")
+        AND REGEXP_CONTAINS(test_id, r"mlab[1-4].%s\d\d")
+        AND connection_spec.client_geolocation.continent_code = "AF"
+        AND (REGEXP_CONTAINS(test_id, ".*3010.paris.gz") OR REGEXP_CONTAINS(test_id, ".*3001.paris.gz"))
+
+      GROUP BY
+        dest_country_code
+
+      HAVING
+        hops > 50
+
+      ORDER BY
+        hops desc
+      """ % metro)
+      ```
+
+          tun jnb cpt mpm tnr los nbo acc
+
+
+
+      ```python
+      for metro in african_metros:
+          if not len(df_hops[metro]):
+              print "Skipping %s" % metro
+              continue
+
+          hops_merged = globe.merge(df_hops[metro], left_on='iso_a2', right_on='dest_country_code')
+
+          ax1 = globe.plot(column='default', color='white', edgecolor='lightgrey', figsize=figsize)
+          ax2 = hops_merged.plot(ax=ax1, column='hops', cmap='Oranges', scheme='Fisher_Jenks',
+                                 k=6, legend=True, legend_kwds={"loc": 3}, edgecolor='lightgrey')
+          ax2.set_title('Country Hops for sources in Africa & targets in %s' % metro)
+          africa_locations[africa_locations.metro == metro].plot(ax=ax2, color='cyan', markersize=30)
+          ax2.set_xbound(-100, 100)
+      ```
+
+
+      ![](/notebooks/exploring-african-internet_files/exploring-african-internet_19_0.png)
+
+
+
+      ![](/notebooks/exploring-african-internet_files/exploring-african-internet_19_1.png)
+
+
+
+      ![](/notebooks/exploring-african-internet_files/exploring-african-internet_19_2.png)
+
+
+
+      ![](/notebooks/exploring-african-internet_files/exploring-african-internet_19_3.png)
+
+
+
+      ![](/notebooks/exploring-african-internet_files/exploring-african-internet_19_4.png)
+
+
+
+      ![](/notebooks/exploring-african-internet_files/exploring-african-internet_19_5.png)
+
+
+
+      ![](/notebooks/exploring-african-internet_files/exploring-african-internet_19_6.png)
+
+
+
+      ![](/notebooks/exploring-african-internet_files/exploring-african-internet_19_7.png)
+
