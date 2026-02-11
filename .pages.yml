@@ -988,7 +988,7 @@ content:
     label: Tests
     type: collection
     path: src/content/tests
-    format: md
+    format: yaml-frontmatter
     filename: '{fields.slug}.md'
     subfolders: true
     view:
