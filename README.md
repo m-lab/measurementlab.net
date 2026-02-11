@@ -177,7 +177,7 @@ title: My New Blog Post
 excerpt: A brief description of the post
 authors:
   - chris-ritzo
-published: published
+status: published
 tags:
   - research
   - data
@@ -194,7 +194,7 @@ Your markdown content here...
 - `permalink` - URL slug (no leading slash)
 - `title` - Post title
 - `authors` - Array of people IDs from `src/content/people/`
-- `published` - Either `draft` or `published`
+- `status` - One of: `draft`, `published`, or `archived`
 - `tags` - Array of tag strings
 - `publishedDate` - Date in YYYY-MM-DD format
 
@@ -335,7 +335,7 @@ Create a new `.json` file in `src/content/publications/`:
 
 **Optional fields:**
 
-- `description` - Brief summary
+- `description` - Brief summary (supports markdown)
 - `authors` - Citation string for all authors
 - `contributors` - Array of people IDs from `src/content/people/` (for M-Lab team members)
 - `venue` - Conference/journal name
@@ -344,7 +344,6 @@ Create a new `.json` file in `src/content/publications/`:
 - `externalLinks` - Array of `{label, url}` for external links
 - `videoLinks` - Array of `{label, url, platform}` for video content
 - `tags` - Array of tag strings
-- `order` - Sort order
 
 ### Tests
 
@@ -355,7 +354,8 @@ Create a new `.md` file in `src/content/tests/`:
 permalink: /tests/my-test/
 title: 'My Test'
 description: 'Brief description of the test'
-status: current
+testStatus: current
+status: published
 icon: /src/assets/images/tests/my-test.png
 order: 10
 showInIndex: true
@@ -374,7 +374,8 @@ Full markdown documentation for the test...
 **Optional fields:**
 
 - `description` - Brief description
-- `status` - One of: current, retired, core-service, retired-core-service
+- `testStatus` - Operational status: current, retired, core-service, retired-core-service
+- `status` - Visibility: `draft`, `published`, or `archived` (default: `draft`)
 - `icon` - Path to icon image for tests index
 - `order` - Sort order (default 999)
 - `showInIndex` - Whether to show on tests index page (default true)
