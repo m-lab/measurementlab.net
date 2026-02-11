@@ -73,3 +73,18 @@ sections:
       type: full
     title: This is a Flexi Section!
     description: Weeeee
+  - type: card
+    background:
+      color: white
+      type: full
+    title: test
+    cards:
+      - title: tes
+        content: test
+        color: secondary
+        icon: insights
+        button:
+          variant: secondary
+          size: md
+          text: test
+          href: test
