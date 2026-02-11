@@ -83,10 +83,10 @@ export default function PublicationItem({ item }: PublicationItemProps) {
                 <a
                   key={`${link.path}:${index}`}
                   href={`/${link.path}`}
-                  className="inline-flex items-center gap-2 text-sm text-primary-500 hover:text-primary-600"
+                  className="text-md inline-flex items-center gap-2 text-primary-500 hover:text-primary-600"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <IconDownload class="h-4 w-4" />
+                  <IconDownload class="h-6 w-6" />
                   {link.label}
                 </a>
               ))}

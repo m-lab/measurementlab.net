@@ -1111,8 +1111,8 @@ content:
         description: Draft content is only visible on the preview site. New content defaults to Draft.
       - name: description
         label: Description
-        type: text
-        description: Brief summary of the publication
+        type: rich-text
+        description: Brief summary of the publication (supports markdown)
       - name: authors
         label: Authors
         type: string
