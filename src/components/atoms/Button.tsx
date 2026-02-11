@@ -70,7 +70,9 @@ export default function Button({
     return (
       <a data-component href={href} className={classes} {...anchorProps}>
         {icon === 'arrowDown' && <ArrowDown />}
-        {icon === 'measurement' && <MeasurementSmall />}
+        {icon === 'measurement' && (
+          <MeasurementSmall height="1.4em" width="1.4em" />
+        )}
         {children}
         {icon === 'arrowRight' && <ArrowLong style={{ fontSize: '2em' }} />}
       </a>

@@ -22,7 +22,7 @@
   @apply border-supporting2-700 bg-supporting2-600 text-black;
 }
 .button-speed {
-  @apply border-speed-700 bg-speed-600 text-white;
+  @apply border-b-2 border-speed-800 bg-speed-600 text-white;
 }
 .button-outline {
   @apply border-neutral-400 bg-neutral-200 text-neutral-900;

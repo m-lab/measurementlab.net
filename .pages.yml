@@ -992,6 +992,10 @@ content:
     filename: '{fields.slug}.md'
     subfolders: true
     view:
+      layout: tree
+      node:
+        filename: index.md
+        hideDirs: nodes
       fields: [icon, title, testStatus, status, order]
       sort: [order, title]
       primary: title
