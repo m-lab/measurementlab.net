@@ -7,7 +7,7 @@
 /* Button - Variants */
 
 .button-base {
-  @apply inline-flex items-center justify-center gap-2 border-b-2 font-medium focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
+  @apply inline-flex items-center justify-center gap-2 border-b-2 font-medium whitespace-nowrap focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
 }
 .button-primary {
   @apply border-primary-900 bg-primary-700 text-white;
@@ -25,7 +25,7 @@
   @apply border-b-2 border-speed-800 bg-speed-600 text-white;
 }
 .button-outline {
-  @apply border-neutral-400 bg-neutral-200 text-neutral-900;
+  @apply gap-0 border-neutral-400 bg-neutral-200 text-neutral-900;
 }
 .button-ghost {
   @apply border-transparent text-neutral-900 hover:bg-neutral-100 focus-visible:ring-neutral-900;
@@ -39,7 +39,7 @@
   @apply px-4 py-2 text-base;
 }
 .button-size-lg {
-  @apply px-6 py-3 text-lg;
+  @apply px-4 py-3 text-lg;
 }
 .button-size-xl {
   @apply px-8 py-4 text-xl;

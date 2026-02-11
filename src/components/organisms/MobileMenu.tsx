@@ -3,6 +3,8 @@ import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import { siteConfig } from '@lib/config';
 import type { NavItem } from '@utils/navigation';
 import { useState } from 'react';
+import IconOpenMenu from '~icons/heroicons/bars-3';
+import IconCloseMenu from '~icons/heroicons/x-mark';
 
 interface MobileMenuProps {
   items: NavItem[];
@@ -49,23 +51,10 @@ export default function MobileMenu({
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="button-base button-outline inline-flex cursor-pointer items-center justify-center p-1"
+        className="button-base button-size-lg button-outline inline-flex cursor-pointer items-center justify-center"
         aria-label="Open menu"
       >
-        <svg
-          className="size-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
-        </svg>
+        <IconOpenMenu />
       </button>
 
       {/* Mobile menu dialog */}
@@ -91,20 +80,7 @@ export default function MobileMenu({
                 className="-m-2.5 p-2.5"
                 aria-label="Close menu"
               >
-                <svg
-                  className="size-6 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <IconCloseMenu />
               </button>
             </div>
 

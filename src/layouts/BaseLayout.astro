@@ -26,6 +26,17 @@ const canonicalURL = Astro.site
 <!doctype html>
 <html lang={lang}>
 	<head>
+		<script is:inline>
+			(function() {
+				var ua = navigator.userAgent;
+				var cls = document.documentElement.classList;
+				if (/Mac/.test(ua)) cls.add('os-macos');
+				else if (/Win/.test(ua)) cls.add('os-windows');
+				else if (/Android/.test(ua)) cls.add('os-android');
+				else if (/iPhone|iPad|iPod/.test(ua)) cls.add('os-ios');
+				else if (/Linux/.test(ua)) cls.add('os-linux');
+			})();
+		</script>
 		<Head
 			title={title}
 			description={description}

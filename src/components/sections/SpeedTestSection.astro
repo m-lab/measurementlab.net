@@ -6,7 +6,9 @@ import Text from '@components/atoms/Text.astro';
 const { title, description } = Astro.props;
 ---
 
-<div class="flex w-full flex-row items-center justify-between py-4">
+<div
+	class="flex w-full flex-col items-center justify-between gap-6 py-4 text-center md:flex-row md:text-left"
+>
 	<div class="my-8 flex flex-col gap-4">
 		{
 			title && (
