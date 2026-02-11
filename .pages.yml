@@ -80,10 +80,8 @@ components:
       - name: image
         label: Image
         type: image
-        description: Card image (absolute path, e.g. /src/assets/images/card.jpg)
-      - name: button
-        label: Button
-        component: button
+        description: Card image
+      
       - name: color
         label: Color
         type: select
@@ -118,6 +116,9 @@ components:
             - label: M-Lab White
               value: mlab-white
         description: Card icon (will not show if the card has an image)
+      - name: button
+        label: Button
+        component: button
 
   background_select:
     type: object
