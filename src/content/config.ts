@@ -1,4 +1,5 @@
 import { defineCollection, type ImageFunction, z } from 'astro:content';
+import type { ImageMetadata } from 'astro';
 import blogCategories from './categories/blog.json';
 import partnerCategories from './categories/partners.json';
 import peopleCategories from './categories/people.json';
@@ -16,26 +17,33 @@ const colorPaletteSchema = z.enum([
   'supporting1',
   'supporting2',
   'neutral',
+  'speed',
 ]);
+
+// Atoms (no image dependency, can be shared)
+const buttonSchema = z.object({
+  variant: z.string(),
+  size: z.string(),
+  href: z.string(),
+  text: z.string(),
+});
+
+const cardBaseSchema = z.object({
+  title: z.string(),
+  content: z.string().optional(),
+  button: buttonSchema.optional(),
+  color: colorPaletteSchema.optional(),
+  icon: z.enum(['measurement', 'insights', 'community', 'mlab-blue', 'mlab-white']).optional(),
+});
+
+export type ButtonType = z.infer<typeof buttonSchema>;
+export type CardType = z.infer<typeof cardBaseSchema> & { image?: ImageMetadata };
 
 // Helper to create schemas with image support
 const createSchemas = (image: ImageFunction) => {
-  // Atoms
-  const buttonSchema = z.object({
-    variant: z.string(),
-    size: z.string(),
-    href: z.string(),
-    text: z.string(),
-  });
-
-  // Organisms
-
-  // Card
-  const cardSchema = z.object({
-    title: z.string(),
-    content: z.string().optional(),
+  // Card (extends base with image)
+  const cardSchema = cardBaseSchema.extend({
     image: image().optional(),
-    button: buttonSchema.optional(),
   });
 
   //  Person

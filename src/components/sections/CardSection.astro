@@ -1,24 +1,9 @@
 ---
 import Button from '@components/atoms/Button.tsx';
 import Heading from '@components/atoms/Heading.astro';
-import Image from '@components/atoms/Image.astro';
-import Card from '@components/molecules/Card.astro';
+import HouseCard from '@components/molecules/HouseCard.astro';
+import type { ButtonType, CardType } from '@content/config';
 import SectionLayout from '@layouts/SectionLayout.astro';
-import type { ImageMetadata } from 'astro';
-
-export interface ButtonType {
-  variant: string;
-  size: string;
-  href: string;
-	text: string
-}
-
-export interface CardType {
-  title: string;
-  content?: string;
-  image?: ImageMetadata;
-  button?: ButtonType;
-}
 
 export interface Props {
   title: string;
@@ -50,20 +35,14 @@ const {
 			cards.length > 0 && (
 				<div class="mb-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 					{cards.map((card) => (
-						<Card variant="elevated" padding="lg">
-							{card.image && (
-								<div class="mb-4">
-									<Image
-										src={card.image}
-										alt={card.title}
-										width={400}
-										height={300}
-										class="h-48 w-full rounded-lg object-cover"
-									/>
-								</div>
-							)}
-							<h3 class="mb-3">{card.title}</h3>
-							{card.content && <p class="mb-4 text-gray-600">{card.content}</p>}
+						<HouseCard
+							image={card.image}
+							title={card.title}
+							description={card.content}
+							cardType="container"
+							variant={card.color}
+							icon={card.icon}
+						>
 							{card.button && (
 								<Button
 									type="button"
@@ -75,7 +54,7 @@ const {
 									{card.button.text}
 								</Button>
 							)}
-						</Card>
+						</HouseCard>
 					))}
 				</div>
 			)

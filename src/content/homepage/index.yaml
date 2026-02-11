@@ -32,8 +32,10 @@ sections:
       Society.
     cards:
       - title: Global Testing Platform
-        content: A  network of 425+ servers in 75+ metro areas, hosted at
+        content: A network of 425+ servers in 75+ metro areas, hosted at
           interconnection points and cloud networks.
+        color: speed
+        icon: measurement
         button:
           variant: primary
           size: md
@@ -43,6 +45,8 @@ sections:
         content:
           A large-scale Internet measurement data, consolidated into an open,
           accessible pipeline.
+        color: supporting1
+        icon: insights
         button:
           variant: secondary
           size: md
@@ -51,6 +55,8 @@ sections:
       - title: Community Engagement
         content: Provide technical advice, hold convenings, and bring together
           stakeholders to foster knowledge exchange and collaboration.
+        color: secondary
+        icon: community
         button:
           variant: primary
           size: md
@@ -60,6 +66,8 @@ sections:
         content: Host advanced measurement tools, create reporting interfaces,
           visualizations and research products like the Internet Quality
           Barometer.
+        color: primary
+        icon: mlab-white
         button:
           variant: secondary
           size: md

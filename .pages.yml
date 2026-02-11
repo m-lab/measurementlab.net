@@ -84,6 +84,40 @@ components:
       - name: button
         label: Button
         component: button
+      - name: color
+        label: Color
+        type: select
+        options:
+          values:
+            - label: Neutral
+              value: neutral
+            - label: Primary (Blue)
+              value: primary
+            - label: Secondary (Yellow)
+              value: secondary
+            - label: Supporting 1 (Green)
+              value: supporting1
+            - label: Supporting 2 (Sap Green)
+              value: supporting2
+            - label: Speed (Purple)
+              value: speed
+        description: Card color theme
+      - name: icon
+        label: Icon
+        type: select
+        options:
+          values:
+            - label: Measurement
+              value: measurement
+            - label: Insights
+              value: insights
+            - label: Community
+              value: community
+            - label: M-Lab Blue
+              value: mlab-blue
+            - label: M-Lab White
+              value: mlab-white
+        description: Card icon (will not show if the card has an image)
 
   background_select:
     type: object
@@ -1122,6 +1156,8 @@ content:
                   value: supporting2
                 - label: Neutral (Gray)
                   value: neutral
+                - label: Speed (Purple)
+                  value: speed
             description: Color palette for the banner
 
   # --------------------------------------------------------------------------

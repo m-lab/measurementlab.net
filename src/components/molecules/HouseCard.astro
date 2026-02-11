@@ -2,7 +2,19 @@
 import { Image } from 'astro:assets';
 import { renderMarkdown } from '@utils/renderMarkdown';
 import type { ImageMetadata } from 'astro';
+import IconCommunity from '~icons/m-lab/community';
+import IconInsights from '~icons/m-lab/insights';
+import IconMeasurement from '~icons/m-lab/measurement';
+import IconMlabBlue from '~icons/m-lab/mlab-blue';
+import IconMlabWhite from '~icons/m-lab/mlab-white';
 
+const iconMap = {
+  measurement: IconMeasurement,
+  insights: IconInsights,
+  community: IconCommunity,
+  'mlab-blue': IconMlabBlue,
+  'mlab-white': IconMlabWhite,
+};
 
 export interface Props {
   image?: ImageMetadata;
@@ -11,11 +23,11 @@ export interface Props {
   description?: string;
 	truncateDescription?: boolean;
   href?: string;
-  variant?: 'primary' | 'secondary' | 'supporting1' | 'supporting2' | 'speed' | 'neutral';
+  variant?: 'white' | 'primary' | 'secondary' | 'supporting1' | 'supporting2' | 'speed' | 'neutral';
   cardType?: 'blog' | 'publication' | 'container';
   class?: string;
 	width?: 'standard' | 'narrow';
-
+	icon?: 'measurement' | 'insights' | 'community' | 'mlab-blue' | 'mlab-white';
 }
 
 const {
@@ -25,19 +37,31 @@ const {
   description,
 	truncateDescription = false,
   href,
-  variant = 'primary',
+  variant = 'white',
   cardType = 'blog',
   class: className = '',
 	width = 'standard',
+	icon
 } = Astro.props;
 
-const variantColors = {
-  primary: 'bg-white',
-  secondary: 'bg-secondary-50 hover:bg-secondary-100',
-  supporting1: 'bg-supporting1-50 hover:bg-supporting1-100',
-  supporting2: 'bg-supporting2-50 hover:bg-supporting2-100',
-  speed: 'bg-speed-50 hover:bg-speed-100',
-  neutral: 'bg-neutral-100',
+const variantLightStyles = {
+  white: 'bg-white border-neutral-200',
+	primary: 'bg-primary-100 border-primary-400',
+  secondary: 'bg-secondary-100 border-secondary-400',
+  supporting1: 'bg-supporting1-100 border-supporting1-400',
+  supporting2: 'bg-supporting2-100 border-supporting2-400',
+  speed: 'bg-speed-50 border-speed-400',
+  neutral: 'bg-neutral-100 border-neutral-400',
+};
+
+const variantStrongStyles = {
+  white: 'bg-white',
+	primary: 'bg-primary-400',
+  secondary: 'bg-secondary-400 ',
+  supporting1: 'bg-supporting1-400 ',
+  supporting2: 'bg-supporting2-400 ',
+  speed: 'bg-speed-400',
+  neutral: 'bg-neutral-400',
 };
 
 const houseWidthStyles = {
@@ -45,47 +69,69 @@ const houseWidthStyles = {
   narrow: 'px-24',
 }
 
+const iconCircleFillColors: Record<string, string> = {
+  white: 'var(--color-neutral-300)',
+  primary: 'var(--color-primary-600)',
+  secondary: 'var(--color-secondary-600)',
+  supporting1: 'var(--color-supporting1-600)',
+  supporting2: 'var(--color-supporting2-600)',
+  speed: 'var(--color-speed-600)',
+  neutral: 'var(--color-neutral-600)',
+};
+
+const iconsWithCircleFill = new Set(['measurement', 'insights', 'community']);
+const IconComponent = icon ? iconMap[icon] : null;
+const hasCircleFill = icon && iconsWithCircleFill.has(icon);
 const Tag = cardType==="blog" ? 'a' : 'div';
-const TitleLink = (cardType!=="blog" && href) ? 'a':'slot';
 
 
 ---
 
 <Tag
 	href={href}
-	class={`block transition-all border-neutral-200 text-neutral-600 border-b-4 no-underline duration-200 ${className}`}
+	class={`block transition-all text-neutral-800  no-underline duration-200 ${className}`}
 >
 	<div
-		class={`houseCard flex h-full flex-col gap-6 ${variantColors[variant]} ${houseWidthStyles[width]} p-4 ${!image && `pt-18`}`}
+		class={`houseCard flex h-full flex-col gap-6 border-b-4  ${variantLightStyles[variant]} ${houseWidthStyles[width]} p-4 ${!image && !IconComponent && 'pt-18'}`}
 	>
-		{
-			image && (
-				<div class="-m-4 mb-0 max-h-52 overflow-hidden">
+		<div
+			class={`-m-4 mb-0 aspect-square overflow-hidden ${variantStrongStyles[variant]}`}
+		>
+			{
+				image ? (
 					<Image
 						src={image}
 						alt={imageAlt}
-						class="object-cover object-center"
+						class="h-full object-cover object-center"
 					/>
-				</div>
-			)
-		}
+				) : (
+					IconComponent && (
+						<div class:list={["h-full w-full p-8 text-white", { "icon-wrapper": hasCircleFill }]} style={hasCircleFill ? `--icon-circle-fill: ${iconCircleFillColors[variant]}` : undefined}>
+							<IconComponent
+								height="100%"
+								width="100%"
+								class="h-full object-cover object-center"
+							/>
+						</div>
+					)
+				)
+			}
+		</div>
 		<slot name="above-title" />
 
 		{
 			title &&
 				(cardType !== 'blog' && href ? (
 					<a href={href}>
-						<h3 class="text-xl font-bold md:text-2xl">{title}</h3>
+						<h3 class="text-center">{title}</h3>
 					</a>
 				) : (
-					<h3 class="text-xl font-bold text-neutral-900 md:text-2xl">
-						{title}
-					</h3>
+					<h3 class="text-center">{title}</h3>
 				))
 		}
 
 		<div
-			class=`grow justify-self-start ${truncateDescription && 'line-clamp-4'}`
+			class=`grow justify-self-start text-center ${truncateDescription && 'line-clamp-4'}`
 			set:html={description && (await renderMarkdown(description))?.html}
 		/>
 		<slot />
@@ -95,5 +141,8 @@ const TitleLink = (cardType!=="blog" && href) ? 'a':'slot';
 <style>
 	.houseCard {
 		mask: conic-gradient(from 45deg at 50px 50px, #000 75%, #0000 0) -50px;
+	}
+	.icon-wrapper :global(circle) {
+		fill: var(--icon-circle-fill);
 	}
 </style>
