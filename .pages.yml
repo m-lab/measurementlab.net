@@ -893,7 +893,7 @@ content:
     view:
       fields: [heroImage, title, publishedDate, status]
       primary: title
-      sort: [-publishedDate]
+      sort: [publishedDate, title]
     fields:
       - name: permalink
         label: Permalink
