@@ -894,6 +894,10 @@ content:
       fields: [heroImage, title, publishedDate, status]
       primary: title
       sort: [publishedDate, title]
+      default:
+        search: ''
+        sort: publishedDate
+        order: desc
     fields:
       - name: permalink
         label: Permalink
