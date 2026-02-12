@@ -16,13 +16,13 @@ const { title = 'Infrastructure Map' } = Astro.props;
 			</Heading>
 		)
 	}
-	<div id="infrastructure-map" class="h-125 w-full overflow-hidden rounded-lg">
+	<div id="infrastructure-map-container" class="h-125 w-full overflow-hidden rounded-lg">
 	</div>
 </div>
 
 <style>
 	/* Mapbox popup styles */
-	:global(#infrastructure-map .mapboxgl-popup-content) {
+	:global(#infrastructure-map-container .mapboxgl-popup-content) {
 		background: #1a1a2e;
 		color: #fff;
 		border-radius: 8px;
@@ -77,7 +77,7 @@ const { title = 'Infrastructure Map' } = Astro.props;
 
 <script is:inline>
 	function initInfrastructureMap() {
-		var container = document.getElementById('infrastructure-map');
+		var container = document.getElementById('infrastructure-map-container');
 		if (!container) return;
 
 		// Check if map is already initialized
@@ -94,7 +94,7 @@ const { title = 'Infrastructure Map' } = Astro.props;
 			'pk.eyJ1IjoibS1sYWIiLCJhIjoiY2xsdmN2NXBuMTl1ZDNmcGh1ZmxmaGwzcSJ9.3xXvAS4T6tZoahEeevGa4A';
 
 		var map = new mapboxgl.Map({
-			container: 'infrastructure-map',
+			container: 'infrastructure-map-container',
 			style: 'mapbox://styles/mapbox/dark-v10',
 			center: [5, 17],
 			zoom: 1.2,
