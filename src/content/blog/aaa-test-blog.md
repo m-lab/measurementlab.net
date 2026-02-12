@@ -16,4 +16,8 @@ categories:
 ---
 some text here, and a link to an image with a space in the file name:
 
+## This is a heading
+
+This is my content
+
 ![](../../assets/Group%2055.png)
