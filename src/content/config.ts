@@ -154,6 +154,7 @@ const createSchemas = (image: ImageFunction) => {
     SectionCommonSchema.extend({
       type: z.literal('infrastructureMap'),
       title: z.string().default('Infrastructure Map'),
+      description: z.string().optional(),
     }),
   ]);
 

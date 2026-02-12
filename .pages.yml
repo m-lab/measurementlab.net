@@ -510,6 +510,10 @@ components:
         type: string
         default: Infrastructure Map
         description: Title displayed above the map
+      - name: description
+        label: Description
+        type: rich-text
+        description: Optional description displayed below the title
 
   # -- Speed Test (homepage only) --
   speed_test_section:
@@ -609,6 +613,9 @@ content:
           - name: featured_partners
             label: Featured Partners Section
             component: featured_partners_section
+          - name: infrastructureMap
+            label: Infrastructure Map Section
+            component: infrastructure_map_section
 
   # --------------------------------------------------------------------------
   # Pages

@@ -96,7 +96,7 @@ let richTextCounter = 0;
 						/>
 					);
 				case 'infrastructureMap':
-					return <InfrastructureMapSection title={section.title} />;
+					return <InfrastructureMapSection title={section.title} description={section.description} />;
 				default:
 					return null;
 			}

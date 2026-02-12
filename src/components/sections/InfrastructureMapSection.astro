@@ -1,11 +1,13 @@
 ---
 import Heading from '@components/atoms/Heading.astro';
+import Text from '@components/atoms/Text.astro';
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = 'Infrastructure Map' } = Astro.props;
+const { title = 'Infrastructure Map', description } = Astro.props;
 ---
 
 <div class="infrastructure-map-section">
@@ -14,6 +16,11 @@ const { title = 'Infrastructure Map' } = Astro.props;
 			<Heading level={2} class="mb-6 text-2xl font-bold">
 				{title}
 			</Heading>
+		)
+	}
+	{
+		description && (
+			<Text class="mb-6 max-w-3xl text-lg text-gray-600">{description}</Text>
 		)
 	}
 	<div id="infrastructure-map-container" class="h-125 w-full overflow-hidden rounded-lg">
