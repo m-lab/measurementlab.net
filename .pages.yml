@@ -894,6 +894,7 @@ content:
       fields: [heroImage, title, publishedDate, status]
       primary: title
       sort: [publishedDate, title]
+      search: [title]
       default:
         search: ''
         sort: publishedDate
