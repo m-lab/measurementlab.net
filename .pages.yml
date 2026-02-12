@@ -686,7 +686,6 @@ content:
         label: Page Sections
         type: block
         list: true
-        required: true
         blockKey: type
         description: Add and arrange page sections in any order
         blocks:
