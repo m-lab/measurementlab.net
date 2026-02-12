@@ -3,8 +3,3 @@ permalink: blog
 status: published
 description: Insights, research, and updates from the M-Lab team
 zigzag: supporting1-light
-sections:
-  - type: hero
-    title: Pages CMS made me do this
-    subtitle: =(
-    zigzag: supporting1-light
