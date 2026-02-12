@@ -1316,6 +1316,20 @@ content:
                 - label: Speed (Purple)
                   value: speed
             description: Color palette for the banner
+      - name: cookieConsent
+        label: Cookie Consent
+        type: object
+        description: Cookie banner and analytics settings
+        fields:
+          - name: message
+            label: Banner Message
+            type: rich-text
+            required: true
+            description: Message shown in the cookie consent banner (supports markdown)
+          - name: googleAnalyticsId
+            label: Google Analytics Measurement ID
+            type: string
+            description: "GA4 Measurement ID (e.g. G-XXXXXXXXXX). Leave empty to disable analytics."
 
   # --------------------------------------------------------------------------
   # Redirects (singleton)

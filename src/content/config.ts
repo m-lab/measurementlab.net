@@ -273,6 +273,10 @@ const siteCollection = defineCollection({
         message: z.string(),
         color: colorPaletteSchema,
       }).optional(),
+      cookieConsent: z.object({
+        message: z.string(),
+        googleAnalyticsId: z.string().optional(),
+      }).optional(),
     }),
 });
 
