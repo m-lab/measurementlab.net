@@ -84,14 +84,16 @@ const isActive = (href: string) => {
 			size="lg"
 		>
 			<MagnifyingGlassIcon />
-			<kbd
-				class="hidden font-sans text-xs/4 text-neutral-400 in-[.os-macos_&]:block"
-				>⌘K</kbd
-			>
-			<kbd
-				class="hidden font-sans text-xs/4 text-neutral-400 not-[.os-macos_&]:block"
-				>Ctrl K</kbd
-			>
+			<span class="hidden md:block">
+				<kbd
+					class="hidden font-sans text-xs/4 text-neutral-400 in-[.os-macos_&]:block"
+					>⌘K</kbd
+				>
+				<kbd
+					class="hidden font-sans text-xs/4 text-neutral-400 not-[.os-macos_&]:block"
+					>Ctrl K</kbd
+				>
+			</span>
 		</Button>
 
 		<!-- CTA or Actions Slot -->
