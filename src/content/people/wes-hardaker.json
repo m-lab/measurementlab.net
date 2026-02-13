@@ -1,0 +1,11 @@
+{
+  "id": "wes-hardaker",
+  "name": "Wes Hardaker",
+  "status": "draft",
+  "headshot": "/src/assets/wes_hardaker_2023_icann_portrait_mlab.jpg",
+  "title": "Internet Standards Engineer ",
+  "affiliation": "Google",
+  "sections": [
+    "Maintainers"
+  ]
+}
