@@ -142,6 +142,8 @@ Categories are defined in `src/content/categories/` and control filtering/groupi
 
 **Pages CMS is the recommended way to edit content.** It provides a visual interface that makes editing easier and reduces the chance of syntax errors. However, all content can also be edited directly in the repository files.
 
+> **For content editors:** See the comprehensive **[CMS Editing Guide](docs/cms-guide.md)** for step-by-step instructions on using Pages CMS, including screenshots and a field reference for every content type.
+
 ### Using Pages CMS (Recommended)
 
 1. Go to [app.pagescms.org](https://app.pagescms.org)

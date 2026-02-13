@@ -725,6 +725,115 @@ content:
             component: infrastructure_map_section
 
   # --------------------------------------------------------------------------
+  # Blog
+  # --------------------------------------------------------------------------
+  - name: blog
+    label: Blog
+    type: collection
+    path: src/content/blog
+    filename: '{fields.permalink}.md'
+    subfolders: false
+    view:
+      fields: [heroImage, title, publishedDate, status]
+      primary: title
+      sort: [publishedDate, title]
+      search: [title]
+      default:
+        search: ''
+        sort: publishedDate
+        order: desc
+    fields:
+      - name: permalink
+        label: Permalink
+        type: string
+        required: true
+        description: URL-friendly identifier (e.g. my-blog-post-title)
+        pattern:
+          {
+            message: "Must be a web-safe string like 'my-blog-post-title'.",
+            regex: '^[a-zA-Z0-9_-]*$',
+          }
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: Blog post title
+      - name: excerpt
+        label: Excerpt
+        type: text
+        description: Short summary of the blog post
+      - name: authors
+        label: Authors
+        type: reference
+        required: false
+        default: []
+        options:
+          collection: people
+          required: false
+          multiple: true
+          value: '{id}'
+          label: '{fields.name}'
+      - name: externalAuthors
+        label: External Authors
+        type: string
+        required: false
+        description: Add any external authors here
+      - name: status
+        label: Status
+        type: select
+        required: true
+        default: draft
+        options:
+          values:
+            - label: Draft
+              value: draft
+            - label: Published
+              value: published
+            - label: Archived
+              value: archived
+        description: Draft content is only visible on the preview site. New content defaults to Draft.
+      - name: publishedDate
+        label: Published Date
+        type: date
+        options:
+          format: yyyy-MM-dd
+        required: true
+        description: Date the blog post was published
+      - name: heroImage
+        label: Hero Image
+        type: image
+        options:
+          media: blog
+        description: Featured image for the blog post
+      - name: relatedPosts
+        label: Related Posts
+        type: reference
+        description: Select up to 3 related blog posts
+        options:
+          collection: blog
+          required: false
+          multiple: true
+          value: '{permalink}'
+          label: '{title}'
+          image: '{fields.heroImage}'
+      - name: categories
+        label: Categories
+        type: select
+        required: true
+        options:
+          multiple: true
+          fetch:
+            url: https://mlab.draftlab.dev/api/categories.json
+            results: blog.categories
+            value: '{name}'
+            label: '{name}'
+      - name: body
+        label: Body
+        type: rich-text
+        options:
+          media: blog
+
+  # --------------------------------------------------------------------------
   # People
   # --------------------------------------------------------------------------
   - name: people
@@ -887,115 +996,6 @@ content:
         type: string
         list: true
         required: true
-
-  # --------------------------------------------------------------------------
-  # Blog
-  # --------------------------------------------------------------------------
-  - name: blog
-    label: Blog
-    type: collection
-    path: src/content/blog
-    filename: '{fields.permalink}.md'
-    subfolders: false
-    view:
-      fields: [heroImage, title, publishedDate, status]
-      primary: title
-      sort: [publishedDate, title]
-      search: [title]
-      default:
-        search: ''
-        sort: publishedDate
-        order: desc
-    fields:
-      - name: permalink
-        label: Permalink
-        type: string
-        required: true
-        description: URL-friendly identifier (e.g. my-blog-post-title)
-        pattern:
-          {
-            message: "Must be a web-safe string like 'my-blog-post-title'.",
-            regex: '^[a-zA-Z0-9_-]*$',
-          }
-      - name: title
-        label: Title
-        type: string
-        required: true
-        description: Blog post title
-      - name: excerpt
-        label: Excerpt
-        type: text
-        description: Short summary of the blog post
-      - name: authors
-        label: Authors
-        type: reference
-        required: false
-        default: []
-        options:
-          collection: people
-          required: false
-          multiple: true
-          value: '{id}'
-          label: '{fields.name}'
-      - name: externalAuthors
-        label: External Authors
-        type: string
-        required: false
-        description: Add any external authors here
-      - name: status
-        label: Status
-        type: select
-        required: true
-        default: draft
-        options:
-          values:
-            - label: Draft
-              value: draft
-            - label: Published
-              value: published
-            - label: Archived
-              value: archived
-        description: Draft content is only visible on the preview site. New content defaults to Draft.
-      - name: publishedDate
-        label: Published Date
-        type: date
-        options:
-          format: yyyy-MM-dd
-        required: true
-        description: Date the blog post was published
-      - name: heroImage
-        label: Hero Image
-        type: image
-        options:
-          media: blog
-        description: Featured image for the blog post
-      - name: relatedPosts
-        label: Related Posts
-        type: reference
-        description: Select up to 3 related blog posts
-        options:
-          collection: blog
-          required: false
-          multiple: true
-          value: '{permalink}'
-          label: '{title}'
-          image: '{fields.heroImage}'
-      - name: categories
-        label: Categories
-        type: select
-        required: true
-        options:
-          multiple: true
-          fetch:
-            url: https://mlab.draftlab.dev/api/categories.json
-            results: blog.categories
-            value: '{name}'
-            label: '{name}'
-      - name: body
-        label: Body
-        type: rich-text
-        options:
-          media: blog
 
   # --------------------------------------------------------------------------
   # Tests
