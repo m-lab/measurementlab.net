@@ -13,6 +13,7 @@ relatedPosts:
 categories:
   - Aim
   - Advocacy
+  - Research
 ---
 some text here, and a link to an image with a space in the file name:
 
