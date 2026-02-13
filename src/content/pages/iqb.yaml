@@ -53,3 +53,10 @@ sections:
       type: full
     withTOC: false
     content: "![](/src/assets/images/IQB%20Score.svg)"
+  - type: blog_roll
+    background:
+      color: white
+      type: full
+    title: Latest News
+    limit: 3
+    showMore: false
