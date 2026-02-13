@@ -10,7 +10,9 @@
     "migrate:1-authors": "tsx scripts/generate-author-mapping.ts && tsx scripts/create-authors.ts",
     "migrate:2-dry": "tsx scripts/migrate-articles.ts --dry-run",
     "migrate:3-execute": "tsx scripts/migrate-articles.ts",
-    "migrate:4-validate": "tsx scripts/validate-migration.ts"
+    "migrate:4-validate": "tsx scripts/validate-migration.ts",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
@@ -46,6 +48,7 @@
   },
   "devDependencies": {
     "@iconify/json": "^2.2.430",
+    "@playwright/test": "^1.58.2",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@tailwindcss/typography": "^0.5.19",

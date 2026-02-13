@@ -26,6 +26,9 @@ pnpm-debug.log*
 # Local Netlify folder
 .netlify
 
+# test results
+test-results
+
 # Local configuration
 .localconfig/
 .claude/
