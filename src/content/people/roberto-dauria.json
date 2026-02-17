@@ -1,11 +1,11 @@
 {
-  "status": "published",
   "id": "roberto-dauria",
   "name": "Roberto D'Auria",
+  "status": "published",
   "headshot": "/src/assets/people/roberto.jpg",
+  "title": "Senior Software Engineer",
   "affiliation": "Code for Science & Society",
   "url": "https://www.codeforsociety.org/",
-  "title": "Platform Engineer",
   "sections": [
     "Maintainers"
   ]
