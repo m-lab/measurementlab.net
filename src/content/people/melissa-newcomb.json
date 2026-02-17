@@ -1,10 +1,10 @@
 {
-  "status": "published",
   "id": "melissa-newcomb",
   "name": "Melissa Newcomb",
+  "status": "published",
   "headshot": "/src/assets/people/melissa.jpeg",
   "title": "Senior Program Manager",
-  "affiliation": "Code for Science & Society",
+  "affiliation": "Measurement Lab ",
   "sections": [
     "Maintainers"
   ]
