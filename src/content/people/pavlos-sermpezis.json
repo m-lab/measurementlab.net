@@ -1,10 +1,10 @@
 {
-  "status": "published",
   "id": "pavlos-sermpezis",
   "name": "Pavlos Sermpezis",
+  "status": "published",
   "headshot": "/src/assets/people/pavlos_sermpezis.jpg",
   "title": "Director, Technical Lead",
-  "affiliation": "Code for Science & Society",
+  "affiliation": "Measurement Lab ",
   "sections": [
     "Maintainers"
   ]
