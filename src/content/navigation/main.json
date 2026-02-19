@@ -77,6 +77,14 @@
         "label": "Partner with us",
         "pageRef": "community"
       }
+    },
+    {
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "Section Showcase",
+        "pageRef": "section-showcase"
+      }
     }
   ]
 }
