@@ -62,3 +62,9 @@ sections:
       color: white
       type: full
     category: Alumni
+  - type: flexi
+    background:
+      color: white
+      type: full
+    title: Meet the Team
+    description: meet the team content
