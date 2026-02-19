@@ -16,6 +16,12 @@ sections:
       dedicating time, expertise, and financial resources. M-Lab operates as a
       not-for-profit as and is a fiscally sponsored project of Code for Science
       & Society. Learn how to [get involved](/contribute).
+  - type: flexi
+    background:
+      color: white
+      type: full
+    title: Meet the Team
+    description: meet the team content
   - type: richText
     background:
       color: white
@@ -62,9 +68,3 @@ sections:
       color: white
       type: full
     category: Alumni
-  - type: flexi
-    background:
-      color: white
-      type: full
-    title: Meet the Team
-    description: meet the team content
