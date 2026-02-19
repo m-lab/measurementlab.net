@@ -18,7 +18,7 @@ sections:
       & Society. Learn how to [get involved](/contribute).
   - type: flexi
     background:
-      color: white
+      color: primary-light
       type: full
     title: Meet the Team
     description: meet the team content
