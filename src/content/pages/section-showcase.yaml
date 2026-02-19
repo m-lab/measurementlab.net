@@ -1,0 +1,560 @@
+title: Section Showcase
+permalink: section-showcase
+status: published
+description: A comprehensive showcase of every available page section type with multiple variations.
+sections:
+  # ============================================================
+  # HERO SECTION — All zigzag variations
+  # ============================================================
+  - type: hero
+    title: Hero Section
+    subtitle: >-
+      The hero section displays a prominent title and optional subtitle over a zigzag
+      background. It is used for visual page breaks and emphasis. This is the primary-light
+      variant.
+    zigzag: primary-light
+
+  - type: richText
+    content: >-
+      ## Hero Section Variations
+
+
+      The hero section supports 8 zigzag color variants. Each one renders the signature
+      triangular/zigzag decorative background in a different color from the palette.
+      Heroes are great for separating major page sections visually.
+
+  - type: hero
+    title: Primary Dark
+    subtitle: zigzag variant — primary-dark
+    zigzag: primary-dark
+
+  - type: hero
+    title: Secondary Light
+    subtitle: zigzag variant — secondary-light
+    zigzag: secondary-light
+
+  - type: hero
+    title: Secondary Dark
+    subtitle: zigzag variant — secondary-dark
+    zigzag: secondary-dark
+
+  - type: hero
+    title: Supporting 1 Light
+    subtitle: zigzag variant — supporting1-light
+    zigzag: supporting1-light
+
+  - type: hero
+    title: Supporting 1 Dark
+    subtitle: zigzag variant — supporting1-dark
+    zigzag: supporting1-dark
+
+  - type: hero
+    title: Supporting 2 Light
+    subtitle: zigzag variant — supporting2-light
+    zigzag: supporting2-light
+
+  - type: hero
+    title: Supporting 2 Dark
+    subtitle: zigzag variant — supporting2-dark
+    zigzag: supporting2-dark
+
+  # ============================================================
+  # RICH TEXT SECTION — Various backgrounds, with and without TOC
+  # ============================================================
+  - type: hero
+    title: Rich Text Section
+    subtitle: Renders markdown content with optional table of contents
+    zigzag: primary-light
+
+  - type: richText
+    background:
+      color: white
+    content: >-
+      ## Rich Text — White Background
+
+
+      The richText section renders markdown content. It supports full markdown syntax
+      including headings, paragraphs, lists, links, bold, italic, code blocks, and images.
+      This is the most common section type used throughout the site.
+
+
+      ### Features
+
+      - Full markdown rendering with image processing
+
+      - Optional table of contents sidebar (set `withTOC: true`)
+
+      - Supports all standard background color options
+
+      - Images use `/src/assets/...` paths and are optimized at build time
+
+
+      ### When to Use
+
+      Use richText for any long-form content — articles, documentation, descriptions,
+      or any page that needs formatted text with headings and lists.
+
+  - type: richText
+    background:
+      color: gray
+    content: >-
+      ## Rich Text — Gray Background
+
+
+      This richText section uses `background.color: gray`, which renders a light neutral
+      background. Gray backgrounds are useful for visually separating content sections
+      and creating contrast between adjacent white sections.
+
+  - type: richText
+    background:
+      color: primary-light
+    content: >-
+      ## Rich Text — Primary Light Background
+
+
+      This richText section uses `background.color: primary-light`. Light color backgrounds
+      are good for highlighting important content without overwhelming the reader. Text
+      automatically adjusts for readability.
+
+  - type: richText
+    background:
+      color: primary-medium
+    content: >-
+      ## Rich Text — Primary Medium Background
+
+
+      This richText section uses `background.color: primary-medium`. Medium backgrounds
+      provide stronger emphasis. Text color adjusts to white for readability on darker
+      backgrounds.
+
+  - type: richText
+    background:
+      color: primary-dark
+    content: >-
+      ## Rich Text — Primary Dark Background
+
+
+      This richText section uses `background.color: primary-dark`. Dark backgrounds
+      create the strongest visual emphasis. Best used sparingly for key messages or CTAs.
+
+  - type: richText
+    withTOC: true
+    content: >-
+      ## Rich Text — With Table of Contents
+
+
+      When `withTOC` is set to `true`, a table of contents sidebar is generated
+      automatically from the markdown headings. The TOC appears on medium-sized
+      screens and above, positioned to the side of the content.
+
+
+      ### How TOC Works
+
+      The table of contents is built from all `##` and `###` headings in the markdown.
+      It provides quick navigation for long content sections.
+
+
+      ### Best Practices
+
+      - Use TOC for pages with 3 or more headings
+
+      - Keep heading text concise for clean TOC display
+
+      - TOC is hidden on mobile and shown on desktop
+
+
+      ### Example Use Cases
+
+      Documentation pages, data guides, policy pages, and any long-form content
+      benefits from a table of contents for navigation.
+
+  # ============================================================
+  # BUTTON SECTION — Variants and sizes
+  # ============================================================
+  - type: hero
+    title: Button Section
+    subtitle: Displays a title with a row of call-to-action buttons
+    zigzag: secondary-light
+
+  - type: button
+    title: Primary Buttons (All Sizes)
+    buttons:
+      - variant: primary
+        size: sm
+        text: Small
+        href: '#'
+      - variant: primary
+        size: md
+        text: Medium
+        href: '#'
+      - variant: primary
+        size: lg
+        text: Large
+        href: '#'
+      - variant: primary
+        size: xl
+        text: Extra Large
+        href: '#'
+
+  - type: button
+    title: Button Color Variants (Medium Size)
+    buttons:
+      - variant: primary
+        size: md
+        text: Primary
+        href: '#'
+      - variant: secondary
+        size: md
+        text: Secondary
+        href: '#'
+      - variant: supporting1
+        size: md
+        text: Supporting 1
+        href: '#'
+      - variant: supporting2
+        size: md
+        text: Supporting 2
+        href: '#'
+
+  - type: button
+    buttons:
+      - variant: speed
+        size: md
+        text: Speed
+        href: '#'
+      - variant: outline
+        size: md
+        text: Outline
+        href: '#'
+      - variant: ghost
+        size: md
+        text: Ghost
+        href: '#'
+
+  - type: button
+    background:
+      color: primary-dark
+    title: Buttons on Dark Background
+    buttons:
+      - variant: outline
+        size: md
+        text: Outline on Dark
+        href: '#'
+      - variant: ghost
+        size: md
+        text: Ghost on Dark
+        href: '#'
+      - variant: secondary
+        size: md
+        text: Secondary on Dark
+        href: '#'
+
+  # ============================================================
+  # CARD SECTION — Icons, colors, descriptions, buttons
+  # ============================================================
+  - type: hero
+    title: Card Section
+    subtitle: Displays a grid of cards with icons, images, colors, and optional buttons
+    zigzag: supporting1-light
+
+  - type: card
+    title: Cards with Icons
+    description: >-
+      Cards can display custom M-Lab icons. Each icon renders inside the card's colored
+      header area. Available icons are measurement, insights, community, mlab-blue, and
+      mlab-white.
+    cards:
+      - title: Measurement
+        content: The measurement icon represents M-Lab's core testing infrastructure and tools.
+        icon: measurement
+        color: primary
+      - title: Insights
+        content: The insights icon represents data analysis, research findings, and reports.
+        icon: insights
+        color: secondary
+      - title: Community
+        content: The community icon represents collaboration, partners, and open-source contributors.
+        icon: community
+        color: supporting1
+
+  - type: card
+    title: Cards with Color Variations
+    description: >-
+      Cards support 6 color options from the design palette. The color determines both
+      the header background and the border accent.
+    cards:
+      - title: Primary
+        content: Uses the primary color palette — the main brand color.
+        color: primary
+      - title: Secondary
+        content: Uses the secondary color palette — complementary to primary.
+        color: secondary
+      - title: Supporting 1
+        content: Uses the supporting1 color palette — for variety and emphasis.
+        color: supporting1
+      - title: Supporting 2
+        content: Uses the supporting2 color palette — warm accent tones.
+        color: supporting2
+      - title: Neutral
+        content: Uses the neutral color palette — subtle and understated.
+        color: neutral
+      - title: Speed
+        content: Uses the speed color palette — purple tones for speed-related content.
+        color: speed
+
+  - type: card
+    title: Cards with Buttons
+    description: >-
+      Each card can include an optional call-to-action button. The section itself
+      can also have buttons below the card grid.
+    cards:
+      - title: Card with CTA
+        content: This card has its own button that links to a specific destination.
+        color: primary
+        icon: measurement
+        button:
+          variant: primary
+          size: sm
+          text: Learn More
+          href: '#'
+      - title: Another Card with CTA
+        content: Buttons inside cards are useful for directing users to detail pages.
+        color: secondary
+        icon: insights
+        button:
+          variant: secondary
+          size: sm
+          text: View Details
+          href: '#'
+      - title: Third Card
+        content: Not every card in a group needs a button — they are optional.
+        color: supporting1
+        icon: community
+    buttons:
+      - variant: primary
+        size: md
+        text: Section-Level Button Below Cards
+        href: '#'
+
+  - type: card
+    background:
+      color: gray
+    title: Cards on Gray Background
+    description: >-
+      Card sections can use any background color. A gray background helps the white
+      card bodies stand out with more contrast.
+    cards:
+      - title: M-Lab Blue Icon
+        content: The mlab-blue icon shows the M-Lab logo mark in blue.
+        icon: mlab-blue
+        color: primary
+      - title: M-Lab White Icon
+        content: The mlab-white icon shows the M-Lab logo mark in white on a colored background.
+        icon: mlab-white
+        color: secondary
+
+  # ============================================================
+  # FLEXI SECTION — Nested sections
+  # ============================================================
+  - type: hero
+    title: Flexi Section
+    subtitle: A container that wraps other sections with a title and description
+    zigzag: supporting2-light
+
+  - type: flexi
+    background:
+      color: gray
+    title: Flexi on Gray Background
+    description: >-
+      The flexi section is a container that displays a title and description, then renders
+      nested child sections inside it. It is useful for grouping related content under
+      a shared heading.
+    sections:
+      - type: richText
+        content: >-
+          ### Nested Rich Text
+
+
+          This richText section is nested inside a flexi container. Flexi sections can
+          contain any other section type, allowing flexible page composition.
+      - type: button
+        buttons:
+          - variant: primary
+            size: md
+            text: Nested Button
+            href: '#'
+
+  - type: flexi
+    background:
+      color: primary-light
+    title: Flexi on Primary Light
+    description: >-
+      Flexi sections support all background colors. This one uses primary-light to
+      create a colored container around its nested content.
+    sections:
+      - type: richText
+        content: >-
+          This content inherits the visual context of its flexi parent. Nesting allows
+          you to create visually grouped content blocks without building custom components.
+
+  - type: flexi
+    background:
+      color: primary-dark
+    title: Flexi on Dark Background
+    description: >-
+      Dark flexi backgrounds are useful for creating high-contrast feature sections.
+      Text automatically switches to white for readability.
+    sections:
+      - type: richText
+        content: >-
+          Nested content inside a dark flexi section. The combination of flexi with
+          richText, buttons, or cards creates versatile page layouts.
+
+  # ============================================================
+  # SPEED TEST SECTION
+  # ============================================================
+  - type: hero
+    title: Speed Test Section
+    subtitle: Displays a speed test call-to-action with a link to the M-Lab speed test
+    zigzag: primary-light
+
+  - type: speed_test
+    title: Run a Speed Test
+    description: >-
+      The speed_test section renders a prominent call-to-action linking to
+      speed.measurementlab.net. It displays a title, optional description, and
+      a large speed test button. Typically used on the homepage.
+
+  # ============================================================
+  # BLOG ROLL SECTION
+  # ============================================================
+  - type: hero
+    title: Blog Roll Section
+    subtitle: Displays the latest blog posts in a card grid
+    zigzag: secondary-light
+
+  - type: blog_roll
+    title: Latest Blog Posts (Limit 3)
+    description: >-
+      The blog_roll section fetches published blog posts and displays them as cards.
+      The limit parameter controls how many posts to show (1-12, default 3).
+      Set showMore to true to display a link to the full blog listing.
+    limit: 3
+    showMore: true
+
+  - type: blog_roll
+    background:
+      color: gray
+    title: Blog Roll — 6 Posts on Gray
+    description: >-
+      A larger blog roll with 6 posts on a gray background. The gray background creates
+      visual separation from surrounding sections.
+    limit: 6
+    showMore: false
+
+  # ============================================================
+  # PEOPLE SECTION
+  # ============================================================
+  - type: hero
+    title: People Section
+    subtitle: Displays team members from the people collection, filterable by category
+    zigzag: supporting1-light
+
+  - type: richText
+    content: >-
+      ## People Section
+
+
+      The people section queries the people collection and displays members in a grid.
+      Use the optional `category` field to filter by group — Maintainers, Experiment Review
+      Committee, Advisory Committee, M-Lab Founders, or Alumni.
+
+  - type: people
+    category: Maintainers
+
+  # ============================================================
+  # PARTNERS SECTION
+  # ============================================================
+  - type: hero
+    title: Partners Section
+    subtitle: Displays partner logos from the partners collection, filterable by category
+    zigzag: supporting2-light
+
+  - type: partners
+    title: All Partners
+    background:
+      color: white
+
+  - type: partners
+    title: Supporting Partners Only
+    background:
+      color: gray
+    category: Supporting Partners
+
+  # ============================================================
+  # FEATURED PARTNERS SECTION
+  # ============================================================
+  - type: hero
+    title: Featured Partners Section
+    subtitle: Displays top partners in an alternating left-right layout
+    zigzag: primary-light
+
+  - type: featured_partners
+    title: Featured Partners
+    description: >-
+      The featured_partners section shows the top 9 partners (sorted by order field)
+      in an alternating 2-3 column grid layout. Typically used on the homepage to
+      highlight key partnerships.
+
+  # ============================================================
+  # INFRASTRUCTURE MAP SECTION
+  # ============================================================
+  - type: hero
+    title: Infrastructure Map Section
+    subtitle: Displays an interactive Mapbox map of M-Lab server locations worldwide
+    zigzag: secondary-light
+
+  - type: infrastructureMap
+    title: M-Lab Infrastructure
+    description: >-
+      The infrastructureMap section renders an interactive map showing M-Lab server
+      locations around the world. It uses Mapbox with clustering and popups. Typically
+      used on the status page.
+
+  # ============================================================
+  # BACKGROUND COLORS COMPARISON
+  # ============================================================
+  - type: hero
+    title: Background Color Comparison
+    subtitle: All 5 background color options side by side
+    zigzag: primary-dark
+
+  - type: richText
+    background:
+      color: white
+    content: >-
+      **Background: white** — The default. Transparent/white background for standard content areas.
+
+  - type: richText
+    background:
+      color: gray
+    content: >-
+      **Background: gray** — Light neutral background (neutral-200). Good for alternating sections.
+
+  - type: richText
+    background:
+      color: primary-light
+    content: >-
+      **Background: primary-light** — Light brand color (primary-100). Subtle emphasis.
+
+  - type: richText
+    background:
+      color: primary-medium
+    content: >-
+      **Background: primary-medium** — Medium brand color (primary-700). Strong emphasis, white text.
+
+  - type: richText
+    background:
+      color: primary-dark
+    content: >-
+      **Background: primary-dark** — Dark brand color (primary-900). Maximum contrast, white text.

@@ -7,11 +7,14 @@ import renderMarkdownWithImages from '@utils/renderMarkdown';
 export interface Props {
   id: string;
   content: string;
-  background?: string;
+  background?: { color?: string };
   withTOC?: boolean;
 }
 
-const { id, content, withTOC = false } = Astro.props;
+const { id, content, background, withTOC = false } = Astro.props;
+
+const darkBackgrounds = new Set(['primary-medium', 'primary-dark']);
+const isDark = darkBackgrounds.has(background?.color ?? '');
 
 const { html, toc } = (await renderMarkdownWithImages(content, withTOC, id));
 
@@ -37,7 +40,7 @@ const countTocEntries = (entries: TocEntry[]): number => {
 			)
 		}
 
-		<div class={`prose max-w-3xl ${withTOC ? '' : 'mx-auto'}`}>
+		<div class={`prose max-w-3xl ${isDark ? 'prose-invert' : ''} ${withTOC ? '' : 'mx-auto'}`}>
 			<Fragment set:html={html} />
 		</div>
 	</div>
