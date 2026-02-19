@@ -7,15 +7,6 @@ description: M-Lab is an open source project with contributors from civil
 sections:
   - type: richText
     background:
-      color: white
-      type: full
-    withTOC: false
-    content: |-
-      # Meet the Team
-
-      _meet the team content_
-  - type: richText
-    background:
       color: primary-light
       type: full
     withTOC: false
@@ -25,6 +16,15 @@ sections:
       dedicating time, expertise, and financial resources. M-Lab operates as a
       not-for-profit as and is a fiscally sponsored project of Code for Science
       & Society. Learn how to [get involved](/contribute).
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: |-
+      # Meet the Team
+
+      _meet the team content_
   - type: people
     background:
       color: white
