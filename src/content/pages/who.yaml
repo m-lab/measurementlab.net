@@ -7,6 +7,15 @@ description: M-Lab is an open source project with contributors from civil
 sections:
   - type: richText
     background:
+      color: white
+      type: full
+    withTOC: false
+    content: |-
+      # Meet the Team
+
+      _meet the team content_
+  - type: richText
+    background:
       color: primary-light
       type: full
     withTOC: false
