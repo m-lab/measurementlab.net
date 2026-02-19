@@ -94,29 +94,31 @@ const Tag = cardType==="blog" ? 'a' : 'div';
 	<div
 		class={`houseCard flex h-full flex-col gap-6 border-b-4  ${variantLightStyles[variant]} ${houseWidthStyles[width]} p-4 ${!image && !IconComponent && 'pt-18'}`}
 	>
-		<div
-			class={`-m-4 mb-0 aspect-square overflow-hidden ${variantStrongStyles[variant]}`}
-		>
-			{
-				image ? (
-					<Image
-						src={image}
-						alt={imageAlt}
-						class="h-full object-cover object-center"
-					/>
-				) : (
-					IconComponent && (
-						<div class:list={["h-full w-full p-8 text-white", { "icon-wrapper": hasCircleFill }]} style={hasCircleFill ? `--icon-circle-fill: ${iconCircleFillColors[variant]}` : undefined}>
-							<IconComponent
-								height="100%"
-								width="100%"
-								class="h-full object-cover object-center"
-							/>
-						</div>
+		{(image || IconComponent) && (
+			<div
+				class={`-m-4 mb-0 aspect-square overflow-hidden ${variantStrongStyles[variant]}`}
+			>
+				{
+					image ? (
+						<Image
+							src={image}
+							alt={imageAlt}
+							class="h-full object-cover object-center"
+						/>
+					) : (
+						IconComponent && (
+							<div class:list={["h-full w-full p-8 text-white", { "icon-wrapper": hasCircleFill }]} style={hasCircleFill ? `--icon-circle-fill: ${iconCircleFillColors[variant]}` : undefined}>
+								<IconComponent
+									height="100%"
+									width="100%"
+									class="h-full object-cover object-center"
+								/>
+							</div>
+						)
 					)
-				)
-			}
-		</div>
+				}
+			</div>
+		)}
 		<slot name="above-title" />
 
 		{
