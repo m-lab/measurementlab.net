@@ -41,7 +41,28 @@ sections:
       # IQB Framework
 
 
+      *   IQB is a comprehensive framework for collecting data and calculating a
+      composite score, the “IQB Score”, which reflects the quality of Internet
+      experience. IQB takes a more holistic approach than “speed tests” and
+      evaluates Internet performance across various use cases (web browsing,
+      video streaming, online gaming, etc.), each with its own specific network
+      requirements (latency, throughput, etc.).
+          
+      *   To create the IQB framework, M-Lab engaged with more than 60 experts
+      across various fields, including academic network research, public policy,
+      digital inclusion advocacy, Internet service provision, speed test data
+      analysis, content provision, and other related domains from November 2023
+      to March 2025.
+          
+      *   Check out the executive summary, full report, or IMC 2025 poster paper
+      for more details.
+          
+
       # IQB Prototype
+
+
+      *   Following the completion of the framework, the M-Lab team created a
+      prototype of the IQB tool to calculate the single metric.
   - type: button
     background:
       color: white
