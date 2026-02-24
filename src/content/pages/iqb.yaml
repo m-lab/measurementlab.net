@@ -113,9 +113,9 @@ sections:
     background:
       color: white
       type: full
-    title: Prototype
+    title: Explore IQB More
     cards:
-      - title: Explore the IQB Prototype
+      - title: IQB Prototype
         color: supporting2
         icon: insights
         button:
