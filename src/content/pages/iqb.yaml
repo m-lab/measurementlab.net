@@ -5,13 +5,14 @@ zigzag: secondary-dark
 sections:
   - type: hero
     title: What is IQB?
+    zigzag: secondary-dark
   - type: richText
     background:
       color: white
       type: full
     withTOC: true
     content: >-
-      # What are the goals of IQB?
+      # IQB Goals
 
 
       *   Shift the conversation around Internet Quality beyond “speed"
@@ -23,7 +24,7 @@ sections:
       *   Advocate for the collection of more nuanced metrics
           
 
-      # Background & Motivation for IQB
+      # Background & Motivation
 
 
       *   Internet use cases are growing complex where traditional metrics like
@@ -35,9 +36,15 @@ sections:
       *   While a single metric for optimization offers ‘accessibility’ and
       ‘data application’ benefits, there is no consensus on what that metric
       should encompass.
+          
+
+      # IQB Framework
+
+
+      # IQB Prototype
   - type: button
     background:
-      color: gray
+      color: white
       type: full
     buttons:
       - variant: primary
@@ -47,17 +54,4 @@ sections:
       - variant: primary
         size: md
         text: Check out the Prototype
-        href: https://iqb.mlab-sandbox.measurementlab.net/IQB_Map
-  - type: richText
-    background:
-      color: white
-      type: full
-    withTOC: false
-    content: "![](/src/assets/images/IQB%20Score.svg)"
-  - type: blog_roll
-    background:
-      color: white
-      type: full
-    title: Latest News
-    limit: 3
-    showMore: false
+        href: " https://iqb.mlab-staging.measurementlab.net/ "
