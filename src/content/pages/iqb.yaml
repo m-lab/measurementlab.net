@@ -56,8 +56,25 @@ sections:
           
       *   Check out the executive summary, full report, or IMC 2025 poster paper
       for more details.
-          
-
+  - type: button
+    background:
+      color: white
+      type: full
+    buttons:
+      - variant: primary
+        size: md
+        text: "Read the full report! "
+        href: /iqb-full-report
+      - variant: primary
+        size: md
+        text: Check out the Prototype
+        href: " https://iqb.mlab-staging.measurementlab.net/ "
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: true
+    content: >-
       # IQB Prototype
 
 
@@ -87,21 +104,22 @@ sections:
       *   IQB is built to be adaptable and iterative and we are interested in
       tailoring IQB to specific use cases such as in schools and rural areas.
           
-      *   If you're interested in working together, let us know!  
+      *   If you're interested in working together, let us know!
           
           ### _Acknowledgments_
           
           The IQB project was made possible through funding from the Internet Society Foundation.
-  - type: button
+  - type: card
     background:
       color: white
       type: full
-    buttons:
-      - variant: primary
-        size: md
-        text: "Read the full report! "
-        href: /iqb-full-report
-      - variant: primary
-        size: md
-        text: Check out the Prototype
-        href: " https://iqb.mlab-staging.measurementlab.net/ "
+    title: Prototype
+    cards:
+      - title: Explore the IQB Prototype
+        color: supporting2
+        icon: insights
+        button:
+          variant: primary
+          size: md
+          text: "IQB Prototype "
+          href: " https://iqb.mlab-staging.measurementlab.net/ "
