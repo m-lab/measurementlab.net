@@ -1,11 +1,11 @@
 title: Internet Quality Barometer
 permalink: iqb
 status: published
-zigzag: secondary-dark
+zigzag: supporting1-light
 sections:
   - type: hero
     title: What is IQB?
-    zigzag: secondary-dark
+    zigzag: supporting1-dark
   - type: richText
     background:
       color: white
