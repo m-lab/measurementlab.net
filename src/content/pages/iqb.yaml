@@ -123,3 +123,11 @@ sections:
           size: md
           text: "IQB Prototype "
           href: " https://iqb.mlab-staging.measurementlab.net/ "
+      - title: "IQB Prototype Research Report "
+        color: supporting2
+        icon: insights
+        button:
+          variant: primary
+          size: md
+          text: Initial Analysis of the IQB Prototype
+          href: https://drive.google.com/file/d/1eeGng8Cn7vsY9VdynxnoDEtPlp5PFb5i/view?usp=sharing
