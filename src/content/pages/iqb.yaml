@@ -20,6 +20,9 @@ sections:
           
       *   Advocate for the collection of more nuanced metrics
           
+          ![](/src/assets/images/iqb/Policymaker.png)
+
+          
 
       # Background & Motivation
 
@@ -58,7 +61,7 @@ sections:
       *   Check out the executive summary, full report, or IMC 2025 poster paper
       for more details.
           
-          ![](/src/assets/images/iqb/Audio%20Streaming.svg)
+          ![](/src/assets/images/iqb/Audio%20Streaming%20weights.png)
           
           # IQB Prototype
           
@@ -70,7 +73,7 @@ sections:
               
           *   The second interface provides global visualizations of precomputed IQB scores for all countries and their subdivisions color-coded based on their IQB score.
               
-          *   <p style="text-align: center"><img src="/src/assets/images/iqb/iqb%20pt%201.jpeg"></p><p style="text-align: center"><img src="/src/assets/images/iqb/iqb%20drc.jpeg"></p>
+              <p style="text-align: center"><img src="/src/assets/images/iqb/iqb%20drc.jpeg"></p>
           
           # IQB Going Forward
           
