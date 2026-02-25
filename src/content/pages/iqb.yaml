@@ -101,7 +101,7 @@ sections:
           text: Initial Analysis of the IQB Prototype
           href: https://drive.google.com/file/d/1eeGng8Cn7vsY9VdynxnoDEtPlp5PFb5i/view?usp=sharing
       - title: "IQB Framework Report "
-        content: Describes how M-Lab created the formula for the IQB prototype.
+        content: Learn how M-Lab created the formula for the IQB prototype.
         color: supporting2
         icon: insights
         button:
