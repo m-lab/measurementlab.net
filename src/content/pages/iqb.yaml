@@ -53,6 +53,29 @@ sections:
           
       *   Check out the executive summary, full report, or IMC 2025 poster paper
       for more details.
+          
+          # IQB Prototype
+          
+          *   Following the completion of the framework, the M-Lab team created a prototype of the IQB tool to calculate the single metric.
+              
+          *   The IQB web app prototype consists of two main interfaces designed to explore and visualize IQB scores.
+              
+          *   The first interface allows users to test the IQB score using their own measurement values or to experiment with hypothetical values to observe how scores change. Users can adjust parameters such as dataset weights, network requirements per use case, use case weights, and thresholds per dataset or use case.
+              
+          *   The second interface provides global visualizations of precomputed IQB scores for all countries and their subdivisions color-coded based on their IQB score.
+              
+          
+          # IQB Going Forward
+          
+          *   M-Lab hope to continue refining the IQB framework and prototype, as well as establish sustainable governance.
+              
+          *   IQB is built to be adaptable and iterative and we are interested in tailoring IQB to specific use cases such as in schools and rural areas.
+              
+          *   If you're interested in working together, let us know!
+              
+              ### _Acknowledgments_
+              
+              The IQB project was made possible through funding from the Internet Society Foundation.
   - type: button
     background:
       color: white
@@ -62,46 +85,6 @@ sections:
         size: md
         text: "Read the full report! "
         href: /iqb-full-report
-  - type: richText
-    background:
-      color: white
-      type: full
-    withTOC: true
-    content: >-
-      # IQB Prototype
-
-
-      *   Following the completion of the framework, the M-Lab team created a
-      prototype of the IQB tool to calculate the single metric.
-          
-      *   The IQB web app prototype consists of two main interfaces designed to
-      explore and visualize IQB scores.
-          
-      *   The first interface allows users to test the IQB score using their own
-      measurement values or to experiment with hypothetical values to observe
-      how scores change. Users can adjust parameters such as dataset weights,
-      network requirements per use case, use case weights, and thresholds per
-      dataset or use case.
-          
-      *   The second interface provides global visualizations of precomputed IQB
-      scores for all countries and their subdivisions color-coded based on their
-      IQB score.
-          
-
-      # IQB Going Forward
-
-
-      *   M-Lab hope to continue refining the IQB framework and prototype, as
-      well as establish sustainable governance.
-          
-      *   IQB is built to be adaptable and iterative and we are interested in
-      tailoring IQB to specific use cases such as in schools and rural areas.
-          
-      *   If you're interested in working together, let us know!
-          
-          ### _Acknowledgments_
-          
-          The IQB project was made possible through funding from the Internet Society Foundation.
   - type: card
     background:
       color: white
