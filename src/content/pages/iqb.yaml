@@ -58,7 +58,9 @@ sections:
       *   Check out the executive summary, full report, or IMC 2025 poster paper
       for more details.
           
-      *   # IQB Prototype
+          ![](/src/assets/images/iqb/Audio%20Streaming.svg)
+          
+          # IQB Prototype
           
           *   Following the completion of the framework, the M-Lab team created a prototype of the IQB tool to calculate the single metric.
               
@@ -67,6 +69,8 @@ sections:
           *   The first interface allows users to test the IQB score using their own measurement values or to experiment with hypothetical values to observe how scores change. Users can adjust parameters such as dataset weights, network requirements per use case, use case weights, and thresholds per dataset or use case.
               
           *   The second interface provides global visualizations of precomputed IQB scores for all countries and their subdivisions color-coded based on their IQB score.
+              
+              ![](/src/assets/images/iqb/iqb%20pt%201.jpeg)
               
           
           # IQB Going Forward
