@@ -83,6 +83,7 @@ sections:
     title: Explore IQB More
     cards:
       - title: IQB Prototype
+        content: Explore the data yourself!
         color: supporting2
         icon: insights
         button:
@@ -91,6 +92,7 @@ sections:
           text: "IQB Prototype "
           href: " https://iqb.mlab-staging.measurementlab.net/ "
       - title: "IQB Prototype Research Report "
+        content: Go deeper into the prototype design.
         color: supporting2
         icon: insights
         button:
