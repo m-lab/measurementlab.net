@@ -84,7 +84,7 @@ sections:
     cards:
       - title: IQB Prototype
         content: Explore the data yourself!
-        color: supporting2
+        color: supporting1
         icon: insights
         button:
           variant: primary
@@ -102,7 +102,7 @@ sections:
           href: https://drive.google.com/file/d/1eeGng8Cn7vsY9VdynxnoDEtPlp5PFb5i/view?usp=sharing
       - title: "IQB Framework Report "
         content: Learn how M-Lab created the formula for the IQB prototype.
-        color: supporting2
+        color: supporting1
         icon: insights
         button:
           variant: primary
