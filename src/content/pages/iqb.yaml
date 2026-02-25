@@ -35,6 +35,10 @@ sections:
       should encompass.
           
 
+      <p style="text-align: center"><img
+      src="/src/assets/images/iqb/Speed%20test%20to%20IQB%20score.svg"></p>
+
+
       # IQB Framework
 
 
@@ -54,7 +58,7 @@ sections:
       *   Check out the executive summary, full report, or IMC 2025 poster paper
       for more details.
           
-          # IQB Prototype
+      *   # IQB Prototype
           
           *   Following the completion of the framework, the M-Lab team created a prototype of the IQB tool to calculate the single metric.
               
