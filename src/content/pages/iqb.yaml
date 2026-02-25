@@ -70,9 +70,7 @@ sections:
               
           *   The second interface provides global visualizations of precomputed IQB scores for all countries and their subdivisions color-coded based on their IQB score.
               
-          *   ![](/src/assets/images/iqb/iqb%20pt%201.jpeg)
-              
-              <p style="text-align: center"><img src="/src/assets/images/iqb/iqb%20drc.jpeg"></p>
+          *   <p style="text-align: center"><img src="/src/assets/images/iqb/iqb%20pt%201.jpeg"></p><p style="text-align: center"><img src="/src/assets/images/iqb/iqb%20drc.jpeg"></p>
           
           # IQB Going Forward
           
