@@ -3,9 +3,6 @@ permalink: iqb
 status: published
 zigzag: supporting1-light
 sections:
-  - type: hero
-    title: What is IQB?
-    zigzag: supporting1-dark
   - type: richText
     background:
       color: white
@@ -65,10 +62,6 @@ sections:
         size: md
         text: "Read the full report! "
         href: /iqb-full-report
-      - variant: primary
-        size: md
-        text: Check out the Prototype
-        href: " https://iqb.mlab-staging.measurementlab.net/ "
   - type: richText
     background:
       color: white
@@ -131,3 +124,12 @@ sections:
           size: md
           text: Initial Analysis of the IQB Prototype
           href: https://drive.google.com/file/d/1eeGng8Cn7vsY9VdynxnoDEtPlp5PFb5i/view?usp=sharing
+      - title: Where it started
+        content: Describes how M-Lab created the formula for the IQB prototype.
+        color: supporting2
+        icon: insights
+        button:
+          variant: primary
+          size: md
+          text: IQB Framework
+          href: public/publications/IQB_report_2025.pdf
