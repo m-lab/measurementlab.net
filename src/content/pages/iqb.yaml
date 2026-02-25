@@ -76,15 +76,6 @@ sections:
               ### _Acknowledgments_
               
               The IQB project was made possible through funding from the Internet Society Foundation.
-  - type: button
-    background:
-      color: white
-      type: full
-    buttons:
-      - variant: primary
-        size: md
-        text: "Read the full report! "
-        href: /iqb-full-report
   - type: card
     background:
       color: white
