@@ -140,7 +140,24 @@ Type `/` on an empty line to open the command menu. This gives you quick access 
 
 For internal links, use a path starting with `/` (e.g., `/about-us`). For external links, use the full URL (e.g., `https://example.com`).
 
-### 2.4 Working with Images
+### 2.4 Images vs. Files: How They Are Handled Differently
+
+The website treats **images** and **files** (like PDFs) differently:
+
+**Images** (photos, logos, diagrams) are stored in `src/assets/` and processed by the site's build system. When you upload an image through the CMS, Astro automatically optimizes it for the web — resizing it, compressing it, and converting it to modern formats so pages load faster. This is why image fields in the CMS point to paths like `/src/assets/images/...`.
+
+**Files** (PDFs, documents) are stored in the `public/` folder and served directly to visitors without any processing. Anything in the `public/` folder is accessible on the internet exactly as uploaded. The URL matches the folder structure:
+
+| File location in repository     | URL on the website               |
+| ------------------------------- | -------------------------------- |
+| `public/publications/paper.pdf` | `yoursite.com/publications/paper.pdf` |
+| `public/my-doc.pdf`             | `yoursite.com/my-doc.pdf`        |
+
+This is why publication PDFs live in `public/publications/` — visitors can download them directly at a clean URL. Images, on the other hand, go through `src/assets/` so the site can optimize them for fast loading.
+
+> **In short:** Use the **Image** field for photos and graphics (they get optimized). Use the **File** field for documents like PDFs (they are served as-is from the `public/` folder).
+
+### 2.5 Working with Images
 
 Image fields show an **Upload** button and a browse button (folder icon). You have two options:
 
@@ -153,6 +170,23 @@ Once an image is attached, you will see a thumbnail preview. You can:
 - Click the trash icon to remove it
 
 > **Tip:** Use descriptive file names for images (e.g., `ndt-speed-test-diagram.png` instead of `screenshot-2024.png`). This helps with organization and accessibility.
+
+### 2.6 Entering URLs in Buttons, Cards, and Links
+
+When you type a URL into a component field (e.g., a button link or card link), make sure you format it correctly:
+
+- **For pages on this site**, start with a forward slash: `/about-us`, `/tests/ndt`, `/blog`
+- **For external websites**, write the full URL: `https://example.com`
+
+If you forget the leading `/` on an internal link and just type `about-us`, the browser will try to append it to whatever page the visitor is currently on. For example, a visitor on `/tests` who clicks a link to `about-us` would end up at `/tests/about-us` instead of `/about-us` — which does not exist.
+
+| What you type        | Where the visitor goes                   | Correct? |
+| -------------------- | ---------------------------------------- | -------- |
+| `/about-us`          | `yoursite.com/about-us`                  | Yes      |
+| `about-us`           | depends on the current page — unreliable | No       |
+| `https://example.com`| `example.com`                            | Yes      |
+
+> **Rule of thumb:** Internal links always start with `/`. External links always start with `https://`.
 
 ---
 
