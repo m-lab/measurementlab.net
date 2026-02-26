@@ -7,7 +7,7 @@ stats:
   - label: Tests per day
     value: 4 million
   - label: Data
-    value: '9 PB '
+    value: "9 PB "
   - label: Servers
     value: 400+
 sections:
@@ -23,8 +23,7 @@ sections:
       color: white
       type: full
     title: What we do
-    description:
-      Founded in 2009, Measurement Lab (M-Lab) is an open platform for
+    description: Founded in 2009, Measurement Lab (M-Lab) is an open platform for
       studying Internet performance and neutrality over time. We provide public,
       transparent data to empower researchers, policymakers, and open Internet
       advocates to make informed decisions about Internet infrastructure and
@@ -32,8 +31,8 @@ sections:
       Society.
     cards:
       - title: Global Testing Platform
-        content: A network of 425+ servers in 75+ metro areas, hosted at
-          interconnection points and cloud networks.
+        content: A network of 425+ servers in 75+ metro areas, hosted at interconnection
+          points and cloud networks.
         color: speed
         icon: measurement
         button:
@@ -41,9 +40,8 @@ sections:
           size: md
           text: Check out the Platform
           href: /status
-      - title: 'Internet Measurement Data '
-        content:
-          A large-scale Internet measurement data, consolidated into an open,
+      - title: "Internet Measurement Data "
+        content: A large-scale Internet measurement data, consolidated into an open,
           accessible pipeline.
         color: supporting1
         icon: insights
@@ -62,17 +60,6 @@ sections:
           size: md
           text: Join the Community
           href: /community/
-      - title: 'Research & Analysis '
-        content: Host advanced measurement tools, create reporting interfaces,
-          visualizations and research products like the Internet Quality
-          Barometer.
-        color: primary
-        icon: mlab-white
-        button:
-          variant: secondary
-          size: md
-          text: Discover our Latest Work
-          href: feature-showcase
     buttons:
       - variant: primary
         size: md
@@ -83,13 +70,15 @@ sections:
       color: primary-dark
       type: full
     title: Run an NDT test
-    description:
-      Diagnose the performance of your broadband connection with M-Lab's
+    description: Diagnose the performance of your broadband connection with M-Lab's
       Network Diagnostics Test (NDT).
   - type: infrastructureMap
+    background:
+      color: white
+      type: full
     title: Visualisations and more
-    description: M-Lab provides software integrations, dashboards, measurements, data APIs, and more to assist in network measurements.
-
+    description: M-Lab provides software integrations, dashboards, measurements,
+      data APIs, and more to assist in network measurements.
   - type: featured_partners
     background:
       color: white
