@@ -1337,6 +1337,19 @@ content:
             label: Google Analytics Measurement ID
             type: string
             description: "GA4 Measurement ID (e.g. G-XXXXXXXXXX). Leave empty to disable analytics."
+      - name: footer
+        label: Footer
+        type: object
+        description: Footer content settings
+        fields:
+          - name: description
+            label: Description
+            type: rich-text
+            description: Short description shown in the footer (supports markdown links)
+          - name: bottom
+            label: Bottom Text
+            type: rich-text
+            description: Text shown at the bottom of the footer (supports markdown links)
 
   # --------------------------------------------------------------------------
   # Redirects (singleton)
