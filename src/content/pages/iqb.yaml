@@ -61,7 +61,7 @@ sections:
       *   Check out the executive summary, full report, or IMC 2025 poster paper
       for more details.
           
-          ![](/src/assets/images/iqb/Audio%20Streaming%20weights.png)
+          <p style="text-align: center"><img src="/src/assets/images/iqb/Audio%20Streaming%20weights.png" alt=""></p>
           
           # IQB Prototype
           
@@ -103,7 +103,7 @@ sections:
           href: " https://iqb.mlab-staging.measurementlab.net/ "
       - title: "IQB Prototype Research Report "
         content: Go deeper into the prototype design.
-        color: supporting2
+        color: supporting1
         icon: insights
         button:
           variant: primary
