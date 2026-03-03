@@ -94,6 +94,11 @@
     @apply border-white/20 bg-white/10;
   }
 
+  /* Center images in prose by default */
+  .prose img {
+    @apply mx-auto;
+  }
+
   /* Add spacing between consecutive code blocks */
   pre + pre,
   .expressive-code + .expressive-code {
