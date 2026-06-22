@@ -1,5 +1,5 @@
 title: Welcome to our Community
-permalink: community
+permalink: partners-community
 status: published
 description: Join our vibrant community of developers, contributors, and partners
 sections:
@@ -11,7 +11,7 @@ sections:
       color: white
       type: full
     withTOC: true
-    content: >-
+    content: >+
       # Sine invisi
 
 
@@ -20,10 +20,10 @@ sections:
 
       Lorem markdownum Caeneus prospiciunt adest: et Rhodon meditataque vix
       parte `dongle` carbasa sonum, **et** vix occumbere quos scopulo paelicis.
-      Mare meo. Dei _nuntia adeunt_ conceperat pennas sinusque et quid. Mea
+      Mare meo. Dei *nuntia adeunt* conceperat pennas sinusque et quid. Mea
       numinis cognoscere tibi; exorata moriemur virorum. Quid motu reliquit
       currus! Cava tamen flumina credere. Sit Elateia habebas obstrusaque tanti
-      est subiectaque quod iam, nunc? Non certa et me vada _gravisque tantis_.
+      est subiectaque quod iam, nunc? Non certa et me vada *gravisque tantis*.
 
 
       ## Quod famulas deos servat
@@ -31,13 +31,12 @@ sections:
 
       Omnia atque, cognita et Iovem, aere praeduraque illum cum augurium,
       prorae. Tulit ponere, ligo pugnae candida aureus Perseus sedes.
-      packThickE(hacker\_dslam\_multiplatform, terabyte\_bittorrent\_table);
-      page.overclocking.powerpoint(drive(dot + dram\_dual, bar), fiRamEmoticon,
-      qwerty);
-      nui\_rate\_qwerty.impression\_cyberbullying.framework\_p(bluetooth + -2 +
-      minicomputer\_client\_dock, cdn.scrolling\_smm(cyberspace, page\_bar));
-      middlewareSimplexPlay(5, image\_architecture\_javascript); bsod\_php -=
-      koffice\_newsgroup\_android(spoolSimplexHfs, southbridge);
+      packThickE(hackerdslammultiplatform, terabytebittorrenttable);
+      page.overclocking.powerpoint(drive(dot + dramdual, bar), fiRamEmoticon,
+      qwerty); nuirateqwerty.impressioncyberbullying.frameworkp(bluetooth + -2 +
+      minicomputerclientdock, cdn.scrollingsmm(cyberspace, pagebar));
+      middlewareSimplexPlay(5, imagearchitecturejavascript); bsodphp -=
+      kofficenewsgroupandroid(spoolSimplexHfs, southbridge);
 
 
       ## Pedes sollertius te inque
@@ -45,7 +44,7 @@ sections:
 
       Siculo sit cervos luserat et fluminis, cum desint. In et exacta
       **marmora**, suo et rustice Orchomenosque possim talia vestigia mulcebunt
-      oblita! Huius _deficiunt_ vicisse eris amnis, amor, si eram forte at quam
+      oblita! Huius *deficiunt* vicisse eris amnis, amor, si eram forte at quam
       illum iaculum et profundum catenis pabula insania. Non arma Hyaleque, que
       laudis solent similis; una robore docendam iuvat certe acta forti nepotis,
       genitore tenentibus.
@@ -57,7 +56,7 @@ sections:
       Ne vulgus sanguine opprimere manusque adorat Saturnia, nec qui nuda
       moenibus luserit omnia, secundo: mater. Tibi caedis, me viret est ut
       caelo, **inde demum** virgo nostraque auctore `system` gratia in pictis
-      insopitumque ponit, _parabat_. Qua gravem telum populisque et caelum
+      insopitumque ponit, *parabat*. Qua gravem telum populisque et caelum
       utramque vanam, sit mihi nec contentus **tua Amorum**, sumus ab. Thebae
       doleamne corpora. Ruit somnia ritu ore decent, ore caelum quaeque meque
       exululat. Restare conponitur quoque facit in staret superatus stare
@@ -75,11 +74,12 @@ sections:
       We believe in:
 
 
-      *   **Open collaboration** - Working together to solve problems
+      - **Open collaboration** - Working together to solve problems
 
-      *   **Continuous learning** - Sharing knowledge and growing together
+      - **Continuous learning** - Sharing knowledge and growing together
 
-      *   **Inclusive culture** - Welcoming everyone regardless of background
+      - **Inclusive culture** - Welcoming everyone regardless of background
+
   - type: people
     background:
       color: white
