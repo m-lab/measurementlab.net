@@ -7,7 +7,7 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: fill in
+    content: "[fill in]"
   - type: partners
     background:
       color: white
