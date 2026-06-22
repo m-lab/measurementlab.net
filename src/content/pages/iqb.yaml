@@ -8,84 +8,82 @@ sections:
       color: white
       type: full
     withTOC: true
-    content: >-
+    content: >+
+      # What is the Internet Quality Barometer? 
+
+
+
+
       # IQB Goals
 
 
-      *   Shift the conversation around Internet Quality beyond “speed"
-          
-      *   Help decision-makers make sense of the data
-          
-      *   Use existing, openly available datasets as complementary sources
-          
-      *   Advocate for the collection of more nuanced metrics
-          
-          ![](/src/assets/images/iqb/Policymaker.png)
+      - Shift the conversation around Internet Quality beyond “speed"
 
-          
+      - Help decision-makers make sense of the data
+
+      - Use existing, openly available datasets as complementary sources
+
+      - Advocate for the collection of more nuanced metrics
+        ![](/src/assets/images/iqb/Policymaker.png)
+
+
 
       # Background & Motivation
 
 
-      *   Internet use cases are growing complex where traditional metrics like
+      - Internet use cases are growing complex where traditional metrics like
       “speed” fail to capture the full scope of quality.
-          
-      *   With various methods for measuring Internet quality are available, it
-      is unclear how to effectively integrate them with one another.
-          
-      *   While a single metric for optimization offers ‘accessibility’ and
-      ‘data application’ benefits, there is no consensus on what that metric
-      should encompass.
-          
 
-      <p style="text-align: center"><img
-      src="/src/assets/images/iqb/Speed%20test%20to%20IQB%20score.svg"></p>
+      - With various methods for measuring Internet quality are available, it is
+      unclear how to effectively integrate them with one another.
+
+      - While a single metric for optimization offers ‘accessibility’ and ‘data
+      application’ benefits, there is no consensus on what that metric should
+      encompass.
+
+
+
+
+      ![](</src/assets/images/iqb/Speed test to IQB score.svg>)
 
 
       # IQB Framework
 
 
-      *   IQB is a comprehensive framework for collecting data and calculating a
+      - IQB is a comprehensive framework for collecting data and calculating a
       composite score, the “IQB Score”, which reflects the quality of Internet
       experience. IQB takes a more holistic approach than “speed tests” and
       evaluates Internet performance across various use cases (web browsing,
       video streaming, online gaming, etc.), each with its own specific network
       requirements (latency, throughput, etc.).
-          
-      *   To create the IQB framework, M-Lab engaged with more than 60 experts
+
+      - To create the IQB framework, M-Lab engaged with more than 60 experts
       across various fields, including academic network research, public policy,
       digital inclusion advocacy, Internet service provision, speed test data
       analysis, content provision, and other related domains from November 2023
       to March 2025.
-          
-      *   Check out the executive summary, full report, or IMC 2025 poster paper
+
+      - Check out the executive summary, full report, or IMC 2025 poster paper
       for more details.
+
+        
+        ![](</src/assets/images/iqb/Audio Streaming weights.png>)
+        # IQB Prototype
+        - Following the completion of the framework, the M-Lab team created a prototype of the IQB tool to calculate the single metric.
+        - The IQB web app prototype consists of two main interfaces designed to explore and visualize IQB scores.
+        - The first interface allows users to test the IQB score using their own measurement values or to experiment with hypothetical values to observe how scores change. Users can adjust parameters such as dataset weights, network requirements per use case, use case weights, and thresholds per dataset or use case.
+        - The second interface provides global visualizations of precomputed IQB scores for all countries and their subdivisions color-coded based on their IQB score.
+        
           
-          <p style="text-align: center"><img src="/src/assets/images/iqb/Audio%20Streaming%20weights.png" alt=""></p>
-          
-          # IQB Prototype
-          
-          *   Following the completion of the framework, the M-Lab team created a prototype of the IQB tool to calculate the single metric.
-              
-          *   The IQB web app prototype consists of two main interfaces designed to explore and visualize IQB scores.
-              
-          *   The first interface allows users to test the IQB score using their own measurement values or to experiment with hypothetical values to observe how scores change. Users can adjust parameters such as dataset weights, network requirements per use case, use case weights, and thresholds per dataset or use case.
-              
-          *   The second interface provides global visualizations of precomputed IQB scores for all countries and their subdivisions color-coded based on their IQB score.
-              
-              <p style="text-align: center"><img src="/src/assets/images/iqb/iqb%20drc.jpeg"></p>
-          
-          # IQB Going Forward
-          
-          *   M-Lab hope to continue refining the IQB framework and prototype, as well as establish sustainable governance.
-              
-          *   IQB is built to be adaptable and iterative and we are interested in tailoring IQB to specific use cases such as in schools and rural areas.
-              
-          *   If you're interested in working together, [let us know](hello@measurementlab.net)!
-              
-              ### _Acknowledgments_
-              
-              The IQB project was made possible through funding from the Internet Society Foundation.
+          ![](</src/assets/images/iqb/iqb drc.jpeg>)
+        # IQB Going Forward
+        - M-Lab hope to continue refining the IQB framework and prototype, as well as establish sustainable governance.
+        - IQB is built to be adaptable and iterative and we are interested in tailoring IQB to specific use cases such as in schools and rural areas.
+        - If you're interested in working together, [let us know](hello@measurementlab.net)!
+          ### *Acknowledgments*
+        
+          The IQB project was made possible through funding from the Internet Society Foundation.
+
   - type: card
     background:
       color: white
