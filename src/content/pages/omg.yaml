@@ -7,14 +7,14 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: |-
+    content: |+
       # **What Is the Open Measurement Gathering?**
 
       The Open Measurement Gathering (OMG) was a series of convenings that brought together four open Internet and censorship measurement organizations — Measurement Lab (M-Lab), Censored Planet, IODA (Internet Outage Detection and Analysis), and OONI (Open Observatory of Network Interference) — to build deeper trust, coordination, and collaboration.
 
        The program ran from 2024 to 2025 and funded by the Open Technology Fund (OTF). OMG’s overarching goal was to help open Internet measurement groups support the Internet freedom community more sustainably and efficiently by understanding each other's tools and data better, and by tackling shared challenges together.
 
-       
+
 
       **The four participating organizations:**
 
@@ -26,7 +26,7 @@ sections:
 
       •       OONI — documents Internet censorship through a global network of probes
 
-       
+
 
       # **At a Glance: The Four Convenings**
 
@@ -36,7 +36,7 @@ sections:
       Georgia Tech (Atlanta)  
       Kick-off; groups introduced, tools & data shared, common challenges surfaced
 
-      OMG 2 December 10-12, 2024   
+      OMG 2 December 10-12, 2024  
       Georgia Tech (Atlanta)  
       Deepened understanding; identified shared challenges around funding, infrastructure & Theory of Change
 
@@ -48,7 +48,7 @@ sections:
       Estoril, Portugal  
       Final convening; Open Measurement Village at Global Gathering; produced OMG User Guide
 
-       
+
 
       # **OMG 1 — First Convening (June 2024)**
 
@@ -56,7 +56,7 @@ sections:
 
       Key outcomes from OMG 1 included groups learning the specifics of each other's measurement approaches, identifying overlapping use cases, and beginning to surface common operational challenges. The full public report from this event is available on the M-Lab website.
 
-       
+
 
       **1. Shared Challenges**
 
@@ -71,7 +71,9 @@ sections:
       - Much of what the groups already do supports one another. Participants identified several collaborative patterns to preserve and scale:
       - Rapid response coordination — OONI, IODA, and Cloudflare Radar already coordinate regularly during network interference events, often working alongside Access Now's #KeepItOn coalition and Kentik. These partnerships keep groups in close contact and build familiarity with each other's tools.
       - Documenting censorship events — Groups frequently collaborate on post-event documentation, enabling deeper data analysis than rapid response allows. Participants expressed pride in these efforts and a desire for more resources to pursue them.
-      -  Complementary datasets — Because each group uses different measurement techniques, they can cross-verify findings.  
+      - Complementary datasets — Because each group uses different measurement techniques, they can cross-verify findings.
+
+        
 
       **4. Opportunities for Deeper Collaboration**
 
@@ -80,7 +82,6 @@ sections:
       - Shared Theory of Change — All groups face strategic decisions about where their data has the most impact: academic research, legal proceedings, journalism, or policy. Aligning on a common vision for how to engage with these different pathways could amplify collective reach and give shared purpose to the work.
 
          
-
 
       # **OMG 2 — Second Convening (December 2024)**
 
@@ -104,7 +105,7 @@ sections:
 
       All four groups agreed on a shared vision: a free, open, transparent, accountable, resilient, and equitable Internet. A SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis helped identify entry points for collective action. The groups committed to refining a shared Theory of Change in future convenings.
 
-       
+
 
       # **OMG 3 — Public AMA Event (June 25, 2025)**
 
@@ -122,7 +123,7 @@ sections:
       - **OONI** [Slides](https://drive.google.com/file/d/1Xnyga1QNQQis_INsAK2Ky2puMuZBrreL/view?usp=drive_link) and [Recording](https://youtu.be/WuPu3T2Vrqk?feature=shared)
       - **IODA** [Slides](https://docs.google.com/presentation/d/1Q5ia6f4a3mzcprfpiCyd8Gmgthu0qrtd/edit?usp=sharing&ouid=110513362222638557784&rtpof=true&sd=true) and [Recording](https://youtu.be/BSV9gktaDjs?feature=shared)
 
-       
+
 
       # **OMG 4 — Fourth Convening (September 8–12, 2025, Estoril, Portugal)**
 
@@ -130,7 +131,7 @@ sections:
 
       Before the formal OMG convening, the groups co-hosted an Open Measurement Village at the Global Gathering (GG) — a major gathering of the digital rights community. At the Village, OMG groups ran booths, facilitated circle discussions, and hosted an interactive game called 'Are You My Measurement Tool?' to help attendees understand the differences and complementary uses of each group's tools and datasets.
 
-       
+
 
       A key insight from this community engagement: balancing innovation in Internet measurement with accessibility for non-technical users remains a central challenge. Open measurement tools must keep pace with increasingly sophisticated Internet interference while also remaining understandable to the civil society organizations that need them most.
 
@@ -138,7 +139,7 @@ sections:
 
       In direct response to feedback gathered at the Global Gathering, the four OMG groups collaborated on a new public resource: the OMG User Guide. This guide is designed to help users and organizations determine which measurement tool is best suited to their needs, and how to compare or combine data across the four groups.
 
-       
+
 
       ## **OMG 4 Internal Sessions (Sept 11–12) — Key Takeaways**
 
@@ -157,7 +158,7 @@ sections:
 
       The groups agreed they need to narrow their scope, focus on what matters most, and explicitly include maintenance and operational costs in their budgets rather than treating them as invisible overhead.
 
-       
+
 
       **Theme 2: Increase Coordination**
 
@@ -167,13 +168,13 @@ sections:
       - Long term: host OMG events alongside major conferences, conduct joint research studies, develop complementary datasets, pool resources, build the capacity of global digital rights researchers, and create a more detailed shared tool to help people navigate across the different measurement platforms.
       - Groups also identified specific coordination improvements for censorship monitoring and rapid response — including leveraging existing coalitions like #KeepItOn, sharing internal data dashboards with trusted partners, and training communities in regions with low measurement coverage to be ready to mobilize during Internet disruptions.
 
-       
+
 
       **Theme 3: Sustainability**
 
       The groups reviewed the current funding landscape, noting a significant loss of U.S. government funding for Internet freedom initiatives with no single equivalent replacement in sight. Despite much lower resources, open measurement is more important than ever. Key sustainability priorities identified:
 
-      -  Focus on demonstrable impact rather than discrete activities — connect open measurement work to broader trends in policy and technology to maintain donor and public interest.
+      - Focus on demonstrable impact rather than discrete activities — connect open measurement work to broader trends in policy and technology to maintain donor and public interest.
       - Data is both a strength and a vulnerability. Each group holds large amounts of complementary data. Combined, the OMG groups could offer a uniquely comprehensive open data resource representing the Internet as a whole — but the cost to host and publish data will only increase.
       - AI was characterized as both a threat (further straining limited infrastructure and resources) and an opportunity (potentially unlocking new analytical capabilities and partnerships).
       - Shrinking civic space and strained teams threaten the capacity to report on censorship events. Organizational resilience must improve so that the collapse of one institution or donor does not destabilize the entire open measurement ecosystem.
@@ -184,7 +185,7 @@ sections:
       Across the four convenings, the OMG program achieved something significant: it moved four organizations from working in parallel to working in coordination. The practical outcomes include:
 
       -   Deeper mutual understanding of each group's platforms, data pipelines, tools, and user communities
-      -  Stronger interpersonal relationships and trust across teams
+      - Stronger interpersonal relationships and trust across teams
       - A default habit of collaboration — groups now routinely consider incorporating each other's data and keeping each other's communities informed
       - Joint public events that benefit the broader Internet freedom ecosystem
       - A new shared public resource (the OMG User Guide) to help civil society navigate these tools
@@ -192,10 +193,16 @@ sections:
 
        The OMG program recognized that the challenges facing open Internet measurement — from funding uncertainty to infrastructure pressure to government interference — cannot be solved by any single group alone. By building trust and coordination across organizations, the OMG project has strengthened the ecosystem's collective capacity to defend a free and open Internet.
 
-       
   - type: partners
     background:
       color: white
       type: full
     title: OMG Groups
     category: OMG Partners
+  - type: blog_roll
+    background:
+      color: white
+      type: full
+    title: Latest News
+    limit: 3
+    showMore: false
