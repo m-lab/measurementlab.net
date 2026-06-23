@@ -17,44 +17,42 @@ sections:
       color: white
       type: full
     withTOC: true
-    content: >-
-      # Open Internet Measurement
+    content: >+
+      ## **Open Internet Measurement**
 
 
-      When your Internet connection doesn't work as expected, how can you tell
-      whether the problem is caused by your connection, the application or
-      something else? Answering this question and others like it is surprisingly
-      difficult. That is where Measurement Lab comes in.
+      When the Internet fails, most people are left guessing why.
 
 
-      M-Lab is an open source project with contributors from civil society
-      organizations, educational institutions, and private sector companies
-      dedicated to:
+      Measurement Lab exists to change that.
 
 
-      *   Providing an open, verifiable measurement platform for global network
-      performance
-          
-      *   Hosting the largest open Internet performance dataset on the planet
-          
-      *   Creating visualizations and tools to help people make sense of
-      Internet performance
-          
-
-      ## Why Measurement Lab?
+      M-Lab is a global, open source project that makes Internet performance
+      transparent. It offers a verifiable measurement platform, maintains one of
+      the world’s largest open datasets on network performance, and creates
+      tools that help people understand and improve how the Internet works.
 
 
-      Real science requires verifiable processes, and M-Lab welcomes scientific
-      collaboration and scrutiny. This is why all of the data collected by
-      M-Lab's global measurement platform is openly available, and all of the
-      measurement tools hosted by M-Lab are open source. Anyone with the time
-      and skill can review and improve the underlying methodologies and
-      assumptions on which M-Lab's platform, tools, and data rely. Transparency
-      and review are key to good science, and good science is key to good
-      measurement.
+      ## **Why M-Lab?**
 
 
-      ## An Open Platform for Researchers
+      Rigorous scientific research depends on transparency and verifiable
+      methods. M-Lab is designed with this principle at its core, actively
+      encouraging collaboration, review, and scrutiny.
+
+
+      All data collected through M-Lab’s global measurement platform is openly
+      available, and all associated tools are open source. This allows
+      researchers, practitioners, and the wider public to examine, validate, and
+      improve the methodologies and assumptions that underpin the platform.
+
+
+      By prioritizing transparency and peer review, M-Lab supports more reliable
+      measurement and, in turn, a deeper and more accurate understanding of how
+      the Internet performs.
+
+
+      ## **An Open Platform for Researchers**
 
 
       M-Lab assists scientific research by providing widely distributed servers
@@ -65,14 +63,15 @@ sections:
       software.
 
 
-      ## Better Open Data for Everyone
+      ## **Better Open Data for Everyone**
 
 
-      All data collected via M-Lab are made available to the public M-Lab's
-      historical data archive providers a common pool of historical network
-      measurement information that anyone may use, and is a data source enabling
-      consumers, operators, regulators, researchers, and civil society to
-      understand the state and quality of the Internet.
+      All data collected via M-Lab is made publicly available. M-Lab's
+      historical data archive provides a common pool of historical network
+      measurement information that anyone may use and serves as a data source
+      enabling consumers, operators, regulators, researchers, and civil society
+      to understand the state and quality of the Internet.
+
   - type: richText
     background:
       color: primary-light
