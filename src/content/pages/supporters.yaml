@@ -1,0 +1,16 @@
+title: Our Supporters
+permalink: supporters
+status: draft
+sections:
+  - type: partners
+    background:
+      color: white
+      type: full
+    title: Research Partners
+    category: Supporting Research Projects
+  - type: partners
+    background:
+      color: white
+      type: full
+    title: Supporting Partners
+    category: Supporting Partners
