@@ -75,15 +75,13 @@ sections:
   - type: richText
     background:
       color: primary-light
-      type: full
+      type: contained
     withTOC: false
     content: >-
-      # Our Story  
+      # Our Story
 
 
-
-      ## The history of M-Lab  
-
+      ## The history of M-Lab
 
 
       **M-Lab was [founded](/who/#m-lab-founders) in 2009 by New America's Open
