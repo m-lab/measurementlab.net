@@ -18,13 +18,8 @@
         },
         {
           "type": "internal",
-          "label": "Projects",
-          "pageRef": "projects"
-        },
-        {
-          "type": "internal",
-          "label": "Publications",
-          "pageRef": "publications"
+          "label": "Our Supporters",
+          "pageRef": "supporters"
         }
       ]
     },
@@ -51,6 +46,11 @@
           "type": "internal",
           "label": "Tests",
           "pageRef": "tests"
+        },
+        {
+          "type": "internal",
+          "label": "Policies",
+          "pageRef": "policies"
         }
       ]
     },
