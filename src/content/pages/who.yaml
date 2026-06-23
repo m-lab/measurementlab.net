@@ -1,27 +1,72 @@
 title: Who We Are
 permalink: who
 status: published
-description: M-Lab is an open source project with contributors from civil
+description: "M-Lab is an open source project with contributors from civil
   society organizations, educational institutions, and private sector companies,
-  and is a fiscally sponsored project of Code for Science & Society.
+  and is a fiscally sponsored project of Superbloom Design. "
 sections:
   - type: richText
     background:
       color: primary-light
       type: full
     withTOC: false
-    content: M-Lab is a community-based open source project made possible by every
-      contributor who runs a measurement, and from supporters from civil society
-      organizations, educational institutions, and private sector companies
-      dedicating time, expertise, and financial resources. M-Lab operates as a
-      not-for-profit as and is a fiscally sponsored project of Code for Science
-      & Society. Learn how to [get involved](/contribute).
+    content: >-
+      M-Lab is a community-driven, open source initiative working to make
+      Internet performance more visible, measurable, and understandable.
+
+
+      We are powered by a global network of contributors from civil society,
+      academia, and industry. From the individuals who run measurements to the
+      partners who provide infrastructure and and financial support, this
+      distributed community enables M-Lab to operate and grow.
+
+
+      M-Lab is a not-for-profit project and is fiscally sponsored by Superbloom
+      Design. ++[Learn how to get
+      involved](https://mlab.draftlab.dev/contribute/)++.
   - type: flexi
     background:
       color: primary-light
       type: full
     title: Meet the Team
-    description: meet the team content
+    description: >-
+      At the core of M-Lab is a multidisciplinary team of researchers,
+      engineers, designers, and advocates who build and maintain the platform,
+      develop tools, and support a growing ecosystem of research and
+      collaboration.
+
+
+      This work is shaped and sustained by several interconnected groups:
+
+
+      - **Maintainers** ensure the platform remains reliable, open, and
+      continuously evolving. This includes technical and programmatic work  such
+      as; managing the platform infrastructure, providing data analysis and
+      insights, delivering impact-driven programs, and .fostering the M-Lab
+      community.
+
+      - **The Experiment Review Committee** evaluates and supports new
+      measurement tools and methodologies, helping maintain the integrity and
+      scientific rigor of the platform.
+
+      - **The Advisory Committee** provides strategic guidance, drawing on
+      expertise across Internet measurement, policy, and public interest
+      technology.
+
+      - **M-Lab Founders** established the vision for an open, transparent
+      measurement ecosystem and continue to inform its direction.
+
+      - **Contributor Partners** contribute time, expertise, experiments and/or
+      financial resources, enabling M-Lab’s work to expand and reach new
+      communities. 
+
+      - **Alumni** are former contributors whose work has helped shape M-Lab and
+      continues to influence its evolution.
+
+
+      Together, this global community makes M-Lab possible, ensuring that
+      anyone, anywhere, can better understand how the Internet is performing and
+      how it can be improved.
   - type: richText
     background:
       color: white
