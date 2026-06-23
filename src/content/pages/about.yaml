@@ -81,23 +81,26 @@ sections:
       ## What is the history of M-Lab?
 
 
-      In 2008, [Vint Cerf](http://www.google.com/corporate/execs.html#vint), one
-      of the "fathers of the Internet," began a series of conversations with
-      Internet researchers to learn more about challenges they faced while
-      trying to study Internet performance. Researchers identified several
-      problems, including a lack of widely deployed servers with ample
-      connectivity to support Internet measurement experiments. They also
-      reported an inability to share large data sets with one another easily.
+      **M-Lab was [founded](/who/#m-lab-founders) in 2009 by New America's Open
+      Technology Institute, the PlanetLab Consortium, Google, and a group of
+      academic researchers.** 
 
 
-      There also was no public resource that could provide combined performance
-      data to policymakers or to consumers interested in understanding their
-      Internet performance over time. As a result of these conversations, M-Lab
-      was founded to help address the core problems experienced by researchers
-      and to promote large-scale open source measurement of the Internet.
+      The project grew out of conversations begun in 2008 by [Vint
+      Cerf](http://www.google.com/corporate/execs.html#vint), one of the
+      “fathers of the Internet,” who spoke with Internet researchers to better
+      understand the challenges they faced when studying Internet performance.
 
 
-      M-Lab was [founded](/who/#m-lab-founders) in 2009 by [New America's Open
-      Technology Institute](https://www.newamerica.org/oti), the [PlanetLab
-      Consortium](https://www.planet-lab.org/), Google, and a group of academic
-      researchers.
+      Researchers identified several key obstacles, including the lack of widely
+      deployed servers with sufficient connectivity to support large-scale
+      Internet measurement experiments. They also reported difficulties sharing
+      large datasets with one another. At the same time, there was no public
+      resource capable of providing combined performance data to policymakers or
+      to consumers interested in understanding how their Internet performance
+      changed over time.
+
+
+      M-Lab was created in response to these challenges, with the goal of
+      addressing the core barriers researchers faced and promoting large-scale,
+      open-source measurement of the Internet.
