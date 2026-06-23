@@ -58,22 +58,6 @@
       "type": "single",
       "link": {
         "type": "internal",
-        "label": "Latest News ",
-        "pageRef": "blog"
-      }
-    },
-    {
-      "type": "single",
-      "link": {
-        "type": "internal",
-        "label": "Contribute",
-        "pageRef": "contribute"
-      }
-    },
-    {
-      "type": "single",
-      "link": {
-        "type": "internal",
         "label": "Work with Us",
         "pageRef": "community"
       }
