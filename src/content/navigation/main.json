@@ -103,6 +103,27 @@
           "pageRef": "frequently-asked-questions"
         }
       ]
+    },
+    {
+      "type": "dropdown",
+      "label": "Projects",
+      "links": [
+        {
+          "type": "internal",
+          "label": "Projects Overview & Impact ",
+          "pageRef": "projects"
+        },
+        {
+          "type": "internal",
+          "label": "Internet Quality Barometer ",
+          "pageRef": "iqb"
+        },
+        {
+          "type": "internal",
+          "label": "Open Measurement Gathering (OMG) ",
+          "pageRef": "omg"
+        }
+      ]
     }
   ]
 }
