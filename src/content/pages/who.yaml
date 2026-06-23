@@ -29,11 +29,17 @@ sections:
       color: primary-light
       type: full
     title: Meet the Team
-    description: >-
-      At the core of M-Lab is a multidisciplinary team of researchers,
+    description: At the core of M-Lab is a multidisciplinary team of researchers,
       engineers, designers, and advocates who build and maintain the platform,
       develop tools, and support a growing ecosystem of research and
       collaboration.
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: >-
+      # Meet the Team
 
 
       This work is shaped and sustained by several interconnected groups:
@@ -67,15 +73,6 @@ sections:
       Together, this global community makes M-Lab possible, ensuring that
       anyone, anywhere, can better understand how the Internet is performing and
       how it can be improved.
-  - type: richText
-    background:
-      color: white
-      type: full
-    withTOC: false
-    content: |-
-      # Meet the Team
-
-      *meet the team content*
   - type: people
     background:
       color: white
