@@ -58,17 +58,30 @@
       "type": "single",
       "link": {
         "type": "internal",
-        "label": "Work with Us",
-        "pageRef": "community"
-      }
-    },
-    {
-      "type": "single",
-      "link": {
-        "type": "internal",
         "label": "Section Showcase",
         "pageRef": "section-showcase"
       }
+    },
+    {
+      "type": "dropdown",
+      "label": "Work With Us ",
+      "links": [
+        {
+          "type": "internal",
+          "label": "Community",
+          "pageRef": "partners-community"
+        },
+        {
+          "type": "internal",
+          "label": "Contribute to M-Lab",
+          "pageRef": "contribute"
+        },
+        {
+          "type": "internal",
+          "label": "Join the Platform",
+          "pageRef": "contribute/host-managed"
+        }
+      ]
     }
   ]
 }
