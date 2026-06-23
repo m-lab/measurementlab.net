@@ -76,7 +76,7 @@ sections:
     background:
       color: primary-light
       type: contained
-    withTOC: true
+    withTOC: false
     content: >-
       # Our Story
 
