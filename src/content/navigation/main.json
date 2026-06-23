@@ -82,6 +82,27 @@
           "pageRef": "contribute/host-managed"
         }
       ]
+    },
+    {
+      "type": "dropdown",
+      "label": "Learn More",
+      "links": [
+        {
+          "type": "internal",
+          "label": "Blog",
+          "pageRef": "blog"
+        },
+        {
+          "type": "internal",
+          "label": "Publications",
+          "pageRef": "publications"
+        },
+        {
+          "type": "internal",
+          "label": "FAQ",
+          "pageRef": "frequently-asked-questions"
+        }
+      ]
     }
   ]
 }
