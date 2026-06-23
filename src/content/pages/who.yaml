@@ -30,7 +30,7 @@ sections:
     content: |-
       # Meet the Team
 
-      _meet the team content_
+      *meet the team content*
   - type: people
     background:
       color: white
@@ -51,18 +51,6 @@ sections:
       color: white
       type: full
     category: M-Lab Founders
-  - type: partners
-    background:
-      color: white
-      type: full
-    title: Supporting Research Projects
-    category: Supporting Research Projects
-  - type: partners
-    background:
-      color: white
-      type: full
-    title: Supporting Partners
-    category: Supporting Partners
   - type: people
     background:
       color: white
