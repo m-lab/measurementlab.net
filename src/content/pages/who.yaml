@@ -22,17 +22,8 @@ sections:
 
 
       M-Lab is a not-for-profit project and is fiscally sponsored by Superbloom
-      Design. ++[Learn how to get
-      involved](https://mlab.draftlab.dev/contribute/)++.
-  - type: flexi
-    background:
-      color: primary-light
-      type: full
-    title: Meet the Team
-    description: At the core of M-Lab is a multidisciplinary team of researchers,
-      engineers, designers, and advocates who build and maintain the platform,
-      develop tools, and support a growing ecosystem of research and
-      collaboration.
+      Design. [Learn how to get
+      involved.](https://mlab.draftlab.dev/contribute/)
   - type: richText
     background:
       color: white
@@ -40,6 +31,12 @@ sections:
     withTOC: false
     content: >-
       # Meet the Team
+
+
+      At the core of M-Lab is a multidisciplinary team of researchers,
+      engineers, designers, and advocates who build and maintain the platform,
+      develop tools, and support a growing ecosystem of research and
+      collaboration.
 
 
       This work is shaped and sustained by several interconnected groups:
