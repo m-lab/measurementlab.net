@@ -55,14 +55,6 @@
       ]
     },
     {
-      "type": "single",
-      "link": {
-        "type": "internal",
-        "label": "Section Showcase",
-        "pageRef": "section-showcase"
-      }
-    },
-    {
       "type": "dropdown",
       "label": "Work With Us ",
       "links": [
@@ -124,6 +116,14 @@
           "pageRef": "omg"
         }
       ]
+    },
+    {
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "Section Showcase",
+        "pageRef": "section-showcase"
+      }
     }
   ]
 }
