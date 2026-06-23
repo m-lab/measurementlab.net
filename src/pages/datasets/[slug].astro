@@ -1,0 +1,315 @@
+---
+/**
+ * /datasets/[slug] — Individual dataset page
+ *
+ * Layout: thin hero → two-column body (main + sidebar)
+ *   Main:    description, access resources, documentation, related datasets
+ *   Sidebar: compact metadata (publisher, license, coverage, etc.), keywords
+ *
+ * Head embeds:
+ *   - schema.org/Dataset JSON-LD
+ *   - Dublin Core <meta> tags
+ *
+ * M-Lab constants (creator, publisher, license, language, type, subject)
+ * are pre-populated here — intentionally not stored in content files.
+ */
+import { getCollection } from 'astro:content';
+import Tag from '@components/atoms/Tag';
+import HeroSection from '@components/sections/HeroSection.astro';
+import PageLayout from '@layouts/PageLayout.astro';
+import SectionLayout from '@layouts/SectionLayout.astro';
+import { isVisible } from '@utils/content';
+import { siteConfig } from '@lib/config';
+
+const MLAB_CREATOR = {
+  '@type': 'Organization' as const,
+  name: 'Measurement Lab',
+  url: siteConfig.url,
+  sameAs: ['https://www.wikidata.org/wiki/Q64928862', 'https://github.com/m-lab'],
+};
+
+const DC_SUBJECT = ['Internet measurement', 'Network performance', 'Broadband', 'Open data'];
+const LICENSE_URL = 'https://creativecommons.org/publicdomain/zero/1.0/';
+
+export async function getStaticPaths() {
+  const datasets = await getCollection('datasets');
+  return datasets
+    .filter((ds) => isVisible(ds))
+    .map((ds) => ({ params: { slug: ds.id }, props: { ds } }));
+}
+
+const { ds } = Astro.props;
+const {
+  title,
+  description,
+  category,
+  temporalCoverageStart,
+  temporalCoverageEnd,
+  spatialCoverage,
+  updateFrequency,
+  accessPoints,
+  dataSize,
+  documentationLinks,
+  testRef,
+  relatedDatasets,
+} = ds.data;
+
+const canonicalUrl = `${siteConfig.url}/datasets/${ds.id}/`;
+
+const temporalCoverage = temporalCoverageStart
+  ? `${temporalCoverageStart}/${temporalCoverageEnd === 'present' || !temporalCoverageEnd ? '..' : temporalCoverageEnd}`
+  : undefined;
+
+const coverageLabel = temporalCoverageStart
+  ? `${temporalCoverageStart.slice(0, 4)}${temporalCoverageEnd ? ` – ${temporalCoverageEnd === 'present' ? 'present' : temporalCoverageEnd.slice(0, 4)}` : ''}`
+  : null;
+
+const distributions = (accessPoints ?? []).map((ap) => ({
+  '@type': 'DataDownload',
+  name: ap.label,
+  description: ap.description,
+  encodingFormat: ap.format,
+  contentUrl: ap.url.startsWith('gs://')
+    ? `https://console.cloud.google.com/storage/browser/${ap.url.replace('gs://', '')}`
+    : ap.url,
+}));
+
+const datasetJsonLd = {
+  '@context': 'https://schema.org/',
+  '@type': 'Dataset',
+  '@id': canonicalUrl,
+  name: title,
+  description,
+  url: canonicalUrl,
+  identifier: canonicalUrl,
+  creator: MLAB_CREATOR,
+  publisher: MLAB_CREATOR,
+  maintainer: MLAB_CREATOR,
+  inLanguage: 'en',
+  license: LICENSE_URL,
+  isAccessibleForFree: true,
+  keywords: DC_SUBJECT,
+  ...(spatialCoverage ? { spatialCoverage: { '@type': 'Place', name: spatialCoverage } } : {}),
+  ...(temporalCoverage ? { temporalCoverage } : {}),
+  ...(distributions.length > 0 ? { distribution: distributions } : {}),
+  ...(testRef ? { isBasedOn: `${siteConfig.url}/tests/${testRef}/` } : {}),
+};
+
+const allDatasets = await getCollection('datasets');
+const related = (relatedDatasets ?? [])
+  .map((id) => allDatasets.find((d) => d.id === id))
+  .filter(Boolean);
+
+const accessUrl = (url: string) =>
+  url.startsWith('gs://')
+    ? `https://console.cloud.google.com/storage/browser/${url.replace('gs://', '')}`
+    : url;
+
+// Format badge colors
+const formatBadge: Record<string, string> = {
+  portal:     'bg-gray-100 text-blue-700',
+  bigquery:   'bg-gray-100 text-amber-700',
+  gcs:        'bg-gray-100 text-green-700',
+  github:     'bg-gray-100 text-gray-600',
+  json:       'bg-gray-100 text-teal-700',
+  parquet:    'bg-gray-100 text-teal-700',
+  csv:        'bg-gray-100 text-teal-700',
+  interactive:'bg-gray-100 text-violet-700',
+};
+
+const getBadgeClass = (format: string) =>
+  formatBadge[format.toLowerCase()] ?? 'bg-gray-100 text-gray-700';
+
+const formatFrequency = (f: string) => f.charAt(0).toUpperCase() + f.slice(1);
+---
+
+<PageLayout
+  title={`${title} — M-Lab Data Catalog`}
+  description={description.slice(0, 160)}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(datasetJsonLd, null, 2)} />
+    <meta name="DC.title" content={title} />
+    <meta name="DC.description" content={description.slice(0, 500)} />
+    <meta name="DC.creator" content="Measurement Lab" />
+    <meta name="DC.publisher" content="Measurement Lab" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.type" content="Dataset" />
+    <meta name="DC.rights" content="CC0 1.0 Universal (Public Domain)" />
+    <meta name="DC.license" content={LICENSE_URL} />
+    {DC_SUBJECT.map((s) => <meta name="DC.subject" content={s} />)}
+    {temporalCoverage && <meta name="DC.coverage" content={temporalCoverage} />}
+    {spatialCoverage && <meta name="DC.spatial" content={spatialCoverage} />}
+    <meta name="DC.identifier" content={canonicalUrl} />
+    <link rel="canonical" href={canonicalUrl} />
+  </Fragment>
+
+  {/* Hero — title + breadcrumb */}
+  <SectionLayout sectionLabel="hero" zigzag="primary-light" maxWidth="2xl">
+    <HeroSection
+      title={title}
+      subtitle={category === 'enriched' ? 'Enriched Dataset' : category === 'raw' ? 'Raw Dataset' : 'Dataset'}
+    />
+  </SectionLayout>
+
+  {/* Body — two-column layout */}
+  <SectionLayout bgColor="primary-light">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <div class="flex flex-col gap-10 lg:flex-row lg:gap-12">
+
+        {/* ── MAIN COLUMN ── */}
+        <div class="min-w-0 flex-1">
+
+          {/* Description */}
+          <section class="mb-10">
+            <h2 class="mb-3 text-xs font-semibold uppercase tracking-widest text-gray-500">About this dataset</h2>
+            <p class="text-base text-gray-800 leading-relaxed">{description}</p>
+          </section>
+
+          {/* Access Resources */}
+          {accessPoints && accessPoints.length > 0 && (
+            <section class="mb-10">
+              <h2 class="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">Access the Data</h2>
+              <ul class="divide-y divide-gray-200 rounded-xl border border-gray-200 bg-white overflow-hidden">
+                {accessPoints.map((ap) => (
+                  <li>
+                    <a
+                      href={accessUrl(ap.url)}
+                      target={ap.url.startsWith('http') ? '_blank' : undefined}
+                      rel={ap.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      class="block py-4 pr-5 hover:bg-gray-50 transition-colors group"
+                    >
+                      <div class="pl-3 mb-1.5">
+                        <span class={`inline-block rounded-md px-2.5 py-0.5 text-base font-semibold ${getBadgeClass(ap.format)}`}>
+                          {ap.format}
+                        </span>
+                      </div>
+                      <div class="flex items-center justify-between gap-3 pl-5">
+                        <div class="min-w-0">
+                          <div class="text-base font-medium text-gray-900 group-hover:text-blue-700">{ap.label}</div>
+                          {ap.description && (
+                            <div class="text-base text-gray-500 mt-0.5">{ap.description}</div>
+                          )}
+                          {ap.url.startsWith('gs://') && (
+                            <code class="text-xs text-gray-400 font-mono mt-1 block">{ap.url}</code>
+                          )}
+                        </div>
+                        <svg class="h-4 w-4 shrink-0 text-gray-300 group-hover:text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* Documentation */}
+          {(documentationLinks ?? []).length > 0 && (
+            <section class="mb-10">
+              <h2 class="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">Documentation</h2>
+              <ul class="space-y-2">
+                {documentationLinks!.map((link) => (
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 shrink-0 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <a
+                      href={link.url}
+                      target={link.url.startsWith('http') ? '_blank' : undefined}
+                      rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      class="text-base text-blue-600 hover:underline"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* Related Datasets */}
+          {related.length > 0 && (
+            <section>
+              <h2 class="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">Related Datasets</h2>
+              <ul class="space-y-2">
+                {related.map((rel) =>
+                  rel ? (
+                    <li class="flex items-center gap-2">
+                      <svg class="h-4 w-4 shrink-0 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                      <a href={`/datasets/${rel.id}`} class="text-base text-blue-600 hover:underline">
+                        {rel.data.title}
+                      </a>
+                    </li>
+                  ) : null
+                )}
+              </ul>
+            </section>
+          )}
+        </div>
+
+        {/* ── SIDEBAR ── */}
+        <aside class="lg:w-72 shrink-0">
+          <div class="rounded-xl border border-gray-200 bg-white overflow-hidden">
+            <div class="px-5 py-4 border-b border-gray-100 bg-gray-50">
+              <h2 class="text-xs font-semibold uppercase tracking-widest text-gray-500">Dataset Info</h2>
+            </div>
+            <dl class="divide-y divide-gray-100">
+              <div class="px-5 py-3">
+                <dt class="text-xs text-gray-400 mb-0.5">Publisher</dt>
+                <dd class="text-sm font-medium text-gray-900">
+                  <a href={siteConfig.url} class="hover:underline">Measurement Lab</a>
+                </dd>
+              </div>
+              <div class="px-5 py-3">
+                <dt class="text-xs text-gray-400 mb-0.5">License</dt>
+                <dd class="text-sm font-medium">
+                  <a href={LICENSE_URL} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+                    CC0 1.0 Universal
+                  </a>
+                </dd>
+              </div>
+              {coverageLabel && (
+                <div class="px-5 py-3">
+                  <dt class="text-xs text-gray-400 mb-0.5">Coverage</dt>
+                  <dd class="text-sm font-medium text-gray-900">{coverageLabel}</dd>
+                </div>
+              )}
+              {updateFrequency && (
+                <div class="px-5 py-3">
+                  <dt class="text-xs text-gray-400 mb-0.5">Updated</dt>
+                  <dd class="text-sm font-medium text-gray-900">{formatFrequency(updateFrequency)}</dd>
+                </div>
+              )}
+              {spatialCoverage && (
+                <div class="px-5 py-3">
+                  <dt class="text-xs text-gray-400 mb-0.5">Geography</dt>
+                  <dd class="text-sm font-medium text-gray-900">{spatialCoverage}</dd>
+                </div>
+              )}
+              {dataSize && (
+                <div class="px-5 py-3">
+                  <dt class="text-xs text-gray-400 mb-0.5">Approximate size</dt>
+                  <dd class="text-sm font-medium text-gray-900">{dataSize}</dd>
+                </div>
+              )}
+              {testRef && (
+                <div class="px-5 py-3">
+                  <dt class="text-xs text-gray-400 mb-0.5">Source test</dt>
+                  <dd class="text-sm font-medium">
+                    <a href={`/tests/${testRef}/`} class="text-blue-600 hover:underline">{testRef}</a>
+                  </dd>
+                </div>
+              )}
+            </dl>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </SectionLayout>
+</PageLayout>

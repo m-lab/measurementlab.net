@@ -1,0 +1,38 @@
+{
+  "id": "wehe",
+  "title": "Wehe Dataset",
+  "status": "published",
+  "description": "The Wehe dataset contains measurements collected by the Wehe app, which detects traffic differentiation (throttling) by ISPs for specific application types such as video streaming, music streaming, and conferencing. Each test replays recorded traffic from popular applications and compares the throughput achieved using original versus anonymized traffic.",
+  "category": "raw",
+  "testRef": "wehe",
+  "temporalCoverageStart": "2018-01-01",
+  "temporalCoverageEnd": "present",
+  "spatialCoverage": "Global",
+  "updateFrequency": "continuous",
+  "accessPoints": [
+    {
+      "label": "BigQuery",
+      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=wehe&page=dataset",
+      "format": "BigQuery",
+      "type": "query",
+      "description": "Parsed Wehe results in BigQuery"
+    },
+    {
+      "label": "Google Cloud Storage (raw)",
+      "url": "gs://archive.measurementlab.net/wehe/",
+      "format": "JSON",
+      "type": "download",
+      "description": "Raw Wehe measurement archives"
+    }
+  ],
+  "documentationLinks": [
+    {
+      "label": "Wehe Test Documentation",
+      "url": "https://www.measurementlab.net/tests/wehe/"
+    },
+    {
+      "label": "Wehe Project (Northeastern University)",
+      "url": "https://wehe.meddle.mobi/"
+    }
+  ]
+}

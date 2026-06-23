@@ -1,0 +1,43 @@
+{
+  "id": "monthly-stats",
+  "title": "Monthly Stats",
+  "status": "published",
+  "category": "enriched",
+  "description": "Cached M-Lab summary query results available for download. These data are used to calculate the Internet Quality Barometer (IQB), but are generally useful as aggregate statistics of M-Lab's global measurements. Data are organized by month, direction (download/upload), and geographic granularity.",
+  "testRef": "ndt",
+  "relatedDatasets": ["ndt"],
+  "temporalCoverageStart": "2009-01-01",
+  "temporalCoverageEnd": "present",
+  "spatialCoverage": "Global",
+  "updateFrequency": "monthly",
+  "accessPoints": [
+    {
+      "label": "Stats Data Portal",
+      "url": "/data/stats/",
+      "format": "Portal",
+      "type": "viz",
+      "description": "Browse and download monthly stats files filtered by period, direction, and granularity"
+    },
+    {
+      "label": "GitHub (m-lab/iqb)",
+      "url": "https://github.com/m-lab/iqb/tree/main/data",
+      "format": "GitHub",
+      "type": "download",
+      "description": "Source code and data manifest for the IQB monthly stats pipeline"
+    }
+  ],
+  "documentationLinks": [
+    {
+      "label": "Internet Quality Barometer (IQB)",
+      "url": "/iqb/"
+    },
+    {
+      "label": "IQB Framework Report",
+      "url": "/publications/IQB_report_2025.pdf"
+    },
+    {
+      "label": "IQB Executive Summary",
+      "url": "/publications/IQB_executive_summary_2025.pdf"
+    }
+  ]
+}
