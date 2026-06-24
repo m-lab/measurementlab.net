@@ -34,7 +34,7 @@
         },
         {
           "type": "internal",
-          "label": "Platform Status",
+          "label": "Platform ",
           "pageRef": "platform-status"
         },
         {
