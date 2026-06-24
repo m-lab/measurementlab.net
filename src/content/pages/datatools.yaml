@@ -47,7 +47,7 @@ sections:
       Internet performance and make connectivity patterns more visible.
 
 
-      ### Active Tools 
+      ### Active Tools
 
 
       Cellwatch mobile application  
@@ -62,11 +62,10 @@ sections:
       trends, supporting research and policy analysis.
 
 
-      ++**[SpeedUp
-      America](https://github.com/Hack4Eugene/SpeedUpAmerica)++*-*** An open
-      source project that maps Internet speed test data using M-Lab datasets. It
-      combines multiple data sources to show connectivity by geography,
-      provider, time period, and speed.
+      ++[SpeedUp America](https://github.com/Hack4Eugene/SpeedUpAmerica)++ An
+      open source project that maps Internet speed test data using M-Lab
+      datasets. It combines multiple data sources to show connectivity by
+      geography, provider, time period, and speed.
 
 
       Reverse traceroute web app  
