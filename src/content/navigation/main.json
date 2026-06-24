@@ -34,13 +34,13 @@
         },
         {
           "type": "internal",
-          "label": "Data",
-          "pageRef": "data"
+          "label": "Tools",
+          "pageRef": "data/tools"
         },
         {
           "type": "internal",
-          "label": "Tools",
-          "pageRef": "data/tools"
+          "label": "Data",
+          "pageRef": "data"
         },
         {
           "type": "internal",
