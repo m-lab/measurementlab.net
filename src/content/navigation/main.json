@@ -20,6 +20,11 @@
           "type": "internal",
           "label": "Our Supporters",
           "pageRef": "supporters"
+        },
+        {
+          "type": "internal",
+          "label": "Policies",
+          "pageRef": "policies"
         }
       ]
     },
@@ -51,11 +56,6 @@
           "type": "internal",
           "label": "Tests",
           "pageRef": "tests"
-        },
-        {
-          "type": "internal",
-          "label": "Policies",
-          "pageRef": "policies"
         }
       ]
     },
