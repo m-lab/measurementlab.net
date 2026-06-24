@@ -40,7 +40,7 @@
         {
           "type": "internal",
           "label": "Tools",
-          "pageRef": "data/tools"
+          "pageRef": "tools"
         },
         {
           "type": "internal",
