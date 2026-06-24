@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection, getEntry } from 'astro:content';
 import Banner from '@components/atoms/Banner.astro';
 import Link from '@components/atoms/Link';
+import CitationBlock from '@components/molecules/CitationBlock.astro';
 import Hero from '@components/organisms/Hero.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
@@ -149,6 +150,18 @@ const archivedBanner = siteConfig?.data.archivedBanner;
 		<article class="mx-auto prose prose-a:text-primary-600">
 			<Content />
 		</article>
+	</SectionLayout>
+
+	<!-- Citation Block -->
+	<SectionLayout>
+		<CitationBlock
+			title={test.data.title}
+			permalink={test.data.permalink}
+			dateRange={test.data.citation?.dateRange}
+			bqTable={test.data.citation?.bqTable}
+			gcsPath={test.data.citation?.gcsPath}
+			vizUrl={test.data.citation?.vizUrl}
+		/>
 	</SectionLayout>
 
 	<!-- Back navigation -->

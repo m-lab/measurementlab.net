@@ -5,6 +5,11 @@ status: published
 testStatus: current
 description: "Tests your connection speed, and provides a sophisticated diagnosis of problems limiting speed."
 icon: /src/assets/images/tests/ndt.png
+citation:
+  dateRange: "2009-02-18 -- present"
+  bqTable: "measurement-lab.ndt.ndt7_union"
+  gcsPath: "gs://archive-measurement-lab/ndt"
+  vizUrl: "https://viz.measurementlab.net"
 ---
 
 # NDT (Network Diagnostic Tool)
@@ -311,22 +316,6 @@ current BigQuery Views, please review the pages below:
 
 [locatev2]: https://github.com/m-lab/locate/blob/master/USAGE.md
 
-## Citing the M-Lab NDT Dataset
-
-Please cite the NDT data set as follows: **The M-Lab NDT Data Set, &lt;date range used&gt; <https://measurementlab.net/tests/ndt>**
-
-or, in [BibTeX](https://en.wikipedia.org/wiki/BibTeX) format:
-
-```bibtex
-@misc{mlab,
-        author="{Measurement Lab}",
-        title="The {M}-{L}ab {NDT} Data Set",
-        year="(2009-02-11 -- 2015-12-21)",
-        howpublished="\url{https://measurementlab.net/tests/ndt}",
-}
-```
-
-<br>
 ## Policies & Support Information
 
 NDT is maintained by Measurement Lab, and is governed by the [M-Lab Privacy Policy](/privacy/).

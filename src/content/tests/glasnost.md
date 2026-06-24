@@ -6,6 +6,9 @@ description: "Glasnost tested for application-specific blocking or throttling, a
 testStatus: retired
 icon: /src/assets/images/tests/glasnost.png
 order: 2
+citation:
+  dateRange: "2012-07-02 -- 2017-07-07"
+  gcsPath: "gs://archive-measurement-lab/glasnost"
 ---
 
 # Glasnost

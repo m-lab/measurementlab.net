@@ -362,6 +362,14 @@ const testsCollection = defineCollection({
       icon: image().optional(), // Icon image for tests index page
       order: z.number().optional().default(999),
       showInIndex: z.boolean().optional().default(true),
+      citation: z
+        .object({
+          dateRange: z.string().optional(), // e.g. "2009-02-11 -- 2015-12-21" or "2009-02-11 -- present"
+          bqTable: z.string().optional(), // e.g. "measurement-lab.ndt.ndt7_union"
+          gcsPath: z.string().optional(), // e.g. "gs://archive-measurement-lab/ndt"
+          vizUrl: z.string().optional(), // e.g. "https://viz.measurementlab.net"
+        })
+        .optional(),
     }),
 });
 

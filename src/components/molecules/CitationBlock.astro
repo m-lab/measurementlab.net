@@ -1,0 +1,63 @@
+---
+/**
+ * CitationBlock.astro
+ *
+ * Renders a BibTeX citation block for an M-Lab dataset page.
+ * Requires at minimum: title (test title) and permalink.
+ * Optional citation fields (dateRange, bqTable, gcsPath, vizUrl) enrich the output.
+ */
+
+interface Props {
+  title: string;
+  permalink: string;
+  dateRange?: string;
+  bqTable?: string;
+  gcsPath?: string;
+  vizUrl?: string;
+}
+
+const { title, permalink, dateRange, bqTable, gcsPath, vizUrl } = Astro.props;
+
+// Build a safe BibTeX key from the title (lowercase, no spaces/special chars)
+const citeKey = `mlab-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
+
+// Wrap each word of the title in braces to preserve capitalisation in BibTeX
+const bibtexTitle = `The {M}-{L}ab {${title}} Data Set`;
+
+const siteBase = 'https://measurementlab.net';
+const url = `${siteBase}${permalink}`;
+
+// Build the BibTeX lines
+const lines: string[] = [];
+lines.push(`@misc{${citeKey},`);
+lines.push(`        author="{Measurement Lab}",`);
+lines.push(`        title="${bibtexTitle}",`);
+if (dateRange) {
+  lines.push(`        year="(${dateRange})",`);
+}
+lines.push(`        howpublished="\\url{${url}}",`);
+if (bqTable || gcsPath || vizUrl) {
+  lines.push(`        comment="Depending on which access method you used, please include one of the following notes:",`);
+}
+if (bqTable) {
+  lines.push(`        note="BigQuery table {\\tt ${bqTable}}",`);
+}
+if (gcsPath) {
+  lines.push(`        note1="Google Cloud Storage {\\tt ${gcsPath}}",`);
+}
+if (vizUrl) {
+  lines.push(`        note2="Data visualization \\url{${vizUrl}}",`);
+}
+lines.push(`}`);
+
+const bibtex = lines.join('\n');
+---
+
+<section class="mx-auto mt-10 max-w-4xl">
+  <h2 class="text-xl font-semibold mb-3">Citing This Dataset</h2>
+  <p class="text-gray-600 mb-3 text-sm">
+    Please cite the {title} dataset as follows: <strong>The M-Lab {title} Data Set{dateRange ? `, ${dateRange}` : ''}, <a href={url} class="text-primary-600 hover:underline">{url}</a></strong>
+  </p>
+  <p class="text-gray-600 mb-2 text-sm">Or in <a href="https://en.wikipedia.org/wiki/BibTeX" class="text-primary-600 hover:underline">BibTeX</a> format:</p>
+  <pre class="bg-gray-50 border border-gray-200 rounded-lg p-4 overflow-x-auto text-sm font-mono leading-relaxed"><code>{bibtex}</code></pre>
+</section>
