@@ -1,4 +1,4 @@
-title: Data Tools
+title: Tools
 permalink: tools
 status: published
 sections:
@@ -21,7 +21,7 @@ sections:
       developed by external organizations using M-Lab’s open data.
 
 
-      ## Official M-Lab Tools 
+      ## Official M-Lab Tools
 
 
       These tools are developed and maintained by the M-Lab team. They enable
@@ -48,7 +48,7 @@ sections:
       Internet performance and make connectivity patterns more visible.
 
 
-      ###   
+
 
       Active Tools 
 
@@ -122,26 +122,26 @@ sections:
       Examples include:
 
 
-      -  Broadband Berlin
+      - Broadband Berlin
 
-      -  [BroadbandNow.com](http://BroadbandNow.com)
+      - [BroadbandNow.com](http://BroadbandNow.com)
 
-      -  Canadian Internet Registration Authority – Internet Performance Test
+      - Canadian Internet Registration Authority – Internet Performance Test
 
-      -  Google OneBox Search Results Widget
+      - Google OneBox Search Results Widget
 
-      -  Google Stadia
+      - Google Stadia
 
-      -  [HighSpeedInternet.com](http://HighSpeedInternet.com)
+      - [HighSpeedInternet.com](http://HighSpeedInternet.com)
 
-      -  Minnesota Office of Broadband Development
+      - Minnesota Office of Broadband Development
 
-      -  West London Business
+      - West London Business
 
-      -  WhistleOut connectivity search engine
+      - WhistleOut connectivity search engine
 
 
-      #   
+
 
       Add Your Tool or Integration
 
@@ -149,4 +149,5 @@ sections:
       M-Lab is an open ecosystem, and this list continues to grow. If you have
       built a tool, product, or integration that runs on the M-Lab platform or
       uses M-Lab data, we’d love to include it. Please contact us at
-      hello@measurementlab.netto share your work.
+      [hello@measurementlab.netto](mailto:hello@measurementlab.netto) share your
+      work.
