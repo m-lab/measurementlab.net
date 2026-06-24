@@ -1,0 +1,175 @@
+title: "What We Do "
+permalink: what-we-do
+status: draft
+sections:
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: true
+    content: >-
+      ### Our Mission
+
+
+      Measurement Lab (M-Lab) exists to make the Internet measurable openly,
+      independently, and at a global scale. We build and maintain one of the
+      world’s largest open datasets on Internet performance, alongside a
+      distributed measurement platform that enables researchers, journalists,
+      policymakers, and the public to understand how networks actually perform
+      in practice.
+
+
+      ### Our Approach
+
+
+      M-Lab’s work is guided by a set of core principles.
+
+
+      - We operate with open data by default and build on open-source
+      infrastructure. 
+
+      - We prioritize scientific transparency and reproducibility, while
+      maintaining privacy-conscious data practices. 
+
+      - Our work is grounded in global collaboration and designed to support a
+      broad and diverse community.
+
+
+      ### Operate a Global Measurement Platform
+
+
+      At the core of M-Lab is a global infrastructure of hundreds of measurement
+      servers deployed across diverse regions. Through this network, we host
+      open-source diagnostic tools and enable millions of performance tests
+      every day. By ensuring consistency in how tests are run and maintaining
+      scientific rigor in their design, the platform produces data that is
+      reliable, comparable, and independent of commercial influence.
+
+
+      Our work is supported by partnerships with hosting providers and research
+      institutions worldwide, enabling the platform to expand and evolve over
+      time.
+
+
+      The result is a trusted foundation for understanding Internet performance
+      at scale.
+
+
+      Learn more about the [M-lab
+      platform](https://mlab-preview.draftlab.dev/status/). 
+
+
+      ### Provide Open Data for Research and Accountability
+
+        
+
+
+      All data collected through M-Lab is made openly available for analysis and
+      reuse.
+
+        
+
+
+      This includes petabytes of historical network performance data that can be
+      used to study long-term trends, understand connectivity patterns, and
+      examine how the Internet behaves across different environments.
+
+        
+
+
+      This open data supports academic research, peer-reviewed studies,
+      investigative journalism, and public interest reporting. It also informs
+      regulatory decisions and contributes to policy discussions around
+      connectivity, resilience, and digital inequality.
+
+        
+
+
+      This data and research have led to greater transparency and evidence for
+      how the Internet works and where it does not.
+
+        
+
+
+      Explore M-Lab’s data [link to data page].
+
+
+      ### Develop and Support Open Measurement Tools
+
+        
+
+
+      M-Lab supports the development of open-source tools designed to measure
+      key aspects of Internet performance, including download and upload speed,
+      latency, packet loss, and signs of network interference or traffic
+      shaping.
+
+        
+
+
+      These tools are built with a strong emphasis on transparency,
+      reproducibility, and scientific integrity. This ensures that measurements
+      remain trustworthy and are not controlled by proprietary systems or
+      Internet service providers.
+
+        
+
+
+      We now have a set of tools that enable independent, verifiable measurement
+      of network performance.
+
+        
+
+
+      Use M-Lab’s tools. [link to tools page]
+
+
+      ### Collaborate with Researchers and Public Interest Organisations
+
+        
+
+
+      M-Lab works in collaboration with a broad network of partners, including
+      universities, research labs, civil society organizations, digital rights
+      advocates, policymakers, and journalists.
+
+        
+
+
+      Through these partnerships, we strengthen the global ecosystem of open
+      Internet measurement and support the development of evidence-based
+      insights into connectivity and access.
+
+        
+
+
+      Such collaboration has led to a more informed and connected community
+      working toward digital equity and accountability.
+
+        
+
+
+      Join the M-Lab Community. [link to community/partner page]   
+
+
+      ### Advance Internet Transparency
+
+        
+
+
+      M-Lab exists to ensure that understanding Internet performance does not
+      depend on closed or proprietary systems.
+
+        
+
+
+      By making performance data openly accessible, the platform supports work
+      across network neutrality analysis, broadband mapping, infrastructure
+      planning, and monitoring connectivity during disruptions. It also enables
+      research into digital inclusion, helping to identify gaps in access and
+      areas for improvement.
+
+        
+
+
+      We continue to support a more accountable and measurable Internet.
