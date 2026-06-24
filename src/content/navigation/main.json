@@ -29,6 +29,11 @@
       "links": [
         {
           "type": "internal",
+          "label": "What We Do ",
+          "pageRef": "what-we-do"
+        },
+        {
+          "type": "internal",
           "label": "Platform Status",
           "pageRef": "status"
         },
