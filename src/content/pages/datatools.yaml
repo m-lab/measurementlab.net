@@ -62,8 +62,8 @@ sections:
       trends, supporting research and policy analysis.
 
 
-      ++[SpeedUp America](https://github.com/Hack4Eugene/SpeedUpAmerica)++ An
-      open source project that maps Internet speed test data using M-Lab
+      ++**[SpeedUp America](https://github.com/Hack4Eugene/SpeedUpAmerica)++**
+      An open source project that maps Internet speed test data using M-Lab
       datasets. It combines multiple data sources to show connectivity by
       geography, provider, time period, and speed.
 
@@ -77,11 +77,11 @@ sections:
 
 
       ++**[I3 Connectivity
-      Explorer](https://i3cex.internet-is-infrastructure.org/)++ *-*** Part of
-      the Internet as Infrastructure Project, this platform combines M-Lab data
-      with datasets from U.S. agencies, including the FCC, Census Bureau, EPA,
-      and USDA. It provides maps and visualizations of connectivity across
-      regions, including towns, counties, tribal areas, and school districts.
+      Explorer](https://i3cex.internet-is-infrastructure.org/)++** Part of the
+      Internet as Infrastructure Project, this platform combines M-Lab data with
+      datasets from U.S. agencies, including the FCC, Census Bureau, EPA, and
+      USDA. It provides maps and visualizations of connectivity across regions,
+      including towns, counties, tribal areas, and school districts.
 
 
       ## Products and Applications Using M-Lab
