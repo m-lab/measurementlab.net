@@ -72,6 +72,11 @@
           "type": "internal",
           "label": "FAQ",
           "pageRef": "frequently-asked-questions"
+        },
+        {
+          "type": "external",
+          "label": "Knowledge Base ",
+          "externalUrl": "https://kb.measurementlab.net"
         }
       ]
     },
