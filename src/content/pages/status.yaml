@@ -7,14 +7,21 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: |-
+    content: |+
       # M-Lab Platform Status
 
-      M-Lab places server infrastructure for conducting tests in diverse locations around the world. Since 2008, we have sought hosting in well connected data centers where ISPs interconnect with one another to have high performance access to as many users as possible from as few locations as possible. In 2022, we also began incorporating [virtual servers in cloud networks](/blog/2022-mlab-to-the-cloud/#m-lab-to-the-cloud) into the platform, [starting with Google Cloud](/blog/virtual-sites-gcp/#m-lab-to-the-cloud:-virtual-sites-in-all-google-cloud-regions). Additionally, in 2025 we began to pilot a new "host-managed" deployment model that permits any interested network provider to stand up a server and run M-Lab's software services to become part of the global platform. For these host-managed deployments, M-Lab does not manage or control the servers in any way.
+      M-Lab (Measurement Lab) is a global platform that enables researchers, policymakers, and the public to measure and understand Internet performance. It provides open infrastructure for testing network speed, reliability, and connectivity, generating publicly available data on how the Internet works in practice.
 
-      Each physical M-Lab "site" consists of 3-4 servers and one switch, connected directly to an upstream provider. Virtual sites include 1 or more virtual servers proportionate to demand. In large metro areas, we prefer to place multiple sites to obtain diversity in transit and routes. Host-managed deployments may consist of physical and/or virtual machines, and may be located in a diversity of locations and networks, including transit, research and education, as well as last-mile ISP networks.
+      To support these measurements, M-Lab operates a distributed network of servers placed in diverse locations around the world. These servers allow Internet users to run performance tests and contribute anonymized data that helps researchers study broadband quality, network congestion, and other aspects of Internet infrastructure.
 
-      If you are a network provider interested in hosting an M-Lab measurement site, please [review our requirements](/contribute/#host-or-sponsor-an-m-lab-measurement-site) and fill out our [Infrastructure Contribution Form](https://docs.google.com/forms/d/e/1FAIpQLSe1wXKfQ0VIt_hZFatCwCaoOeeDpRv3JZDM_eAmIaksMuwB4g/viewform?usp=sf_link).
+      Since 2008, M-Lab has focused on hosting its infrastructure in well-connected data centers where Internet service providers interconnect, allowing the platform to reach large numbers of users with high performance from relatively few locations.
+
+      In 2022, M-Lab expanded the platform to include virtual servers in cloud environments, beginning with Google Cloud. In 2025, the project also began piloting a “host-managed” deployment model, which allows network providers to run M-Lab’s software on their own infrastructure and join the global measurement platform. In these cases, M-Lab does not manage or control the servers directly.
+
+      Host-managed deployments may include physical or virtual machines located across a variety of networks, including transit providers, research and education networks, and last-mile Internet service providers.
+
+      Network providers interested in hosting an M-Lab measurement site, please [review our requirements](/contribute/#host-or-sponsor-an-m-lab-measurement-site) and fill out our [Infrastructure Contribution Form](https://docs.google.com/forms/d/e/1FAIpQLSe1wXKfQ0VIt_hZFatCwCaoOeeDpRv3JZDM_eAmIaksMuwB4g/viewform?usp=sf_link). 
+
   - type: infrastructureMap
     background:
       color: white
