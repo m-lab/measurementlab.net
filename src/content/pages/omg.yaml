@@ -206,3 +206,11 @@ sections:
     title: Latest News
     limit: 3
     showMore: false
+  - type: blog_roll
+    background:
+      color: white
+      type: full
+    title: Latest News
+    description: "#omg"
+    limit: 3
+    showMore: false
