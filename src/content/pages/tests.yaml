@@ -10,7 +10,7 @@ sections:
     background:
       color: white
       type: full
-    withTOC: false
+    withTOC: true
     content: >+
       M-Lab provides a set of tools that let you explore how your Internet
       connection is performing in real time. By running a test, you can measure
@@ -34,7 +34,6 @@ sections:
       M-Lab tests do not access or analyze your everyday Internet use, such as
       emails, browsing, messages, or downloads. The tests also do not collect
       personally identifiable information about your online activity.  
-        
 
 
       ## Data and Transparency
@@ -52,7 +51,7 @@ sections:
       Internet performance and connectivity.
 
 
-      ## M-Lab’s Privacy Policy 
+      ## M-Lab’s Privacy Policy
 
 
       Before running a test, we recommend reviewing [M-Lab’s Privacy
@@ -71,5 +70,4 @@ sections:
       search the support site for answers to common questions. You can also
       contact the team directly at
       ++[support@measurementlab.net](mailto:support@measurementlab.net)++.   
-
 
