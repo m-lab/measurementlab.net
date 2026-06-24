@@ -35,7 +35,7 @@
         {
           "type": "internal",
           "label": "Platform Status",
-          "pageRef": "status"
+          "pageRef": "platform-status"
         },
         {
           "type": "internal",
