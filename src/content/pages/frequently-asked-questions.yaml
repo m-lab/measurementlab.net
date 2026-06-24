@@ -47,8 +47,8 @@ sections:
 
       Three factors drive differences between tests: (1) M-Lab always tests **off-net** — traffic crosses your ISP's network border, where congestion is most likely to occur; (2) NDT uses a **single TCP stream**, which is more sensitive to network problems than multi-stream tests; (3) Internet routing changes constantly, so results from different moments in time reflect different conditions.
 
-      → [Understanding Speed Test Results](https://kb.measurementlab.net/understanding-speed-test-results) *(article to be created — see work table)*
-
+      → [Understanding Speed Test Results](https://kb.measurementlab.net/understanding-speed-test-results) 
+      
       ### Will these tests monitor my private Internet activity?
 
       No. M-Lab tests measure only synthetic traffic between your device and an M-Lab server. Your browsing history, email, and other private traffic are never collected. See our [Privacy Policy](https://www.measurementlab.net/privacy) and [Acceptable Use Policy](https://www.measurementlab.net/aup) for details.
@@ -57,7 +57,7 @@ sections:
 
       Most tests complete in under 30 seconds. If a test hangs or fails, try again, try from a different network, and check whether a firewall is blocking the connection. If the problem persists, email [support@measurementlab.net](mailto:support@measurementlab.net) with your OS, browser, test name, and any error messages.
 
-      → [Troubleshooting M-Lab Tests](https://kb.measurementlab.net/troubleshooting-mlab-tests) *(article to be created — see work table)*
+      → [Troubleshooting M-Lab Tests](https://kb.measurementlab.net/troubleshooting-mlab-tests) 
 
       ---
 
@@ -119,7 +119,7 @@ sections:
 
       M-Lab's NDT test is open source and has been integrated by Google Search, Fing, and many others. Review the developer guide or contact [support@measurementlab.net](mailto:support@measurementlab.net) to get started.
 
-      → [Integrating M-Lab Tests Into Your Website or App](https://kb.measurementlab.net/integrating-mlab-tests) *(article to be created — see work table)*  
+      → [Integrating M-Lab Tests Into Your Website or App](https://kb.measurementlab.net/integrating-mlab-tests) 
       → [Developer Guide](https://www.measurementlab.net/develop)
 
       ### Can I host my own experiment on M-Lab?
