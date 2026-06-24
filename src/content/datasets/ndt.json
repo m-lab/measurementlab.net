@@ -1,0 +1,58 @@
+{
+  "id": "ndt",
+  "title": "NDT (Network Diagnostic Tool) Dataset",
+  "status": "published",
+  "description": "The NDT dataset contains measurements of TCP throughput and latency collected by the Network Diagnostic Tool (NDT). NDT is a single-stream performance measurement of a connection's capacity for bulk transport. Measurements include download speed, upload speed, round-trip time (RTT), and packet loss between end-user devices and M-Lab servers worldwide.",
+  "category": "raw",
+  "testRef": "ndt",
+  "relatedDatasets": ["ndt5", "ndt7"],
+  "temporalCoverageStart": "2009-01-01",
+  "temporalCoverageEnd": "present",
+  "spatialCoverage": "Global",
+  "updateFrequency": "continuous",
+  "dataSize": "~2 TB/year (raw), ~500 GB/year (parsed)",
+  "accessPoints": [
+    {
+      "label": "BigQuery (ndt7)",
+      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=ndt7_summary&page=table",
+      "format": "BigQuery",
+      "type": "query",
+      "description": "Parsed ndt7 summary table — recommended for most analyses"
+    },
+    {
+      "label": "BigQuery (ndt5)",
+      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=ndt5_summary&page=table",
+      "format": "BigQuery",
+      "type": "query",
+      "description": "Parsed ndt5 summary table — historical data pre-2020"
+    },
+    {
+      "label": "Google Cloud Storage (raw)",
+      "url": "gs://archive.measurementlab.net/ndt/",
+      "format": "JSON / raw TCP trace",
+      "type": "download",
+      "description": "Raw measurement archives in compressed JSON and pcap format"
+    },
+    {
+      "label": "Viz — Throughput Explorer",
+      "url": "https://viz.measurementlab.net/",
+      "format": "Interactive",
+      "type": "viz",
+      "description": "Interactive visualization of NDT download and upload speeds by geography and ISP"
+    }
+  ],
+  "documentationLinks": [
+    {
+      "label": "NDT Data Documentation",
+      "url": "https://www.measurementlab.net/tests/ndt/"
+    },
+    {
+      "label": "BigQuery Schema Reference",
+      "url": "https://www.measurementlab.net/data/docs/bq/schema/"
+    },
+    {
+      "label": "Acceptable Use Policy",
+      "url": "https://www.measurementlab.net/aup/"
+    }
+  ]
+}

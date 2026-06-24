@@ -1,0 +1,79 @@
+---
+/**
+ * /datasets — M-Lab Data Catalog
+ *
+ * Follows the same pattern as [..path].astro / TestsLanding:
+ *   1. Thin hero (title + subtitle) — maxWidth="2xl", zigzag
+ *   2. Intro paragraph in a section below
+ *   3. DatasetsLanding — handles its own SectionLayouts per category group
+ *
+ * Embeds schema.org DataCatalog JSON-LD in <head>.
+ */
+import { getCollection } from 'astro:content';
+import DatasetsLanding from '@components/landing/DatasetsLanding.astro';
+import HeroSection from '@components/sections/HeroSection.astro';
+import PageLayout from '@layouts/PageLayout.astro';
+import SectionLayout from '@layouts/SectionLayout.astro';
+import { isVisible } from '@utils/content';
+import { siteConfig } from '@lib/config';
+
+const allDatasets = await getCollection('datasets');
+const publishedDatasets = allDatasets.filter((ds) => isVisible(ds));
+
+const catalogJsonLd = {
+  '@context': 'https://schema.org/',
+  '@type': 'DataCatalog',
+  name: 'Measurement Lab Open Data Catalog',
+  description: 'Open Internet measurement datasets collected by Measurement Lab, released under CC0 1.0 Universal.',
+  url: `${siteConfig.url}/datasets/`,
+  publisher: { '@type': 'Organization', name: 'Measurement Lab', url: siteConfig.url },
+  license: 'https://creativecommons.org/publicdomain/zero/1.0/',
+  keywords: ['Internet measurement', 'Network performance', 'Broadband', 'Open data'],
+  dataset: publishedDatasets.map((ds) => ({
+    '@type': 'Dataset',
+    name: ds.data.title,
+    description: ds.data.description,
+    url: `${siteConfig.url}/datasets/${ds.id}/`,
+    license: 'https://creativecommons.org/publicdomain/zero/1.0/',
+    creator: { '@type': 'Organization', name: 'Measurement Lab' },
+    spatialCoverage: ds.data.spatialCoverage ?? 'Global',
+    ...(ds.data.temporalCoverageStart
+      ? { temporalCoverage: `${ds.data.temporalCoverageStart}/${ds.data.temporalCoverageEnd === 'present' ? '..' : (ds.data.temporalCoverageEnd ?? '..')}` }
+      : {}),
+    keywords: ['Internet measurement', 'Network performance', 'Broadband', 'Open data'],
+  })),
+};
+---
+
+<PageLayout
+  title="Data Catalog"
+  description="Open Internet measurement datasets from Measurement Lab, released under CC0."
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(catalogJsonLd, null, 2)} />
+
+  {/* Hero — thin, matches [..path].astro */}
+  <SectionLayout sectionLabel="hero" zigzag="primary-light" maxWidth="2xl">
+    <HeroSection
+      title="Data Catalog"
+      subtitle="Open Internet measurement data released under CC0 — freely available for research, policy, and public interest analysis."
+    />
+  </SectionLayout>
+
+  {/* Intro — pushed below hero as a separate section */}
+  <SectionLayout bgColor="primary-light">
+    <div class="mx-auto max-w-4xl py-10 px-4">
+      <p class="text-gray-700 text-base leading-relaxed">
+        M-Lab data is published in two forms: <strong>enriched data</strong> (parsed,
+        annotated, and queryable via BigQuery or available as pre-computed summaries) and <strong>archival data</strong> (measurement
+        logs on Google Cloud Storage for deeper analysis). Both are released under{' '}
+        <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer" class="underline">
+          CC0 1.0 Universal
+        </a>{' '}
+        with no restrictions on use.
+      </p>
+    </div>
+  </SectionLayout>
+
+  {/* Dataset listing — DatasetsLanding manages its own SectionLayouts */}
+  <DatasetsLanding />
+</PageLayout>

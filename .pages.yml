@@ -1226,6 +1226,210 @@ content:
         type: string
         list: true
   # --------------------------------------------------------------------------
+  # Datasets (Data Catalog)
+  #
+  # Fields intentionally OMITTED from this form (pre-populated for all
+  # M-Lab datasets at render time):
+  #   dc:creator / dc:publisher  → "Measurement Lab"
+  #   dc:language                → "en"
+  #   dc:type                    → "Dataset"
+  #   dc:rights / license        → "CC0 1.0 Universal"
+  #   dc:subject                 → Internet measurement, Network performance,
+  #                                 Broadband, Open data
+  # --------------------------------------------------------------------------
+  - name: datasets
+    label: Datasets
+    type: collection
+    path: src/content/datasets
+    format: json
+    filename: '{fields.id}.json'
+    subfolders: false
+    view:
+      fields: [title, updateFrequency, status]
+      sort: [title]
+      search: [title, description, keywords]
+      primary: title
+    fields:
+      - name: id
+        label: ID
+        type: string
+        required: true
+        description: URL-safe identifier (e.g. ndt, wehe, traceroute). Becomes the page path /datasets/<id>/.
+        pattern:
+          message: "Must be a URL-safe string like 'ndt' or 'my-dataset'."
+          regex: '^[a-zA-Z0-9_-]+$'
+
+      - name: title
+        label: Dataset Name
+        type: string
+        required: true
+        description: Full human-readable name of the dataset (dc:title)
+
+      - name: status
+        label: Status
+        type: select
+        required: true
+        default: draft
+        options:
+          values:
+            - label: Draft
+              value: draft
+            - label: Published
+              value: published
+            - label: Archived
+              value: archived
+        description: Draft datasets are only visible on the preview site.
+
+      - name: description
+        label: Description
+        type: text
+        required: true
+        description: "Plain-text description of what this dataset contains and how it was collected. Used in search results and as dc:description / schema.org description. (Tip: 2–4 sentences works well.)"
+
+      - name: keywords
+        label: Keywords
+        type: string
+        list: true
+        description: "Dataset-specific search terms (e.g. 'TCP throughput', 'NDT', 'video streaming'). M-Lab base terms (Internet measurement, Network performance, Broadband, Open data) are added automatically."
+
+      - name: category
+        label: Data Category
+        type: select
+        required: false
+        options:
+          values:
+            - label: Raw — archival measurement logs (GCS)
+              value: raw
+            - label: Enriched — parsed and queryable (BigQuery)
+              value: enriched
+        description: "Raw = unprocessed archives on GCS. Enriched = parsed, annotated, queryable via BigQuery."
+
+      - name: testRef
+        label: Related Test
+        type: reference
+        required: false
+        options:
+          collection: tests
+          value: '{fields.slug}'
+          label: '{title}'
+        description: The M-Lab test that generates this dataset (links the dataset page to the test page)
+
+      - name: relatedDatasets
+        label: Related Datasets
+        type: reference
+        required: false
+        options:
+          collection: datasets
+          multiple: true
+          value: '{id}'
+          label: '{title}'
+        description: Other datasets that are closely related (e.g. protocol variants, companion datasets)
+
+      - name: temporalCoverageStart
+        label: Coverage Start Date
+        type: string
+        required: false
+        description: "ISO 8601 date when data collection began (e.g. 2009-01-01)"
+        pattern:
+          message: "Must be an ISO date like 2009-01-01"
+          regex: '^\d{4}-\d{2}-\d{2}$'
+
+      - name: temporalCoverageEnd
+        label: Coverage End Date
+        type: string
+        required: false
+        description: "ISO 8601 end date, or the word 'present' if collection is ongoing"
+
+      - name: spatialCoverage
+        label: Spatial Coverage
+        type: string
+        required: false
+        default: Global
+        description: "Geographic scope of the data (default: Global)"
+
+      - name: updateFrequency
+        label: Update Frequency
+        type: select
+        required: false
+        options:
+          values:
+            - label: Continuous (real-time)
+              value: continuous
+            - label: Daily
+              value: daily
+            - label: Weekly
+              value: weekly
+            - label: Monthly
+              value: monthly
+            - label: Irregular
+              value: irregular
+            - label: Static (no further updates)
+              value: static
+        description: How often new measurements are added to this dataset
+
+      - name: dataSize
+        label: Approximate Size
+        type: string
+        required: false
+        description: "Human-readable size hint (e.g. '~2 TB/year (raw), ~500 GB/year (parsed)')"
+
+      - name: accessPoints
+        label: Access Points
+        type: object
+        list: true
+        description: Ways to access or download this dataset (BigQuery tables, GCS buckets, download URLs, etc.)
+        fields:
+          - name: label
+            label: Label
+            type: string
+            required: true
+            description: "Short display name (e.g. 'BigQuery', 'GCS', 'Download')"
+          - name: url
+            label: URL or Path
+            type: string
+            required: true
+            description: "Full URL (https://…) or GCS path (gs://…)"
+          - name: format
+            label: Format
+            type: string
+            required: true
+            description: "Data format (e.g. BigQuery, Parquet, CSV, JSON)"
+          - name: type
+            label: Type
+            type: select
+            required: false
+            options:
+              values:
+                - label: Query (interactive)
+                  value: query
+                - label: Download
+                  value: download
+                - label: API
+                  value: api
+                - label: Visualization
+                  value: viz
+          - name: description
+            label: Description
+            type: string
+            required: false
+            description: Brief explanation of what this access point provides
+
+      - name: documentationLinks
+        label: Documentation Links
+        type: object
+        list: true
+        description: Links to data documentation, schemas, acceptable use policy, etc.
+        fields:
+          - name: label
+            label: Label
+            type: string
+            required: true
+          - name: url
+            label: URL
+            type: string
+            required: true
+
+  # --------------------------------------------------------------------------
   # Site Settings (singleton)
   # --------------------------------------------------------------------------
   - name: site-config

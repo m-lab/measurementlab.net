@@ -420,6 +420,74 @@ const publicationsCollection = defineCollection({
   }),
 });
 
+// ---------------------------------------------------------------------------
+// Dataset access point - describes one way to access a dataset
+// (e.g. BigQuery table, GCS bucket, download URL)
+// ---------------------------------------------------------------------------
+const accessPointSchema = z.object({
+  label: z.string(),                              // e.g. "BigQuery", "GCS"
+  url: z.string(),                               // access URL or path
+  format: z.string(),                            // e.g. "BigQuery", "Parquet", "CSV"
+  type: z.enum(['query', 'download', 'api', 'viz']).optional(),
+  description: z.string().optional(),
+});
+
+// ---------------------------------------------------------------------------
+// Datasets collection
+//
+// Dublin Core fields with M-Lab constants pre-populated at render time:
+//   dc:creator / dc:publisher  → "Measurement Lab"
+//   dc:language                → "en"
+//   dc:type                    → "Dataset"
+//   dc:rights / license        → "CC0 1.0 Universal"
+//   dc:subject                 → ["Internet measurement", "Network performance",
+//                                  "Broadband", "Open data"]
+//
+// These are intentionally absent from the CMS form to keep entry simple.
+// ---------------------------------------------------------------------------
+const datasetsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    // Identity
+    id: z.string(),
+    title: z.string(),                          // dc:title
+    status: statusSchema,
+
+    // Description
+    description: z.string(),                   // dc:description (plain text for JSON-LD)
+
+    // Data category — used to group datasets on the catalog page
+    category: z.enum(['raw', 'enriched']).optional(),
+
+    // Provenance / relation
+    testRef: z.string().optional(),            // slug of associated M-Lab test
+    relatedDatasets: z.array(z.string()).optional(), // slugs of related datasets
+
+    // Temporal coverage
+    temporalCoverageStart: z.string().optional(), // ISO date string e.g. "2009-01-01"
+    temporalCoverageEnd: z.string().optional(),   // ISO date string or "present"
+
+    // Spatial coverage (defaults to "Global" at render time)
+    spatialCoverage: z.string().optional().default('Global'),
+
+    // Update cadence
+    updateFrequency: z
+      .enum(['continuous', 'daily', 'weekly', 'monthly', 'irregular', 'static'])
+      .optional(),
+
+    // Access points (BigQuery, GCS, download links, etc.)
+    accessPoints: z.array(accessPointSchema).optional(),
+
+    // Size hint (human-readable, e.g. "~500 GB/year")
+    dataSize: z.string().optional(),
+
+    // Additional documentation / external links
+    documentationLinks: z
+      .array(z.object({ label: z.string(), url: z.string() }))
+      .optional(),
+  }),
+});
+
 export const collections = {
   people: peopleCollection,
   pages: pagesCollection,
@@ -431,4 +499,5 @@ export const collections = {
   homepage: homepageCollection,
   publications: publicationsCollection,
   tests: testsCollection,
+  datasets: datasetsCollection,
 };

@@ -1,0 +1,93 @@
+---
+/**
+ * DatasetsLanding.astro
+ *
+ * Groups published datasets by category — Enriched first, then Raw.
+ * Encourages users to start with enriched data and fall back to raw.
+ */
+import { getCollection } from 'astro:content';
+import Card from '@components/molecules/Card.astro';
+import Tag from '@components/atoms/Tag';
+import SectionLayout from '@layouts/SectionLayout.astro';
+import { isVisible } from '@utils/content';
+
+const allDatasets = await getCollection('datasets');
+const datasets = allDatasets.filter((ds) => isVisible(ds));
+
+type CategoryKey = 'enriched' | 'raw' | 'uncategorized';
+
+const categoryGroups: Record<CategoryKey, { title: string; description: string; datasets: typeof datasets }> = {
+  enriched: {
+    title: 'Enriched Datasets',
+    description: 'Start here. These datasets have been parsed, annotated, and structured for analysis — queryable via BigQuery or downloadable as pre-computed summaries. Most research questions can be answered without touching raw data.',
+    datasets: [],
+  },
+  raw: {
+    title: 'Raw Datasets',
+    description: "Unprocessed measurement logs and archives as collected directly from M-Lab's infrastructure, stored in Google Cloud Storage. Use these when enriched datasets don't cover your specific analysis need.",
+    datasets: [],
+  },
+  uncategorized: {
+    title: 'Other Datasets',
+    description: '',
+    datasets: [],
+  },
+};
+
+datasets.forEach((ds) => {
+  const key = (ds.data.category ?? 'uncategorized') as CategoryKey;
+  categoryGroups[key].datasets.push(ds);
+});
+
+// Sort within each group alphabetically
+(Object.values(categoryGroups) as (typeof categoryGroups[CategoryKey])[]).forEach((g) =>
+  g.datasets.sort((a, b) => a.data.title.localeCompare(b.data.title))
+);
+
+const orderedKeys: CategoryKey[] = ['enriched', 'raw', 'uncategorized'];
+const activeGroups = orderedKeys
+  .filter((key) => categoryGroups[key].datasets.length > 0)
+  .map((key) => ({ key, ...categoryGroups[key] }));
+
+const formatFrequency = (f: string) => f.charAt(0).toUpperCase() + f.slice(1);
+---
+
+<div class="pb-12">
+  {activeGroups.map((group) => (
+    <SectionLayout maxWidth="4xl" sectionLabel={`section > ${group.title}`}>
+      <div class="mb-8">
+        <h2 class="mb-2 text-2xl font-bold">{group.title}</h2>
+        {group.description && (
+          <p class="text-gray-600 max-w-2xl">{group.description}</p>
+        )}
+      </div>
+
+      <div class="grid gap-5">
+        {group.datasets.map((ds) => (
+          <Card variant="elevated" padding="lg" class="w-full" href={`/datasets/${ds.id}`}>
+            <div class="mb-3 flex flex-wrap gap-2">
+              {ds.data.updateFrequency && (
+                <Tag variant="primary" size="sm">
+                  {formatFrequency(ds.data.updateFrequency)}
+                </Tag>
+              )}
+              {ds.data.spatialCoverage && (
+                <Tag variant="secondary" size="sm">{ds.data.spatialCoverage}</Tag>
+              )}
+            </div>
+            <h3 class="mb-2 text-xl font-semibold leading-snug">{ds.data.title}</h3>
+            <p class="text-gray-600 mb-4 text-base">{ds.data.description}</p>
+            {ds.data.temporalCoverageStart && (
+              <p class="text-gray-400 mt-auto pt-3 border-t border-gray-100 text-sm">
+                {ds.data.temporalCoverageStart.slice(0, 4)}
+                {ds.data.temporalCoverageEnd
+                  ? ` – ${ds.data.temporalCoverageEnd === 'present' ? 'present' : ds.data.temporalCoverageEnd.slice(0, 4)}`
+                  : ''}
+              </p>
+            )}
+          </Card>
+        ))}
+      </div>
+    </SectionLayout>
+  ))}
+</div>
