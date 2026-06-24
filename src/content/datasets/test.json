@@ -1,0 +1,21 @@
+{
+  "id": "test",
+  "title": "Testing for Melissa",
+  "status": "published",
+  "description": "This is to show Melissa how to make a dataset. ",
+  "category": "enriched",
+  "temporalCoverageStart": "2009-01-01",
+  "temporalCoverageEnd": "2020-01-31",
+  "spatialCoverage": "Georgia, USA",
+  "updateFrequency": "static",
+  "dataSize": "20GB",
+  "accessPoints": [
+    {
+      "label": "Download",
+      "url": "https://someurl.com/somefile.json",
+      "format": "JSON",
+      "type": "download",
+      "description": "This is the coolest data we got!!!!"
+    }
+  ]
+}
