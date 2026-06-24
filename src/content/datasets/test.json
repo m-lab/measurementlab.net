@@ -1,7 +1,7 @@
 {
   "id": "test",
   "title": "Testing for Melissa",
-  "status": "published",
+  "status": "draft",
   "description": "This is to show Melissa how to make a dataset. ",
   "category": "enriched",
   "temporalCoverageStart": "2009-01-01",
