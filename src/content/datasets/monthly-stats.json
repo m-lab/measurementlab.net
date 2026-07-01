@@ -2,10 +2,12 @@
   "id": "monthly-stats",
   "title": "Monthly Stats",
   "status": "published",
-  "category": "enriched",
   "description": "Cached M-Lab summary query results available for download. These data are used to calculate the Internet Quality Barometer (IQB), but are generally useful as aggregate statistics of M-Lab's global measurements. Data are organized by month, direction (download/upload), and geographic granularity.",
+  "category": "enriched",
   "testRef": "ndt",
-  "relatedDatasets": ["ndt"],
+  "relatedDatasets": [
+    "ndt"
+  ],
   "temporalCoverageStart": "2009-01-01",
   "temporalCoverageEnd": "present",
   "spatialCoverage": "Global",
@@ -19,25 +21,25 @@
       "description": "Browse and download monthly stats files filtered by period, direction, and granularity"
     },
     {
-      "label": "GitHub (m-lab/iqb)",
+      "label": "GitHub (m-lab/iqb) ",
       "url": "https://github.com/m-lab/iqb/tree/main/data",
       "format": "GitHub",
       "type": "download",
-      "description": "Source code and data manifest for the IQB monthly stats pipeline"
+      "description": "Processing Pipeline that creates monthly stats data (formerly called \"IQB data pipeline\")"
     }
   ],
   "documentationLinks": [
     {
-      "label": "Internet Quality Barometer (IQB)",
-      "url": "/iqb/"
+      "label": "M-Lab Monthly Stats: Pre-computed Summaries",
+      "url": "https://kb.measurementlab.net/monthly-stats-dataset/"
     },
     {
-      "label": "IQB Framework Report",
-      "url": "/publications/IQB_report_2025.pdf"
+      "label": "Exploring Monthly Stats with Python - Demo notebooks to help you learn how to work with the data",
+      "url": "https://kb.measurementlab.net/monthly-stats-python/"
     },
     {
-      "label": "IQB Executive Summary",
-      "url": "/publications/IQB_executive_summary_2025.pdf"
+      "label": "Reading Percentiles in Monthly Stats",
+      "url": "https://kb.measurementlab.net/monthly-stats-percentiles/"
     }
   ]
 }
