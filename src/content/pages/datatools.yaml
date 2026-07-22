@@ -30,14 +30,14 @@ sections:
       contribute data to the platform.
 
 
-      ++[speed.measurementlab.net](http://speed.measurementlab.net)++ A public
+      **[speed.measurementlab.net](http://speed.measurementlab.net)** A public
       website that allows anyone to run a quick Internet speed test using
       M-Lab’s NDT tool. Available in multiple languages, it provides a simple
       and accessible way to test connectivity.  
-
-      ++[Murakami](https://github.com/m-lab/murakami)++   An automated testing
-      tool that runs NDT performance tests approximately every 12 hours and
-      stores results locally. It is designed for researchers and network
+        
+      ++**[Murakami](https://github.com/m-lab/murakami)++**   An automated
+      testing tool that runs NDT performance tests approximately every 12 hours
+      and stores results locally. It is designed for researchers and network
       operators who need continuous, long-term measurement data.
 
 
@@ -51,11 +51,14 @@ sections:
       ### Active Tools
 
 
-      Cellwatch mobile application  
+      Cellwatch mobile application
 
-      Giga meter  
 
-      OONI  
+      Giga meter
+
+
+      OONI - 
+
 
       ++**[Piecewise](https://github.com/m-lab/piecewise)**++ - A web-based tool
       that aggregates M-Lab test results and visualizes Internet performance
@@ -76,8 +79,8 @@ sections:
       ### Archived Tools
 
 
-      ++**[I3 Connectivity
-      Explorer](https://i3cex.internet-is-infrastructure.org/)++** Part of the
+      ++[I3 Connectivity
+      Explorer](https://i3cex.internet-is-infrastructure.org/)++  Part of the
       Internet as Infrastructure Project, this platform combines M-Lab data with
       datasets from U.S. agencies, including the FCC, Census Bureau, EPA, and
       USDA. It provides maps and visualizations of connectivity across regions,
