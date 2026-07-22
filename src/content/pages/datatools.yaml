@@ -30,13 +30,13 @@ sections:
       contribute data to the platform.
 
 
-      **[speed.measurementlab.net](http://speed.measurementlab.net)** A public
+      **[speed.measurementlab.net](http://speed.measurementlab.net)** - A public
       website that allows anyone to run a quick Internet speed test using
       M-Lab’s NDT tool. Available in multiple languages, it provides a simple
       and accessible way to test connectivity.  
 
 
-      ++[Murakami](https://github.com/m-lab/murakami)++   An automated testing
+      ++[Murakami](https://github.com/m-lab/murakami)++  - An automated testing
       tool that runs NDT performance tests approximately every 12 hours and
       stores results locally. It is designed for researchers and network
       operators who need continuous, long-term measurement data.
@@ -52,24 +52,27 @@ sections:
       ### Active Tools
 
 
-      Cellwatch mobile application
+      Cellwatch mobile application - 
 
 
-      Giga meter
+      Giga meter -
 
 
-      OONI - 
+      OONI  - The Open Observatory of Network Interference is internet
+      censorship measurement project that runs ndt7 and neubot/dash. While it is
+      no longer an experiment hosted by the M-Lab platform, it still integrates
+      M-Lab tools. 
 
 
-      ++**[Piecewise](https://github.com/m-lab/piecewise)**++ - A web-based tool
-      that aggregates M-Lab test results and visualizes Internet performance
-      trends, supporting research and policy analysis.
+      [Piecewise](https://github.com/m-lab/piecewise) - A web-based tool that
+      aggregates M-Lab test results and visualizes Internet performance trends,
+      supporting research and policy analysis.
 
 
-      ++[SpeedUp America](https://github.com/Hack4Eugene/SpeedUpAmerica)++ An
-      open source project that maps Internet speed test data using M-Lab
-      datasets. It combines multiple data sources to show connectivity by
-      geography, provider, time period, and speed.
+      [SpeedUp America](https://github.com/Hack4Eugene/SpeedUpAmerica) - An open
+      source project that maps Internet speed test data using M-Lab datasets. It
+      combines multiple data sources to show connectivity by geography,
+      provider, time period, and speed.
 
 
       Reverse traceroute web app  
@@ -81,7 +84,7 @@ sections:
 
 
       ++[I3 Connectivity
-      Explorer](https://i3cex.internet-is-infrastructure.org/)++  Part of the
+      Explorer](https://i3cex.internet-is-infrastructure.org/)++ -  Part of the
       Internet as Infrastructure Project, this platform combines M-Lab data with
       datasets from U.S. agencies, including the FCC, Census Bureau, EPA, and
       USDA. It provides maps and visualizations of connectivity across regions,
