@@ -16,9 +16,9 @@ sections:
 
       Since 2008, M-Lab has focused on hosting its infrastructure in well-connected data centers where Internet service providers interconnect, allowing the platform to reach large numbers of users with high performance from relatively few locations.
 
-      In 2022, M-Lab expanded the platform to include virtual servers in cloud environments, beginning with Google Cloud. In 2025, the project also began piloting a “host-managed” deployment model, which allows network providers to run M-Lab’s software on their own infrastructure and join the global measurement platform. In these cases, M-Lab does not manage or control the servers directly.
+      In 2022, M-Lab expanded the platform to include virtual servers in cloud environments, beginning with Google Cloud. In 2025, the project also began piloting the Bring Your Own Server program, a host-managed deployment model that allows network providers to run M-Lab’s software on their own infrastructure and join the global measurement platform. In these cases, M-Lab does not manage or control the servers directly.
 
-      Host-managed deployments may include physical or virtual machines located across a variety of networks, including transit providers, research and education networks, and last-mile Internet service providers.
+      Bring Your Own Server deployments may include physical or virtual machines located across a variety of networks, including transit providers, research and education networks, and last-mile Internet service providers.
 
       Network providers interested in hosting an M-Lab measurement site, please [review our requirements](/contribute/#host-or-sponsor-an-m-lab-measurement-site) and fill out our [Infrastructure Contribution Form](https://docs.google.com/forms/d/e/1FAIpQLSe1wXKfQ0VIt_hZFatCwCaoOeeDpRv3JZDM_eAmIaksMuwB4g/viewform?usp=sf_link). 
 
