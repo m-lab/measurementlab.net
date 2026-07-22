@@ -1,4 +1,4 @@
-title: Cookies Notice and Policy
+title: "Cookies Notice "
 permalink: cookies-notice
 status: draft
 sections:
@@ -55,7 +55,7 @@ sections:
 
       | -------------- | ---------------- |
       -------------------------------------------------------------------------
-      | ----------- | -------- |
+      | --------- | -------- |
 
       | NAME | PROVIDER | PURPOSE | TYPE | EXPIRY |
 
@@ -69,11 +69,11 @@ sections:
       tracks page views and site usage | Analytics | 2 years |
 
       | _gid | Google Analytics | Distinguishes users across sessions Analytics
-      | Your rights | 24 hours |
+      | Analytics | 24 hours |
 
 
 
-      Your Rights 
+      ### Your Rights 
 
 
       Depending on your location, you may have rights including: the right to
@@ -83,9 +83,7 @@ sections:
       at [privacy@measurementlab.net](mailto:privacy@measurementlab.net).
 
 
-
-
-      Opting out of Google Analytics
+      ### Opting out of Google Analytics
 
 
       You can opt out of Google Analytics tracking across all websites by
