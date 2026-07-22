@@ -1,6 +1,7 @@
 title: Tools
 permalink: tools
 status: published
+zigzag: supporting1-light
 sections:
   - type: richText
     background:
@@ -54,16 +55,15 @@ sections:
 
       Giga meter  
 
-      OONI
-
+      OONI  
 
       ++**[Piecewise](https://github.com/m-lab/piecewise)**++ - A web-based tool
       that aggregates M-Lab test results and visualizes Internet performance
       trends, supporting research and policy analysis.
 
 
-      ++**[SpeedUp America](https://github.com/Hack4Eugene/SpeedUpAmerica)++**
-      An open source project that maps Internet speed test data using M-Lab
+      ++[SpeedUp America](https://github.com/Hack4Eugene/SpeedUpAmerica)++ An
+      open source project that maps Internet speed test data using M-Lab
       datasets. It combines multiple data sources to show connectivity by
       geography, provider, time period, and speed.
 
