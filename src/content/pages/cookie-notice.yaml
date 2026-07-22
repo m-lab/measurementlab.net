@@ -6,7 +6,7 @@ sections:
     background:
       color: white
       type: full
-    withTOC: false
+    withTOC: true
     content: >-
       # M-Lab Cookie Notice
 
@@ -73,7 +73,7 @@ sections:
 
 
 
-      ### Your Rights 
+      ### Your Rights
 
 
       Depending on your location, you may have rights including: the right to
