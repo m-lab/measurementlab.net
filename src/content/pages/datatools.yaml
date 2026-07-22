@@ -34,10 +34,11 @@ sections:
       website that allows anyone to run a quick Internet speed test using
       M-Lab’s NDT tool. Available in multiple languages, it provides a simple
       and accessible way to test connectivity.  
-        
-      ++**[Murakami](https://github.com/m-lab/murakami)++**   An automated
-      testing tool that runs NDT performance tests approximately every 12 hours
-      and stores results locally. It is designed for researchers and network
+
+
+      ++[Murakami](https://github.com/m-lab/murakami)++   An automated testing
+      tool that runs NDT performance tests approximately every 12 hours and
+      stores results locally. It is designed for researchers and network
       operators who need continuous, long-term measurement data.
 
 
