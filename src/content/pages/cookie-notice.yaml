@@ -1,3 +1,116 @@
 title: Cookie Notice and Policy
 permalink: cookie-notice
 status: draft
+sections:
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: >-
+      # M-Lab Cookie Notice
+
+
+      ## Last Updated: July 2026
+
+
+      ### Previous notices:
+
+
+      2020 v1 (cookies-notice-v1) 
+
+
+      This notice explains how Measurement Lab ("M-Lab") uses cookies and
+      similar technologies on its websites. It describes what these technologies
+      are, why we use them, and your rights to control them.
+
+
+      ### What are cookies?
+
+
+      Cookies are small text files stored on your device when you visit a
+      website. They help websites recognise your device across visits. This
+      notice uses "cookies" broadly to include web beacons, pixels, and similar
+      tracking technologies.
+
+
+      ### Your consent choices
+
+
+      When you first visit our site, a banner gives you the option to accept or
+      reject non-essential cookies. Strictly necessary cookies are always active
+      as they are required for the site to function. You can update your
+      preferences at any time by clicking "Manage cookies" in the site footer.
+
+
+      We do not set analytics or functional cookies until you have given
+      consent.
+
+
+      ### Cookies we use
+
+
+
+      |  |  |  |  |  |
+
+      | -------------- | ---------------- |
+      -------------------------------------------------------------------------
+      | ----------- | -------- |
+
+      | NAME | PROVIDER | PURPOSE | TYPE | EXPIRY |
+
+      | _session | M-Lab | M-Lab Maintains your session and privacy preferences
+      | Necessary | Session |
+
+      | cookie_consent | M-Lab | Stores your cookie consent choice | Necessary |
+      1 year |
+
+      | *ga,* ga_* | Google Analytics | Distinguishes unique users and sessions;
+      tracks page views and site usage | Analytics | 2 years |
+
+      | _gid | Google Analytics | Distinguishes users across sessions Analytics
+      | Your rights | 24 hours |
+
+
+
+      ###   
+
+      Your Rights 
+
+
+      Depending on your location, you may have rights including: the right to
+      withdraw consent at any time, the right to know what data is collected,
+      and (in California and other US states) the right to opt out of the sale
+      or sharing of personal information. To exercise these rights, contact us
+      at [privacy@measurementlab.net](mailto:privacy@measurementlab.net).
+
+
+      ###   
+
+      Opting out of Google Analytics
+
+
+      You can opt out of Google Analytics tracking across all websites by
+      installing the Google Analytics opt-out browser add-on.
+
+
+      ### No Sale of Data 
+
+
+      M-Lab does not save your personal information and cannot sell or share it
+      with third parties for cross-context behavioral advertising purposes. 
+
+
+      ### Changes to this notice
+
+
+      We may update this notice from time to time. We will update the "Last
+      updated" date at the top of this page.
+
+
+      ### Contact us
+
+
+      Questions about cookies? Email us at
+      [privacy@measurementlab.net](mailto:privacy@measurementlab.net) or see our
+      full [Privacy Policy.](/privacy)
