@@ -1,6 +1,6 @@
 title: Bring Your Own Server
 permalink: byos
-status: draft
+status: published
 zigzag: primary-dark
 sections:
   - type: richText
@@ -38,7 +38,7 @@ sections:
 
       ### Gain insights about your network!
 
-      - You can access M-Lab data for free to explore the performance that your end-users experience. 
+      - You can access M-Lab data for free to explore the performance that your end-users experience.
 
       ### Gain insights about other (e.g.,  competing) networks
 
@@ -47,7 +47,7 @@ sections:
       ### Help your customers & peering ecosystem
 
       - Deploying an M-Lab server close(r) to a metro, gives higher quality results for users & network operators in this or neighboring metros.
-      - Other networks will be encouraged to peer with you so that performance results for their customers are more representative. 
+      - Other networks will be encouraged to peer with you so that performance results for their customers are more representative.
 
 
 
