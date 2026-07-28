@@ -38,28 +38,19 @@ sections:
 
       ### Gain insights about your network!
 
-      - You don’t have to do your own monitoring systems; you get M-Lab’s data for free
-      - Even if you have your own monitoring, M-Lab’s data are on TCP layer (end-to-end connection information)
+      - You can access M-Lab data for free to explore the performance that your end-users experience. 
 
       ### Gain insights about other (e.g.,  competing) networks
 
-      - You can compare your vs others’ (i.e., other networks hosting M-Lab servers) performance measurements; if you don’t have a server, data are not directly comparable
+      - You can compare your vs others’ (i.e., other networks hosting M-Lab servers) performance measurements; if you don’t have a server, data are not directly comparable.
 
       ### Help your customers & peering ecosystem
 
-      - Deploying an M-Lab server close(r) to a metro, gives higher quality results for users & network operators in this or neighboring metros
-      - Helps your peering: other networks will be encouraged to peer with you so that performance results for their customers are more representative (aka. “Show better performance”)
-      - **More “download” traffic** → from your network (i.e., M-Lab server) to other networks (i.e., where users taking speedtests are)
+      - Deploying an M-Lab server close(r) to a metro, gives higher quality results for users & network operators in this or neighboring metros.
+      - Other networks will be encouraged to peer with you so that performance results for their customers are more representative. 
 
 
 
       &nbsp;
 
       &nbsp;
-
-      &nbsp;
-  - type: partners
-    background:
-      color: white
-      type: full
-    title: Current BYOS Partners
