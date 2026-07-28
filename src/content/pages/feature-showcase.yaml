@@ -9,7 +9,7 @@ sections:
       color: primary-light
       type: full
     withTOC: true
-    content: |+
+    content: |-
       # Projects Overview and Impact
 
       M-Lab’s projects contribute to a growing global effort to better understand how the Internet performs in practice. 
@@ -56,6 +56,7 @@ sections:
 
 
 
+      &nbsp;
   - type: flexi
     background:
       color: primary-medium
