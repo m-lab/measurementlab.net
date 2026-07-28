@@ -58,3 +58,8 @@ sections:
       &nbsp;
 
       &nbsp;
+  - type: partners
+    background:
+      color: white
+      type: full
+    title: Current BYOS Partners
