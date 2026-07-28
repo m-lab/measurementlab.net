@@ -7,74 +7,65 @@ sections:
     background:
       color: white
       type: full
-    withTOC: true
-    content: >-
-      **Internet Quality Barometer** - shifting the conversation around Internet
-      Quality beyond “speed."
+    withTOC: false
+    content: |+
+      # Projects Overview and Impact 
 
+      M-Lab’s projects contribute to a growing global effort to better understand how the Internet performs in practice. 
 
-      ![](/src/assets/images/iqb/Speed%20test%20to%20IQB%20score.svg)
-  - type: button
-    background:
-      color: white
-      type: full
-    buttons:
-      - variant: primary
-        size: md
-        text: Learn more about the IQB project
-        href: /iqb
-      - variant: primary
-        size: md
-        text: Read the Full Report
-        href: /iqb-full-report
-  - type: hero
-    title: Hero
-    subtitle: Hero primary - dark
-    zigzag: primary-dark
-  - type: richText
-    background:
-      color: white
-      type: full
-    withTOC: true
-    content: >-
-      **Open Measurement Gatherings (OMG)** - bringing together open Internet
-      measurement groups to strengthen ties, exchange knowledge, and support
-      Internet freedom.
+      We have three flagship projects that represent the areas of work we focus on:
 
+      - Applied Data and Research: The Internet Quality Barometer
+      - Measurement Infrastructure: Bring Your Own Server 
+      - Community Building: The Open Measurement Gatherings 
 
-      ![](/src/assets/omg/file%201.png)
-  - type: hero
-    title: Hero
-    subtitle: Hero secondary - light
-    zigzag: secondary-light
-  - type: hero
-    title: Hero
-    subtitle: Hero secondary - dark
-    zigzag: secondary-dark
-  - type: hero
-    title: Hero
-    subtitle: Hero supporting1 - light
-    zigzag: supporting1-light
-  - type: hero
-    title: Hero
-    subtitle: Hero supporting1 - dark
-    zigzag: supporting1-dark
-  - type: hero
-    title: Hero
-    subtitle: Hero supporting2 - light
-    zigzag: supporting2-light
-  - type: hero
-    title: Hero
-    subtitle: Hero supporting2 - dark
-    zigzag: supporting2-dark
-  - type: flexi
-    background:
-      color: primary-dark
-      type: full
-    title: This is a Flexi Section!
-    description: Weeeee
-  - type: card
-    background:
-      color: white
-      type: full
-    title: test
+      These projects expand the reach of the M-Lab platform and help translate measurement data into insights that support research, policy, and infrastructure development.
+
+      ## Applied Data and Research 
+
+      All data collected through M-Lab tests is made publicly available. This open approach enables the study of Internet infrastructure and connectivity trends across regions and networks which can then be applied to solve connectivity challenges.
+
+      The ++**[Internet Quality Barometer](https://mlab-preview.draftlab.dev/iqb/)**++ (IQB) is an initiative to redefine how we measure and understand Internet performance to keep pace with evolving technological demands and user expectations.
+
+      ![](</src/assets/IQB Score.svg>)
+
+      **Past Projects:** 
+
+      - **[Broadband Mapping](https://broadbandmappingcoalition.org/ndt-data-measurement-lab/)**
+
+      These projects use M-Lab’s measurement tools and datasets to better understand Internet access, network performance, and connectivity gaps around the world.
+
+      ## Community Building
+
+      M-Lab also contributes to a global community of researchers and technologists working on Internet measurement. 
+
+      The Open Measurement Gathering (OMG) was a series of convenings that brought together four open Internet and censorship measurement organizations — Measurement Lab (M-Lab), Censored Planet, IODA (Internet Outage Detection and Analysis), and OONI (Open Observatory of Network Interference) — to build deeper trust, coordination, and collaboration. 
+
+      Through community building initiatives the platform helps foster collaboration, knowledge sharing, and the development of new measurement tools. Learn more about how to get involved with the M-Lab Community. 
+
+      ![](</src/assets/omg/file 1.png>)
+
+      ## Measurement Infrastructure
+
+      Through its distributed infrastructure, M-Lab enables Internet performance tests to be run by users and integrated into websites and applications around the world. 
+
+      In particular, the **[Bring Your Own Server**](/byos) project seeks to further diversify the measurement platform to create a global open source measurement infrastructure. Partners can contribute physical or virtual servers that they manage and joining an open source federated measurement platform.
+
+      ## M-Lab Supports Your Projects 
+
+        
+      In addition to our own initiatives, by providing open measurement tools and public datasets M-Lab enables researchers, policymakers, and technologists to study connectivity and support improvements to Internet infrastructure worldwide. 
+
+        
+      This includes work to:
+
+      - Map mobile cellular coverage 
+      - Develop new measurement tools and experiments
+      - Improve open datasets about Internet performance
+      - Decide public policy on connectivity infrastructure 
+      - Journalism and investigations into Internet service quality
+
+        
+        
+        
+        
