@@ -35,7 +35,7 @@ sections:
 
       [Giga meter](https://meter.giga.global/) - A  powerful desktop application that allows school administrators to monitor and visualize the quality of their institution's connectivity.
 
-
+      ![](/src/assets/partners/Giga.svg)
 
       [OONI](https://explorer.ooni.org/chart/mat?test_name=web_connectivity&axis_x=measurement_start_day&since=2026-06-23&until=2026-07-23&time_grain=day)  - The Open Observatory of Network Interference is internet censorship measurement project that runs ndt7 and neubot/dash. While it is no longer an experiment hosted by the M-Lab platform, it still integrates M-Lab tools. 
 
@@ -59,23 +59,23 @@ sections:
 
       Examples include:
 
-      - AirBnB  
+      - AirBnB
 
       ![](/src/assets/images/tools/airbnb.webp)
 
-      - Domotz 
+      - Domotz
 
       ![](/src/assets/images/tools/Domotz.webp)
 
-      - Cox 
+      - Cox
 
       ![](/src/assets/images/tools/Cox.webp)
 
-      - Fing 
+      - Fing
 
       ![](/src/assets/images/tools/Fing.webp)
 
-      - National Association of Counties (U.S.) 
+      - National Association of Counties (U.S.)
 
       ![](/src/assets/images/tools/NACo.webp)
 
