@@ -103,6 +103,11 @@
           "type": "internal",
           "label": "Open Measurement Gathering (OMG) ",
           "pageRef": "omg"
+        },
+        {
+          "type": "internal",
+          "label": "Bring Your Own Server ",
+          "pageRef": "byos"
         }
       ]
     },
@@ -117,7 +122,7 @@
         },
         {
           "type": "internal",
-          "label": "Support Us",
+          "label": "Contribute ",
           "pageRef": "contribute"
         },
         {
