@@ -31,9 +31,15 @@ sections:
 
       [Cellwatch](https://cellwatch.cc.gatech.edu/) mobile application - An open-source cellular network measurement suite created by researchers and developers at Georgia Tech, UC Santa Barbara, and Michigan State. 
 
+      ![](/src/assets/images/tools/CellWatch.webp)
+
       [Giga meter](https://meter.giga.global/) - A  powerful desktop application that allows school administrators to monitor and visualize the quality of their institution's connectivity.
 
+
+
       [OONI](https://explorer.ooni.org/chart/mat?test_name=web_connectivity&axis_x=measurement_start_day&since=2026-06-23&until=2026-07-23&time_grain=day)  - The Open Observatory of Network Interference is internet censorship measurement project that runs ndt7 and neubot/dash. While it is no longer an experiment hosted by the M-Lab platform, it still integrates M-Lab tools. 
+
+      ![](</src/assets/images/tools/OONI Probe .webp>)
 
       [Piecewise](https://github.com/m-lab/piecewise) - A web-based tool that aggregates M-Lab test results and visualizes Internet performance trends, supporting research and policy analysis.
 
@@ -53,11 +59,27 @@ sections:
 
       Examples include:
 
-      - AirBnB
-      - Domotz
-      - Cox
-      - Fing
-      - National Association of Counties (U.S.)
+      - AirBnB  
+
+      ![](/src/assets/images/tools/airbnb.webp)
+
+      - Domotz 
+
+      ![](/src/assets/images/tools/Domotz.webp)
+
+      - Cox 
+
+      ![](/src/assets/images/tools/Cox.webp)
+
+      - Fing 
+
+      ![](/src/assets/images/tools/Fing.webp)
+
+      - National Association of Counties (U.S.) 
+
+      ![](/src/assets/images/tools/NACo.webp)
+
+
 
       ## Websites Using M-Lab Data
 
