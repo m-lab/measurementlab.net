@@ -170,10 +170,13 @@ sections:
 
       To work with M-Lab data:
 
-      - Review the data documentation
-      - Join the public mailing list for updates and announcements
-      - Contact the team if you have questions about research or analysis
-      - Developers with experience in data analysis, visualization, or application development may also contribute by building tools that work with M-Lab’s tests and datasets. All of these resources are open source and openly licensed.
+      - [Review the data documentation]([https://www.measurementlab.net/data](https://www.measurementlab.net/data))
+      - [Join the public mailing list for updates and announcements]([https://groups.google.com/a/measurementlab.net/forum/?fromgroups#!forum/discuss](https://groups.google.com/a/measurementlab.net/forum/?fromgroups#!forum/discuss)))
+      - [Contact the team if you have questions about research or analysis](hello@measurementlab.net)
+      - Developers with experience in data analysis, visualization, or application development may also contribute by building tools that work with M-Lab’s tests and datasets. All of these resources are open source and openly licensed. Check out the following resources:
+        - [M-Lab's conceptual and technical scope and policies](https://www.measurementlab.net/publications/mlab-founding-vision.pdf))
+        - [M-Lab's Roles & Responsibilities for new researchers](https://www.measurementlab.net/publications/mlab-roles-responsibilities.pdf)
+        - [M-Lab's requirements and procedures for accepting new tools](https://www.measurementlab.net/publications/mlab-procedures-new-tools.pdf) 
 
       ## Develop a Measurement Test
 
