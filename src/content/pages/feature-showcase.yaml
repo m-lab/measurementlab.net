@@ -63,7 +63,7 @@ sections:
     sections:
       - type: richText
         background:
-          color: primary-medium
+          color: primary-light
           type: full
         withTOC: false
         content: >+
