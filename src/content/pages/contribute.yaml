@@ -148,7 +148,7 @@ sections:
       color: primary-light
       type: full
     withTOC: false
-    content: |+
+    content: |-
       M-Lab sits at the center of a global ecosystem of organizations working to measure, understand, and improve Internet connectivity. Through open infrastructure, open-source measurement tools, and publicly available datasets, the platform connects researchers, technology partners, policymakers, and users around the world. The ecosystem works because many different partners contribute in different ways.
 
       ### Types of Contributors to M-Lab
@@ -156,10 +156,11 @@ sections:
       - Researchers
       - Developers 
       - Integrators 
-      - Infrastructure Partners 
+      - Infrastructure Partners
 
-        
 
+
+      &nbsp;
 
       Note that all M-Lab usage and contributions are subject to M-Lab’s ++[Acceptable Use Policy](https://www.measurementlab.net/aup/)++ and ++[Privacy Policy](https://www.measurementlab.net/privacy/)++. 
 
@@ -167,12 +168,10 @@ sections:
 
       M-Lab publishes open datasets on Internet performance, which researchers, analysts, and developers can use to study connectivity, infrastructure, and network behavior. We encourage researchers and practitioners to explore and build with this data. 
 
-        
 
 
       M-Lab provides documentation and best-effort support to help people get started.
 
-        
 
 
       To work with M-Lab data:
@@ -206,13 +205,18 @@ sections:
 
       If you plan to integrate an M-Lab test into your product, please review  M-Lab’s ++[Privacy](https://www.measurementlab.net/privacy)++ and ++[Acceptable Use](https://www.measurementlab.net/aup)++ policies. Additional technical guidance is available in the ++[Developers Guide](https://www.measurementlab.net/develop)++ and ++[data documentation](https://www.measurementlab.net/data/docs)++.
 
-        
 
 
-      ### Contribute to M-Lab Infrastructure 
+      ### Contribute to M-Lab Infrastructure
 
-      Infrastructure partners donate/host servers, provide cloud resources, or otherwise support the operation of M-Lab’s global testing platform. There are many ways to get involved with the platform, so please reach out if you’re interested.
+      Infrastructure partners donate/host servers, provide cloud resources, or otherwise support the operation of M-Lab’s global testing platform. 
 
-      If you want to join the M-Lab platform and manage your own server, find out more about the Bring Your Own Server project.  
+      - Donate a virtual server
+      - Bring Your Own Server and host a Measurement Lab node 
+      - Or let us know other ways you'd like to contribute! 
 
-        
+      There are many ways to get involved with the platform, so please reach out if you’re interested.
+
+
+
+      &nbsp;
