@@ -43,8 +43,8 @@ sections:
 
       Before reaching out, please review the following documentation:
 
-      - ++[M-Lab Conceptual & Technical Scope and Related Policies](https://www.measurementlab.net/mlab-scope/)++
-      - ++[Experiment Developer Responsibilities, Requirements, and Guidelines](https://www.measurementlab.net/experimenter-requirements-guidelines/)++
+      -[M-Lab Conceptual & Technical Scope and Related Policies](https://www.measurementlab.net/mlab-scope/)
+      -[Experiment Developer Responsibilities, Requirements, and Guidelines](https://www.measurementlab.net/experimenter-requirements-guidelines/)
 
       These resources explain the expectations, responsibilities, and technical requirements for researchers who want to run experiments on the M-Lab platform.
 
@@ -59,7 +59,7 @@ sections:
       - Fing
       - and other third-party applications
 
-      If you plan to integrate an M-Lab test into your product, please review  M-Lab’s ++[Privacy](https://www.measurementlab.net/privacy)++ and ++[Acceptable Use](https://www.measurementlab.net/aup)++ policies. Additional technical guidance is available in the ++[Developers Guide](https://www.measurementlab.net/develop)++ and ++[data documentation](https://www.measurementlab.net/data/docs)++.
+      If you plan to integrate an M-Lab test into your product, please review  M-Lab’s [Privacy](https://www.measurementlab.net/privacy) and [Acceptable Use](https://www.measurementlab.net/aup) policies. Additional technical guidance is available in the [Developers Guide](https://www.measurementlab.net/develop) and [data documentation](https://www.measurementlab.net/data/docs).
 
       ## Become an Infrastructure Parnter
 
@@ -74,5 +74,5 @@ sections:
 
       ## Contribute Financial Support
 
-      M-Lab welcomes the direct financial contributions of organizations that find our work beneficial. If your organization is interested in supporting the M-Lab platform, please review our sponsorship offerings and contact us.  
+      M-Lab welcomes the direct financial contributions of organizations that find our work beneficial. If your organization is interested in supporting the M-Lab platform, review our sponsorship offerings and contact us.  
 
