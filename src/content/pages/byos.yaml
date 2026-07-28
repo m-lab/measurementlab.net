@@ -8,8 +8,8 @@ sections:
       color: primary-dark
       type: full
     withTOC: true
-    content: >+
-      # Bring Your Own Server 
+    content: >-
+      # Bring Your Own Server
 
 
       M-Lab is committed to evolving with the Internet and now welcomes servers
@@ -60,7 +60,7 @@ sections:
       Internet quality and improve the Internet
 
 
-      ## The Benefits of Becoming a BYOS Partner 
+      ## The Benefits of Becoming a BYOS Partner
 
 
       ### Gain insights about your network!
@@ -102,5 +102,5 @@ sections:
 
       &nbsp;
 
-        
-        
+
+      &nbsp;
