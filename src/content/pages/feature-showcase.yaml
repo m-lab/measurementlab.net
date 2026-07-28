@@ -10,7 +10,7 @@ sections:
       type: full
     withTOC: true
     content: |+
-      # Projects Overview and Impact 
+      # Projects Overview and Impact
 
       M-Lab’s projects contribute to a growing global effort to better understand how the Internet performs in practice. 
 
@@ -18,11 +18,13 @@ sections:
 
       - Applied Data and Research: The Internet Quality Barometer
       - Measurement Infrastructure: Bring Your Own Server 
-      - Community Building: The Open Measurement Gatherings 
+      - Community Building: The Open Measurement Gatherings
+
+
 
       These projects expand the reach of the M-Lab platform and help translate measurement data into insights that support research, policy, and infrastructure development.
 
-      ## Applied Data and Research 
+      ## Applied Data and Research
 
       All data collected through M-Lab tests is made publicly available. This open approach enables the study of Internet infrastructure and connectivity trends across regions and networks which can then be applied to solve connectivity challenges.
 
@@ -52,21 +54,30 @@ sections:
 
       In particular, the **[Bring Your Own Server**](/byos) project seeks to further diversify the measurement platform to create a global open source measurement infrastructure. Partners can contribute physical or virtual servers that they manage and joining an open source federated measurement platform.
 
-      ## M-Lab Supports Your Projects 
 
-        
-      In addition to our own initiatives, by providing open measurement tools and public datasets M-Lab enables researchers, policymakers, and technologists to study connectivity and support improvements to Internet infrastructure worldwide. 
 
-        
+  - type: flexi
+    background:
+      color: primary-medium
+      type: full
+    title: M-Lab Supports Your Projects
+    description: >+
+      In addition to our own initiatives, by providing open measurement tools
+      and public datasets M-Lab enables researchers, policymakers, and
+      technologists to study connectivity and support improvements to Internet
+      infrastructure worldwide. 
+
+
       This includes work to:
 
+
       - Map mobile cellular coverage 
+
       - Develop new measurement tools and experiments
+
       - Improve open datasets about Internet performance
+
       - Decide public policy on connectivity infrastructure 
+
       - Journalism and investigations into Internet service quality
 
-        
-        
-        
-        
