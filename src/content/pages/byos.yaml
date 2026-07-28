@@ -1,3 +1,106 @@
 title: Bring Your Own Server
 permalink: byos
 status: draft
+zigzag: primary-dark
+sections:
+  - type: richText
+    background:
+      color: primary-dark
+      type: full
+    withTOC: true
+    content: >+
+      # Bring Your Own Server 
+
+
+      M-Lab is committed to evolving with the Internet and now welcomes servers
+      in cloud, edge, access networks. 
+
+
+      The **Bring Your Own Server** (BYOS) project is a host-managed deployment
+      model that allows network providers to run M-Lab’s software on their own
+      infrastructure and join an open source global measurement platform. 
+
+
+      The goal of BYOS is to expand M-Lab’s platform to measure more of the
+      Internet from new network locations and make it easier for partners to
+      contribute to the platform. 
+
+
+      Development of BYOS took place throughout 2023, and from 2024-2026 we have
+      gone through a series of pilots. We are expecting to make it generally
+      available in 2027. Until then, we welcome pilot partners to test the BYOS
+      system. 
+
+
+      Network providers interested in hosting an M-Lab measurement site can
+      review the requirements and submit an **Infrastructure Contribution Form**
+      to participate in the platform.
+
+
+      ### When you become a BYOS partner you…
+
+
+      Join the largest open Internet measurement platform 
+
+
+      - Contribute to 15 years of measuring the Internet at scale
+
+      - Support Internet openness, transparency and equity
+
+
+      ### Have real world impact
+
+
+      - Enable users measure their Internet connections with a free open source
+      tool
+
+      - Improve school connectivity through partnership with Giga 
+
+      - Advance initiatives like the Internet Quality Barometer to redefine
+      Internet quality and improve the Internet
+
+
+      ## The Benefits of Becoming a BYOS Partner 
+
+
+      ### Gain insights about your network!
+
+
+      - You don’t have to do your own monitoring systems; you get M-Lab’s data
+      for free
+
+      - Even if you have your own monitoring, M-Lab’s data are on TCP layer
+      (end-to-end connection information)
+
+
+      ### Gain insights about other (e.g.,  competing) networks
+
+
+      - You can compare your vs others’ (i.e., other networks hosting M-Lab
+      servers) performance measurements; if you don’t have a server, data are
+      not directly comparable
+
+
+      ### Help your customers & peering ecosystem
+
+
+      - Deploying an M-Lab server close(r) to a metro, gives higher quality
+      results for users & network operators in this or neighboring metros
+
+      - Helps your peering: other networks will be encouraged to peer with you
+      so that performance results for their customers are more representative
+      (aka. “Show better performance”)
+
+      - **More “download” traffic** → from your network (i.e., M-Lab server) to
+      other networks (i.e., where users taking speedtests are)
+
+
+
+
+      &nbsp;
+
+
+      &nbsp;
+
+        
+        
