@@ -60,29 +60,22 @@ sections:
       color: primary-medium
       type: full
     title: M-Lab Supports Your Projects
+    description: In addition to our own initiatives, by providing open measurement
+      tools and public datasets M-Lab enables researchers, policymakers, and
+      technologists to study connectivity and support improvements to Internet
+      infrastructure worldwide. 
     sections:
       - type: richText
         background:
-          color: primary-light
+          color: primary-medium
           type: full
         withTOC: false
-        content: >+
-          In addition to our own initiatives, by providing open measurement
-          tools and public datasets M-Lab enables researchers, policymakers, and
-          technologists to study connectivity and support improvements to
-          Internet infrastructure worldwide. 
-
-
+        content: |+
           This includes work to:
 
-
           - Map mobile cellular coverage 
-
           - Develop new measurement tools and experiments
-
           - Improve open datasets about Internet performance
-
           - Decide public policy on connectivity infrastructure 
-
           - Journalism and investigations into Internet service quality
 
