@@ -149,30 +149,24 @@ sections:
       type: full
     withTOC: false
     content: |-
+      # Contribute to M-Lab
+
       M-Lab sits at the center of a global ecosystem of organizations working to measure, understand, and improve Internet connectivity. Through open infrastructure, open-source measurement tools, and publicly available datasets, the platform connects researchers, technology partners, policymakers, and users around the world. The ecosystem works because many different partners contribute in different ways.
 
-      ### Types of Contributors to M-Lab
+      ## Types of Contributors to M-Lab
 
       - Researchers
       - Developers 
       - Integrators 
       - Infrastructure Partners
 
-
-
-      &nbsp;
-
       Note that all M-Lab usage and contributions are subject to M-Lab’s ++[Acceptable Use Policy](https://www.measurementlab.net/aup/)++ and ++[Privacy Policy](https://www.measurementlab.net/privacy/)++. 
 
-      ### Research, Analyze and Visualize M-Lab Data
+      ## Research, Analyze and Visualize M-Lab Data
 
       M-Lab publishes open datasets on Internet performance, which researchers, analysts, and developers can use to study connectivity, infrastructure, and network behavior. We encourage researchers and practitioners to explore and build with this data. 
 
-
-
       M-Lab provides documentation and best-effort support to help people get started.
-
-
 
       To work with M-Lab data:
 
@@ -181,7 +175,7 @@ sections:
       - Contact the team if you have questions about research or analysis
       - Developers with experience in data analysis, visualization, or application development may also contribute by building tools that work with M-Lab’s tests and datasets. All of these resources are open source and openly licensed.
 
-      ### Develop a Measurement Test
+      ## Develop a Measurement Test
 
       Researchers who are developing open-source Internet measurement tests can apply to host their tools on the M-Lab platform. If your project aligns with M-Lab’s technical standards, research goals, and open data principles, we welcome you to [contact us to discuss hosting your test.](hello@measurementlab.net)
 
@@ -192,7 +186,7 @@ sections:
 
       These resources explain the expectations, responsibilities, and technical requirements for researchers who want to run experiments on the M-Lab platform.
 
-      ### Integrate an M-Lab Test into Your Website or Application
+      ## Integrate an M-Lab Test into Your Website or Application
 
       M-Lab’s open-source measurement tests can be embedded into websites, mobile apps, and other software. Doing so allows your users to test their Internet connection while contributing data that helps researchers better understand global network performance.
 
@@ -205,7 +199,7 @@ sections:
 
       If you plan to integrate an M-Lab test into your product, please review  M-Lab’s ++[Privacy](https://www.measurementlab.net/privacy)++ and ++[Acceptable Use](https://www.measurementlab.net/aup)++ policies. Additional technical guidance is available in the ++[Developers Guide](https://www.measurementlab.net/develop)++ and ++[data documentation](https://www.measurementlab.net/data/docs)++.
 
-      ### Contribute to M-Lab Infrastructure
+      ## Become an Infrastructure Parnter
 
       Infrastructure partners donate/host servers, provide cloud resources, or otherwise support the operation of M-Lab’s global testing platform. 
 
