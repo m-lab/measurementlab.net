@@ -2,12 +2,13 @@ title: Projects
 permalink: projects
 status: published
 description: Learn about M-Lab flagship projects
+zigzag: primary-dark
 sections:
   - type: richText
     background:
-      color: white
+      color: primary-light
       type: full
-    withTOC: false
+    withTOC: true
     content: |+
       # Projects Overview and Impact 
 
