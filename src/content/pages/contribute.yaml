@@ -5,8 +5,9 @@ sections:
   - type: richText
     background:
       color: white
+      type: full
     withTOC: true
-    content: |
+    content: |-
       # Supporting or Contributing to M-Lab
 
       M-Lab welcomes the participation of individuals researchers and ISPs, as well as
@@ -27,8 +28,8 @@ sections:
 
       Please review these documents below before contacting us:
 
-      * [M-Lab Conceptual & Technical Scope & Related Policies](https://www.measurementlab.net/mlab-scope/)
-      * [M-Lab Experiment Developer Responsibilities, Requirements, and Guidelines](https://www.measurementlab.net/experimenter-requirements-guidelines/)
+      - [M-Lab Conceptual & Technical Scope & Related Policies](https://www.measurementlab.net/mlab-scope/)
+      - [M-Lab Experiment Developer Responsibilities, Requirements, and Guidelines](https://www.measurementlab.net/experimenter-requirements-guidelines/)
 
       ## Use an M-Lab Test in Your Website or Application
 
@@ -40,12 +41,10 @@ sections:
 
       If you are considering building an M-Lab test into your website or application,
       you should be familiar with M-Lab's
-      [Privacy](https://www.measurementlab.net/privacy) and [Acceptable
-      Use](https://www.measurementlab.net/aup) policies.
+      [Privacy](https://www.measurementlab.net/privacy) and [Acceptable Use](https://www.measurementlab.net/aup) policies.
 
       You can find out more information in our [Developers
-      Guide](https://www.measurementlab.net/develop) and [data
-      documentation](https://www.measurementlab.net/data/docs).
+      Guide](https://www.measurementlab.net/develop) and [data documentation](https://www.measurementlab.net/data/docs).
 
       ## Host or Sponsor an M-Lab Measurement Site
 
@@ -57,7 +56,7 @@ sections:
 
       All contributions are considered tax-deductible donations to Code for Science &
       Society, M-Lab's nonprofit fiscal sponsor. To learn more, contact us at
-      <hello@measurementlab.net>.
+      [hello@measurementlab.net](mailto:hello@measurementlab.net).
 
       ### Host-Managed Deployment
 
@@ -67,15 +66,15 @@ sections:
 
       To contribute servers:
 
-      * Review M-Lab's [Acceptable Use Policy](https://www.measurementlab.net/aup/),
-        [Privacy Policy](https://www.measurementlab.net/privacy/), and the technical
-        and operational requirements in the [host-managed documentation](https://www.measurementlab.net/contribute/host-managed/).
-      * Complete the [Infrastructure Contribution
-        Form](<https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFmN3cW6onvLsCxkd3UnECVd9Q/viewform?usp=dialog>).
-      * M-Lab will review the submission and contact applicants if approved.  Under some
-        circumstances we may suggest drafting a Memorandum of Understanding (MOU), for
-        example if you contribute more than 10 servers or are exceptional in some
-        other way.
+      - Review M-Lab's [Acceptable Use Policy](https://www.measurementlab.net/aup/),
+      [Privacy Policy](https://www.measurementlab.net/privacy/), and the technical
+      and operational requirements in the [host-managed documentation](https://www.measurementlab.net/contribute/host-managed/).
+      - Complete the [Infrastructure Contribution
+      Form](https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFmN3cW6onvLsCxkd3UnECVd9Q/viewform?usp=dialog).
+      - M-Lab will review the submission and contact applicants if approved.  Under some
+      circumstances we may suggest drafting a Memorandum of Understanding (MOU), for
+      example if you contribute more than 10 servers or are exceptional in some
+      other way.
 
       M-Lab will provide successful applicants with an API key and other information
       necessary to build and configure measurement servers.
@@ -120,33 +119,100 @@ sections:
 
       Please fill out our online [Infrastructure Contribution
       Form](https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFmN3cW6onvLsCxkd3UnECVd9Q/viewform?usp=dialog)
-      and feel free to reach out to <hello@measurementlab.net>.
+      and feel free to reach out to [hello@measurementlab.net](mailto:hello@measurementlab.net).
 
       ## **Analyze and Visualize M-Lab Data**
 
       M-Lab welcomes researchers who want to dig into the M-Lab data, providing
       documentation and best-effort email support. If you are interested in working
-      with M-Lab data in your research, please review our [data
-      documentation](https://www.measurementlab.net/data) to help get you started, and
-      contact us with any questions. We also suggest that you join our [public mailing
-      list](https://groups.google.com/a/measurementlab.net/forum/?fromgroups#!forum/discuss)
-      for news and announcements.  If you have experience in web or application
-      development, data analysis, or visualization, you may be interested in working
-      with M-Lab's tests, data, and analysis tools, all of which are open source and
-      openly licensed.
+      with M-Lab data in your research, please review our [data](https://www.measurementlab.net/data)  
+      [documentation](https://www.measurementlab.net/data) to help get you started, and contact us with any questions. We also suggest that you join our [public mailing list](https://groups.google.com/a/measurementlab.net/forum/?fromgroups#!forum/discuss) for news and announcements.  If you have experience in web or application development, data analysis, or visualization, you may be interested in working  
+      with M-Lab's tests, data, and analysis tools, all of which are open source and openly licensed.
 
-      * [M-Lab's conceptual and technical scope and policies](https://www.measurementlab.net/publications/mlab-founding-vision.pdf)
-      * [M-Lab's Roles & Responsibilities for new researchers](https://www.measurementlab.net/publications/mlab-roles-responsibilities.pdf)
-      * [M-Lab's requirements and procedures for accepting new tools](https://www.measurementlab.net/publications/mlab-procedures-new-tools.pdf)
+      - [M-Lab's conceptual and technical scope and policies](https://www.measurementlab.net/publications/mlab-founding-vision.pdf)
+      - [M-Lab's Roles & Responsibilities for new researchers](https://www.measurementlab.net/publications/mlab-roles-responsibilities.pdf)
+      - [M-Lab's requirements and procedures for accepting new tools](https://www.measurementlab.net/publications/mlab-procedures-new-tools.pdf)
 
       ## **Donate to M-Lab**
 
-      M-Lab welcomes the direct financial contributions of organizations that find our
-      work beneficial. If your organization is interested in supporting the M-Lab
-      platform, please review our [sponsorship
-      offerings](https://www.measurementlab.net/documents/mlab-sponsorship.pdf) and
+      M-Lab welcomes the direct financial contributions of organizations that find our  
+      work beneficial. If your organization is interested in supporting the M-Lab  
+      platform, please review our [sponsorship offerings](https://www.measurementlab.net/documents/mlab-sponsorship.pdf) and  
       contact us.
 
       ## Github Sponsorship
 
       You can support us through [GitHub Sponsors](https://github.com/sponsors/m-lab). Every contribution helps!
+  - type: richText
+    background:
+      color: primary-light
+      type: full
+    withTOC: false
+    content: |+
+      M-Lab sits at the center of a global ecosystem of organizations working to measure, understand, and improve Internet connectivity. Through open infrastructure, open-source measurement tools, and publicly available datasets, the platform connects researchers, technology partners, policymakers, and users around the world. The ecosystem works because many different partners contribute in different ways.
+
+      ### Types of Contributors to M-Lab
+
+      - Researchers
+      - Developers 
+      - Integrators 
+      - Infrastructure Partners 
+
+        
+
+
+      Note that all M-Lab usage and contributions are subject to M-Lab’s ++[Acceptable Use Policy](https://www.measurementlab.net/aup/)++ and ++[Privacy Policy](https://www.measurementlab.net/privacy/)++. 
+
+      ### Research, Analyze and Visualize M-Lab Data
+
+      M-Lab publishes open datasets on Internet performance, which researchers, analysts, and developers can use to study connectivity, infrastructure, and network behavior. We encourage researchers and practitioners to explore and build with this data. 
+
+        
+
+
+      M-Lab provides documentation and best-effort support to help people get started.
+
+        
+
+
+      To work with M-Lab data:
+
+      - Review the data documentation
+      - Join the public mailing list for updates and announcements
+      - Contact the team if you have questions about research or analysis
+      - Developers with experience in data analysis, visualization, or application development may also contribute by building tools that work with M-Lab’s tests and datasets. All of these resources are open source and openly licensed.
+
+      ### Develop a Measurement Test
+
+      Researchers who are developing open-source Internet measurement tests can apply to host their tools on the M-Lab platform. If your project aligns with M-Lab’s technical standards, research goals, and open data principles, we welcome you to [contact us to discuss hosting your test.](hello@measurementlab.net)
+
+      Before reaching out, please review the following documentation:
+
+      - ++[M-Lab Conceptual & Technical Scope and Related Policies](https://www.measurementlab.net/mlab-scope/)++
+      - ++[Experiment Developer Responsibilities, Requirements, and Guidelines](https://www.measurementlab.net/experimenter-requirements-guidelines/)++
+
+      These resources explain the expectations, responsibilities, and technical requirements for researchers who want to run experiments on the M-Lab platform.
+
+      ### Integrate an M-Lab Test into Your Website or Application
+
+      M-Lab’s open-source measurement tests can be embedded into websites, mobile apps, and other software. Doing so allows your users to test their Internet connection while contributing data that helps researchers better understand global network performance.
+
+      One widely used example is the Network Diagnostic Tool (NDT), which has been integrated into platforms including:
+
+      - Google Search
+      - SpeedUp America
+      - Fing
+      - and other third-party applications
+
+      If you plan to integrate an M-Lab test into your product, please review  M-Lab’s ++[Privacy](https://www.measurementlab.net/privacy)++ and ++[Acceptable Use](https://www.measurementlab.net/aup)++ policies. Additional technical guidance is available in the ++[Developers Guide](https://www.measurementlab.net/develop)++ and ++[data documentation](https://www.measurementlab.net/data/docs)++.
+
+        
+
+
+      ### Contribute to M-Lab Infrastructure 
+
+      Infrastructure partners donate/host servers, provide cloud resources, or otherwise support the operation of M-Lab’s global testing platform. There are many ways to get involved with the platform, so please reach out if you’re interested.
+
+      If you want to join the M-Lab platform and manage your own server, find out more about the Bring Your Own Server project.  
+
+        
