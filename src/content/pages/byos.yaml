@@ -5,7 +5,7 @@ zigzag: primary-dark
 sections:
   - type: richText
     background:
-      color: primary-dark
+      color: primary-medium
       type: full
     withTOC: true
     content: >-
