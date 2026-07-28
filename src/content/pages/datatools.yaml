@@ -51,7 +51,7 @@ sections:
 
       ### Archived Tools
 
-      ++[I3 Connectivity Explorer](https://i3cex.internet-is-infrastructure.org/)++ -  Part of the Internet as Infrastructure Project, this platform combines M-Lab data with datasets from U.S. agencies, including the FCC, Census Bureau, EPA, and USDA. It provides maps and visualizations of connectivity across regions, including towns, counties, tribal areas, and school districts.
+      [I3 Connectivity Explorer](https://i3cex.internet-is-infrastructure.org/) -  Part of the Internet as Infrastructure Project, this platform combines M-Lab data with datasets from U.S. agencies, including the FCC, Census Bureau, EPA, and USDA. It provides maps and visualizations of connectivity across regions, including towns, counties, tribal areas, and school districts.
 
       ## Products and Applications Using M-Lab
 
@@ -59,19 +59,19 @@ sections:
 
       Examples include:
 
-      - AirBnB
+      AirBnB
 
       ![](/src/assets/images/tools/airbnb.webp)
 
-      - Domotz
+      Domotz
 
       ![](/src/assets/images/tools/Domotz.webp)
 
-      - Cox
+      Cox
 
       ![](/src/assets/images/tools/Cox.webp)
 
-      - Fing
+      Fing
 
       ![](/src/assets/images/tools/Fing.webp)
 
