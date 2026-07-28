@@ -29,7 +29,7 @@ sections:
 
       ### Active Tools
 
-      [Cellwatch](https://cellwatch.cc.gatech.edu/) mobile application - An open-source cellular network measurement suite created by researchers and developers at Georgia Tech, UC Santa Barbara, and Michigan State. 
+      <p style="text-align:center;">[Cellwatch](https://cellwatch.cc.gatech.edu/) mobile application - An open-source cellular network measurement suite created by researchers and developers at Georgia Tech, UC Santa Barbara, and Michigan State.</p>
 
       ![](/src/assets/images/tools/CellWatch.webp)
 
