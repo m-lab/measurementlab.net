@@ -2,6 +2,12 @@ title: Open Measurement Gatherings OMG
 permalink: omg
 status: published
 sections:
+  - type: partners
+    background:
+      color: white
+      type: full
+    title: OMG Groups
+    category: OMG Partners
   - type: richText
     background:
       color: white
@@ -70,8 +76,6 @@ sections:
       | **OMG 3 Video Recordings** | youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v |
 
 
-
-
       Related Blog Posts 
 
       ++[https://www.measurementlab.net/blog/open-measurement-gathering-1/](https://www.measurementlab.net/blog/open-measurement-gathering-1/)++
@@ -84,12 +88,6 @@ sections:
 
       Keep reading if you’d like to review each convening summary! 
 
-  - type: partners
-    background:
-      color: white
-      type: full
-    title: OMG Groups
-    category: OMG Partners
   - type: richText
     background:
       color: white
@@ -224,3 +222,24 @@ sections:
     posts:
       - open-measurement-gathering-1-public-report
       - omg3
+  - type: card
+    background:
+      color: primary-light
+      type: full
+    title: Resources
+    cards:
+      - title: "OMG User Guide "
+        color: secondary
+        icon: community
+        button:
+          variant: primary
+          size: md
+          text: OMG User Guide
+          href: /measurementlab.net/publications/OMG4_User_Guide.pdf
+      - title: "OMG 3 AMA Playlist "
+        color: primary
+        button:
+          variant: primary
+          size: md
+          text: OMG 3 AMA Playlist
+          href: youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v
