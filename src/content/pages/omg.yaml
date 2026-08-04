@@ -42,7 +42,7 @@ sections:
       OMG 2 December 10-12, 2024 at Georgia Tech (Atlanta)  
       Deepened understanding; identified shared challenges around funding, infrastructure & Theory of Change
 
-      OMG 3 June 25, 2025 a [Public Virtual AMA Event](https://www.youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v)  
+      OMG 3 June 25, 2025 a Public Virtual AMA Event  
       Public-facing event; each group presented updates & took live Q&A (~60 attendees worldwide)
 
       OMG 4 Sept 8–12, 2025 at Estoril, Portugal  
@@ -235,7 +235,7 @@ sections:
           variant: primary
           size: md
           text: OMG User Guide
-          href: /measurementlab.net/publications/OMG4_User_Guide.pdf
+          href: https://www.measurementlab.net/documents/OMG1_PublicReport.pdf
       - title: "OMG 3 AMA Playlist "
         color: primary
         icon: insights
@@ -243,4 +243,4 @@ sections:
           variant: primary
           size: md
           text: OMG 3 AMA Playlist
-          href: /youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v
+          href: youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v
