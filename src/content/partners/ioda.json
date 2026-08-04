@@ -3,5 +3,6 @@
   "name": "IODA ",
   "status": "published",
   "url": "https://ioda.inetintel.cc.gatech.edu/dashboard",
-  "category": "OMG Partners"
+  "category": "OMG Partners",
+  "image": "/src/assets/ioda-logo.svg"
 }
