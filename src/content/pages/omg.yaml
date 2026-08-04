@@ -189,18 +189,11 @@ sections:
       type: full
     title: OMG Groups
     category: OMG Partners
-  - type: blog_roll
+  - type: related_posts
     background:
-      color: white
+      color: primary-dark
       type: full
-    title: Latest News
-    limit: 3
-    showMore: false
-  - type: blog_roll
-    background:
-      color: white
-      type: full
-    title: Latest News
-    description: "#omg"
-    limit: 3
-    showMore: false
+    title: Related Posts
+    posts:
+      - open-measurement-gathering-1-public-report
+      - omg3
