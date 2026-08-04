@@ -6,7 +6,7 @@ sections:
     background:
       color: white
       type: full
-    withTOC: false
+    withTOC: true
     content: |+
       # **What Is the Open Measurement Gathering?**
 
@@ -14,17 +14,15 @@ sections:
 
        The program ran from 2024 to 2025 and funded by the Open Technology Fund (OTF). OMG’s overarching goal was to help open Internet measurement groups support the Internet freedom community more sustainably and efficiently by understanding each other's tools and data better, and by tackling shared challenges together.
 
-
-
       **The four participating organizations:**
 
       •       Measurement Lab (M-Lab) — measures Internet performance globally
 
-      •       Censored Planet — monitors Internet censorship using remote measurement techniques
+      •       [Censored Planet](https://censoredplanet.org/) — monitors Internet censorship using remote measurement techniques
 
-      •       IODA — detects Internet outages and disruptions in near real-time
+      •       [IODA](https://ioda.inetintel.cc.gatech.edu/) — detects Internet outages and disruptions in near real-time
 
-      •       OONI — documents Internet censorship through a global network of probes
+      •       [OONI](https://ooni.org/) — documents Internet censorship through a global network of probes
 
 
 
@@ -32,23 +30,17 @@ sections:
 
       The OMG project unfolded across four gatherings between June 2024 and September 2025, each building on the last:
 
-      OMG 1  June 11th-13th, 2024   
-      Georgia Tech (Atlanta)  
+      OMG 1  June 11th-13th, 2024 at Georgia Tech (Atlanta)  
       Kick-off; groups introduced, tools & data shared, common challenges surfaced
 
-      OMG 2 December 10-12, 2024  
-      Georgia Tech (Atlanta)  
+      OMG 2 December 10-12, 2024 at Georgia Tech (Atlanta)  
       Deepened understanding; identified shared challenges around funding, infrastructure & Theory of Change
 
-      OMG 3 June 25, 2025  
-      Public Virtual AMA Event  
+      OMG 3 June 25, 2025 a [Public Virtual AMA Event](https://www.youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v)  
       Public-facing event; each group presented updates & took live Q&A (~60 attendees worldwide)
 
-      OMG 4 Sept 8–12, 2025  
-      Estoril, Portugal  
+      OMG 4 Sept 8–12, 2025 at Estoril, Portugal  
       Final convening; Open Measurement Village at Global Gathering; produced OMG User Guide
-
-
 
       # **OMG 1 — First Convening (June 2024)**
 
@@ -130,8 +122,6 @@ sections:
       ## **Open Measurement Village (Sept 8–10)**
 
       Before the formal OMG convening, the groups co-hosted an Open Measurement Village at the Global Gathering (GG) — a major gathering of the digital rights community. At the Village, OMG groups ran booths, facilitated circle discussions, and hosted an interactive game called 'Are You My Measurement Tool?' to help attendees understand the differences and complementary uses of each group's tools and datasets.
-
-
 
       A key insight from this community engagement: balancing innovation in Internet measurement with accessibility for non-technical users remains a central challenge. Open measurement tools must keep pace with increasingly sophisticated Internet interference while also remaining understandable to the civil society organizations that need them most.
 
