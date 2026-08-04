@@ -61,21 +61,6 @@ sections:
 
        The OMG program recognized that the challenges facing open Internet measurement — from funding uncertainty to infrastructure pressure to government interference — cannot be solved by any single group alone. By building trust and coordination across organizations, the OMG project has strengthened the ecosystem's collective capacity to defend a free and open Internet.
 
-
-
-      # **Reports & Resources**
-
-
-      |  |  |
-      | -------------------------- | ------------------------------------------------------------ |
-      | **OMG 1 Public Report** | measurementlab.net/documents/OMG1_PublicReport.pdf |
-      | **OMG 2 Public Report** | measurementlab.net/documents/OMG2_PublicReport.pdf |
-      | **OMG 3 Public Report** | measurementlab.net/publications/OMG3_report_July2025.pdf |
-      | **OMG 4 Final Report** | measurementlab.net/publications/OMG4_final_report.pdf |
-      | **OMG User Guide** | measurementlab.net/publications/OMG4_User_Guide.pdf |
-      | **OMG 3 Video Recordings** | youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v |
-
-
       Related Blog Posts 
 
       ++[https://www.measurementlab.net/blog/open-measurement-gathering-1/](https://www.measurementlab.net/blog/open-measurement-gathering-1/)++
@@ -86,8 +71,62 @@ sections:
 
       ++[https://www.measurementlab.net/blog/open-measurement-gathering-2/](https://www.measurementlab.net/blog/open-measurement-gathering-2/)++ 
 
-      Keep reading if you’d like to review each convening summary! 
+      Keep reading if you’d like to review each report or summaries! 
 
+  - type: card
+    background:
+      color: primary-light
+      type: full
+    title: Resources
+    cards:
+      - title: "OMG User Guide "
+        color: supporting1
+        icon: community
+        button:
+          variant: primary
+          size: sm
+          text: OMG User Guide
+          href: https://www.measurementlab.net/publications/OMG4_User_Guide.pdf
+      - title: OMg 4 Report
+        color: secondary
+        icon: community
+        button:
+          variant: primary
+          size: sm
+          text: OMG 4 Report
+          href: https://www.measurementlab.net/publications/OMG4_final_report.pdf
+      - title: "OMG 3 Report "
+        color: secondary
+        icon: community
+        button:
+          variant: primary
+          size: md
+          text: OMG 3 Report
+          href: https://www.measurementlab.net/publications/OMG3_report_July2025.pdf
+      - title: "OMG 3 AMA Playlist "
+        color: primary
+        icon: insights
+        button:
+          variant: primary
+          size: sm
+          text: OMG 3 AMA Playlist
+          href: https://www.youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v
+      - title: "OMG 2 Report "
+        color: secondary
+        icon: community
+        button:
+          variant: primary
+          size: sm
+          text: "OMG 2 Public report "
+          href: https://www.measurementlab.net/documents/OMG2_PublicReport.pdf
+      - title: "OMG 1 Public Report "
+        color: secondary
+        icon: community
+        button:
+          variant: primary
+          size: sm
+          text: "OMG 1 Report "
+          href: https://www.measurementlab.net/documents/OMG1_PublicReport.pdf
   - type: richText
     background:
       color: white
@@ -222,57 +261,3 @@ sections:
     posts:
       - open-measurement-gathering-1-public-report
       - omg3
-  - type: card
-    background:
-      color: primary-light
-      type: full
-    title: Resources
-    cards:
-      - title: "OMG User Guide "
-        color: supporting1
-        icon: community
-        button:
-          variant: primary
-          size: sm
-          text: OMG User Guide
-          href: https://www.measurementlab.net/publications/OMG4_User_Guide.pdf
-      - title: OMg 4 Report
-        color: secondary
-        icon: community
-        button:
-          variant: primary
-          size: sm
-          text: OMG 4 Report
-          href: https://www.measurementlab.net/publications/OMG4_final_report.pdf
-      - title: "OMG 3 Report "
-        color: secondary
-        icon: community
-        button:
-          variant: primary
-          size: md
-          text: OMG 3 Report
-          href: https://www.measurementlab.net/publications/OMG3_report_July2025.pdf
-      - title: "OMG 3 AMA Playlist "
-        color: primary
-        icon: insights
-        button:
-          variant: primary
-          size: sm
-          text: OMG 3 AMA Playlist
-          href: https://www.youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v
-      - title: "OMG 2 Report "
-        color: secondary
-        icon: community
-        button:
-          variant: primary
-          size: sm
-          text: "OMG 2 Public report "
-          href: https://www.measurementlab.net/documents/OMG2_PublicReport.pdf
-      - title: "OMG 1 Public Report "
-        color: secondary
-        icon: community
-        button:
-          variant: primary
-          size: sm
-          text: "OMG 1 Report "
-          href: https://www.measurementlab.net/documents/OMG1_PublicReport.pdf
