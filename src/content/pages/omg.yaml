@@ -42,134 +42,6 @@ sections:
       OMG 4 Sept 8–12, 2025 at Estoril, Portugal  
       Final convening; Open Measurement Village at Global Gathering; produced OMG User Guide
 
-      # **OMG 1 — First Convening (June 2024)**
-
-      The first gathering launched the OMG project, giving each organization the opportunity to introduce itself and share details about its platforms, tools, and data. The primary goal was to build a shared foundation of understanding across groups that had previously operated mostly in parallel.
-
-      Key outcomes from OMG 1 included groups learning the specifics of each other's measurement approaches, identifying overlapping use cases, and beginning to surface common operational challenges. The full public report from this event is available on the M-Lab website.
-
-
-
-      **1. Shared Challenges**
-
-      Across all three days, participants identified challenges that cut across all four organizations:
-
-      - Common dependencies — All groups rely on similar infrastructure (cloud provider credits, donated servers) and third-party datasets. These dependencies are vulnerable to shifts outside any group's control.
-      - Blind spots — Each group is aware of Internet behaviors they do not currently measure. There is an ongoing tension between measuring what is currently relevant and maintaining longitudinal consistency. The groups agreed that being transparent about blind spots matters not just for their own work, but for their users.
-      - Communications and rapid response burden — Censorship measurement requires deep technical and sociopolitical expertise, yet making that work accessible to journalists and advocates is core to the mission. This balance demands significant time and labor, especially during live censorship events when community members also frequently ask groups to validate their own conclusions.
-
-       **2. Existing Complementary Efforts Worth Sustaining**
-
-      - Much of what the groups already do supports one another. Participants identified several collaborative patterns to preserve and scale:
-      - Rapid response coordination — OONI, IODA, and Cloudflare Radar already coordinate regularly during network interference events, often working alongside Access Now's #KeepItOn coalition and Kentik. These partnerships keep groups in close contact and build familiarity with each other's tools.
-      - Documenting censorship events — Groups frequently collaborate on post-event documentation, enabling deeper data analysis than rapid response allows. Participants expressed pride in these efforts and a desire for more resources to pursue them.
-      - Complementary datasets — Because each group uses different measurement techniques, they can cross-verify findings.
-
-        
-
-      **4. Opportunities for Deeper Collaboration**
-
-      - Shared measurement expertise — The 101 presentations and data dives were identified as the most valuable parts of the convening. The goal going forward is for each group to become a genuine champion and expert in the others' tools — able to direct researchers to the right dataset for any given question, and to collaboratively report on network interference events.
-      - Shared resources — Given overlapping infrastructure needs (cloud credits, bare metal servers, data analysis support, fundraising), there is interest in exploring what a more integrated approach to resource sharing could look like.
-      - Shared Theory of Change — All groups face strategic decisions about where their data has the most impact: academic research, legal proceedings, journalism, or policy. Aligning on a common vision for how to engage with these different pathways could amplify collective reach and give shared purpose to the work.
-
-         
-
-      # **OMG 2 — Second Convening (December 2024)**
-
-      The second gathering took place over three days at Georgia Tech's Internet Intelligence Lab in Atlanta, hosted in collaboration with the IODA project. Rather than re-introductions, this convening focused on deepening mutual knowledge so participants could become genuine advocates for one another's work.
-
-       Four key themes emerged as priority areas for collaboration:
-
-       **1. Uncertainty about the funding landscape**
-
-      Shifts in political leadership globally put historic funding sources at risk for each group. Participants recognized the need to identify alternative revenue streams and adapt to changing donor mandates.
-
-       **2. Evolving infrastructural constraints**
-
-      Internet measurement datasets are growing rapidly, requiring more resources to maintain and keep publicly accessible. Emerging technologies like AI place further pressure on finite infrastructure. Groups discussed what data to prioritize making available publicly and how to manage archival storage.
-
-       **3. Infrastructure resilience**
-
-      Each organization faces distinct but related risks: DDoS attacks, government-ordered blocks, software dependency failures, understaffing, and potential data loss. Sharing these challenges highlighted opportunities for mutual support and joint resilience-building.
-
-       **4. Theory of Change for an open Internet**
-
-      All four groups agreed on a shared vision: a free, open, transparent, accountable, resilient, and equitable Internet. A SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis helped identify entry points for collective action. The groups committed to refining a shared Theory of Change in future convenings.
-
-
-
-      # **OMG 3 — Public AMA Event (June 25, 2025)**
-
-      The third OMG convening took a different form: a public virtual event open to the broader Internet freedom community. Each of the four groups presented for 30 minutes on their platforms, recent tool updates, and future plans, followed by a live Q&A session.
-
-      This shift toward a public format allowed the OMG groups to share previews of upcoming changes directly with the community and gather real-time feedback before those changes went live. At its peak, around 60 participants joined from across the world.
-
-      The event was aimed especially at advocacy organizations, digital rights researchers, anti-censorship tool developers, journalists, lawyers, activists, policymakers, and funders. A full report with presentation summaries and key community questions is available on the M-Lab publications page, and recordings of all four sessions are publicly available on YouTube.
-
-       **Presentations & recordings available for:**
-
-      - **[Full OMG AMA Playlist](https://www.youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v)**
-      - **Censored Planet** [Slides](https://docs.google.com/presentation/d/18DOCyU4yRpxMhdsGDoDe9udGuiMgxxQeHZs8C5vo600/edit?usp=drive_link) and [Recording](https://youtu.be/5MqsYkBDXYk?feature=shared)
-      - **Measurement Lab** [Slides](https://docs.google.com/presentation/d/1U_BnDTpAnXsNS4DMObi3aiGDKVWZH__xc7KSMqlli6A/edit?usp=sharing) and [Recording](https://youtu.be/tBBpW497kME?feature=shared)
-      - **OONI** [Slides](https://drive.google.com/file/d/1Xnyga1QNQQis_INsAK2Ky2puMuZBrreL/view?usp=drive_link) and [Recording](https://youtu.be/WuPu3T2Vrqk?feature=shared)
-      - **IODA** [Slides](https://docs.google.com/presentation/d/1Q5ia6f4a3mzcprfpiCyd8Gmgthu0qrtd/edit?usp=sharing&ouid=110513362222638557784&rtpof=true&sd=true) and [Recording](https://youtu.be/BSV9gktaDjs?feature=shared)
-
-
-
-      # **OMG 4 — Fourth Convening (September 8–12, 2025, Estoril, Portugal)**
-
-      ## **Open Measurement Village (Sept 8–10)**
-
-      Before the formal OMG convening, the groups co-hosted an Open Measurement Village at the Global Gathering (GG) — a major gathering of the digital rights community. At the Village, OMG groups ran booths, facilitated circle discussions, and hosted an interactive game called 'Are You My Measurement Tool?' to help attendees understand the differences and complementary uses of each group's tools and datasets.
-
-      A key insight from this community engagement: balancing innovation in Internet measurement with accessibility for non-technical users remains a central challenge. Open measurement tools must keep pace with increasingly sophisticated Internet interference while also remaining understandable to the civil society organizations that need them most.
-
-      ## **New OMG User Guide**
-
-      In direct response to feedback gathered at the Global Gathering, the four OMG groups collaborated on a new public resource: the OMG User Guide. This guide is designed to help users and organizations determine which measurement tool is best suited to their needs, and how to compare or combine data across the four groups.
-
-
-
-      ## **OMG 4 Internal Sessions (Sept 11–12) — Key Takeaways**
-
-      After the Global Gathering, the OMG groups held two days of internal sessions. Three overarching themes ran through the entire convening: that the groups face shared challenges, that meeting those challenges requires more coordination, and that the work can only continue if the organizations become more sustainable.
-
-      **Theme 1: Shared Challenges**
-
-      The biggest shared challenge was that every group is trying to achieve a large mission with limited resources. Common operational pressures included:
-
-      - Remote, globally distributed teams across many time zones, making it hard to stay connected and collaborate effectively day-to-day.
-      - Chronic understaffing — all groups have too much work and not enough people, with most staff multi-tasking and taking on responsibilities outside their core expertise.
-      - Fundraising and donor management consume significant time, sometimes from staff who are not specialists in that area. Most staff are contractors with limited stability, and most groups lack operational teams to handle finance, HR, or organizational well-being.
-      - Unpredictable workflows and high-pressure missions create burnout risk. Most teams have single points of failure — if one person is out, key projects stall.
-      - Keeping up with maintenance and troubleshooting often means postponing development of new features.
-      - Managing user communities with varied levels of technical expertise and different — sometimes conflicting — needs and threat models.
-
-      The groups agreed they need to narrow their scope, focus on what matters most, and explicitly include maintenance and operational costs in their budgets rather than treating them as invisible overhead.
-
-
-
-      **Theme 2: Increase Coordination**
-
-      The groups outlined both immediate and longer-term plans for working more closely together:
-
-      - Short term: create cross-organization communication channels, establish thematic working groups (e.g. research, operations), hold regular joint virtual meetings, and build a centralized hub for sharing knowledge resources with the open measurement community. An initial help channel has already been set up on the public OONI Slack.
-      - Long term: host OMG events alongside major conferences, conduct joint research studies, develop complementary datasets, pool resources, build the capacity of global digital rights researchers, and create a more detailed shared tool to help people navigate across the different measurement platforms.
-      - Groups also identified specific coordination improvements for censorship monitoring and rapid response — including leveraging existing coalitions like #KeepItOn, sharing internal data dashboards with trusted partners, and training communities in regions with low measurement coverage to be ready to mobilize during Internet disruptions.
-
-
-
-      **Theme 3: Sustainability**
-
-      The groups reviewed the current funding landscape, noting a significant loss of U.S. government funding for Internet freedom initiatives with no single equivalent replacement in sight. Despite much lower resources, open measurement is more important than ever. Key sustainability priorities identified:
-
-      - Focus on demonstrable impact rather than discrete activities — connect open measurement work to broader trends in policy and technology to maintain donor and public interest.
-      - Data is both a strength and a vulnerability. Each group holds large amounts of complementary data. Combined, the OMG groups could offer a uniquely comprehensive open data resource representing the Internet as a whole — but the cost to host and publish data will only increase.
-      - AI was characterized as both a threat (further straining limited infrastructure and resources) and an opportunity (potentially unlocking new analytical capabilities and partnerships).
-      - Shrinking civic space and strained teams threaten the capacity to report on censorship events. Organizational resilience must improve so that the collapse of one institution or donor does not destabilize the entire open measurement ecosystem.
-      - Groups should become more proactive in fundraising and more resilient by diversifying funding sources and sharing partnerships and networks across organizations.
-
       # **Overall Impact of the OMG Program**
 
       Across the four convenings, the OMG program achieved something significant: it moved four organizations from working in parallel to working in coordination. The practical outcomes include:
@@ -182,6 +54,36 @@ sections:
       - A foundation for ongoing coordination even after the formal funding period ends
 
        The OMG program recognized that the challenges facing open Internet measurement — from funding uncertainty to infrastructure pressure to government interference — cannot be solved by any single group alone. By building trust and coordination across organizations, the OMG project has strengthened the ecosystem's collective capacity to defend a free and open Internet.
+
+
+
+      # **Reports & Resources**
+
+
+      |  |  |
+      | -------------------------- | ------------------------------------------------------------ |
+      | **OMG 1 Public Report** | measurementlab.net/documents/OMG1_PublicReport.pdf |
+      | **OMG 2 Public Report** | measurementlab.net/documents/OMG2_PublicReport.pdf |
+      | **OMG 3 Public Report** | measurementlab.net/publications/OMG3_report_July2025.pdf |
+      | **OMG 4 Final Report** | measurementlab.net/publications/OMG4_final_report.pdf |
+      | **OMG User Guide** | measurementlab.net/publications/OMG4_User_Guide.pdf |
+      | **OMG 3 Video Recordings** | youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v |
+
+
+       
+
+      Blog posts 
+
+      ++[https://www.measurementlab.net/blog/open-measurement-gathering-1/](https://www.measurementlab.net/blog/open-measurement-gathering-1/)++
+
+      ++[https://www.measurementlab.net/blog/omg3/](https://www.measurementlab.net/blog/omg3/)++
+
+      ++[https://www.measurementlab.net/blog/omg4/](https://www.measurementlab.net/blog/omg4/)++ 
+
+      ++[https://www.measurementlab.net/blog/open-measurement-gathering-2/](https://www.measurementlab.net/blog/open-measurement-gathering-2/)++ 
+
+        
+      Keep reading if you’d like to review each convening summary! 
 
   - type: partners
     background:
