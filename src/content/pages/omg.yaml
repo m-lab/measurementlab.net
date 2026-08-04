@@ -84,16 +84,16 @@ sections:
         icon: community
         button:
           variant: primary
-          size: sm
-          text: OMG User Guide
+          size: md
+          text: Get the OMG User Guide
           href: https://www.measurementlab.net/publications/OMG4_User_Guide.pdf
-      - title: OMg 4 Report
+      - title: OMG 4 Report
         color: secondary
         icon: community
         button:
           variant: primary
-          size: sm
-          text: OMG 4 Report
+          size: md
+          text: The Full OMG 4 Report
           href: https://www.measurementlab.net/publications/OMG4_final_report.pdf
       - title: "OMG 3 Report "
         color: secondary
@@ -101,15 +101,15 @@ sections:
         button:
           variant: primary
           size: md
-          text: OMG 3 Report
+          text: The Full OMG 3 Report
           href: https://www.measurementlab.net/publications/OMG3_report_July2025.pdf
       - title: "OMG 3 AMA Playlist "
         color: primary
         icon: insights
         button:
           variant: primary
-          size: sm
-          text: OMG 3 AMA Playlist
+          size: md
+          text: Watch the OMG 3 AMA Playlist
           href: https://www.youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v
       - title: "OMG 2 Report "
         color: secondary
@@ -117,15 +117,15 @@ sections:
         button:
           variant: primary
           size: sm
-          text: "OMG 2 Public report "
+          text: "The Full OMG 2 Report "
           href: https://www.measurementlab.net/documents/OMG2_PublicReport.pdf
       - title: "OMG 1 Public Report "
         color: secondary
         icon: community
         button:
           variant: primary
-          size: sm
-          text: "OMG 1 Report "
+          size: md
+          text: "The Full OMG 1 Report "
           href: https://www.measurementlab.net/documents/OMG1_PublicReport.pdf
   - type: richText
     background:
