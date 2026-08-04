@@ -229,13 +229,13 @@ sections:
     title: Resources
     cards:
       - title: "OMG User Guide "
-        color: secondary
+        color: supporting1
         icon: community
         button:
           variant: primary
           size: md
           text: OMG User Guide
-          href: https://www.measurementlab.net/documents/OMG1_PublicReport.pdf
+          href: https://www.measurementlab.net/publications/OMG4_User_Guide.pdf
       - title: "OMG 3 AMA Playlist "
         color: primary
         icon: insights
