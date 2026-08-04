@@ -236,6 +236,14 @@ sections:
           size: md
           text: OMG User Guide
           href: https://www.measurementlab.net/publications/OMG4_User_Guide.pdf
+      - title: "OMG 1 Public Report "
+        color: secondary
+        icon: community
+        button:
+          variant: primary
+          size: md
+          text: "OMG 1 Report "
+          href: https://www.measurementlab.net/documents/OMG1_PublicReport.pdf
       - title: "OMG 3 AMA Playlist "
         color: primary
         icon: insights
@@ -244,7 +252,7 @@ sections:
           size: md
           text: OMG 3 AMA Playlist
           href: https://www.youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v
-      - title: "OMG 2 Public Report "
+      - title: "OMG 2 Report "
         color: secondary
         icon: community
         button:
