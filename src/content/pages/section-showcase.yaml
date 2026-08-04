@@ -464,7 +464,7 @@ sections:
       The related_posts section uses the same card layout as blog_roll, but you choose
       the posts yourself instead of pulling the latest ones. Pick up to 3 posts in the
       CMS; they appear in the order you select them. Posts that are drafts or archived
-      are skipped automatically.
+      are skipped automatically. The description is optional.
     posts:
       - 2022-mlab-to-the-cloud
       - 2022-extracting-single-traceroute

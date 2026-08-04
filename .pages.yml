@@ -512,6 +512,8 @@ components:
       - name: description
         label: Description
         type: rich-text
+        required: false
+        description: Optional description displayed below the title
       - name: posts
         label: Posts
         type: reference
