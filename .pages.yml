@@ -856,11 +856,94 @@ content:
         required: true
         options:
           multiple: true
-          fetch:
-            url: https://mlab.draftlab.dev/api/categories.json
-            results: blog.categories
-            value: '{name}'
-            label: '{name}'
+          # pages-cms:category-sync start blog
+          values:
+            - Accuracy
+            - Advocacy
+            - Aim
+            - Analysis
+            - Annotations
+            - Announcement
+            - Annual Review
+            - BBR
+            - Bigquery
+            - Broadband
+            - Bufferbloat
+            - Bug
+            - Censorship Measurement
+            - Cloud
+            - Cloudflare
+            - Community
+            - Consumer Internet
+            - Contribution
+            - Covid19
+            - Data
+            - Data Analysis
+            - DataViz
+            - Developer
+            - Digital Inclusion
+            - Event
+            - Experiment Review Committee
+            - Features
+            - Fellowship
+            - GCS
+            - GDPR
+            - GIS
+            - Governance
+            - GSOC
+            - Guest
+            - Hackathon
+            - IGF
+            - Infrastructure
+            - Interconnection
+            - Internet Quality
+            - Kernel
+            - Latency
+            - Leadership
+            - Learning
+            - Mapping
+            - Microbursts
+            - NDT
+            - NDT Server
+            - Ndt5
+            - NDT7
+            - Neubot
+            - Observatory
+            - Ookla
+            - Open Source
+            - Paris Traceroute
+            - Partnership
+            - Performance
+            - Pipeline
+            - Platform
+            - Policies
+            - Policy
+            - Privacy
+            - Publication
+            - Publications
+            - Research
+            - Responsiveness
+            - RIPE
+            - Roadmap
+            - Schema
+            - Speed
+            - Statistics
+            - Survey
+            - Switch Discard
+            - TCP
+            - TCP_INFO
+            - ToS
+            - Traceroute
+            - Traffic Congestion
+            - Transparency
+            - Tutorial
+            - Upgrades
+            - Versioning
+            - Virtualization
+            - Visualization
+            - Web100
+            - Wehe
+          # pages-cms:category-sync end
       - name: body
         label: Body
         type: rich-text
@@ -934,11 +1017,14 @@ content:
         required: true
         options:
           multiple: true
-          fetch:
-            url: https://mlab.draftlab.dev/api/categories.json
-            results: people.categories
-            value: '{name}'
-            label: '{name}'
+          # pages-cms:category-sync start people
+          values:
+            - Maintainers
+            - Experiment Review Committee
+            - Advisory Committee
+            - M-Lab Founders
+            - Alumni
+          # pages-cms:category-sync end
 
   # --------------------------------------------------------------------------
   # Partners
@@ -991,11 +1077,13 @@ content:
         required: true
         options:
           multiple: false
-          fetch:
-            url: https://mlab.draftlab.dev/api/categories.json
-            results: partners.categories
-            value: '{name}'
-            label: '{name}'
+          # pages-cms:category-sync start partners
+          values:
+            - Supporting Research Projects
+            - Supporting Partners
+            - OMG Partners
+            - BYOS Partners
+          # pages-cms:category-sync end
       - name: image
         label: Logo
         type: image
@@ -1184,11 +1272,13 @@ content:
         required: true
         options:
           multiple: false
-          fetch:
-            url: https://mlab.draftlab.dev/api/categories.json
-            results: publications.categories
-            value: '{name}'
-            label: '{name}'
+          # pages-cms:category-sync start publications
+          values:
+            - paper
+            - regulatory-filing
+            - presentation
+            - documentation
+          # pages-cms:category-sync end
       - name: internalLinks
         label: Internal Links
         type: object

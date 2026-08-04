@@ -7,6 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "sync:pages-categories": "node scripts/sync-pages-categories.mjs",
+    "sync:pages-categories:check": "node scripts/sync-pages-categories.mjs --check",
     "migrate:1-authors": "tsx scripts/generate-author-mapping.ts && tsx scripts/create-authors.ts",
     "migrate:2-dry": "tsx scripts/migrate-articles.ts --dry-run",
     "migrate:3-execute": "tsx scripts/migrate-articles.ts",
