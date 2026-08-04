@@ -244,3 +244,11 @@ sections:
           size: md
           text: OMG 3 AMA Playlist
           href: https://www.youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v
+      - title: "OMG 2 Public Report "
+        color: secondary
+        icon: community
+        button:
+          variant: primary
+          size: md
+          text: "OMG 2 Public report "
+          href: https://www.measurementlab.net/documents/OMG2_PublicReport.pdf
