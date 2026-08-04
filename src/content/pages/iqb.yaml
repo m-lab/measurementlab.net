@@ -89,3 +89,11 @@ sections:
           size: md
           text: IQB Framework
           href: /publications/IQB_report_2025.pdf
+  - type: related_posts
+    background:
+      color: white
+      type: full
+    title: IQB Related Posts
+    posts:
+      - iqb-prototype-v1
+      - iqb
