@@ -132,6 +132,30 @@ export async function prepareBlogPostsCardData(
 }
 
 /**
+ * Resolves an ordered list of blog post permalinks to posts
+ * Only visible posts are returned; unknown permalinks are skipped with a warning
+ * @param permalinks - Blog post permalinks, in the order they should appear
+ * @returns Matching posts in the given order
+ */
+export async function getPostsByPermalinks(
+  permalinks: string[]
+): Promise<BlogPost[]> {
+  if (!permalinks?.length) return [];
+
+  const allPosts = await getBlogPosts();
+
+  return permalinks
+    .map((permalink) => {
+      const post = allPosts.find((p) => p.data.permalink === permalink);
+      if (!post) {
+        console.warn(`Blog post not found or not visible: ${permalink}`);
+      }
+      return post;
+    })
+    .filter((post): post is BlogPost => post !== undefined);
+}
+
+/**
  * Gets related posts based on manual selection and tag matching
  * @param currentPost - The current blog post
  * @param options - Configuration options

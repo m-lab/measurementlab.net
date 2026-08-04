@@ -453,6 +453,24 @@ sections:
     showMore: false
 
   # ============================================================
+  - type: hero
+    title: Related Posts Section
+    subtitle: Displays up to three hand-picked blog posts in a card grid
+    zigzag: secondary-light
+
+  - type: related_posts
+    title: Hand-Picked Posts
+    description: >-
+      The related_posts section uses the same card layout as blog_roll, but you choose
+      the posts yourself instead of pulling the latest ones. Pick up to 3 posts in the
+      CMS; they appear in the order you select them. Posts that are drafts or archived
+      are skipped automatically.
+    posts:
+      - 2022-mlab-to-the-cloud
+      - 2022-extracting-single-traceroute
+      - africomm-afrinic
+
+  # ============================================================
   # PEOPLE SECTION
   # ============================================================
   - type: hero

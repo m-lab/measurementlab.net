@@ -1,0 +1,43 @@
+---
+import Heading from '@components/atoms/Heading.astro';
+import BlogItem from '@components/organisms/Blog/BlogItem.tsx';
+import { getPostsByPermalinks, prepareBlogPostsCardData } from '@utils/blog';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  posts?: string[];
+}
+
+const { title = 'Related Posts', description, posts = [] } = Astro.props;
+
+// Hand-picked posts, in the order the editor selected them
+// (drafts are filtered out automatically based on environment)
+const selectedPosts = await getPostsByPermalinks(posts);
+const postsData = await prepareBlogPostsCardData(selectedPosts);
+---
+
+<div class="py-12">
+	<!-- Section Header -->
+	<div class="mb-8">
+		<Heading level={2} class="text-3xl font-bold text-neutral-900">{title}</Heading>
+		{description && <p class="text-gray-600 mt-2">{description}</p>}
+	</div>
+
+	<!-- Posts Grid -->
+	{
+		postsData.length === 0 ? (
+			<div class="py-12 text-center">
+				<p class="text-gray-600 text-lg">
+					No posts selected yet.
+				</p>
+			</div>
+		) : (
+			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+				{postsData.map((item) => (
+					<BlogItem item={item} />
+				))}
+			</div>
+		)
+	}
+</div>

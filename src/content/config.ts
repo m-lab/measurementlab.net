@@ -150,6 +150,13 @@ const createSchemas = (image: ImageFunction) => {
       limit: z.number().min(1).max(12).default(3),
       showMore: z.boolean().default(false),
     }),
+    // Hand-picked counterpart to blog_roll — same layout, editor chooses the posts
+    SectionCommonSchema.extend({
+      type: z.literal('related_posts'),
+      title: z.string().default('Related Posts'),
+      description: z.string().optional(),
+      posts: z.array(z.string()).max(3).default([]), // Blog post permalinks (max 3)
+    }),
     // status map section for /status page
     SectionCommonSchema.extend({
       type: z.literal('infrastructureMap'),

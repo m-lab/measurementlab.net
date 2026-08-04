@@ -498,6 +498,32 @@ components:
         default: false
         description: Display a link to the full blog
 
+  # -- Related Posts --
+  related_posts_section:
+    type: object
+    fields:
+      - name: background
+        label: Section Background
+        component: background_select
+      - name: title
+        label: Title
+        type: string
+        default: Related Posts
+      - name: description
+        label: Description
+        type: rich-text
+      - name: posts
+        label: Posts
+        type: reference
+        description: Pick up to 3 blog posts to feature, in the order you want them shown
+        options:
+          collection: blog
+          required: false
+          multiple: true
+          value: '{permalink}'
+          label: '{title}'
+          image: '{fields.heroImage}'
+
   # -- Infrastructure Map --
   infrastructure_map_section:
     type: object
@@ -607,6 +633,9 @@ content:
           - name: blog_roll
             label: Blog Roll Section
             component: blog_roll_section
+          - name: related_posts
+            label: Related Posts Section
+            component: related_posts_section
           - name: speed_test
             label: Speed Test Section
             component: speed_test_section
@@ -720,6 +749,9 @@ content:
           - name: blog_roll
             label: Blog Roll Section
             component: blog_roll_section
+          - name: related_posts
+            label: Related Posts Section
+            component: related_posts_section
           - name: infrastructureMap
             label: Infrastructure Map Section
             component: infrastructure_map_section
