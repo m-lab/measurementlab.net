@@ -21,11 +21,14 @@ npm install
 npm run dev      # Development server at localhost:4321
 npm run build    # Production build
 npm run preview  # Preview production build
+
+PUBLIC_PREVIEW=true npm run dev      # Dev server with draft content visible
+npm run sync:pages-categories        # Regenerate CMS category dropdowns
 ```
 
 ## Tech Stack
 
-- **Astro 5.16** - Static site generation
+- **Astro 5** - Static site generation
 - **Tailwind CSS 4** - Utility-first styling
 - **React 19** - Interactive components
 - **Pages CMS** - Git-based content management
@@ -60,11 +63,26 @@ All content lives in `src/content/` with type-safe schemas defined in `src/conte
 | `publications/` | JSON     | Research publications, papers, presentations                  |
 | `people/`       | JSON     | Team member profiles                                          |
 | `partners/`     | JSON     | Partner organizations                                         |
-| `tests/`        | Markdown | M-Lab test documentation                                      |
+| `tests/`        | Markdown | M-Lab test documentation (supports nested sub-tests)          |
+| `datasets/`     | JSON     | Dataset catalog with access points and coverage metadata      |
 | `navigation/`   | JSON     | Menu structure (main.json, footer-1.json, footer-2.json)      |
 | `site/`         | JSON     | Global site configuration (config.json, \_redirects.json)     |
 | `homepage/`     | YAML     | Homepage-specific content                                     |
-| `categories/`   | JSON     | Category definitions for blog, people, partners, publications |
+| `categories/`   | JSON     | Category definitions (see [Categories](#categories))          |
+
+### Content Status
+
+Every content collection above shares a `status` field: `draft`, `published`, or `archived`. **New content defaults to `draft`.**
+
+| Status      | Production      | Preview / local dev |
+| ----------- | --------------- | ------------------- |
+| `published` | Visible         | Visible             |
+| `archived`  | Visible, with an "archived" banner | Same |
+| `draft`     | Hidden          | Visible             |
+
+Visibility is centralised in `isVisible()` (`src/utils/content.ts`) — use it rather than checking `status` directly. Run the preview build locally with `PUBLIC_PREVIEW=true npm run dev`.
+
+The `tests/` collection additionally has `testStatus` (`current`, `retired`, `core-service`, `retired-core-service`) for operational state — that is separate from `status`, which controls visibility.
 
 ## Page Sections
 
@@ -81,9 +99,13 @@ Pages use a flexible section-based system. Each page YAML file contains a `secti
 | `people`            | PeopleSection           | Team member listings (filtered by category)      |
 | `partners`          | PartnersSection         | Partner organization display                     |
 | `blog_roll`         | BlogRollSection         | Latest blog posts (configurable limit)           |
+| `related_posts`     | RelatedPostsSection     | Up to 3 hand-picked blog posts, same card layout |
 | `speed_test`        | SpeedTestSection        | M-Lab speed test widget                          |
 | `featured_partners` | FeaturedPartnersSection | Partner spotlight                                |
+| `infrastructureMap` | InfrastructureMapSection | Mapbox infrastructure map (used on /status)     |
 | `flexi`             | FlexiSection            | Nested section container                         |
+
+A live example of every section type is rendered at `/section-showcase`.
 
 ### Section Backgrounds
 
@@ -123,14 +145,59 @@ Links can reference internal pages by `pageRef` (using the page's permalink) or 
 
 ## Categories
 
-Categories are defined in `src/content/categories/` and control filtering/grouping:
+Categories control filtering and grouping. Each file in `src/content/categories/` is the **single source of truth** for one set of values:
 
-| File                | Used For             | Values                                                                       |
-| ------------------- | -------------------- | ---------------------------------------------------------------------------- |
-| `blog.json`         | Blog post categories | Technology, Development, Design, Product, Business, Tutorial, News, Opinion  |
-| `people.json`       | Team member sections | Maintainers, Experiment Review Committee, Advisory Committee, M-Lab Founders |
-| `partners.json`     | Partner groupings    | Supporting Research Projects, Supporting Partners                            |
-| `publications.json` | Publication types    | paper, regulatory-filing, presentation, documentation                        |
+| File                | Used For             | Count | Example Values                                              |
+| ------------------- | -------------------- | ----- | ----------------------------------------------------------- |
+| `blog.json`         | Blog post categories | 85    | Announcement, Data, NDT, Privacy, Research, Visualization    |
+| `people.json`       | Team member sections | 5     | Maintainers, Experiment Review Committee, Advisory Committee, M-Lab Founders, Alumni |
+| `partners.json`     | Partner groupings    | 4     | Supporting Research Projects, Supporting Partners, OMG Partners, BYOS Partners |
+| `publications.json` | Publication types    | 4     | paper, regulatory-filing, presentation, documentation        |
+| `tests.json`        | Test groupings       | 1     | Current Tests                                                |
+
+Each file looks like this:
+
+```json
+{
+  "id": "partners",
+  "name": "Partner Categories",
+  "categories": ["Supporting Research Projects", "Supporting Partners"]
+}
+```
+
+### How categories reach the code and the CMS
+
+Each list feeds **two** places, and both must agree or content breaks:
+
+1. **Build-time validation.** `src/content/config.ts` imports these files directly and turns them into Zod enums, so a typo in a content file fails the build.
+2. **Pages CMS dropdowns.** These populate the Category/Sections dropdowns in the CMS.
+
+Pages CMS `select` fields only support a hardcoded local `values:` list — there is no option to fetch them from an API. So the dropdown values are **generated into `.pages.yml`** between marker comments:
+
+```yaml
+# pages-cms:category-sync start partners
+values:
+  - Supporting Research Projects
+  - Supporting Partners
+# pages-cms:category-sync end
+```
+
+`scripts/sync-pages-categories.mjs` rewrites everything between those markers from the matching `src/content/categories/<id>.json`. **Never edit the values between markers by hand** — they get overwritten.
+
+```bash
+npm run sync:pages-categories        # regenerate the dropdowns in .pages.yml
+npm run sync:pages-categories:check  # verify they are in sync, without writing
+```
+
+The `.github/workflows/sync-pages-categories.yml` action runs the sync automatically on any push that touches `src/content/categories/`, and commits the updated `.pages.yml`. This matters because editors changing categories through Pages CMS commit JSON directly and never run anything locally.
+
+### Adding a new category value
+
+1. Add the value to the relevant `src/content/categories/*.json`
+2. Run `npm run sync:pages-categories` (or let the GitHub Action do it)
+3. Commit both the JSON file and the updated `.pages.yml`
+
+To wire up a **new** category-backed dropdown, add the marker pair around an empty `values:` key in the field's `options:` block in `.pages.yml`, then run the sync. The script exits non-zero on an unknown category id, a missing end marker, or unexpected content between markers — it will not overwrite anything it did not generate.
 
 ## Deployment
 
@@ -180,11 +247,8 @@ excerpt: A brief description of the post
 authors:
   - chris-ritzo
 status: published
-tags:
-  - research
-  - data
 categories:
-  - News
+  - Announcement
 publishedDate: 2025-01-15
 ---
 
@@ -195,17 +259,16 @@ Your markdown content here...
 
 - `permalink` - URL slug (no leading slash)
 - `title` - Post title
-- `authors` - Array of people IDs from `src/content/people/`
-- `status` - One of: `draft`, `published`, or `archived`
-- `tags` - Array of tag strings
+- `categories` - Array of values from `src/content/categories/blog.json`
 - `publishedDate` - Date in YYYY-MM-DD format
 
 **Optional fields:**
 
+- `status` - `draft`, `published`, or `archived` (defaults to `draft`, so set this to publish)
 - `excerpt` - Short description for previews
-- `categories` - Array from: Technology, Development, Design, Product, Business, Tutorial, News, Opinion
-- `heroImage` - Path to hero image
+- `authors` - Array of people IDs from `src/content/people/`
 - `externalAuthors` - Comma-separated names for non-M-Lab authors
+- `heroImage` - Path to hero image
 - `relatedPosts` - Array of up to 3 blog post permalinks
 
 ### Pages
@@ -257,7 +320,8 @@ Create a new `.json` file in `src/content/people/`:
   "headshot": "/src/assets/people/jane-smith.jpg",
   "title": "Research Director",
   "affiliation": "Measurement Lab",
-  "sections": ["Maintainers"]
+  "sections": ["Maintainers"],
+  "status": "published"
 }
 ```
 
@@ -266,10 +330,11 @@ Create a new `.json` file in `src/content/people/`:
 - `id` - Unique identifier (should match filename without extension)
 - `name` - Display name
 - `headshot` - Path to headshot image
-- `sections` - Array from: Maintainers, Experiment Review Committee, Advisory Committee, M-Lab Founders
+- `sections` - Array of values from `src/content/categories/people.json`
 
 **Optional fields:**
 
+- `status` - `draft`, `published`, or `archived` (defaults to `draft`)
 - `title` - Job title
 - `affiliation` - Organization name
 - `extraInfo` - Additional info
@@ -286,7 +351,8 @@ Create a new `.json` file in `src/content/partners/`:
   "url": "https://example.com",
   "category": "Supporting Partners",
   "image": "/src/assets/partners/example.png",
-  "order": 10
+  "order": 10,
+  "status": "published"
 }
 ```
 
@@ -294,10 +360,11 @@ Create a new `.json` file in `src/content/partners/`:
 
 - `id` - Unique identifier
 - `name` - Organization name
-- `category` - Either "Supporting Research Projects" or "Supporting Partners"
+- `category` - One value from `src/content/categories/partners.json`
 
 **Optional fields:**
 
+- `status` - `draft`, `published`, or `archived` (defaults to `draft`)
 - `url` - Partner website
 - `image` - Path to logo image
 - `affiliation` - Additional affiliation info
@@ -333,10 +400,11 @@ Create a new `.json` file in `src/content/publications/`:
 - `id` - Unique identifier
 - `title` - Publication title
 - `year` - Publication year
-- `category` - One of: paper, regulatory-filing, presentation, documentation
+- `category` - One value from `src/content/categories/publications.json`
 
 **Optional fields:**
 
+- `status` - `draft`, `published`, or `archived` (defaults to `draft`)
 - `description` - Brief summary (supports markdown)
 - `authors` - Citation string for all authors
 - `contributors` - Array of people IDs from `src/content/people/` (for M-Lab team members)
@@ -367,6 +435,8 @@ showInIndex: true
 
 Full markdown documentation for the test...
 ```
+
+Tests can be nested: a test with sub-tests becomes a folder containing `index.md` (for example `src/content/tests/ndt/index.md`), with each sub-test alongside it and pointing at the parent via `parentTest`.
 
 **Required fields:**
 
@@ -450,18 +520,22 @@ Edit `src/content/site/config.json`:
 
 ## Development Notes
 
+> **Keep `src/content/config.ts` and `.pages.yml` in sync.** The Zod schema and the Pages CMS config describe the same content from two directions. If they drift, the CMS writes content the build then rejects.
+
 ### Adding New Content Types
 
-1. Define the schema in `src/content/config.ts`
+1. Define the schema in `src/content/config.ts` and register it in `collections`
 2. Create the collection folder in `src/content/`
-3. Add category definitions in `src/content/categories/` if needed
+3. Add category definitions in `src/content/categories/` if needed, then run `npm run sync:pages-categories`
 4. Update Pages CMS config in `.pages.yml` for visual editing
 
 ### Creating New Section Types
 
-1. Create component in `src/components/sections/`
-2. Register in `src/components/sections/Sections.astro`
-3. Add to `sectionsSchema` in `src/content/config.ts`
+1. Add to the `sectionsSchema` discriminated union in `src/content/config.ts`
+2. Create the component in `src/components/sections/`
+3. Register it in the switch in `src/components/sections/Sections.astro`
+4. Add a component definition and a `blocks:` entry in `.pages.yml`
+5. Optionally add an example to `src/content/pages/section-showcase.yaml`
 
 ## Useful Links
 
