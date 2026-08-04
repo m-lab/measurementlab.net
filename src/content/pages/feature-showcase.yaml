@@ -67,7 +67,7 @@ sections:
     sections:
       - type: richText
         background:
-          color: primary-medium
+          color: white
           type: full
         withTOC: false
         content: |+
