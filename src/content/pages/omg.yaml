@@ -80,7 +80,7 @@ sections:
     title: Resources
     cards:
       - title: "OMG User Guide "
-        color: supporting1
+        color: primary
         icon: community
         button:
           variant: primary
@@ -96,7 +96,7 @@ sections:
           text: The Full OMG 4 Report
           href: https://www.measurementlab.net/publications/OMG4_final_report.pdf
       - title: "OMG 3 Report "
-        color: secondary
+        color: supporting1
         icon: community
         button:
           variant: primary
@@ -104,15 +104,15 @@ sections:
           text: The Full OMG 3 Report
           href: https://www.measurementlab.net/publications/OMG3_report_July2025.pdf
       - title: "OMG 3 AMA Playlist "
-        color: primary
-        icon: insights
+        color: speed
+        icon: community
         button:
           variant: primary
           size: md
           text: Watch the OMG 3 AMA Playlist
           href: https://www.youtube.com/playlist?list=PLEszjns3sXFGsa42CYPxrQrFPAfA7v71v
       - title: "OMG 2 Report "
-        color: secondary
+        color: primary
         icon: community
         button:
           variant: primary
