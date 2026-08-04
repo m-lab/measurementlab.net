@@ -268,3 +268,11 @@ sections:
           size: sm
           text: "OMG 1 Report "
           href: https://www.measurementlab.net/documents/OMG1_PublicReport.pdf
+      - title: "OMG 3 Report "
+        color: secondary
+        icon: community
+        button:
+          variant: primary
+          size: md
+          text: OMG 3 Report
+          href: https://www.measurementlab.net/publications/OMG3_report_July2025.pdf
