@@ -9,7 +9,7 @@ sections:
       color: primary-light
       type: full
     withTOC: true
-    content: |-
+    content: |+
       # Projects Overview and Impact
 
       M-Lab’s projects contribute to a growing global effort to better understand how the Internet performs in practice. 
@@ -58,9 +58,8 @@ sections:
 
       In particular, the [Bring Your Own Server](/byos) project seeks to further diversify the measurement platform to create a global open source measurement infrastructure. Partners can contribute physical or virtual servers that they manage and joining an open source federated measurement platform.
 
+      ![](</src/assets/Group 55.png>)
 
-
-      &nbsp;
   - type: flexi
     background:
       color: white
