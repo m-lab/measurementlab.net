@@ -7,7 +7,7 @@ sections:
       color: white
       type: full
     title: OMG Groups
-    category: omg partners
+    category: OMG Partners
   - type: richText
     background:
       color: white
