@@ -454,8 +454,18 @@ components:
         component: background_select
       - name: category
         label: Category
-        type: string
-        description: Filter people by section/department (e.g. "Engineering", "Leadership"). Leave empty to show all people.
+        type: select
+        options:
+          # pages-cms:category-sync start people
+          values:
+            - Maintainers
+            - Experiment Review Committee
+            - Advisory Committee
+            - M-Lab Founders
+            - Alumni
+            - Community
+          # pages-cms:category-sync end
+        description: Filter people by section. Leave empty to show all people. Options come from the People category group under Categories.
 
   # -- Partners --
   partners_section:
@@ -470,8 +480,16 @@ components:
         required: true
       - name: category
         label: Category
-        type: string
-        description: Filter partners by category (e.g. "sponsor", "technology"). Leave empty to show all partners.
+        type: select
+        options:
+          # pages-cms:category-sync start partners
+          values:
+            - Supporting Research Projects
+            - Supporting Partners
+            - OMG Partners
+            - BYOS Partners
+          # pages-cms:category-sync end
+        description: Filter partners by category. Leave empty to show all partners. Options come from the Partners category group under Categories.
 
   # -- Blog Roll --
   blog_roll_section:
@@ -1024,6 +1042,7 @@ content:
             - Advisory Committee
             - M-Lab Founders
             - Alumni
+            - Community
           # pages-cms:category-sync end
 
   # --------------------------------------------------------------------------

@@ -351,7 +351,7 @@ Categories are tag groups shared across the site. Different collections (Blog, P
 
 > **Important: your new category will not appear in dropdowns right away.**
 >
-> The Category and Sections dropdowns you see elsewhere in the CMS (on Blog posts, People, Partners, Publications) are not read live from this collection. They are copied into the site's CMS configuration file by an automated job that runs after you save.
+> The Category and Sections dropdowns you see elsewhere in the CMS — on Blog posts, People, Partners and Publications, and on the People Section and Partners Section blocks you add to a page — are not read live from this collection. They are copied into the site's CMS configuration file by an automated job that runs after you save.
 >
 > So the sequence is: you save a new category → an automated job updates the configuration → the new value becomes selectable. This usually takes **a couple of minutes**. If the new category is missing from a dropdown, wait a moment and reload the page.
 >
@@ -710,8 +710,8 @@ This library stores downloadable files attached to publications (typically PDFs)
 | **Rich Text**          | Long-form text content                  | Content, Table of Contents toggle, Background                  |
 | **Button**             | Call-to-action links                    | Title, Buttons (variant, size, text, URL)                      |
 | **Card**               | Feature grids, service highlights       | Title, Description, Cards (with icon/image/button), Background |
-| **People**             | Team member displays                    | Category filter, Background                                    |
-| **Partners**           | Partner logo grids                      | Title, Category filter, Background                             |
+| **People**             | Team member displays                    | Category filter (dropdown), Background                         |
+| **Partners**           | Partner logo grids                      | Title, Category filter (dropdown), Background                  |
 | **Flexi**              | Complex layouts with nested sections    | Title, Description, Nested Sections                            |
 | **Blog Roll**          | Latest news feed (automatic)            | Title, Description, Post count, "More" button toggle           |
 | **Related Posts**      | Up to 3 blog posts you choose yourself  | Title, Description, Posts                                      |

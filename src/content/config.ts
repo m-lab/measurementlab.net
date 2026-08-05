@@ -125,12 +125,19 @@ const createSchemas = (image: ImageFunction) => {
     }),
     SectionCommonSchema.extend({
       type: z.literal('people'),
-      category: z.string().optional(),
+      // Sourced from src/content/categories/people.json, the same list that
+      // feeds the CMS dropdown. Keeps a typo from silently rendering an empty
+      // section instead of failing the build.
+      category: z
+        .enum(peopleCategories.categories as [string, ...string[]])
+        .optional(),
     }),
     SectionCommonSchema.extend({
       type: z.literal('partners'),
       title: z.string(),
-      category: z.string().optional(),
+      category: z
+        .enum(partnerCategories.categories as [string, ...string[]])
+        .optional(),
     }),
     // homepage-specific section types
     SectionCommonSchema.extend({
