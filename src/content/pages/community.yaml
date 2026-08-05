@@ -101,3 +101,12 @@ sections:
 
       [Reach out button] 
 
+  - type: button
+    background:
+      color: white
+      type: full
+    buttons:
+      - variant: secondary
+        size: md
+        text: Join the CCoP
+        href: https://groups.google.com/a/measurementlab.net/g/connectivity-cop
