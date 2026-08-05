@@ -1,5 +1,5 @@
 title: Join the M-Lab Community
-permalink: community
+permalink: partners-community
 status: published
 sections:
   - type: hero
@@ -29,8 +29,6 @@ sections:
       ideas and ask questions from fellow researchers. With over 2,000 members,
       the M-Lab Discuss email list is a network of incredible minds! 
 
-        
-        
   - type: people
     background:
       color: white
@@ -40,6 +38,11 @@ sections:
     background:
       color: white
       type: full
+    buttons:
+      - variant: primary
+        size: md
+        text: Join the M-Lab Discuss List
+        href: https://groups.google.com/a/measurementlab.net/g/discuss
   - type: richText
     background:
       color: white
@@ -50,11 +53,10 @@ sections:
 
 
 
-      #### The Connectivity Community of Practice 
+      #### The Connectivity Community of Practice
 
       Measurement Lab runs a Connectivity Community of Practice In partnership with UNICEF Giga. We work with Giga to strengthen how connectivity is measured and understood for public facilities, especially schools, using open measurement approaches that reflect on-the-ground conditions.
 
-        
       The CCoP builds on that shared foundation. It brings together researchers, network engineers, implementers, and policymakers to advance measurement approaches that are:
 
       - Technically rigorous
@@ -75,9 +77,8 @@ sections:
 
 
 
-      ### Hackathons 
+      ### Hackathons
 
-        
       M-Lab also runs hackathons, and for the last four years has run a hackathon in partnership with other Internet measurement groups on the sidelines of the Internet Measurement Conference. 
 
 
@@ -91,9 +92,11 @@ sections:
       - 2025 IMC Hackathon in Madison, WI ++[https://www.measurementlab.net/blog/imc2025-hackathon/](https://www.measurementlab.net/blog/imc2025-hackathon/)++
       - 2024 IMC Hackathon in Madrid, Spain  ++[https://conferences.sigcomm.org/imc/2024/hackathon/](https://conferences.sigcomm.org/imc/2024/hackathon/)++ 
       - 2023 IMC Hackathon in Montreal, Canada ++[https://conferences.sigcomm.org/imc/2023/hackaton/](https://conferences.sigcomm.org/imc/2023/hackaton/)++ 
-      - 2022 IMC Hackathon in Nice, France ++[https://www.measurementlab.net/blog/imc22-hackathon/](https://www.measurementlab.net/blog/imc22-hackathon/)++ 
+      - 2022 IMC Hackathon in Nice, France ++[https://www.measurementlab.net/blog/imc22-hackathon/](https://www.measurementlab.net/blog/imc22-hackathon/)++
+
+
 
       We welcome your ideas for hackathons or other convenings!  
-        
+
       [Reach out button] 
 
