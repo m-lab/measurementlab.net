@@ -28,7 +28,6 @@ sections:
 
       The **[Internet Quality Barometer](https://mlab-preview.draftlab.dev/iqb/)** (IQB) is an initiative to redefine how we measure and understand Internet performance to keep pace with evolving technological demands and user expectations.   
 
-
       ![](</src/assets/IQB Score.svg>)
 
       *Director, Techncial Lead Pavlos Sermpezis presents the IQB Framework at the 2025 Pulse Research week in Barcelona.*
@@ -62,11 +61,6 @@ sections:
 
 
       &nbsp;
-  - type: infrastructureMap
-    background:
-      color: white
-      type: full
-    title: Infrastructure Map
   - type: flexi
     background:
       color: white
