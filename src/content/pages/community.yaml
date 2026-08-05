@@ -42,7 +42,7 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: >+
+    content: >-
       ## The Connectivity Community of Practice
 
 
@@ -74,10 +74,15 @@ sections:
 
       We host regular meetings for the CCoP to share updates, resources, and
       problem solve together. 
-
-
-      [Join CCoP Button] 
-
+  - type: button
+    background:
+      color: white
+      type: full
+    buttons:
+      - variant: secondary
+        size: md
+        text: Join the CCoP
+        href: https://groups.google.com/a/measurementlab.net/g/connectivity-cop
   - type: richText
     background:
       color: white
@@ -101,12 +106,3 @@ sections:
 
       [Reach out button] 
 
-  - type: button
-    background:
-      color: white
-      type: full
-    buttons:
-      - variant: secondary
-        size: md
-        text: Join the CCoP
-        href: https://groups.google.com/a/measurementlab.net/g/connectivity-cop
