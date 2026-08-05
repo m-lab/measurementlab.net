@@ -1,6 +1,7 @@
 title: Join the M-Lab Community
 permalink: community
 status: published
+zigzag: secondary-light
 sections:
   - type: hero
     title: This is a hero section
@@ -9,7 +10,7 @@ sections:
     background:
       color: white
       type: full
-    withTOC: true
+    withTOC: false
     content: >+
       ## About the M-Lab Community
 
@@ -20,8 +21,6 @@ sections:
       measurement tools.
 
 
-
-
       ## Access Data and Discuss Ideas
 
 
@@ -29,17 +28,12 @@ sections:
       ideas and ask questions from fellow researchers. With over 2,000 members,
       the M-Lab Discuss email list is a network of incredible minds! 
 
-  - type: people
-    background:
-      color: white
-      type: full
-    category: Community
   - type: button
     background:
       color: white
       type: full
     buttons:
-      - variant: primary
+      - variant: secondary
         size: md
         text: Join the M-Lab Discuss List
         href: https://groups.google.com/a/measurementlab.net/g/discuss
