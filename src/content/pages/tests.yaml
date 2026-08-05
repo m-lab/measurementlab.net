@@ -71,3 +71,24 @@ sections:
       contact the team directly at
       ++[support@measurementlab.net](mailto:support@measurementlab.net)++.   
 
+  - type: tests
+    background:
+      color: white
+      type: full
+    title: Current Tests
+    tests:
+      - /tests/ndt/
+      - /tests/reverse_traceroute/
+      - /tests/neubot/
+      - /tests/msak/
+      - /tests/wehe/
+  - type: tests
+    background:
+      color: gray
+      type: full
+    title: Core Services
+    description: "Essential services that support all M-Lab measurements "
+    tests:
+      - /tests/pcap/
+      - /tests/tcp-info/
+      - /tests/traceroute/
