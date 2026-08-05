@@ -101,3 +101,19 @@ sections:
       search the support site for answers to common questions. You can also
       contact the team directly at
       ++[support@measurementlab.net](mailto:support@measurementlab.net)++.   
+  - type: tests
+    background:
+      color: white
+      type: full
+    title: Retired Tests
+    description: "Tests that are no longer actively running on the M-Lab platform "
+    tests:
+      - /tests/bismark/
+      - /tests/mobiperf/
+      - /tests/npad/
+      - /tests/samknows/
+      - /tests/windrider/
+      - /tests/glasnost/
+      - /tests/ooni/
+      - /tests/pathload2/
+      - /tests/shaperprobe/
