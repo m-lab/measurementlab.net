@@ -488,6 +488,7 @@ components:
             - Supporting Partners
             - OMG Partners
             - BYOS Partners
+            - IMC Hackathon Partners
           # pages-cms:category-sync end
         description: Filter partners by category. Leave empty to show all partners. Options come from the Partners category group under Categories.
 
@@ -1136,6 +1137,7 @@ content:
             - Supporting Partners
             - OMG Partners
             - BYOS Partners
+            - IMC Hackathon Partners
           # pages-cms:category-sync end
       - name: image
         label: Logo
