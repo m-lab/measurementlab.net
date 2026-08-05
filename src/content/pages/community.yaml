@@ -126,7 +126,7 @@ sections:
       color: white
       type: full
     buttons:
-      - variant: primary
+      - variant: secondary
         size: md
         text: Reach out!
         href: hello@measurementlab.net
