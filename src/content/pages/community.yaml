@@ -8,7 +8,7 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: >+
+    content: >-
       ## About the M-Lab Community
 
 
@@ -23,8 +23,6 @@ sections:
       Guidelines](/community-guidelines).
 
 
-
-
       ## Access Data and Discuss Ideas
 
 
@@ -32,6 +30,10 @@ sections:
       ideas and ask questions from fellow researchers. With over 2,000 members,
       the M-Lab Discuss email list is a network of incredible minds! 
 
+        
+
+        
+      *Lai Yi Ohlsen explains M-Lab data to IMC Hackathon 2024 participants* 
   - type: button
     background:
       color: white
@@ -128,8 +130,9 @@ sections:
 
 
       We welcome your ideas for hackathons or other convenings!    
-        
-      *Pavlos presenting to IMC Hackathon 2025 participants* 
+
+
+      *Pavlos Sermpezis presenting to IMC Hackathon 2025 participants* 
 
 
       ![](/src/assets/community/PS2025IMCHackathon.jpg)
