@@ -1,3 +1,10 @@
 title: "The 2026 IMC Hackathon "
 permalink: imc-hackathon-2026
 status: draft
+sections:
+  - type: partners
+    background:
+      color: primary-light
+      type: full
+    title: "IMC Hackathon Hosts "
+    category: IMC Hackathon Partners
