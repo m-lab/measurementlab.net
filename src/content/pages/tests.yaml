@@ -61,3 +61,43 @@ sections:
       - /tests/pcap/
       - /tests/tcp-info/
       - /tests/traceroute/
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: >-
+      ## Data and Transparency
+
+
+      M-Lab is built on principles of openness and transparency.
+
+
+      To support research and public understanding of Internet performance, all
+      test results are made publicly available. This includes the IP address
+      used during the test, which helps researchers interpret network conditions
+      and patterns. Test data is stored and published indefinitely. Once
+      collected, individual test records cannot be removed. All M-Lab tools are
+      open source and are developed and maintained by researchers studying
+      Internet performance and connectivity.
+
+
+      ## M-Lab’s Privacy Policy
+
+
+      Before running a test, we recommend reviewing [M-Lab’s Privacy
+      Policy](/privacy) to understand how data is handled.
+
+
+      Have questions? Reach out If you have questions about privacy or how your
+      data is used, you can contact the team at
+      [privacy@measurementlab.net](mailto:privacy@measurementlab.net).
+
+
+      ## Help and troubleshooting
+
+
+      If you need help running a test or troubleshooting an issue, you can
+      search the support site for answers to common questions. You can also
+      contact the team directly at
+      ++[support@measurementlab.net](mailto:support@measurementlab.net)++.   
