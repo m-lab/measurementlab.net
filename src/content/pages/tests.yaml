@@ -11,7 +11,7 @@ sections:
       color: white
       type: full
     withTOC: true
-    content: >+
+    content: >-
       M-Lab provides a set of tools that let you explore how your Internet
       connection is performing in real time. By running a test, you can measure
       key aspects of your connection, including speed, latency (delay), network
@@ -37,6 +37,8 @@ sections:
 
 
 
+
+      &nbsp;
   - type: tests
     background:
       color: white
