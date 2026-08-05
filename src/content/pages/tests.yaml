@@ -76,6 +76,7 @@ sections:
       color: white
       type: full
     title: Current Tests
+    description: Active measurements currently running on the M-Lab platform
     tests:
       - /tests/ndt/
       - /tests/reverse_traceroute/
