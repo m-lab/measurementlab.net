@@ -3,9 +3,6 @@ permalink: community
 status: published
 zigzag: secondary-light
 sections:
-  - type: hero
-    title: This is a hero section
-    subtitle: Connect, collaborate, and grow with fellow developers from around the world
   - type: richText
     background:
       color: white
