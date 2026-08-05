@@ -39,22 +39,22 @@
         },
         {
           "type": "internal",
-          "label": "Platform ",
+          "label": "Get to Know the Platform ",
           "pageRef": "platform-status"
         },
         {
           "type": "internal",
-          "label": "Tools",
+          "label": "Use Tools",
           "pageRef": "tools"
         },
         {
           "type": "internal",
-          "label": "Data",
+          "label": "Explore Data",
           "pageRef": "data"
         },
         {
           "type": "internal",
-          "label": "Tests",
+          "label": "Run Tests",
           "pageRef": "tests"
         }
       ]
@@ -75,7 +75,7 @@
         },
         {
           "type": "internal",
-          "label": "FAQ",
+          "label": "FAQs",
           "pageRef": "frequently-asked-questions"
         },
         {
@@ -117,12 +117,12 @@
       "links": [
         {
           "type": "internal",
-          "label": "Community",
+          "label": "Join Our Community",
           "pageRef": "partners-community"
         },
         {
           "type": "internal",
-          "label": "Contribute ",
+          "label": "Contribute to M-Lab",
           "pageRef": "contribute"
         },
         {
