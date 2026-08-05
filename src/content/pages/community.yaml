@@ -88,7 +88,7 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: >+
+    content: >-
       ### Hackathons
 
 
@@ -104,7 +104,7 @@ sections:
       also with each other. 
 
 
-      Find out more about the 2026 IMC Hackathon
+      ***Find out more about the 2026 IMC Hackathon***
 
 
       **Past IMC Hackathons** 
@@ -124,7 +124,12 @@ sections:
 
 
       We welcome your ideas for hackathons or other convenings!  
-
-
-      [Reach out button] 
-
+  - type: button
+    background:
+      color: white
+      type: full
+    buttons:
+      - variant: primary
+        size: md
+        text: Reach out!
+        href: hello@measurementlab.net
