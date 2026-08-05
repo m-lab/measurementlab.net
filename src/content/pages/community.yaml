@@ -107,7 +107,7 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: >+
+    content: >-
       ### Hackathons
 
 
@@ -142,23 +142,23 @@ sections:
       France](https://www.measurementlab.net/blog/imc22-hackathon/)
 
 
-      We welcome your ideas for hackathons or other convenings!    
+      [Reach out with your ideas for hackathons or other
+      convenings!](hello@measurementlab.net)  
 
 
-      *Director, Technical Lead, Pavlos Sermpezis presenting to IMC Hackathon
-      2025 participants* 
 
 
       ![](/src/assets/community/PS2025IMCHackathon.jpg)
 
 
-
-
-      *IMC Hackathon 2024 participants and hosts* 
+      *Director, Technical Lead, Pavlos Sermpezis presenting to IMC Hackathon
+      2025 participants* .
 
 
       ![](/src/assets/community/2024HackathonGroup.jpg)
 
+
+      *IMC Hackathon 2024 participants and hosts.*
   - type: button
     background:
       color: white
@@ -166,8 +166,8 @@ sections:
     buttons:
       - variant: secondary
         size: md
-        text: Reach out!
-        href: hello@measurementlab.net
+        text: Find out more about this year's IMC Hackathon
+        href: /imc-hackathon-2026
   - type: flexi
     background:
       color: primary-light
