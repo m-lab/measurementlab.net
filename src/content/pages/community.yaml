@@ -88,21 +88,43 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: |+
+    content: >+
       ### Hackathons
 
-      M-Lab also runs hackathons, and for the last four years has run a hackathon in partnership with other Internet measurement groups on the sidelines of the Internet Measurement Conference. 
 
-      We believe in providing emerging Internet measurement researchers the opportunity to apply their skills and knowledge to interesting and current issues in Internet measurement. It also provides participants with an opportunity to network, not only with Hackathon hosts and mentors, but also with each other. 
+      M-Lab also runs hackathons, and for the last four years has run a
+      hackathon in partnership with other Internet measurement groups on the
+      sidelines of the Internet Measurement Conference. 
+
+
+      We believe in providing emerging Internet measurement researchers the
+      opportunity to apply their skills and knowledge to interesting and current
+      issues in Internet measurement. It also provides participants with an
+      opportunity to network, not only with Hackathon hosts and mentors, but
+      also with each other. 
+
+
+      Find out more about the 2026 IMC Hackathon
+
 
       **Past IMC Hackathons** 
 
-      - 2025 IMC Hackathon in Madison, WI ++[https://www.measurementlab.net/blog/imc2025-hackathon/](https://www.measurementlab.net/blog/imc2025-hackathon/)++
-      - 2024 IMC Hackathon in Madrid, Spain  ++[https://conferences.sigcomm.org/imc/2024/hackathon/](https://conferences.sigcomm.org/imc/2024/hackathon/)++ 
-      - 2023 IMC Hackathon in Montreal, Canada ++[https://conferences.sigcomm.org/imc/2023/hackaton/](https://conferences.sigcomm.org/imc/2023/hackaton/)++ 
-      - 2022 IMC Hackathon in Nice, France ++[https://www.measurementlab.net/blog/imc22-hackathon/](https://www.measurementlab.net/blog/imc22-hackathon/)++
+
+      - [2025 IMC Hackathon in Madison,
+      WI](https://www.measurementlab.net/blog/imc2025-hackathon/) 
+
+      - [2024 IMC Hackathon in Madrid,
+      Spain](https://conferences.sigcomm.org/imc/2024/hackathon/)  
+
+      - [2023 IMC Hackathon in Montreal,
+      Canada](https://conferences.sigcomm.org/imc/2023/hackaton/) 
+
+      - [2022 IMC Hackathon in Nice,
+      France](https://www.measurementlab.net/blog/imc22-hackathon/)
+
 
       We welcome your ideas for hackathons or other convenings!  
+
 
       [Reach out button] 
 
