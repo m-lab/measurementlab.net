@@ -23,7 +23,6 @@ sections:
       Guidelines](/community-guidelines).
 
 
-      ![](/src/assets/community/LYO2024Hackathon.png)
 
 
       ## Access Data and Discuss Ideas
@@ -144,13 +143,13 @@ sections:
         href: hello@measurementlab.net
   - type: flexi
     background:
-      color: white
-      type: full
+      color: primary-light
+      type: contained
     title: M-Lab Team at Pulse Research Week in 2025
     sections:
       - type: richText
         background:
-          color: white
+          color: primary-light
           type: full
         withTOC: false
         content: |+
