@@ -1,0 +1,8 @@
+{
+  "id": "ooni",
+  "name": "OONI",
+  "status": "published",
+  "url": "https://ooni.org/",
+  "category": "OMG Partners",
+  "image": "/src/assets/Ooni logo.png"
+}
