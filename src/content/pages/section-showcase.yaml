@@ -471,6 +471,28 @@ sections:
       - africomm-afrinic
 
   # ============================================================
+  # TESTS SECTION
+  # ============================================================
+  - type: hero
+    title: Tests Section
+    subtitle: Displays hand-picked tests from the tests collection in a card grid
+    zigzag: primary-light
+
+  - type: tests
+    title: Featured Tests
+    description: >-
+      The tests section uses the same card as the /tests listing page, but you choose
+      which tests appear instead of showing all of them grouped by status. Pick any
+      number of tests in the CMS; they appear in the order you select them. Tests that
+      are drafts or archived are skipped automatically. Unlike the /tests listing, a
+      test hidden with "Show in index" off will still render here if you pick it
+      explicitly. The description is optional.
+    tests:
+      - /tests/ndt/
+      - /tests/msak/
+      - /tests/wehe/
+
+  # ============================================================
   # PEOPLE SECTION
   # ============================================================
   - type: hero

@@ -391,6 +391,7 @@ Pages are the most flexible content type. Each page is built from a series of **
 | **Partners Section**           | Displays partner logos filtered by category                            |
 | **Flexi Section**              | A container that holds nested sections (Rich Text, Button, or Card)    |
 | **Blog Roll Section**          | Shows the latest blog posts with configurable count                    |
+| **Tests Section**              | Displays tests you pick yourself, as a grid of cards                   |
 | **Infrastructure Map Section** | Interactive map of M-Lab server locations                              |
 
 **To add a section to a page:**
@@ -715,6 +716,7 @@ This library stores downloadable files attached to publications (typically PDFs)
 | **Flexi**              | Complex layouts with nested sections    | Title, Description, Nested Sections                            |
 | **Blog Roll**          | Latest news feed (automatic)            | Title, Description, Post count, "More" button toggle           |
 | **Related Posts**      | Up to 3 blog posts you choose yourself  | Title, Description, Posts                                      |
+| **Tests**              | Tests you choose yourself               | Title, Description, Tests, Background                          |
 | **Infrastructure Map** | Server location visualization           | Title, Description                                             |
 | **Speed Test**         | NDT test widget (Homepage only)         | Title, Description                                             |
 | **Featured Partners**  | Curated partner display (Homepage only) | Title, Description                                             |

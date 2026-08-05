@@ -164,6 +164,13 @@ const createSchemas = (image: ImageFunction) => {
       description: z.string().optional(),
       posts: z.array(z.string()).max(3).default([]), // Blog post permalinks (max 3)
     }),
+    // Hand-picked tests, rendered with the same card as the /tests listing
+    SectionCommonSchema.extend({
+      type: z.literal('tests'),
+      title: z.string().default('Tests'),
+      description: z.string().optional(),
+      tests: z.array(z.string()).default([]), // Test permalinks (e.g. "/tests/ndt/")
+    }),
     // status map section for /status page
     SectionCommonSchema.extend({
       type: z.literal('infrastructureMap'),

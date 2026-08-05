@@ -544,6 +544,34 @@ components:
           label: '{title}'
           image: '{fields.heroImage}'
 
+  # -- Tests --
+  tests_section:
+    type: object
+    fields:
+      - name: background
+        label: Section Background
+        component: background_select
+      - name: title
+        label: Title
+        type: string
+        default: Tests
+      - name: description
+        label: Description
+        type: rich-text
+        required: false
+        description: Optional description displayed below the title
+      - name: tests
+        label: Tests
+        type: reference
+        description: Pick the tests to feature, in the order you want them shown
+        options:
+          collection: tests
+          required: false
+          multiple: true
+          value: '{permalink}'
+          label: '{title}'
+          image: '{fields.icon}'
+
   # -- Infrastructure Map --
   infrastructure_map_section:
     type: object
@@ -656,6 +684,9 @@ content:
           - name: related_posts
             label: Related Posts Section
             component: related_posts_section
+          - name: tests
+            label: Tests Section
+            component: tests_section
           - name: speed_test
             label: Speed Test Section
             component: speed_test_section
@@ -772,6 +803,9 @@ content:
           - name: related_posts
             label: Related Posts Section
             component: related_posts_section
+          - name: tests
+            label: Tests Section
+            component: tests_section
           - name: infrastructureMap
             label: Infrastructure Map Section
             component: infrastructure_map_section

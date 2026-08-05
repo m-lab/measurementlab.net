@@ -1,0 +1,40 @@
+---
+import Heading from '@components/atoms/Heading.astro';
+import TestCard from '@components/molecules/TestCard.astro';
+import { getTestsByPermalinks } from '@utils/tests';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  tests?: string[];
+}
+
+const { title = 'Tests', description, tests = [] } = Astro.props;
+
+// Hand-picked tests, in the order the editor selected them
+// (drafts are filtered out automatically based on environment)
+const selectedTests = await getTestsByPermalinks(tests);
+---
+
+<div class="py-12">
+	<!-- Section Header -->
+	<div class="mb-8">
+		<Heading level={2} class="text-3xl font-bold text-neutral-900">{title}</Heading>
+		{description && <p class="text-gray-600 mt-2">{description}</p>}
+	</div>
+
+	<!-- Tests Grid -->
+	{
+		selectedTests.length === 0 ? (
+			<div class="py-12 text-center">
+				<p class="text-gray-600 text-lg">No tests selected yet.</p>
+			</div>
+		) : (
+			<div class="grid gap-6 sm:grid-cols-2">
+				{selectedTests.map((test) => (
+					<TestCard test={test} />
+				))}
+			</div>
+		)
+	}
+</div>

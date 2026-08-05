@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import Card from '@components/molecules/Card.astro';
+import type { Test } from '@utils/tests';
+
+export interface Props {
+  test: Test;
+}
+
+const { test } = Astro.props;
+---
+
+<Card variant="elevated" padding="lg" class="h-full" href={test.data.permalink}>
+	<div class="flex items-start gap-4">
+		{
+			test.data.icon && (
+				<div class="shrink-0">
+					<Image
+						src={test.data.icon}
+						alt=""
+						width={96}
+						height={96}
+						class="h-24 w-24 object-contain"
+					/>
+				</div>
+			)
+		}
+		<div>
+			<h3 class="mb-1 text-lg font-semibold">{test.data.title}</h3>
+			{test.data.description && <p class="text-sm text-neutral-600">{test.data.description}</p>}
+		</div>
+	</div>
+</Card>

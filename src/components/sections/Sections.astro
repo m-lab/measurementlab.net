@@ -11,6 +11,7 @@ import PeopleSection from '@components/sections/PeopleSection.astro';
 import RelatedPostsSection from '@components/sections/RelatedPostsSection.astro';
 import RichTextSection from '@components/sections/RichTextSection.astro';
 import SpeedTestSection from '@components/sections/SpeedTestSection.astro';
+import TestsSection from '@components/sections/TestsSection.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 
 const { sectionItems } = Astro.props;
@@ -102,6 +103,14 @@ let richTextCounter = 0;
 							title={section.title}
 							description={section.description}
 							posts={section.posts}
+						/>
+					);
+				case 'tests':
+					return (
+						<TestsSection
+							title={section.title}
+							description={section.description}
+							tests={section.tests}
 						/>
 					);
 				case 'infrastructureMap':

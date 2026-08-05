@@ -100,6 +100,7 @@ Pages use a flexible section-based system. Each page YAML file contains a `secti
 | `partners`          | PartnersSection         | Partner organization display                     |
 | `blog_roll`         | BlogRollSection         | Latest blog posts (configurable limit)           |
 | `related_posts`     | RelatedPostsSection     | Up to 3 hand-picked blog posts, same card layout |
+| `tests`             | TestsSection            | Hand-picked tests, same card as the /tests page  |
 | `speed_test`        | SpeedTestSection        | M-Lab speed test widget                          |
 | `featured_partners` | FeaturedPartnersSection | Partner spotlight                                |
 | `infrastructureMap` | InfrastructureMapSection | Mapbox infrastructure map (used on /status)     |
