@@ -60,7 +60,7 @@ const socialLinks = social
 {
 	socialLinks.length > 0 && (
 		<div class={`flex items-center gap-4 ${className}`}>
-			{socialLinks.map(({ network, url, icon: Icon, label }) => (
+			{socialLinks.map(({ url, icon: Icon, label }) => (
 				<a
 					href={url}
 					target="_blank"

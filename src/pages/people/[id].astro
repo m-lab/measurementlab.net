@@ -4,11 +4,9 @@ import MlabDefault from '@assets/mlab-default-card.png';
 import Image from '@components/atoms/Image.astro';
 import Tag from '@components/atoms/Tag';
 import HouseCard from '@components/molecules/HouseCard.astro';
-import Hero from '@components/organisms/Hero.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import { isVisible } from '@utils/content';
-import { siteConfig } from '@lib/config';
 import type { GetStaticPaths } from 'astro';
 
 // Generate static paths for all people
@@ -42,7 +40,7 @@ const allPeople = await getCollection('people');
 const peopleMap = new Map(allPeople.map((person) => [person.data.id, person.data]));
 
 // Helper to get author names
-const getAuthorNames = (authorIds: string[]) => {
+const getAuthorNames = (authorIds: string[] = []) => {
   return authorIds
     .map((id) => peopleMap.get(id)?.name)
     .filter(Boolean)

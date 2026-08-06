@@ -14,7 +14,7 @@ export interface NavItem {
   href: string;
   label: string;
   type?: 'internal' | 'external';
-  children?: Array<{ href: string; label: string }>;
+  children?: Array<{ href: string; label: string; type: 'internal' | 'external' }>;
 }
 
 /**

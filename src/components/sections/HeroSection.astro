@@ -12,7 +12,8 @@ export interface Props {
 	};
 }
 
-const { title, subtitle, class: className = '', background } = Astro.props;
+// `background` is accepted but rendered by the SectionLayout wrapper in Sections.astro.
+const { title, subtitle, class: className = '' } = Astro.props;
 ---
 
 <Hero title={title} subtitle={subtitle} size="default" class={className}>

@@ -14,7 +14,6 @@
  * are pre-populated here — intentionally not stored in content files.
  */
 import { getCollection } from 'astro:content';
-import Tag from '@components/atoms/Tag';
 import HeroSection from '@components/sections/HeroSection.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
@@ -128,7 +127,7 @@ const formatFrequency = (f: string) => f.charAt(0).toUpperCase() + f.slice(1);
   description={description.slice(0, 160)}
 >
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(datasetJsonLd, null, 2)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(datasetJsonLd, null, 2)} />
     <meta name="DC.title" content={title} />
     <meta name="DC.description" content={description.slice(0, 500)} />
     <meta name="DC.creator" content="Measurement Lab" />

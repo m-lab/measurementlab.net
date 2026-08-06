@@ -1,4 +1,5 @@
 ---
+import { getEntry } from 'astro:content';
 // Import landing page components
 import Banner from '@components/atoms/Banner.astro';
 import BlogLanding from '@components/landing/BlogLanding.astro';
@@ -10,7 +11,6 @@ import Sections from '@components/sections/Sections.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import { getPages } from '@utils/pages';
-import { getEntry } from 'astro:content';
 
 import type { GetStaticPaths } from 'astro';
 
@@ -56,7 +56,11 @@ const archivedBanner = siteConfig?.data.archivedBanner;
 	>
 		<HeroSection title={page.data.title} subtitle={page.data.description} />
 	</SectionLayout>
-	{page.data.status === 'archived' && archivedBanner && <Banner message={archivedBanner.message} color={archivedBanner.color} />}
+	{
+		page.data.status === 'archived' && archivedBanner && (
+			<Banner message={archivedBanner.message} color={archivedBanner.color} />
+		)
+	}
 	<!-- Main Page Content (Sections) -->
 	{sections && <Sections sectionItems={sections} />}
 

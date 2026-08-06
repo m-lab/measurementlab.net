@@ -7,6 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "typecheck": "astro check",
     "sync:pages-categories": "node scripts/sync-pages-categories.mjs",
     "sync:pages-categories:check": "node scripts/sync-pages-categories.mjs --check",
     "migrate:1-authors": "tsx scripts/generate-author-mapping.ts && tsx scripts/create-authors.ts",
@@ -49,6 +50,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "@iconify/json": "^2.2.430",
     "@playwright/test": "^1.58.2",
     "@svgr/core": "^8.1.0",
@@ -62,6 +64,7 @@
     "prettier": "^3.8.0",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
     "unplugin-icons": "^23.0.1"
   }
 }

@@ -20,6 +20,8 @@ const colorPaletteSchema = z.enum([
   'speed',
 ]);
 
+export type ColorPaletteType = z.infer<typeof colorPaletteSchema>;
+
 // Atoms (no image dependency, can be shared)
 const buttonSchema = z.object({
   variant: z.string(),

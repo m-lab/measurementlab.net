@@ -15,11 +15,9 @@ export interface Props {
   class?: string;
 }
 
-const {
-  title,
-  buttons = [],
-  class: className = '',
-} = Astro.props;
+// `class` is accepted for compatibility but applied by the SectionLayout wrapper in
+// Sections.astro, not here.
+const { title, buttons = [] } = Astro.props;
 ---
 
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

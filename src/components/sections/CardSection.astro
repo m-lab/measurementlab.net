@@ -13,13 +13,9 @@ export interface Props {
   class?: string;
 }
 
-const {
-  title,
-  description,
-  cards = [],
-  buttons = [],
-  class: className = '',
-} = Astro.props;
+// `class` is accepted for compatibility but applied by the SectionLayout wrapper in
+// Sections.astro, not here.
+const { title, description, cards = [], buttons = [] } = Astro.props;
 ---
 
 <SectionLayout>

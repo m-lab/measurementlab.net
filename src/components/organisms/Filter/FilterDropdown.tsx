@@ -83,9 +83,9 @@ export default function FilterDropdown(props: FilterDropdownProps) {
             <ListboxOption
               key={option}
               value={option}
-              className={({ active }) =>
+              className={({ focus }) =>
                 `relative cursor-pointer py-2 pr-4 pl-10 select-none ${
-                  active ? 'bg-primary-100 text-primary-900' : 'text-gray-900'
+                  focus ? 'bg-primary-100 text-primary-900' : 'text-gray-900'
                 }`
               }
             >

@@ -43,7 +43,7 @@ export default function BlogItem({ item }: BlogItemProps) {
         {/* Content Slot Area */}
         <div className="flex flex-col">
           {/* Draft badge (only visible in dev) */}
-          {isDev && post.data.published === 'draft' && (
+          {isDev && post.data.status === 'draft' && (
             <div className="mb-3">
               <Tag variant="highlight" className="font-bold">
                 DRAFT

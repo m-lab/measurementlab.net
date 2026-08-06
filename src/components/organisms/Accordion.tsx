@@ -1,4 +1,8 @@
-import { Disclosure } from '@headlessui/react';
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from '@headlessui/react';
 import ChevronDownIcon from '~icons/heroicons/chevron-down-20-solid';
 
 export interface AccordionItem {
@@ -40,7 +44,7 @@ export default function Accordion({
         >
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-4 text-left transition-colors hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-700 focus-visible:ring-offset-2">
+              <DisclosureButton className="flex w-full items-center justify-between rounded-lg p-4 text-left transition-colors hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-700 focus-visible:ring-offset-2">
                 <span className="text-base font-semibold text-neutral-900 md:text-lg">
                   {item.title}
                 </span>
@@ -49,10 +53,10 @@ export default function Accordion({
                     open ? 'rotate-180' : ''
                   }`}
                 />
-              </Disclosure.Button>
-              <Disclosure.Panel className="prose prose-sm max-w-none p-4 pt-0 text-neutral-700">
+              </DisclosureButton>
+              <DisclosurePanel className="prose prose-sm max-w-none p-4 pt-0 text-neutral-700">
                 <div dangerouslySetInnerHTML={{ __html: item.content }} />
-              </Disclosure.Panel>
+              </DisclosurePanel>
             </>
           )}
         </Disclosure>

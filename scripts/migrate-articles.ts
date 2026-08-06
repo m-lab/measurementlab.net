@@ -7,7 +7,8 @@ interface OldFrontmatter {
   layout?: string;
   title: string;
   author?: string;
-  date: string;
+  // gray-matter parses unquoted YAML dates into Date objects, quoted ones into strings
+  date: string | Date;
   breadcrumb?: string;
   categories?: string[];
 }
@@ -22,17 +23,6 @@ interface NewFrontmatter {
   categories?: string[];
   publishedDate: string;
 }
-
-const _VALID_CATEGORIES = [
-  'Technology',
-  'Development',
-  'Design',
-  'Product',
-  'Business',
-  'Tutorial',
-  'News',
-  'Opinion',
-];
 
 function generatePermalink(filename: string): string {
   // Remove date prefix (YYYY-MM-DD-) and .md extension
@@ -192,13 +182,10 @@ function transformArticle(
     const categories = classifyArticle(old.title, tags);
 
     // Extract just YYYY-MM-DD from the date (strip time if present)
-    let dateString = old.date;
-    if (typeof dateString === 'object' && dateString instanceof Date) {
-      dateString = dateString.toISOString().split('T')[0];
-    } else if (typeof dateString === 'string') {
-      // If it's a string with timestamp, extract just the date part
-      dateString = dateString.split('T')[0];
-    }
+    const dateString =
+      old.date instanceof Date
+        ? old.date.toISOString().split('T')[0]
+        : old.date.split('T')[0];
 
     // Build new frontmatter
     const newFrontmatter: NewFrontmatter = {

@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import Heading from '@components/atoms/Heading.astro';
 import Image from '@components/atoms/Image.astro';
-import SectionLayout from '@layouts/SectionLayout.astro';
 import { isVisible } from '@utils/content';
 import type { ImageMetadata } from 'astro';
 
@@ -21,7 +20,9 @@ export interface Props {
 	class?: string
 }
 
-const { title, category, class: className = '', sectionLabel = 'Partners' } = Astro.props;
+// `class` and `sectionLabel` are accepted but consumed by the SectionLayout wrapper in
+// Sections.astro, not here.
+const { title, category } = Astro.props;
 
 // Query partners collection, filtered by visibility
 const allPartners = (await getCollection('partners')).filter(p => isVisible(p));

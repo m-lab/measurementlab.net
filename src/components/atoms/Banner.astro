@@ -1,17 +1,22 @@
 ---
+import type { ColorPaletteType } from '@content/config';
+
 export interface Props {
 	message: string;
-	color?: 'primary' | 'secondary' | 'supporting1' | 'supporting2' | 'neutral';
+	color?: ColorPaletteType;
 }
 
 const { message, color = 'secondary' } = Astro.props;
 
-const colorStyles = {
+// Keyed by the full palette so adding a colour to `colorPaletteSchema` without a
+// style here is a type error rather than a `class="... undefined"` banner.
+const colorStyles: Record<ColorPaletteType, string> = {
 	primary: 'border-primary-300 bg-primary-50 text-primary-800',
 	secondary: 'border-secondary-300 bg-secondary-50 text-secondary-800',
 	supporting1: 'border-supporting1-300 bg-supporting1-50 text-supporting1-800',
 	supporting2: 'border-supporting2-300 bg-supporting2-50 text-supporting2-800',
 	neutral: 'border-neutral-300 bg-neutral-50 text-neutral-800',
+	speed: 'border-speed-300 bg-speed-50 text-speed-800',
 };
 ---
 
