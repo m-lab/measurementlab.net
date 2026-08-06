@@ -32,3 +32,6 @@ test-results
 # Local configuration
 .localconfig/
 .claude/
+
+# Playwright files
+.playwright-mcp/

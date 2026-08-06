@@ -1,11 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 /**
  * /datasets/[slug] — Individual dataset page
  *
- * Layout: thin hero → two-column body (main + sidebar)
- *   Main:    description, access resources, documentation, related datasets
- *   Sidebar: compact metadata (publisher, license, coverage, etc.), keywords
+ * Follows the same shape as the other detail pages (publications, tests):
+ *   breadcrumbs → hero with metadata tags → single 4xl column
  *
  * Head embeds:
  *   - schema.org/Dataset JSON-LD
@@ -14,7 +12,11 @@ import { getCollection } from 'astro:content';
  * M-Lab constants (creator, publisher, license, language, type, subject)
  * are pre-populated here — intentionally not stored in content files.
  */
+import { getCollection } from 'astro:content';
 import JsonLd from '@components/atoms/JsonLd.astro';
+import Link from '@components/atoms/Link';
+import Tag from '@components/atoms/Tag';
+import Card from '@components/molecules/Card.astro';
 import HeroSection from '@components/sections/HeroSection.astro';
 import datasetCategories from '@content/categories/datasets.json';
 import PageLayout from '@layouts/PageLayout.astro';
@@ -28,6 +30,9 @@ import {
   MLAB_CREATOR,
   temporalCoverageOf,
 } from '@utils/datasetSchema';
+import ArrowTopRightOnSquareIcon from '~icons/heroicons/arrow-top-right-on-square-20-solid';
+import ChevronRightIcon from '~icons/heroicons/chevron-right-20-solid';
+import DocumentTextIcon from '~icons/heroicons/document-text-20-solid';
 
 export async function getStaticPaths() {
   const datasets = await getCollection('datasets');
@@ -83,22 +88,31 @@ const accessUrl = (url: string) =>
     ? `https://console.cloud.google.com/storage/browser/${url.replace('gs://', '')}`
     : url;
 
-// Format badge colors
-const formatBadge: Record<string, string> = {
-  portal:     'bg-gray-100 text-blue-700',
-  bigquery:   'bg-gray-100 text-amber-700',
-  gcs:        'bg-gray-100 text-green-700',
-  github:     'bg-gray-100 text-gray-600',
-  json:       'bg-gray-100 text-teal-700',
-  parquet:    'bg-gray-100 text-teal-700',
-  csv:        'bg-gray-100 text-teal-700',
-  interactive:'bg-gray-100 text-violet-700',
-};
+// Colour access points by how you reach the data, not by file format. `type` is a
+// schema enum and is always set; `format` is free text, so the previous format-keyed
+// lookup silently fell through for values like "JSON / raw TCP trace".
+const accessVariants = {
+  query: 'primary',
+  download: 'supporting1',
+  api: 'speed',
+  viz: 'secondary',
+} as const;
 
-const getBadgeClass = (format: string) =>
-  formatBadge[format.toLowerCase()] ?? 'bg-gray-100 text-gray-700';
+const accessVariant = (type?: keyof typeof accessVariants) =>
+  (type && accessVariants[type]) || 'neutral';
+
+const isExternal = (url: string) => url.startsWith('http') || url.startsWith('gs://');
 
 const formatFrequency = (f: string) => f.charAt(0).toUpperCase() + f.slice(1);
+
+// Rendered as a definition list; entries with no value drop out. Category and coverage
+// are deliberately absent — they are the hero tags, and repeating them here would say
+// the same thing twice on one screen.
+const metadata = [
+  { term: 'Geography', value: spatialCoverage },
+  { term: 'Updated', value: updateFrequency && formatFrequency(updateFrequency) },
+  { term: 'Approximate size', value: dataSize },
+].filter((item) => item.value);
 ---
 
 <PageLayout
@@ -122,272 +136,192 @@ const formatFrequency = (f: string) => f.charAt(0).toUpperCase() + f.slice(1);
 		<!-- No canonical link here: BaseLayout already emits one from Astro.site. -->
 	</Fragment>
 
-	{/* Hero — title + breadcrumb */}
-	<SectionLayout sectionLabel="hero" zigzag="primary-light" maxWidth="2xl">
-		<HeroSection title={title} subtitle={categoryName} />
+	<!-- Breadcrumbs -->
+	<SectionLayout padding={false}>
+		<nav class="px-4 py-4 sm:px-6 lg:px-8" aria-label="Breadcrumb">
+			<ol class="flex flex-wrap items-center gap-2 text-base">
+				<li class="flex items-center gap-2">
+					<Link href="/datasets" variant="crumb">Data Catalog</Link>
+				</li>
+				<li class="flex items-center gap-2">
+					<span class="text-neutral-400">/</span>
+					<span class="text-neutral-600">{title}</span>
+				</li>
+			</ol>
+		</nav>
 	</SectionLayout>
 
-	{/* Body — two-column layout */}
-	<SectionLayout bgColor="primary-light">
-		<div class="mx-auto max-w-6xl px-4 py-12">
-			<div class="flex flex-col gap-10 lg:flex-row lg:gap-12">
-				{/* ── MAIN COLUMN ── */}
-				<div class="min-w-0 flex-1">
-					{/* Description */}
-					<section class="mb-10">
-						<h2
-							class="text-gray-500 mb-3 text-xs font-semibold tracking-widest uppercase"
-						>
-							About this dataset
-						</h2>
-						<p class="text-gray-800 text-base leading-relaxed">{description}</p>
-					</section>
-
-					{/* Access Resources */}
-					{
-						accessPoints && accessPoints.length > 0 && (
-							<section class="mb-10">
-								<h2 class="text-gray-500 mb-4 text-xs font-semibold tracking-widest uppercase">
-									Access the Data
-								</h2>
-								<ul class="divide-gray-200 border-gray-200 divide-y overflow-hidden rounded-xl border bg-white">
-									{accessPoints.map((ap) => (
-										<li>
-											<a
-												href={accessUrl(ap.url)}
-												target={
-													ap.url.startsWith('http') ? '_blank' : undefined
-												}
-												rel={
-													ap.url.startsWith('http')
-														? 'noopener noreferrer'
-														: undefined
-												}
-												class="hover:bg-gray-50 group block py-4 pr-5 transition-colors"
-											>
-												<div class="mb-1.5 pl-3">
-													<span
-														class={`inline-block rounded-md px-2.5 py-0.5 text-base font-semibold ${getBadgeClass(ap.format)}`}
-													>
-														{ap.format}
-													</span>
-												</div>
-												<div class="flex items-center justify-between gap-3 pl-5">
-													<div class="min-w-0">
-														<div class="text-gray-900 group-hover:text-blue-700 text-base font-medium">
-															{ap.label}
-														</div>
-														{ap.description && (
-															<div class="text-gray-500 mt-0.5 text-base">
-																{ap.description}
-															</div>
-														)}
-														{ap.url.startsWith('gs://') && (
-															<code class="text-gray-400 mt-1 block font-mono text-xs">
-																{ap.url}
-															</code>
-														)}
-													</div>
-													<svg
-														class="text-gray-300 group-hover:text-blue-500 h-4 w-4 shrink-0"
-														fill="none"
-														viewBox="0 0 24 24"
-														stroke="currentColor"
-													>
-														<path
-															stroke-linecap="round"
-															stroke-linejoin="round"
-															stroke-width="2"
-															d="M9 5l7 7-7 7"
-														/>
-													</svg>
-												</div>
-											</a>
-										</li>
-									))}
-								</ul>
-							</section>
-						)
-					}
-
-					{/* Documentation */}
-					{
-						(documentationLinks ?? []).length > 0 && (
-							<section class="mb-10">
-								<h2 class="text-gray-500 mb-4 text-xs font-semibold tracking-widest uppercase">
-									Documentation
-								</h2>
-								<ul class="space-y-2">
-									{documentationLinks!.map((link) => (
-										<li class="flex items-center gap-2">
-											<svg
-												class="text-gray-300 h-4 w-4 shrink-0"
-												fill="none"
-												viewBox="0 0 24 24"
-												stroke="currentColor"
-											>
-												<path
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													stroke-width="2"
-													d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-												/>
-											</svg>
-											<a
-												href={link.url}
-												target={
-													link.url.startsWith('http') ? '_blank' : undefined
-												}
-												rel={
-													link.url.startsWith('http')
-														? 'noopener noreferrer'
-														: undefined
-												}
-												class="text-blue-600 text-base hover:underline"
-											>
-												{link.label}
-											</a>
-										</li>
-									))}
-								</ul>
-							</section>
-						)
-					}
-
-					{/* Related Datasets */}
-					{
-						related.length > 0 && (
-							<section>
-								<h2 class="text-gray-500 mb-4 text-xs font-semibold tracking-widest uppercase">
-									Related Datasets
-								</h2>
-								<ul class="space-y-2">
-									{related.map((rel) =>
-										rel ? (
-											<li class="flex items-center gap-2">
-												<svg
-													class="text-gray-300 h-4 w-4 shrink-0"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke="currentColor"
-												>
-													<path
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														stroke-width="2"
-														d="M9 5l7 7-7 7"
-													/>
-												</svg>
-												<a
-													href={`/datasets/${rel.id}`}
-													class="text-blue-600 text-base hover:underline"
-												>
-													{rel.data.title}
-												</a>
-											</li>
-										) : null
-									)}
-								</ul>
-							</section>
-						)
-					}
-				</div>
-
-				{/* ── SIDEBAR ── */}
-				<aside class="shrink-0 lg:w-72">
-					<div
-						class="border-gray-200 overflow-hidden rounded-xl border bg-white"
-					>
-						<div class="border-gray-100 bg-gray-50 border-b px-5 py-4">
-							<h2
-								class="text-gray-500 text-xs font-semibold tracking-widest uppercase"
-							>
-								Dataset Info
-							</h2>
-						</div>
-						<dl class="divide-gray-100 divide-y">
-							<div class="px-5 py-3">
-								<dt class="text-gray-400 mb-0.5 text-xs">Publisher</dt>
-								<dd class="text-gray-900 text-sm font-medium">
-									<a href={MLAB_CREATOR.url} class="hover:underline"
-										>Measurement Lab</a
-									>
-								</dd>
-							</div>
-							<div class="px-5 py-3">
-								<dt class="text-gray-400 mb-0.5 text-xs">License</dt>
-								<dd class="text-sm font-medium">
-									<a
-										href={LICENSE_URL}
-										target="_blank"
-										rel="noopener noreferrer"
-										class="text-blue-600 hover:underline"
-									>
-										CC0 1.0 Universal
-									</a>
-								</dd>
-							</div>
-							{
-								coverageLabel && (
-									<div class="px-5 py-3">
-										<dt class="text-gray-400 mb-0.5 text-xs">Coverage</dt>
-										<dd class="text-gray-900 text-sm font-medium">
-											{coverageLabel}
-										</dd>
-									</div>
-								)
-							}
-							{
-								updateFrequency && (
-									<div class="px-5 py-3">
-										<dt class="text-gray-400 mb-0.5 text-xs">Updated</dt>
-										<dd class="text-gray-900 text-sm font-medium">
-											{formatFrequency(updateFrequency)}
-										</dd>
-									</div>
-								)
-							}
-							{
-								spatialCoverage && (
-									<div class="px-5 py-3">
-										<dt class="text-gray-400 mb-0.5 text-xs">Geography</dt>
-										<dd class="text-gray-900 text-sm font-medium">
-											{spatialCoverage}
-										</dd>
-									</div>
-								)
-							}
-							{
-								dataSize && (
-									<div class="px-5 py-3">
-										<dt class="text-gray-400 mb-0.5 text-xs">
-											Approximate size
-										</dt>
-										<dd class="text-gray-900 text-sm font-medium">
-											{dataSize}
-										</dd>
-									</div>
-								)
-							}
-							{
-								testRef && (
-									<div class="px-5 py-3">
-										<dt class="text-gray-400 mb-0.5 text-xs">Source test</dt>
-										<dd class="text-sm font-medium">
-											<a
-												href={`/tests/${testRef}/`}
-												class="text-blue-600 hover:underline"
-											>
-												{testRef}
-											</a>
-										</dd>
-									</div>
-								)
-							}
-						</dl>
-					</div>
-				</aside>
+	<!-- Hero -->
+	<SectionLayout sectionLabel="hero" maxWidth="4xl" zigzag="supporting1-light">
+		<HeroSection title={title}>
+			<div class="flex flex-wrap justify-center gap-2">
+				<Tag variant="primary" size="md">{categoryName}</Tag>
+				{
+					coverageLabel && (
+						<Tag variant="neutral" size="md">
+							{coverageLabel}
+						</Tag>
+					)
+				}
 			</div>
+		</HeroSection>
+	</SectionLayout>
+
+	<SectionLayout>
+		<div class="mx-auto max-w-4xl py-12">
+			<!-- About -->
+			<section class="mb-12">
+				<h2 class="mb-6 text-2xl font-bold">About this dataset</h2>
+				<p class="text-lg leading-relaxed text-neutral-800">{description}</p>
+			</section>
+
+			<!-- Access the data — the page's primary job -->
+			{
+				accessPoints && accessPoints.length > 0 && (
+					<section class="mb-12">
+						<h2 class="mb-6 text-2xl font-bold">Access the data</h2>
+						<div class="space-y-3">
+							{accessPoints.map((ap) => (
+								<Card
+									variant="elevated"
+									padding="md"
+									href={accessUrl(ap.url)}
+									external={isExternal(ap.url)}
+								>
+									<div class="flex items-start justify-between gap-4">
+										<div class="min-w-0">
+											<div class="mb-2">
+												<Tag variant={accessVariant(ap.type)} size="sm">
+													{ap.format}
+												</Tag>
+											</div>
+											<p class="text-lg font-semibold text-neutral-900">
+												{ap.label}
+											</p>
+											{ap.description && (
+												<p class="mt-1 text-base text-neutral-600">
+													{ap.description}
+												</p>
+											)}
+											{ap.url.startsWith('gs://') && (
+												<code class="mt-2 inline-block font-mono text-base break-all text-neutral-600">
+													{ap.url}
+												</code>
+											)}
+										</div>
+										<ArrowTopRightOnSquareIcon
+											className="mt-1 h-5 w-5 shrink-0 text-neutral-400"
+											aria-hidden="true"
+										/>
+									</div>
+								</Card>
+							))}
+						</div>
+					</section>
+				)
+			}
+
+			<!-- Dataset properties. Always rendered: publisher and licence are constants. -->
+			{
+				(
+					<section class="mb-12">
+						<h2 class="mb-6 text-2xl font-bold">Dataset info</h2>
+						<Card variant="default">
+							<dl class="grid gap-x-8 gap-y-5 sm:grid-cols-2">
+								{metadata.map((item) => (
+									<div>
+										<dt class="mb-1 text-base text-neutral-500">{item.term}</dt>
+										<dd class="text-lg font-medium text-neutral-900">
+											{item.value}
+										</dd>
+									</div>
+								))}
+								<div>
+									<dt class="mb-1 text-base text-neutral-500">Publisher</dt>
+									<dd class="text-lg font-medium">
+										<a href={MLAB_CREATOR.url}>Measurement Lab</a>
+									</dd>
+								</div>
+								<div>
+									<dt class="mb-1 text-base text-neutral-500">License</dt>
+									<dd class="text-lg font-medium">
+										<a
+											href={LICENSE_URL}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											CC0 1.0 Universal
+										</a>
+									</dd>
+								</div>
+								{testRef && (
+									<div>
+										<dt class="mb-1 text-base text-neutral-500">Source test</dt>
+										<dd class="text-lg font-medium">
+											<a href={`/tests/${testRef}/`}>{testRef}</a>
+										</dd>
+									</div>
+								)}
+							</dl>
+						</Card>
+					</section>
+				)
+			}
+
+			<!-- Documentation -->
+			{
+				(documentationLinks ?? []).length > 0 && (
+					<section class="mb-12">
+						<h2 class="mb-6 text-2xl font-bold">Documentation</h2>
+						<ul class="space-y-3">
+							{documentationLinks!.map((link) => (
+								<li class="flex items-center gap-3">
+									<DocumentTextIcon
+										className="h-5 w-5 shrink-0 text-neutral-400"
+										aria-hidden="true"
+									/>
+									<a
+										href={link.url}
+										target={link.url.startsWith('http') ? '_blank' : undefined}
+										rel={
+											link.url.startsWith('http')
+												? 'noopener noreferrer'
+												: undefined
+										}
+										class="text-lg"
+									>
+										{link.label}
+									</a>
+								</li>
+							))}
+						</ul>
+					</section>
+				)
+			}
+
+			<!-- Related datasets -->
+			{
+				related.length > 0 && (
+					<section>
+						<h2 class="mb-6 text-2xl font-bold">Related datasets</h2>
+						<ul class="space-y-3">
+							{related.map((rel) =>
+								rel ? (
+									<li class="flex items-center gap-3">
+										<ChevronRightIcon
+											className="h-5 w-5 shrink-0 text-neutral-400"
+											aria-hidden="true"
+										/>
+										<a href={`/datasets/${rel.id}`} class="text-lg">
+											{rel.data.title}
+										</a>
+									</li>
+								) : null
+							)}
+						</ul>
+					</section>
+				)
+			}
 		</div>
 	</SectionLayout>
 </PageLayout>

@@ -43,7 +43,7 @@ export default function Link({
       <span>{children}</span>
       {external && (
         <ArrowTopRightOnSquareIcon
-          class="ml-1 inline-block h-4 w-4"
+          className="ml-1 inline-block h-4 w-4"
           aria-hidden="true"
         />
       )}

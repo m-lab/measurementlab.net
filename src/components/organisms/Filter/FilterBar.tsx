@@ -87,7 +87,7 @@ const FilterBar = ({
             />
             {isSearchExpanded && (
               <MagnifyingGlassIcon
-                class="pointer-events-none absolute left-3 h-5 w-5 text-neutral-700"
+                className="pointer-events-none absolute left-3 h-5 w-5 text-neutral-700"
                 aria-hidden="true"
               />
             )}
@@ -99,10 +99,10 @@ const FilterBar = ({
             aria-label="Expand search"
           >
             {isSearchExpanded ? (
-              <XMarkIcon class="text-gray-400 h-5 w-5" aria-hidden="true" />
+              <XMarkIcon className="text-gray-400 h-5 w-5" aria-hidden="true" />
             ) : (
               <MagnifyingGlassIcon
-                class="text-gray-400 h-5 w-5"
+                className="text-gray-400 h-5 w-5"
                 aria-hidden="true"
               />
             )}

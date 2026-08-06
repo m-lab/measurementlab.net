@@ -49,7 +49,7 @@ export default function Accordion({
                   {item.title}
                 </span>
                 <ChevronDownIcon
-                  class={`h-5 w-5 text-neutral-500 transition-transform duration-200 ${
+                  className={`h-5 w-5 text-neutral-500 transition-transform duration-200 ${
                     open ? 'rotate-180' : ''
                   }`}
                 />

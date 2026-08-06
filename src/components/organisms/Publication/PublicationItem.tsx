@@ -86,7 +86,7 @@ export default function PublicationItem({ item }: PublicationItemProps) {
                   className="text-md inline-flex items-center gap-2 text-primary-500 hover:text-primary-600"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <IconDownload class="h-6 w-6" />
+                  <IconDownload className="h-6 w-6" />
                   {link.label}
                 </a>
               ))}

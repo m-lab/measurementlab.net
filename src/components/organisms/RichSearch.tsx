@@ -397,7 +397,7 @@ export default function RichSearch() {
                 }}
               />
               <MagnifyingGlassIcon
-                class="text-gray-400 pointer-events-none col-start-1 row-start-1 ml-4 size-5 self-center"
+                className="text-gray-400 pointer-events-none col-start-1 row-start-1 ml-4 size-5 self-center"
                 aria-hidden="true"
               />
             </div>
@@ -498,7 +498,7 @@ export default function RichSearch() {
             {!loading && rawQuery === '?' && (
               <div className="px-6 py-14 text-center text-sm sm:px-14">
                 <LifebuoyIcon
-                  class="text-gray-400 mx-auto size-6"
+                  className="text-gray-400 mx-auto size-6"
                   aria-hidden="true"
                 />
                 <p className="text-gray-900 mt-4 font-semibold">
@@ -520,7 +520,7 @@ export default function RichSearch() {
               ) && (
                 <div className="px-6 py-14 text-center text-sm sm:px-14">
                   <ExclamationTriangleIcon
-                    class="text-gray-400 mx-auto size-6"
+                    className="text-gray-400 mx-auto size-6"
                     aria-hidden="true"
                   />
                   <p className="text-gray-900 mt-4 font-semibold">
