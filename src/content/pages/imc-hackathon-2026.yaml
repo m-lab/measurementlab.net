@@ -27,22 +27,6 @@ sections:
       *Venue to be confirmed* 
 
 
-      **More details, registration, and agenda coming soon!**  
-
-
-      [Questions or want to participate?](mailto: leads@measurementlab.net)
-  - type: partners
-    background:
-      color: primary-light
-      type: full
-    title: "IMC Hackathon Hosts "
-    category: IMC Hackathon Partners
-  - type: richText
-    background:
-      color: white
-      type: full
-    withTOC: false
-    content: >-
       **Names and affiliations of organizers**
 
 
@@ -62,6 +46,22 @@ sections:
       - Lai Yi, Head of Cloudflare Radar, Cloudflare
 
 
+      **More details, registration, and agenda coming soon!**  
+
+
+      [Questions or want to participate?](mailto: leads@measurementlab.net)
+  - type: partners
+    background:
+      color: primary-light
+      type: full
+    title: "IMC Hackathon Hosts "
+    category: IMC Hackathon Partners
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: >-
       **Past IMC Hackathons** 
 
 
