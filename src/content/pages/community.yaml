@@ -8,34 +8,22 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: >-
+    content: |-
       ## About the M-Lab Community
 
+      M-Lab contributes to a global community of researchers and technologists working on Internet measurement. Through community-building events, M-lab fosters collaboration, knowledge sharing, and the development of new measurement tools.
 
-      M-Lab contributes to a global community of researchers and technologists
-      working on Internet measurement. Through community-building events, M-lab
-      fosters collaboration, knowledge sharing, and the development of new
-      measurement tools.
-
-
-      We value each member of our community and ask members treat each other
-      with respect and kindness in our [Community
-      Guidelines](/community-guidelines).
-
+      We value each member of our community and ask members treat each other with respect and kindness in our [Community Guidelines](/community-guidelines).
 
       ## Access Data and Discuss Ideas
 
+      M-Lab hosts [Community Calls](https://youtube.com/playlist?list=PLz8pFRnFxSSZBJG4E-KsWksLxzHjLz1gQ&si=NcycaU413L55NjK0) to share latest news, highlight important work from within the community, and discuss trends in Internet measurement. 
 
-      Join M-Lab’s Discuss list to access M-Lab data on Big Query and/or swap
-      ideas and ask questions from fellow researchers. With over 2,000 members,
-      the M-Lab Discuss email list is a network of incredible minds! 
-
+      In addition, you can join M-Lab’s Discuss list to access M-Lab data on Big Query and/or swap ideas and ask questions from fellow researchers. With over 2,000 members, the M-Lab Discuss email list is a network of incredible minds! 
 
       ![](/src/assets/community/LYO2024MadridCrop.png)
 
-
-      *M-Lab Advisory Committee member Lai Yi Ohlsen explains M-Lab data to IMC
-      Hackathon 2024 participants* 
+      *M-Lab Advisory Committee member Lai Yi Ohlsen explains M-Lab data to IMC Hackathon 2024 participants* 
   - type: button
     background:
       color: white
@@ -45,6 +33,10 @@ sections:
         size: md
         text: Join the M-Lab Discuss List
         href: https://groups.google.com/a/measurementlab.net/g/discuss
+      - variant: secondary
+        size: md
+        text: M-Lab Community Calls
+        href: https://youtube.com/playlist?list=PLz8pFRnFxSSZBJG4E-KsWksLxzHjLz1gQ&si=NcycaU413L55NjK0
   - type: richText
     background:
       color: white
