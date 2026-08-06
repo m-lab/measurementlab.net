@@ -27,7 +27,6 @@
     { "from": "tools/paris_traceroute", "to": "tests/paris_traceroute", "status": 301 },
     { "from": "tools/pathload2", "to": "tests/pathload2", "status": 301 },
     { "from": "tools/sidestream", "to": "tests/sidestream", "status": 301 },
-    { "from": "tools/windrider", "to": "tests/windrider", "status": 301 },
-    { "from": "tools", "to": "tests", "status": 301 }
+    { "from": "tools/windrider", "to": "tests/windrider", "status": 301 }
   ]
 }
