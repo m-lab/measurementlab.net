@@ -42,7 +42,6 @@ sections:
         background:
           color: primary-medium
           type: full
-        title: "Get Involved "
         buttons:
           - variant: secondary
             size: md
