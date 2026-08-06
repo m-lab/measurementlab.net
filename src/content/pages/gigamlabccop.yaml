@@ -69,15 +69,11 @@ sections:
 
 
       Data:  
-
-      The CCoP GitHub  
-
-      Launch event recording  
-
+        
       Past Session Notes: March, May, July  
   - type: flexi
     background:
-      color: primary-dark
+      color: primary-medium
       type: full
     title: Get Involved
     sections:
@@ -85,6 +81,7 @@ sections:
         background:
           color: primary-dark
           type: full
+        title: "Get Involved "
         buttons:
           - variant: secondary
             size: md
@@ -94,3 +91,21 @@ sections:
             size: md
             text: "Suggest a topic or share an update "
             href: "mailto: hello@measurementlab.net"
+  - type: button
+    background:
+      color: primary-medium
+      type: full
+    title: Resources
+    buttons:
+      - variant: secondary
+        size: md
+        text: CCoP GitHub
+        href: https://github.com/unicef/giga-mlab-school-connectivity-cop
+      - variant: primary
+        size: md
+        text: Launch Event Recording
+        href: https://youtu.be/J5cvJLu1F6c?si=QMcO1G5olinwy72e
+      - variant: primary
+        size: md
+        text: IQB-Edu Case Study and Data
+        href: https://github.com/unicef/giga-mlab-school-connectivity-cop/tree/main/materials/2026-05-IQB-Edu
