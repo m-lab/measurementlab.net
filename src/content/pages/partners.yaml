@@ -5,7 +5,7 @@ zigzag: secondary-light
 sections:
   - type: richText
     background:
-      color: primary-light
+      color: gray
       type: full
     withTOC: true
     content: >+
