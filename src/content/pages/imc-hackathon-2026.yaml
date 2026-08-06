@@ -41,7 +41,7 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: |
+    content: |-
       **Names and affiliations of organizers**
 
       - Pavlos Sermpezis, Director, Technical Lead, Measurement Lab
