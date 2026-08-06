@@ -114,9 +114,15 @@ All sections support a `background` property:
 
 ```yaml
 background:
-  color: white # Options: white, gray, primary-light, primary-medium, primary-dark
+  color: white # Options: white, gray, primary-light, primary-medium,
+  # primary-dark, speed-light, speed-dark
   image: /src/assets/my-image.jpg # Optional background image
 ```
+
+Backgrounds are defined in `src/utils/backgrounds.ts`, which is the single source of
+truth for the class map, the Zod enum, and which colours count as dark. Dark backgrounds
+automatically invert text, prose and link contrast — see `.section-dark` in
+`src/styles/typography.css`.
 
 ### Zigzag Decorations
 
@@ -126,7 +132,8 @@ Hero sections support zigzag decorative backgrounds:
 zigzag:
   primary-light # Options: primary-light, primary-dark, secondary-light,
   # secondary-dark, supporting1-light, supporting1-dark,
-  # supporting2-light, supporting2-dark
+  # supporting2-light, supporting2-dark,
+  # speed-light, speed-dark
 ```
 
 ## Navigation Structure

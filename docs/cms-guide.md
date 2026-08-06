@@ -414,7 +414,7 @@ Click the trash icon on the right side of the section header.
 
 Most sections include a **Section Background** setting with two options:
 
-- **Color** — Choose from White, Gray, Light Blue, Medium Blue, or Dark Blue
+- **Color** — Choose from White, Gray, Light Blue, Medium Blue, Dark Blue, Light Purple, or Dark Purple. On the dark options (Medium Blue, Dark Blue, Dark Purple) the text, links and buttons switch to light automatically — you do not need to change anything else.
 - **Type** — Full-width or Contained
 
 **Working with Card Sections:**
