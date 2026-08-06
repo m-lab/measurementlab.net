@@ -52,7 +52,7 @@ sections:
       - title: Community Engagement
         content: Provide technical advice, hold convenings, and bring together
           stakeholders to foster knowledge exchange and collaboration.
-        color: primary
+        color: secondary
         icon: community
         button:
           variant: primary
