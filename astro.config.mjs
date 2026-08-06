@@ -43,9 +43,6 @@ const redirects = redirectsData.redirects.reduce(
 export default defineConfig({
   redirects,
   site: siteConfig.url,
-  // Astro 7 changed the default to 'jsx', which collapses whitespace between
-  // inline elements. Pinned to the pre-7 behaviour so the upgrade is visually
-  // neutral; opt into 'jsx' deliberately later.
   compressHTML: true,
   devToolbar: {
     enabled: false,
@@ -54,13 +51,23 @@ export default defineConfig({
     {
       provider: fontProviders.bunny(),
       name: 'Inter',
-      weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      weights: [400, 500, 600, 700, 800],
+      styles: ['normal'],
+      cssVariable: '--font-inter',
+    },
+    {
+      provider: fontProviders.bunny(),
+      name: 'Inter',
+      weights: [400],
+      styles: ['italic'],
       cssVariable: '--font-inter',
     },
     {
       provider: fontProviders.bunny(),
       name: 'IBM Plex Mono',
       weights: [400],
+      styles: ['normal'],
+      fallbacks: ['monospace'],
       cssVariable: '--font-ibm-plex-mono',
     },
   ],

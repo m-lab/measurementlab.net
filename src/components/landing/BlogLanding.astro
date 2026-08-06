@@ -9,7 +9,7 @@ const postsData = await prepareBlogPostsCardData(posts);
 
 <div class="pb-12">
 	<FilterableContent
-		client:load
+		client:visible
 		type="blog"
 		items={postsData}
 		fields={["categories"]}

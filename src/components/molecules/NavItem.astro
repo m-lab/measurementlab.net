@@ -25,7 +25,7 @@ const classes = `no-underline hover:underline transition transition-300 underlin
 ---
 
 {children ? (
-	<NavItemDropdown label={label} items={children} class={className} client:load />
+	<NavItemDropdown label={label} items={children} class={className} client:idle />
 ) : (
 	<Link href={href} variant="nav" className={classes} external={type === 'external'}>
 		{label}

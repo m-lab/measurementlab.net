@@ -36,7 +36,7 @@ const countTocEntries = (entries: TocEntry[]): number => {
 		{
 			withTOC && toc && (
 				<div class="hidden md:block md:w-[200px] md:shrink-0">
-					<TOC entries={toc} id={`toc-${id}`} client:load />
+					<TOC entries={toc} id={`toc-${id}`} client:visible />
 				</div>
 			)
 		}

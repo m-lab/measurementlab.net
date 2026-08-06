@@ -47,10 +47,12 @@ const isActive = (href: string) => {
 		<!-- Logo/Site Name -->
 		<div class="shrink-0">
 			<Link href="/" variant="unstyled" className="block">
+				<!-- Always above the fold; don't inherit the atom's lazy default. -->
 				<Image
 					src={NavLogo}
 					alt={siteName}
 					class={`h-12 w-auto ${isPreview ? 'grayscale' : ''}`}
+					loading="eager"
 				/>
 			</Link>
 			{
@@ -101,13 +103,18 @@ const isActive = (href: string) => {
 
 		<!-- Mobile Menu -->
 		<div class="lg:hidden">
-			<MobileMenu client:load items={items} currentPath={currentPath} />
+			<MobileMenu
+				client:media="(max-width: 1023px)"
+				items={items}
+				currentPath={currentPath}
+			/>
 		</div>
 	</div>
 </nav>
 
 <!-- Rich Search Modal -->
-<RichSearch client:load />
+
+<RichSearch client:idle />
 
 <script>
 	const searchButton = document.getElementById('search-button');

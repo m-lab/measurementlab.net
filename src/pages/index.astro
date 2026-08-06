@@ -37,7 +37,7 @@ const homepage = homepageEntry.data;
 			class="grid grid-cols-1 items-center justify-between gap-8 lg:grid-cols-2"
 		>
 			<div class="">
-				<h1 class="font-semi-bold text-4xl leading-[140%] text-white">
+				<h1 class="text-4xl font-semibold leading-[140%] text-white">
 					{homepage.title}
 				</h1>
 			</div>
@@ -45,10 +45,14 @@ const homepage = homepageEntry.data;
 			{
 				homepage.backgroundImage && (
 					<div class="mx-auto max-w-md">
+						{/* Above the fold and the LCP candidate — must not inherit
+						    the Image atom's lazy default. */}
 						<Image
 							src={homepage.backgroundImage}
 							alt="Homepage Background"
 							class="h-auto w-full"
+							loading="eager"
+							fetchpriority="high"
 						/>
 					</div>
 				)

@@ -209,8 +209,13 @@ export default function RichSearch() {
 
   const query = debouncedRawQuery.toLowerCase().replace(/^[#>@$]/, '');
 
+  const hasFetched = useRef(false);
+
   // Fetch data dynamically from all configured categories
   useEffect(() => {
+    if (!open || hasFetched.current) return;
+    hasFetched.current = true;
+
     async function fetchSearchData() {
       setLoading(true);
       try {
@@ -263,7 +268,7 @@ export default function RichSearch() {
     }
 
     fetchSearchData();
-  }, []);
+  }, [open]);
 
   // Open/close event listener
   useEffect(() => {

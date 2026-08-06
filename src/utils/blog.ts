@@ -1,3 +1,4 @@
+import { getImage } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import MlabDefault from '@assets/mlab-default-card.png';
@@ -12,10 +13,25 @@ import type { ImageMetadata } from 'astro';
 
 export type BlogPost = CollectionEntry<'blog'>;
 
+/**
+ * Pre-resized hero image for card rendering. BlogItem is a React component, so
+ * it can't call Astro's image pipeline itself — without this it fell back to
+ * `heroImage.src`, which is the untouched original (up to 4000px / 1.2MB).
+ */
+export interface BlogCardImage {
+  src: string;
+  width: number;
+  height: number;
+}
+
+/** Cards render at roughly 400px wide; 2x covers retina. */
+const CARD_IMAGE_WIDTH = 800;
+
 export interface BlogPostCardData {
   post: BlogPost;
   authorNames: string;
   formattedDate: string;
+  heroImage: BlogCardImage;
 }
 
 export interface BlogPostWithAuthors extends BlogPost {
@@ -97,16 +113,29 @@ export async function prepareBlogPostCardData(
   post: BlogPost,
   peopleMap?: Map<string, PersonData>
 ): Promise<BlogPostCardData> {
-  const heroImage = post.data.heroImage || MlabDefault;
+  const heroImage = (post.data.heroImage || MlabDefault) as ImageMetadata;
+
+  // Never upscale, and keep the source aspect ratio so the rendered box is
+  // unchanged — the explicit width/height also removes the card's CLS.
+  const width = Math.min(CARD_IMAGE_WIDTH, heroImage.width);
+  const height = Math.round(heroImage.height * (width / heroImage.width));
+  const optimized = await getImage({ src: heroImage, width, height });
+
+  // `body` is the post's full markdown. Card rendering never reads it, but
+  // FilterableContent is a client island, so anything left on this object gets
+  // serialised into an astro-island props attribute — that alone was 2.8MB of
+  // the /blog HTML. `rendered` is dropped for the same reason.
+  const { body: _body, rendered: _rendered, ...cardPost } = post;
 
   return {
     post: {
-      ...post,
+      ...cardPost,
       data: {
         ...post.data,
-        heroImage: heroImage as ImageMetadata,
+        heroImage,
       },
-    },
+    } as BlogPost,
+    heroImage: { src: optimized.src, width, height },
     authorNames: await getAllAuthorNames(
       post.data.authors,
       post.data.externalAuthors,

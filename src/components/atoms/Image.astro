@@ -7,6 +7,8 @@ export interface Props {
   width?: number;
   height?: number;
   loading?: 'lazy' | 'eager';
+  /** Set to 'high' on above-the-fold/LCP images; they also need loading="eager". */
+  fetchpriority?: 'high' | 'low' | 'auto';
   class?: string;
   [key: string]: any;
 }

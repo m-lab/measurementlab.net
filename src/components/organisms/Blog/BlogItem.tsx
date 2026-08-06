@@ -7,7 +7,7 @@ interface BlogItemProps {
 }
 
 export default function BlogItem({ item }: BlogItemProps) {
-  const { authorNames, formattedDate, post } = item;
+  const { authorNames, formattedDate, post, heroImage } = item;
 
   return (
     <a
@@ -22,7 +22,11 @@ export default function BlogItem({ item }: BlogItemProps) {
         {/* Hero Image */}
         <div className="-m-4 mb-0 max-h-52 overflow-hidden">
           <img
-            src={post.data.heroImage?.src}
+            src={heroImage.src}
+            width={heroImage.width}
+            height={heroImage.height}
+            loading="lazy"
+            decoding="async"
             alt={post.data.title}
             className="w-full object-cover object-center"
           />

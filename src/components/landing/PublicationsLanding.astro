@@ -18,7 +18,7 @@ const publicationsData = await preparePublicationsCardData(publications);
 
 <div class="pb-12">
 	<FilterableContent
-		client:load
+		client:visible
 		type="publications"
 		items={publicationsData}
 		fields={['category', 'tags', 'year']}

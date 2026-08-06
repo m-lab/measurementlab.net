@@ -20,10 +20,13 @@ const { title = 'Infrastructure Map', description } = Astro.props;
 	}
 	{
 		description && (
-			<Text class="mb-6 max-w-3xl text-lg text-gray-600">{description}</Text>
+			<Text class="text-gray-600 mb-6 max-w-3xl text-lg">{description}</Text>
 		)
 	}
-	<div id="infrastructure-map-container" class="h-125 w-full overflow-hidden rounded-lg">
+	<div
+		id="infrastructure-map-container"
+		class="h-125 w-full overflow-hidden rounded-lg"
+	>
 	</div>
 </div>
 
@@ -76,13 +79,37 @@ const { title = 'Infrastructure Map', description } = Astro.props;
 	}
 </style>
 
-<link
-	rel="stylesheet"
-	href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
-/>
-<script is:inline src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
-
 <script is:inline>
+	var MAPBOX_SRC = 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl';
+	var mapboxSdkPromise = null;
+
+	// The SDK is ~800KB parsed and this map sits below the fold on every page that
+	// uses it, so the stylesheet and script are injected on demand
+	function loadMapboxSdk() {
+		if (mapboxSdkPromise) return mapboxSdkPromise;
+
+		mapboxSdkPromise = new Promise(function (resolve, reject) {
+			if (typeof mapboxgl !== 'undefined') {
+				resolve();
+				return;
+			}
+
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.href = MAPBOX_SRC + '.css';
+			document.head.appendChild(link);
+
+			var script = document.createElement('script');
+			script.src = MAPBOX_SRC + '.js';
+			script.async = true;
+			script.onload = resolve;
+			script.onerror = reject;
+			document.head.appendChild(script);
+		});
+
+		return mapboxSdkPromise;
+	}
+
 	function initInfrastructureMap() {
 		var container = document.getElementById('infrastructure-map-container');
 		if (!container) return;
@@ -91,12 +118,12 @@ const { title = 'Infrastructure Map', description } = Astro.props;
 		if (container.dataset.mapInitialized === 'true') return;
 		container.dataset.mapInitialized = 'true';
 
-		// Wait for mapboxgl to be available
-		if (typeof mapboxgl === 'undefined') {
-			setTimeout(initInfrastructureMap, 100);
-			return;
-		}
+		loadMapboxSdk().then(function () {
+			buildInfrastructureMap(container);
+		});
+	}
 
+	function buildInfrastructureMap(container) {
 		mapboxgl.accessToken =
 			'pk.eyJ1IjoibS1sYWIiLCJhIjoiY2xsdmN2NXBuMTl1ZDNmcGh1ZmxmaGwzcSJ9.3xXvAS4T6tZoahEeevGa4A';
 
@@ -106,6 +133,9 @@ const { title = 'Infrastructure Map', description } = Astro.props;
 			center: [5, 17],
 			zoom: 1.2,
 		});
+
+		// Handle for the astro:before-swap teardown below.
+		container._mlabMap = map;
 
 		var url =
 			'https://locate.measurementlab.net/v2/siteinfo/registrations?format=geo&exp=ndt';
@@ -275,13 +305,55 @@ const { title = 'Infrastructure Map', description } = Astro.props;
 		});
 	}
 
-	// Initialize on DOMContentLoaded
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', initInfrastructureMap);
-	} else {
-		initInfrastructureMap();
+	// Only pull in the SDK once the container gets close to the viewport. The
+	// margin gives the download a head start so the map is usually ready by the
+	// time it is actually scrolled to.
+	function observeInfrastructureMap() {
+		var container = document.getElementById('infrastructure-map-container');
+		if (!container || container.dataset.mapInitialized === 'true') return;
+
+		if (!('IntersectionObserver' in window)) {
+			initInfrastructureMap();
+			return;
+		}
+
+		var observer = new IntersectionObserver(
+			function (entries) {
+				for (var i = 0; i < entries.length; i++) {
+					if (!entries[i].isIntersecting) continue;
+					observer.disconnect();
+					initInfrastructureMap();
+					return;
+				}
+			},
+			{ rootMargin: '400px' }
+		);
+
+		observer.observe(container);
 	}
 
-	// Re-initialize on Astro page transitions
-	document.addEventListener('astro:page-load', initInfrastructureMap);
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', observeInfrastructureMap);
+	} else {
+		observeInfrastructureMap();
+	}
+
+	// Bound once: this script re-runs on every ClientRouter swap, and stacking
+	// duplicate listeners was leaking a map per navigation.
+	if (!window.__mlabMapListenersBound) {
+		window.__mlabMapListenersBound = true;
+
+		// Re-arm on Astro page transitions.
+		document.addEventListener('astro:page-load', observeInfrastructureMap);
+
+		// ClientRouter swaps in a fresh container, so the outgoing mapboxgl.Map
+		// has to release its WebGL context and tile caches explicitly.
+		document.addEventListener('astro:before-swap', function () {
+			var container = document.getElementById('infrastructure-map-container');
+			if (container && container._mlabMap) {
+				container._mlabMap.remove();
+				container._mlabMap = null;
+			}
+		});
+	}
 </script>
