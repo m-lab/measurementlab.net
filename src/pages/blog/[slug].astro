@@ -70,7 +70,7 @@ const archivedBanner = siteConfig?.data.archivedBanner;
 			{
 				isDev && status === 'draft' && (
 					<div class="mb-4">
-						<Tag variant="highlight" size="md" className="font-bold">
+						<Tag variant="neutral" size="md" className="font-bold">
 							DRAFT
 						</Tag>
 					</div>
@@ -118,7 +118,11 @@ const archivedBanner = siteConfig?.data.archivedBanner;
 			</div>
 		</Hero>
 	</SectionLayout>
-	{status === 'archived' && archivedBanner && <Banner message={archivedBanner.message} color={archivedBanner.color} />}
+	{
+		status === 'archived' && archivedBanner && (
+			<Banner message={archivedBanner.message} color={archivedBanner.color} />
+		)
+	}
 
 	<!-- Post Content -->
 	<SectionLayout>
