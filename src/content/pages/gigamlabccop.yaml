@@ -9,7 +9,7 @@ sections:
       type: full
     withTOC: false
     content: >-
-      # The Connectivity Community of Practice 
+      # The Connectivity Community of Practice
 
 
       In 2026, Measurement Lab (M-Lab) and Giga UNCIEF launched the Connectivity
@@ -39,9 +39,18 @@ sections:
       brings together researchers, network engineers, implementers, and
       policymakers to advance measurement approaches that are:
 
-      	•	Technically rigorous  
-      	•	Globally comparable  
-      	•	Practical for real-world connectivity contexts, including underserved regions
+
+      ```
+
+      •	Technically rigorous  
+
+      •	Globally comparable  
+
+      •	Practical for real-world connectivity contexts, including underserved
+      regions
+
+      ```
+
 
       Together, the community will first explore what meaningful measurement
       looks like for schools, align on indicators that support better
@@ -58,18 +67,19 @@ sections:
 
       - 
 
+
       - Reach out if you would like to share a community update or suggest a
-      CCoP topic 
+      CCoP topic
 
 
       ## Resources
 
 
-      Data:   
+      Data:  
 
       The CCoP GitHub  
 
-      Launch event recording   
+      Launch event recording  
 
       Past Session Notes: March, May, July  
   - type: flexi
