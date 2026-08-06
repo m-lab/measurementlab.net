@@ -1476,12 +1476,16 @@ content:
         type: select
         required: false
         options:
+          # pages-cms:category-sync start datasets
           values:
-            - label: Raw — archival measurement logs (GCS)
-              value: raw
-            - label: Enriched — parsed and queryable (BigQuery)
+            - label: Enriched Datasets
               value: enriched
-        description: "Raw = unprocessed archives on GCS. Enriched = parsed, annotated, queryable via BigQuery."
+            - label: Raw Datasets
+              value: raw
+            - label: Other Datasets
+              value: uncategorized
+          # pages-cms:category-sync end
+        description: "Raw = unprocessed archives on GCS. Enriched = parsed, annotated, queryable via BigQuery. Leave empty to group the dataset under Other Datasets."
 
       - name: testRef
         label: Related Test

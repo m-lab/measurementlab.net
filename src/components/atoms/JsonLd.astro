@@ -1,0 +1,24 @@
+---
+/**
+ * Renders a schema.org JSON-LD block — production builds only.
+ *
+ */
+import { isProduction } from '@utils/dev';
+
+export interface Props {
+	/** Any JSON-serialisable schema.org node. */
+	data: unknown;
+}
+
+const { data } = Astro.props;
+
+// Escape `<` so a stray "</script>" in CMS-authored text cannot terminate the block
+// early. JSON-LD parsers decode < transparently, so the payload is unchanged.
+const json = JSON.stringify(data, null, 2).replace(/</g, '\\u003c');
+---
+
+{
+	isProduction && (
+		<script is:inline type="application/ld+json" set:html={json} />
+	)
+}

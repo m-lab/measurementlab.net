@@ -1,0 +1,19 @@
+---
+/**
+ * <head> content for the /datasets catalog page.
+ *
+ * Rendered via the `landingHeadComponents` map in [...path].astro, which mirrors the
+ * `landingComponents` map, so the catalog's structured data stays attached to the
+ * datasets page without the generic page renderer knowing anything about datasets.
+ */
+
+import { getCollection } from 'astro:content';
+import JsonLd from '@components/atoms/JsonLd.astro';
+import { isVisible } from '@utils/content';
+import { buildCatalogJsonLd } from '@utils/datasetSchema';
+
+const datasets = (await getCollection('datasets')).filter((ds) => isVisible(ds));
+---
+
+<!-- No canonical link needed, BaseLayout already emits one from Astro.site. -->
+<JsonLd data={buildCatalogJsonLd(datasets)} />

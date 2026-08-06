@@ -1,14 +1,15 @@
 import { defineCollection, type ImageFunction, z } from 'astro:content';
 import type { ImageMetadata } from 'astro';
 import blogCategories from './categories/blog.json';
+import datasetCategories from './categories/datasets.json';
 import partnerCategories from './categories/partners.json';
 import peopleCategories from './categories/people.json';
 import publicationsCategories from './categories/publications.json';
 
-//  TODO: #5 create Projects content collection
-
 // Shared status field for content visibility across all collections
-const statusSchema = z.enum(['draft', 'published', 'archived']).default('draft');
+const statusSchema = z
+  .enum(['draft', 'published', 'archived'])
+  .default('draft');
 
 // Shared color palette enum matching the site's design tokens
 const colorPaletteSchema = z.enum([
@@ -35,11 +36,15 @@ const cardBaseSchema = z.object({
   content: z.string().optional(),
   button: buttonSchema.optional(),
   color: colorPaletteSchema.optional(),
-  icon: z.enum(['measurement', 'insights', 'community', 'mlab-blue', 'mlab-white']).optional(),
+  icon: z
+    .enum(['measurement', 'insights', 'community', 'mlab-blue', 'mlab-white'])
+    .optional(),
 });
 
 export type ButtonType = z.infer<typeof buttonSchema>;
-export type CardType = z.infer<typeof cardBaseSchema> & { image?: ImageMetadata };
+export type CardType = z.infer<typeof cardBaseSchema> & {
+  image?: ImageMetadata;
+};
 
 // Helper to create schemas with image support
 const createSchemas = (image: ImageFunction) => {
@@ -293,14 +298,18 @@ const siteCollection = defineCollection({
         description: z.string().optional(),
         bottom: z.string(),
       }),
-      archivedBanner: z.object({
-        message: z.string(),
-        color: colorPaletteSchema,
-      }).optional(),
-      cookieConsent: z.object({
-        message: z.string(),
-        googleAnalyticsId: z.string().optional(),
-      }).optional(),
+      archivedBanner: z
+        .object({
+          message: z.string(),
+          color: colorPaletteSchema,
+        })
+        .optional(),
+      cookieConsent: z
+        .object({
+          message: z.string(),
+          googleAnalyticsId: z.string().optional(),
+        })
+        .optional(),
     }),
 });
 
@@ -342,12 +351,19 @@ const navigationCollection = defineCollection({
   }),
 });
 
+const richCategorySchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string().optional(),
+  order: z.number(),
+});
+
 const categoriesCollection = defineCollection({
   type: 'data',
   schema: z.object({
     id: z.string(),
     name: z.string(),
-    categories: z.array(z.string()),
+    categories: z.union([z.array(z.string()), z.array(richCategorySchema)]),
   }),
 });
 
@@ -448,9 +464,9 @@ const publicationsCollection = defineCollection({
 // (e.g. BigQuery table, GCS bucket, download URL)
 // ---------------------------------------------------------------------------
 const accessPointSchema = z.object({
-  label: z.string(),                              // e.g. "BigQuery", "GCS"
-  url: z.string(),                               // access URL or path
-  format: z.string(),                            // e.g. "BigQuery", "Parquet", "CSV"
+  label: z.string(), // e.g. "BigQuery", "GCS"
+  url: z.string(), // access URL or path
+  format: z.string(), // e.g. "BigQuery", "Parquet", "CSV"
   type: z.enum(['query', 'download', 'api', 'viz']).optional(),
   description: z.string().optional(),
 });
@@ -473,22 +489,29 @@ const datasetsCollection = defineCollection({
   schema: z.object({
     // Identity
     id: z.string(),
-    title: z.string(),                          // dc:title
+    title: z.string(), // dc:title
     status: statusSchema,
 
     // Description
-    description: z.string(),                   // dc:description (plain text for JSON-LD)
+    description: z.string(), // dc:description (plain text for JSON-LD)
 
     // Data category — used to group datasets on the catalog page
-    category: z.enum(['raw', 'enriched']).optional(),
+    // Sourced from src/content/categories/datasets.json — the same file the landing
+    // page groups by and the CMS dropdown is generated from. Optional: an entry with
+    // no category falls back to the "uncategorized" group at render time.
+    category: z
+      .enum(
+        datasetCategories.categories.map((c) => c.id) as [string, ...string[]]
+      )
+      .optional(),
 
     // Provenance / relation
-    testRef: z.string().optional(),            // slug of associated M-Lab test
+    testRef: z.string().optional(), // slug of associated M-Lab test
     relatedDatasets: z.array(z.string()).optional(), // slugs of related datasets
 
     // Temporal coverage
     temporalCoverageStart: z.string().optional(), // ISO date string e.g. "2009-01-01"
-    temporalCoverageEnd: z.string().optional(),   // ISO date string or "present"
+    temporalCoverageEnd: z.string().optional(), // ISO date string or "present"
 
     // Spatial coverage (defaults to "Global" at render time)
     spatialCoverage: z.string().optional().default('Global'),
@@ -503,6 +526,10 @@ const datasetsCollection = defineCollection({
 
     // Size hint (human-readable, e.g. "~500 GB/year")
     dataSize: z.string().optional(),
+
+    // Dataset-specific search terms. Merged with the shared M-Lab base terms by
+    // keywordsFor() in @utils/datasetSchema — do not repeat those here.
+    keywords: z.array(z.string()).optional(),
 
     // Additional documentation / external links
     documentationLinks: z

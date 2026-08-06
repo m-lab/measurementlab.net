@@ -3,6 +3,8 @@ import { getEntry } from 'astro:content';
 // Import landing page components
 import Banner from '@components/atoms/Banner.astro';
 import BlogLanding from '@components/landing/BlogLanding.astro';
+import DatasetsCatalogJsonLd from '@components/landing/DatasetsCatalogJsonLd.astro';
+import DatasetsLanding from '@components/landing/DatasetsLanding.astro';
 import PeopleLanding from '@components/landing/PeopleLanding.astro';
 import PublicationsLanding from '@components/landing/PublicationsLanding.astro';
 import TestsLanding from '@components/landing/TestsLanding.astro';
@@ -32,10 +34,21 @@ const landingComponents = {
 	publications: PublicationsLanding,
 	people: PeopleLanding,
 	tests: TestsLanding,
+	datasets: DatasetsLanding
 } as const;
 
 const LandingComponent =
 	landingComponents[page.id as keyof typeof landingComponents];
+
+// Optional <head> content for a landing page.
+// Keyed the same way as landingComponents so page-specific markup stays in its own
+// component rather than being special-cased here.
+const landingHeadComponents = {
+	datasets: DatasetsCatalogJsonLd,
+} as const;
+
+const LandingHead =
+	landingHeadComponents[page.id as keyof typeof landingHeadComponents];
 
 // Filter hero to avoid duplication (hero rendered separately)
 const sections = page.data.sections
@@ -48,6 +61,13 @@ const archivedBanner = siteConfig?.data.archivedBanner;
 ---
 
 <PageLayout title={page.data.title} description={page.data.description}>
+	{
+		LandingHead && (
+			<Fragment slot="head">
+				<LandingHead />
+			</Fragment>
+		)
+	}
 	<SectionLayout
 		maxWidth="2xl"
 		bgImage={page.data.heroImage}

@@ -1,3 +1,5 @@
+import { siteConfig } from '@lib/config';
+
 /**
  * Check if currently in development mode
  */
@@ -15,6 +17,25 @@ export const isPreview = !!import.meta.env.PUBLIC_PREVIEW;
  * appear on the preview site.
  */
 export const isDevOnly = isDev && !isPreview;
+
+/**
+ * Hostnames that count as the live site.
+ */
+const PRODUCTION_HOSTNAMES = ['measurementlab.net', 'www.measurementlab.net'];
+
+const siteHostname = (() => {
+  try {
+    return new URL(siteConfig.url).hostname;
+  } catch {
+    return '';
+  }
+})();
+
+/**
+ * True only on the main site.
+ */
+export const isProduction =
+  !isDev && !isPreview && PRODUCTION_HOSTNAMES.includes(siteHostname);
 
 /**
  * Returns CSS classes only in local dev mode (not preview)

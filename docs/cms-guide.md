@@ -533,7 +533,13 @@ Access Points are how someone actually reaches the data (a BigQuery table, a clo
 2. Enter a **Label** (e.g., "BigQuery — ndt.unified_downloads").
 3. Enter the **URL or Path**, the **Format** (e.g., `BigQuery table`, `JSONL`), and optionally a **Type** and **Description**.
 
-> **Note:** The **Keywords** field currently has no effect on the site — the dataset pages use a fixed set of keywords. Leave it empty unless a developer tells you otherwise.
+**About the Keywords field:**
+
+Keywords describe what a dataset is *about*. They are not shown on the page — they go into the machine-readable metadata that search engines and research-data catalogues read, which is how someone finds this dataset without already knowing it exists.
+
+Enter only terms specific to this dataset, such as `TCP throughput`, `video streaming`, or `packet loss`. Four M-Lab base terms — Internet measurement, Network performance, Broadband, Open data — are added to every dataset automatically, so there is no need to repeat them (and no harm if you do; duplicates are removed).
+
+Leaving Keywords empty is fine. The dataset still gets the four base terms — but it will then look identical to every other dataset to a search engine, so a few specific terms are worth adding.
 
 ---
 

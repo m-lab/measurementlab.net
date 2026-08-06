@@ -1,0 +1,24 @@
+{
+  "id": "datasets",
+  "name": "Dataset Categories",
+  "categories": [
+    {
+      "id": "enriched",
+      "name": "Enriched Datasets",
+      "description": "Start here. These datasets have been parsed, annotated, and structured for analysis — queryable via BigQuery or downloadable as pre-computed summaries. Most research questions can be answered without touching raw data.",
+      "order": 10
+    },
+    {
+      "id": "raw",
+      "name": "Raw Datasets",
+      "description": "Unprocessed measurement logs and archives as collected directly from M-Lab's infrastructure, stored in Google Cloud Storage. Use these when enriched datasets don't cover your specific analysis need.",
+      "order": 20
+    },
+    {
+      "id": "uncategorized",
+      "name": "Other Datasets",
+      "description": "",
+      "order": 999
+    }
+  ]
+}

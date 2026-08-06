@@ -1,0 +1,13 @@
+title: Data Catalog
+permalink: datasets
+status: published
+description: Open Internet measurement data released under CC0 — freely available for research, policy, and public interest analysis.
+zigzag: supporting1-light
+sections:
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: >-
+      M-Lab data is published in two forms: **enriched data** (parsed, annotated, and queryable via BigQuery or available as pre-computed summaries) and **archival data** (measurement logs on Google Cloud Storage for deeper analysis). Both are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) with no restrictions on use.

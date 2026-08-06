@@ -31,22 +31,41 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CATEGORIES_DIR = join(root, 'src/content/categories');
 const PAGES_YML = join(root, '.pages.yml');
 
-// id -> string[] of category values, loaded from the JSON source of truth.
+const errors = [];
+
+// id -> category entries, loaded from the JSON source of truth. An entry is either a
+// plain string (label and stored value are the same) or an object carrying at least
+// `id` and `name`. A half-formed object would silently emit `undefined` into the
+// dropdown, so reject the file instead of writing it.
 const categories = {};
 for (const file of readdirSync(CATEGORIES_DIR)) {
   if (!file.endsWith('.json')) continue;
   const data = JSON.parse(readFileSync(join(CATEGORIES_DIR, file), 'utf8'));
-  if (data && typeof data.id === 'string' && Array.isArray(data.categories)) {
-    categories[data.id] = data.categories;
+  if (!data || typeof data.id !== 'string' || !Array.isArray(data.categories))
+    continue;
+
+  const bad = data.categories.findIndex(
+    (entry) =>
+      typeof entry !== 'string' &&
+      !(entry && typeof entry.id === 'string' && typeof entry.name === 'string')
+  );
+  if (bad !== -1) {
+    errors.push(
+      `${file}: categories[${bad}] must be a string, or an object with string "id" and "name".`
+    );
+    continue;
   }
+
+  categories[data.id] = data.categories;
 }
 
 const START = /^(\s*)#\s*pages-cms:category-sync start (\S+)/;
 const END = /^\s*#\s*pages-cms:category-sync end\b/;
-// Inside a block we only ever write a `values:` key and its list items. Anything
-// else means the markers drifted or were wrapped around the wrong lines, so we
-// refuse to overwrite content this script did not produce.
-const BODY = /^\s*(values:\s*$|-\s)/;
+// Inside a block we only ever write a `values:` key and its list items — either
+// plain scalars (`- Foo`) or label/value pairs for object-shaped categories.
+// Anything else means the markers drifted or were wrapped around the wrong lines,
+// so we refuse to overwrite content this script did not produce.
+const BODY = /^\s*(values:\s*$|-\s|label:\s|value:\s)/;
 
 // Quote a YAML scalar only when the plain form would be ambiguous.
 function yamlScalar(value) {
@@ -57,7 +76,6 @@ function yamlScalar(value) {
 
 const lines = readFileSync(PAGES_YML, 'utf8').split('\n');
 const out = [];
-const errors = [];
 let changed = 0;
 
 for (let i = 0; i < lines.length; i++) {
@@ -110,9 +128,23 @@ for (let i = 0; i < lines.length; i++) {
     continue;
   }
 
+  // Object-shaped categories carry an explicit `order`, so list them the same way the
+  // site does. Flat lists keep their hand-curated file order.
+  const entries = [...categories[id]];
+  if (entries.every((e) => typeof e === 'object'))
+    entries.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+
   const rebuilt = [lines[i], `${indent}values:`];
-  for (const value of categories[id])
-    rebuilt.push(`${indent}  - ${yamlScalar(value)}`);
+  for (const entry of entries) {
+    if (typeof entry === 'string') {
+      // Flat category list: the label and the stored value are the same string.
+      rebuilt.push(`${indent}  - ${yamlScalar(entry)}`);
+    } else {
+      // Object-shaped category: show `name` in the dropdown, store `id`.
+      rebuilt.push(`${indent}  - label: ${yamlScalar(entry.name)}`);
+      rebuilt.push(`${indent}    value: ${yamlScalar(entry.id)}`);
+    }
+  }
   rebuilt.push(lines[end]);
 
   if (lines.slice(i, end + 1).join('\n') !== rebuilt.join('\n')) changed++;
