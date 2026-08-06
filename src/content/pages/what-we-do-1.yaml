@@ -1,10 +1,11 @@
 title: "What We Do "
 permalink: what-we-do
 status: published
+zigzag: supporting2-dark
 sections:
   - type: richText
     background:
-      color: white
+      color: gray
       type: full
     withTOC: true
     content: >-
