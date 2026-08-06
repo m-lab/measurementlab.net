@@ -94,6 +94,10 @@ sections:
         size: md
         text: Join the CCoP
         href: https://groups.google.com/a/measurementlab.net/g/connectivity-cop
+      - variant: secondary
+        size: md
+        text: More about the CCoP
+        href: /gigamlabccop
   - type: richText
     background:
       color: white
