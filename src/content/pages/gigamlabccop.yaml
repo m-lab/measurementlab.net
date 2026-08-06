@@ -40,7 +40,7 @@ sections:
     sections:
       - type: button
         background:
-          color: primary-dark
+          color: primary-medium
           type: full
         title: "Get Involved "
         buttons:
@@ -54,7 +54,7 @@ sections:
             href: "mailto: hello@measurementlab.net"
   - type: button
     background:
-      color: primary-medium
+      color: primary-dark
       type: full
     title: Resources
     buttons:
@@ -62,11 +62,11 @@ sections:
         size: md
         text: CCoP GitHub
         href: https://github.com/unicef/giga-mlab-school-connectivity-cop
-      - variant: primary
+      - variant: secondary
         size: md
         text: Launch Event Recording
         href: https://youtu.be/J5cvJLu1F6c?si=QMcO1G5olinwy72e
-      - variant: primary
+      - variant: secondary
         size: md
         text: IQB-Edu Case Study and Data
         href: https://github.com/unicef/giga-mlab-school-connectivity-cop/tree/main/materials/2026-05-IQB-Edu
