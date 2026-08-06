@@ -1,10 +1,64 @@
 title: "The 2026 IMC Hackathon "
 permalink: imc-hackathon-2026
-status: draft
+status: published
+zigzag: secondary-light
 sections:
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: >-
+      **IMC 2026 Hackathon! You can be a hero - use Internet measurement data to
+      solve real-world challenges!**
+
+
+      For the last four years has run a hackathon in partnership with other
+      Internet measurement groups on the sidelines of the Internet Measurement
+      Conference. This year, we will hold a hackathon to examine critical
+      challenges in connectivity and Internet measurement at scale.
+
+
+      **Date:** October 12, 2026  
+
+      **Location:** Karlsruhe, Germany   
+
+      *Venue to be confirmed* 
+
+
+      **More details, registration, and agenda coming soon!**  
+
+
+      [Questions or want to participate?](leads@measurementlab.net) 
   - type: partners
     background:
       color: primary-light
       type: full
     title: "IMC Hackathon Hosts "
     category: IMC Hackathon Partners
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: |
+      **Names and affiliations of organizers**
+
+      - Pavlos Sermpezis, Director, Technical Lead, Measurement Lab
+      - Maria Antonia Bravo, Technology Programme Manager, UNICEF Giga 
+      - Loqman Salamatian, Post-doc, *Columbia University*
+      - Amreesh Phokeer, Internet Measurement and Data Expert, ISOC
+      - Romain Fontugne, Deputy Director, IIJ Research Laboratory
+      - Zachary Bischof, Senior Research Scientist, Georgia Institute of Technology (Internet Intelligence Lab; IODA)
+      - Lai Yi, Head of Cloudflare Radar, Cloudflare
+
+      **Past IMC Hackathons** 
+
+      - 2025 IMC Hackathon in Madison, WI ++[https://www.measurementlab.net/blog/imc2025-hackathon/](https://www.measurementlab.net/blog/imc2025-hackathon/)++
+      - 2024 IMC Hackathon in Madrid, Spain  ++[https://conferences.sigcomm.org/imc/2024/hackathon/](https://conferences.sigcomm.org/imc/2024/hackathon/)++ 
+      - 2023 IMC Hackathon in Montreal, Canada ++[https://conferences.sigcomm.org/imc/2023/hackaton/](https://conferences.sigcomm.org/imc/2023/hackaton/)++ 
+      - 2022 IMC Hackathon in Nice, France ++[https://www.measurementlab.net/blog/imc22-hackathon/](https://www.measurementlab.net/blog/imc22-hackathon/)++
+
+      ![](/src/assets/community/2024HackathonGroup.jpg)
+
+      *2024 IMC Hackathon Hosts and Participants in Madrid, Spain *  
