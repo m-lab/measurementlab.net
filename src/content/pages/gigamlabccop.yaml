@@ -40,16 +40,12 @@ sections:
       policymakers to advance measurement approaches that are:
 
 
-      ```
-
       •	Technically rigorous  
 
       •	Globally comparable  
 
       •	Practical for real-world connectivity contexts, including underserved
       regions
-
-      ```
 
 
       Together, the community will first explore what meaningful measurement
@@ -65,11 +61,8 @@ sections:
       priorities.
 
 
-      - 
-
-
-      - Reach out if you would like to share a community update or suggest a
-      CCoP topic
+      We welcome CCoP members to suggest topics and present updates at sessions,
+      so please reach out with ideas! 
 
 
       ## Resources
@@ -99,5 +92,5 @@ sections:
             href: https://groups.google.com/a/measurementlab.net/g/connectivity-cop/about
           - variant: secondary
             size: md
-            text: Suggest a topic or Share an Update
+            text: "Suggest a topic or share an update "
             href: "mailto: hello@measurementlab.net"
