@@ -8,69 +8,30 @@ sections:
       color: gray
       type: full
     withTOC: false
-    content: >-
+    content: |-
       # The Connectivity Community of Practice
 
+      In 2026, Measurement Lab (M-Lab) and Giga UNCIEF launched the Connectivity Community of Practice for applied Internet measurement. 
 
-      In 2026, Measurement Lab (M-Lab) and Giga UNCIEF launched the Connectivity
-      Community of Practice for applied Internet measurement. 
+      As the world’s largest open collection of Ιnternet performance data, M-Lab provides powerful, real-world telemetry that helps illuminate how networks actually perform. Through this collaboration, we’re working with Giga to strengthen how connectivity is measured and understood for public facilities, especially schools, using open measurement approaches that reflect on-the-ground conditions.
 
-
-      As the world’s largest open collection of Ιnternet performance data, M-Lab
-      provides powerful, real-world telemetry that helps illuminate how networks
-      actually perform. Through this collaboration, we’re working with Giga to
-      strengthen how connectivity is measured and understood for public
-      facilities, especially schools, using open measurement approaches that
-      reflect on-the-ground conditions.
-
-
-      Giga is a joint initiative of UNICEF and the International
-      Telecommunication Union (ITU), working to connect every school to the
-      internet and every young person to information, opportunity, and choice.
-      Through its global focus on school connectivity, Giga supports governments
-      and partners with data, technical expertise, and financing tools to
-      accelerate meaningful access to the internet for education.
-
+      Giga is a joint initiative of UNICEF and the International Telecommunication Union (ITU), working to connect every school to the internet and every young person to information, opportunity, and choice. Through its global focus on school connectivity, Giga supports governments and partners with data, technical expertise, and financing tools to accelerate meaningful access to the internet for education.
 
       ## Objectives
 
-
-      This Community of Practice (CoP) builds on that shared foundation. It
-      brings together researchers, network engineers, implementers, and
-      policymakers to advance measurement approaches that are:
-
+      This Community of Practice (CoP) builds on that shared foundation. It brings together researchers, network engineers, implementers, and policymakers to advance measurement approaches that are:
 
       •	Technically rigorous  
-
       •	Globally comparable  
+      •	Practical for real-world connectivity contexts, including underserved regions
 
-      •	Practical for real-world connectivity contexts, including underserved
-      regions
+      Together, the community will first explore what meaningful measurement looks like for schools, align on indicators that support better decision-making, and translate open telemetry into insights that enable smarter, evidence-based connectivity planning. 
 
+      At its core, the CoP reflects a shared commitment to openness in data, in tools, and in collaboration. As the community grows, we look forward to shaping inclusive participation and governance models with contributors, ensuring this work remains durable, representative, and grounded in shared priorities.
 
-      Together, the community will first explore what meaningful measurement
-      looks like for schools, align on indicators that support better
-      decision-making, and translate open telemetry into insights that enable
-      smarter, evidence-based connectivity planning. 
+      We welcome CCoP members to suggest topics and present updates at sessions, so please reach out with ideas! 
 
-
-      At its core, the CoP reflects a shared commitment to openness in data, in
-      tools, and in collaboration. As the community grows, we look forward to
-      shaping inclusive participation and governance models with contributors,
-      ensuring this work remains durable, representative, and grounded in shared
-      priorities.
-
-
-      We welcome CCoP members to suggest topics and present updates at sessions,
-      so please reach out with ideas! 
-
-
-      ## Resources
-
-
-      Data:  
-        
-      Past Session Notes: March, May, July  
+      Past Session Notes: [March](https://docs.google.com/document/d/10LuFzy9Pyz98GcoagzutCZ4nsi9TWl6G3HLO7yNwVbY/edit?usp=sharing), [May](https://docs.google.com/document/d/1FZm2abUnJAgE5uuSB5hbNWWyGxcCFhYuvRb-DwQL0LM/edit?usp=sharing), [July](https://docs.google.com/document/d/1_dEHEtph9VlsixVagELy1ymM1bEbjN9GC2K6dwGNkWc/edit?usp=sharing)  
   - type: flexi
     background:
       color: primary-medium
