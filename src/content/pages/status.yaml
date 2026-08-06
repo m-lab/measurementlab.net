@@ -1,6 +1,7 @@
 title: "M-Lab Platform "
 permalink: platform-status
 status: published
+zigzag: primary-dark
 sections:
   - type: richText
     background:
@@ -8,7 +9,7 @@ sections:
       type: full
     withTOC: false
     content: |+
-      # M-Lab's Platform 
+      # M-Lab's Platform
 
       M-Lab (Measurement Lab) is a global platform that enables researchers, policymakers, and the public to measure and understand Internet performance. It provides open infrastructure for testing network speed, reliability, and connectivity, generating publicly available data on how the Internet works in practice.
 
