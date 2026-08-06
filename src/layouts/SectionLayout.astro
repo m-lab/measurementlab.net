@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import DevOnly from '@components/atoms/DevOnly.astro';
 import ZigZagPattern from '@components/atoms/ZigZagPattern.astro'
+import { backgroundClass, textClass as textClasses } from '@utils/backgrounds';
 import { devClass } from '@utils/dev';
 import type { ImageMetadata } from 'astro';
 
@@ -11,6 +12,12 @@ export interface Props {
   padding?: boolean;
   class?: string;
 	bgColor?: string;
+	/**
+	 * Background of an enclosing section (e.g. a flexi wrapper). Used only to decide
+	 * text contrast when this section paints no background of its own — nested content
+	 * sits on the parent's surface, so it must invert with the parent.
+	 */
+	inheritedBgColor?: string;
 	bgImage?: ImageMetadata;
 	sectionLabel?: string;
 	zigzag?: string
@@ -22,7 +29,8 @@ const {
   maxWidth = '7xl',
   padding = true,
   class: className = '',
-	bgColor = 'white',
+	bgColor,
+	inheritedBgColor,
   bgImage,
 	sectionLabel = 'section',
 	zigzag,
@@ -42,24 +50,14 @@ const maxWidths = {
 const containerClass = containerized ? `mx-auto ${maxWidths[maxWidth]}` : '';
 const paddingClass = padding ? 'px-4 sm:px-6 lg:px-8 py-8' : '';
 
-const backgrounds = {
-  white: 'bg-transparent',
-	gray: 'bg-neutral-200',
-  "primary-light": 'bg-primary-100',
-  "primary-medium": 'bg-primary-700',
-	"primary-dark": 'bg-primary-900'
-};
-
-const textColors = {
-  white: 'text-gray-900',
-	gray: 'text-gray-900',
-  "primary-light": 'text-gray-900',
-  "primary-medium": 'text-white',
-	"primary-dark": 'text-white'
-};
-
-const bgClass = backgrounds[bgColor as keyof typeof backgrounds] || "";
-const textClass = textColors[bgColor as keyof typeof textColors] || "text-gray-900";
+// Background and text classes both come from @utils/backgrounds so a new background
+// colour never has to be registered in more than one place.
+//
+// Only this section's own colour paints — inheriting would repaint the parent's surface
+// underneath itself. But contrast follows whichever surface the content actually sits
+// on, which is the parent's when this section paints nothing.
+const bgClass = backgroundClass(bgColor ?? 'white');
+const textClass = textClasses(bgColor ?? inheritedBgColor ?? 'white');
 // const sectionBgClass = bgType === 'full' ? bgClass : '';
 // const containerBgClass = bgType === 'contained' ? bgClass : '';
 

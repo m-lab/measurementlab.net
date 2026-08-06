@@ -14,7 +14,10 @@ import SpeedTestSection from '@components/sections/SpeedTestSection.astro';
 import TestsSection from '@components/sections/TestsSection.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 
-const { sectionItems } = Astro.props;
+// `inheritedBackground` is the background colour of an enclosing section (set by
+// FlexiSection for its nested children). A nested section with no background of its own
+// is drawn on that surface, so it must take its contrast from it.
+const { sectionItems, inheritedBackground } = Astro.props;
 
 let richTextCounter = 0;
 ---
@@ -22,6 +25,8 @@ let richTextCounter = 0;
 {
 	sectionItems.map((section: any) => {
 		const sectionLabel = `section > ${section.type}`;
+		// The surface this section's content actually sits on.
+		const effectiveBackground = section.background?.color ?? inheritedBackground;
 		// const richTextId = section.type === 'richText' ? `text-section-${++richTextCounter}` : undefined;
 
 		const content = (() => {
@@ -36,6 +41,7 @@ let richTextCounter = 0;
 							title={section.title}
 							description={section.description}
 							sections={section.sections}
+							background={{ color: effectiveBackground }}
 						/>
 					);
 				case 'hero':
@@ -51,7 +57,7 @@ let richTextCounter = 0;
 					return (
 						<RichTextSection
 							id={richTextId}
-							background={section.background}
+							background={{ color: effectiveBackground }}
 							content={section.content}
 							withTOC={section.withTOC}
 						/>
@@ -140,6 +146,7 @@ let richTextCounter = 0;
 				class={section.class}
 				sectionLabel={sectionLabel}
 				bgColor={section.background?.color}
+				inheritedBgColor={inheritedBackground}
 			>
 				{content}
 			</SectionLayout>

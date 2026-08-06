@@ -127,4 +127,27 @@
   a:not([data-component]):not(.heading-anchor) {
     @apply link-default;
   }
+
+  /* Dark section backgrounds set `text-white` on the container, but links declare their
+  own colour, so they keep the mid-tone primary and sink into the background.
+  `.section-dark` is added by SectionLayout for any background marked dark in
+  @utils/backgrounds, lifting links and inline code to readable contrast on any dark hue.
+  Prose sets its own colours via `prose-invert` at higher specificity, so it is unaffected.
+
+  Hover is written as an explicit selector rather than Tailwind's `hover:` variant: the
+  variant appends `:hover` to the whole selector and produced a doubled paren
+  (`…:not(.heading-anchor)):hover`), which is invalid and silently dropped the rule. */
+  .section-dark a:not([data-component]):not(.heading-anchor) {
+    @apply text-white;
+    text-decoration-color: color-mix(in oklab, white 60%, transparent);
+  }
+
+  .section-dark a:not([data-component]):not(.heading-anchor):hover {
+    @apply text-white;
+    text-decoration-color: white;
+  }
+
+  .section-dark code {
+    @apply border-white/20 bg-white/10 text-white;
+  }
 }

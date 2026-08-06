@@ -1,5 +1,6 @@
 ---
 import ZigZag from '@assets/patterns/zigzag.svg'
+import { zigzagClass } from '@utils/backgrounds';
 export interface Props {
   style?: string;
   size?: { left: number; right: number };
@@ -10,21 +11,10 @@ const {
   size = { left: 450, right: 450}
 } = Astro.props;
 
-const styles = {
-  'primary-light': 'bg-primary-100 text-primary-500',
-  'primary-dark': 'bg-primary-800 text-primary-300',
-  'secondary-light': 'bg-secondary-100 text-secondary-500',
-  'secondary-dark': 'bg-secondary-400 text-secondary-200',
-  'supporting1-light': 'bg-supporting1-100 text-supporting1-300',
-  'supporting1-dark': 'bg-supporting1-500 text-supporting1-200',
-  'supporting2-light': 'bg-supporting2-100 text-supporting2-400',
-  'supporting2-dark': 'bg-supporting2-400 text-supporting2-100',
-}
-
 ---
 
 <div
-	class={`absolute h-full w-full overflow-hidden ${styles[style as keyof typeof styles]}`}
+	class={`absolute h-full w-full overflow-hidden ${zigzagClass(style)}`}
 >
 	<ZigZag width={size.left} class="absolute -bottom-16 -left-12" />
 	<ZigZag width={size.right} class="absolute -top-12 right-0 rotate-180" />

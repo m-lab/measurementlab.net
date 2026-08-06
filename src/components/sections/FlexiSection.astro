@@ -12,13 +12,19 @@ export interface Props {
   title: string;
   description?: string;
   sections?: SectionType[];
+  /** Surface this flexi is drawn on — passed down so nested sections invert with it. */
+  background?: { color?: string };
 }
 
-const { title, description, sections = [] } = Astro.props;
+const { title, description, sections = [], background } = Astro.props;
 
+// This wrapper paints nothing itself; the enclosing SectionLayout already painted the
+// background. It only needs the colour so its own heading and its nested children take
+// their contrast from the surface they sit on.
+const inheritedBackground = background?.color;
 ---
 
-<SectionLayout>
+<SectionLayout inheritedBgColor={inheritedBackground}>
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<!-- Section Header -->
 		<div class="mb-12 text-center">
@@ -27,6 +33,6 @@ const { title, description, sections = [] } = Astro.props;
 		</div>
 
 		<!-- Sections -->
-		<Sections sectionItems={sections} />
+		<Sections sectionItems={sections} inheritedBackground={inheritedBackground} />
 	</div>
 </SectionLayout>

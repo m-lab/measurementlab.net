@@ -2,6 +2,7 @@
 
 import TOC from '@components/organisms/TOC.tsx';
 import type { TocEntry } from '@stefanprobst/rehype-extract-toc';
+import { isDarkBackground } from '@utils/backgrounds';
 import renderMarkdownWithImages from '@utils/renderMarkdown';
 
 export interface Props {
@@ -13,8 +14,8 @@ export interface Props {
 
 const { id, content, background, withTOC = false } = Astro.props;
 
-const darkBackgrounds = new Set(['primary-medium', 'primary-dark']);
-const isDark = darkBackgrounds.has(background?.color ?? '');
+// Shared with SectionLayout so a new dark background inverts prose automatically.
+const isDark = isDarkBackground(background?.color);
 
 const { html, toc } = (await renderMarkdownWithImages(content, withTOC, id));
 

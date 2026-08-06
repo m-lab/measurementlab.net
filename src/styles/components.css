@@ -31,6 +31,14 @@
   @apply border-transparent text-neutral-900 hover:bg-neutral-100 focus-visible:ring-neutral-900;
 }
 
+/* The ghost variant is the only button with no surface of its own, so on a dark section
+   it stayed near-black on near-black. `.section-dark` is set by SectionLayout for any
+   background marked dark in @utils/backgrounds. The hover fill is a translucent white so
+   it works on any dark hue rather than assuming blue. */
+.section-dark .button-ghost {
+  @apply text-white hover:bg-white/15 hover:text-white focus-visible:ring-white;
+}
+
 /* Button - Sizes */
 .button-size-sm {
   @apply px-3 py-1.5 text-sm;

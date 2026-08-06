@@ -142,6 +142,10 @@ components:
               value: primary-medium
             - label: Dark Blue
               value: primary-dark
+            - label: Light Purple
+              value: speed-light
+            - label: Dark Purple
+              value: speed-dark
         default: white
         description: Select a section background for this section
       - name: type
@@ -349,6 +353,10 @@ components:
               value: supporting2-light
             - label: Supporting 2 Dark
               value: supporting2-dark
+            - label: Speed Light
+              value: speed-light
+            - label: Speed Dark
+              value: speed-dark
         description: Decorative zigzag pattern style for the hero section
 
   # -- Rich Text --
@@ -769,6 +777,10 @@ content:
               value: supporting2-light
             - label: Supporting 2 Dark
               value: supporting2-dark
+            - label: Speed Light
+              value: speed-light
+            - label: Speed Dark
+              value: speed-dark
         description: Decorative zigzag pattern applied to the page hero. Used when no hero image is set.
       - name: sections
         label: Page Sections

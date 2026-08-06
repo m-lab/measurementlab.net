@@ -58,6 +58,16 @@ sections:
     subtitle: zigzag variant — supporting2-dark
     zigzag: supporting2-dark
 
+  - type: hero
+    title: Speed Light
+    subtitle: zigzag variant — speed-light
+    zigzag: speed-light
+
+  - type: hero
+    title: Speed Dark
+    subtitle: zigzag variant — speed-dark
+    zigzag: speed-dark
+
   # ============================================================
   # RICH TEXT SECTION — Various backgrounds, with and without TOC
   # ============================================================
@@ -136,6 +146,26 @@ sections:
 
       This richText section uses `background.color: primary-dark`. Dark backgrounds
       create the strongest visual emphasis. Best used sparingly for key messages or CTAs.
+
+  - type: richText
+    background:
+      color: speed-light
+    content: >-
+      ## Rich Text — Speed Light Background
+
+
+      This richText section uses `background.color: speed-light`. A [link](/datasets) and
+      some `inline code` are included to check contrast on a tinted background.
+
+  - type: richText
+    background:
+      color: speed-dark
+    content: >-
+      ## Rich Text — Speed Dark Background
+
+
+      This richText section uses `background.color: speed-dark`. A [link](/datasets) and
+      some `inline code` are included to check that content inverts on dark backgrounds.
 
   - type: richText
     withTOC: true
@@ -352,6 +382,23 @@ sections:
         content: The mlab-white icon shows the M-Lab logo mark in white on a colored background.
         icon: mlab-white
         color: secondary
+
+  - type: card
+    background:
+      color: speed-dark
+    title: Cards on Speed Dark Background
+    description: >-
+      Checks that a card section stays readable on a dark background: the section title
+      and description invert, while the card bodies keep their own light surface.
+    cards:
+      - title: Measurement
+        content: Card bodies carry their own background, so they are unaffected by the section.
+        icon: measurement
+        color: speed
+      - title: Insights
+        content: The section title and description above invert to white.
+        icon: insights
+        color: primary
 
   # ============================================================
   # FLEXI SECTION — Nested sections

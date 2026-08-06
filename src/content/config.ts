@@ -1,4 +1,5 @@
 import { defineCollection, type ImageFunction, z } from 'astro:content';
+import { sectionBackgroundNames, zigzagNames } from '@utils/backgrounds';
 import type { ImageMetadata } from 'astro';
 import blogCategories from './categories/blog.json';
 import datasetCategories from './categories/datasets.json';
@@ -80,15 +81,9 @@ const createSchemas = (image: ImageFunction) => {
   const SectionCommonSchema = z.object({
     background: z
       .object({
-        color: z
-          .enum([
-            'white',
-            'gray',
-            'primary-light',
-            'primary-medium',
-            'primary-dark',
-          ])
-          .default('white'),
+        // Sourced from src/utils/backgrounds.ts, the same map SectionLayout and
+        // RichTextSection use to pick background, text colour and prose inversion.
+        color: z.enum(sectionBackgroundNames).default('white'),
         image: image().optional(),
       })
       .optional(),
@@ -101,16 +96,7 @@ const createSchemas = (image: ImageFunction) => {
       title: z.string(),
       subtitle: z.string().optional(),
       zigzag: z
-        .enum([
-          'primary-light',
-          'primary-dark',
-          'secondary-light',
-          'secondary-dark',
-          'supporting1-light',
-          'supporting1-dark',
-          'supporting2-light',
-          'supporting2-dark',
-        ])
+        .enum(zigzagNames)
         .optional(),
     }),
     SectionCommonSchema.extend({
@@ -219,16 +205,7 @@ const pagesCollection = defineCollection({
       permalink: z.string(),
       status: statusSchema,
       zigzag: z
-        .enum([
-          'primary-light',
-          'primary-dark',
-          'secondary-light',
-          'secondary-dark',
-          'supporting1-light',
-          'supporting1-dark',
-          'supporting2-light',
-          'supporting2-dark',
-        ])
+        .enum(zigzagNames)
         .optional(),
       sections: sectionsSchema.optional(),
     });
