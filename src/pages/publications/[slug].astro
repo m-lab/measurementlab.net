@@ -49,7 +49,12 @@ const relatedPublications = allPublications
       return bSameCategory - aSameCategory;
     }
     // Then sort by year (newest first)
-    return b.data.year - a.data.year;
+    if (b.data.year !== a.data.year) {
+      return b.data.year - a.data.year;
+    }
+    // Deterministic tie-break: without it the picked 3 depend on collection
+    // iteration order, which is not guaranteed to be stable across builds.
+    return a.id.localeCompare(b.id);
   })
   .slice(0, 3);
 

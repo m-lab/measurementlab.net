@@ -1,5 +1,10 @@
 ---
-import { type CollectionEntry, getCollection, getEntry } from 'astro:content';
+import {
+  type CollectionEntry,
+  getCollection,
+  getEntry,
+  render,
+} from 'astro:content';
 import Banner from '@components/atoms/Banner.astro';
 import Link from '@components/atoms/Link';
 import Hero from '@components/organisms/Hero.astro';
@@ -26,7 +31,7 @@ export async function getStaticPaths() {
 }
 
 const { test } = Astro.props;
-const { Content } = await test.render();
+const { Content } = await render(test);
 
 // Get all tests for navigation
 const allTests = await getCollection('tests');

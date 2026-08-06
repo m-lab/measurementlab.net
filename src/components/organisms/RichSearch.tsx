@@ -120,7 +120,7 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
       return {
         id: post.id,
         name: post.data.title,
-        url: `/blog/${post.slug || post.id}`,
+        url: `/blog/${post.id}`,
         imageUrl: post.data.heroImage?.src,
         content:
           parts.length > 0
@@ -237,7 +237,7 @@ export default function RichSearch() {
             // Filter out unpublished blog posts if applicable
             .filter((item: any) =>
               category.name === 'Blog'
-                ? item.data?.published === 'published'
+                ? item.data?.status === 'published'
                 : true
             )
             .map((item: any) => {

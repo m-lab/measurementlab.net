@@ -2,6 +2,11 @@ import { getImage } from 'astro:assets';
 import rehypeExtractToc, {
   type TocEntry,
 } from '@stefanprobst/rehype-extract-toc';
+import {
+  autolinkHeadingsOptions,
+  externalLinksOptions,
+} from '@lib/markdown-plugins';
+import { rehypeTableAlign } from '@lib/rehype-table-align';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
@@ -84,22 +89,13 @@ const createMarkdownProcessor = (withTOC = false, id?: string) => {
   }
 
   processor
-    .use(rehypeAutolinkHeadings, {
-      behavior: 'append',
-      headingProperties: { class: 'heading-anchor-group' },
-      properties: { class: 'heading-anchor', ariaHidden: true, tabIndex: -1 },
-      content: {
-        type: 'element',
-        tagName: 'span',
-        properties: { class: 'heading-anchor-icon' },
-        children: [{ type: 'text', value: '#' }],
-      },
-    })
-    .use(rehypeExternalLinks, {
-      target: '_blank',
-      rel: ['noopener', 'noreferrer'],
-    })
+    .use(rehypeAutolinkHeadings, autolinkHeadingsOptions)
+    .use(rehypeExternalLinks, externalLinksOptions)
     .use(rehypeRaw)
+    // After rehypeRaw so it also reaches tables authored as raw HTML. Astro's
+    // own pipeline runs this too (astro.config.mjs); without it, richText
+    // tables keep the deprecated `align` attribute this plugin exists to strip.
+    .use(rehypeTableAlign)
     .use(rehypeExpressiveCode, {
       themes: ['catppuccin-frappe'],
       defaultProps: {

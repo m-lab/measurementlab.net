@@ -11,7 +11,7 @@ export default function BlogItem({ item }: BlogItemProps) {
 
   return (
     <a
-      href={`/blog/${post.slug}`}
+      href={`/blog/${post.id}`}
       className="block border-b-4 border-neutral-200 text-neutral-600 no-underline transition-all duration-200"
       style={{
         maskImage: 'conic-gradient(from 45deg at 50px 50px, #000 75%, #0000 0)',

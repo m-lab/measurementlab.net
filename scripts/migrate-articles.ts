@@ -1,7 +1,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import matter from 'gray-matter';
-import yaml from 'js-yaml';
+import { dump } from 'js-yaml';
 
 interface OldFrontmatter {
   layout?: string;
@@ -204,9 +204,9 @@ function transformArticle(
       console.log(`File: ${filename}`);
       console.log('-'.repeat(60));
       console.log('OLD FRONTMATTER:');
-      console.log(yaml.dump(old));
+      console.log(dump(old));
       console.log('NEW FRONTMATTER:');
-      console.log(yaml.dump(newFrontmatter));
+      console.log(dump(newFrontmatter));
       if (excerpt) {
         console.log(`Excerpt: ${excerpt.substring(0, 100)}...`);
       }

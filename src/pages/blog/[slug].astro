@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { getCollection, getEntry } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 import Banner from '@components/atoms/Banner.astro';
 import Link from '@components/atoms/Link'
 import Tag from '@components/atoms/Tag';
@@ -25,13 +25,13 @@ export async function getStaticPaths() {
   return posts
     .filter((post) => isVisible(post))
     .map((post) => ({
-      params: { slug: post.slug },
+      params: { slug: post.id },
       props: { post },
     }));
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 // Get author details and related posts using utilities
 const peopleMap = await getPeopleMap();
@@ -141,7 +141,7 @@ const archivedBanner = siteConfig?.data.archivedBanner;
 						{relatedPosts.map((relatedPost) => (
 							<Link
 								variant="unstyled"
-								href={`/blog/${relatedPost.slug}`}
+								href={`/blog/${relatedPost.id}`}
 								clasName="flex flex-col overflow-hidden rounded-lg bg-white no-underline transition hover:shadow-lg"
 							>
 								{/* Hero Image */}
@@ -171,20 +171,17 @@ const archivedBanner = siteConfig?.data.archivedBanner;
 
 									{/* Metadata: Authors and Date */}
 									<div class="text-gray-600 mt-auto text-sm">
+										{/* Joined in one expression: the Rust compiler (Astro 7) preserves
+										    the whitespace between adjacent JSX expressions, which the old Go
+										    compiler stripped — splitting this across lines renders "Name , Name". */}
 										<p>
 											By{' '}
-											{relatedPost.resolvedAuthors.map((a, i) => (
-												<>
-													{a?.name}
-													{i < relatedPost.resolvedAuthors.length - 1 && ', '}
-												</>
-											))}
-											{relatedPost.data.externalAuthors && (
-												<>
-													{relatedPost.resolvedAuthors.length > 0 ? ', ' : ''}
-													{relatedPost.data.externalAuthors}
-												</>
-											)}
+											{[
+												...relatedPost.resolvedAuthors.map((a) => a?.name),
+												relatedPost.data.externalAuthors,
+											]
+												.filter(Boolean)
+												.join(', ')}
 										</p>
 										<p class="text-gray-500 mt-1 text-xs">
 											{formatDate(relatedPost.data.publishedDate)}

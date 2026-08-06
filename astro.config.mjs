@@ -1,6 +1,6 @@
 // @ts-check
 
-import { rehypeHeadingIds } from '@astrojs/markdown-remark';
+import { rehypeHeadingIds, unified } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
 import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
@@ -14,6 +14,10 @@ import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import Icons from 'unplugin-icons/vite';
 import redirectsData from './src/content/site/_redirects.json';
 import { siteConfig } from './src/lib/config.ts';
+import {
+  autolinkHeadingsOptions,
+  externalLinksOptions,
+} from './src/lib/markdown-plugins.ts';
 import { rehypeTableAlign } from './src/lib/rehype-table-align.ts';
 
 // Transform redirects array to Astro's format
@@ -39,25 +43,27 @@ const redirects = redirectsData.redirects.reduce(
 export default defineConfig({
   redirects,
   site: siteConfig.url,
+  // Astro 7 changed the default to 'jsx', which collapses whitespace between
+  // inline elements. Pinned to the pre-7 behaviour so the upgrade is visually
+  // neutral; opt into 'jsx' deliberately later.
+  compressHTML: true,
   devToolbar: {
     enabled: false,
   },
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.bunny(),
-        name: 'Inter',
-        weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-        cssVariable: '--font-inter',
-      },
-      {
-        provider: fontProviders.bunny(),
-        name: 'IBM Plex Mono',
-        weights: [400],
-        cssVariable: '--font-ibm-plex-mono',
-      },
-    ],
-  },
+  fonts: [
+    {
+      provider: fontProviders.bunny(),
+      name: 'Inter',
+      weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      cssVariable: '--font-inter',
+    },
+    {
+      provider: fontProviders.bunny(),
+      name: 'IBM Plex Mono',
+      weights: [400],
+      cssVariable: '--font-ibm-plex-mono',
+    },
+  ],
   // markdown: {
   //   shikiConfig: {
   //     // Choose from Shiki's built-in themes (or add your own)
@@ -66,12 +72,8 @@ export default defineConfig({
   //   },
   // },
   vite: {
-    // TODO #1 - remove expect error when Astro updates to Vite 7
-    // https://github.com/withastro/astro/issues/14030#issuecomment-3027129338
     plugins: [
-      // @ts-expect-error
       tailwindcss(),
-      // @ts-expect-error
       Icons({
         compiler: 'jsx',
         jsx: 'react',
@@ -82,36 +84,19 @@ export default defineConfig({
     ],
   },
   markdown: {
-    rehypePlugins: [
-      rehypeHeadingIds,
-      [
-        rehypeExternalLinks,
-        {
-          // content: { type: 'text', value: ' 🔗' },
-          target: '_blank',
-          rel: ['noopener', 'noreferrer'],
-        },
+    // Astro 7 defaults to the Sätteri processor, which does not run remark/rehype
+    // plugins. Keep the unified pipeline so the four rehype plugins below (one of
+    // them repo-local) continue to apply.
+    processor: unified({
+      // Shared options live in src/lib/markdown-plugins.ts, alongside the
+      // standalone pipeline in src/utils/renderMarkdown.ts that mirrors them.
+      rehypePlugins: [
+        rehypeHeadingIds,
+        [rehypeExternalLinks, externalLinksOptions],
+        rehypeTableAlign,
+        [rehypeAutolinkHeadings, autolinkHeadingsOptions],
       ],
-      rehypeTableAlign,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: 'append',
-          headingProperties: { class: 'heading-anchor-group' },
-          properties: {
-            class: 'heading-anchor',
-            ariaHidden: true,
-            tabIndex: -1,
-          },
-          content: {
-            type: 'element',
-            tagName: 'span',
-            properties: { class: 'heading-anchor-icon' },
-            children: [{ type: 'text', value: '#' }],
-          },
-        },
-      ],
-    ],
+    }),
   },
   integrations: [
     react(),
