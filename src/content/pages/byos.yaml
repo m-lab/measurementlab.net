@@ -54,3 +54,9 @@ sections:
       &nbsp;
 
       &nbsp;
+  - type: partners
+    background:
+      color: primary-medium
+      type: full
+    title: BYOS Partners
+    category: BYOS Partners
