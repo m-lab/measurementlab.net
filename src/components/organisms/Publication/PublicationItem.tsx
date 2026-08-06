@@ -51,9 +51,9 @@ export default function PublicationItem({ item }: PublicationItemProps) {
             {post.data.title}
           </a>
         </h3>
-        {/* Description */}
+
         {post.data.description && (
-          <p
+          <div
             className="line-clamp-3 grow text-neutral-600"
             dangerouslySetInnerHTML={{ __html: post.data.description }}
           />
@@ -79,9 +79,9 @@ export default function PublicationItem({ item }: PublicationItemProps) {
           {/* Internal Links */}
           {post.data.internalLinks && (
             <div className="flex flex-wrap gap-2 pt-2">
-              {post.data.internalLinks.map((link, index) => (
+              {post.data.internalLinks.map((link) => (
                 <a
-                  key={`${link.path}:${index}`}
+                  key={`${link.path}`}
                   href={`/${link.path}`}
                   className="text-md inline-flex items-center gap-2 text-primary-500 hover:text-primary-600"
                   onClick={(e) => e.stopPropagation()}
