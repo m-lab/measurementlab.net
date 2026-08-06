@@ -22,6 +22,8 @@ export interface Props {
 	sectionLabel?: string;
 	zigzag?: string
 	zigzagSize?: { left: number; right: number };
+	/** Hide the zigzag below `lg`, for sections whose content collapses under it. */
+	zigzagHideOnMobile?: boolean;
 }
 
 const {
@@ -35,6 +37,7 @@ const {
 	sectionLabel = 'section',
 	zigzag,
 	zigzagSize,
+	zigzagHideOnMobile = false,
 } = Astro.props;
 
 
@@ -72,7 +75,15 @@ const textClass = textClasses(bgColor ?? inheritedBgColor ?? 'white');
 			>{sectionLabel}</span
 		>
 	</DevOnly>
-	{zigzag && !bgImage && <ZigZagPattern style={zigzag} size={zigzagSize} />}
+	{
+		zigzag && !bgImage && (
+			<ZigZagPattern
+				style={zigzag}
+				size={zigzagSize}
+				hideOnMobile={zigzagHideOnMobile}
+			/>
+		)
+	}
 
 	{
 		bgImage && (

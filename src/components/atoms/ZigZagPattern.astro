@@ -4,17 +4,25 @@ import { zigzagClass } from '@utils/backgrounds';
 export interface Props {
   style?: string;
   size?: { left: number; right: number };
+  /**
+   * Hide the pattern below `lg`. The decoration is sized for a two-column
+   * layout; once a section collapses to one column it runs across the body
+   * text instead of beside it.
+   */
+  hideOnMobile?: boolean;
 }
 
 const {
   style,
-  size = { left: 450, right: 450}
+  size = { left: 450, right: 450},
+  hideOnMobile = false
 } = Astro.props;
 
+const visibilityClass = hideOnMobile ? 'hidden lg:block' : '';
 ---
 
 <div
-	class={`absolute h-full w-full overflow-hidden ${zigzagClass(style)}`}
+	class={`absolute h-full w-full overflow-hidden ${visibilityClass} ${zigzagClass(style)}`}
 >
 	<ZigZag width={size.left} class="absolute -bottom-16 -left-12" />
 	<ZigZag width={size.right} class="absolute -top-12 right-0 rotate-180" />
