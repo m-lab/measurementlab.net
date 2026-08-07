@@ -9,7 +9,6 @@ authors:
   - lai-yi-ohlsen
 status: published
 publishedDate: 2025-06-30
-heroImage: ../../assets/images/iqb/IQB Score.svg
 categories:
   - Publication
   - Announcement
