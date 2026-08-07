@@ -67,7 +67,7 @@ sections:
     category: Supporting Research Projects
   - type: partners
     background:
-      color: white
+      color: primary-light
       type: full
     title: M-Lab Supporting Partners
     category: Supporting Partners
