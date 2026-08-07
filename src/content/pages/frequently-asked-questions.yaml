@@ -1,10 +1,11 @@
 title: FAQ
 permalink: frequently-asked-questions
 status: published
+zigzag: primary-dark
 sections:
   - type: richText
     background:
-      color: white
+      color: primary-light
       type: full
     withTOC: true
     content: |-
@@ -29,7 +30,7 @@ sections:
       ### How can I contact M-Lab?
 
       For general inquiries: [hello@measurementlab.net ](mailto:hello@measurementlab.et)  
-      For technical support:  [support@measurementlab.net](mailto:support@measurementlab.net)   
+      For technical support:  [support@measurementlab.net](mailto:support@measurementlab.net)  
       For community: join the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/forum/#!forum/discuss).
 
       ---
@@ -127,7 +128,3 @@ sections:
       ### Can I host my own experiment on M-Lab?
 
       M-Lab accepts applications from researchers who develop open source network measurement tests, but the bar is high: accepted tests must align with M-Lab's mission, not duplicate existing tests, and have sustainable long-term funding. Read M-Lab's [procedures for new tools](https://www.measurementlab.net/publications/mlab-procedures-new-tools.pdf) before reaching out to the operations team.
-
-      ---
-
-      *Have a question not answered here? Email [support@measurementlab.net](mailto:support@measurementlab.net)*
