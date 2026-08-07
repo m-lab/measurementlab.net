@@ -139,6 +139,14 @@
         "label": "Section Showcase",
         "pageRef": "section-showcase"
       }
+    },
+    {
+      "type": "single",
+      "link": {
+        "type": "internal",
+        "label": "Support M-Lab",
+        "pageRef": "support"
+      }
     }
   ]
 }
