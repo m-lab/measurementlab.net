@@ -15,8 +15,7 @@ export interface Props {
 
 const { chapters, currentPermalink, sticky = true } = Astro.props;
 
-// Drafts only ever reach the sidebar in dev/preview, but there they sit next to
-// finished pages with nothing to tell them apart.
+
 const markDrafts = isDev || isPreview;
 ---
 
@@ -52,7 +51,7 @@ const markDrafts = isDev || isPreview;
 									{markDrafts && page.data.status === 'draft' && (
 										<span
 											class="ml-1.5 align-middle text-[0.625rem] font-bold tracking-wide text-neutral-400 uppercase"
-											title="Draft — not visible in production"
+											title="Draft"
 										>
 											draft
 										</span>

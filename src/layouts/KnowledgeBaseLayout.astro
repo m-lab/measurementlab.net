@@ -37,8 +37,6 @@ const {
   next,
 } = Astro.props;
 
-// Difficulty is editorial metadata carried over from kb.measurementlab.net.
-// The palette climbs with effort: supporting1 (green) → secondary (amber) → speed (purple).
 const difficultyVariant = {
   beginner: 'supporting1',
   intermediate: 'secondary',
@@ -64,100 +62,100 @@ const hasToc = Boolean(toc && toc.length > 0);
 ---
 
 <PageLayout title={title} description={description}>
-  {
-    status === 'archived' && archivedBanner && (
-      <Banner message={archivedBanner.message} color={archivedBanner.color} />
-    )
-  }
+	{
+		status === 'archived' && archivedBanner && (
+			<Banner message={archivedBanner.message} color={archivedBanner.color} />
+		)
+	}
 
-  <SectionLayout maxWidth="7xl" sectionLabel="kb">
-    {
-      /* Mobile / tablet chapter drawer. The desktop sidebar below is hidden here. */
-    }
-    <details class="mb-8 rounded-lg border border-neutral-200 p-4 lg:hidden">
-      <summary class="cursor-pointer font-semibold text-neutral-800">
-        Browse chapters
-      </summary>
-      <div class="mt-4">
-        <KnowledgeBaseSidebar
-          chapters={chapters}
-          currentPermalink={currentPermalink}
-          sticky={false}
-        />
-      </div>
-    </details>
+	<SectionLayout maxWidth="7xl" sectionLabel="kb">
+		{
+			/* Mobile / tablet chapter drawer. The desktop sidebar below is hidden here. */
+		}
+		<details class="mb-8 rounded-lg border border-neutral-200 p-4 lg:hidden">
+			<summary class="cursor-pointer font-semibold text-neutral-800">
+				Browse chapters
+			</summary>
+			<div class="mt-4">
+				<KnowledgeBaseSidebar
+					chapters={chapters}
+					currentPermalink={currentPermalink}
+					sticky={false}
+				/>
+			</div>
+		</details>
 
-    <div
-      class:list={[
-        'grid grid-cols-1 gap-x-10 gap-y-8',
-        hasToc
-          ? 'lg:grid-cols-[15rem_minmax(0,1fr)] xl:grid-cols-[15rem_minmax(0,1fr)_13rem]'
-          : 'lg:grid-cols-[15rem_minmax(0,1fr)]',
-      ]}
-    >
-      {/* Chapter navigation */}
-      <aside class="hidden lg:block">
-        <KnowledgeBaseSidebar
-          chapters={chapters}
-          currentPermalink={currentPermalink}
-        />
-      </aside>
+		<div
+			class:list={[
+				'grid grid-cols-1 gap-x-10 gap-y-8',
+				hasToc
+					? 'lg:grid-cols-[15rem_minmax(0,1fr)] xl:grid-cols-[15rem_minmax(0,1fr)_13rem]'
+					: 'lg:grid-cols-[15rem_minmax(0,1fr)]',
+			]}
+		>
+			{/* Chapter navigation */}
+			<aside class="hidden lg:block">
+				<KnowledgeBaseSidebar
+					chapters={chapters}
+					currentPermalink={currentPermalink}
+				/>
+			</aside>
 
-      {/* Article */}
-      <main class="min-w-0">
-        <header class="mb-8">
-          {
-            showDraftBadge && (
-              <div class="mb-4">
-                <Tag variant="neutral" size="md" className="font-bold">
-                  DRAFT
-                </Tag>
-              </div>
-            )
-          }
-          <p
-            class="mb-2 text-xs font-semibold tracking-wide text-primary-700 uppercase"
-          >
-            {chapter}
-          </p>
-          <h1 class="text-3xl font-bold text-neutral-900 sm:text-4xl">
-            {title}
-          </h1>
-          {
-            description && (
-              <p class="mt-3 text-lg text-neutral-600">{description}</p>
-            )
-          }
-          {
-            difficulty && (
-              <div class="mt-4">
-                <Tag variant={difficultyVariant[difficulty]} size="sm">
-                  {difficultyLabel[difficulty]}
-                </Tag>
-              </div>
-            )
-          }
-        </header>
+			{/* Article */}
+			<main class="min-w-0">
+				<header class="mb-8">
+					{
+						showDraftBadge && (
+							<div class="mb-4">
+								<Tag variant="neutral" size="md" className="font-bold">
+									DRAFT
+								</Tag>
+							</div>
+						)
+					}
+					<p
+						class="mb-2 text-xs font-semibold tracking-wide text-primary-700 uppercase"
+					>
+						{chapter}
+					</p>
+					<h1 class="text-3xl font-bold text-neutral-900 sm:text-4xl">
+						{title}
+					</h1>
+					{
+						description && (
+							<p class="mt-3 text-lg text-neutral-600">{description}</p>
+						)
+					}
+					{
+						difficulty && (
+							<div class="mt-4">
+								<Tag variant={difficultyVariant[difficulty]} size="sm">
+									{difficultyLabel[difficulty]}
+								</Tag>
+							</div>
+						)
+					}
+				</header>
 
-        <article class="prose max-w-none prose-a:text-primary-600">
-          <slot />
-        </article>
+				<article class="prose max-w-none prose-a:text-primary-600">
+					<slot />
+				</article>
 
-        <KnowledgeBasePrevNext prev={prev} next={next} />
-      </main>
+				<KnowledgeBasePrevNext prev={prev} next={next} />
+			</main>
 
-      {/* On-page table of contents */}
-      {
-        hasToc && (
-          <div class="hidden xl:block">
-            <TOC
-              entries={toc as TocEntry[]}
-              id={`toc-${currentPermalink}`}
-              client:visible
-            />
-          </div>
-        )
-      }
-    </div>
-  </SectionLayout>
+			{/* On-page table of contents */}
+			{
+				hasToc && (
+					<div class="hidden xl:block">
+						<TOC
+							entries={toc as TocEntry[]}
+							id={`toc-${currentPermalink}`}
+							client:visible
+						/>
+					</div>
+				)
+			}
+		</div>
+	</SectionLayout>
 </PageLayout>

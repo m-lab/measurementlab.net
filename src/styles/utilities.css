@@ -2,3 +2,15 @@
   --shadow-sharp: 2px 2px 0 0 rgba(0, 0, 0, 1);
   --shadow-sharp-pressed: 1px 1px 0 0 rgba(0, 0, 0, 1);
 }
+
+/*
+ * The house shape: a square notch cut out of the top-left corner, used on
+ * cards and on the hero. Single source of truth — override the size per
+ * element with an inline `--notch` (inline styles beat the utility's own
+ * declaration, so a class-based override is not reliable here).
+ */
+@utility notch {
+  --notch: 50px;
+  mask: conic-gradient(from 45deg at var(--notch) var(--notch), #000 75%, #0000 0)
+    calc(var(--notch) * -1);
+}

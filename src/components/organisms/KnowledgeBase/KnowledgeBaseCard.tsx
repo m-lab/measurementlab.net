@@ -1,15 +1,18 @@
 import Tag from '@components/atoms/Tag';
 import type { KbCardData } from '@utils/kb';
+import type { CSSProperties } from 'react';
 
 /**
  * Knowledge base card, in the same style as PublicationItem: a neutral panel
- * with a mask-clipped top-left corner and a heavy bottom rule.
- *
- * The notch and padding are scaled down from the publications card, which is
- * full-width at max-w-4xl — these sit three to a row. Padding has to clear the
- * notch or the first tag lands inside the cut, so the two move together.
+ * with the shared `notch` corner cut and a heavy bottom rule.
  */
 
+/**
+ * Overrides the `notch` utility's 50px default (src/styles/utilities.css).
+ * Scaled down because these sit three to a row, where the publications card is
+ * full-width at max-w-4xl. The `p-8` below has to clear the notch or the first
+ * tag lands inside the cut, so the two move together.
+ */
 const NOTCH_PX = 28;
 
 /** The palette climbs with effort: green → amber → purple. */
@@ -38,11 +41,8 @@ export default function KnowledgeBaseCard({ article, markDraft }: Props) {
 
   return (
     <div
-      className="group relative flex h-full flex-col border-b-4 border-neutral-200 transition-colors duration-200 hover:border-primary-400"
-      style={{
-        maskImage: `conic-gradient(from 45deg at ${NOTCH_PX}px ${NOTCH_PX}px, #000 75%, #0000 0)`,
-        maskPosition: `-${NOTCH_PX}px`,
-      }}
+      className="notch group relative flex h-full flex-col border-b-4 border-neutral-200 transition-colors duration-200 hover:border-primary-400"
+      style={{ '--notch': `${NOTCH_PX}px` } as CSSProperties}
     >
       <div className="flex h-full flex-col gap-4 bg-neutral-100 p-8">
         {hasTopRow && (

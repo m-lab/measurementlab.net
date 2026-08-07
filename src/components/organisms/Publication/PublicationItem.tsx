@@ -22,11 +22,7 @@ export default function PublicationItem({ item }: PublicationItemProps) {
 
   return (
     <div
-      className="block border-b-4 border-neutral-200 transition-all duration-200"
-      style={{
-        maskImage: 'conic-gradient(from 45deg at 50px 50px, #000 75%, #0000 0)',
-        maskPosition: '-50px',
-      }}
+      className="notch block border-b-4 border-neutral-200 transition-all duration-200"
     >
       <div className="flex h-full flex-col gap-6 bg-neutral-100 px-16 py-12">
         {/* Category, Year, and Tags */}

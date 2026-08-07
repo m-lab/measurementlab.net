@@ -1,24 +1,12 @@
 import KnowledgeBaseCard from '@components/organisms/KnowledgeBase/KnowledgeBaseCard';
-import type { KbCardData } from '@utils/kb';
 import { Input } from '@headlessui/react';
+import type { KbCardData } from '@utils/kb';
 import Fuse from 'fuse.js';
 import { useMemo, useState } from 'react';
 import MagnifyingGlassIcon from '~icons/heroicons/magnifying-glass-20-solid';
 import XMarkIcon from '~icons/heroicons/x-mark-20-solid';
 import FilterDropdown from './FilterDropdown';
 
-/**
- * The /kb landing grid: chapter headings, each with the matching articles
- * beneath it, in the same reading order as the sidebar on an article page.
- *
- * Deliberately separate from FilterableContent: that component sorts by date
- * (`publishedDate` / `year`) and dispatches to the blog and publication item
- * lists. Knowledge base articles have no date, and this page offers no sort at
- * all — the chapter grouping *is* the order. FilterDropdown is shared; the
- * rest is not.
- */
-
-/** Ascending effort, so the difficulty filter lists gentlest-first. */
 const DIFFICULTY_RANK: Record<string, number> = {
   beginner: 0,
   intermediate: 1,
@@ -27,11 +15,6 @@ const DIFFICULTY_RANK: Record<string, number> = {
 
 interface Props {
   articles: KbCardData[];
-  /**
-   * Badge draft cards. Passed in rather than read from import.meta.env here so
-   * the rule lives in one place — the Astro side, alongside the same decision
-   * for the article page and sidebar.
-   */
   markDrafts?: boolean;
 }
 
@@ -110,10 +93,6 @@ export default function KnowledgeBaseFilteredGrid({
     );
   }, [articles, fuse, searchText, chapters, tags, difficulties]);
 
-  // One group per chapter that still has matches. Because `visible` is already
-  // in reading order, articles of a chapter are adjacent and the insertion
-  // order of the map is the chapter order — so a chapter filtered down to
-  // nothing simply never gets a group, and its heading never renders.
   const groups = useMemo(() => {
     const byChapter = new Map<string, KbCardData[]>();
     for (const article of visible) {
