@@ -8,127 +8,55 @@ sections:
       color: primary-light
       type: full
     withTOC: false
-    content: "The Internet powers modern life—driving economies, education, and
-      innovation. As a critical infrastructure, understanding and improving its
-      performance isn’t optional—it’s essential.
+    content: |-
+      The Internet powers modern life—driving economies, education, and innovation. As a critical infrastructure, understanding and improving its performance isn’t optional—it’s essential.
 
+      M-Lab exists to make the Internet more transparent, measurable, and accountable. Our global platform provides open tools and datasets that help researchers, policymakers, journalists, and the public understand how Internet networks actually perform.
 
-      M-Lab exists to make the Internet more transparent, measurable, and
-      accountable. Our global platform provides open tools and datasets that
-      help researchers, policymakers, journalists, and the public understand how
-      Internet networks actually perform.
-
-
-      Maintaining this open infrastructure requires ongoing support.
-      Contributions help us operate measurement servers around the world,
-      maintain open-source tools, and keep Internet performance data freely
-      available to anyone who needs it. If you believe the Internet should be
-      open, measurable, and accountable, we invite you to support M-Lab.
-
+      Maintaining this open infrastructure requires ongoing support. Contributions help us operate measurement servers around the world, maintain open-source tools, and keep Internet performance data freely available to anyone who needs it. If you believe the Internet should be open, measurable, and accountable, we invite you to support M-Lab.
 
       ## **Who Benefits from Your Support?**
 
-
       - Computer scientists can propose measurements to be hosted as services.
-
-      - Policymakers and Advocates can evaluate Internet access and performance
-      for their communities.
-
-      - Internet Users can run tests and contribute to research as citizen
-      scientists.
-
-      - Internet researchers can conduct large-scale Internet studies using open
-      datasets.
-
-      - Organizations with Data can publish and share open Internet measurement
-      datasets.
-
+      - Policymakers and Advocates can evaluate Internet access and performance for their communities.
+      - Internet Users can run tests and contribute to research as citizen scientists.
+      - Internet researchers can conduct large-scale Internet studies using open datasets.
+      - Organizations with Data can publish and share open Internet measurement datasets.
 
       ## Organizational Sponsorship
 
+      Organizations that rely on open Internet measurement data can support M-Lab through financial sponsorship. Sponsorship helps sustain the platform and expand the global network of measurement infrastructure. If your organization is interested in supporting M-Lab, please review our sponsorship opportunities or contact us to learn more.
 
-      Organizations that rely on open Internet measurement data can support
-      M-Lab through financial sponsorship. Sponsorship helps sustain the
-      platform and expand the global network of measurement infrastructure. If
-      your organization is interested in supporting M-Lab, please review our
-      sponsorship opportunities or contact us to learn more.
+      M-Lab offers tiered sponsorship opportunities to align with your organization's goals and the level of impact you wish to achieve.
 
-
-      M-Lab offers tiered sponsorship opportunities to align with your
-      organization's goals and the level of impact you wish to achieve.
-
-
-
-      | Resiliency Circle | Value |
-
-      | ----------------- | -------------- |
-
-      | Resiliency Circle | $500k+ |
-
-      | Quality Circle | $250k - $500k\x1f |
-
-      | Transit Circle | $100k - 250k |
-
-      | Latency Circle | $50k - $100k |
-
-      | Speed Circle | Up to $50k \x1f |
-
-
+      ![](</src/assets/images/sponsorship/M-Lab Sponsorship Tiers 2026.png>)
 
       ### Types of Support
 
-
       - Direct Funding
-
       - Allocated staff time to contribute to M-Lab Projects
-
       - Donated infrastructure (e.g. Cloud Credits, Servers, Transit)
 
-
-      If your organization is interested in supporting the M-Lab platform,
-      please [contact us](mailto:hello@measurementlab.net).
-
+      If your organization is interested in supporting the M-Lab platform, please [contact us](mailto:hello@measurementlab.net).
 
       ## Individual Donations
 
+      Individuals can support M-Lab through [GitHub Sponsors](https://github.com/sponsors/m-lab). Contributions of any size help us maintain the platform and continue developing open-source measurement tools.
 
-      Individuals can support M-Lab through [GitHub
-      Sponsors](https://github.com/sponsors/m-lab). Contributions of any size
-      help us maintain the platform and continue developing open-source
-      measurement tools.
-
-
-      Every contribution helps strengthen the shared infrastructure that
-      supports research, transparency, and accountability on the Internet.\ 
-
+      Every contribution helps strengthen the shared infrastructure that supports research, transparency, and accountability on the Internet. 
 
       ## Infrastructure Partner
 
+      The M-Lab platform is entirely donated. There are a few ways to become an infrastructure partner:
 
-      The M-Lab platform is entirely donated. There are a few ways to become an
-      infrastructure partner:
-
-
-      - [Bring Your Own Server](/byos): network providers run M-Lab’s software
-      on their own infrastructure and join an open source global measurement
-      platform. 
-
+      - [Bring Your Own Server](/byos): network providers run M-Lab’s software on their own infrastructure and join an open source global measurement platform. 
       - Provide hardware for M-Lab to integrate into the platform. 
-
       - Donate virtual servers or cloud credits.
-
       - Contribute transit to facilitate Internet measurement tests.
 
+      If you’d like to provide hardware, cloud credits, or transit please [contact us directly.](mailto:support@measurementlab.net) 
 
-      If you’d like to provide hardware, cloud credits, or transit please
-      [contact us directly.](mailto:support@measurementlab.net) 
-
-
-      If you’d like to participate in BYOS, review the
-      [requirements](https://www.measurementlab.net/contribute/host-managed/)
-      and submit an **[Infrastructure Contribution
-      Form](https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFm\
-      N3cW6onvLsCxkd3UnECVd9Q/viewform)**."
+      If you’d like to participate in BYOS, review the [requirements](https://www.measurementlab.net/contribute/host-managed/) and submit an **[Infrastructure Contribution Form](https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFmN3cW6onvLsCxkd3UnECVd9Q/viewform)**.
   - type: partners
     background:
       color: primary-medium
