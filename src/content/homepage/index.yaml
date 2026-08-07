@@ -38,7 +38,7 @@ sections:
           variant: primary
           size: md
           text: Check out the Platform
-          href: /status
+          href: /platform-status
       - title: "Internet Measurement Data "
         content: A large-scale Internet measurement data, consolidated into an open,
           accessible pipeline.
