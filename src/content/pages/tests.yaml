@@ -100,7 +100,7 @@ sections:
 
       If you need help running a test or troubleshooting an issue, you can
       search the support site for answers to common questions. You can also
-      [contact the team directly.](support@measurementlab.net)  
+      [contact the team directly.](mailto:support@measurementlab.net)  
   - type: tests
     background:
       color: white
