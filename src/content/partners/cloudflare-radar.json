@@ -2,8 +2,6 @@
   "id": "cloudflare-radar",
   "name": "Cloudflare Radar ",
   "status": "published",
-  "category": [
-    "IMC Hackathon Partners"
-  ],
-  "image": "/src/assets/partners/cloudflare-radar.png"
+  "category": ["IMC Hackathon Partners"],
+  "image": "/src/assets/partners/cloudflare-radar-logo.png"
 }
