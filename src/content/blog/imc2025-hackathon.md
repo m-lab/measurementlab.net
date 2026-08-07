@@ -1,10 +1,8 @@
 ---
 permalink: imc2025-hackathon
-title: >-
-  Open Measurement Hackathon at the ACM Internet Measurement Conference (IMC)
-  2025
-excerpt: >-
-  M-Lab, OONI, IIJ, Dioptra Research Group, Cloudflare Radar, Reverse
+title: Open Measurement Hackathon at the ACM Internet Measurement Conference
+  (IMC) 2025
+excerpt: M-Lab, OONI, IIJ, Dioptra Research Group, Cloudflare Radar, Reverse
   Traceroute, and IODA hosted the Open Measurement Hackathon, October 31, 2025,
   following the ACM Internet Measurement Conference (IMC) 2025 in Madison,
   Wisconsin, USA.
@@ -13,19 +11,19 @@ authors:
   - melissa-newcomb
   - pavlos-sermpezis
 status: published
+publishedDate: 2025-11-12
+heroImage: ../../assets/community/2024HackathonGroup.jpg
 categories:
   - Event
   - Community
   - Research
   - Data
-publishedDate: 2025-11-12
 ---
-
 M-Lab, [OONI](https://ooni.org/), [IIJ](https://www.iij.ad.jp/en/), [Dioptra Research Group](https://dioptra.io/), [Cloudflare Radar](https://radar.cloudflare.com/), [Reverse Traceroute](https://www.measurementlab.net/tests/reverse_traceroute/), and [IODA](https://ioda.inetintel.cc.gatech.edu/) hosted the [Open Measurement Hackathon](https://conferences.sigcomm.org/imc/2025/events/hackathon/), October 31, 2025, following the [ACM Internet Measurement Conference (IMC) 2025](https://conferences.sigcomm.org/imc/2025/) in Madison, Wisconsin, USA.
 
 ![IMC 2025 hackathon logo](../../assets/images/blog/2025-11-12-imc2025-hackathon/imc2025_hackathon_logo.png)
 
-Over 40 participants from academia and industry gathered to _“Measure All the Frights”_, exploring and comparing data from our projects over the eight-hour hackathon. Each host organization suggested potential projects to participants in advance, and those who planned to attend formed teams via Discord or in person to select a project or propose their own ideas. Teams worked on a variety of projects, including:
+Over 40 participants from academia and industry gathered to *“Measure All the Frights”*, exploring and comparing data from our projects over the eight-hour hackathon. Each host organization suggested potential projects to participants in advance, and those who planned to attend formed teams via Discord or in person to select a project or propose their own ideas. Teams worked on a variety of projects, including:
 
 - Aggregating and visualizing metrics across multiple platforms/datasets
 - Analyzing and visualizing internet censorship data
@@ -35,10 +33,11 @@ Over 40 participants from academia and industry gathered to _“Measure All the 
 - Reproducing and extending key results from a recent study on web centralization
 - Comparing IPv4 versus IPv6 performance
 
-The event concluded with teams presenting their findings to the group. The [**hackathon GitHub repository**](https://github.com/m-lab/open-measurement-hackathon) lists the projects that teams worked on at the event as well as code, presentations, images, etc. that participants shared with the hackathon organizers.
+The event concluded with teams presenting their findings to the group. The **[hackathon GitHub repository](https://github.com/m-lab/open-measurement-hackathon)** lists the projects that teams worked on at the event as well as code, presentations, images, etc. that participants shared with the hackathon organizers.
 
 We’re grateful for everyone who brought their energy and ideas to the IMC 2025 hackathon. We enjoyed meeting you, talking about your research, and appreciate your interest in our open source and open data projects! Thanks as well to [Internet Society](https://www.internetsociety.org/) for sponsoring the venue, beverages, and dinner for those who attended.
 
 ![IMC 2025 hackathon logo](../../assets/images/blog/2025-11-12-imc2025-hackathon/imc_2025_hackathon_photo2.jpg)
 
 ![IMC 2025 hackathon logo](../../assets/images/blog/2025-11-12-imc2025-hackathon/imc_2025_hackathon_photo1.png)
+
