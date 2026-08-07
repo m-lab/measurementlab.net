@@ -23,9 +23,9 @@ The Internet Quality Barometer (IQB) is an initiative funded by the Internet Soc
 - ACM IMC 2025 [poster paper](https://arxiv.org/pdf/2509.19034)
 
   
-
-
 For decades, policymakers, advocates, Internet researchers, Internet service providers and more have relied on speed test data to tell us if our Internet connections are performing well. But as the Internet has evolved so have its use cases and “high-speed” alone is no longer representative of “high-quality” Internet.
+
+
 
 ![Image](<../../assets/images/blog/2025-06-30_iqb/IQB Score.png>)
 
