@@ -500,9 +500,11 @@ so headings in the body should start at `##`.
 - `tags` - Keywords; filterable on the landing page, no effect on reading order
 - `difficulty` - `beginner`, `intermediate`, or `advanced`; badge plus a landing-page filter
 
-Reading order (sidebar, prev/next, and the landing page's default sort) all come from one sort in `getPublishedKbArticles()` (`src/utils/kb.ts`): `chapterOrder`, then `order`, then title as a tie-break.
+Reading order (sidebar, prev/next, and the landing page) all comes from one sort in `getPublishedKbArticles()` (`src/utils/kb.ts`): `chapterOrder`, then `order`, then title as a tie-break.
 
-**The landing page.** `/kb` is a normal entry in the pages collection (`src/content/pages/kb.yaml`), so its title, description, and intro sections are CMS-editable like any other page. `[...path].astro` maps the page id `kb` to `KnowledgeBaseLanding.astro`, which renders the filterable card grid below whatever sections the page defines. The grid (`Filter/KnowledgeBaseFilteredGrid.tsx`) filters by chapter, tag, and difficulty, with a fuzzy title/description/tag search and three sorts (reading order, alphabetical, difficulty). It is separate from `FilterableContent` because that component sorts by date, which knowledge base articles do not have.
+**The landing page.** `/kb` is a normal entry in the pages collection (`src/content/pages/kb.yaml`), so its title, description, and intro sections are CMS-editable like any other page. `[...path].astro` maps the page id `kb` to `KnowledgeBaseLanding.astro`, which renders the card grid below whatever sections the page defines.
+
+The grid (`Filter/KnowledgeBaseFilteredGrid.tsx`) lays articles out under a heading per chapter, in reading order — the same order as the sidebar. It offers no sort control: the chapter grouping *is* the order. Readers narrow it with chapter, tag, and difficulty filters plus a fuzzy title/description/tag search; a chapter whose articles are all filtered out drops its heading rather than showing an empty section. It is separate from `FilterableContent` because that component sorts by date, which knowledge base articles do not have.
 
 **Search.** Articles are indexed in the site-wide `RichSearch` dialog under a "Knowledge Base" category, reachable with the `!` modifier.
 

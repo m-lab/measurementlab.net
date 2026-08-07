@@ -7,19 +7,17 @@ import XMarkIcon from '~icons/heroicons/x-mark-20-solid';
 import FilterDropdown from './FilterDropdown';
 
 /**
- * The /kb landing grid.
+ * The /kb landing grid: chapter headings, each with the matching articles
+ * beneath it, in the same reading order as the sidebar on an article page.
  *
  * Deliberately separate from FilterableContent: that component sorts by date
  * (`publishedDate` / `year`) and dispatches to the blog and publication item
- * lists. Knowledge base articles have no date — their natural order is the
- * reading order of the book — so they need their own sorts and their own card.
- * FilterDropdown is shared; the rest is not.
+ * lists. Knowledge base articles have no date, and this page offers no sort at
+ * all — the chapter grouping *is* the order. FilterDropdown is shared; the
+ * rest is not.
  */
 
-const SORT_OPTIONS = ['reading order', 'alphabetical', 'difficulty'] as const;
-type SortOption = (typeof SORT_OPTIONS)[number];
-
-/** Ascending effort, so "difficulty" sorts gentlest-first. */
+/** Ascending effort, so the difficulty filter lists gentlest-first. */
 const DIFFICULTY_RANK: Record<string, number> = {
   beginner: 0,
   intermediate: 1,
@@ -48,7 +46,6 @@ export default function KnowledgeBaseFilteredGrid({
 }: Props) {
   const [searchText, setSearchText] = useState('');
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
-  const [sortBy, setSortBy] = useState<SortOption>(SORT_OPTIONS[0]);
   const [chapters, setChapters] = useState<string[]>([]);
   const [tags, setTags] = useState<string[]>([]);
   const [difficulties, setDifficulties] = useState<string[]>([]);
@@ -95,8 +92,8 @@ export default function KnowledgeBaseFilteredGrid({
   );
 
   const visible = useMemo(() => {
-    // Fuse returns by relevance; the explicit sort below overrides that, which
-    // is what we want — the sort control should win over match score.
+    // Fuse orders by relevance; the sort below discards that. Reading order is
+    // the only order this page offers, so match score must not disturb it.
     let results = searchText
       ? fuse.search(searchText).map((r) => r.item)
       : articles;
@@ -113,25 +110,24 @@ export default function KnowledgeBaseFilteredGrid({
       results = results.filter((a) => a.tags.some((t) => tags.includes(t)));
     }
 
-    const sorted = [...results];
-    if (sortBy === 'alphabetical') {
-      sorted.sort((a, b) => a.title.localeCompare(b.title));
-    } else if (sortBy === 'difficulty') {
-      // Articles with no difficulty sort last rather than ahead of beginners.
-      const rank = (d?: string) => (d ? DIFFICULTY_RANK[d] : 99);
-      sorted.sort(
-        (a, b) =>
-          rank(a.difficulty) - rank(b.difficulty) ||
-          a.chapterOrder - b.chapterOrder ||
-          a.order - b.order
-      );
-    } else {
-      sorted.sort(
-        (a, b) => a.chapterOrder - b.chapterOrder || a.order - b.order
-      );
+    return [...results].sort(
+      (a, b) => a.chapterOrder - b.chapterOrder || a.order - b.order
+    );
+  }, [articles, fuse, searchText, chapters, tags, difficulties]);
+
+  // One group per chapter that still has matches. Because `visible` is already
+  // in reading order, articles of a chapter are adjacent and the insertion
+  // order of the map is the chapter order — so a chapter filtered down to
+  // nothing simply never gets a group, and its heading never renders.
+  const groups = useMemo(() => {
+    const byChapter = new Map<string, KbCardData[]>();
+    for (const article of visible) {
+      const existing = byChapter.get(article.chapter);
+      if (existing) existing.push(article);
+      else byChapter.set(article.chapter, [article]);
     }
-    return sorted;
-  }, [articles, fuse, searchText, chapters, tags, difficulties, sortBy]);
+    return Array.from(byChapter, ([name, items]) => ({ name, items }));
+  }, [visible]);
 
   const clearAll = () => {
     setSearchText('');
@@ -170,19 +166,6 @@ export default function KnowledgeBaseFilteredGrid({
               value={difficulties}
               onChange={(v) => setDifficulties(v as string[])}
               multiple
-            />
-          </div>
-
-          <div className="flex flex-1 items-center gap-3">
-            <span className="text-lg font-bold text-neutral-50 uppercase">
-              Sort:
-            </span>
-            <FilterDropdown
-              label="Sort"
-              options={[...SORT_OPTIONS]}
-              value={sortBy}
-              onChange={(v) => setSortBy(v as SortOption)}
-              showAllOption={false}
             />
           </div>
 
@@ -246,49 +229,55 @@ export default function KnowledgeBaseFilteredGrid({
       </div>
 
       <div className="mx-auto max-w-7xl px-6 py-8">
-        {visible.length > 0 ? (
-          <ul className="grid list-none grid-cols-1 gap-6 p-0 md:grid-cols-2 lg:grid-cols-3">
-            {visible.map((article) => (
-              <li key={article.permalink} className="flex">
-                <a
-                  href={`/kb/${article.permalink}`}
-                  className="card-elevated group flex w-full flex-col rounded-md no-underline"
-                >
-                  <p className="mb-2 flex flex-wrap items-center gap-2 text-xs font-semibold tracking-wide text-primary-700 uppercase">
-                    {article.chapter}
-                    {markDrafts && article.status === 'draft' && (
-                      <span className="text-neutral-400">draft</span>
-                    )}
-                  </p>
-                  <h3 className="mb-2 text-lg leading-snug font-semibold text-neutral-900 group-hover:text-primary-700">
-                    {article.title}
-                  </h3>
-                  {article.description && (
-                    <p className="mb-4 line-clamp-4 text-sm text-neutral-600">
-                      {article.description}
-                    </p>
-                  )}
-                  <div className="mt-auto flex flex-wrap items-center gap-1.5 border-t border-neutral-100 pt-3">
-                    {article.difficulty && (
-                      <span
-                        className={`tag-base tag-size-sm ${DIFFICULTY_TAG_CLASS[article.difficulty]}`}
-                      >
-                        {article.difficulty}
-                      </span>
-                    )}
-                    {article.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="tag-base tag-neutral tag-size-sm"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </a>
-              </li>
-            ))}
-          </ul>
+        {groups.length > 0 ? (
+          groups.map((group) => (
+            <section key={group.name} className="mb-12 last:mb-0">
+              <h2 className="mb-6 border-b border-neutral-200 pb-2 text-2xl font-bold text-neutral-900">
+                {group.name}
+              </h2>
+              <ul className="grid list-none grid-cols-1 gap-6 p-0 md:grid-cols-2 lg:grid-cols-3">
+                {group.items.map((article) => (
+                  <li key={article.permalink} className="flex">
+                    <a
+                      href={`/kb/${article.permalink}`}
+                      className="card-elevated group flex w-full flex-col rounded-md no-underline"
+                    >
+                      {markDrafts && article.status === 'draft' && (
+                        <p className="mb-2 text-xs font-semibold tracking-wide text-neutral-400 uppercase">
+                          draft
+                        </p>
+                      )}
+                      <h3 className="mb-2 text-lg leading-snug font-semibold text-neutral-900 group-hover:text-primary-700">
+                        {article.title}
+                      </h3>
+                      {article.description && (
+                        <p className="mb-4 line-clamp-4 text-sm text-neutral-600">
+                          {article.description}
+                        </p>
+                      )}
+                      <div className="mt-auto flex flex-wrap items-center gap-1.5 border-t border-neutral-100 pt-3">
+                        {article.difficulty && (
+                          <span
+                            className={`tag-base tag-size-sm ${DIFFICULTY_TAG_CLASS[article.difficulty]}`}
+                          >
+                            {article.difficulty}
+                          </span>
+                        )}
+                        {article.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="tag-base tag-neutral tag-size-sm"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))
         ) : (
           <div className="py-12 text-center">
             <p className="text-lg text-neutral-600">

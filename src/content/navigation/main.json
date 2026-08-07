@@ -80,8 +80,8 @@
         },
         {
           "type": "internal",
-          "label": "Knowledge Base ",
-          "externalUrl": "kb"
+          "label": "Knowledge Base",
+          "pageRef": "kb"
         }
       ]
     },
