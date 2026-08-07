@@ -104,7 +104,7 @@ sections:
   - type: tests
     background:
       color: white
-      type: full
+      type: contained
     title: Retired Tests
     description: "Tests that are no longer actively running on the M-Lab platform "
     tests:
