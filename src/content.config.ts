@@ -519,6 +519,37 @@ const datasetsCollection = defineCollection({
   }),
 });
 
+// ---------------------------------------------------------------------------
+// Docs collection
+//
+// Long-form documentation organised as a book: chapters in the left sidebar,
+// pages ordered within each chapter, prev/next at the foot of every page.
+//
+// `chapter` is a free-text name rather than a categories/*.json enum because
+// the chapter list is the table of contents — editors reshape it as the docs
+// grow, and a page's chapter is the only thing that puts it in the sidebar.
+// `chapterOrder` must be repeated identically on every page of a chapter; it
+// orders the chapters themselves, and getDocChapters() reads it from whichever
+// page it meets first.
+//
+// `tags` and `difficulty` carry over from the kb.measurementlab.net source and
+// are editorial metadata only — neither one affects navigation.
+// ---------------------------------------------------------------------------
+const docsCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/docs' }),
+  schema: z.object({
+    permalink: z.string(),
+    title: z.string(),
+    chapter: z.string(),
+    chapterOrder: z.number(),
+    order: z.number(),
+    status: statusSchema,
+    description: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    difficulty: z.enum(['beginner', 'intermediate', 'advanced']).optional(),
+  }),
+});
+
 export const collections = {
   people: peopleCollection,
   pages: pagesCollection,
@@ -531,4 +562,5 @@ export const collections = {
   publications: publicationsCollection,
   tests: testsCollection,
   datasets: datasetsCollection,
+  docs: docsCollection,
 };

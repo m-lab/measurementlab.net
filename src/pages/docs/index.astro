@@ -1,0 +1,18 @@
+---
+// /docs has no landing page of its own — it opens the first page of the first
+// chapter, so the sidebar is the table of contents. Which page that is depends
+// on what is visible, so this cannot be a static entry in astro.config's
+// `redirects` map.
+import { getFirstDocPage } from '@utils/docs';
+
+// Rendered on request so this is a real 302. Prerendered, Astro can only fall
+// back to a meta-refresh page, which parks the visitor on a blank screen for
+// two seconds before /docs opens.
+export const prerender = false;
+
+const firstDoc = await getFirstDocPage();
+
+return firstDoc
+  ? Astro.redirect(`/docs/${firstDoc.data.permalink}`, 302)
+  : Astro.redirect('/', 302);
+---

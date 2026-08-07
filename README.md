@@ -64,6 +64,7 @@ All content lives in `src/content/` with type-safe schemas defined in `src/conte
 | `people/`       | JSON     | Team member profiles                                          |
 | `partners/`     | JSON     | Partner organizations                                         |
 | `tests/`        | Markdown | M-Lab test documentation (supports nested sub-tests)          |
+| `docs/`         | Markdown | Knowledge base articles, organised into chapters at `/docs`   |
 | `datasets/`     | JSON     | Dataset catalog with access points and coverage metadata      |
 | `navigation/`   | JSON     | Menu structure (main.json, footer-1.json, footer-2.json)      |
 | `site/`         | JSON     | Global site configuration (config.json, \_redirects.json)     |
@@ -460,6 +461,48 @@ Tests can be nested: a test with sub-tests becomes a folder containing `index.md
 - `order` - Sort order (default 999)
 - `showInIndex` - Whether to show on tests index page (default true)
 - `parentTest` - Parent test permalink for nested tests
+
+### Docs (Knowledge Base)
+
+Long-form documentation served at `/docs`, laid out as a book: chapters in the left sidebar, an on-page table of contents on the right, and prev/next links at the foot of each page. Content was migrated from [m-lab/knowledgebase](https://github.com/m-lab/knowledgebase).
+
+Create a new `.md` file in `src/content/docs/`:
+
+```markdown
+---
+permalink: my-doc-page
+title: 'My Doc Page'
+chapter: 'Getting Started'
+chapterOrder: 1
+order: 6
+status: published
+description: 'Brief summary shown under the title.'
+tags: [data-access, research]
+difficulty: beginner
+---
+
+Body content. Do not add an `# H1` — the title above is rendered as the page heading,
+so headings in the body should start at `##`.
+```
+
+**Required fields:**
+
+- `permalink` - URL-safe slug; the page is served at `/docs/<permalink>`
+- `title` - Page title, rendered as the `h1`
+- `chapter` - Sidebar chapter heading. Must match the other pages of the chapter **exactly** — the string is the grouping key
+- `chapterOrder` - Position of the chapter in the sidebar. Repeat the same number on every page of a chapter
+- `order` - Position of the page within its chapter
+
+**Optional fields:**
+
+- `status` - Visibility: `draft`, `published`, or `archived` (default: `draft`)
+- `description` - Short summary shown under the title
+- `tags` - Editorial keywords carried over from the knowledge base; no effect on navigation
+- `difficulty` - `beginner`, `intermediate`, or `advanced`; rendered as a badge
+
+Reading order (sidebar, prev/next, and the page `/docs` opens on) all come from one sort in `getPublishedDocs()` (`src/utils/docs.ts`): `chapterOrder`, then `order`, then title as a tie-break. `/docs` itself has no landing page — it 302s to the first visible page.
+
+In dev and on the preview site, draft pages are marked `DRAFT` next to the title and in the sidebar, so unfinished pages are distinguishable from finished ones while reviewing.
 
 ### Navigation
 

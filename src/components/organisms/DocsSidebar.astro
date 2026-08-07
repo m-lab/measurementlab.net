@@ -1,0 +1,68 @@
+---
+import { isDev, isPreview } from '@utils/dev';
+import type { DocChapter } from '@utils/docs';
+
+export interface Props {
+  chapters: DocChapter[];
+  currentPermalink: string;
+  /**
+   * The mobile drawer renders a second copy of this nav. Sticky positioning
+   * belongs only to the desktop copy — inside a <details> it would pin the
+   * list to the viewport instead of the disclosure.
+   */
+  sticky?: boolean;
+}
+
+const { chapters, currentPermalink, sticky = true } = Astro.props;
+
+// Drafts only ever reach the sidebar in dev/preview, but there they sit next to
+// finished pages with nothing to tell them apart.
+const markDrafts = isDev || isPreview;
+---
+
+<nav
+  class:list={[
+    'text-sm',
+    sticky &&
+      'lg:sticky lg:top-25 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto',
+  ]}
+  aria-label="Documentation"
+>
+  {
+    chapters.map((chapter) => (
+      <div class="mb-6 last:mb-0">
+        <h2 class="mb-2 border-b border-neutral-200 pb-1 text-xs font-bold tracking-wide text-neutral-500 uppercase">
+          {chapter.name}
+        </h2>
+        <ul class="space-y-0.5">
+          {chapter.pages.map((page) => {
+            const isCurrent = page.data.permalink === currentPermalink;
+            return (
+              <li>
+                <a
+                  href={`/docs/${page.data.permalink}`}
+                  aria-current={isCurrent ? 'page' : undefined}
+                  class={`block rounded-md border-l-2 px-2 py-1.5 leading-snug no-underline transition-colors ${
+                    isCurrent
+                      ? 'border-primary-600 bg-primary-50 font-medium text-primary-800'
+                      : 'border-transparent text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50 hover:text-primary-700'
+                  }`}
+                >
+                  {page.data.title}
+                  {markDrafts && page.data.status === 'draft' && (
+                    <span
+                      class="ml-1.5 align-middle text-[0.625rem] font-bold tracking-wide text-neutral-400 uppercase"
+                      title="Draft — not visible in production"
+                    >
+                      draft
+                    </span>
+                  )}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))
+  }
+</nav>

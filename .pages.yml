@@ -1273,6 +1273,92 @@ content:
         description: Full documentation for the test
 
   # --------------------------------------------------------------------------
+  # Docs (Knowledge Base)
+  # --------------------------------------------------------------------------
+  - name: docs
+    label: Docs
+    type: collection
+    path: src/content/docs
+    format: yaml-frontmatter
+    filename: '{fields.permalink}.md'
+    subfolders: false
+    view:
+      fields: [title, chapter, order, status]
+      primary: title
+      sort: [chapterOrder, order, title]
+      default:
+        sort: chapterOrder
+        order: asc
+    fields:
+      - name: permalink
+        label: Permalink
+        type: string
+        required: true
+        description: URL-friendly identifier. The page is served at /docs/<permalink>.
+        pattern:
+          {
+            message: "Must be a web-safe string like 'getting-started-bigquery'.",
+            regex: '^[a-zA-Z0-9_-]*$',
+          }
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: chapter
+        label: Chapter
+        type: string
+        required: true
+        description: Chapter heading in the docs sidebar (e.g. Getting Started). Must match the other pages of the chapter exactly.
+      - name: chapterOrder
+        label: Chapter Order
+        type: number
+        required: true
+        description: Position of the whole chapter in the sidebar (1, 2, 3...). Use the same number on every page of a chapter.
+      - name: order
+        label: Page Order
+        type: number
+        required: true
+        description: Position of this page within its chapter (1, 2, 3...)
+      - name: status
+        label: Status
+        type: select
+        required: true
+        default: draft
+        options:
+          values:
+            - label: Draft
+              value: draft
+            - label: Published
+              value: published
+            - label: Archived
+              value: archived
+        description: Draft content is only visible on the preview site. New content defaults to Draft.
+      - name: description
+        label: Description
+        type: text
+        description: Short summary shown under the page title and in search results
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+        description: Editorial keywords carried over from the knowledge base. Does not affect navigation.
+      - name: difficulty
+        label: Difficulty
+        type: select
+        options:
+          values:
+            - label: Beginner
+              value: beginner
+            - label: Intermediate
+              value: intermediate
+            - label: Advanced
+              value: advanced
+        description: Shown as a badge under the page title
+      - name: body
+        label: Content
+        type: rich-text
+
+  # --------------------------------------------------------------------------
   # Publications
   # --------------------------------------------------------------------------
   - name: publications

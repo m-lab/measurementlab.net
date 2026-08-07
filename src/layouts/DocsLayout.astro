@@ -1,0 +1,153 @@
+---
+import { getEntry } from 'astro:content';
+import Banner from '@components/atoms/Banner.astro';
+import Tag from '@components/atoms/Tag';
+import DocsPrevNext from '@components/organisms/DocsPrevNext.astro';
+import DocsSidebar from '@components/organisms/DocsSidebar.astro';
+import TOC from '@components/organisms/TOC.tsx';
+import PageLayout from '@layouts/PageLayout.astro';
+import SectionLayout from '@layouts/SectionLayout.astro';
+import type { TocEntry } from '@stefanprobst/rehype-extract-toc';
+import { isDev, isPreview } from '@utils/dev';
+import type { DocChapter, DocEntry } from '@utils/docs';
+
+export interface Props {
+  title: string;
+  description?: string;
+  chapter: string;
+  difficulty?: 'beginner' | 'intermediate' | 'advanced';
+  status?: string;
+  chapters: DocChapter[];
+  currentPermalink: string;
+  toc?: TocEntry[];
+  prev: DocEntry | null;
+  next: DocEntry | null;
+}
+
+const {
+  title,
+  description,
+  chapter,
+  difficulty,
+  status,
+  chapters,
+  currentPermalink,
+  toc,
+  prev,
+  next,
+} = Astro.props;
+
+// Difficulty is editorial metadata carried over from kb.measurementlab.net.
+// The palette climbs with effort: supporting1 (green) → secondary (amber) → speed (purple).
+const difficultyVariant = {
+  beginner: 'supporting1',
+  intermediate: 'secondary',
+  advanced: 'speed',
+} as const;
+
+const siteConfig = await getEntry('site', 'config');
+const archivedBanner = siteConfig?.data.archivedBanner;
+
+// Badge a draft wherever a draft is visible at all — dev and preview both, unlike
+// the blog's dev-only badge, so preview reviewers can tell unfinished pages from
+// finished ones. isVisible() already keeps drafts out of production entirely.
+const showDraftBadge = status === 'draft' && (isDev || isPreview);
+
+const hasToc = Boolean(toc && toc.length > 0);
+---
+
+<PageLayout title={title} description={description}>
+  {
+    status === 'archived' && archivedBanner && (
+      <Banner message={archivedBanner.message} color={archivedBanner.color} />
+    )
+  }
+
+  <SectionLayout maxWidth="7xl" sectionLabel="docs">
+    {
+      /* Mobile / tablet chapter drawer. The desktop sidebar below is hidden here. */
+    }
+    <details class="mb-8 rounded-lg border border-neutral-200 p-4 lg:hidden">
+      <summary class="cursor-pointer font-semibold text-neutral-800">
+        Browse chapters
+      </summary>
+      <div class="mt-4">
+        <DocsSidebar
+          chapters={chapters}
+          currentPermalink={currentPermalink}
+          sticky={false}
+        />
+      </div>
+    </details>
+
+    <div
+      class:list={[
+        'grid grid-cols-1 gap-x-10 gap-y-8',
+        hasToc
+          ? 'lg:grid-cols-[15rem_minmax(0,1fr)] xl:grid-cols-[15rem_minmax(0,1fr)_13rem]'
+          : 'lg:grid-cols-[15rem_minmax(0,1fr)]',
+      ]}
+    >
+      {/* Chapter navigation */}
+      <aside class="hidden lg:block">
+        <DocsSidebar chapters={chapters} currentPermalink={currentPermalink} />
+      </aside>
+
+      {/* Article */}
+      <main class="min-w-0">
+        <header class="mb-8">
+          {
+            showDraftBadge && (
+              <div class="mb-4">
+                <Tag variant="neutral" size="md" className="font-bold">
+                  DRAFT
+                </Tag>
+              </div>
+            )
+          }
+          <p
+            class="mb-2 text-xs font-semibold tracking-wide text-primary-700 uppercase"
+          >
+            {chapter}
+          </p>
+          <h1 class="text-3xl font-bold text-neutral-900 sm:text-4xl">
+            {title}
+          </h1>
+          {
+            description && (
+              <p class="mt-3 text-lg text-neutral-600">{description}</p>
+            )
+          }
+          {
+            difficulty && (
+              <div class="mt-4">
+                <Tag variant={difficultyVariant[difficulty]} size="sm">
+                  {difficulty}
+                </Tag>
+              </div>
+            )
+          }
+        </header>
+
+        <article class="prose max-w-none prose-a:text-primary-600">
+          <slot />
+        </article>
+
+        <DocsPrevNext prev={prev} next={next} />
+      </main>
+
+      {/* On-page table of contents */}
+      {
+        hasToc && (
+          <div class="hidden xl:block">
+            <TOC
+              entries={toc as TocEntry[]}
+              id={`toc-${currentPermalink}`}
+              client:visible
+            />
+          </div>
+        )
+      }
+    </div>
+  </SectionLayout>
+</PageLayout>
