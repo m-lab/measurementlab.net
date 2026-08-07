@@ -42,7 +42,7 @@ sections:
 
   - type: tests
     background:
-      color: white
+      color: speed-light
       type: contained
     title: Current Tests
     description: Active measurements currently running on the M-Lab platform
@@ -54,7 +54,7 @@ sections:
       - /tests/wehe/
   - type: tests
     background:
-      color: gray
+      color: white
       type: contained
     title: Core Services
     description: "Essential services that support all M-Lab measurements "
@@ -64,7 +64,7 @@ sections:
       - /tests/traceroute/
   - type: richText
     background:
-      color: white
+      color: speed-light
       type: full
     withTOC: false
     content: >-
@@ -103,7 +103,7 @@ sections:
       [contact the team directly.](mailto:support@measurementlab.net)  
   - type: tests
     background:
-      color: white
+      color: gray
       type: contained
     title: Retired Tests
     description: "Tests that are no longer actively running on the M-Lab platform "
