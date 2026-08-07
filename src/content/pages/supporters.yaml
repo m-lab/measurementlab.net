@@ -14,3 +14,9 @@ sections:
       type: full
     title: Supporting Partners
     category: Supporting Partners
+  - type: partners
+    background:
+      color: white
+      type: full
+    title: Bring Your Own Server Partners
+    category: BYOS Partners
