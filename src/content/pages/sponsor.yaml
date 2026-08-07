@@ -1,3 +1,17 @@
 title: Sponsor M-Lab
 permalink: sponsor
 status: draft
+zigzag: primary-dark
+sections:
+  - type: richText
+    background:
+      color: primary-light
+      type: full
+    withTOC: false
+    content: "[add content]"
+  - type: partners
+    background:
+      color: primary-medium
+      type: full
+    title: Supporting Partners
+    category: Supporting Partners
