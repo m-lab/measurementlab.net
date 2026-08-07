@@ -102,6 +102,6 @@ Finer-grained slices (city, city+ASN) will have far more low-count rows than cou
 
 ## Further Reading
 
-- [M-Lab Monthly Stats Dataset](/docs/monthly-stats-dataset) — dataset overview, access, and structure
-- [Beyond Speed: Understanding Internet Quality Metrics](/docs/internet-quality-beyond-speed) — why latency and loss matter as much as speed
-- [NDT (Network Diagnostic Tool)](/docs/test-ndt) — how the underlying measurements are made
+- [M-Lab Monthly Stats Dataset](/kb/monthly-stats-dataset) — dataset overview, access, and structure
+- [Beyond Speed: Understanding Internet Quality Metrics](/kb/internet-quality-beyond-speed) — why latency and loss matter as much as speed
+- [NDT (Network Diagnostic Tool)](/kb/test-ndt) — how the underlying measurements are made

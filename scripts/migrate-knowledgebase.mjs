@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * One-shot migration of kb.measurementlab.net articles into the `docs` collection.
+ * One-shot migration of kb.measurementlab.net articles into the `kb` collection.
  *
  * Source: https://github.com/m-lab/knowledgebase — src/content/articles/*.md
  *
- * The knowledge base is organised by tag; `docs` is organised as a book. This
+ * The knowledge base is organised by tag; the `kb` collection is organised as a book. This
  * script carries the mapping between the two: CHAPTERS below assigns every one
  * of the 31 source articles to exactly one chapter and a position within it,
  * derived from each article's primary tag. Articles with several tags (most of
@@ -13,11 +13,11 @@
  *
  * Everything else is mechanical:
  *   - `published: false`  → `status: draft`   (absent → `status: published`)
- *   - `../slug` body links → `/docs/slug`
+ *   - `../slug` body links → `/kb/slug`
  *   - `standalone`, `starter` and the source `order` are dropped; `order` here
  *     comes from CHAPTERS, and the other two have no meaning in a book layout.
  *
- * Usage: node scripts/migrate-knowledgebase-docs.mjs <path-to-knowledgebase-repo> [--dry-run]
+ * Usage: node scripts/migrate-knowledgebase.mjs <path-to-knowledgebase-repo> [--dry-run]
  */
 
 import {
@@ -97,7 +97,7 @@ const CHAPTERS = [
   },
 ];
 
-const DEST = resolve('src/content/docs');
+const DEST = resolve('src/content/kb');
 
 // --- tiny frontmatter reader ------------------------------------------------
 // Deliberately not gray-matter: the source frontmatter is a flat, known set of
@@ -143,7 +143,7 @@ const dryRun = process.argv.includes('--dry-run');
 
 if (!sourceRepo) {
   console.error(
-    'usage: node scripts/migrate-knowledgebase-docs.mjs <knowledgebase-repo> [--dry-run]'
+    'usage: node scripts/migrate-knowledgebase.mjs <knowledgebase-repo> [--dry-run]'
   );
   process.exit(1);
 }
@@ -188,13 +188,13 @@ CHAPTERS.forEach((chapter, chapterIndex) => {
     const raw = readFileSync(join(sourceDir, `${slug}.md`), 'utf8');
     const { data, body: sourceBody } = splitFrontmatter(raw);
 
-    // `../other-article` → `/docs/other-article`
+    // `../other-article` → `/kb/other-article`
     const body = sourceBody.replace(
       /\]\(\.\.\/([a-z0-9-]+)([#?][^)]*)?\)/g,
       (_m, target, suffix = '') => {
         if (!available.has(target))
           brokenLinks.push({ from: slug, to: target });
-        return `](/docs/${target}${suffix})`;
+        return `](/kb/${target}${suffix})`;
       }
     );
 
@@ -226,7 +226,7 @@ CHAPTERS.forEach((chapter, chapterIndex) => {
 });
 
 console.log(
-  `${dryRun ? '[dry run] ' : ''}${written} docs across ${CHAPTERS.length} chapters ` +
+  `${dryRun ? '[dry run] ' : ''}${written} articles across ${CHAPTERS.length} chapters ` +
     `(${drafts} draft, ${written - drafts} published)`
 );
 

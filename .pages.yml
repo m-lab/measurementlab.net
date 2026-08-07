@@ -1273,12 +1273,12 @@ content:
         description: Full documentation for the test
 
   # --------------------------------------------------------------------------
-  # Docs (Knowledge Base)
+  # Knowledge Base
   # --------------------------------------------------------------------------
-  - name: docs
-    label: Docs
+  - name: kb
+    label: Knowledge Base
     type: collection
-    path: src/content/docs
+    path: src/content/kb
     format: yaml-frontmatter
     filename: '{fields.permalink}.md'
     subfolders: false
@@ -1294,7 +1294,7 @@ content:
         label: Permalink
         type: string
         required: true
-        description: URL-friendly identifier. The page is served at /docs/<permalink>.
+        description: URL-friendly identifier. The article is served at /kb/<permalink>.
         pattern:
           {
             message: "Must be a web-safe string like 'getting-started-bigquery'.",
@@ -1308,17 +1308,17 @@ content:
         label: Chapter
         type: string
         required: true
-        description: Chapter heading in the docs sidebar (e.g. Getting Started). Must match the other pages of the chapter exactly.
+        description: Chapter heading in the knowledge base sidebar (e.g. Getting Started). Must match the other articles of the chapter exactly.
       - name: chapterOrder
         label: Chapter Order
         type: number
         required: true
-        description: Position of the whole chapter in the sidebar (1, 2, 3...). Use the same number on every page of a chapter.
+        description: Position of the whole chapter in the sidebar (1, 2, 3...). Use the same number on every article of a chapter.
       - name: order
         label: Page Order
         type: number
         required: true
-        description: Position of this page within its chapter (1, 2, 3...)
+        description: Position of this article within its chapter (1, 2, 3...)
       - name: status
         label: Status
         type: select
@@ -1341,7 +1341,7 @@ content:
         label: Tags
         type: string
         list: true
-        description: Editorial keywords carried over from the knowledge base. Does not affect navigation.
+        description: Keywords readers can filter by on the /kb landing page. Does not affect reading order.
       - name: difficulty
         label: Difficulty
         type: select
@@ -1353,7 +1353,7 @@ content:
               value: intermediate
             - label: Advanced
               value: advanced
-        description: Shown as a badge under the page title
+        description: Shown as a badge under the title, and filterable on the /kb landing page
       - name: body
         label: Content
         type: rich-text

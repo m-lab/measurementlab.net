@@ -28,7 +28,7 @@ Because the test deliberately avoids the optimizations real players use, results
 
 ## A Note on Throttling at Interconnects
 
-A known limitation of the DASH test (shared with most measurement tools) is that if video throttling is caused by congestion at interconnection points between ISPs, results depend heavily on which network path the test takes. If the M-Lab server is reached via a different interconnect than the one where throttling occurs, the test may not detect the throttling. The [WeHe test](/docs/test-wehe) addresses app-specific throttling more directly.
+A known limitation of the DASH test (shared with most measurement tools) is that if video throttling is caused by congestion at interconnection points between ISPs, results depend heavily on which network path the test takes. If the M-Lab server is reached via a different interconnect than the one where throttling occurs, the test may not detect the throttling. The [WeHe test](/kb/test-wehe) addresses app-specific throttling more directly.
 
 ## Privacy and Data Collection
 
@@ -71,5 +71,5 @@ DASH data is **not currently published to BigQuery**. Analysis requires working 
 
 - [Neubot project website](http://www.neubot.org/)
 - [Dynamic Adaptive Streaming over HTTP (Wikipedia)](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP)
-- [WeHe — traffic differentiation testing](/docs/test-wehe)
-- [NDT — throughput and speed testing](/docs/test-ndt)
+- [WeHe — traffic differentiation testing](/kb/test-wehe)
+- [NDT — throughput and speed testing](/kb/test-ndt)

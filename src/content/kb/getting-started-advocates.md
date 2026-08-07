@@ -22,9 +22,9 @@ M-Lab data is a powerful resource for internet advocacy — it's open, independe
 
 ## Start Here
 
-- [Welcome to M-Lab: Open Internet Measurement](/docs/welcome-to-mlab) — what M-Lab is and why open measurement matters
-- [Beyond Speed: Understanding Internet Quality Metrics](/docs/internet-quality-beyond-speed) — why download speed headlines often don't capture what users actually experience; latency, packet loss, and quality under load
-- [How M-Lab Measures Internet Speed: NDT7 and MSAK](/docs/test-ndt) — what NDT actually measures and what it doesn't
+- [Welcome to M-Lab: Open Internet Measurement](/kb/welcome-to-mlab) — what M-Lab is and why open measurement matters
+- [Beyond Speed: Understanding Internet Quality Metrics](/kb/internet-quality-beyond-speed) — why download speed headlines often don't capture what users actually experience; latency, packet loss, and quality under load
+- [How M-Lab Measures Internet Speed: NDT7 and MSAK](/kb/test-ndt) — what NDT actually measures and what it doesn't
 
 ## Detecting Throttling and Traffic Discrimination
 
@@ -34,19 +34,19 @@ One of M-Lab's most directly advocacy-relevant tools is **WeHe**, which tests wh
 
 WeHe works by sending real app traffic and comparing it to randomized (bit-inverted) traffic. A statistically significant difference means the ISP is applying app-specific treatment — throttling, deprioritization, or blocking — not just experiencing general congestion.
 
-- [WeHe — Traffic Differentiation Detection](/docs/test-wehe) — how WeHe works, how to interpret results, and how to query the historical dataset in BigQuery
+- [WeHe — Traffic Differentiation Detection](/kb/test-wehe) — how WeHe works, how to interpret results, and how to query the historical dataset in BigQuery
 
 ## Broadband Speed and Coverage Evidence
 
 For characterizing ISP performance in a community, region, or across ISPs:
 
-- [NDT (Network Diagnostic Tool)](/docs/test-ndt) — M-Lab's flagship speed test, with 15+ years of data. Can be filtered by geography (country, region, city) or by ISP (ASN).
-- [Analyzing M-Lab Data: A Researcher's Guide](/docs/research-guide) — patterns for ISP comparison and geographic analysis
+- [NDT (Network Diagnostic Tool)](/kb/test-ndt) — M-Lab's flagship speed test, with 15+ years of data. Can be filtered by geography (country, region, city) or by ISP (ASN).
+- [Analyzing M-Lab Data: A Researcher's Guide](/kb/research-guide) — patterns for ISP comparison and geographic analysis
 
 ### Accessing the Data (Free)
 
-- [Setting Up Free BigQuery Access](/docs/getting-started-bigquery) — register for free BigQuery access with your Google account
-- [Getting Started with M-Lab Data in BigQuery](/docs/getting-started-bigquery) — run your first query in under 10 minutes
+- [Setting Up Free BigQuery Access](/kb/getting-started-bigquery) — register for free BigQuery access with your Google account
+- [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery) — run your first query in under 10 minutes
 
 ### Visualization (No Coding Required)
 
@@ -56,9 +56,9 @@ For characterizing ISP performance in a community, region, or across ISPs:
 
 Before making claims based on M-Lab data, it's important to understand the limitations:
 
-- [M-Lab Network Annotations: Geolocation, ASNs, and What They Mean](/docs/mlab-annotations-explained) — how M-Lab ties measurements to locations and ISPs, and where this can be imprecise
-- [FAQ: Geolocation Limitations in M-Lab Data](/docs/mlab-annotations-explained) — city-level location data is often imprecise; ISP (ASN) level analysis is more reliable
-- [FAQ: Test Rate Limits](/docs/test-rate-limits) — M-Lab limits tests to 40/day per IP to protect data integrity; good to know if you're organizing community measurement campaigns
+- [M-Lab Network Annotations: Geolocation, ASNs, and What They Mean](/kb/mlab-annotations-explained) — how M-Lab ties measurements to locations and ISPs, and where this can be imprecise
+- [FAQ: Geolocation Limitations in M-Lab Data](/kb/mlab-annotations-explained) — city-level location data is often imprecise; ISP (ASN) level analysis is more reliable
+- [FAQ: Test Rate Limits](/kb/test-rate-limits) — M-Lab limits tests to 40/day per IP to protect data integrity; good to know if you're organizing community measurement campaigns
 
 **Important caveat:** M-Lab data comes from users who choose to run a test. This means it's not a random sample of all internet users — people who run speed tests may be more likely to be experiencing problems. This selection effect should be acknowledged in any public-facing analysis.
 
@@ -66,7 +66,7 @@ Before making claims based on M-Lab data, it's important to understand the limit
 
 The **Internet Quality Barometer (IQB)** is M-Lab's framework for moving beyond speed to evaluate overall internet quality. It scores connections across real use cases — web browsing, gaming, video calls, streaming — and is designed to make internet quality more legible to policymakers and the public.
 
-- [Beyond Speed: Understanding Internet Quality Metrics](/docs/internet-quality-beyond-speed) — introduction to the IQB and why quality matters beyond Mbps
+- [Beyond Speed: Understanding Internet Quality Metrics](/kb/internet-quality-beyond-speed) — introduction to the IQB and why quality matters beyond Mbps
 - [IQB Framework](https://www.measurementlab.net/blog/iqb/) — full framework documentation
 - [IQB Executive Summary](https://www.measurementlab.net/publications/IQB_executive_summary_2025.pdf) — concise, non-technical summary
 
@@ -84,7 +84,7 @@ See [M-Lab Publications — Government/Regulatory Filings](https://www.measureme
 If you want to organize your community to contribute measurements:
 
 - Point people to [speed.measurementlab.net](https://speed.measurementlab.net) — each test contributes anonymously to the public dataset
-- [BYOS Program](/docs/byos-overview) — organizations can host their own M-Lab node to add local measurement capacity and generate data closer to the community
+- [BYOS Program](/kb/byos-overview) — organizations can host their own M-Lab node to add local measurement capacity and generate data closer to the community
 
 ## Contact
 

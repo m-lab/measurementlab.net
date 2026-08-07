@@ -79,9 +79,9 @@
           "pageRef": "frequently-asked-questions"
         },
         {
-          "type": "external",
+          "type": "internal",
           "label": "Knowledge Base ",
-          "externalUrl": "https://kb.measurementlab.net"
+          "externalUrl": "kb"
         }
       ]
     },

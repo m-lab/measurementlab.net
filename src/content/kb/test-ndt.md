@@ -58,7 +58,7 @@ Each NDT test records:
 
 ## Known Limitations
 
-- A single TCP stream may not saturate very fast links (>500 Mbps) — use [MSAK](/docs/test-msak) for high-bandwidth connections
+- A single TCP stream may not saturate very fast links (>500 Mbps) — use [MSAK](/kb/test-msak) for high-bandwidth connections
 - Results reflect conditions at the moment of testing; network conditions vary by time of day and day of week
 - The measurement is from the client to an M-Lab server, not to an arbitrary endpoint
 - NDT is sensitive to congestion on the single stream; multi-stream tests like MSAK produce higher numbers on high-capacity links
@@ -79,7 +79,7 @@ Since 2021, M-Lab has used **access tokens** for NDT7 tests run through the Loca
 
 ### BigQuery (recommended)
 
-NDT data is parsed into BigQuery and available for free. See [Getting Started with M-Lab Data in BigQuery](/docs/getting-started-bigquery) for access setup.
+NDT data is parsed into BigQuery and available for free. See [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery) for access setup.
 
 The current recommended view for general use is `measurement-lab.ndt.ndt7_union`. Key views:
 
@@ -159,10 +159,10 @@ NDT is one of the most-cited Internet measurement datasets in the world. Common 
 
 Each NDT test automatically triggers collection of additional datasets that can enrich analysis:
 
-- **Traceroute** — a forward path traceroute from the M-Lab server to the client is run for every connection. See [Traceroute](/docs/core-service-traceroute).
-- **Reverse Traceroute** — for ~25% of NDT tests, a reverse path measurement is also run. See [Reverse Traceroute](/docs/test-reverse-traceroute).
-- **TCP INFO** — kernel-level TCP socket statistics collected continuously during each test. See [TCP INFO](/docs/core-service-tcp-info).
-- **Packet Headers** — packet header captures (.pcap) stored per-flow. See [Packet Headers](/docs/core-service-packet-headers).
+- **Traceroute** — a forward path traceroute from the M-Lab server to the client is run for every connection. See [Traceroute](/kb/core-service-traceroute).
+- **Reverse Traceroute** — for ~25% of NDT tests, a reverse path measurement is also run. See [Reverse Traceroute](/kb/test-reverse-traceroute).
+- **TCP INFO** — kernel-level TCP socket statistics collected continuously during each test. See [TCP INFO](/kb/core-service-tcp-info).
+- **Packet Headers** — packet header captures (.pcap) stored per-flow. See [Packet Headers](/kb/core-service-packet-headers).
 
 ## Running an NDT Test
 
@@ -177,6 +177,6 @@ Visit [speed.measurementlab.net](https://speed.measurementlab.net) to run a test
 - [Evolution of NDT](https://www.measurementlab.net/blog/evolution-of-ndt/) — blog post on NDT's technical history
 - [Introducing ndt7](https://www.measurementlab.net/blog/ndt7-introduction/) — blog post on the current protocol
 - [NDT Unified Views Example Queries](https://www.measurementlab.net/tests/ndt/views/examples) — official example queries
-- [Getting Started with M-Lab Data in BigQuery](/docs/getting-started-bigquery)
+- [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery)
 
 <!-- TODO: Add diagram showing NDT7 test flow (client → Locate API → server selection → measurement → pipeline). Add section on how to run your own NDT7 test from the command line using the reference client. Link to the ndt7-client-go repository. -->

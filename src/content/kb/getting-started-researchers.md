@@ -16,39 +16,39 @@ M-Lab's open datasets have been used in hundreds of peer-reviewed publications, 
 
 Read these first — they cover the conceptual ground you need before diving into data:
 
-- [Welcome to M-Lab: Open Internet Measurement](/docs/welcome-to-mlab) — what M-Lab is, what it measures, and how the platform works
-- [NDT (Network Diagnostic Tool)](/docs/test-ndt) — the flagship dataset: single-stream throughput, latency, loss. Protocol history, BigQuery views, and what the numbers mean.
-- [Beyond Speed: Understanding Internet Quality Metrics](/docs/internet-quality-beyond-speed) — latency, loss, working quality, and the IQB framework
+- [Welcome to M-Lab: Open Internet Measurement](/kb/welcome-to-mlab) — what M-Lab is, what it measures, and how the platform works
+- [NDT (Network Diagnostic Tool)](/kb/test-ndt) — the flagship dataset: single-stream throughput, latency, loss. Protocol history, BigQuery views, and what the numbers mean.
+- [Beyond Speed: Understanding Internet Quality Metrics](/kb/internet-quality-beyond-speed) — latency, loss, working quality, and the IQB framework
 
 ## Getting Data Access
 
-- [Getting Started with M-Lab Data in BigQuery](/docs/getting-started-bigquery) — join the M-Lab Discuss group for sponsored free access, run your first queries, schema overview, cost management
-- [Analyzing M-Lab Data: A Researcher's Guide](/docs/research-guide) — research patterns, ISP comparison queries, working with raw data, and statistical guidance
-- [FAQ: Accessing M-Lab Data Buckets](/docs/accessing-data-buckets) — how to access raw data archives in Google Cloud Storage
+- [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery) — join the M-Lab Discuss group for sponsored free access, run your first queries, schema overview, cost management
+- [Analyzing M-Lab Data: A Researcher's Guide](/kb/research-guide) — research patterns, ISP comparison queries, working with raw data, and statistical guidance
+- [FAQ: Accessing M-Lab Data Buckets](/kb/accessing-data-buckets) — how to access raw data archives in Google Cloud Storage
 
 ## Understanding the Data
 
 Before drawing conclusions, read these:
 
-- [M-Lab Network Annotations: Geolocation, ASNs, and What They Mean](/docs/mlab-annotations-explained) — how geographic and network annotations are applied, their reliability at different scales, and how to improve spatial precision
-- [FAQ: IP Address Mismatch in M-Lab Data](/docs/ip-address-mismatch) — why the IP address annotated in a test sometimes differs from a client's actual IP, and how to handle it
+- [M-Lab Network Annotations: Geolocation, ASNs, and What They Mean](/kb/mlab-annotations-explained) — how geographic and network annotations are applied, their reliability at different scales, and how to improve spatial precision
+- [FAQ: IP Address Mismatch in M-Lab Data](/kb/ip-address-mismatch) — why the IP address annotated in a test sometimes differs from a client's actual IP, and how to handle it
 
 ## Go Deeper: Additional Tests and Datasets
 
 Once you have NDT working, these datasets extend your analysis:
 
-- [MSAK (Measurement Swiss-Army Knife)](/docs/test-msak) — configurable multi-stream throughput and UDP latency; useful for studying how parallelism affects perceived throughput
-- [Neubot DASH Streaming Test](/docs/test-neubot-dash) — adaptive video streaming emulation; measures network quality from a video player's perspective
-- [WeHe — Traffic Differentiation Detection](/docs/test-wehe) — detects application-specific throttling using controlled traffic replays and KS statistical tests
-- [Reverse Traceroute](/docs/test-reverse-traceroute) — reconstructs the network path from M-Lab server back to client (the direction standard traceroute can't see); paired with ~25% of NDT tests
+- [MSAK (Measurement Swiss-Army Knife)](/kb/test-msak) — configurable multi-stream throughput and UDP latency; useful for studying how parallelism affects perceived throughput
+- [Neubot DASH Streaming Test](/kb/test-neubot-dash) — adaptive video streaming emulation; measures network quality from a video player's perspective
+- [WeHe — Traffic Differentiation Detection](/kb/test-wehe) — detects application-specific throttling using controlled traffic replays and KS statistical tests
+- [Reverse Traceroute](/kb/test-reverse-traceroute) — reconstructs the network path from M-Lab server back to client (the direction standard traceroute can't see); paired with ~25% of NDT tests
 
 ## Go Deeper: Core Infrastructure Data
 
 These datasets are collected automatically alongside every test:
 
-- [Traceroute — M-Lab Core Service](/docs/core-service-traceroute) — forward path from M-Lab server to client for every connection; one of the world's largest longitudinal routing datasets. Includes research applications, joining with NDT, data volume guidance.
-- [TCP INFO — M-Lab Core Service](/docs/core-service-tcp-info) — kernel-level TCP socket statistics polled throughout each connection; underlies NDT's RTT and loss metrics
-- [Packet Headers (PCAP) — M-Lab Core Service](/docs/core-service-packet-headers) — per-flow packet header captures; useful for sub-RTT TCP behavior analysis
+- [Traceroute — M-Lab Core Service](/kb/core-service-traceroute) — forward path from M-Lab server to client for every connection; one of the world's largest longitudinal routing datasets. Includes research applications, joining with NDT, data volume guidance.
+- [TCP INFO — M-Lab Core Service](/kb/core-service-tcp-info) — kernel-level TCP socket statistics polled throughout each connection; underlies NDT's RTT and loss metrics
+- [Packet Headers (PCAP) — M-Lab Core Service](/kb/core-service-packet-headers) — per-flow packet header captures; useful for sub-RTT TCP behavior analysis
 
 ## Key External Resources
 

@@ -24,9 +24,9 @@ M-Lab measures actual internet performance experienced by real users, not what I
 
 ## Start Here
 
-- [Welcome to M-Lab: Open Internet Measurement](/docs/welcome-to-mlab) — what M-Lab is, how it works, and why open data matters
-- [Beyond Speed: Understanding Internet Quality Metrics](/docs/internet-quality-beyond-speed) — why download speed alone is an incomplete picture, and how latency, packet loss, and "working quality" affect real users
-- [How M-Lab Measures Internet Speed: NDT7 and MSAK](/docs/test-ndt) — what NDT7 actually measures and what its results mean in practice
+- [Welcome to M-Lab: Open Internet Measurement](/kb/welcome-to-mlab) — what M-Lab is, how it works, and why open data matters
+- [Beyond Speed: Understanding Internet Quality Metrics](/kb/internet-quality-beyond-speed) — why download speed alone is an incomplete picture, and how latency, packet loss, and "working quality" affect real users
+- [How M-Lab Measures Internet Speed: NDT7 and MSAK](/kb/test-ndt) — what NDT7 actually measures and what its results mean in practice
 
 ## The Internet Quality Barometer (IQB)
 
@@ -48,9 +48,9 @@ This work is part of the [Connectivity Community of Practice](https://www.measur
 
 ## Key Measurement Tools for Policy
 
-- [NDT (Network Diagnostic Tool)](/docs/test-ndt) — the flagship speed test, with data going back to 2009. Measures download speed, upload speed, and latency. The most widely used M-Lab dataset for policy analysis.
-- [WeHe — Traffic Differentiation Detection](/docs/test-wehe) — detects whether ISPs are treating traffic from specific apps (YouTube, Spotify, etc.) differently from other traffic. Relevant for net neutrality enforcement and monitoring.
-- [Neubot DASH Streaming Test](/docs/test-neubot-dash) — measures network quality from a video streaming perspective. Useful for evaluating broadband quality for video-dependent use cases like education and telehealth.
+- [NDT (Network Diagnostic Tool)](/kb/test-ndt) — the flagship speed test, with data going back to 2009. Measures download speed, upload speed, and latency. The most widely used M-Lab dataset for policy analysis.
+- [WeHe — Traffic Differentiation Detection](/kb/test-wehe) — detects whether ISPs are treating traffic from specific apps (YouTube, Spotify, etc.) differently from other traffic. Relevant for net neutrality enforcement and monitoring.
+- [Neubot DASH Streaming Test](/kb/test-neubot-dash) — measures network quality from a video streaming perspective. Useful for evaluating broadband quality for video-dependent use cases like education and telehealth.
 
 ## Working with M-Lab Data
 
@@ -58,14 +58,14 @@ For no-code exploration, see the Visualization section below — the M-Lab Obser
 
 If you have a data analyst on staff, M-Lab data is also freely available in Google BigQuery:
 
-- [Getting Started with M-Lab Data in BigQuery](/docs/getting-started-bigquery) — access setup, first queries, and schema overview
-- [Analyzing M-Lab Data: A Researcher's Guide](/docs/research-guide) — ISP comparison patterns and geographic analysis
+- [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery) — access setup, first queries, and schema overview
+- [Analyzing M-Lab Data: A Researcher's Guide](/kb/research-guide) — ISP comparison patterns and geographic analysis
 
 ### Understanding Geographic Limitations
 
 Country-level and ISP-level (ASN) analysis is reliable. City-level data and coordinates are intentionally coarse for privacy reasons and should not be used for fine-grained broadband mapping without supplementary geolocation sources:
 
-- [M-Lab Network Annotations: Geolocation, ASNs, and What They Mean](/docs/mlab-annotations-explained) — full accuracy guidance, how to use region codes for sub-national analysis, and joining M-Lab data with external datasets
+- [M-Lab Network Annotations: Geolocation, ASNs, and What They Mean](/kb/mlab-annotations-explained) — full accuracy guidance, how to use region codes for sub-national analysis, and joining M-Lab data with external datasets
 
 ## How M-Lab Data Has Been Used in Policy
 

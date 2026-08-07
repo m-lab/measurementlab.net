@@ -63,7 +63,7 @@ When a target client is behind a NAT or firewall and drops all probes, RevTr loo
 
 ### BigQuery
 
-Reverse traceroute data is available in BigQuery. First, set up free access following the [BigQuery access setup guide](/docs/getting-started-bigquery).
+Reverse traceroute data is available in BigQuery. First, set up free access following the [BigQuery access setup guide](/kb/getting-started-bigquery).
 
 The primary table is `measurement-lab.revtr_raw.revtr1`. Additional supporting tables:
 
@@ -153,6 +153,6 @@ Each reverse traceroute row contains `raw.uuid`, which is the M-Lab NDT test UUI
 
 - [RevTr 1.0 paper (NSDI '10)](https://www.measurementlab.net/publications/reverse-traceroute.pdf)
 - [RevTr 2.0 paper (IMC '22)](https://dl.acm.org/doi/10.1145/3517745.3561422)
-- [Setting Up Free BigQuery Access](/docs/getting-started-bigquery)
-- [Traceroute (forward path)](/docs/core-service-traceroute)
-- [NDT — the speed test paired with RevTr](/docs/test-ndt)
+- [Setting Up Free BigQuery Access](/kb/getting-started-bigquery)
+- [Traceroute (forward path)](/kb/core-service-traceroute)
+- [NDT — the speed test paired with RevTr](/kb/test-ndt)

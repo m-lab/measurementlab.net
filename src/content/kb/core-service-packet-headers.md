@@ -82,7 +82,7 @@ Packet header data is **not published to BigQuery**. Analysis requires working w
 
 ## Further Reading
 
-- [TCP INFO — kernel-level TCP statistics (companion dataset)](/docs/core-service-tcp-info)
-- [NDT — speed test whose flows are captured](/docs/test-ndt)
+- [TCP INFO — kernel-level TCP statistics (companion dataset)](/kb/core-service-tcp-info)
+- [NDT — speed test whose flows are captured](/kb/test-ndt)
 <!-- FIXME: add link – "Accessing Data in GCS" -->
-- [Traceroute — network path data collected alongside PCAPs](/docs/core-service-traceroute)
+- [Traceroute — network path data collected alongside PCAPs](/kb/core-service-traceroute)

@@ -134,7 +134,7 @@ AS (
 ## Further Reading
 
 - [M-Lab BigQuery Schema](https://www.measurementlab.net/data/docs/bq/schema) — full schema documentation
-- [NDT (Network Diagnostic Tool)](/docs/test-ndt) — the primary dataset
-- [Analyzing M-Lab Data: A Researcher's Guide](/docs/research-guide) — ISP comparison patterns and advanced queries
+- [NDT (Network Diagnostic Tool)](/kb/test-ndt) — the primary dataset
+- [Analyzing M-Lab Data: A Researcher's Guide](/kb/research-guide) — ISP comparison patterns and advanced queries
 
 <!-- TODO: Add section on using the BigQuery API from Python (google-cloud-bigquery library). Add worked example of ISP comparison query. Add section on M-Lab's long-term schema support policy (stable column names since 2020). Link to the M-Lab data documentation at measurementlab.net/data. -->

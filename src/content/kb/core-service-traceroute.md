@@ -64,7 +64,7 @@ jq . < 2024/06/01/<UUID>.jsonl | more
 
 ### BigQuery
 
-Traceroute data is parsed into BigQuery and available for free. See [Getting Started with M-Lab Data in BigQuery](/docs/getting-started-bigquery).
+Traceroute data is parsed into BigQuery and available for free. See [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery).
 
 | Table | Contents |
 |-------|----------|
@@ -138,7 +138,7 @@ Traceroute archives are organized by the measurement service that triggered the 
 
 **Validation of network models** — Internet topology models and simulations can be validated against the empirical path data in M-Lab's traceroute archive.
 
-**Pairing with Reverse Traceroute** — M-Lab's forward traceroutes are a direct complement to the [Reverse Traceroute](/docs/test-reverse-traceroute) dataset, which provides the path in the opposite direction for a subset of NDT tests.
+**Pairing with Reverse Traceroute** — M-Lab's forward traceroutes are a direct complement to the [Reverse Traceroute](/kb/test-reverse-traceroute) dataset, which provides the path in the opposite direction for a subset of NDT tests.
 
 ## Data Volume Considerations
 
@@ -165,9 +165,9 @@ The Scamper dataset is hundreds of terabytes. Strategies for efficient BigQuery 
 
 ## Further Reading
 
-- [Reverse Traceroute — the return path](/docs/test-reverse-traceroute)
-- [NDT — the speed test paired with each traceroute](/docs/test-ndt)
-- [Getting Started with M-Lab Data in BigQuery](/docs/getting-started-bigquery)
+- [Reverse Traceroute — the return path](/kb/test-reverse-traceroute)
+- [NDT — the speed test paired with each traceroute](/kb/test-ndt)
+- [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery)
 - [Long Term Supported Schemas blog post](https://www.measurementlab.net/blog/long-term-schema-support-standard-columns/)
 
 <!-- TODO: Add section on extracting single traceroutes using the M-Lab traceroute extraction tool (blog post: 2022-extracting-single-traceroute). Add worked example of AS path analysis using the CAIDA AS relationship dataset for enrichment. Add section on known limitations (MPLS tunnels hiding intermediate hops, load balancers causing inconsistent paths). -->

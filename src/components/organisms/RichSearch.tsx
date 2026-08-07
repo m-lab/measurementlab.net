@@ -10,6 +10,7 @@ import {
 import Fuse, { type FuseResult } from 'fuse.js';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AcademicCapIcon from '~icons/heroicons/academic-cap';
+import BookOpenIcon from '~icons/heroicons/book-open';
 import ChevronRightIcon from '~icons/heroicons/chevron-right-16-solid';
 import DocumentIcon from '~icons/heroicons/document-text';
 import ExclamationTriangleIcon from '~icons/heroicons/exclamation-triangle';
@@ -122,6 +123,31 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
         name: post.data.title,
         url: `/blog/${post.id}`,
         imageUrl: post.data.heroImage?.src,
+        content:
+          parts.length > 0
+            ? stripMarkdown(parts.join(' ')).slice(0, 2000)
+            : undefined,
+      };
+    },
+  },
+  {
+    name: 'Knowledge Base',
+    apiEndpoint: '/api/kb.json',
+    urlPrefix: '/kb/',
+    icon: BookOpenIcon,
+    modifier: '!',
+    transform: (article: any) => {
+      const parts: string[] = [];
+      if (article.data.description) parts.push(article.data.description);
+      if (article.data.tags?.length) parts.push(article.data.tags.join(' '));
+      if (article.body) parts.push(article.body);
+      return {
+        id: `kb-${article.id}`,
+        name: article.data.title,
+        // The route is keyed on `permalink`, not the file id — they match today
+        // but the schema does not force it.
+        url: `/kb/${article.data.permalink}`,
+        imageUrl: undefined,
         content:
           parts.length > 0
             ? stripMarkdown(parts.join(' ')).slice(0, 2000)

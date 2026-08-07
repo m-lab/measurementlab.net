@@ -64,7 +64,7 @@ All content lives in `src/content/` with type-safe schemas defined in `src/conte
 | `people/`       | JSON     | Team member profiles                                          |
 | `partners/`     | JSON     | Partner organizations                                         |
 | `tests/`        | Markdown | M-Lab test documentation (supports nested sub-tests)          |
-| `docs/`         | Markdown | Knowledge base articles, organised into chapters at `/docs`   |
+| `kb/`           | Markdown | Knowledge base articles, organised into chapters at `/kb`     |
 | `datasets/`     | JSON     | Dataset catalog with access points and coverage metadata      |
 | `navigation/`   | JSON     | Menu structure (main.json, footer-1.json, footer-2.json)      |
 | `site/`         | JSON     | Global site configuration (config.json, \_redirects.json)     |
@@ -462,21 +462,21 @@ Tests can be nested: a test with sub-tests becomes a folder containing `index.md
 - `showInIndex` - Whether to show on tests index page (default true)
 - `parentTest` - Parent test permalink for nested tests
 
-### Docs (Knowledge Base)
+### Knowledge Base
 
-Long-form documentation served at `/docs`, laid out as a book: chapters in the left sidebar, an on-page table of contents on the right, and prev/next links at the foot of each page. Content was migrated from [m-lab/knowledgebase](https://github.com/m-lab/knowledgebase).
+Long-form documentation served at `/kb`, laid out as a book: chapters in the left sidebar, an on-page table of contents on the right, and prev/next links at the foot of each article. Content was migrated from [m-lab/knowledgebase](https://github.com/m-lab/knowledgebase).
 
-Create a new `.md` file in `src/content/docs/`:
+Create a new `.md` file in `src/content/kb/`:
 
 ```markdown
 ---
-permalink: my-doc-page
-title: 'My Doc Page'
+permalink: my-article
+title: 'My Article'
 chapter: 'Getting Started'
 chapterOrder: 1
 order: 6
 status: published
-description: 'Brief summary shown under the title.'
+description: 'Brief summary shown under the title and on the landing card.'
 tags: [data-access, research]
 difficulty: beginner
 ---
@@ -487,22 +487,26 @@ so headings in the body should start at `##`.
 
 **Required fields:**
 
-- `permalink` - URL-safe slug; the page is served at `/docs/<permalink>`
-- `title` - Page title, rendered as the `h1`
-- `chapter` - Sidebar chapter heading. Must match the other pages of the chapter **exactly** — the string is the grouping key
-- `chapterOrder` - Position of the chapter in the sidebar. Repeat the same number on every page of a chapter
-- `order` - Position of the page within its chapter
+- `permalink` - URL-safe slug; the article is served at `/kb/<permalink>`
+- `title` - Article title, rendered as the `h1`
+- `chapter` - Sidebar chapter heading. Must match the other articles of the chapter **exactly** — the string is the grouping key
+- `chapterOrder` - Position of the chapter in the sidebar. Repeat the same number on every article of a chapter
+- `order` - Position of the article within its chapter
 
 **Optional fields:**
 
 - `status` - Visibility: `draft`, `published`, or `archived` (default: `draft`)
-- `description` - Short summary shown under the title
-- `tags` - Editorial keywords carried over from the knowledge base; no effect on navigation
-- `difficulty` - `beginner`, `intermediate`, or `advanced`; rendered as a badge
+- `description` - Short summary shown under the title and on the landing card
+- `tags` - Keywords; filterable on the landing page, no effect on reading order
+- `difficulty` - `beginner`, `intermediate`, or `advanced`; badge plus a landing-page filter
 
-Reading order (sidebar, prev/next, and the page `/docs` opens on) all come from one sort in `getPublishedDocs()` (`src/utils/docs.ts`): `chapterOrder`, then `order`, then title as a tie-break. `/docs` itself has no landing page — it 302s to the first visible page.
+Reading order (sidebar, prev/next, and the landing page's default sort) all come from one sort in `getPublishedKbArticles()` (`src/utils/kb.ts`): `chapterOrder`, then `order`, then title as a tie-break.
 
-In dev and on the preview site, draft pages are marked `DRAFT` next to the title and in the sidebar, so unfinished pages are distinguishable from finished ones while reviewing.
+**The landing page.** `/kb` is a normal entry in the pages collection (`src/content/pages/kb.yaml`), so its title, description, and intro sections are CMS-editable like any other page. `[...path].astro` maps the page id `kb` to `KnowledgeBaseLanding.astro`, which renders the filterable card grid below whatever sections the page defines. The grid (`Filter/KnowledgeBaseFilteredGrid.tsx`) filters by chapter, tag, and difficulty, with a fuzzy title/description/tag search and three sorts (reading order, alphabetical, difficulty). It is separate from `FilterableContent` because that component sorts by date, which knowledge base articles do not have.
+
+**Search.** Articles are indexed in the site-wide `RichSearch` dialog under a "Knowledge Base" category, reachable with the `!` modifier.
+
+In dev and on the preview site, draft articles are marked `DRAFT` next to the title, in the sidebar, and on the landing cards, so unfinished articles are distinguishable from finished ones while reviewing.
 
 ### Navigation
 

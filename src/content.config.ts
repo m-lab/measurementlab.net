@@ -520,23 +520,23 @@ const datasetsCollection = defineCollection({
 });
 
 // ---------------------------------------------------------------------------
-// Docs collection
+// Knowledge base collection (served at /kb)
 //
 // Long-form documentation organised as a book: chapters in the left sidebar,
-// pages ordered within each chapter, prev/next at the foot of every page.
+// articles ordered within each chapter, prev/next at the foot of every page.
 //
 // `chapter` is a free-text name rather than a categories/*.json enum because
-// the chapter list is the table of contents — editors reshape it as the docs
-// grow, and a page's chapter is the only thing that puts it in the sidebar.
-// `chapterOrder` must be repeated identically on every page of a chapter; it
-// orders the chapters themselves, and getDocChapters() reads it from whichever
-// page it meets first.
+// the chapter list is the table of contents — editors reshape it as the
+// knowledge base grows, and an article's chapter is the only thing that puts it
+// in the sidebar. `chapterOrder` must be repeated identically on every article
+// of a chapter; it orders the chapters themselves, and getKbChapters() reads it
+// from whichever article it meets first.
 //
-// `tags` and `difficulty` carry over from the kb.measurementlab.net source and
-// are editorial metadata only — neither one affects navigation.
+// `tags` and `difficulty` carry over from the kb.measurementlab.net source.
+// Neither affects reading order — both are filters on the /kb landing page.
 // ---------------------------------------------------------------------------
-const docsCollection = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/docs' }),
+const kbCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/kb' }),
   schema: z.object({
     permalink: z.string(),
     title: z.string(),
@@ -562,5 +562,5 @@ export const collections = {
   publications: publicationsCollection,
   tests: testsCollection,
   datasets: datasetsCollection,
-  docs: docsCollection,
+  kb: kbCollection,
 };

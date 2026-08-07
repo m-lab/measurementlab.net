@@ -33,7 +33,7 @@ Because WeHe runs multiple trials and uses a statistical test, it filters out th
 
 WeHe is specifically designed to detect **application-specific** differentiation — cases where an ISP applies different treatment based on which app the traffic appears to come from. It will detect throttling of YouTube-like traffic even if other traffic is unaffected.
 
-WeHe is **not** a general speed test. If an ISP throttles all traffic equally, WeHe will not detect this as differentiation (since both the original and inverted replays would be equally throttled). For overall throughput measurement, use [NDT](/docs/test-ndt).
+WeHe is **not** a general speed test. If an ISP throttles all traffic equally, WeHe will not detect this as differentiation (since both the original and inverted replays would be equally throttled). For overall throughput measurement, use [NDT](/kb/test-ndt).
 
 ## Privacy and Data Collection
 
@@ -43,7 +43,7 @@ When you run WeHe, your IP address is collected (truncated to /24 in the publish
 
 ### BigQuery
 
-WeHe data is parsed into BigQuery and available for free query access. See [Setting Up Free BigQuery Access](/docs/getting-started-bigquery).
+WeHe data is parsed into BigQuery and available for free query access. See [Setting Up Free BigQuery Access](/kb/getting-started-bigquery).
 
 WeHe data is organized into three tables, all keyed by `userID` + `historyCount` (together they uniquely identify a test):
 
@@ -144,6 +144,6 @@ WeHe is available as a mobile app. Visit the [Wehe project website](https://wehe
 
 - [Wehe project website](https://wehe.meddle.mobi/)
 - [Wehe source code](https://wehe.meddle.mobi/codeanddata.html)
-- [Setting Up Free BigQuery Access](/docs/getting-started-bigquery)
-- [NDT — general throughput testing](/docs/test-ndt)
-- [DASH — streaming quality testing](/docs/test-neubot-dash)
+- [Setting Up Free BigQuery Access](/kb/getting-started-bigquery)
+- [NDT — general throughput testing](/kb/test-ndt)
+- [DASH — streaming quality testing](/kb/test-neubot-dash)

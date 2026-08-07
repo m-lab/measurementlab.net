@@ -12,7 +12,7 @@ difficulty: intermediate
 
 M-Lab's TCP INFO sidecar records a time series of kernel TCP socket statistics for every connection on the platform. The BigQuery table is large, heterogeneous, and counterintuitive until you understand how collection and storage work. This article explains the mechanics, the quirks, and the correct patterns for research use.
 
-See [TCP INFO — M-Lab Core Service](/docs/core-service-tcp-info) for a general reference on what fields the table contains.
+See [TCP INFO — M-Lab Core Service](/kb/core-service-tcp-info) for a general reference on what fields the table contains.
 
 ## How Snapshot Collection Works
 
@@ -213,8 +213,8 @@ Each day's directory contains `.tgz` tarballs (one per server, per time window).
 
 ## Further Reading
 
-- [TCP INFO — M-Lab Core Service](/docs/core-service-tcp-info) — field reference and architecture overview
-- [NDT (Network Diagnostic Tool)](/docs/test-ndt) — the primary test whose connections TCPinfo instruments
-- [Getting Started with M-Lab Data in BigQuery](/docs/getting-started-bigquery) — access setup and query basics
-- [Analyzing M-Lab Data: A Researcher's Guide](/docs/research-guide) — broader M-Lab research patterns
-- [Beyond Speed: Understanding Internet Quality Metrics](/docs/internet-quality-beyond-speed) — context on latency and jitter as quality dimensions
+- [TCP INFO — M-Lab Core Service](/kb/core-service-tcp-info) — field reference and architecture overview
+- [NDT (Network Diagnostic Tool)](/kb/test-ndt) — the primary test whose connections TCPinfo instruments
+- [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery) — access setup and query basics
+- [Analyzing M-Lab Data: A Researcher's Guide](/kb/research-guide) — broader M-Lab research patterns
+- [Beyond Speed: Understanding Internet Quality Metrics](/kb/internet-quality-beyond-speed) — context on latency and jitter as quality dimensions

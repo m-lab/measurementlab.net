@@ -50,6 +50,7 @@ The sidebar is organized into three groups:
 - **Tests** — M-Lab measurement tests and documentation
 - **Publications** — Research papers and reports
 - **Datasets** — The published data catalogue
+- **Knowledge Base** — Long-form guides shown at `/kb`
 
 **Site Administration (middle section)**
 
@@ -541,40 +542,40 @@ Enter only terms specific to this dataset, such as `TCP throughput`, `video stre
 
 Leaving Keywords empty is fine. The dataset still gets the four base terms — but it will then look identical to every other dataset to a search engine, so a few specific terms are worth adding.
 
-### 3.10 Docs (Knowledge Base)
+### 3.10 Knowledge Base
 
-**Where:** Sidebar > **Docs**
+**Where:** Sidebar > **Knowledge Base**
 
-The Docs collection is M-Lab's knowledge base, shown at `/docs`. Unlike the other collections, Docs is laid out as a **book**: pages are grouped into chapters listed down the left-hand side, and each page has Previous / Next links at the bottom. Readers move through it in order.
+The Knowledge Base collection is shown at `/kb`. Unlike the other collections, it is laid out as a **book**: articles are grouped into chapters listed down the left-hand side, and each article has Previous / Next links at the bottom, so readers can move through a chapter in order. The `/kb` landing page also lets readers filter the whole collection by chapter, tag, and difficulty.
 
 **Fields:**
 
 | Field             | Required | Description                                                                     |
 | ----------------- | -------- | ------------------------------------------------------------------------------- |
-| **Permalink**     | Yes      | URL identifier (e.g., `getting-started-bigquery`). The page becomes `/docs/getting-started-bigquery` |
-| **Title**         | Yes      | Page title, shown as the heading                                                |
-| **Chapter**       | Yes      | The chapter heading this page appears under (e.g., `Accessing Data`)            |
+| **Permalink**     | Yes      | URL identifier (e.g., `getting-started-bigquery`). The article becomes `/kb/getting-started-bigquery` |
+| **Title**         | Yes      | Article title, shown as the heading                                             |
+| **Chapter**       | Yes      | The chapter heading this article appears under (e.g., `Accessing Data`)         |
 | **Chapter Order** | Yes      | Position of the whole chapter in the sidebar (1, 2, 3…)                         |
-| **Page Order**    | Yes      | Position of this page within its chapter (1, 2, 3…)                             |
+| **Page Order**    | Yes      | Position of this article within its chapter (1, 2, 3…)                          |
 | **Status**        | Yes      | Content visibility: Draft, Published, or Archived                               |
-| **Description**   | No       | Short summary shown under the title                                             |
-| **Tags**          | No       | Editorial keywords carried over from the old knowledge base site                |
-| **Difficulty**    | No       | Beginner, Intermediate, or Advanced — shown as a badge under the title          |
+| **Description**   | No       | Short summary shown under the title and on the landing page card                |
+| **Tags**          | No       | Keywords readers can filter by on the landing page                              |
+| **Difficulty**    | No       | Beginner, Intermediate, or Advanced — a badge, and a landing page filter        |
 | **Content**       | No       | The article itself (rich text)                                                  |
 
-> **Important — chapters are grouped by their exact text.** `Accessing Data` and `Accessing data` are two different chapters as far as the sidebar is concerned. When adding a page to an existing chapter, copy the Chapter value from a page already in it rather than retyping it, and give it the **same Chapter Order** as its neighbours. Chapter Order positions the chapter; Page Order positions the page inside it.
+> **Important — chapters are grouped by their exact text.** `Accessing Data` and `Accessing data` are two different chapters as far as the sidebar is concerned. When adding an article to an existing chapter, copy the Chapter value from an article already in it rather than retyping it, and give it the **same Chapter Order** as its neighbours. Chapter Order positions the chapter; Page Order positions the article inside it.
 
-**To add a page to an existing chapter:**
+**To add an article to an existing chapter:**
 
-1. Open any page already in that chapter and note its **Chapter** and **Chapter Order**.
-2. Create the new page and enter those two values identically.
-3. Set **Page Order** to where it should sit in the chapter — renumber the pages after it if you are inserting in the middle.
+1. Open any article already in that chapter and note its **Chapter** and **Chapter Order**.
+2. Create the new article and enter those two values identically.
+3. Set **Page Order** to where it should sit in the chapter — renumber the articles after it if you are inserting in the middle.
 
-**To start a new chapter:** give the first page a new **Chapter** name and a **Chapter Order** that places it where you want among the existing chapters.
+**To start a new chapter:** give the first article a new **Chapter** name and a **Chapter Order** that places it where you want among the existing chapters.
 
-**A note on headings:** the Title field is rendered as the page's main heading, so start headings inside the content at level 2 (`##`). A level-1 heading in the body will produce two competing titles, and the table of contents on the right is built from level 2 and 3 headings only.
+**A note on headings:** the Title field is rendered as the article's main heading, so start headings inside the content at level 2 (`##`). A level-1 heading in the body will produce two competing titles, and the table of contents on the right is built from level 2 and 3 headings only.
 
-`/docs` has no landing page of its own — visiting it opens the first published page of the first chapter. Which page that is therefore depends on what is Published, so keep the opening page of your first chapter published.
+**The landing page at `/kb`** is edited separately, under Sidebar > **Pages** > *Knowledge Base*. Its title, description, and intro text are ordinary page fields; the filterable grid of article cards is added automatically below them and always reflects what is Published here. You do not need to add or remove cards by hand.
 
 ---
 
@@ -843,7 +844,7 @@ Every piece of content in the CMS maps to a file in the repository. Here's where
 | Publications     | `src/content/publications/`        | JSON (e.g., `2024-the-state-of-ndt.json`)             |
 | Categories       | `src/content/categories/`          | JSON (e.g., `blog.json`)                              |
 | Tests            | `src/content/tests/`               | Markdown with YAML frontmatter (e.g., `ndt/index.md`) |
-| Docs             | `src/content/docs/`                | Markdown with YAML frontmatter (e.g., `test-ndt.md`)  |
+| Knowledge Base   | `src/content/kb/`                  | Markdown with YAML frontmatter (e.g., `test-ndt.md`)  |
 | Datasets         | `src/content/datasets/`            | JSON (e.g., `ndt.json`)                               |
 | Navigation Menus | `src/content/navigation/`          | JSON (e.g., `main.json`)                              |
 | Site Settings    | `src/content/site/config.json`     | JSON                                                  |

@@ -1,6 +1,6 @@
 ---
 permalink: accessing-data-buckets
-title: "FAQ: Accessing M-Lab Data Buckets"
+title: 'FAQ: Accessing M-Lab Data Buckets'
 chapter: Accessing Data
 chapterOrder: 5
 order: 2

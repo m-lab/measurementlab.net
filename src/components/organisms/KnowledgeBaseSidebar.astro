@@ -1,9 +1,9 @@
 ---
 import { isDev, isPreview } from '@utils/dev';
-import type { DocChapter } from '@utils/docs';
+import type { KbChapter } from '@utils/kb';
 
 export interface Props {
-  chapters: DocChapter[];
+  chapters: KbChapter[];
   currentPermalink: string;
   /**
    * The mobile drawer renders a second copy of this nav. Sticky positioning
@@ -40,7 +40,7 @@ const markDrafts = isDev || isPreview;
             return (
               <li>
                 <a
-                  href={`/docs/${page.data.permalink}`}
+                  href={`/kb/${page.data.permalink}`}
                   aria-current={isCurrent ? 'page' : undefined}
                   class={`block rounded-md border-l-2 px-2 py-1.5 leading-snug no-underline transition-colors ${
                     isCurrent

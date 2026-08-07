@@ -1,0 +1,21 @@
+---
+import KnowledgeBaseFilteredGrid from '@components/organisms/Filter/KnowledgeBaseFilteredGrid';
+import { isDev, isPreview } from '@utils/dev';
+import { getKbCardData } from '@utils/kb';
+
+// Flattened to plain objects by getKbCardData() — content entries do not survive
+// serialisation across the island boundary.
+const articles = await getKbCardData();
+
+// Same rule as the article page and sidebar: badge drafts wherever drafts are
+// visible at all. isVisible() has already dropped them in production.
+const markDrafts = isDev || isPreview;
+---
+
+<div class="pb-12">
+  <KnowledgeBaseFilteredGrid
+    client:visible
+    articles={articles}
+    markDrafts={markDrafts}
+  />
+</div>

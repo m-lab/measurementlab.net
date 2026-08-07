@@ -99,7 +99,7 @@ reliable = df[df["sample_count"] >= 100].copy()
 best_latency = reliable.nsmallest(10, "latency_p50")[["country_code", "latency_p50"]]
 ```
 
-See [Reading Percentiles in Monthly Stats](/docs/monthly-stats-percentiles) for a full explanation of the polarity difference between speed and latency/loss columns.
+See [Reading Percentiles in Monthly Stats](/kb/monthly-stats-percentiles) for a full explanation of the polarity difference between speed and latency/loss columns.
 
 ### Load multiple months and compare
 
@@ -161,7 +161,7 @@ Download files contain `download_p{N}`, `latency_p{N}`, `loss_p{N}`. Upload file
 
 ## Computing IQB Scores
 
-If you want to compute [Internet Quality Barometer](/docs/internet-quality-beyond-speed) scores from Monthly Stats, use the `mlab-iqb` library:
+If you want to compute [Internet Quality Barometer](/kb/internet-quality-beyond-speed) scores from Monthly Stats, use the `mlab-iqb` library:
 
 ```python
 from iqb import IQBCalculator
@@ -186,7 +186,7 @@ See the [IQB scores notebook](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HE
 
 ## Further Reading
 
-- [M-Lab Monthly Stats Dataset](/docs/monthly-stats-dataset) — dataset overview and structure
-- [Reading Percentiles in Monthly Stats](/docs/monthly-stats-percentiles) — percentile interpretation and polarity
-- [M-Lab Network Annotations](/docs/mlab-annotations-explained) — understanding ASN and geolocation fields
-- [NDT (Network Diagnostic Tool)](/docs/test-ndt) — how the underlying measurements are collected
+- [M-Lab Monthly Stats Dataset](/kb/monthly-stats-dataset) — dataset overview and structure
+- [Reading Percentiles in Monthly Stats](/kb/monthly-stats-percentiles) — percentile interpretation and polarity
+- [M-Lab Network Annotations](/kb/mlab-annotations-explained) — understanding ASN and geolocation fields
+- [NDT (Network Diagnostic Tool)](/kb/test-ndt) — how the underlying measurements are collected

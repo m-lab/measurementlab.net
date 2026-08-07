@@ -2,14 +2,14 @@
 import { getEntry } from 'astro:content';
 import Banner from '@components/atoms/Banner.astro';
 import Tag from '@components/atoms/Tag';
-import DocsPrevNext from '@components/organisms/DocsPrevNext.astro';
-import DocsSidebar from '@components/organisms/DocsSidebar.astro';
+import KnowledgeBasePrevNext from '@components/organisms/KnowledgeBasePrevNext.astro';
+import KnowledgeBaseSidebar from '@components/organisms/KnowledgeBaseSidebar.astro';
 import TOC from '@components/organisms/TOC.tsx';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import type { TocEntry } from '@stefanprobst/rehype-extract-toc';
 import { isDev, isPreview } from '@utils/dev';
-import type { DocChapter, DocEntry } from '@utils/docs';
+import type { KbChapter, KbEntry } from '@utils/kb';
 
 export interface Props {
   title: string;
@@ -17,11 +17,11 @@ export interface Props {
   chapter: string;
   difficulty?: 'beginner' | 'intermediate' | 'advanced';
   status?: string;
-  chapters: DocChapter[];
+  chapters: KbChapter[];
   currentPermalink: string;
   toc?: TocEntry[];
-  prev: DocEntry | null;
-  next: DocEntry | null;
+  prev: KbEntry | null;
+  next: KbEntry | null;
 }
 
 const {
@@ -63,7 +63,7 @@ const hasToc = Boolean(toc && toc.length > 0);
     )
   }
 
-  <SectionLayout maxWidth="7xl" sectionLabel="docs">
+  <SectionLayout maxWidth="7xl" sectionLabel="kb">
     {
       /* Mobile / tablet chapter drawer. The desktop sidebar below is hidden here. */
     }
@@ -72,7 +72,7 @@ const hasToc = Boolean(toc && toc.length > 0);
         Browse chapters
       </summary>
       <div class="mt-4">
-        <DocsSidebar
+        <KnowledgeBaseSidebar
           chapters={chapters}
           currentPermalink={currentPermalink}
           sticky={false}
@@ -90,7 +90,10 @@ const hasToc = Boolean(toc && toc.length > 0);
     >
       {/* Chapter navigation */}
       <aside class="hidden lg:block">
-        <DocsSidebar chapters={chapters} currentPermalink={currentPermalink} />
+        <KnowledgeBaseSidebar
+          chapters={chapters}
+          currentPermalink={currentPermalink}
+        />
       </aside>
 
       {/* Article */}
@@ -133,7 +136,7 @@ const hasToc = Boolean(toc && toc.length > 0);
           <slot />
         </article>
 
-        <DocsPrevNext prev={prev} next={next} />
+        <KnowledgeBasePrevNext prev={prev} next={next} />
       </main>
 
       {/* On-page table of contents */}

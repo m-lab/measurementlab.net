@@ -1,9 +1,9 @@
 ---
-import type { DocEntry } from '@utils/docs';
+import type { KbEntry } from '@utils/kb';
 
 export interface Props {
-  prev: DocEntry | null;
-  next: DocEntry | null;
+  prev: KbEntry | null;
+  next: KbEntry | null;
 }
 
 const { prev, next } = Astro.props;
@@ -27,7 +27,7 @@ const titleClass =
       aria-label="Documentation pages"
     >
       {prev ? (
-        <a href={`/docs/${prev.data.permalink}`} class={cardClass} rel="prev">
+        <a href={`/kb/${prev.data.permalink}`} class={cardClass} rel="prev">
           <span class={labelClass}>&larr; Previous</span>
           <span class={titleClass}>{prev.data.title}</span>
         </a>
@@ -37,7 +37,7 @@ const titleClass =
 
       {next && (
         <a
-          href={`/docs/${next.data.permalink}`}
+          href={`/kb/${next.data.permalink}`}
           class={`${cardClass} sm:items-end sm:text-right`}
           rel="next"
         >

@@ -10,7 +10,7 @@ tags: [tests, data-access, bigquery, throughput, latency]
 difficulty: intermediate
 ---
 
-MSAK (Measurement Swiss-Army Knife) is a measurement service hosted by M-Lab that implements two measurement protocols: a configurable WebSocket-based throughput protocol and a UDP-based latency protocol. Where [NDT](/docs/test-ndt) is a standardized single-stream bulk transport test, MSAK is designed for cases where researchers need to tune measurement parameters.
+MSAK (Measurement Swiss-Army Knife) is a measurement service hosted by M-Lab that implements two measurement protocols: a configurable WebSocket-based throughput protocol and a UDP-based latency protocol. Where [NDT](/kb/test-ndt) is a standardized single-stream bulk transport test, MSAK is designed for cases where researchers need to tune measurement parameters.
 
 MSAK is also the engine behind M-Lab's official speed test at [speed.measurementlab.net](https://speed.measurementlab.net).
 
@@ -53,7 +53,7 @@ When you run MSAK, your IP address is collected along with measurement results a
 
 ### BigQuery
 
-MSAK data is available in BigQuery for free. See [Setting Up Free BigQuery Access](/docs/getting-started-bigquery).
+MSAK data is available in BigQuery for free. See [Setting Up Free BigQuery Access](/kb/getting-started-bigquery).
 
 Data is in two datasets:
 
@@ -94,7 +94,7 @@ See Accessing Data in GCS<!-- FIXME: add link for "Accessing Data in GCS" --> fo
 
 ## Further Reading
 
-- [NDT — single-stream speed test](/docs/test-ndt)
-- [TCP INFO — kernel-level TCP statistics collected alongside MSAK](/docs/core-service-tcp-info)
-- [Packet Headers — per-flow PCAPs collected alongside MSAK](/docs/core-service-packet-headers)
-- [Setting Up Free BigQuery Access](/docs/getting-started-bigquery)
+- [NDT — single-stream speed test](/kb/test-ndt)
+- [TCP INFO — kernel-level TCP statistics collected alongside MSAK](/kb/core-service-tcp-info)
+- [Packet Headers — per-flow PCAPs collected alongside MSAK](/kb/core-service-packet-headers)
+- [Setting Up Free BigQuery Access](/kb/getting-started-bigquery)

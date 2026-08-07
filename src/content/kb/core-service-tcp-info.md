@@ -43,7 +43,7 @@ Because snapshots are taken at regular intervals, you can reconstruct the time s
 
 ### BigQuery
 
-TCP INFO data is parsed into BigQuery and available for free. See [Setting Up Free BigQuery Access](/docs/getting-started-bigquery).
+TCP INFO data is parsed into BigQuery and available for free. See [Setting Up Free BigQuery Access](/kb/getting-started-bigquery).
 
 The primary location is `measurement-lab.ndt.tcpinfo` — TCP INFO data associated with NDT tests. Additional locations may exist for other services.
 
@@ -83,7 +83,7 @@ Data is stored in JSONL format. Each line is one snapshot of the tcp_info struct
 
 **Throughput modeling** — the relationship between congestion window, RTT, and achieved throughput can be studied directly against real-world measurements.
 
-**Validating packet-level analysis** — TCP INFO statistics can be cross-referenced with [Packet Header captures](/docs/core-service-packet-headers) to validate conclusions drawn from either dataset.
+**Validating packet-level analysis** — TCP INFO statistics can be cross-referenced with [Packet Header captures](/kb/core-service-packet-headers) to validate conclusions drawn from either dataset.
 
 **Understanding NDT metrics** — when an NDT result seems unusual, TCP INFO time-series data often explains why — showing, for example, a congestion event mid-test or a retransmit storm that deflated the final throughput number.
 
@@ -97,8 +97,8 @@ TCP INFO underlies the metrics reported by NDT's ndt5 and ndt7 protocols. When N
 
 ## Further Reading
 
-- [NDT — the test whose TCP connections TCP INFO instruments](/docs/test-ndt)
-- [Packet Headers — complementary packet-level data](/docs/core-service-packet-headers)
-- [MSAK — configurable throughput test also instrumented by TCP INFO](/docs/test-msak)
-- [Setting Up Free BigQuery Access](/docs/getting-started-bigquery)
+- [NDT — the test whose TCP connections TCP INFO instruments](/kb/test-ndt)
+- [Packet Headers — complementary packet-level data](/kb/core-service-packet-headers)
+- [MSAK — configurable throughput test also instrumented by TCP INFO](/kb/test-msak)
+- [Setting Up Free BigQuery Access](/kb/getting-started-bigquery)
 - [Long Term Supported Schemas blog post](https://www.measurementlab.net/blog/long-term-schema-support-standard-columns/)

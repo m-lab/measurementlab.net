@@ -19,7 +19,7 @@ M-Lab publishes a dataset called **Monthly Stats** — pre-computed monthly summ
 
 ## What Monthly Stats Are
 
-Each Monthly Stats file covers one calendar month of [NDT](/docs/test-ndt) measurements, pre-aggregated at a chosen geographic granularity. Instead of one row per test, each row summarises all tests in that geography/ISP for that month — recording the full **percentile distribution** of download speed, upload speed, latency, and packet loss.
+Each Monthly Stats file covers one calendar month of [NDT](/kb/test-ndt) measurements, pre-aggregated at a chosen geographic granularity. Instead of one row per test, each row summarises all tests in that geography/ISP for that month — recording the full **percentile distribution** of download speed, upload speed, latency, and packet loss.
 
 This design means you can answer questions like "what was the median download speed in Germany in October 2024?" with a single parquet read rather than scanning hundreds of millions of raw test rows.
 
@@ -60,7 +60,7 @@ Every download parquet file contains:
 
 Upload files add `upload_p{N}` columns. Available percentiles: 1, 5, 10, 25, 50, 75, 90, 95, 99.
 
-For guidance on interpreting percentiles — including the counterintuitive polarity of latency and loss — see [Reading Percentiles in Monthly Stats](/docs/monthly-stats-percentiles).
+For guidance on interpreting percentiles — including the counterintuitive polarity of latency and loss — see [Reading Percentiles in Monthly Stats](/kb/monthly-stats-percentiles).
 
 ## How Monthly Stats Are Derived
 
@@ -71,7 +71,7 @@ Monthly Stats are computed from M-Lab's NDT7 dataset using a BigQuery pipeline. 
 3. Percentiles are computed across all tests in each bin
 4. Results are written to Parquet and uploaded to Google Cloud Storage
 
-The pipeline source and configuration live in the [m-lab/iqb](https://github.com/m-lab/iqb) repository, which also contains the [Internet Quality Barometer](/docs/internet-quality-beyond-speed) score library that uses Monthly Stats as its primary input.
+The pipeline source and configuration live in the [m-lab/iqb](https://github.com/m-lab/iqb) repository, which also contains the [Internet Quality Barometer](/kb/internet-quality-beyond-speed) score library that uses Monthly Stats as its primary input.
 
 ## How to Access the Data
 
@@ -127,8 +127,8 @@ These interactive notebooks explore Monthly Stats at each geographic granularity
 
 **Sample count matters.** Rows with fewer than ~100 tests produce unreliable percentile estimates. The `sample_count` column lets you filter out low-confidence rows. The notebooks default to a 100–500 test minimum depending on the granularity.
 
-**City-level data has significant geolocation uncertainty.** See [M-Lab Network Annotations](/docs/mlab-annotations-explained) for a full discussion of what city-level geolocation means in practice.
+**City-level data has significant geolocation uncertainty.** See [M-Lab Network Annotations](/kb/mlab-annotations-explained) for a full discussion of what city-level geolocation means in practice.
 
-**Monthly Stats reflect NDT test populations, not all internet users.** NDT tests are opt-in and typically run by users who suspect a problem or are doing research. This creates a non-representative sample. See [Understanding Speed Test Results](/docs/understanding-speed-test-results) for context.
+**Monthly Stats reflect NDT test populations, not all internet users.** NDT tests are opt-in and typically run by users who suspect a problem or are doing research. This creates a non-representative sample. See [Understanding Speed Test Results](/kb/understanding-speed-test-results) for context.
 
 **Data is usually 4–8 weeks behind the current date** due to pipeline processing time.

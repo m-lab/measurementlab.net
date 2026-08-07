@@ -47,7 +47,7 @@ By default, clients are directed to the nearest M-Lab-managed server via the Loc
 
 **M-Lab-managed servers** — the default. No infrastructure work required. Your users are served by M-Lab's global network of servers at internet exchange facilities. Results appear in `ndt7_union` and `ndt7` BigQuery views.
 
-**Host-Managed servers (BYOS)** — your organization hosts an M-Lab node on your own infrastructure using Docker. This is well-suited to ISPs, IXPs, and large platforms that want measurements anchored to specific networks. Results appear in `ndt7_dynamic`. See [Running Your Own M-Lab Node: The BYOS Program](/docs/byos-overview) for hardware requirements and deployment steps.
+**Host-Managed servers (BYOS)** — your organization hosts an M-Lab node on your own infrastructure using Docker. This is well-suited to ISPs, IXPs, and large platforms that want measurements anchored to specific networks. Results appear in `ndt7_dynamic`. See [Running Your Own M-Lab Node: The BYOS Program](/kb/byos-overview) for hardware requirements and deployment steps.
 
 ## Contributing Infrastructure as a Community Partner
 

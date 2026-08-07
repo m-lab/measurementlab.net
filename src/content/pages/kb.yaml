@@ -1,0 +1,13 @@
+title: Knowledge Base
+permalink: kb
+status: published
+description: Practical guides to M-Lab's tests, datasets, and infrastructure — for researchers, policymakers, advocates, and network operators.
+zigzag: primary-light
+sections:
+  - type: richText
+    background:
+      color: white
+      type: full
+    withTOC: false
+    content: >-
+      Articles are grouped into chapters and ordered as a reading path — start at the top of a chapter and work down, or filter below to find a specific topic. Every article opens with its own sidebar so you can keep moving through the chapter.
