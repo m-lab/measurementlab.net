@@ -7,7 +7,7 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: >-
+    content: >+
       # Jobs & Opportunities
 
 
@@ -21,25 +21,20 @@ sections:
       ## Open Positions at Measurement Lab
 
 
-      *   None at this time
-          
+      - None at this time
+
 
       ## Contract Opportunities with M-Lab
 
 
-      *   [Data Scientist, Internet Measurement](jobs-datascientist): Read the
-      [description](jobs-datascientist) and
-      [apply!](https://forms.clickup.com/9014422731/f/8cmub6b-6434/8I6LSVP6GNEWQH5VYW)
-          
-      *   [Technical Support and Community Manager](job-techsupport): Read the
-      [description](job-techsupport) and
-      [apply!](https://forms.clickup.com/9014422731/f/8cmub6b-6434/8I6LSVP6GNEWQH5VYW)
-          
+      None at this time. 
+
 
       ## Open Opportunities in the M-Lab Community
 
 
-      *   None at this time
-          
-      *   If you have open jobs that you'd like to have listed here, [contact
+      - None at this time
+
+      - If you have open jobs that you'd like to have listed here, [contact
       us](mailto:contact@measurementlab.net)
+
