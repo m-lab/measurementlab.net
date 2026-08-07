@@ -38,7 +38,7 @@ export default function KnowledgeBaseCard({ article, markDraft }: Props) {
 
   return (
     <div
-      className="flex h-full flex-col border-b-4 border-neutral-200 transition-all duration-200"
+      className="group relative flex h-full flex-col border-b-4 border-neutral-200 transition-colors duration-200 hover:border-primary-400"
       style={{
         maskImage: `conic-gradient(from 45deg at ${NOTCH_PX}px ${NOTCH_PX}px, #000 75%, #0000 0)`,
         maskPosition: `-${NOTCH_PX}px`,
@@ -65,9 +65,16 @@ export default function KnowledgeBaseCard({ article, markDraft }: Props) {
         )}
 
         <h3 className="text-lg leading-snug font-bold md:text-xl">
+          {/*
+            Stretched link: `after:absolute after:inset-0` spreads this anchor's
+            hit area over the whole card (which is `relative`), so the card is
+            clickable without wrapping it in an anchor. Wrapping would fold the
+            description and every tag into the link's accessible name; this way
+            the name stays the title alone.
+          */}
           <a
             href={`/kb/${article.permalink}`}
-            className="block text-neutral-900 no-underline transition-all hover:text-primary-600"
+            className="text-neutral-900 no-underline transition-colors after:absolute after:inset-0 hover:text-primary-600"
           >
             {article.title}
           </a>
