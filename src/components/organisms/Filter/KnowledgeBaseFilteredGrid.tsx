@@ -1,3 +1,4 @@
+import KnowledgeBaseCard from '@components/organisms/KnowledgeBase/KnowledgeBaseCard';
 import type { KbCardData } from '@utils/kb';
 import { Input } from '@headlessui/react';
 import Fuse from 'fuse.js';
@@ -22,19 +23,6 @@ const DIFFICULTY_RANK: Record<string, number> = {
   beginner: 0,
   intermediate: 1,
   advanced: 2,
-};
-
-const DIFFICULTY_TAG_CLASS: Record<string, string> = {
-  beginner: 'tag-supporting1',
-  intermediate: 'tag-secondary',
-  advanced: 'tag-speed',
-};
-
-/** Frontmatter stores the level lowercase; badges and filters show it capitalised. */
-const DIFFICULTY_LABEL: Record<string, string> = {
-  beginner: 'Beginner',
-  intermediate: 'Intermediate',
-  advanced: 'Advanced',
 };
 
 interface Props {
@@ -245,41 +233,10 @@ export default function KnowledgeBaseFilteredGrid({
               <ul className="grid list-none grid-cols-1 gap-6 p-0 md:grid-cols-2 lg:grid-cols-3">
                 {group.items.map((article) => (
                   <li key={article.permalink} className="flex">
-                    <a
-                      href={`/kb/${article.permalink}`}
-                      className="card-elevated group flex w-full flex-col rounded-md no-underline"
-                    >
-                      {markDrafts && article.status === 'draft' && (
-                        <p className="mb-2 text-xs font-semibold tracking-wide text-neutral-400 uppercase">
-                          draft
-                        </p>
-                      )}
-                      <h3 className="mb-2 text-lg leading-snug font-semibold text-neutral-900 group-hover:text-primary-700">
-                        {article.title}
-                      </h3>
-                      {article.description && (
-                        <p className="mb-4 line-clamp-4 text-sm text-neutral-600">
-                          {article.description}
-                        </p>
-                      )}
-                      <div className="mt-auto flex flex-wrap items-center gap-1.5 border-t border-neutral-100 pt-3">
-                        {article.difficulty && (
-                          <span
-                            className={`tag-base tag-size-sm ${DIFFICULTY_TAG_CLASS[article.difficulty]}`}
-                          >
-                            {DIFFICULTY_LABEL[article.difficulty]}
-                          </span>
-                        )}
-                        {article.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="tag-base tag-neutral tag-size-sm"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </a>
+                    <KnowledgeBaseCard
+                      article={article}
+                      markDraft={markDrafts}
+                    />
                   </li>
                 ))}
               </ul>
