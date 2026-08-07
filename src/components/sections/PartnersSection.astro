@@ -36,6 +36,24 @@ const filteredPartners = category
 const partners = filteredPartners
   .sort((a, b) => (a.data.order || 999) - (b.data.order || 999))
   .map(entry => entry.data);
+
+// Logo aspect ratios range from 5.5:1 wordmarks to portrait lockups. Asking for a
+// fixed width and height makes the image service crop to fill, so scale each logo
+// to fit the box instead, never past its natural size.
+const LOGO_BOX = { width: 200, height: 128 };
+
+const fitLogo = (image: ImageMetadata) => {
+  if (!image.width || !image.height) return LOGO_BOX;
+  const scale = Math.min(
+    LOGO_BOX.width / image.width,
+    LOGO_BOX.height / image.height,
+    1
+  );
+  return {
+    width: Math.round(image.width * scale),
+    height: Math.round(image.height * scale),
+  };
+};
 ---
 
 <div>
@@ -54,7 +72,7 @@ const partners = filteredPartners
 							href={partner.url}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="group"
+							class="group w-full"
 							data-component
 						>
 							{partner.image && (
@@ -62,8 +80,7 @@ const partners = filteredPartners
 									<Image
 										src={partner.image}
 										alt={partner.name}
-										width={200}
-										height={128}
+										{...fitLogo(partner.image)}
 										class="max-h-full max-w-full object-contain"
 									/>
 								</div>
@@ -80,8 +97,7 @@ const partners = filteredPartners
 									<Image
 										src={partner.image}
 										alt={partner.name}
-										width={200}
-										height={128}
+										{...fitLogo(partner.image)}
 										class="max-h-full max-w-full object-contain"
 									/>
 								</div>
