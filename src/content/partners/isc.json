@@ -2,7 +2,9 @@
   "id": "isc",
   "name": "Internet Systems Consortium",
   "url": "https://www.isc.org/",
-  "category": "Supporting Partners",
+  "category": [
+    "Supporting Partners"
+  ],
   "image": "/src/assets/partners/isc.png",
   "status": "published"
 }

@@ -3,7 +3,9 @@
   "name": "Reverse Traceroute",
   "affiliation": "University of Washington",
   "url": "http://www.cs.washington.edu/research/networking/astronomy/reverse-traceroute.html",
-  "category": "Supporting Research Projects",
+  "category": [
+    "Supporting Research Projects"
+  ],
   "image": "/src/assets/partners/reverse-traceroute.jpg",
   "status": "published"
 }

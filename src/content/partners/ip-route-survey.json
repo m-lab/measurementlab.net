@@ -3,7 +3,9 @@
   "name": "IP Route Survey",
   "affiliation": "Dioptra group at Sorbonne Université",
   "url": "https://dioptra.io/",
-  "category": "Supporting Research Projects",
+  "category": [
+    "Supporting Research Projects"
+  ],
   "image": "/src/assets/partners/dioptra.svg",
   "status": "published"
 }

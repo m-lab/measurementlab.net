@@ -2,7 +2,9 @@
   "id": "ufsc",
   "name": "Universidade Federal de Santa Catarina",
   "url": "http://ufsc.br/",
-  "category": "Supporting Partners",
+  "category": [
+    "Supporting Partners"
+  ],
   "image": "/src/assets/partners/brasao_site_ufsc.png",
   "status": "published"
 }

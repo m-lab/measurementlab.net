@@ -2,7 +2,10 @@
   "id": "m-lab",
   "name": "Measurement Lab",
   "status": "published",
-  "url": "measurementlab.net",
-  "category": "OMG Partners",
-  "image": "/src/assets/Mlab blue logo.png"
+  "url": "https://measurementlab.net",
+  "category": [
+    "OMG Partners",
+    "IMC Hackathon Partners"
+  ],
+  "image": "/src/assets/partners/m-lab.png"
 }

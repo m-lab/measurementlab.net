@@ -241,14 +241,14 @@ The Partners collection stores organizations that collaborate with M-Lab.
 | **Status**       | Yes      | Draft, Published, or Archived                    |
 | **Affiliation**  | No       | Partnership level (e.g., "Platinum Sponsor")     |
 | **Website URL**  | No       | Partner's website                                |
-| **Category**     | Yes      | Partner grouping (e.g., "Supporting Partners", "BYOS Partners") |
+| **Categories**   | Yes      | One or more partner groupings (e.g., "Supporting Partners", "BYOS Partners"). Pick every group the partner belongs to. |
 | **Logo**         | No       | Partner organization logo                        |
 
 **To add a new partner:**
 
 1. Click **Add an entry**.
 2. Set the **ID** (e.g., `acme-corp`).
-3. Enter the **Partner Name** and select a **Category**.
+3. Enter the **Partner Name** and select one or more **Categories**.
 4. Upload a **Logo** image.
 5. Set **Status** to Published and click **Save**.
 
@@ -938,7 +938,7 @@ Your blog post content goes here. Use **Markdown** formatting.
   "status": "draft",
   "affiliation": "Infrastructure Partner",
   "url": "https://acme.example.com",
-  "category": "Supporting Partners",
+  "category": ["Supporting Partners"],
   "image": "/src/assets/images/partners/acme-logo.png"
 }
 ```

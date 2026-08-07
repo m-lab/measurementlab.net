@@ -76,7 +76,9 @@ const createSchemas = (image: ImageFunction) => {
     name: z.string(),
     affiliation: z.string().optional(),
     url: z.string().optional(),
-    category: z.enum(partnerCategories.categories as [string, ...string[]]),
+    category: z
+      .array(z.enum(partnerCategories.categories as [string, ...string[]]))
+      .min(1),
     image: image().optional(),
   });
 

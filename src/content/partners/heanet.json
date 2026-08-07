@@ -2,7 +2,9 @@
   "id": "heanet",
   "name": "HEAnet",
   "url": "http://www.heanet.ie/",
-  "category": "Supporting Partners",
+  "category": [
+    "Supporting Partners"
+  ],
   "image": "/src/assets/partners/heanet.png",
   "status": "published"
 }

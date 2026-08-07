@@ -9,7 +9,7 @@ export interface Partner {
   name: string;
   affiliation?: string;
   url?: string;
-  category: string;
+  category: string[];
   image?: ImageMetadata;
 }
 
@@ -29,7 +29,7 @@ const allPartners = (await getCollection('partners')).filter(p => isVisible(p));
 
 // Filter by category if specified, otherwise show all
 const filteredPartners = category
-  ? allPartners.filter(p => p.data.category === category)
+  ? allPartners.filter(p => p.data.category.includes(category))
   : allPartners;
 
 // Sort by order field

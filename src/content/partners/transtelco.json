@@ -2,7 +2,9 @@
   "id": "transtelco",
   "name": "Transtelco",
   "url": "https://transtelco.net/",
-  "category": "Supporting Partners",
+  "category": [
+    "Supporting Partners"
+  ],
   "image": "/src/assets/partners/transtelco.png",
   "status": "published"
 }

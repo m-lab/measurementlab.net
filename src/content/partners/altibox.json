@@ -2,7 +2,9 @@
   "id": "altibox",
   "name": "Altibox",
   "url": "https://www.altibox.no/",
-  "category": "Supporting Partners",
+  "category": [
+    "Supporting Partners"
+  ],
   "image": "/src/assets/partners/altibox.png",
   "status": "published"
 }

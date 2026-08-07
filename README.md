@@ -158,8 +158,8 @@ Categories control filtering and grouping. Each file in `src/content/categories/
 | File                | Used For             | Count | Example Values                                              |
 | ------------------- | -------------------- | ----- | ----------------------------------------------------------- |
 | `blog.json`         | Blog post categories | 85    | Announcement, Data, NDT, Privacy, Research, Visualization    |
-| `people.json`       | Team member sections | 5     | Maintainers, Experiment Review Committee, Advisory Committee, M-Lab Founders, Alumni |
-| `partners.json`     | Partner groupings    | 4     | Supporting Research Projects, Supporting Partners, OMG Partners, BYOS Partners |
+| `people.json`       | Team member sections | 6     | Maintainers, Experiment Review Committee, Advisory Committee, M-Lab Founders, Alumni, Community |
+| `partners.json`     | Partner groupings    | 5     | Supporting Research Projects, Supporting Partners, OMG Partners, BYOS Partners, IMC Hackathon Partners |
 | `publications.json` | Publication types    | 4     | paper, regulatory-filing, presentation, documentation        |
 | `tests.json`        | Test groupings       | 1     | Current Tests                                                |
 
@@ -357,7 +357,7 @@ Create a new `.json` file in `src/content/partners/`:
   "id": "example-partner",
   "name": "Example Partner",
   "url": "https://example.com",
-  "category": "Supporting Partners",
+  "category": ["Supporting Partners"],
   "image": "/src/assets/partners/example.png",
   "order": 10,
   "status": "published"
@@ -368,7 +368,7 @@ Create a new `.json` file in `src/content/partners/`:
 
 - `id` - Unique identifier
 - `name` - Organization name
-- `category` - One value from `src/content/categories/partners.json`
+- `category` - Array of one or more values from `src/content/categories/partners.json`
 
 **Optional fields:**
 

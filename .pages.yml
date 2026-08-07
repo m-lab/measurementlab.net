@@ -1103,8 +1103,8 @@ content:
     filename: '{fields.id}.json'
     subfolders: false
     view:
-      fields: [image, name, affiliation, category, status]
-      sort: [category, name]
+      fields: [image, name, affiliation, status]
+      sort: [name]
       search: [name, affiliation]
       primary: name
     fields:
@@ -1138,11 +1138,12 @@ content:
         label: Website URL
         type: string
       - name: category
-        label: Category
+        label: Categories
         type: select
         required: true
+        description: A partner can belong to more than one category.
         options:
-          multiple: false
+          multiple: true
           # pages-cms:category-sync start partners
           values:
             - Supporting Research Projects

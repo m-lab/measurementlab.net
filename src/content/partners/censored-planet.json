@@ -3,6 +3,8 @@
   "name": "Censored Planet",
   "status": "published",
   "url": "https://censoredplanet.org/",
-  "category": "OMG Partners",
-  "image": "/src/assets/CP logo.svg"
+  "category": [
+    "OMG Partners"
+  ],
+  "image": "/src/assets/partners/censored-planet.svg"
 }

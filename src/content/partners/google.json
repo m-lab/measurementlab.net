@@ -2,7 +2,9 @@
   "id": "google",
   "name": "Google",
   "url": "http://google.com",
-  "category": "Supporting Partners",
+  "category": [
+    "Supporting Partners"
+  ],
   "image": "/src/assets/partners/google.jpg",
   "status": "published"
 }

@@ -2,7 +2,9 @@
   "id": "wide",
   "name": "WIDE Project",
   "url": "http://www.wide.ad.jp/",
-  "category": "Supporting Partners",
+  "category": [
+    "Supporting Partners"
+  ],
   "image": "/src/assets/partners/wide.png",
   "status": "published"
 }

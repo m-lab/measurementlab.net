@@ -2,7 +2,9 @@
   "id": "vocus",
   "name": "Vocus",
   "url": "http://www.vocus.com/",
-  "category": "Supporting Partners",
+  "category": [
+    "Supporting Partners"
+  ],
   "image": "/src/assets/partners/vocus.png",
   "status": "published"
 }

@@ -2,7 +2,7 @@
   "id": "equinix",
   "name": "Equinix",
   "url": "https://www.equinix.com/",
-  "category": "Supporting Partners",
+  "category": ["Supporting Partners", "BYOS Partners"],
   "image": "/src/assets/partners/equinix.png",
   "status": "published"
 }

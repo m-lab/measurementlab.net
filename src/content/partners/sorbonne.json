@@ -2,7 +2,9 @@
   "id": "sorbonne",
   "name": "Sorbonne Université",
   "url": "https://www.sorbonne-universite.fr/",
-  "category": "Supporting Partners",
+  "category": [
+    "Supporting Partners"
+  ],
   "image": "/src/assets/partners/sorbonne.svg",
   "status": "published"
 }

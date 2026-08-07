@@ -3,6 +3,9 @@
   "name": "IODA ",
   "status": "published",
   "url": "https://ioda.inetintel.cc.gatech.edu/dashboard",
-  "category": "OMG Partners",
-  "image": "/src/assets/IODA logo.png"
+  "category": [
+    "OMG Partners",
+    "IMC Hackathon Partners"
+  ],
+  "image": "/src/assets/partners/ioda.png"
 }
