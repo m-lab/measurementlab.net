@@ -17,13 +17,13 @@ sections:
 
       ## Access Data and Discuss Ideas
 
-      M-Lab hosts [Community Calls](https://youtube.com/playlist?list=PLz8pFRnFxSSZBJG4E-KsWksLxzHjLz1gQ&si=NcycaU413L55NjK0) to share latest news, highlight important work from within the community, and discuss trends in Internet measurement. 
+      M-Lab hosts [Community Calls](https://youtube.com/playlist?list=PLz8pFRnFxSSZBJG4E-KsWksLxzHjLz1gQ&si=NcycaU413L55NjK0) to share latest news, highlight important work from within the community, and discuss trends in Internet measurement.
 
       In addition, you can join M-Lab’s Discuss list to access M-Lab data on Big Query and/or swap ideas and ask questions from fellow researchers. With over 2,000 members, the M-Lab Discuss email list is a network of incredible minds! 
 
       ![](/src/assets/community/LYO2024MadridCrop.png)
 
-      *M-Lab Advisory Committee member Lai Yi Ohlsen explains M-Lab data to IMC Hackathon 2024 participants* 
+      *M-Lab Advisory Committee member Lai Yi Ohlsen explains M-Lab data to IMC Hackathon 2024 participants*
   - type: button
     background:
       color: white
@@ -73,18 +73,14 @@ sections:
 
 
       We host regular meetings for the CCoP to share updates, resources, and
-      problem solve together. 
-
-
-      ![](</src/assets/community/MLab Giga ISOC 2025 .jpg>)
-
+      problem solve together.
 
       ![](</src/assets/community/MLab Giga ISOC 2025 -1.jpg>)
 
 
       *Giga, M-Lab, Internet Society, and guests outside the Giga offices in
       Barcelona, Spain after the announcement of the CCoP at Pulse Research
-      week.* 
+      week.*
   - type: button
     background:
       color: white
@@ -126,20 +122,20 @@ sections:
 
 
       - [2025 IMC Hackathon in Madison,
-      WI](https://www.measurementlab.net/blog/imc2025-hackathon/) 
+      WI](https://www.measurementlab.net/blog/imc2025-hackathon/)
 
       - [2024 IMC Hackathon in Madrid,
-      Spain](https://conferences.sigcomm.org/imc/2024/hackathon/)  
+      Spain](https://conferences.sigcomm.org/imc/2024/hackathon/) 
 
       - [2023 IMC Hackathon in Montreal,
-      Canada](https://conferences.sigcomm.org/imc/2023/hackaton/) 
+      Canada](https://conferences.sigcomm.org/imc/2023/hackaton/)
 
       - [2022 IMC Hackathon in Nice,
       France](https://www.measurementlab.net/blog/imc22-hackathon/)
 
 
       [Reach out](mailto:hello@measurementlab.net) with your ideas for
-      hackathons or other convenings! 
+      hackathons or other convenings!
 
 
       ![](/src/assets/community/PS2025IMCHackathon.jpg)
@@ -169,4 +165,3 @@ sections:
         withTOC: false
         content: |+
           ![](/src/assets/community/MLab2025BCN.jpg)
-
