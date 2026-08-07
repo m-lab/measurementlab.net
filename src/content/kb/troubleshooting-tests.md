@@ -6,7 +6,7 @@ chapterOrder: 3
 order: 7
 status: draft
 description: Steps to take when an M-Lab test takes too long, fails to start, or never completes.
-tags: [troubleshooting, tests]
+tags: [Troubleshooting, Tests]
 difficulty: beginner
 ---
 

@@ -6,7 +6,7 @@ chapterOrder: 4
 order: 3
 status: published
 description: M-Lab's Traceroute core service automatically runs a network path measurement from every M-Lab server back to the client for every TCP connection, building a continuous record of Internet routing.
-tags: [core-services, data-access, bigquery, routing, network-topology]
+tags: [Core Services, Data Access, BigQuery, Routing, Network Topology]
 difficulty: intermediate
 ---
 

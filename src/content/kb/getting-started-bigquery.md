@@ -6,7 +6,7 @@ chapterOrder: 5
 order: 1
 status: draft
 description: How to get free access to M-Lab's BigQuery datasets, run your first queries, understand the data structure, and work efficiently with large tables.
-tags: [data-access, bigquery]
+tags: [Data Access, BigQuery]
 difficulty: beginner
 ---
 

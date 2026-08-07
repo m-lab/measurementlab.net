@@ -30,6 +30,13 @@ const DIFFICULTY_TAG_CLASS: Record<string, string> = {
   advanced: 'tag-speed',
 };
 
+/** Frontmatter stores the level lowercase; badges and filters show it capitalised. */
+const DIFFICULTY_LABEL: Record<string, string> = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
+};
+
 interface Props {
   articles: KbCardData[];
   /**
@@ -260,7 +267,7 @@ export default function KnowledgeBaseFilteredGrid({
                           <span
                             className={`tag-base tag-size-sm ${DIFFICULTY_TAG_CLASS[article.difficulty]}`}
                           >
-                            {article.difficulty}
+                            {DIFFICULTY_LABEL[article.difficulty]}
                           </span>
                         )}
                         {article.tags.map((tag) => (

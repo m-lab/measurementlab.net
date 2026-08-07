@@ -6,7 +6,7 @@ chapterOrder: 4
 order: 2
 status: published
 description: M-Lab's packet-headers service captures TCP packet headers for every connection on the M-Lab platform, stored as per-flow .pcap files indexed by UUID.
-tags: [core-services, data-access, pcap, tcp]
+tags: [Core Services, Data Access, PCAP, TCP]
 difficulty: advanced
 ---
 

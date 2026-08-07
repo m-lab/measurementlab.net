@@ -6,7 +6,7 @@ chapterOrder: 7
 order: 4
 status: published
 description: Recommended Prometheus metrics endpoints and Docker logging configuration to prevent disk exhaustion on M-Lab BYOS nodes.
-tags: [node-operations]
+tags: [Node Operations]
 difficulty: intermediate
 ---
 

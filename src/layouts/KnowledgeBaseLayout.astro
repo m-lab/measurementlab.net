@@ -45,6 +45,13 @@ const difficultyVariant = {
   advanced: 'speed',
 } as const;
 
+/** Frontmatter stores the level lowercase; the badge shows it capitalised. */
+const difficultyLabel = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
+} as const;
+
 const siteConfig = await getEntry('site', 'config');
 const archivedBanner = siteConfig?.data.archivedBanner;
 
@@ -125,7 +132,7 @@ const hasToc = Boolean(toc && toc.length > 0);
             difficulty && (
               <div class="mt-4">
                 <Tag variant={difficultyVariant[difficulty]} size="sm">
-                  {difficulty}
+                  {difficultyLabel[difficulty]}
                 </Tag>
               </div>
             )

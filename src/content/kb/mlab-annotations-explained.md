@@ -6,7 +6,7 @@ chapterOrder: 5
 order: 3
 status: published
 description: How M-Lab annotates measurements with geographic and network metadata, the accuracy and limitations of each annotation type, and how to use them correctly in analysis.
-tags: [data-access, internet-quality]
+tags: [Data Access, Internet Quality]
 difficulty: intermediate
 ---
 

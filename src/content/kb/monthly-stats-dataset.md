@@ -6,7 +6,7 @@ chapterOrder: 5
 order: 4
 status: published
 description: What the Monthly Stats dataset is, how it's derived from NDT measurements, what the parquet files contain, and how to access them without BigQuery.
-tags: [data-access, research]
+tags: [Data Access, Research]
 difficulty: beginner
 ---
 

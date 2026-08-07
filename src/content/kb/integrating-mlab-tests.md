@@ -6,7 +6,7 @@ chapterOrder: 3
 order: 6
 status: published
 description: "How to embed M-Lab's open source tests in a website, mobile app, or software product — and how integration partners can contribute infrastructure back to the M-Lab community."
-tags: [tests, ndt, node-operations]
+tags: [Tests, NDT, Node Operations]
 difficulty: intermediate
 ---
 

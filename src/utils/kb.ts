@@ -96,6 +96,7 @@ export interface KbCardData {
   chapter: string;
   chapterOrder: number;
   order: number;
+  /** Written-out tag names, e.g. "Core Services" — see categories/kb.json. */
   tags: string[];
   difficulty?: 'beginner' | 'intermediate' | 'advanced';
   status: 'draft' | 'published' | 'archived';

@@ -6,7 +6,7 @@ chapterOrder: 1
 order: 3
 status: draft
 description: A guide for policymakers, regulators, and government staff who want to use M-Lab data to understand broadband performance, inform policy decisions, and evaluate connectivity programs.
-tags: [getting-started, policy, internet-quality]
+tags: [Getting Started, Policy, Internet Quality]
 difficulty: beginner
 ---
 

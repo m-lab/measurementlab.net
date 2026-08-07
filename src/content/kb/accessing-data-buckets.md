@@ -6,7 +6,7 @@ chapterOrder: 5
 order: 2
 status: published
 description: How to access M-Lab's raw NDT7 data in Google Cloud Storage using gsutil or gcloud without permission errors.
-tags: [data-access]
+tags: [Data Access]
 difficulty: beginner
 ---
 

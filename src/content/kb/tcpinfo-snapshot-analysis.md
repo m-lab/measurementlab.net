@@ -6,7 +6,7 @@ chapterOrder: 6
 order: 2
 status: draft
 description: "A practical guide to M-Lab's TCP INFO snapshot data in BigQuery — how snapshots are collected and thinned, why most rows are noise, how to filter to real tests, and how to use RTT variance data to study latency-sensitive applications like VoIP."
-tags: [research, data-access]
+tags: [Research, Data Access]
 difficulty: intermediate
 ---
 

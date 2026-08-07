@@ -6,7 +6,7 @@ chapterOrder: 7
 order: 5
 status: draft
 description: How to use the M-Lab Locate Service API to verify your node's probability setting and registration status.
-tags: [node-operations]
+tags: [Node Operations]
 difficulty: beginner
 ---
 

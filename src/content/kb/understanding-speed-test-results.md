@@ -6,7 +6,7 @@ chapterOrder: 2
 order: 1
 status: published
 description: Why different speed tests produce different results, and what those differences reveal about your internet connection.
-tags: [speed-test, measurement, ndt]
+tags: [Speed Test, Measurement, NDT]
 difficulty: beginner
 ---
 

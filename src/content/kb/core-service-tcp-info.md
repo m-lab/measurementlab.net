@@ -6,7 +6,7 @@ chapterOrder: 4
 order: 1
 status: published
 description: TCP INFO collects detailed TCP socket statistics from the Linux kernel for every connection on the M-Lab platform, capturing congestion control state, RTT, loss, and dozens of other metrics at regular intervals.
-tags: [core-services, data-access, bigquery, tcp]
+tags: [Core Services, Data Access, BigQuery, TCP]
 difficulty: advanced
 ---
 

@@ -6,7 +6,7 @@ chapterOrder: 7
 order: 2
 status: published
 description: How to fix an M-Lab BYOS node that is unreachable due to a mismatch between the env file IP and the server's actual public IP.
-tags: [node-operations]
+tags: [Node Operations]
 difficulty: beginner
 ---
 

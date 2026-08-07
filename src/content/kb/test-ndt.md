@@ -6,7 +6,7 @@ chapterOrder: 3
 order: 1
 status: draft
 description: "NDT is M-Lab's flagship speed test — it measures single-stream download and upload throughput, latency, and provides TCP-level diagnostics for every test."
-tags: [tests, data-access, bigquery, speed-test]
+tags: [Tests, Data Access, BigQuery, Speed Test]
 difficulty: beginner
 ---
 

@@ -6,7 +6,7 @@ chapterOrder: 7
 order: 1
 status: published
 description: "An overview of M-Lab's Bring Your Own Server program — what it is, what's required, and how hosting a node contributes to global internet measurement."
-tags: [node-operations]
+tags: [Node Operations]
 difficulty: intermediate
 ---
 

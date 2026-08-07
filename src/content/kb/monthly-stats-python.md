@@ -6,7 +6,7 @@ chapterOrder: 5
 order: 6
 status: published
 description: A practical guide to loading, filtering, and visualising M-Lab Monthly Stats parquet files in Python using pandas, without needing BigQuery or a Google Cloud account.
-tags: [data-access, research]
+tags: [Data Access, Research]
 difficulty: intermediate
 ---
 

@@ -163,6 +163,7 @@ Categories control filtering and grouping. Each file in `src/content/categories/
 | `partners.json`     | Partner groupings    | 5     | Supporting Research Projects, Supporting Partners, OMG Partners, BYOS Partners, IMC Hackathon Partners |
 | `publications.json` | Publication types    | 4     | paper, regulatory-filing, presentation, documentation        |
 | `tests.json`        | Test groupings       | 1     | Current Tests                                                |
+| `kb.json`           | Knowledge base tags  | 25    | Core Services, Data Access, BigQuery, NDT, PCAP, Research    |
 
 Each file looks like this:
 

@@ -6,7 +6,7 @@ chapterOrder: 3
 order: 5
 status: published
 description: "Reverse Traceroute reconstructs the network path from an M-Lab server back to a client — the direction that standard traceroute cannot see — using a distributed system of vantage points and spoofed probes."
-tags: [tests, data-access, bigquery, routing, network-topology]
+tags: [Tests, Data Access, BigQuery, Routing, Network Topology]
 difficulty: advanced
 ---
 

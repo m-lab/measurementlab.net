@@ -332,13 +332,13 @@ To attach a downloadable file (like a PDF):
 
 **Where:** Sidebar > **Categories**
 
-Categories are tag groups shared across the site. Different collections (Blog, People, Partners, Publications) each have their own set of categories.
+Categories are tag groups shared across the site. Different collections (Blog, People, Partners, Publications, Knowledge Base) each have their own set of categories.
 
 **Fields:**
 
 | Field          | Required | Description                                                                          |
 | -------------- | -------- | ------------------------------------------------------------------------------------ |
-| **ID**         | Yes      | Which collection this category group belongs to (e.g., `blog`, `people`, `partners`) |
+| **ID**         | Yes      | Which collection this category group belongs to (e.g., `blog`, `people`, `partners`, `kb`) |
 | **Name**       | Yes      | Display name for the group                                                           |
 | **Categories** | Yes      | List of category values                                                              |
 
@@ -352,7 +352,7 @@ Categories are tag groups shared across the site. Different collections (Blog, P
 
 > **Important: your new category will not appear in dropdowns right away.**
 >
-> The Category and Sections dropdowns you see elsewhere in the CMS — on Blog posts, People, Partners and Publications, and on the People Section and Partners Section blocks you add to a page — are not read live from this collection. They are copied into the site's CMS configuration file by an automated job that runs after you save.
+> The Category, Sections and Tags dropdowns you see elsewhere in the CMS — on Blog posts, People, Partners, Publications and Knowledge Base articles, and on the People Section and Partners Section blocks you add to a page — are not read live from this collection. They are copied into the site's CMS configuration file by an automated job that runs after you save.
 >
 > So the sequence is: you save a new category → an automated job updates the configuration → the new value becomes selectable. This usually takes **a couple of minutes**. If the new category is missing from a dropdown, wait a moment and reload the page.
 >
@@ -559,7 +559,7 @@ The Knowledge Base collection is shown at `/kb`. Unlike the other collections, i
 | **Page Order**    | Yes      | Position of this article within its chapter (1, 2, 3…)                          |
 | **Status**        | Yes      | Content visibility: Draft, Published, or Archived                               |
 | **Description**   | No       | Short summary shown under the title and on the landing page card                |
-| **Tags**          | No       | Keywords readers can filter by on the landing page                              |
+| **Tags**          | No       | Keywords readers can filter by on the landing page. Chosen from Categories > Knowledge Base Tags |
 | **Difficulty**    | No       | Beginner, Intermediate, or Advanced — a badge, and a landing page filter        |
 | **Content**       | No       | The article itself (rich text)                                                  |
 

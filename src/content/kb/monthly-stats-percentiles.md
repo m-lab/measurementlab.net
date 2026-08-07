@@ -6,7 +6,7 @@ chapterOrder: 5
 order: 5
 status: published
 description: How to interpret percentile columns in M-Lab Monthly Stats data, including the counterintuitive polarity of latency and loss, and what p50 vs p95 tells you.
-tags: [data-access, internet-quality, research]
+tags: [Data Access, Internet Quality, Research]
 difficulty: intermediate
 ---
 

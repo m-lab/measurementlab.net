@@ -6,7 +6,7 @@ chapterOrder: 2
 order: 3
 status: published
 description: M-Lab enforces 40 tests per day per IP address. Learn what this means and how to work within the limit.
-tags: [internet-quality]
+tags: [Internet Quality]
 difficulty: beginner
 ---
 

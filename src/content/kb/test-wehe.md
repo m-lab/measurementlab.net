@@ -6,7 +6,7 @@ chapterOrder: 3
 order: 4
 status: published
 description: "WeHe tests whether your ISP is treating traffic from specific apps (like YouTube or Spotify) differently from other traffic — detecting throttling or blocking on a per-application basis."
-tags: [tests, data-access, bigquery, net-neutrality, throttling]
+tags: [Tests, Data Access, BigQuery, Net Neutrality, Throttling]
 difficulty: intermediate
 ---
 

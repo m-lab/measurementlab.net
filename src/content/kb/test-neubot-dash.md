@@ -6,7 +6,7 @@ chapterOrder: 3
 order: 3
 status: published
 description: DASH emulates a video streaming player to measure how well a network connection supports adaptive video streaming, without relying on a real video platform.
-tags: [tests, data-access, streaming, network-neutrality]
+tags: [Tests, Data Access, Streaming, Network Neutrality]
 difficulty: beginner
 ---
 

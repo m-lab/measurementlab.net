@@ -5,6 +5,7 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import blogCategories from './content/categories/blog.json';
 import datasetCategories from './content/categories/datasets.json';
+import kbCategories from './content/categories/kb.json';
 import partnerCategories from './content/categories/partners.json';
 import peopleCategories from './content/categories/people.json';
 import publicationsCategories from './content/categories/publications.json';
@@ -99,9 +100,7 @@ const createSchemas = (image: ImageFunction) => {
       type: z.literal('hero'),
       title: z.string(),
       subtitle: z.string().optional(),
-      zigzag: z
-        .enum(zigzagNames)
-        .optional(),
+      zigzag: z.enum(zigzagNames).optional(),
     }),
     SectionCommonSchema.extend({
       type: z.literal('richText'),
@@ -208,9 +207,7 @@ const pagesCollection = defineCollection({
       heroImage: image().optional(),
       permalink: z.string(),
       status: statusSchema,
-      zigzag: z
-        .enum(zigzagNames)
-        .optional(),
+      zigzag: z.enum(zigzagNames).optional(),
       sections: sectionsSchema.optional(),
     });
   },
@@ -534,6 +531,12 @@ const datasetsCollection = defineCollection({
 //
 // `tags` and `difficulty` carry over from the kb.measurementlab.net source.
 // Neither affects reading order — both are filters on the /kb landing page.
+//
+// Tags are a closed vocabulary from src/content/categories/kb.json, the same
+// file the CMS dropdown is generated from by `npm run sync:pages-categories`.
+// As with blog categories, the stored value is the display name, so a tag that
+// is not in that file fails the build rather than quietly creating a
+// one-article filter option.
 // ---------------------------------------------------------------------------
 const kbCollection = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/kb' }),
@@ -545,7 +548,9 @@ const kbCollection = defineCollection({
     order: z.number(),
     status: statusSchema,
     description: z.string().optional(),
-    tags: z.array(z.string()).optional(),
+    tags: z
+      .array(z.enum(kbCategories.categories as [string, ...string[]]))
+      .optional(),
     difficulty: z.enum(['beginner', 'intermediate', 'advanced']).optional(),
   }),
 });

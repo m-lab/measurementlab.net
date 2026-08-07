@@ -6,7 +6,7 @@ chapterOrder: 7
 order: 3
 status: published
 description: Steps to diagnose and fix a stopped or unresponsive register-node component in a Docker BYOS deployment.
-tags: [node-operations]
+tags: [Node Operations]
 difficulty: intermediate
 ---
 

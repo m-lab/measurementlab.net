@@ -6,7 +6,7 @@ chapterOrder: 3
 order: 2
 status: published
 description: "MSAK is M-Lab's configurable multi-stream throughput and UDP latency measurement service — designed for researchers and developers who need more control than single-stream NDT provides."
-tags: [tests, data-access, bigquery, throughput, latency]
+tags: [Tests, Data Access, BigQuery, Throughput, Latency]
 difficulty: intermediate
 ---
 

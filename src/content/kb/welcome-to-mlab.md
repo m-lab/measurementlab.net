@@ -6,7 +6,7 @@ chapterOrder: 1
 order: 1
 status: draft
 description: An introduction to what M-Lab is, what it measures, and how its open data can help you understand internet performance.
-tags: [measurement, research]
+tags: [Measurement, Research]
 difficulty: beginner
 ---
 
