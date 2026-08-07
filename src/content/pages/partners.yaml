@@ -61,6 +61,6 @@ sections:
 
   - type: partners
     background:
-      color: white
+      color: primary-light
       type: full
     title: M-Lab Partners
