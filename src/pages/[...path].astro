@@ -5,6 +5,7 @@ import Banner from '@components/atoms/Banner.astro';
 import BlogLanding from '@components/landing/BlogLanding.astro';
 import DatasetsCatalogJsonLd from '@components/landing/DatasetsCatalogJsonLd.astro';
 import DatasetsLanding from '@components/landing/DatasetsLanding.astro';
+import KnowledgeBaseLanding from '@components/landing/KnowledgeBaseLanding.astro';
 import PeopleLanding from '@components/landing/PeopleLanding.astro';
 import PublicationsLanding from '@components/landing/PublicationsLanding.astro';
 import TestsLanding from '@components/landing/TestsLanding.astro';
@@ -34,7 +35,8 @@ const landingComponents = {
 	publications: PublicationsLanding,
 	people: PeopleLanding,
 	// tests: TestsLanding,
-	datasets: DatasetsLanding
+	datasets: DatasetsLanding,
+	kb: KnowledgeBaseLanding
 } as const;
 
 const LandingComponent =
@@ -61,36 +63,36 @@ const archivedBanner = siteConfig?.data.archivedBanner;
 ---
 
 <PageLayout title={page.data.title} description={page.data.description}>
-	{
-		LandingHead && (
-			<Fragment slot="head">
-				<LandingHead />
-			</Fragment>
-		)
-	}
-	<SectionLayout
-		maxWidth="2xl"
-		bgImage={page.data.heroImage}
-		sectionLabel="hero"
-		zigzag={zigzag}
-	>
-		<HeroSection title={page.data.title} subtitle={page.data.description} />
-	</SectionLayout>
-	{
-		page.data.status === 'archived' && archivedBanner && (
-			<Banner message={archivedBanner.message} color={archivedBanner.color} />
-		)
-	}
-	<!-- Main Page Content (Sections) -->
-	{sections && <Sections sectionItems={sections} />}
+  {
+    LandingHead && (
+      <Fragment slot="head">
+        <LandingHead />
+      </Fragment>
+    )
+  }
+  <SectionLayout
+    maxWidth="2xl"
+    bgImage={page.data.heroImage}
+    sectionLabel="hero"
+    zigzag={zigzag}
+  >
+    <HeroSection title={page.data.title} subtitle={page.data.description} />
+  </SectionLayout>
+  {
+    page.data.status === 'archived' && archivedBanner && (
+      <Banner message={archivedBanner.message} color={archivedBanner.color} />
+    )
+  }
+  <!-- Main Page Content (Sections) -->
+  {sections && <Sections sectionItems={sections} />}
 
-	<!-- Custom landing page content (only for blog, publications, people)  -->
-	{LandingComponent && <LandingComponent />}
+  <!-- Custom landing page content (only for blog, publications, people)  -->
+  {LandingComponent && <LandingComponent />}
 </PageLayout>
 
 <script>
-	const toc = document.querySelector('aside#toc');
-	if (toc) {
-		console.log('TOC aside is present');
-	}
+  const toc = document.querySelector('aside#toc');
+  if (toc) {
+    console.log('TOC aside is present');
+  }
 </script>

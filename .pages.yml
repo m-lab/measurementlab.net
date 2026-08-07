@@ -1273,6 +1273,121 @@ content:
         description: Full documentation for the test
 
   # --------------------------------------------------------------------------
+  # Knowledge Base
+  # --------------------------------------------------------------------------
+  - name: kb
+    label: Knowledge Base
+    type: collection
+    path: src/content/kb
+    format: yaml-frontmatter
+    filename: '{fields.permalink}.md'
+    subfolders: false
+    view:
+      fields: [title, chapter, order, status]
+      primary: title
+      sort: [chapterOrder, order, title]
+      default:
+        sort: chapterOrder
+        order: asc
+    fields:
+      - name: permalink
+        label: Permalink
+        type: string
+        required: true
+        description: URL-friendly identifier. The article is served at /kb/<permalink>.
+        pattern:
+          {
+            message: "Must be a web-safe string like 'getting-started-bigquery'.",
+            regex: '^[a-zA-Z0-9_-]*$',
+          }
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: chapter
+        label: Chapter
+        type: string
+        required: true
+        description: Chapter heading in the knowledge base sidebar (e.g. Getting Started). Must match the other articles of the chapter exactly.
+      - name: chapterOrder
+        label: Chapter Order
+        type: number
+        required: true
+        description: Position of the whole chapter in the sidebar (1, 2, 3...). Use the same number on every article of a chapter.
+      - name: order
+        label: Page Order
+        type: number
+        required: true
+        description: Position of this article within its chapter (1, 2, 3...)
+      - name: status
+        label: Status
+        type: select
+        required: true
+        default: draft
+        options:
+          values:
+            - label: Draft
+              value: draft
+            - label: Published
+              value: published
+            - label: Archived
+              value: archived
+        description: Draft content is only visible on the preview site. New content defaults to Draft.
+      - name: description
+        label: Description
+        type: text
+        description: Short summary shown under the page title and in search results
+      - name: tags
+        label: Tags
+        type: select
+        description: Keywords readers can filter by on the /kb landing page. Does not affect reading order.
+        options:
+          multiple: true
+          # pages-cms:category-sync start kb
+          values:
+            - Advocacy
+            - BigQuery
+            - Core Services
+            - Data Access
+            - Getting Started
+            - Internet Quality
+            - Latency
+            - Measurement
+            - NDT
+            - Net Neutrality
+            - Network Neutrality
+            - Network Operations
+            - Network Topology
+            - Node Operations
+            - PCAP
+            - Policy
+            - Research
+            - Routing
+            - Speed Test
+            - Streaming
+            - TCP
+            - Tests
+            - Throttling
+            - Throughput
+            - Troubleshooting
+          # pages-cms:category-sync end
+      - name: difficulty
+        label: Difficulty
+        type: select
+        options:
+          values:
+            - label: Beginner
+              value: beginner
+            - label: Intermediate
+              value: intermediate
+            - label: Advanced
+              value: advanced
+        description: Shown as a badge under the title, and filterable on the /kb landing page
+      - name: body
+        label: Content
+        type: rich-text
+
+  # --------------------------------------------------------------------------
   # Publications
   # --------------------------------------------------------------------------
   - name: publications

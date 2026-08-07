@@ -92,7 +92,7 @@ const Tag = cardType==="blog" ? 'a' : 'div';
 	class={`block transition-all text-neutral-800  no-underline duration-200 ${className}`}
 >
 	<div
-		class={`houseCard flex h-full flex-col gap-6 border-b-4  ${variantLightStyles[variant]} ${houseWidthStyles[width]} p-4 ${!image && !IconComponent && 'pt-18'}`}
+		class={`notch flex h-full flex-col gap-6 border-b-4  ${variantLightStyles[variant]} ${houseWidthStyles[width]} p-4 ${!image && !IconComponent && 'pt-18'}`}
 	>
 		{(image || IconComponent) && (
 			<div
@@ -141,9 +141,6 @@ const Tag = cardType==="blog" ? 'a' : 'div';
 </Tag>
 
 <style>
-	.houseCard {
-		mask: conic-gradient(from 45deg at 50px 50px, #000 75%, #0000 0) -50px;
-	}
 	.icon-wrapper :global(circle) {
 		fill: var(--icon-circle-fill);
 	}

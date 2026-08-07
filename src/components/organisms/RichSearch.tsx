@@ -10,11 +10,11 @@ import {
 import Fuse, { type FuseResult } from 'fuse.js';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AcademicCapIcon from '~icons/heroicons/academic-cap';
+import BookOpenIcon from '~icons/heroicons/book-open';
 import ChevronRightIcon from '~icons/heroicons/chevron-right-16-solid';
 import DocumentIcon from '~icons/heroicons/document-text';
 import ExclamationTriangleIcon from '~icons/heroicons/exclamation-triangle';
 import FolderIcon from '~icons/heroicons/folder';
-import LifebuoyIcon from '~icons/heroicons/lifebuoy';
 import MagnifyingGlassIcon from '~icons/heroicons/magnifying-glass-20-solid';
 import UserIcon from '~icons/heroicons/user';
 
@@ -122,6 +122,31 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
         name: post.data.title,
         url: `/blog/${post.id}`,
         imageUrl: post.data.heroImage?.src,
+        content:
+          parts.length > 0
+            ? stripMarkdown(parts.join(' ')).slice(0, 2000)
+            : undefined,
+      };
+    },
+  },
+  {
+    name: 'Knowledge Base',
+    apiEndpoint: '/api/kb.json',
+    urlPrefix: '/kb/',
+    icon: BookOpenIcon,
+    modifier: '!',
+    transform: (article: any) => {
+      const parts: string[] = [];
+      if (article.data.description) parts.push(article.data.description);
+      if (article.data.tags?.length) parts.push(article.data.tags.join(' '));
+      if (article.body) parts.push(article.body);
+      return {
+        id: `kb-${article.id}`,
+        name: article.data.title,
+        // The route is keyed on `permalink`, not the file id — they match today
+        // but the schema does not force it.
+        url: `/kb/${article.data.permalink}`,
+        imageUrl: undefined,
         content:
           parts.length > 0
             ? stripMarkdown(parts.join(' ')).slice(0, 2000)
@@ -500,23 +525,6 @@ export default function RichSearch() {
                 </ComboboxOptions>
               )}
 
-            {!loading && rawQuery === '?' && (
-              <div className="px-6 py-14 text-center text-sm sm:px-14">
-                <LifebuoyIcon
-                  className="text-gray-400 mx-auto size-6"
-                  aria-hidden="true"
-                />
-                <p className="text-gray-900 mt-4 font-semibold">
-                  Help with searching
-                </p>
-                <p className="text-gray-600 mt-2">
-                  Quickly search through site content and get results divided by
-                  category. You can also use search modifiers in the footer to
-                  search and show all results from a single category.
-                </p>
-              </div>
-            )}
-
             {!loading &&
               query !== '' &&
               rawQuery !== '?' &&
@@ -538,7 +546,6 @@ export default function RichSearch() {
               )}
 
             <div className="border-gray-100 bg-gray-50 text-gray-600 flex flex-wrap items-center border-t px-4 py-2.5 text-xs">
-              Type{' '}
               {SEARCH_CATEGORIES.map((category) => (
                 <span key={category.name} className="inline-flex items-center">
                   <kbd
@@ -551,22 +558,9 @@ export default function RichSearch() {
                   >
                     {category.modifier}
                   </kbd>{' '}
-                  <span className="">
-                    {`for ${category.name.toLowerCase()}, `}
-                  </span>
+                  <span className="pr-1">{category.name.toLowerCase()}</span>
                 </span>
               ))}
-              <kbd
-                className={classNames(
-                  'mx-1 flex size-5 items-center justify-center border-b border-neutral-300 bg-neutral-50 font-semibold sm:mx-2',
-                  rawQuery === '?'
-                    ? 'border-primary-400 bg-primary-50 text-primary-700'
-                    : 'border-gray-300 text-gray-700'
-                )}
-              >
-                ?
-              </kbd>{' '}
-              for help.
             </div>
           </Combobox>
         </DialogPanel>

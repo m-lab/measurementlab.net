@@ -1,0 +1,46 @@
+---
+import { getCollection, render } from 'astro:content';
+import KnowledgeBaseLayout from '@layouts/KnowledgeBaseLayout.astro';
+import type { TocEntry } from '@stefanprobst/rehype-extract-toc';
+import { isVisible } from '@utils/content';
+import { getKbChapters, getKbNavigation } from '@utils/kb';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('kb');
+
+  return articles
+    .filter((article) => isVisible(article))
+    .map((article) => ({
+      params: { slug: article.data.permalink },
+      props: { article },
+    }));
+}
+
+const { article } = Astro.props;
+const { Content, headings } = await render(article);
+
+// A flat h2/h3 list, not the nested tree @utils/renderMarkdown produces: the TOC
+// component indents by `depth` and only recurses into `children` above depth 2,
+// so a flat list renders identically and skips the tree build.
+const toc: TocEntry[] = headings
+  .filter((h) => h.depth >= 2 && h.depth <= 3)
+  .map((h) => ({ id: h.slug, value: h.text, depth: h.depth }));
+
+const chapters = await getKbChapters();
+const { prev, next } = await getKbNavigation(article.data.permalink);
+---
+
+<KnowledgeBaseLayout
+  title={article.data.title}
+  description={article.data.description}
+  chapter={article.data.chapter}
+  difficulty={article.data.difficulty}
+  status={article.data.status}
+  chapters={chapters}
+  currentPermalink={article.data.permalink}
+  toc={toc}
+  prev={prev}
+  next={next}
+>
+  <Content />
+</KnowledgeBaseLayout>

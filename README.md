@@ -64,6 +64,7 @@ All content lives in `src/content/` with type-safe schemas defined in `src/conte
 | `people/`       | JSON     | Team member profiles                                          |
 | `partners/`     | JSON     | Partner organizations                                         |
 | `tests/`        | Markdown | M-Lab test documentation (supports nested sub-tests)          |
+| `kb/`           | Markdown | Knowledge base articles, organised into chapters at `/kb`     |
 | `datasets/`     | JSON     | Dataset catalog with access points and coverage metadata      |
 | `navigation/`   | JSON     | Menu structure (main.json, footer-1.json, footer-2.json)      |
 | `site/`         | JSON     | Global site configuration (config.json, \_redirects.json)     |
@@ -162,6 +163,7 @@ Categories control filtering and grouping. Each file in `src/content/categories/
 | `partners.json`     | Partner groupings    | 5     | Supporting Research Projects, Supporting Partners, OMG Partners, BYOS Partners, IMC Hackathon Partners |
 | `publications.json` | Publication types    | 4     | paper, regulatory-filing, presentation, documentation        |
 | `tests.json`        | Test groupings       | 1     | Current Tests                                                |
+| `kb.json`           | Knowledge base tags  | 25    | Core Services, Data Access, BigQuery, NDT, PCAP, Research    |
 
 Each file looks like this:
 
@@ -460,6 +462,54 @@ Tests can be nested: a test with sub-tests becomes a folder containing `index.md
 - `order` - Sort order (default 999)
 - `showInIndex` - Whether to show on tests index page (default true)
 - `parentTest` - Parent test permalink for nested tests
+
+### Knowledge Base
+
+Long-form documentation served at `/kb`, laid out as a book: chapters in the left sidebar, an on-page table of contents on the right, and prev/next links at the foot of each article. Content was migrated from [m-lab/knowledgebase](https://github.com/m-lab/knowledgebase).
+
+Create a new `.md` file in `src/content/kb/`:
+
+```markdown
+---
+permalink: my-article
+title: 'My Article'
+chapter: 'Getting Started'
+chapterOrder: 1
+order: 6
+status: published
+description: 'Brief summary shown under the title and on the landing card.'
+tags: [data-access, research]
+difficulty: beginner
+---
+
+Body content. Do not add an `# H1` — the title above is rendered as the page heading,
+so headings in the body should start at `##`.
+```
+
+**Required fields:**
+
+- `permalink` - URL-safe slug; the article is served at `/kb/<permalink>`
+- `title` - Article title, rendered as the `h1`
+- `chapter` - Sidebar chapter heading. Must match the other articles of the chapter **exactly** — the string is the grouping key
+- `chapterOrder` - Position of the chapter in the sidebar. Repeat the same number on every article of a chapter
+- `order` - Position of the article within its chapter
+
+**Optional fields:**
+
+- `status` - Visibility: `draft`, `published`, or `archived` (default: `draft`)
+- `description` - Short summary shown under the title and on the landing card
+- `tags` - Keywords; filterable on the landing page, no effect on reading order
+- `difficulty` - `beginner`, `intermediate`, or `advanced`; badge plus a landing-page filter
+
+Reading order (sidebar, prev/next, and the landing page) all comes from one sort in `getPublishedKbArticles()` (`src/utils/kb.ts`): `chapterOrder`, then `order`, then title as a tie-break.
+
+**The landing page.** `/kb` is a normal entry in the pages collection (`src/content/pages/kb.yaml`), so its title, description, and intro sections are CMS-editable like any other page. `[...path].astro` maps the page id `kb` to `KnowledgeBaseLanding.astro`, which renders the card grid below whatever sections the page defines.
+
+The grid (`Filter/KnowledgeBaseFilteredGrid.tsx`) lays articles out under a heading per chapter, in reading order — the same order as the sidebar. It offers no sort control: the chapter grouping *is* the order. Cards (`KnowledgeBase/KnowledgeBaseCard.tsx`) reuse the publications card style — a neutral panel with a mask-clipped corner and a heavy bottom rule — with the notch and padding scaled down, since these sit three to a row rather than full width. Readers narrow it with chapter, tag, and difficulty filters plus a fuzzy title/description/tag search; a chapter whose articles are all filtered out drops its heading rather than showing an empty section. It is separate from `FilterableContent` because that component sorts by date, which knowledge base articles do not have.
+
+**Search.** Articles are indexed in the site-wide `RichSearch` dialog under a "Knowledge Base" category, reachable with the `!` modifier.
+
+In dev and on the preview site, draft articles are marked `DRAFT` next to the title, in the sidebar, and on the landing cards, so unfinished articles are distinguishable from finished ones while reviewing.
 
 ### Navigation
 

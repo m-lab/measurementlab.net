@@ -50,6 +50,7 @@ The sidebar is organized into three groups:
 - **Tests** — M-Lab measurement tests and documentation
 - **Publications** — Research papers and reports
 - **Datasets** — The published data catalogue
+- **Knowledge Base** — Long-form guides shown at `/kb`
 
 **Site Administration (middle section)**
 
@@ -331,13 +332,13 @@ To attach a downloadable file (like a PDF):
 
 **Where:** Sidebar > **Categories**
 
-Categories are tag groups shared across the site. Different collections (Blog, People, Partners, Publications) each have their own set of categories.
+Categories are tag groups shared across the site. Different collections (Blog, People, Partners, Publications, Knowledge Base) each have their own set of categories.
 
 **Fields:**
 
 | Field          | Required | Description                                                                          |
 | -------------- | -------- | ------------------------------------------------------------------------------------ |
-| **ID**         | Yes      | Which collection this category group belongs to (e.g., `blog`, `people`, `partners`) |
+| **ID**         | Yes      | Which collection this category group belongs to (e.g., `blog`, `people`, `partners`, `kb`) |
 | **Name**       | Yes      | Display name for the group                                                           |
 | **Categories** | Yes      | List of category values                                                              |
 
@@ -351,7 +352,7 @@ Categories are tag groups shared across the site. Different collections (Blog, P
 
 > **Important: your new category will not appear in dropdowns right away.**
 >
-> The Category and Sections dropdowns you see elsewhere in the CMS — on Blog posts, People, Partners and Publications, and on the People Section and Partners Section blocks you add to a page — are not read live from this collection. They are copied into the site's CMS configuration file by an automated job that runs after you save.
+> The Category, Sections and Tags dropdowns you see elsewhere in the CMS — on Blog posts, People, Partners, Publications and Knowledge Base articles, and on the People Section and Partners Section blocks you add to a page — are not read live from this collection. They are copied into the site's CMS configuration file by an automated job that runs after you save.
 >
 > So the sequence is: you save a new category → an automated job updates the configuration → the new value becomes selectable. This usually takes **a couple of minutes**. If the new category is missing from a dropdown, wait a moment and reload the page.
 >
@@ -540,6 +541,41 @@ Keywords describe what a dataset is *about*. They are not shown on the page — 
 Enter only terms specific to this dataset, such as `TCP throughput`, `video streaming`, or `packet loss`. Four M-Lab base terms — Internet measurement, Network performance, Broadband, Open data — are added to every dataset automatically, so there is no need to repeat them (and no harm if you do; duplicates are removed).
 
 Leaving Keywords empty is fine. The dataset still gets the four base terms — but it will then look identical to every other dataset to a search engine, so a few specific terms are worth adding.
+
+### 3.10 Knowledge Base
+
+**Where:** Sidebar > **Knowledge Base**
+
+The Knowledge Base collection is shown at `/kb`. Unlike the other collections, it is laid out as a **book**: articles are grouped into chapters listed down the left-hand side, and each article has Previous / Next links at the bottom, so readers can move through a chapter in order. The `/kb` landing page also lets readers filter the whole collection by chapter, tag, and difficulty.
+
+**Fields:**
+
+| Field             | Required | Description                                                                     |
+| ----------------- | -------- | ------------------------------------------------------------------------------- |
+| **Permalink**     | Yes      | URL identifier (e.g., `getting-started-bigquery`). The article becomes `/kb/getting-started-bigquery` |
+| **Title**         | Yes      | Article title, shown as the heading                                             |
+| **Chapter**       | Yes      | The chapter heading this article appears under (e.g., `Accessing Data`)         |
+| **Chapter Order** | Yes      | Position of the whole chapter in the sidebar (1, 2, 3…)                         |
+| **Page Order**    | Yes      | Position of this article within its chapter (1, 2, 3…)                          |
+| **Status**        | Yes      | Content visibility: Draft, Published, or Archived                               |
+| **Description**   | No       | Short summary shown under the title and on the landing page card                |
+| **Tags**          | No       | Keywords readers can filter by on the landing page. Chosen from Categories > Knowledge Base Tags |
+| **Difficulty**    | No       | Beginner, Intermediate, or Advanced — a badge, and a landing page filter        |
+| **Content**       | No       | The article itself (rich text)                                                  |
+
+> **Important — chapters are grouped by their exact text.** `Accessing Data` and `Accessing data` are two different chapters as far as the sidebar is concerned. When adding an article to an existing chapter, copy the Chapter value from an article already in it rather than retyping it, and give it the **same Chapter Order** as its neighbours. Chapter Order positions the chapter; Page Order positions the article inside it.
+
+**To add an article to an existing chapter:**
+
+1. Open any article already in that chapter and note its **Chapter** and **Chapter Order**.
+2. Create the new article and enter those two values identically.
+3. Set **Page Order** to where it should sit in the chapter — renumber the articles after it if you are inserting in the middle.
+
+**To start a new chapter:** give the first article a new **Chapter** name and a **Chapter Order** that places it where you want among the existing chapters.
+
+**A note on headings:** the Title field is rendered as the article's main heading, so start headings inside the content at level 2 (`##`). A level-1 heading in the body will produce two competing titles, and the table of contents on the right is built from level 2 and 3 headings only.
+
+**The landing page at `/kb`** is edited separately, under Sidebar > **Pages** > *Knowledge Base*. Its title, description, and intro text are ordinary page fields; the filterable grid of article cards is added automatically below them and always reflects what is Published here. You do not need to add or remove cards by hand.
 
 ---
 
@@ -808,6 +844,7 @@ Every piece of content in the CMS maps to a file in the repository. Here's where
 | Publications     | `src/content/publications/`        | JSON (e.g., `2024-the-state-of-ndt.json`)             |
 | Categories       | `src/content/categories/`          | JSON (e.g., `blog.json`)                              |
 | Tests            | `src/content/tests/`               | Markdown with YAML frontmatter (e.g., `ndt/index.md`) |
+| Knowledge Base   | `src/content/kb/`                  | Markdown with YAML frontmatter (e.g., `test-ndt.md`)  |
 | Datasets         | `src/content/datasets/`            | JSON (e.g., `ndt.json`)                               |
 | Navigation Menus | `src/content/navigation/`          | JSON (e.g., `main.json`)                              |
 | Site Settings    | `src/content/site/config.json`     | JSON                                                  |

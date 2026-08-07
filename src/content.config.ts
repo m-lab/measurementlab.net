@@ -5,6 +5,7 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import blogCategories from './content/categories/blog.json';
 import datasetCategories from './content/categories/datasets.json';
+import kbCategories from './content/categories/kb.json';
 import partnerCategories from './content/categories/partners.json';
 import peopleCategories from './content/categories/people.json';
 import publicationsCategories from './content/categories/publications.json';
@@ -99,9 +100,7 @@ const createSchemas = (image: ImageFunction) => {
       type: z.literal('hero'),
       title: z.string(),
       subtitle: z.string().optional(),
-      zigzag: z
-        .enum(zigzagNames)
-        .optional(),
+      zigzag: z.enum(zigzagNames).optional(),
     }),
     SectionCommonSchema.extend({
       type: z.literal('richText'),
@@ -208,9 +207,7 @@ const pagesCollection = defineCollection({
       heroImage: image().optional(),
       permalink: z.string(),
       status: statusSchema,
-      zigzag: z
-        .enum(zigzagNames)
-        .optional(),
+      zigzag: z.enum(zigzagNames).optional(),
       sections: sectionsSchema.optional(),
     });
   },
@@ -519,6 +516,45 @@ const datasetsCollection = defineCollection({
   }),
 });
 
+// ---------------------------------------------------------------------------
+// Knowledge base collection (served at /kb)
+//
+// Long-form documentation organised as a book: chapters in the left sidebar,
+// articles ordered within each chapter, prev/next at the foot of every page.
+//
+// `chapter` is a free-text name rather than a categories/*.json enum because
+// the chapter list is the table of contents — editors reshape it as the
+// knowledge base grows, and an article's chapter is the only thing that puts it
+// in the sidebar. `chapterOrder` must be repeated identically on every article
+// of a chapter; it orders the chapters themselves, and getKbChapters() reads it
+// from whichever article it meets first.
+//
+// `tags` and `difficulty` carry over from the kb.measurementlab.net source.
+// Neither affects reading order — both are filters on the /kb landing page.
+//
+// Tags are a closed vocabulary from src/content/categories/kb.json, the same
+// file the CMS dropdown is generated from by `npm run sync:pages-categories`.
+// As with blog categories, the stored value is the display name, so a tag that
+// is not in that file fails the build rather than quietly creating a
+// one-article filter option.
+// ---------------------------------------------------------------------------
+const kbCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/kb' }),
+  schema: z.object({
+    permalink: z.string(),
+    title: z.string(),
+    chapter: z.string(),
+    chapterOrder: z.number(),
+    order: z.number(),
+    status: statusSchema,
+    description: z.string().optional(),
+    tags: z
+      .array(z.enum(kbCategories.categories as [string, ...string[]]))
+      .optional(),
+    difficulty: z.enum(['beginner', 'intermediate', 'advanced']).optional(),
+  }),
+});
+
 export const collections = {
   people: peopleCollection,
   pages: pagesCollection,
@@ -531,4 +567,5 @@ export const collections = {
   publications: publicationsCollection,
   tests: testsCollection,
   datasets: datasetsCollection,
+  kb: kbCollection,
 };

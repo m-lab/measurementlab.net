@@ -12,11 +12,7 @@ export default function BlogItem({ item }: BlogItemProps) {
   return (
     <a
       href={`/blog/${post.id}`}
-      className="block border-b-4 border-neutral-200 text-neutral-600 no-underline transition-all duration-200"
-      style={{
-        maskImage: 'conic-gradient(from 45deg at 50px 50px, #000 75%, #0000 0)',
-        maskPosition: '-50px',
-      }}
+      className="notch block border-b-4 border-neutral-200 text-neutral-600 no-underline transition-all duration-200"
     >
       <div className={`flex h-full flex-col gap-6 bg-white p-4`}>
         {/* Hero Image */}

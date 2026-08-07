@@ -12,6 +12,9 @@ const FIELD_LABELS: Record<string, { singular: string; plural: string }> = {
   categories: { singular: 'Category', plural: 'Categories' },
   tags: { singular: 'Tag', plural: 'Tags' },
   year: { singular: 'Year', plural: 'Years' },
+  chapter: { singular: 'Chapter', plural: 'Chapters' },
+  // "All Levels" rather than "All Difficulties", which reads badly in the button.
+  difficulty: { singular: 'Difficulty', plural: 'Levels' },
 };
 
 interface FilterDropdownProps {

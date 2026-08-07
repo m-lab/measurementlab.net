@@ -1,0 +1,31 @@
+{
+  "id": "kb",
+  "name": "Knowledge Base Tags",
+  "categories": [
+    "Advocacy",
+    "BigQuery",
+    "Core Services",
+    "Data Access",
+    "Getting Started",
+    "Internet Quality",
+    "Latency",
+    "Measurement",
+    "NDT",
+    "Net Neutrality",
+    "Network Neutrality",
+    "Network Operations",
+    "Network Topology",
+    "Node Operations",
+    "PCAP",
+    "Policy",
+    "Research",
+    "Routing",
+    "Speed Test",
+    "Streaming",
+    "TCP",
+    "Tests",
+    "Throttling",
+    "Throughput",
+    "Troubleshooting"
+  ]
+}
