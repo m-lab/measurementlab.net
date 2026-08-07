@@ -58,7 +58,7 @@ sections:
           variant: primary
           size: md
           text: Join the Community
-          href: /community/
+          href: /community
     buttons:
       - variant: primary
         size: md
