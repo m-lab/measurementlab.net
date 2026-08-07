@@ -7,7 +7,7 @@
       "link": {
         "type": "internal",
         "label": "FAQs",
-        "pageRef": ""
+        "pageRef": "frequently-asked-questions"
       }
     },
     {
@@ -15,7 +15,7 @@
       "link": {
         "type": "internal",
         "label": "Contact us",
-        "pageRef": ""
+        "pageRef": "contact"
       }
     },
     {
@@ -23,7 +23,7 @@
       "link": {
         "type": "internal",
         "label": "Jobs & Opportunities",
-        "pageRef": ""
+        "pageRef": "jobs"
       }
     },
     {
@@ -31,7 +31,7 @@
       "link": {
         "type": "external",
         "label": "Code",
-        "externalUrl": "http://google.com//"
+        "externalUrl": "https://github.com/m-lab"
       }
     }
   ]
