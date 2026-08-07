@@ -6,8 +6,8 @@
       "type": "single",
       "link": {
         "type": "internal",
-        "label": "Discussion group",
-        "pageRef": ""
+        "label": "Community",
+        "pageRef": "community"
       }
     },
     {
@@ -15,24 +15,24 @@
       "link": {
         "type": "internal",
         "label": "M-Lab policies",
-        "pageRef": ""
+        "pageRef": "policies"
       }
     },
     {
       "type": "single",
       "link": {
         "type": "internal",
-        "label": "Privacy policy",
-        "pageRef": "about"
+        "label": "Data",
+        "pageRef": "data"
       }
     },
     {
       "type": "single",
       "link": {
         "type": "internal",
-        "label": "Acceptable use policy",
-        "pageRef": "about"
+        "label": "Tests",
+        "pageRef": "tests"
       }
-     }
+    }
   ]
 }
