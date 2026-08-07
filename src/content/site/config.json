@@ -5,8 +5,6 @@
   "favicon": "/favicon.svg",
   "defaultOgImage": "/src/assets/mlab-og.png",
   "social": {
-    "bluesky": "#",
-    "mastodon": "#",
     "github": "https://github.com/m-lab",
     "linkedin": "https://www.linkedin.com/company/measurementlab",
     "x": "https://x.com/measurementlab",
