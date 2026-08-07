@@ -8,7 +8,52 @@ sections:
       color: primary-light
       type: full
     withTOC: false
-    content: "[add content]"
+    content: |-
+      The Internet powers modern life—driving economies, education, and innovation. As a critical infrastructure, understanding and improving its performance isn’t optional—it’s essential.
+
+      M-Lab exists to make the Internet more transparent, measurable, and accountable. Our global platform provides open tools and datasets that help researchers, policymakers, journalists, and the public understand how Internet networks actually perform.
+
+      Maintaining this open infrastructure requires ongoing support. Contributions help us operate measurement servers around the world, maintain open-source tools, and keep Internet performance data freely available to anyone who needs it. If you believe the Internet should be open, measurable, and accountable, we invite you to support M-Lab.
+
+      ## **Who Benefits from Your Support?** 
+
+      - Computer scientists can propose measurements to be hosted as services.
+      - Policymakers and Advocates can evaluate Internet access and performance for their communities.
+      - Internet Users can run tests and contribute to research as citizen scientists.
+      - Internet researchers can conduct large-scale Internet studies using open datasets.
+      - Organizations with Data can publish and share open Internet measurement datasets.
+
+      ##   
+      Organizational Sponsorship
+
+      Organizations that rely on open Internet measurement data can support M-Lab through financial sponsorship. Sponsorship helps sustain the platform and expand the global network of measurement infrastructure. If your organization is interested in supporting M-Lab, please review our sponsorship opportunities or contact us to learn more.
+
+      M-Lab offers tiered sponsorship opportunities to align with your organization's goals and the level of impact you wish to achieve.
+
+      ![](</src/assets/images/sponsorship/M-Lab 2026 Sponsor Tiers.png>)
+
+      If your organization is interested in supporting the M-Lab platform, please [contact us](mailto:hello@measurementlab.net).
+
+
+
+      ### Individual Donations
+
+      Individuals can support M-Lab through [GitHub Sponsors](https://github.com/sponsors/m-lab). Contributions of any size help us maintain the platform and continue developing open-source measurement tools.
+
+      Every contribution helps strengthen the shared infrastructure that supports research, transparency, and accountability on the Internet. 
+
+      ### Infrastructure Partner 
+
+      The M-Lab platform is entirely donated. There are a few ways to become an infrastructure partner:
+
+      - [Bring Your Own Server](/byos): network providers run M-Lab’s software on their own infrastructure and join an open source global measurement platform. 
+      - Provide hardware for M-Lab to integrate into the platform. 
+      - Donate virtual servers or cloud credits.
+      - Contribute transit to facilitate Internet measurement tests. 
+
+      If you’d like to provide hardware, cloud credits, or transit please [contact us directly.](mailto:support@measurementlab.net) 
+
+      If you’d like to participate in BYOS, review the [requirements](https://www.measurementlab.net/contribute/host-managed/) and submit an **[Infrastructure Contribution Form](https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFmN3cW6onvLsCxkd3UnECVd9Q/viewform)**.
   - type: partners
     background:
       color: primary-medium
