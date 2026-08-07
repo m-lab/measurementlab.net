@@ -1,11 +1,11 @@
 title: Internet Measurement Tests
 permalink: tests
 status: published
-zigzag: supporting2-light
+zigzag: speed-dark
 sections:
   - type: richText
     background:
-      color: white
+      color: speed-light
       type: full
     withTOC: false
     content: >+
