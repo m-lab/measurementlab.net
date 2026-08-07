@@ -24,7 +24,7 @@ sections:
 
       ### Who runs M-Lab?
 
-      M-Lab is an open source project with contributors from civil society organizations, educational institutions, and private companies. It is a fiscally sponsored project of [Code for Science & Society](https://codeforscience.org/). M-Lab's infrastructure and operations are supported by [academic institutions, private foundations, and private companies](https://www.measurementlab.net/who#supporting-partners).
+      M-Lab is an open source project with contributors from civil society organizations, educational institutions, and private companies. It is a fiscally sponsored project of [Superbloom Desig](https://superbloom.design/)n. M-Lab's infrastructure and operations are supported by [academic institutions, private foundations, and private companies](https://www.measurementlab.net/who#supporting-partners).
 
       ### How can I contact M-Lab?
 
@@ -48,7 +48,7 @@ sections:
       Three factors drive differences between tests: (1) M-Lab always tests **off-net** — traffic crosses your ISP's network border, where congestion is most likely to occur; (2) NDT uses a **single TCP stream**, which is more sensitive to network problems than multi-stream tests; (3) Internet routing changes constantly, so results from different moments in time reflect different conditions.
 
       → [Understanding Speed Test Results](https://kb.measurementlab.net/understanding-speed-test-results) 
-      
+
       ### Will these tests monitor my private Internet activity?
 
       No. M-Lab tests measure only synthetic traffic between your device and an M-Lab server. Your browsing history, email, and other private traffic are never collected. See our [Privacy Policy](https://www.measurementlab.net/privacy) and [Acceptable Use Policy](https://www.measurementlab.net/aup) for details.
@@ -129,9 +129,3 @@ sections:
       ---
 
       *Have a question not answered here? Email [support@measurementlab.net](mailto:support@measurementlab.net)*
-  - type: partners
-    background:
-      color: white
-      type: full
-    title: Supporters
-    category: Supporting Partners
