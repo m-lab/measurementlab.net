@@ -28,8 +28,8 @@ export default function KnowledgeBaseFilteredGrid({
   const [tags, setTags] = useState<string[]>([]);
   const [difficulties, setDifficulties] = useState<string[]>([]);
 
-  const hasFiltersSet =
-    !!searchText || !!chapters.length || !!tags.length || !!difficulties.length;
+  // const hasFiltersSet =
+  //   !!searchText || !!chapters.length || !!tags.length || !!difficulties.length;
 
   // Chapter options stay in reading order rather than alphabetical — the
   // dropdown then mirrors the sidebar on the article pages. Articles arrive
@@ -103,12 +103,12 @@ export default function KnowledgeBaseFilteredGrid({
     return Array.from(byChapter, ([name, items]) => ({ name, items }));
   }, [visible]);
 
-  const clearAll = () => {
-    setSearchText('');
-    setChapters([]);
-    setTags([]);
-    setDifficulties([]);
-  };
+  // const clearAll = () => {
+  //   setSearchText('');
+  //   setChapters([]);
+  //   setTags([]);
+  //   setDifficulties([]);
+  // };
 
   return (
     <div>
@@ -186,7 +186,7 @@ export default function KnowledgeBaseFilteredGrid({
       </div>
 
       {/* Result count and reset */}
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-6 pt-8">
+      {/* <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-6 pt-8">
         <p className="text-sm text-neutral-600">
           {visible.length} {visible.length === 1 ? 'article' : 'articles'}
           {hasFiltersSet ? ` of ${articles.length}` : ''}
@@ -200,7 +200,7 @@ export default function KnowledgeBaseFilteredGrid({
             Clear filters
           </button>
         )}
-      </div>
+      </div> */}
 
       <div className="mx-auto max-w-7xl px-6 py-8">
         {groups.length > 0 ? (
