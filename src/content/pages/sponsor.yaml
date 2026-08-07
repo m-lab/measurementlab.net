@@ -1,6 +1,6 @@
 title: Support M-Lab
 permalink: support
-status: draft
+status: published
 zigzag: primary-dark
 sections:
   - type: richText
@@ -15,7 +15,7 @@ sections:
 
       Maintaining this open infrastructure requires ongoing support. Contributions help us operate measurement servers around the world, maintain open-source tools, and keep Internet performance data freely available to anyone who needs it. If you believe the Internet should be open, measurable, and accountable, we invite you to support M-Lab.
 
-      ## **Who Benefits from Your Support?** 
+      ## **Who Benefits from Your Support?**
 
       - Computer scientists can propose measurements to be hosted as services.
       - Policymakers and Advocates can evaluate Internet access and performance for their communities.
@@ -23,7 +23,8 @@ sections:
       - Internet researchers can conduct large-scale Internet studies using open datasets.
       - Organizations with Data can publish and share open Internet measurement datasets.
 
-      ##   
+
+
       Organizational Sponsorship
 
       Organizations that rely on open Internet measurement data can support M-Lab through financial sponsorship. Sponsorship helps sustain the platform and expand the global network of measurement infrastructure. If your organization is interested in supporting M-Lab, please review our sponsorship opportunities or contact us to learn more.
@@ -42,14 +43,16 @@ sections:
 
       Every contribution helps strengthen the shared infrastructure that supports research, transparency, and accountability on the Internet. 
 
-      ### Infrastructure Partner 
+      ### Infrastructure Partner
 
       The M-Lab platform is entirely donated. There are a few ways to become an infrastructure partner:
 
       - [Bring Your Own Server](/byos): network providers run M-Lab’s software on their own infrastructure and join an open source global measurement platform. 
       - Provide hardware for M-Lab to integrate into the platform. 
       - Donate virtual servers or cloud credits.
-      - Contribute transit to facilitate Internet measurement tests. 
+      - Contribute transit to facilitate Internet measurement tests.
+
+
 
       If you’d like to provide hardware, cloud credits, or transit please [contact us directly.](mailto:support@measurementlab.net) 
 
