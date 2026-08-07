@@ -136,16 +136,16 @@
       "type": "single",
       "link": {
         "type": "internal",
-        "label": "Section Showcase",
-        "pageRef": "section-showcase"
+        "label": "Support M-Lab",
+        "pageRef": "support"
       }
     },
     {
       "type": "single",
       "link": {
         "type": "internal",
-        "label": "Support M-Lab",
-        "pageRef": "support"
+        "label": "Section Showcase",
+        "pageRef": "section-showcase"
       }
     }
   ]
