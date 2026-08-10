@@ -25,6 +25,11 @@
           "type": "internal",
           "label": "Policies",
           "pageRef": "policies"
+        },
+        {
+          "type": "internal",
+          "label": "Section Showcase",
+          "pageRef": "section-showcase"
         }
       ]
     },
@@ -138,14 +143,6 @@
         "type": "internal",
         "label": "Support M-Lab",
         "pageRef": "support"
-      }
-    },
-    {
-      "type": "single",
-      "link": {
-        "type": "internal",
-        "label": "Section Showcase",
-        "pageRef": "section-showcase"
       }
     }
   ]
