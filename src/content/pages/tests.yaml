@@ -117,3 +117,18 @@ sections:
       - /tests/ooni/
       - /tests/pathload2/
       - /tests/shaperprobe/
+  - type: flexi
+    background:
+      color: speed-light
+      type: full
+    title: Run a Speed Test
+    sections:
+      - type: button
+        background:
+          color: speed-light
+          type: full
+        buttons:
+          - variant: primary
+            size: md
+            text: M-Lab Speed Test
+            href: https://speed.measurementlab.net/
