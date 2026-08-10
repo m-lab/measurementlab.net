@@ -23,11 +23,10 @@ sections:
 
       Our knowledge base covers how to query the various M-Lab archives and datasets. We provide ready-to-use datasets (available here) and documentation in the [Knowledge Base](/kb). We also have a [Getting Started Page for Researchers]([https://kb.measurementlab.net/getting-started-researchers/](https://kb.measurementlab.net/getting-started-researchers/)) in the Knowledge Base that can help you getting started with learning about tests, dataset limitations, and advanced querying of M-Lab data. If you have questions, please [contact us](mailto:support@measurementlab.net).     
 
+      ## Data License and Citing M-Lab Data
 
-      ## Data License and Citing M-Lab Data  
-
-      All data collected by M-Lab tests are available to the public without restriction under a [No Rights Reserved [Creative Commons Zero Waiver](http://creativecommons.org/about/cc0).Please cite M-Lab data sets as follows: The M-Lab *test name* Data Set, *date range used*. *M-Lab test URL *  
-      For example:The M-Lab NDT Data Set 2009-02-11–2015-12-21. [https://measurementlab.net/tests/ndtor](https://measurementlab.net/tests/ndt](/tests/ndt)or), in [BibTeX]([https://en.wikipedia.org/wiki/BibTeX](https://en.wikipedia.org/wiki/BibTeX)) format:```bibtex
+      All data collected by M-Lab tests are available to the public without restriction under a [No Rights Reserved Creative Commons Zero Waiver.](https://creativecommons.org/2008/04/16/cc0-betadiscussion-draft-2/) Please cite M-Lab data sets as follows: The M-Lab test name Data Set, date range used. *M-Lab test URL *  
+      For example:The M-Lab NDT Data Set 2009-02-11–2015-12-21. [[https://measurementlab.net/tests/ndtor](https://measurementlab.net/tests/ndt](/tests/ndt)or), in [BibTeX]([https://en.wikipedia.org/wiki/BibTeX](https://en.wikipedia.org/wiki/BibTeX)) format:```bibtex
 
       @misc{mlab,
 
