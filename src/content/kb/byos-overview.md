@@ -5,11 +5,13 @@ chapter: Running a Node
 chapterOrder: 7
 order: 1
 status: published
-description: "An overview of M-Lab's Bring Your Own Server program — what it is, what's required, and how hosting a node contributes to global internet measurement."
-tags: [Node Operations]
+description: An overview of M-Lab's Bring Your Own Server program — what it is,
+  what's required, and how hosting a node contributes to global internet
+  measurement.
+tags:
+  - Node Operations
 difficulty: intermediate
 ---
-
 M-Lab's **Bring Your Own Server (BYOS)** program lets organizations host M-Lab measurement nodes on their own infrastructure. BYOS nodes expand M-Lab's test server coverage and let you run standardized measurements from your network.
 
 ## Why Host a Node?
@@ -24,13 +26,15 @@ BYOS is used by ISPs, academic institutions, research networks, and community br
 
 ### Hardware / VPS
 
+
 | Resource | Minimum | Recommended |
-|----------|---------|-------------|
+| --------- | ------------- | ---------------- |
 | CPU | 4 cores | 8+ cores |
 | RAM | 8 GB | 16 GB |
 | Storage | 50 GB SSD | 100 GB SSD |
 | Bandwidth | 1 Gbps | 10 Gbps |
 | OS | Ubuntu 20.04+ | Ubuntu 22.04 LTS |
+
 
 ### Network Requirements
 
@@ -46,7 +50,7 @@ BYOS is used by ISPs, academic institutions, research networks, and community br
 
 ## Getting Started
 
-1. **Apply to the BYOS program** — contact M-Lab at [measurementlab.net](https://measurementlab.net/contribute) to express interest
+1. **Apply to the BYOS program** — fill out the [Infrastructure Contributor Form](https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFmN3cW6onvLsCxkd3UnECVd9Q/viewform) to express interest
 2. **Receive credentials** — M-Lab will provide your node's configuration files and registration credentials
 3. **Deploy the Docker stack** — follow the provided deployment guide to start the containers
 4. **Verify registration** — use the Locate API to confirm your node is visible and serving tests
@@ -62,14 +66,16 @@ Your node's hostname will appear in the response when it's successfully register
 
 The BYOS stack runs these Docker containers:
 
+
 | Container | Role |
-|-----------|------|
+| ------------------- | ------------------------------------------- |
 | `ndt-server` | Handles NDT7 and NDT5 test connections |
 | `register-node` | Registers the node with M-Lab's Locate API |
 | `tcp-info` | Collects kernel TCP statistics during tests |
 | `traceroute-caller` | Runs Scamper traceroutes to clients |
 | `uuid-annotator` | Annotates measurements with metadata |
 | `host-service` | Exports Prometheus metrics for monitoring |
+
 
 All containers are maintained by M-Lab and updated automatically via the provided configuration.
 
@@ -81,7 +87,8 @@ Measurements from BYOS nodes flow through M-Lab's standard data pipeline:
 - Data is processed and published to BigQuery within ~24 hours
 - You can filter for your node's data using the `server.Site` field in BigQuery:
 
-<!-- sqltest -->
+
+
 ```sql
 -- Query a specific site-id for BYOS test data
 SELECT a.TestTime, a.MeanThroughputMbps, client.Network.ASName
@@ -97,4 +104,3 @@ See the [Docker BYOS Monitoring and Logging](#) article for recommended Promethe
 
 ---
 
-<!-- TODO: Add step-by-step deployment walkthrough with the actual Docker Compose file structure. Add section on the Experiment Review Committee process for nodes hosting additional experiments. Add troubleshooting FAQ links. Include expected traffic volumes and what to expect in the first week after registration. -->
