@@ -1,7 +1,8 @@
 title: Data Catalog
 permalink: datasets
 status: published
-description: Open Internet measurement data released under CC0 — freely available for research, policy, and public interest analysis.
+description: Open Internet measurement data released under CC0 — freely
+  available for research, policy, and public interest analysis.
 zigzag: supporting1-light
 sections:
   - type: richText
@@ -9,5 +10,43 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: >-
+    content: |-
+      # Overview
+
+       M-Lab as a platform collects test data from many experiments running across our community. If you're new here, you can browse datasets to find published and archival data from across M-Lab's many experiments and tests. If you'd like to learn more about the tests that drive M-Lab data collection, you can browse our [current and historical tests](/tests) which drive data into our various datasets in M-Lab.
+
+      ## Data Sets 
+
       M-Lab data is published in two forms: **enriched data** (parsed, annotated, and queryable via BigQuery or available as pre-computed summaries) and **archival data** (measurement logs on Google Cloud Storage for deeper analysis). Both are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) with no restrictions on use.
+
+      ## M-Lab Data Documentation
+
+        
+      Our knowledge base covers how to query the various M-Lab archives and datasets. We provide ready-to-use datasets (available here) and documentation in the [Knowledge Base](/kb). We also have a [Getting Started Page for Researchers]([https://kb.measurementlab.net/getting-started-researchers/](https://kb.measurementlab.net/getting-started-researchers/)) in the Knowledge Base that can help you getting started with learning about tests, dataset limitations, and advanced querying of M-Lab data. If you have questions, please [contact us](mailto:support@measurementlab.net).   
+        
+      Data License and Citing M-Lab Data  
+        
+      All data collected by M-Lab tests are available to the public without restriction under a [No Rights Reserved [Creative Commons Zero Waiver](http://creativecommons.org/about/cc0).Please cite M-Lab data sets as follows: The M-Lab *test name* Data Set, *date range used*. *M-Lab test URL *  
+      For example:The M-Lab NDT Data Set 2009-02-11–2015-12-21. [[https://measurementlab.net/tests/ndt](/tests/ndt)or](https://measurementlab.net/tests/ndt](/tests/ndt)or), in [BibTeX]([https://en.wikipedia.org/wiki/BibTeX](https://en.wikipedia.org/wiki/BibTeX)) format:```bibtex
+
+      @misc{mlab,
+
+              author="{Measurement Lab}",
+
+              title="The {M}-{L}ab {NDT} Data Set",
+
+              year="(2009-02-11 -- 2015-12-21)",
+
+              howpublished="\url{[https://measurementlab.net/tests/ndt](https://measurementlab.net/tests/ndt)}",
+
+              comment="Depending on if you used [viz.measurementlab.net](http://viz.measurementlab.net), bigquery, or the raw data, please use one of the following notes:",
+
+              note="Bigquery table {\tt [measurement-lab.ndt.download](http://measurement-lab.ndt.download)}",
+
+              note1="Google cloud storage {\tt gs://archive-measurement-lab/ndt}",
+
+              note2="Data visualization system \url{[https://viz.measurementlab.net](https://viz.measurementlab.net)}",
+
+      }
+
+      ```
