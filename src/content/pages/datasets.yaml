@@ -17,7 +17,7 @@ sections:
 
       ## Data Sets
 
-      M-Lab data is published in two forms: **enriched data** (parsed, annotated, and queryable via BigQuery or available as pre-computed summaries) and **archival data** (measurement logs on Google Cloud Storage for deeper analysis). Both are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) with no restrictions on use.
+      M-Lab data is published in two forms: **enriched data** (parsed, annotated, and queryable via BigQuery or available as pre-computed summaries) and **archival data** (measurement logs on Google Cloud Storage for deeper analysis). Both are released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) with no restrictions on use. Keep scrolling to find them! 
 
       ## M-Lab Data Documentation
 
