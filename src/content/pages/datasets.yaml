@@ -28,8 +28,9 @@ sections:
       All data collected by M-Lab tests are available to the public without restriction under a [No Rights Reserved Creative Commons Zero Waiver.](https://creativecommons.org/2008/04/16/cc0-betadiscussion-draft-2/) Please cite M-Lab data sets as follows: The M-Lab test name Data Set, date range used. *M-Lab test URL *  
       For example:The M-Lab NDT Data Set 2009-02-11–2015-12-21. [[https://measurementlab.net/tests/ndtor](https://measurementlab.net/tests/ndt](/tests/ndt)or), in [BibTeX]([https://en.wikipedia.org/wiki/BibTeX](https://en.wikipedia.org/wiki/BibTeX)) format:  
 
+
+
       ```
-      ```bibtex
       @misc{mlab,
               author="{Measurement Lab}",
               title="The {M}-{L}ab {NDT} Data Set",
