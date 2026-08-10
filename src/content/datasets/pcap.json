@@ -1,0 +1,49 @@
+{
+  "id": "pcap",
+  "title": "Packet Header Data Set",
+  "status": "draft",
+  "description": "The M-Lab packet-headers service provides a binary which collects packet headers for all incoming TCP flows and saves each stream of packet captures into a per-stream .pcap file where the filename is the UUID of the TCP flow. It only saves the packet headers, and it supports (with a command-line flag) IP anonymity for the saved addresses.",
+  "temporalCoverageStart": "2019-11-01",
+  "temporalCoverageEnd": "present",
+  "spatialCoverage": "Global",
+  "accessPoints": [
+    {
+      "label": "Host Server Packet Captures",
+      "url": "https://console.cloud.google.com/storage/browser/archive-measurement-lab/host/pcap/",
+      "format": "tgz",
+      "type": "download",
+      "description": "Gziped .pcap files "
+    },
+    {
+      "label": "NDT Packet Captures",
+      "url": "https://console.cloud.google.com/storage/browser/archive-measurement-lab/ndt/pcap/",
+      "format": "tgz",
+      "type": "download",
+      "description": "Gziped .pcap files "
+    },
+    {
+      "label": "Neubot Packet Captures",
+      "url": "https://console.cloud.google.com/storage/browser/archive-measurement-lab/neubot/pcap/",
+      "format": "tgz",
+      "type": "download",
+      "description": "Gziped .pcap files "
+    },
+    {
+      "label": "Wehe Packet Captures",
+      "url": "Raw packet capture from NDT test runs (.pcap) tgzd",
+      "format": "tgz",
+      "type": "download",
+      "description": "Gziped .pcap files "
+    }
+  ],
+  "documentationLinks": [
+    {
+      "label": "Packet Header Service",
+      "url": "https://github.com/m-lab/packet-headers"
+    },
+    {
+      "label": "UUID System",
+      "url": "https://github.com/m-lab/uuid"
+    }
+  ]
+}
