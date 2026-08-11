@@ -12,7 +12,6 @@ authors:
   - pavlos-sermpezis
 status: published
 publishedDate: 2025-11-12
-heroImage: ../../assets/community/2024HackathonGroup.jpg
 categories:
   - Event
   - Community
