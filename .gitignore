@@ -35,3 +35,7 @@ test-results
 
 # Playwright files
 .playwright-mcp/
+
+# Lychee folders and cache
+lychee/
+.lycheecache

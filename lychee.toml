@@ -1,0 +1,16 @@
+timeout = 20
+max_retries = 3
+max_concurrency = 32
+
+exclude = [
+  '^https?://localhost',
+  '^https?://127\.0\.0\.1',
+  # skip netlify's preprocessed images -- we will still catch broken images in the astro build process
+  '/\.netlify/images',
+]
+
+accept = ["200", "206", "429"]
+user_agent = "Mozilla/5.0 (compatible; lychee)"
+
+cache = true
+max_cache_age = "1d"

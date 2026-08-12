@@ -1,0 +1,145 @@
+# .github/workflows/linkcheck.yml
+
+# Github Action that checks all links on the site build,
+# and updates a GH issue with the current state of link quality
+# has two options: [linkcheck] for internal-only (skips network, very fast)
+# and [linkcheck-full] that includes all links, and is quite slower
+# Can be triggered with a commit, by adding
+# [linkcheck]
+# or [linkcheck-full]
+# to the commit message.
+# It can also be triggered manually from Github Actions.
+name: Link check
+
+on:
+  workflow_dispatch:
+    inputs:
+      offline:
+        description: "Internal links only (skip network)"
+        type: boolean
+        default: true
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  linkcheck:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.head_commit.message, '[linkcheck]') ||
+      contains(github.event.head_commit.message, '[linkcheck-full]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Determine mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            offline="${{ inputs.offline }}"
+          elif [[ "${{ github.event.head_commit.message }}" == *"[linkcheck-full]"* ]]; then
+            offline=false
+          else
+            offline=true
+          fi
+          echo "offline=$offline" >> "$GITHUB_OUTPUT"
+          [ "$offline" = "true" ] && echo "flag=--offline" >> "$GITHUB_OUTPUT" || echo "flag=" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+      # We use Lychee for link checking
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
+      - name: Check links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          fail: false
+          args: >-
+            --no-progress
+            --root-dir ${{ github.workspace }}/dist
+            ${{ steps.mode.outputs.flag }}
+            'dist/**/*.html'
+
+      # We add some metadata to Lychee's report, like time of last run
+      - name: Build report
+        run: |
+          if [ "${{ steps.mode.outputs.offline }}" = "true" ]; then
+            mode="internal only"
+          else
+            mode="internal + external"
+          fi
+          {
+            echo "_Last run: $(date -u '+%Y-%m-%d %H:%M UTC') · mode: ${mode} · commit \`${GITHUB_SHA:0:7}\` · [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})_"
+            echo
+            cat ./lychee/out.md
+          } > ./lychee/report.md
+
+      # We update the current issue with the new run,
+      # and copy the old run in comments
+      - name: Find existing report issue
+        id: existing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          number=$(gh issue list \
+            --label linkcheck --state open --limit 1 \
+            --json number --jq '.[0].number // empty')
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+
+      - name: Archive previous report
+        if: steps.lychee.outputs.exit_code != 0 && steps.existing.outputs.number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue view ${{ steps.existing.outputs.number }} \
+            --json body --jq .body > previous.md
+
+          # Compare only the lychee output, ignoring the timestamp header
+          if diff -q <(tail -n +3 previous.md) ./lychee/out.md >/dev/null 2>&1; then
+            echo "Report unchanged — skipping archive."
+            exit 0
+          fi
+
+          {
+            echo "<details>"
+            echo "<summary>Previous report (archived $(date -u '+%Y-%m-%d %H:%M UTC'))</summary>"
+            echo
+            sed 's/^\( *\)- \[[ x]\] /\1- /' previous.md
+            echo
+            echo "</details>"
+          } > archive.md
+
+          gh issue comment ${{ steps.existing.outputs.number }} --body-file archive.md
+
+      - name: Update or open report issue
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Broken links report
+          content-filepath: ./lychee/report.md
+          issue-number: ${{ steps.existing.outputs.number }}
+          labels: linkcheck, automated
+
+      - name: Close report issue when clean
+        if: steps.lychee.outputs.exit_code == 0 && steps.existing.outputs.number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue close ${{ steps.existing.outputs.number }} \
+            --comment "All links passing as of ${{ github.sha }}."
