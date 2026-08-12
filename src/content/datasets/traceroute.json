@@ -1,0 +1,89 @@
+{
+  "id": "traceroute",
+  "title": "Traceroute Data Set",
+  "status": "published",
+  "description": "For every TCP connection to an M-Lab server, the Traceroute core service collects network path information from the M-Lab server back to the client IP that initiated the connection. This traceroute collection is done by M-Lab's traceroute-caller which uses traceroute tools like Paris Traceroute and scamper (from the Center for Applied Internet Data Analysis) to collect the actual traceroute data between the M-Lab server and the client. For every TCP connection, traceroute-caller generates two files: traceroute data (scamper1 datatype) and hop annotations (hopannotation1 datatype), which are archived in Google Cloud Storage and parsed into Google BigQuery tables.",
+  "category": "raw",
+  "relatedDatasets": [
+    "ndt",
+    "neubot",
+    "tcpinfo"
+  ],
+  "temporalCoverageStart": "2013-05-01",
+  "temporalCoverageEnd": "present",
+  "spatialCoverage": "Global",
+  "accessPoints": [
+    {
+      "label": "NDT scamper1 (March 2019 to Present)",
+      "url": "https://console.cloud.google.com/storage/browser/archive-measurement-lab/ndt/scamper1/",
+      "format": "tgz",
+      "type": "download",
+      "description": "Compressed tar files containing JSONL-formatted scamper traceroute data for NDT measurement services, organized by date."
+    },
+    {
+      "label": "Host scamper1 (March 2019 to Present)",
+      "url": "https://console.cloud.google.com/storage/browser/archive-measurement-lab/host/scamper1/",
+      "format": "tgz",
+      "type": "download",
+      "description": "Compressed tar files containing JSONL-formatted scamper traceroute data for the M-Lab host server, organized by date."
+    },
+    {
+      "label": "Neubot scamper1 (March 2019 to Present)",
+      "url": "https://console.cloud.google.com/storage/browser/archive-measurement-lab/neubot/scamper1/",
+      "format": "tgz",
+      "type": "download",
+      "description": "Compressed tar files containing JSONL-formatted scamper traceroute data for Neubot measurement services, organized by date."
+    },
+    {
+      "label": "Paris Traceroute (May 2013 to November 2019)",
+      "url": "https://console.cloud.google.com/storage/browser/archive-measurement-lab/paris-traceroute/",
+      "format": "tgz",
+      "type": "download",
+      "description": "Compressed tar files containing unstructured text .paris files from the Paris Traceroute tool, organized by M-Lab server and date."
+    },
+    {
+      "label": "scamper1 BigQuery Table",
+      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=ndt_raw&t=scamper1&page=table",
+      "format": "BigQuery",
+      "type": "bigquery",
+      "description": "BigQuery table for scamper1 traceroute data using standard columns: measurement-lab.ndt_raw.scamper1"
+    },
+    {
+      "label": "paris1_legacy BigQuery Table",
+      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=ndt_raw&t=paris1_legacy&page=table",
+      "format": "BigQuery",
+      "type": "bigquery",
+      "description": "BigQuery table for legacy Paris Traceroute data: measurement-lab.ndt_raw.paris1_legacy. Note: M-Lab is no longer using the Paris Traceroute tool."
+    }
+  ],
+  "documentationLinks": [
+    {
+      "label": "traceroute-caller Source Code",
+      "url": "https://github.com/m-lab/traceroute-caller"
+    },
+    {
+      "label": "scamper Source Code",
+      "url": "https://www.caida.org/catalog/software/scamper/"
+    },
+    {
+      "label": "Paris Traceroute Source Code",
+      "url": "https://github.com/libparistraceroute/libparistraceroute"
+    },
+    {
+      "label": "scamper1 Schema",
+      "url": "https://measurementlab.net/tests/traceroute/scamper1-schema"
+    },
+    {
+      "label": "Long Term Supported Schemas Using Standardized BigQuery Columns",
+      "url": "https://measurementlab.net/blog/long-term-supported-schemas"
+    },
+    {
+      "label": "BigQuery QuickStart",
+      "url": "https://measurementlab.net/quickstart"
+    },
+    {
+      "label": "Citing the M-Lab Traceroute Dataset",
+      "url": "https://measurementlab.net/tests/traceroute"
+    }
+  ]
+}

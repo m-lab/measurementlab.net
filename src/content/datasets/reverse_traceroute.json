@@ -1,0 +1,62 @@
+{
+  "id": "reverse_traceroute",
+  "title": "Reverse Traceroute Data Set",
+  "status": "published",
+  "description": "Reverse traceroute measures the network path back to a user from selected network endpoints, and provides a rich source of information on network routing and topology. For every TCP connection to an M-Lab server, the Reverse Traceroute service collects network path information from the client back to the M-Lab server. Unlike standard traceroute, which measures the forward path from server to client, reverse traceroute reconstructs the return path without requiring control over the client device. Developed by the Reverse Traceroute group led by Ethan Katz-Bassett (Columbia University), RevTr uses a combination of techniques including Record-Route pings, spoofed probes from nearby vantage points, and atlas-based path stitching to reconstruct reverse paths. As of the current integration with M-Lab, roughly 25% of everyday NDT speed tests are paired with a reverse traceroute measurement.",
+  "category": "raw",
+  "relatedDatasets": [
+    "ndt",
+    "traceroute",
+    "tcpinfo"
+  ],
+  "temporalCoverageStart": "2024-01-01",
+  "temporalCoverageEnd": "present",
+  "spatialCoverage": "Global",
+  "accessPoints": [
+    {
+      "label": "revtr1 BigQuery Table",
+      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=revtr_raw&t=revtr1&page=table",
+      "format": "BigQuery",
+      "type": "bigquery",
+      "description": "Main reverse traceroute table containing one row per reverse traceroute measurement, with metadata about the client and vantage points, as well as the measured reverse path: measurement-lab.revtr_raw.revtr1"
+    },
+    {
+      "label": "trace1 BigQuery Table",
+      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=revtr_raw&t=trace1&page=table",
+      "format": "BigQuery",
+      "type": "bigquery",
+      "description": "Stores traceroutes from M-Lab servers to clients. These are always run first and serve as a baseline for reverse path construction: measurement-lab.revtr_raw.trace1"
+    },
+    {
+      "label": "traceatlas1 BigQuery Table",
+      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=revtr_raw&t=traceatlas1&page=table",
+      "format": "BigQuery",
+      "type": "bigquery",
+      "description": "Contains a global atlas of traceroutes from diverse RIPE Atlas probes to M-Lab servers. RevTr uses this atlas to identify path intersections and stitch together partial reverse paths: measurement-lab.revtr_raw.traceatlas1"
+    },
+    {
+      "label": "ping1 BigQuery Table",
+      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=revtr_raw&t=ping1&page=table",
+      "format": "BigQuery",
+      "type": "bigquery",
+      "description": "Includes both standard pings and Record-Route pings used to estimate latency and reveal intermediate hops along the reverse path: measurement-lab.revtr_raw.ping1"
+    },
+    {
+      "label": "rankedspoofers1 BigQuery Table",
+      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=revtr_raw&t=rankedspoofers1&page=table",
+      "format": "BigQuery",
+      "type": "bigquery",
+      "description": "Ranks available vantage points by proximity to the target, helping the system select the best vantage point for each spoofed Record-Route probe: measurement-lab.revtr_raw.rankedspoofers1"
+    }
+  ],
+  "documentationLinks": [
+    {
+      "label": "RevTr 1.0 Paper (NSDI '10)",
+      "url": "https://www.usenix.org/conference/nsdi-10/reverse-traceroute"
+    },
+    {
+      "label": "RevTr 2.0 Paper (IMC '22)",
+      "url": "https://dl.acm.org/doi/10.1145/3517745.3561422"
+    }
+  ]
+}
