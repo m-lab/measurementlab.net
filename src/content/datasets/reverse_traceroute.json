@@ -12,6 +12,7 @@
   "temporalCoverageStart": "2024-01-01",
   "temporalCoverageEnd": "present",
   "spatialCoverage": "Global",
+  "updateFrequency": "continuous",
   "accessPoints": [
     {
       "label": "revtr1 BigQuery Table",
