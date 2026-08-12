@@ -55,6 +55,7 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+
       # We use Lychee for link checking
       - name: Restore lychee cache
         uses: actions/cache@v4
@@ -76,19 +77,60 @@ jobs:
             ${{ steps.mode.outputs.flag }}
             'dist/**/*.html'
 
-      # We add some metadata to Lychee's report, like time of last run
+      # We add some metadata to Lychee's report, like time of last run,
+      # and clean it up a bit
       - name: Build report
         run: |
+          set -euo pipefail
+
           if [ "${{ steps.mode.outputs.offline }}" = "true" ]; then
             mode="internal only"
           else
             mode="internal + external"
           fi
+
+          # Strip the runner's absolute path prefix
+          sed -e "s#file://${GITHUB_WORKSPACE}/dist##g" \
+              -e "s#${GITHUB_WORKSPACE}/##g" \
+              ./lychee/out.md > cleaned.md
+
+          internal=$(grep -c 'file://' cleaned.md || true)
+          external=$(grep -c 'ERROR\] <http' cleaned.md || true)
+
+          # Collapse each per-file section, with its issue count in the summary
+          awk '
+            function flush() {
+              if (!open) return
+              printf "<details><summary><code>%s</code> — %d issue%s</summary>\n\n", title, n, (n==1?"":"s")
+              for (i = 1; i <= c; i++) print body[i]
+              printf "\n</details>\n\n"
+              c = 0; n = 0
+            }
+            /^### / { flush(); title = substr($0,5); sub(/^Errors in /, "", title); open = 1; next }
+            open && /^\* / { body[++c] = $0; n++; next }
+            open { body[++c] = $0; next }
+            { print }
+            END { flush() }
+          ' cleaned.md > sections.md
+
+          # Kept unheadered for the archive comparison in the next run
+          cp sections.md ./lychee/sections-only.md
+
           {
-            echo "_Last run: $(date -u '+%Y-%m-%d %H:%M UTC') · mode: ${mode} · commit \`${GITHUB_SHA:0:7}\` · [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})_"
+            echo "**${internal} internal** · **${external} external** · mode: ${mode}"
             echo
-            cat ./lychee/out.md
+            echo "_Last run: $(date -u '+%Y-%m-%d %H:%M UTC') · commit \`${GITHUB_SHA:0:7}\` · [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})_"
+            echo
+            echo "<!--report-start-->"
+            cat sections.md
           } > ./lychee/report.md
+
+          # Issue bodies cap at 65,536 characters; the API rejects rather than truncates
+          if [ "$(wc -c < ./lychee/report.md)" -gt 60000 ]; then
+            head -c 60000 ./lychee/report.md > truncated.md
+            printf '\n\n_Report truncated — see the run log for the full output._\n' >> truncated.md
+            mv truncated.md ./lychee/report.md
+          fi
 
       # We update the current issue with the new run,
       # and copy the old run in comments
@@ -107,22 +149,23 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
+
           gh issue view ${{ steps.existing.outputs.number }} \
             --json body --jq .body > previous.md
 
-          # Compare only the lychee output, ignoring the timestamp header
-          if diff -q <(tail -n +3 previous.md) ./lychee/out.md >/dev/null 2>&1; then
+          # Everything after the marker, so the header's fresh timestamp is ignored
+          sed -n '/<!--report-start-->/,$p' previous.md | tail -n +2 > previous-sections.md
+
+          if diff -q previous-sections.md ./lychee/sections-only.md >/dev/null 2>&1; then
             echo "Report unchanged — skipping archive."
             exit 0
           fi
 
           {
-            echo "<details>"
-            echo "<summary>Previous report (archived $(date -u '+%Y-%m-%d %H:%M UTC'))</summary>"
+            echo "**Previous report** — archived $(date -u '+%Y-%m-%d %H:%M UTC')"
             echo
             sed 's/^\( *\)- \[[ x]\] /\1- /' previous.md
-            echo
-            echo "</details>"
           } > archive.md
 
           gh issue comment ${{ steps.existing.outputs.number }} --body-file archive.md
