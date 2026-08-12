@@ -1,0 +1,10 @@
+{
+  "id": "annotated-traceroutes",
+  "title": "Annotated traceroutes",
+  "status": "draft",
+  "description": "To be filled in further",
+  "temporalCoverageStart": "2026-01-01",
+  "temporalCoverageEnd": "present",
+  "spatialCoverage": "Global",
+  "updateFrequency": "irregular"
+}
