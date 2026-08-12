@@ -12,6 +12,7 @@
   "temporalCoverageStart": "2013-05-01",
   "temporalCoverageEnd": "present",
   "spatialCoverage": "Global",
+  "updateFrequency": "continuous",
   "accessPoints": [
     {
       "label": "NDT scamper1 (March 2019 to Present)",
