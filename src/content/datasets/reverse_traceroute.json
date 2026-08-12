@@ -17,35 +17,35 @@
       "label": "revtr1 BigQuery Table",
       "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=revtr_raw&t=revtr1&page=table",
       "format": "BigQuery",
-      "type": "bigquery",
+      "type": "query",
       "description": "Main reverse traceroute table containing one row per reverse traceroute measurement, with metadata about the client and vantage points, as well as the measured reverse path: measurement-lab.revtr_raw.revtr1"
     },
     {
       "label": "trace1 BigQuery Table",
       "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=revtr_raw&t=trace1&page=table",
       "format": "BigQuery",
-      "type": "bigquery",
+      "type": "query",
       "description": "Stores traceroutes from M-Lab servers to clients. These are always run first and serve as a baseline for reverse path construction: measurement-lab.revtr_raw.trace1"
     },
     {
       "label": "traceatlas1 BigQuery Table",
       "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=revtr_raw&t=traceatlas1&page=table",
       "format": "BigQuery",
-      "type": "bigquery",
+      "type": "query",
       "description": "Contains a global atlas of traceroutes from diverse RIPE Atlas probes to M-Lab servers. RevTr uses this atlas to identify path intersections and stitch together partial reverse paths: measurement-lab.revtr_raw.traceatlas1"
     },
     {
       "label": "ping1 BigQuery Table",
       "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=revtr_raw&t=ping1&page=table",
       "format": "BigQuery",
-      "type": "bigquery",
+      "type": "query",
       "description": "Includes both standard pings and Record-Route pings used to estimate latency and reveal intermediate hops along the reverse path: measurement-lab.revtr_raw.ping1"
     },
     {
       "label": "rankedspoofers1 BigQuery Table",
       "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=revtr_raw&t=rankedspoofers1&page=table",
       "format": "BigQuery",
-      "type": "bigquery",
+      "type": "query",
       "description": "Ranks available vantage points by proximity to the target, helping the system select the best vantage point for each spoofed Record-Route probe: measurement-lab.revtr_raw.rankedspoofers1"
     }
   ],
