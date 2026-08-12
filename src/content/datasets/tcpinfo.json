@@ -45,28 +45,28 @@
       "label": "NDT TCP INFO BigQuery",
       "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=ndt&t=tcpinfo&page=table",
       "format": "BigQuery",
-      "type": "bigquery",
+      "type": "query",
       "description": "BigQuery table for NDT TCP INFO data: measurement-lab.ndt.tcpinfo"
     },
     {
       "label": "Host Server TCP INFO BigQuery",
       "url": "",
       "format": "BigQuery",
-      "type": "bigquery",
+      "type": "query",
       "description": "Coming soon: measurement-lab.host.tcpinfo"
     },
     {
       "label": "Neubot TCP INFO BigQuery",
       "url": "",
       "format": "BigQuery",
-      "type": "bigquery",
+      "type": "query",
       "description": "Coming soon: measurement-lab.neubot.tcpinfo"
     },
     {
       "label": "WeHe TCP INFO BigQuery",
       "url": "",
       "format": "BigQuery",
-      "type": "bigquery",
+      "type": "query",
       "description": "Coming soon: measurement-lab.wehe.tcpinfo"
     }
   ],

@@ -45,14 +45,14 @@
       "label": "scamper1 BigQuery Table",
       "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=ndt_raw&t=scamper1&page=table",
       "format": "BigQuery",
-      "type": "bigquery",
+      "type": "query",
       "description": "BigQuery table for scamper1 traceroute data using standard columns: measurement-lab.ndt_raw.scamper1"
     },
     {
       "label": "paris1_legacy BigQuery Table",
       "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&d=ndt_raw&t=paris1_legacy&page=table",
       "format": "BigQuery",
-      "type": "bigquery",
+      "type": "query",
       "description": "BigQuery table for legacy Paris Traceroute data: measurement-lab.ndt_raw.paris1_legacy. Note: M-Lab is no longer using the Paris Traceroute tool."
     }
   ],
