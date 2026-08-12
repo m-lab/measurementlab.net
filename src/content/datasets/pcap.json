@@ -10,6 +10,7 @@
   "temporalCoverageStart": "2019-11-01",
   "temporalCoverageEnd": "present",
   "spatialCoverage": "Global",
+  "updateFrequency": "continuous",
   "accessPoints": [
     {
       "label": "Host Server Packet Captures",
