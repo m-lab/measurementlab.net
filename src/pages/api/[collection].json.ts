@@ -1,7 +1,7 @@
 import { getCollection } from 'astro:content';
-import type { APIRoute } from 'astro';
-import { isVisible } from '@utils/content';
 import { collections } from '@content-config';
+import { isVisible } from '@utils/content';
+import type { APIRoute } from 'astro';
 
 // Get collection names from the config - single source of truth
 const COLLECTION_NAMES = Object.keys(collections) as Array<

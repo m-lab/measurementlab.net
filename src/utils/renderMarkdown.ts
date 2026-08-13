@@ -1,17 +1,17 @@
 import { getImage } from 'astro:assets';
-import rehypeExtractToc, {
-  type TocEntry,
-} from '@stefanprobst/rehype-extract-toc';
 import {
   autolinkHeadingsOptions,
   externalLinksOptions,
 } from '@lib/markdown-plugins';
 import { rehypeTableAlign } from '@lib/rehype-table-align';
+import rehypeExtractToc, {
+  type TocEntry,
+} from '@stefanprobst/rehype-extract-toc';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeExternalLinks from 'rehype-external-links';
-import rehypeSlug from 'rehype-slug';
 import rehypeExpressiveCode from 'rehype-expressive-code';
+import rehypeExternalLinks from 'rehype-external-links';
 import rehypeRaw from 'rehype-raw';
+import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';

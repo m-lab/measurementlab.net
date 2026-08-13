@@ -11,6 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "typecheck": "astro check",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "sync:pages-categories": "node scripts/sync-pages-categories.mjs",
     "sync:pages-categories:check": "node scripts/sync-pages-categories.mjs --check",
     "migrate:1-authors": "tsx scripts/generate-author-mapping.ts && tsx scripts/create-authors.ts",
@@ -60,6 +62,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@biomejs/biome": "^2.5.8",
     "@iconify/json": "^2.2.510",
     "@playwright/test": "^1.62.1",
     "@svgr/core": "^8.1.0",

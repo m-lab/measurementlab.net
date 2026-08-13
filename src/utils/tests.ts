@@ -1,6 +1,6 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
-import type { ImageMetadata } from 'astro';
 import { isVisible } from '@utils/content';
+import type { ImageMetadata } from 'astro';
 
 export type Test = CollectionEntry<'tests'>;
 

@@ -1,5 +1,5 @@
+import type { Element, Root } from 'hast';
 import { visit } from 'unist-util-visit';
-import type { Root, Element } from 'hast';
 
 /**
  * Rehype plugin to convert deprecated `align` attributes on table cells
