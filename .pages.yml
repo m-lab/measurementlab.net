@@ -75,6 +75,21 @@ components:
         required: true
         default: md
         description: Square is sized for a button showing only an icon; it will look cramped with text.
+      - name: icon
+        label: Icon
+        type: select
+        options:
+          values:
+            - label: None
+              value: ''
+            - label: Arrow (right)
+              value: arrowRight
+            - label: Arrow (down)
+              value: arrowDown
+            - label: Measurement
+              value: measurement
+        default: ''
+        description: Optional icon. Arrows sit after the text, the measurement mark before it.
       - name: text
         label: Text
         type: string
@@ -643,6 +658,10 @@ components:
       - name: description
         label: Description
         type: rich-text
+      - name: button
+        label: Button
+        component: button
+        description: Call to action shown under the description. Leave empty for the default "Partner with us" button.
 
 # ============================================================================
 # CONTENT COLLECTIONS

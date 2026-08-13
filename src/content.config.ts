@@ -42,6 +42,14 @@ const buttonSchema = z.object({
     'ghost',
   ]),
   size: z.enum(['sm', 'md', 'lg', 'xl', 'square']),
+  // Pages CMS writes '' (and can write null) for the "None" choice on an optional
+  // select, neither of which a bare .optional() enum accepts. Decode both to
+  // undefined so picking "None" doesn't fail the build; a typo'd icon name still does.
+  icon: z
+    .enum(['arrowDown', 'arrowRight', 'measurement'])
+    .or(z.literal(''))
+    .nullish()
+    .transform((v) => v || undefined),
   href: z.string(),
   text: z.string(),
 });
@@ -156,6 +164,10 @@ const createSchemas = (image: ImageFunction) => {
       type: z.literal('featured_partners'),
       title: z.string(),
       description: z.string().optional(),
+      // Optional so entries written before this field existed keep rendering the
+      // section's original "Partner with us" CTA — see the fallback in
+      // FeaturedPartnersSection.astro.
+      button: buttonSchema.optional(),
     }),
     SectionCommonSchema.extend({
       type: z.literal('blog_roll'),

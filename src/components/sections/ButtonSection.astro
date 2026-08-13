@@ -1,13 +1,7 @@
 ---
 import Button from '@components/atoms/Button.tsx';
 import Heading from '@components/atoms/Heading.astro';
-
-export interface ButtonType {
-  variant: string;
-  size: string;
-  href: string;
-	text: string;
-}
+import type { ButtonType } from '@content-config';
 
 export interface Props {
   title?: string;
@@ -38,8 +32,9 @@ const { title, buttons = [] } = Astro.props;
 					<Button
 						type="button"
 						as="a"
-						variant={button.variant as any}
-						size={button.size as any}
+						variant={button.variant}
+						size={button.size}
+						icon={button.icon}
 						href={button.href}
 					>
 						{button.text}

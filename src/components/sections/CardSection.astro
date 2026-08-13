@@ -43,8 +43,9 @@ const { title, description, cards = [], buttons = [] } = Astro.props;
 								<Button
 									type="button"
 									as="a"
-									variant={card.button.variant as any}
-									size={card.button.size as any}
+									variant={card.button.variant}
+									size={card.button.size}
+									icon={card.button.icon}
 									href={card.button.href}
 								>
 									{card.button.text}
@@ -64,8 +65,9 @@ const { title, description, cards = [], buttons = [] } = Astro.props;
 						<Button
 							type="button"
 							as="a"
-							variant={button.variant as any}
-							size={button.size as any}
+							variant={button.variant}
+							size={button.size}
+							icon={button.icon}
 							href={button.href}
 						>
 							{button.text}

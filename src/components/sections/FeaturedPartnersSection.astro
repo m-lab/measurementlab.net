@@ -4,9 +4,26 @@ import { getCollection } from 'astro:content';
 import Button from '@components/atoms/Button.tsx';
 import Heading from '@components/atoms/Heading.astro';
 import Text from '@components/atoms/Text.astro';
+import type { ButtonType } from '@content-config';
 import { isVisible } from '@utils/content';
 
-const { title, description } = Astro.props;
+export interface Props {
+	title?: string;
+	description?: string;
+	button?: ButtonType;
+}
+
+const { title, description, button } = Astro.props;
+
+// The CTA was hardcoded before it was an editable field; keep those exact values as
+// the fallback so homepage entries without a `button` render as they always have.
+const cta: ButtonType = button ?? {
+	variant: 'primary',
+	size: 'md',
+	icon: 'arrowRight',
+	href: '/partner-with-us',
+	text: 'Partner with us',
+};
 
 const PARTNER_LIMIT = 9;
 
@@ -62,11 +79,12 @@ const featuredPartners = (await getCollection('partners'))
 		<div>
 			<Button
 				as="a"
-				href="/partner-with-us"
-				variant="primary"
-				icon="arrowRight"
+				href={cta.href}
+				variant={cta.variant}
+				size={cta.size}
+				icon={cta.icon}
 			>
-				Partner with us
+				{cta.text}
 			</Button>
 		</div>
 	</div>
