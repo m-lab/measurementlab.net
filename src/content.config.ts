@@ -225,6 +225,8 @@ const partnersCollection = defineCollection({
     return partnerSchema.extend({
       id: z.string(),
       order: z.number().optional().default(999),
+      // Floats a partner to the front of FeaturedPartnersSection, ahead of `order`
+      featured: z.boolean().optional().default(false),
       status: statusSchema,
     });
   },

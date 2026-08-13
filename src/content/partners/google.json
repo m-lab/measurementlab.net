@@ -6,5 +6,6 @@
     "Supporting Partners"
   ],
   "image": "/src/assets/partners/google.jpg",
+  "featured": true,
   "status": "published"
 }

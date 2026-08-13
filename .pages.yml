@@ -1152,6 +1152,16 @@ content:
             - BYOS Partners
             - IMC Hackathon Partners
           # pages-cms:category-sync end
+      - name: featured
+        label: Featured
+        type: boolean
+        default: false
+        description: Featured partners appear first in the Featured Partners section on the homepage.
+      - name: order
+        label: Sort Order
+        type: number
+        default: 999
+        description: Lower numbers appear first, after any Featured partners. Leave at 999 to fall back to alphabetical order.
       - name: image
         label: Logo
         type: image

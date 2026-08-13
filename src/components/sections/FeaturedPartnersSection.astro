@@ -8,10 +8,21 @@ import { isVisible } from '@utils/content';
 
 const { title, description } = Astro.props;
 
-// Fetch all partners and filter for featured ones (you can add a featured field later)
-const allPartners = (await getCollection('partners')).filter(p => isVisible(p));
-// TODO: Add a 'featured' field to the partner schema and filter accordingly
-const featuredPartners = allPartners.sort((a, b) => (a.data.order || 999) - (b.data.order || 999)).slice(0, 9);
+const PARTNER_LIMIT = 9;
+
+// Featured first, then by `order`, then alphabetically by name.
+const featuredPartners = (await getCollection('partners'))
+	.filter((p) => isVisible(p))
+	.sort((a, b) => {
+		if (a.data.featured !== b.data.featured) {
+			return a.data.featured ? -1 : 1;
+		}
+		if (a.data.order !== b.data.order) {
+			return a.data.order - b.data.order;
+		}
+		return a.data.name.localeCompare(b.data.name);
+	})
+	.slice(0, PARTNER_LIMIT);
 ---
 
 <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
