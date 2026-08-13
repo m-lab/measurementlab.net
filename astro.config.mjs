@@ -47,6 +47,16 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  image: {
+    // Markdown `![]()` carries no width, so without a layout Astro has nothing to size
+    // against and emits an empty `srcset` so inline post images were being requested at
+    // their intrinsic width (up to 4032px) into a ~700px prose column.
+    //
+    // `responsiveStyles` is deliberately left at its default of `false`. It would inject
+    // Astro's own `:where()` rules, and because Tailwind 4 puts its utilities in cascade
+    // layers, Astro's sizing would override Tailwind classes
+    layout: 'constrained',
+  },
   fonts: [
     {
       provider: fontProviders.bunny(),
