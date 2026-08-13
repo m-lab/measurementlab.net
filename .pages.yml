@@ -44,8 +44,19 @@ components:
               value: primary
             - label: Secondary
               value: secondary
+            - label: Supporting 1
+              value: supporting1
+            - label: Supporting 2
+              value: supporting2
+            - label: Speed
+              value: speed
+            - label: Outline
+              value: outline
+            - label: Ghost
+              value: ghost
         required: true
         default: primary
+        description: Colour of the button. Outline and Ghost are the quiet options — use them for a secondary action next to a coloured button.
       - name: size
         label: Size
         type: select
@@ -57,8 +68,13 @@ components:
               value: md
             - label: Large
               value: lg
+            - label: Extra Large
+              value: xl
+            - label: Square (icon only)
+              value: square
         required: true
         default: md
+        description: Square is sized for a button showing only an icon; it will look cramped with text.
       - name: text
         label: Text
         type: string

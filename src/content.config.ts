@@ -28,9 +28,20 @@ const colorPaletteSchema = z.enum([
 export type ColorPaletteType = z.infer<typeof colorPaletteSchema>;
 
 // Atoms (no image dependency, can be shared)
+// Both enums mirror the unions in Button.tsx, which in turn mirror the classes in
+// styles/components.css. A bare z.string() here let a typo through to render as
+// `class="button-base undefined"` — an unstyled button with no build error.
 const buttonSchema = z.object({
-  variant: z.string(),
-  size: z.string(),
+  variant: z.enum([
+    'primary',
+    'secondary',
+    'supporting1',
+    'supporting2',
+    'speed',
+    'outline',
+    'ghost',
+  ]),
+  size: z.enum(['sm', 'md', 'lg', 'xl', 'square']),
   href: z.string(),
   text: z.string(),
 });
