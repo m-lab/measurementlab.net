@@ -31,7 +31,7 @@ const sizes = {
 // Map color values to Tailwind classes
 const backgrounds = {
   white: 'bg-white',
-  gray: 'bg-gray-50',
+  gray: 'bg-neutral-50',
   'primary-light': 'bg-primary-100',
   'primary-medium': 'bg-primary-700 text-white',
   'primary-dark': 'bg-primary-900 text-white',
@@ -51,7 +51,7 @@ const containerClasses = `${sizes[size]} ${bgClass} ${className}`;
 			</h1>
 
 			<!-- Subtitle -->
-			{subtitle && <p class="text-gray-600">{subtitle}</p>}
+			{subtitle && <p class="text-muted">{subtitle}</p>}
 
 			<!-- Actions Slot -->
 			<!-- <div class="flex flex-wrap justify-center gap-4">

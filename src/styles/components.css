@@ -59,6 +59,38 @@
 
 /*
   -------------
+  Muted text
+  -------------
+*/
+
+/* Two tokens rather than raw `text-neutral-600` / `text-neutral-400`, for the same reason
+   `.button-ghost` above needs a `.section-dark` rule: muted text is text that deliberately
+   sits below the body colour, so it cannot be corrected by the container setting a colour.
+   On a dark section a fixed mid-slate drops to ~2:1 against the background. Only a
+   descendant rule can lift it, so the shade has to be addressable by name.
+
+   Use `.text-muted` for secondary prose (section descriptions, captions, affiliations) and
+   `.text-faint` for metadata a reader skims past (stat labels, timestamps). Anything that
+   is never inside a SectionLayout — modal and navigation chrome — should keep plain
+   `neutral-*`, since the dark variant would be dead weight there. */
+.text-muted {
+  @apply text-neutral-600;
+}
+
+.section-dark .text-muted {
+  @apply text-white/80;
+}
+
+.text-faint {
+  @apply text-neutral-400;
+}
+
+.section-dark .text-faint {
+  @apply text-white/60;
+}
+
+/*
+  -------------
   Card
   -------------
 */

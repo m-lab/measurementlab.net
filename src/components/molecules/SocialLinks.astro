@@ -9,6 +9,14 @@ import IconMastodon from '~icons/simple-icons/mastodon';
 import IconX from '~icons/simple-icons/x';
 import IconYoutube from '~icons/simple-icons/youtube';
 
+// Icon colours are stated for a dark surface because this is used only by Footer.astro,
+// which is `bg-neutral-900`. The previous `text-gray-600 hover:text-gray-900` generated no
+// rule (the theme defines no gray palette), so these anchors fell through to the global
+// link colour in typography.css and rendered `primary-600` blue — not the muted grey the
+// class implied. The `dark:` variants beside them were dead too: no dark-mode strategy is
+// configured. White matches the rest of the footer's text and lifts the icons from roughly
+// 3:1 to 15:1 against `neutral-900`; `primary-300` on hover keeps a brand accent.
+
 // Fetch site config for social links
 const siteConfig = await getEntry('site', 'config');
 const social = siteConfig?.data.social;
@@ -65,7 +73,7 @@ const socialLinks = social
 					href={url}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="text-gray-600 transition-colors hover:text-gray-900 dark:text-white dark:hover:text-primary-300"
+					class="text-white transition-colors hover:text-primary-300"
 					aria-label={label}
 				>
 					<Icon className={iconClass} />

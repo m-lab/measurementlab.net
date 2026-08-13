@@ -17,9 +17,11 @@ const {
 
 const { href, label, type, children } = item;
 
-const activeStyles = active
-  ? 'underline decoration-2'
-  : ' hover:decoration-gray-100';
+// The inactive branch used to carry `hover:decoration-gray-100`, which never generated a
+// rule. Converting it to `neutral-100` would have made the hover underline near-invisible
+// against the header's `bg-neutral-50`, so it is dropped instead: the underline inherits
+// the link colour, which is what has been rendering all along.
+const activeStyles = active ? 'underline decoration-2' : '';
 
 const classes = `no-underline hover:underline transition transition-300 underline-offset-20 inline-flex items-center px-3 py-2  ${activeStyles} ${className}`;
 ---

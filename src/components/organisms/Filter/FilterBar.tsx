@@ -99,10 +99,10 @@ const FilterBar = ({
             aria-label="Expand search"
           >
             {isSearchExpanded ? (
-              <XMarkIcon className="text-gray-400 h-5 w-5" aria-hidden="true" />
+              <XMarkIcon className="text-neutral-400 h-5 w-5" aria-hidden="true" />
             ) : (
               <MagnifyingGlassIcon
-                className="text-gray-400 h-5 w-5"
+                className="text-neutral-400 h-5 w-5"
                 aria-hidden="true"
               />
             )}

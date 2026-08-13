@@ -29,13 +29,13 @@ const {
 
 const backgrounds = {
   white: 'bg-white',
-  gray: 'bg-gray-50',
+  gray: 'bg-neutral-50',
   blue: 'bg-secondary-600 text-white',
   gradient: 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white',
 };
 
-const textColor = background === 'blue' || background === 'gradient' ? 'text-white' : 'text-gray-900';
-const descColor = background === 'blue' || background === 'gradient' ? 'text-blue-100' : 'text-gray-600';
+const textColor = background === 'blue' || background === 'gradient' ? 'text-white' : 'text-neutral-900';
+const descColor = background === 'blue' || background === 'gradient' ? 'text-blue-100' : 'text-neutral-600';
 ---
 
 <section class={`py-16 md:py-24 ${backgrounds[background]} ${className}`}>

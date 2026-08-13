@@ -21,14 +21,14 @@ const postsData = await prepareBlogPostsCardData(selectedPosts);
 	<!-- Section Header -->
 	<div class="mb-8">
 		<Heading level={2} class="text-3xl font-bold text-neutral-900">{title}</Heading>
-		{description && <p class="text-gray-600 mt-2">{description}</p>}
+		{description && <p class="text-muted mt-2">{description}</p>}
 	</div>
 
 	<!-- Posts Grid -->
 	{
 		postsData.length === 0 ? (
 			<div class="py-12 text-center">
-				<p class="text-gray-600 text-lg">
+				<p class="text-muted text-lg">
 					No posts selected yet.
 				</p>
 			</div>

@@ -101,7 +101,7 @@ const { title, year, category, authors, venue, tags } = pub.data;
 			{
 				authors && (
 					<div class="mb-3">
-						<p class="text-gray-700 text-base">
+						<p class="text-neutral-700 text-base">
 							<span class="font-medium">Authors:</span> {authors}
 						</p>
 					</div>
@@ -112,7 +112,7 @@ const { title, year, category, authors, venue, tags } = pub.data;
 			{
 				venue && (
 					<div class="mb-3">
-						<p class="text-gray-700 text-base">
+						<p class="text-neutral-700 text-base">
 							<span class="font-medium">Venue:</span> {venue}
 						</p>
 					</div>
@@ -147,7 +147,7 @@ const { title, year, category, authors, venue, tags } = pub.data;
 									<h3 class="mb-3 text-lg font-semibold">Downloads</h3>
 									<div class="space-y-2">
 										{pub.data.internalLinks.map((link) => (
-											<div class="border-gray-200 bg-gray-50 flex items-center gap-3 rounded-lg border p-4">
+											<div class="border-neutral-200 bg-neutral-50 flex items-center gap-3 rounded-lg border p-4">
 												<svg
 													class="text-blue-600 h-6 w-6 shrink-0"
 													fill="none"
@@ -182,7 +182,7 @@ const { title, year, category, authors, venue, tags } = pub.data;
 									<h3 class="mb-3 text-lg font-semibold">External Resources</h3>
 									<div class="space-y-2">
 										{pub.data.externalLinks.map((link) => (
-											<div class="border-gray-200 bg-gray-50 flex items-center gap-3 rounded-lg border p-4">
+											<div class="border-neutral-200 bg-neutral-50 flex items-center gap-3 rounded-lg border p-4">
 												<svg
 													class="text-blue-600 h-6 w-6 shrink-0"
 													fill="none"
@@ -225,7 +225,7 @@ const { title, year, category, authors, venue, tags } = pub.data;
 														return <Vimeo id={link.url} />;
 													default:
 														return (
-															<div class="border-gray-200 bg-gray-50 flex items-center gap-3 rounded-lg border p-4">
+															<div class="border-neutral-200 bg-neutral-50 flex items-center gap-3 rounded-lg border p-4">
 																<IconPlay />
 																<div class="flex-1">
 																	<Link
@@ -236,7 +236,7 @@ const { title, year, category, authors, venue, tags } = pub.data;
 																		{link.label}
 																	</Link>
 																	{link.platform && (
-																		<span class="text-gray-500 ml-2 text-sm">
+																		<span class="text-neutral-500 ml-2 text-sm">
 																			({link.platform})
 																		</span>
 																	)}
@@ -261,7 +261,7 @@ const { title, year, category, authors, venue, tags } = pub.data;
 	<!-- Contributors Section -->
 	{
 		contributors.length > 0 && (
-			<SectionLayout bgColor="bg-gray-50">
+			<SectionLayout bgColor="bg-neutral-50">
 				<div class="mx-auto max-w-4xl py-12">
 					<h2 class="mb-8 text-2xl font-bold">
 						{contributors.length === 1 ? 'Contributor' : 'Contributors'}
@@ -287,7 +287,7 @@ const { title, year, category, authors, venue, tags } = pub.data;
 											<h3 class="mb-1 text-lg font-semibold">
 												{contributor.name}
 											</h3>
-											<p class="text-gray-600 text-sm">{contributor.title}</p>
+											<p class="text-neutral-600 text-sm">{contributor.title}</p>
 										</div>
 									</Link>
 								)
@@ -328,12 +328,12 @@ const { title, year, category, authors, venue, tags } = pub.data;
 
 								{/* Authors */}
 								{relatedPub.data.authors && (
-									<p class="text-gray-600 text-sm">{relatedPub.data.authors}</p>
+									<p class="text-neutral-600 text-sm">{relatedPub.data.authors}</p>
 								)}
 
 								{/* Description (truncated) */}
 								{relatedPub.data.description && (
-									<p class="text-gray-700 mt-2 line-clamp-2 text-sm">
+									<p class="text-neutral-700 mt-2 line-clamp-2 text-sm">
 										{relatedPub.data.description}
 									</p>
 								)}

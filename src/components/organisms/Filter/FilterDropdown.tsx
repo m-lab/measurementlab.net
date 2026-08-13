@@ -88,7 +88,7 @@ export default function FilterDropdown(props: FilterDropdownProps) {
               value={option}
               className={({ focus }) =>
                 `relative cursor-pointer py-2 pr-4 pl-10 select-none ${
-                  focus ? 'bg-primary-100 text-primary-900' : 'text-gray-900'
+                  focus ? 'bg-primary-100 text-primary-900' : 'text-neutral-900'
                 }`
               }
             >

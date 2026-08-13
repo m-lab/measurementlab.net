@@ -59,7 +59,7 @@ export default function PublicationItem({ item }: PublicationItemProps) {
         <div className="flex flex-col gap-3 border-t border-neutral-300 pt-2">
           {/* Authors from citation string or resolved contributors */}
           {(post.data.authors || authorNames) && (
-            <p className="text-gray-700 text-base">
+            <p className="text-neutral-700 text-base">
               <span className="font-medium">Authors:</span>{' '}
               {post.data.authors || authorNames}
             </p>
@@ -67,7 +67,7 @@ export default function PublicationItem({ item }: PublicationItemProps) {
 
           {/* Venue */}
           {post.data.venue && (
-            <p className="text-gray-700 text-base">
+            <p className="text-neutral-700 text-base">
               <span className="font-medium">Venue:</span> {post.data.venue}
             </p>
           )}

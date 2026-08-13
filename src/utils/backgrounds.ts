@@ -39,7 +39,7 @@ export const backgroundClass = (color?: string): string =>
  * container cannot do (links set their own colour and would otherwise stay dark-on-dark).
  */
 export const textClass = (color?: string): string =>
-  isDarkBackground(color) ? 'section-dark text-white' : 'text-gray-900';
+  isDarkBackground(color) ? 'section-dark text-white' : 'text-neutral-900';
 
 /**
  * Zigzag hero patterns — a separate system from section backgrounds, but with the same

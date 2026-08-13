@@ -160,7 +160,7 @@ export default function FilterableContent({
       </div>
       {filteredItems.length === 0 && (
         <div className="py-12 text-center">
-          <p className="text-gray-600 text-lg">
+          <p className="text-muted text-lg">
             {hasFiltersSet
               ? `No ${PLACEHOLDER_TYPE_LABEL[type]} match your search.`
               : `No ${PLACEHOLDER_TYPE_LABEL[type]} published yet. Check back soon!`}

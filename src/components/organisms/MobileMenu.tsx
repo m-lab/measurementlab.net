@@ -65,7 +65,7 @@ export default function MobileMenu({
       >
         <DialogBackdrop
           transition
-          className="bg-gray-900/80 fixed inset-0 transition-opacity duration-300 ease-linear data-closed:opacity-0"
+          className="bg-neutral-900/80 fixed inset-0 transition-opacity duration-300 ease-linear data-closed:opacity-0"
         />
 
         <div className="fixed inset-0 flex">

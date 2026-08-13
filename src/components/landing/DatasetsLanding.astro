@@ -48,7 +48,7 @@ const formatFrequency = (f: string) => f.charAt(0).toUpperCase() + f.slice(1);
 				<div class="mb-8">
 					<h2 class="mb-2 text-2xl font-bold">{group.name}</h2>
 					{group.description && (
-						<p class="text-gray-600 max-w-2xl">{group.description}</p>
+						<p class="text-muted max-w-2xl">{group.description}</p>
 					)}
 				</div>
 
@@ -75,9 +75,9 @@ const formatFrequency = (f: string) => f.charAt(0).toUpperCase() + f.slice(1);
 							<h3 class="mb-2 text-xl leading-snug font-semibold">
 								{ds.data.title}
 							</h3>
-							<p class="text-gray-600 mb-4 text-base">{ds.data.description}</p>
+							<p class="text-muted mb-4 text-base">{ds.data.description}</p>
 							{ds.data.temporalCoverageStart && (
-								<p class="text-gray-400 border-gray-100 mt-auto border-t pt-3 text-sm">
+								<p class="text-faint border-neutral-100 mt-auto border-t pt-3 text-sm">
 									{ds.data.temporalCoverageStart.slice(0, 4)}
 									{ds.data.temporalCoverageEnd
 										? ` – ${ds.data.temporalCoverageEnd === 'present' ? 'present' : ds.data.temporalCoverageEnd.slice(0, 4)}`

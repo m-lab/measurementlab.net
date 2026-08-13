@@ -85,7 +85,7 @@ const formatDate = (date: Date) => {
 					</h2>
 
 					<!-- Title -->
-					<p class="text-gray-600 mb-6">
+					<p class="text-neutral-600 mb-6">
 						{person.title}
 					</p>
 				</div>
@@ -95,7 +95,7 @@ const formatDate = (date: Date) => {
 	<!-- Sections/Departments -->
 	<!-- {
 		person.sections && person.sections.length > 0 && (
-			<section class="bg-gray-50 py-16">
+			<section class="bg-neutral-50 py-16">
 				<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 					<h2 class="mb-8 text-center">Departments</h2>
 					<div class="flex flex-wrap justify-center gap-2">
@@ -113,14 +113,14 @@ const formatDate = (date: Date) => {
 	<!-- Publications Section -->
 	{
 		personPublications.length > 0 && (
-			<section class="bg-gray-50 py-16">
+			<section class="bg-neutral-50 py-16">
 				<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 					<h2 class="mb-8 text-center">Publications</h2>
 					<div class="space-y-6">
 						{personPublications.map((pub) => (
 							<article class="rounded-lg bg-white p-6 shadow-md">
 								<div class="mb-2 flex items-start justify-between gap-4">
-									<h3 class="text-gray-900 text-xl font-semibold">
+									<h3 class="text-neutral-900 text-xl font-semibold">
 										{pub.data.title}
 									</h3>
 									<span class="shrink-0 rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700">
@@ -129,17 +129,17 @@ const formatDate = (date: Date) => {
 								</div>
 
 								{pub.data.authors && (
-									<p class="text-gray-600 mb-2 text-sm">{pub.data.authors}</p>
+									<p class="text-neutral-600 mb-2 text-sm">{pub.data.authors}</p>
 								)}
 
 								{pub.data.description && (
-									<p class="text-gray-700 mb-4 line-clamp-3">
+									<p class="text-neutral-700 mb-4 line-clamp-3">
 										{pub.data.description}
 									</p>
 								)}
 
 								{pub.data.venue && (
-									<p class="text-gray-500 mb-3 text-sm italic">
+									<p class="text-neutral-500 mb-3 text-sm italic">
 										{pub.data.venue}
 									</p>
 								)}

@@ -397,13 +397,13 @@ export default function RichSearch() {
     >
       <DialogBackdrop
         transition
-        className="bg-gray-500/25 fixed inset-0 transition-opacity data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-100 data-leave:ease-in"
+        className="bg-neutral-500/25 fixed inset-0 transition-opacity data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-100 data-leave:ease-in"
       />
 
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto p-4 sm:p-6 md:p-20">
         <DialogPanel
           transition
-          className="divide-gray-100 mx-auto max-w-xl transform divide-y overflow-hidden border-2 border-primary-700 bg-neutral-200 shadow-lg transition-all data-closed:scale-95 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"
+          className="divide-neutral-100 mx-auto max-w-xl transform divide-y overflow-hidden border-2 border-primary-700 bg-neutral-200 shadow-lg transition-all data-closed:scale-95 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"
         >
           <Combobox
             onChange={(item: any) => {
@@ -415,7 +415,7 @@ export default function RichSearch() {
             <div className="grid grid-cols-1">
               <ComboboxInput
                 autoFocus
-                className="text-gray-900 placeholder:text-gray-400 col-start-1 row-start-1 h-12 w-full bg-white pr-4 pl-11 outline-hidden sm:text-sm md:text-base"
+                className="text-neutral-900 placeholder:text-neutral-400 col-start-1 row-start-1 h-12 w-full bg-white pr-4 pl-11 outline-hidden sm:text-sm md:text-base"
                 placeholder="Search..."
                 onChange={(event) => {
                   setRawQuery(event.target.value);
@@ -427,7 +427,7 @@ export default function RichSearch() {
                 }}
               />
               <MagnifyingGlassIcon
-                className="text-gray-400 pointer-events-none col-start-1 row-start-1 ml-4 size-5 self-center"
+                className="text-neutral-400 pointer-events-none col-start-1 row-start-1 ml-4 size-5 self-center"
                 aria-hidden="true"
               />
             </div>
@@ -444,7 +444,7 @@ export default function RichSearch() {
                           className="flex items-center gap-3 px-4 py-2"
                         >
                           <div className="size-6 animate-pulse rounded bg-primary-100" />
-                          <div className="bg-gray-100 h-4 flex-1 animate-pulse rounded" />
+                          <div className="bg-neutral-100 h-4 flex-1 animate-pulse rounded" />
                         </div>
                       ))}
                     </div>
@@ -471,10 +471,10 @@ export default function RichSearch() {
 
                     return (
                       <li key={category.name}>
-                        <h2 className="text-gray-900 inline-flex gap-1 text-xs font-semibold tracking-wide uppercase">
+                        <h2 className="text-neutral-900 inline-flex gap-1 text-xs font-semibold tracking-wide uppercase">
                           <Icon /> {category.name}
                         </h2>
-                        <ul className="text-gray-700 -mx-4 mt-2">
+                        <ul className="text-neutral-700 -mx-4 mt-2">
                           {items.map((item) => (
                             <ComboboxOption
                               as="li"
@@ -494,7 +494,7 @@ export default function RichSearch() {
                                 />
                               ) : (
                                 <Icon
-                                  class="text-gray-500 group-data-focus:text-gray-700 size-6 flex-none"
+                                  class="text-neutral-500 group-data-focus:text-neutral-700 size-6 flex-none"
                                   aria-hidden="true"
                                 />
                               )}
@@ -503,9 +503,9 @@ export default function RichSearch() {
                                   {item.name}
                                 </span>
                                 {snippets[item.id] && (
-                                  <div className="text-gray-500 block truncate pt-1 text-sm">
+                                  <div className="text-neutral-500 block truncate pt-1 text-sm">
                                     {snippets[item.id].before}
-                                    <span className="text-gray-700 font-semibold">
+                                    <span className="text-neutral-700 font-semibold">
                                       {snippets[item.id].match}
                                     </span>
                                     {snippets[item.id].after}
@@ -533,19 +533,19 @@ export default function RichSearch() {
               ) && (
                 <div className="px-6 py-14 text-center text-sm sm:px-14">
                   <ExclamationTriangleIcon
-                    className="text-gray-400 mx-auto size-6"
+                    className="text-neutral-400 mx-auto size-6"
                     aria-hidden="true"
                   />
-                  <p className="text-gray-900 mt-4 font-semibold">
+                  <p className="text-neutral-900 mt-4 font-semibold">
                     No results found
                   </p>
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-neutral-600 mt-2">
                     We couldn't find anything with that term. Please try again.
                   </p>
                 </div>
               )}
 
-            <div className="border-gray-100 bg-gray-50 text-gray-600 flex flex-wrap items-center border-t px-4 py-2.5 text-xs">
+            <div className="border-neutral-100 bg-neutral-50 text-neutral-600 flex flex-wrap items-center border-t px-4 py-2.5 text-xs">
               {SEARCH_CATEGORIES.map((category) => (
                 <span key={category.name} className="inline-flex items-center">
                   <kbd
@@ -553,7 +553,7 @@ export default function RichSearch() {
                       'mx-1 flex size-5 items-center justify-center border-b border-neutral-300 bg-neutral-50 font-semibold sm:mx-2',
                       rawQuery.startsWith(category.modifier)
                         ? 'border-primary-400 bg-primary-50 text-primary-700'
-                        : 'border-gray-300 text-gray-700'
+                        : 'border-neutral-300 text-neutral-700'
                     )}
                   >
                     {category.modifier}
