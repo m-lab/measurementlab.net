@@ -23,6 +23,7 @@ import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import { isVisible } from '@utils/content';
 import {
+  buildBibTeX,
   buildDatasetNode,
   datasetUrl,
   keywordsFor,
@@ -30,6 +31,7 @@ import {
   MLAB_CREATOR,
   temporalCoverageOf,
 } from '@utils/datasetSchema';
+import { Code } from 'astro-expressive-code/components';
 import ArrowTopRightOnSquareIcon from '~icons/heroicons/arrow-top-right-on-square-20-solid';
 import ChevronRightIcon from '~icons/heroicons/chevron-right-20-solid';
 import DocumentTextIcon from '~icons/heroicons/document-text-20-solid';
@@ -108,6 +110,14 @@ const formatFrequency = (f: string) => f.charAt(0).toUpperCase() + f.slice(1);
 // Rendered as a definition list; entries with no value drop out. Category and coverage
 // are deliberately absent — they are the hero tags, and repeating them here would say
 // the same thing twice on one screen.
+const bibtex = buildBibTeX(ds);
+
+// The prose citation on /data reads "The M-Lab <name> Data Set, <dates>. <url>" and
+// uses full dates, where the hero tag above shows years only.
+const citationRange = temporalCoverageStart
+  ? `${temporalCoverageStart}${temporalCoverageEnd ? `–${temporalCoverageEnd}` : ''}`
+  : null;
+
 const metadata = [
   { term: 'Geography', value: spatialCoverage },
   { term: 'Updated', value: updateFrequency && formatFrequency(updateFrequency) },
@@ -298,6 +308,32 @@ const metadata = [
 					</section>
 				)
 			}
+
+			<!-- Citation -->
+			<section class="mb-12">
+				<h2 class="mb-6 text-2xl font-bold">Citing this dataset</h2>
+				<p class="mb-4">
+					M-Lab data is released without restriction under a <a
+						href={LICENSE_URL}
+						target="_blank"
+						rel="noopener noreferrer">Creative Commons Zero waiver</a
+					>. Please cite this dataset as:
+				</p>
+
+				<p class="mb-6 border-l-4 border-neutral-300 pl-4">
+					The M-Lab {title}{citationRange ? `, ${citationRange}` : ''}. <a
+						href={canonicalUrl}>{canonicalUrl}</a
+					>
+				</p>
+				<p class="mb-3">
+					Or in <a
+						href="https://en.wikipedia.org/wiki/BibTeX"
+						target="_blank"
+						rel="noopener noreferrer">BibTeX</a
+					> format:
+				</p>
+				<Code code={bibtex} lang="bibtex" />
+			</section>
 
 			<!-- Related datasets -->
 			{

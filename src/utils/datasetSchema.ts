@@ -126,6 +126,80 @@ export const buildDatasetNode = (
   };
 };
 
+// Characters that mean something to LaTeX and so cannot pass through untouched.
+// Applied in a single pass — escaping `\` first and `{}` second would corrupt the
+// `\textbackslash{}` the first step just produced.
+const BIBTEX_ESCAPES: Record<string, string> = {
+  '\\': '\\textbackslash{}',
+  '~': '\\textasciitilde{}',
+  '^': '\\textasciicircum{}',
+  '&': '\\&',
+  '%': '\\%',
+  $: '\\$',
+  '#': '\\#',
+  _: '\\_',
+  '{': '\\{',
+  '}': '\\}',
+  // Values sit inside a "quoted" field, where a bare " ends the field early
+  '"': "''",
+};
+
+const bibtexEscape = (value: string) =>
+  value
+    .replace(/[\\~^&%$#_{}"]/g, (c) => BIBTEX_ESCAPES[c])
+    .replace(/\s+/g, ' ')
+    .trim();
+
+/**
+ * A BibTeX `@misc` entry for a dataset, in the citation format published on /data.
+ *
+ * `howpublished` is the dataset's own catalog page rather than an access point:
+ * access-point URLs can be `gs://` paths, which are not dereferenceable and so
+ * make a poor citation target. The access points are carried as `note` fields
+ * instead, matching the note/note1/note2 example on /data.
+ *
+ * Note the URL comes from `siteConfig.url`, so until that points at the production
+ * domain the emitted citation names the staging host.
+ */
+export const buildBibTeX = (ds: DatasetEntry): string => {
+  const {
+    title,
+    description,
+    temporalCoverageStart: start,
+    temporalCoverageEnd: end,
+    accessPoints = [],
+  } = ds.data;
+
+  const fields: [string, string][] = [
+    ['author', '{Measurement Lab}'],
+    // Braces protect the dataset's own capitalisation from BibTeX's title-casing
+    ['title', `{${bibtexEscape(title)}}`],
+  ];
+
+  // Dropped entirely when coverage is unknown, rather than emitting "(undefined)"
+  if (start) {
+    fields.push(['year', end ? `(${start} -- ${end})` : `(${start})`]);
+  }
+
+  fields.push(
+    ['howpublished', `\\url{${datasetUrl(ds.id)}}`],
+    ['comment', bibtexEscape(description)]
+  );
+
+  accessPoints.forEach((ap, i) => {
+    fields.push([
+      i === 0 ? 'note' : `note${i}`,
+      `${bibtexEscape(ap.label)} {\\tt ${bibtexEscape(ap.url)}}`,
+    ]);
+  });
+
+  const body = fields
+    .map(([name, value]) => `        ${name}="${value}"`)
+    .join(',\n');
+
+  return `@misc{${ds.id},\n${body}\n}`;
+};
+
 /** The DataCatalog node, embedding a full Dataset node per member. */
 export const buildCatalogJsonLd = (datasets: DatasetEntry[]) => ({
   '@context': 'https://schema.org/',
