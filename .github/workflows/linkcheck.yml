@@ -94,8 +94,8 @@ jobs:
               -e "s#${GITHUB_WORKSPACE}/##g" \
               ./lychee/out.md > cleaned.md
 
-          internal=$(grep -c 'file://' cleaned.md || true)
-          external=$(grep -c 'ERROR\] <http' cleaned.md || true)
+          internal=$(grep -cE '^\* \[[^]]+\] <(file://|/)' ./lychee/out.md || true)
+          external=$(grep -cE '^\* \[[^]]+\] <https?://' ./lychee/out.md || true)
 
           # Collapse each per-file section, with its issue count in the summary
           awk '
