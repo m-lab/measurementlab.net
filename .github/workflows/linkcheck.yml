@@ -97,6 +97,17 @@ jobs:
           internal=$(grep -cE '^\* \[[^]]+\] <(file://|/)' ./lychee/out.md || true)
           external=$(grep -cE '^\* \[[^]]+\] <https?://' ./lychee/out.md || true)
 
+          notice=""
+          if [ "${{ steps.mode.outputs.offline }}" = "true" ]; then
+            counts="**${internal} internal** · external: not checked"
+            notice=$(printf '%s\n' \
+              '> [!NOTE]' \
+              '> This run checked **internal links only**. To include external links' \
+              '> push a commit tagged `[linkcheck-full]`.')
+          else
+            counts="**${internal} internal** · **${external} external**"
+          fi
+
           # Collapse each per-file section, with its issue count in the summary
           awk '
             function flush() {
@@ -116,11 +127,16 @@ jobs:
           # Kept unheadered for the archive comparison in the next run
           cp sections.md ./lychee/sections-only.md
 
+
           {
-            echo "**${internal} internal** · **${external} external** · mode: ${mode}"
+            echo "${counts} · mode: ${mode}"
             echo
             echo "_Last run: $(date -u '+%Y-%m-%d %H:%M UTC') · commit \`${GITHUB_SHA:0:7}\` · [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})_"
             echo
+            if [ -n "$notice" ]; then
+              echo "$notice"
+              echo
+            fi
             echo "<!--report-start-->"
             cat sections.md
           } > ./lychee/report.md
@@ -184,5 +200,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh issue close ${{ steps.existing.outputs.number }} \
-            --comment "All links passing as of ${{ github.sha }}."
+          set -euo pipefail
+
+          if [ "${{ steps.mode.outputs.offline }}" = "true" ]; then
+            comment="All **internal** links passing as of ${{ github.sha }}. External links were not checked in this run."
+          else
+            comment="All links passing as of ${{ github.sha }}."
+          fi
+
+          gh issue close ${{ steps.existing.outputs.number }} --comment "$comment"
