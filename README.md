@@ -22,6 +22,10 @@ npm run dev      # Development server at localhost:4321
 npm run build    # Production build
 npm run preview  # Preview production build
 
+npm run lint       # Biome linter
+npm run lint:fix   # Biome, applying safe fixes
+npm run typecheck  # astro check
+
 PUBLIC_PREVIEW=true npm run dev      # Dev server with draft content visible
 npm run sync:pages-categories        # Regenerate CMS category dropdowns
 ```
