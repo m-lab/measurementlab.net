@@ -15,7 +15,7 @@ categories:
 publishedDate: 2017-03-07
 ---
 
-The Measurement Lab (M-Lab) global measurement platform contains the largest collection of open Internet performance [data](/src/assets/data/) on the planet. [Hundreds of thousands of people (and rising everyday!) test their Internet connections](https://measurementlab.net/visualizations) on M-Lab and provide that data to the [public domain](/src/assets/data/#data-license-and-citing-m-lab-data) for research, analysis and advocacy. As a consortium of research, industry, and public-interest partners, M-Lab is dedicated to providing an ecosystem for the open, verifiable measurement of global network performance. With an extensive library of data dating back to 2009, M-Lab has over 5 petabytes of information about quality of experience on the Internet contributed by people like you.
+The Measurement Lab (M-Lab) global measurement platform contains the largest collection of open Internet performance [data](/data/) on the planet. [Hundreds of thousands of people (and rising everyday!) test their Internet connections](https://measurementlab.net/visualizations) on M-Lab and provide that data to the [public domain](/data/#data-license-and-citing-m-lab-data) for research, analysis and advocacy. As a consortium of research, industry, and public-interest partners, M-Lab is dedicated to providing an ecosystem for the open, verifiable measurement of global network performance. With an extensive library of data dating back to 2009, M-Lab has over 5 petabytes of information about quality of experience on the Internet contributed by people like you.
 
 ![M-Lab Visualization - Compare Download Speeds in Philippines and Thailand](../../assets/images/blog/viz-SEasia-compare1.png)
 

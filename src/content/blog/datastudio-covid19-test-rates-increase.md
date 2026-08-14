@@ -15,7 +15,7 @@ categories:
 publishedDate: 2020-04-03
 ---
 
-Measurement Lab’s dataset is free, open, and full of data for Internet researchers to study how the Internet is performing under the increased COVID-19 related Internet usage. The DataStudio dashboards below correspond to the internal monitoring metrics we posted last week. They show data about test rate and median download speeds as COVID-19 increased its impact globally. You can read more about what the numbers suggest [here](/src/assets/blog/covid19-test-rates-increase/), but in summary, they show that:
+Measurement Lab’s dataset is free, open, and full of data for Internet researchers to study how the Internet is performing under the increased COVID-19 related Internet usage. The DataStudio dashboards below correspond to the internal monitoring metrics we posted last week. They show data about test rate and median download speeds as COVID-19 increased its impact globally. You can read more about what the numbers suggest [here](/blog/covid19-test-rates-increase/), but in summary, they show that:
 
 - Test volume is increasing
 - Some areas/networks appear to be saturated during peak times

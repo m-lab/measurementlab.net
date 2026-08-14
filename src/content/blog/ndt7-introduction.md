@@ -10,7 +10,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
   - matt-mathis
-externalAuthors: "Stephen Soltesz, Simone Basso"
+externalAuthors: 'Stephen Soltesz, Simone Basso'
 status: published
 categories:
   - NDT
@@ -74,7 +74,7 @@ affect longitudinal analysis.
 For a recent introduction to BBR see: [TCP BBR - Exploring TCP congestion
 control | by Andree Toonk][morebbr]
 
-[ndt]: /src/assets/tests/ndt/
+[ndt]: /tests/ndt/
 [simone]: https://github.com/bassosimone
 [morebbr]: https://medium.com/@atoonk/tcp-bbr-exploring-tcp-congestion-control-84c9c11dc3a9
 [ndt7-client-go]: https://github.com/m-lab/ndt7-client-go

@@ -9,7 +9,7 @@ excerpt: >-
 authors:
   - lai-yi-ohlsen
   - matt-mathis
-externalAuthors: "Stephen Soltesz"
+externalAuthors: 'Stephen Soltesz'
 status: published
 categories:
   - NDT
@@ -94,8 +94,8 @@ in ndt7. For the most important instruments, web100 and TCP_INFO are
 identical. We are still investigating methods for estimating some of the
 historical web100 instruments from archived TCP_INFO data.
 
-[platform]: /src/assets/blog/the-platform-has-landed/
-[tcp-info-docs]: /src/assets/tests/tcp-info/
+[platform]: /blog/the-platform-has-landed/
+[tcp-info-docs]: /tests/tcp-info/
 
 Open questions:
 

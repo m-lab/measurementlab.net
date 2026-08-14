@@ -7,7 +7,7 @@ excerpt: >-
   new software stack. The changes include: * Stock Linux 4.19 LTS kernels with
   modern TCP and Cubic congestion control * Standard instrumentation fo...
 authors: []
-externalAuthors: "Stephen Soltesz"
+externalAuthors: 'Stephen Soltesz'
 status: published
 categories:
   - Platform
@@ -71,8 +71,8 @@ new data formats, building new parsers and BQ schemas for the new data
 formats. Not all of this is publicly available yet. So, the data below are
 a preview of what will be possible once the data is generally available.
 
-[1]: /src/assets/blog/modernizing-mlab
-[2]: /src/assets/blog/mlab-20-platform-migration-update
+[1]: /blog/modernizing-mlab
+[2]: /blog/mlab-20-platform-migration-update
 [3]: https://siteinfo.mlab-oti.measurementlab.net/v1/adhoc/upgrade.json
 
 # Pilot Entry Criteria
@@ -92,7 +92,7 @@ allow the calculation of:
 Using these values, we can evaluate all of the criteria above for uploads and
 downloads.
 
-[web100]: /src/assets/data/docs/bq/schema/ndt/
+[web100]: /data/docs/bq/schema/ndt/
 
 ## Test Counts
 

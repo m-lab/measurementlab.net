@@ -8,7 +8,7 @@ excerpt: >-
   appropriate use of our data in their analyses and reports.
 authors:
   - lai-yi-ohlsen
-externalAuthors: "Greg Russell, Stephen Soltesz"
+externalAuthors: 'Greg Russell, Stephen Soltesz'
 status: published
 categories:
   - Research
@@ -155,7 +155,7 @@ combination of:
 - Internet evolution
 - Client population changes
 - M-Lab platform or service changes ([e.g. shifting from Cubic to BBR congestion
-  control](/src/assets/blog/evolution-of-ndt/))
+  control](/blog/evolution-of-ndt/))
 
 In aggregate, any change (to the Internet, client population, or service
 software) may lead to improving or declining performance measurements. For

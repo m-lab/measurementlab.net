@@ -6,7 +6,7 @@ excerpt: >-
   or mlab-ns.appspot.com service. There are alternatives available for migration
   now.
 authors: []
-externalAuthors: "Stephen Soltesz"
+externalAuthors: 'Stephen Soltesz'
 status: published
 categories:
   - Platform
@@ -90,10 +90,10 @@ If you have exceptional concerns about the retirement of ndt5+raw or
 mlab-ns.appspot.com, [please let us know](mailto:support@measurementlab.net).
 
 [clients]: https://github.com/m-lab/ndt-server#clients
-[intro]: /src/assets/blog/ndt7-introduction
-[evolution]: /src/assets/blog/evolution-of-ndt
-[required]: /src/assets/blog/ndt7-access-tokens
+[intro]: /blog/ndt7-introduction
+[evolution]: /blog/evolution-of-ndt
+[required]: /blog/ndt7-access-tokens
 [locatev2]: /src/assets/develop/locate-v2/
-[gcp]: /src/assets/blog/virtual-sites-gcp/
-[ttc]: /src/assets/blog/2022-mlab-to-the-cloud/
-[migration]: /src/assets/blog/the-platform-has-landed/
+[gcp]: /blog/virtual-sites-gcp/
+[ttc]: /blog/2022-mlab-to-the-cloud/
+[migration]: /blog/the-platform-has-landed/

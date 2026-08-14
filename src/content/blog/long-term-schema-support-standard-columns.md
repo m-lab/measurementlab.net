@@ -17,7 +17,7 @@ categories:
 publishedDate: 2020-07-15
 ---
 
-Following the M-Lab platform upgrade in Nov. 2019, the development team began a series of follow up projects to enable access to NDT data for various audiences with differing needs. The first step in that process was [the publication of "unified views"](/src/assets/blog/new-ndt-unified-views/), which present the most commonly used fields in NDT data, and only show tests that meet our current, best understanding of test completeness. This was one step toward [Long Term Support of stable schemas](/src/assets/blog/new-ndt-unified-views/#long-term-support) for our tables and views in BigQuery. In other words, a lot of work is happening in the background to support long term support for standard BigQuery columns across all M-Lab datasets.
+Following the M-Lab platform upgrade in Nov. 2019, the development team began a series of follow up projects to enable access to NDT data for various audiences with differing needs. The first step in that process was [the publication of "unified views"](/blog/new-ndt-unified-views/), which present the most commonly used fields in NDT data, and only show tests that meet our current, best understanding of test completeness. This was one step toward [Long Term Support of stable schemas](/blog/new-ndt-unified-views/#long-term-support) for our tables and views in BigQuery. In other words, a lot of work is happening in the background to support long term support for standard BigQuery columns across all M-Lab datasets.
 
 ## Motivations for Standard Columns
 

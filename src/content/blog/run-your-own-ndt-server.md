@@ -18,7 +18,7 @@ categories:
 publishedDate: 2019-11-26
 ---
 
-If you've followed the M-Lab blog over the past year and a half, you'll know that we've been engineering and testing a massive upgrade to our server software and how it's managed and deployed \[[1](/src/assets/blog/modernizing-mlab)\] \[[2](/src/assets/blog/mlab-20-platform-migration-update)\] \[[3](/src/assets/blog/global-pilot-entry/)\] \[[4](/src/assets/blog/global-pilot-success/)\]. That's been a ton of work, and our team is excited to now complete the migration from the PLC/vserver platform to the new k8s stack.
+If you've followed the M-Lab blog over the past year and a half, you'll know that we've been engineering and testing a massive upgrade to our server software and how it's managed and deployed \[[1](/blog/modernizing-mlab)\] \[[2](/blog/mlab-20-platform-migration-update)\] \[[3](/blog/global-pilot-entry/)\] \[[4](/blog/global-pilot-success/)\]. That's been a ton of work, and our team is excited to now complete the migration from the PLC/vserver platform to the new k8s stack.
 
 We expect some great derivative outcomes of migrating to Docker and Kubernetes both for ourselves in managing the platform and measurement tests we host, and for the community as well. In particular, the NDT server was completely rewritten in _Golang_, and being fully "dockerized" the server is now portable and usable outside of the M-Lab platform by others. This is really exciting because not only can M-Lab use our tools to measure the public Internet, but _anyone_ can run our server now to measure their network privately using the same methods and tools. This post kicks off a series of blogs that will demonstrate various ways to use M-Lab server and client tools, starting with `ndt-server`.
 
@@ -232,9 +232,9 @@ datadir/
 
 Ok, great, so now we have an `ndt-server` running. We can test with browser clients- yay! You can now use M-Lab's `ndt-server` and associated services just like we do. In fact, we've already collaborated with people interested in using this open source tool to assess their networks.
 
-This demo gets an `ndt-server` up and running and collecting test data from clients using it on the network. But there's obviously more to it than that. M-Lab test results get pushed to our [data archive]() and [BigQuery datasets]() by way of our [ETL pipeline](). You probably want to do things with your data as well.
+This demo gets an `ndt-server` up and running and collecting test data from clients using it on the network. But there's obviously more to it than that. M-Lab test results get pushed to our [data archive](<>) and [BigQuery datasets](<>) by way of our [ETL pipeline](<>). You probably want to do things with your data as well.
 
-As we continue making the `ndt-server` fullstack image more production ready, I'll post an update that demonstrates the use of [pusher](), our solution to getting data from an `ndt-server` to a Google Cloud Storage bucket.
+As we continue making the `ndt-server` fullstack image more production ready, I'll post an update that demonstrates the use of [pusher](<>), our solution to getting data from an `ndt-server` to a Google Cloud Storage bucket.
 
 Of course, not everyone needs to run their own server. You may want a better way to automatically test your connection using an NDT client. You might also want to:
 

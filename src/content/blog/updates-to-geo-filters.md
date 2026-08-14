@@ -33,7 +33,7 @@ Since we began collecting data, M-Lab has used MaxMind's [free GeoLite geoip dat
 
 ![geo-annotations-table](../../assets/images/blog/2022-03-updates-to-geo-filters/2022-03-21%20GeoAnnotations.png)
 
-Since M-Lab data spans 2009 to the present, we had to make a choice when developing our [Unified Views](/src/assets/blog/new-ndt-unified-views/#ndt-unified-views-now-published) - should we mix conventions (i.e. use both “.Region” and “.Subdivision1ISOCode”) or standardize on one? We chose to standardize on the Geo2 ISO3166 conventions. However, our published data has used a mixture of these conventions since 2017-09, when the “Geo2 format” was introduced.
+Since M-Lab data spans 2009 to the present, we had to make a choice when developing our [Unified Views](/blog/new-ndt-unified-views/#ndt-unified-views-now-published) - should we mix conventions (i.e. use both “.Region” and “.Subdivision1ISOCode”) or standardize on one? We chose to standardize on the Geo2 ISO3166 conventions. However, our published data has used a mixture of these conventions since 2017-09, when the “Geo2 format” was introduced.
 
 The introduction of ndt7, the Unified Views, and this mixture of annotation conventions resulted in only ndt5 data being returned when users ran queries that used `client.Geo.Region`. To ensure data includes all relevant results, queries run prior to 2022-03-17 for dates between 2020-02 and 2022-03-17 and used `client.Geo.Region` should be rerun.
 

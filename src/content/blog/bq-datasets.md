@@ -8,7 +8,7 @@ excerpt: >-
   recommended tables and views for most researchers to use. At that time we
   also...
 authors: []
-externalAuthors: "Stephen Soltesz"
+externalAuthors: 'Stephen Soltesz'
 status: published
 categories:
   - Data
@@ -17,7 +17,7 @@ categories:
 publishedDate: 2019-05-02
 ---
 
-Earlier this year, M-Lab published [blog post outlining our new ETL pipeline and transition to new BigQuery tables](/src/assets/blog/etl-pipeline/). That post also outlined where we’ve saved our datasets, tables, and views in BigQuery historically, and recommended tables and views for most researchers to use. At that time we also implemented semantic versioning to new dataset and table releases at that time, and began publishing BigQuery views that unify our NDT data across multiple schema iterations and migrations.
+Earlier this year, M-Lab published [blog post outlining our new ETL pipeline and transition to new BigQuery tables](/blog/etl-pipeline/). That post also outlined where we’ve saved our datasets, tables, and views in BigQuery historically, and recommended tables and views for most researchers to use. At that time we also implemented semantic versioning to new dataset and table releases at that time, and began publishing BigQuery views that unify our NDT data across multiple schema iterations and migrations.
 
 Today, the `measurement-lab` BigQuery project contains 22 datasets, with many tables and views within. While some are documented, others are not, the list can certainly be simplified. Now in April 2019, our development team is beginning work toward a new release and in the process will begin naming our BigQuery datasets and views after M-Lab measurement services and data types. We expect this change to simplify the list of our public datasets for BigQuery users but will initially require some changes to queries within your applications or workflows.
 
@@ -49,7 +49,7 @@ For each M-Lab measurement service that uses the ETL pipeline to publish to BigQ
 
 Historically, Paris Traceroute data was collected for every measurement service. So for this data type, we will create a view in the `aggregate` dataset. Over the next year, we will restructure the traceroute schema to support reprocessing using the [Gardener service](https://github.com/m-lab/etl-gardener), and to unify the schema for historical and future data collection by [Scamper](https://www.caida.org/tools/measurement/scamper/) So, while there is data available now, consider the schema an “alpha” release that will change.
 
-The [current release convention](/src/assets/blog/etl-pipeline/#new-etl-pipeline-and-transition-to-new-bigquery-tables) supports a hierarchy of releases, release candidates “rc”, versioned release candidates, and versioned intermediate views. For now, these will remain unchanged until June 1, 2019. However, they will cease being updated with new data starting May 6, 2019. As we validate the output from [Gardener](https://github.com/m-lab/etl-gardener), and retire the contents of legacy tables, new releases and release candidates views will be migrated to the corresponding dataset.
+The [current release convention](/blog/etl-pipeline/#new-etl-pipeline-and-transition-to-new-bigquery-tables) supports a hierarchy of releases, release candidates “rc”, versioned release candidates, and versioned intermediate views. For now, these will remain unchanged until June 1, 2019. However, they will cease being updated with new data starting May 6, 2019. As we validate the output from [Gardener](https://github.com/m-lab/etl-gardener), and retire the contents of legacy tables, new releases and release candidates views will be migrated to the corresponding dataset.
 
 As we upgrade M-Lab nodes to the new software stack, some measurement services will save new formats and new data types. For example, all measurement services will be deployed with the [tcpinfo](https://github.com/m-lab/tcp-info) sidecar. The tcpinfo data type will be published with the measurement service dataset in BigQuery. For example:
 

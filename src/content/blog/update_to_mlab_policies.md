@@ -16,7 +16,7 @@ categories:
 publishedDate: 2019-07-19
 ---
 
-Earlier this month, M-Lab published updates to our [policies](/src/assets/policies/) after completing a comprehensive review to ensure our compliance with the EU General Data Protection Regulation (GDPR) and in preparation for the [M-Lab 2.0 platform modernization update]({{ site. baseurl }}/blog/mlab-20-platform-migration-update/) that will be rolled out this fall. This post outlines the changes and additions to our policies for the general public, for experiment developers hosting tests on the M-Lab platform, and for partners who provide hosting for M-Lab servers. TL;DR: If you're simply interested in what data is collected when you run an M-Lab test, our [pages for each M-Lab test](/src/assets/tests) provide a schema where available, in addition to our [Privacy](/src/assets/privacy/) and [Acceptable Use](/src/assets/aup/) policies.
+Earlier this month, M-Lab published updates to our [policies](/src/assets/policies/) after completing a comprehensive review to ensure our compliance with the EU General Data Protection Regulation (GDPR) and in preparation for the [M-Lab 2.0 platform modernization update]({{ site. baseurl }}/blog/mlab-20-platform-migration-update/) that will be rolled out this fall. This post outlines the changes and additions to our policies for the general public, for experiment developers hosting tests on the M-Lab platform, and for partners who provide hosting for M-Lab servers. TL;DR: If you're simply interested in what data is collected when you run an M-Lab test, our [pages for each M-Lab test](/tests) provide a schema where available, in addition to our [Privacy](/src/assets/privacy/) and [Acceptable Use](/src/assets/aup/) policies.
 
 ## Why we've updated our policies
 
@@ -33,7 +33,7 @@ The M-Lab community also involves third-party contributors and partners who eith
 - Experiment Developers
 - M-Lab Core Infrastructure Partners
 
-When M-Lab [upgrades to our modernized platform later this year](/src/assets/blog/mlab-20-platform-migration-update/), we will require new agreements and policies for our experiment developers and core infrastructure partners.
+When M-Lab [upgrades to our modernized platform later this year](/blog/mlab-20-platform-migration-update/), we will require new agreements and policies for our experiment developers and core infrastructure partners.
 
 ### Experiment Developers
 

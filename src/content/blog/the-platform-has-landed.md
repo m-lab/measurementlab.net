@@ -6,7 +6,7 @@ excerpt: >-
   landed. We want to express special thanks to those who have supported the
   project and helped us get here.
 authors: []
-externalAuthors: "Stephen Soltesz"
+externalAuthors: 'Stephen Soltesz'
 status: published
 categories:
   - Platform
@@ -31,8 +31,8 @@ M-Lab was built and provides unprecedented transparency and reproducibility.
 Now we're running both new and backward compatible measurement services, with
 plans to add more soon:
 
-- [NDT](/src/assets/tests/ndt/)
-- [Neubot](/src/assets/tests/neubot/)
+- [NDT](/tests/ndt/)
+- [Neubot](/tests/neubot/)
 - [WeHe](https://dd.meddle.mobi/)
 
 These primary measurement services run alongside core service and sidecar
@@ -77,11 +77,11 @@ use-cases over time.
 
 Thank you!
 
-[1]: /src/assets/blog/modernizing-mlab
-[2]: /src/assets/blog/mlab-20-platform-migration-update
-[3]: /src/assets/blog/global-pilot-entry
-[4]: /src/assets/blog/global-pilot-success
-[5]: /src/assets/blog/platform-transition-ndt-dataset-tables-views
+[1]: /blog/modernizing-mlab
+[2]: /blog/mlab-20-platform-migration-update
+[3]: /blog/global-pilot-entry
+[4]: /blog/global-pilot-success
+[5]: /blog/platform-transition-ndt-dataset-tables-views
 [6]: https://www.planet-lab.org/
 [8]: https://www.newamerica.org/oti/
 [9]: https://www.fcc.gov/general/measuring-broadband-america

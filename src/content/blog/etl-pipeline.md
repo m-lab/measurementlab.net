@@ -18,11 +18,11 @@ publishedDate: 2018-02-09
 
 Since May 2017, the M-Lab team has been working on an updated, open source pipeline, which pulls raw data from our servers, saves it to Google Cloud Storage, and then parses it into our BigQuery tables. The team is particularly excited about this update because it means that the pipeline no longer relies on closed source libraries.
 
-The new open source ETL pipeline is one project in a [larger initiative to update all components of the M-Lab platform](/src/assets/blog/modernizing-mlab/). In this post, we'll talk about our expected timeline for transitioning to our new BigQuery datasets and tables, and invite you to explore the new tables, schema, metadata, and table features. We'll also discuss future planned updates to the tables and their schemas, as we continue work to modernize and update the M-Lab platform software stack.
+The new open source ETL pipeline is one project in a [larger initiative to update all components of the M-Lab platform](/blog/modernizing-mlab/). In this post, we'll talk about our expected timeline for transitioning to our new BigQuery datasets and tables, and invite you to explore the new tables, schema, metadata, and table features. We'll also discuss future planned updates to the tables and their schemas, as we continue work to modernize and update the M-Lab platform software stack.
 
 ## Transitioning to New BigQuery Tables - Current Status and Anticipated Timeline
 
-If you've been querying our data lately, you may have noticed some changes. In early [May 2017](/src/assets/blog/transitioning-data-pipeline/) as a part of our pipeline transition work, our team instituted several changes:
+If you've been querying our data lately, you may have noticed some changes. In early [May 2017](/blog/transitioning-data-pipeline/) as a part of our pipeline transition work, our team instituted several changes:
 
 - New raw test data is being published to a new storage bucket, [archive-mlab-oti](https://console.cloud.google.com/storage/browser/archive-mlab-oti)
   - Our team will complete a quality assurance process internally before moving all data to our documented storage bucket, [m-lab](https://console.cloud.google.com/storage/browser/m-lab)
@@ -87,7 +87,7 @@ To help researchers during this transition, and for future schema/table changes,
   - An alias to current supported release containing the set of views that most people should use
   - These views will be updated to include any refinements to the recommended filtering, and may include changes to the schema over time
   - If using the **release** alias, researchers should be subscribed to the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/forum/#!forum/discuss), where we will announce new releases
-  - M-Lab staff will post upcoming change info to the [M-Lab Discuss group](), and update the view descriptions to reflect the planned changes. Since ALL views eventually either change, or are deprecated and removed, all users, whether using "release" or "release_vX_Y_Z", should either look at the view description for information on how long the views will be supported, or follow discuss list
+  - M-Lab staff will post upcoming change info to the [M-Lab Discuss group](<>), and update the view descriptions to reflect the planned changes. Since ALL views eventually either change, or are deprecated and removed, all users, whether using "release" or "release_vX_Y_Z", should either look at the view description for information on how long the views will be supported, or follow discuss list
 
 M-Lab recommends using the **release** dataset for most people. This will make future table schema transitions less impactful since queries can be pinned to the release views instead of to a specific table name
 
@@ -104,7 +104,7 @@ The views above ending in `_legacysql` require you to use [legacySQL](https://cl
 
 Our v3.1 tables will go into production for NDT, Paris Traceroute, and Sidestream in early 2018. Additionally, we will complete work on our [annotation service](https://github.com/m-lab/annotation-service), which will provide the blacklist_flags field, which tags test rows where infrastructure or other issues may have occurred. The annotation service provides geolocation information for all tests and has been developed as a separate service to be extensible for adding different types of metadata in the future.
 
-A complete version history and changelog for our NDT, NPAD, Paris Traceroute, and Sidestream tables is published under [Data > Schema](/src/assets/data/docs/bq/schema).
+A complete version history and changelog for our NDT, NPAD, Paris Traceroute, and Sidestream tables is published under [Data > Schema](/data/docs/bq/schema).
 
 ## Summary of v3.1 Table/Schema and Feature Changes
 

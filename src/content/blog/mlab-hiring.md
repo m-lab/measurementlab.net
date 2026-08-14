@@ -16,10 +16,9 @@ publishedDate: 2019-03-04
 
 Hello M-Lab Community!
 
-
 TLDR; Interested in working with M-Lab? We are hiring a Project Director and have opportunities for contracts! Check out the job description and more information about the contract, and apply by March 31st!
 
-As you may have seen, M-Lab recently [moved over to Code for Science & Society](/src/assets/blog/mlab-announcement/#after-a-decade-of-growth,-measurement-lab-spins-out-of-new-america-to-join-code-for-science-&-society). One change that might not have been as visible is that I also recently moved into a [new role over at Simply Secure](https://simplysecure.org/blog/hello-georgia). For those of you whom I’ve worked with over the years on many M-Lab related projects — it’s important to note, that I’m still involved at M-Lab, I’m just moving out of my role in the day to day management, and instead still involved in some specific projects and in strategy and governance of M-Lab.
+As you may have seen, M-Lab recently [moved over to Code for Science & Society](/blog/mlab-announcement/#after-a-decade-of-growth,-measurement-lab-spins-out-of-new-america-to-join-code-for-science-&-society). One change that might not have been as visible is that I also recently moved into a [new role over at Simply Secure](https://simplysecure.org/blog/hello-georgia). For those of you whom I’ve worked with over the years on many M-Lab related projects — it’s important to note, that I’m still involved at M-Lab, I’m just moving out of my role in the day to day management, and instead still involved in some specific projects and in strategy and governance of M-Lab.
 
 As a result, we are looking for someone new to join the team and help lead the work, based out of our fiscal sponsor [Code for Science & Society](https://codeforscience.org)! The full job description is available on our [new jobs & opportunities page](/src/assets/jobs/), so read more there!
 

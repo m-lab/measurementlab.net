@@ -8,7 +8,7 @@ excerpt: >-
   performance. The Observatory provides easier access to M-Lab’s rich dataset
   ...
 authors: []
-externalAuthors: "Collin Anderson"
+externalAuthors: 'Collin Anderson'
 status: published
 categories:
   - Interconnection
@@ -17,7 +17,7 @@ categories:
 publishedDate: 2015-02-12
 ---
 
-Last October, Measurement Lab [released the Internet Observatory](/src/assets/blog/2014_interconnection_report/), a data-visualization tool that enables consumers, policymakers, and researchers to better understand the impact of ISP relationships on Internet access and performance. The Observatory provides easier access to M-Lab’s rich dataset on network performance to reproduce the analysis in our report on “ISP Interconnection and its Impact on Consumer Internet Performance.”
+Last October, Measurement Lab [released the Internet Observatory](/blog/2014_interconnection_report/), a data-visualization tool that enables consumers, policymakers, and researchers to better understand the impact of ISP relationships on Internet access and performance. The Observatory provides easier access to M-Lab’s rich dataset on network performance to reproduce the analysis in our report on “ISP Interconnection and its Impact on Consumer Internet Performance.”
 
 As a part of our ongoing research on interconnection, M-Lab has updated the Observatory to include data up to the start of the February 2015, including new measurement points with additional network perspectives that affect consumer performance. The Observatory will now be updated on a weekly basis to enable more responsive monitoring and more detailed comparison against past performance.
 

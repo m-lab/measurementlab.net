@@ -6,9 +6,9 @@ excerpt: >-
   Platform][modernize]. This year, we’re bringing them to
   life. Here’s a summary of why the platform update is so valuable and what you
   can expect throughout the year. [modernize]:
-  /src/assets/blog/modernizing-mlab
+  /blog/modernizing-mlab
 authors: []
-externalAuthors: "Stephen Soltesz"
+externalAuthors: 'Stephen Soltesz'
 status: published
 categories:
   - Platform
@@ -26,7 +26,7 @@ Platform][modernize]. This year, we’re bringing them to
 life. Here’s a summary of why the platform update is so valuable and what you
 can expect throughout the year.
 
-[modernize]: /src/assets/blog/modernizing-mlab
+[modernize]: /blog/modernizing-mlab
 
 ## Advantages
 

@@ -24,6 +24,6 @@ The NDT unified views are available in preliminarily form now, and a first versi
 
 ## If you need current data before then
 
-NDT data beyond November 2019 has continued to be published to BigQuery. [Now that the NDT unified views are available](/src/assets/blog/), M-Lab recommends that most people use them to query NDT data.
+NDT data beyond November 2019 has continued to be published to BigQuery. [Now that the NDT unified views are available](/blog/), M-Lab recommends that most people use them to query NDT data.
 
-If you've never queried M-Lab data in BigQuery, please visit our [BigQuery Quickstart guide](/src/assets/quickstart/) and [documentation](/src/assets/data/docs/) to get started! You can also reach out for help at support@measurementlab.net, or watch for one of our upcoming community calls.
+If you've never queried M-Lab data in BigQuery, please visit our [BigQuery Quickstart guide](/src/assets/quickstart/) and [documentation](/data/docs/) to get started! You can also reach out for help at support@measurementlab.net, or watch for one of our upcoming community calls.

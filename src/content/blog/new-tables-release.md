@@ -7,7 +7,7 @@ excerpt: >-
   new, faster-performing tables will be M-Lab's new standard BigQuery tables.
   Before we move on to specifics, when we say faster performing, we me...
 authors: []
-externalAuthors: "Michael Lynch"
+externalAuthors: 'Michael Lynch'
 status: published
 categories:
   - Bigquery
@@ -34,13 +34,13 @@ These tables are:
 - `plx.google:m_lab.sidestream.all`
 - `plx.google:m_lab.paris_traceroute.all`
 
-These tables offer a tremendous amount of improvements over our legacy per-month tables, including performance improvements by orders of magnitude. These benefits are detailed in M-Lab's [previous blog post](/src/assets/blog/bigquery-performance-improvements/).
+These tables offer a tremendous amount of improvements over our legacy per-month tables, including performance improvements by orders of magnitude. These benefits are detailed in M-Lab's [previous blog post](/blog/bigquery-performance-improvements/).
 
-M-Lab will continue to support and update the legacy tables, but these tables are deprecated and will not see future development. To migrate your legacy queries to take advantage of M-Lab's new, faster tables, please refer to the [Legacy Migration Guide](/src/assets/data/docs/bq/legacymigration) for details.
+M-Lab will continue to support and update the legacy tables, but these tables are deprecated and will not see future development. To migrate your legacy queries to take advantage of M-Lab's new, faster tables, please refer to the [Legacy Migration Guide](/data/docs/bq/legacymigration) for details.
 
 ## Overhauled Data Documentation
 
-M-Lab has massive amounts of data available for researchers, but many of our users have reported difficulty finding or using documentation about our data. To address this, today M-Lab is publishing consolidated documentation, updated to cover M-Lab's new BigQuery tables. You can view this documentation under the ["Data" tab](/src/assets/data/) of the M-Lab web site.
+M-Lab has massive amounts of data available for researchers, but many of our users have reported difficulty finding or using documentation about our data. To address this, today M-Lab is publishing consolidated documentation, updated to cover M-Lab's new BigQuery tables. You can view this documentation under the ["Data" tab](/data/) of the M-Lab web site.
 
 This documentation covers everything that our users need to work with our data, including:
 

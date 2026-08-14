@@ -14,7 +14,7 @@ categories:
 publishedDate: 2019-09-18
 ---
 
-While we've been hard at work this year on the [M-Lab 2.0 Platform Upgrade](/src/assets/blog/) and [Global Pilot](/src/assets/blog/), the number of people all over the world runing NDT tests has continued to grow. We collected 2 billion total NDT results between 2009-01-01 and the beginning of the second quarter of 2019, and we are on track to add 500 million just from April through September of this year! We now regularly exceed 3 million NDT tests per day, compared with 2.4 million per day at the end of the first quarter of 2019, 1 million per day two years ago, and 50k per day four years ago.
+While we've been hard at work this year on the [M-Lab 2.0 Platform Upgrade](/blog/) and [Global Pilot](/blog/), the number of people all over the world runing NDT tests has continued to grow. We collected 2 billion total NDT results between 2009-01-01 and the beginning of the second quarter of 2019, and we are on track to add 500 million just from April through September of this year! We now regularly exceed 3 million NDT tests per day, compared with 2.4 million per day at the end of the first quarter of 2019, 1 million per day two years ago, and 50k per day four years ago.
 
 It took us 6 years to get our first 500 million rows, and we now receive that many measurements every 6 months!
 

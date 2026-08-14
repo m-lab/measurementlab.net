@@ -24,7 +24,7 @@ At the end of August, the platform was ready to be fully transitioned. In Septem
 
 ## Change in NDT data publishing dataset, tables, and views
 
-During the staged rolling upgrade to `ndt-server` from [web100 to tcp_info](/src/assets/blog/modernizing-mlab/), NDT test data were published to two different datasets. Our ETL pipeline made NDT tests collected by the `web100` version of the NDT server available in these BigQuery Views:
+During the staged rolling upgrade to `ndt-server` from [web100 to tcp_info](/blog/modernizing-mlab/), NDT test data were published to two different datasets. Our ETL pipeline made NDT tests collected by the `web100` version of the NDT server available in these BigQuery Views:
 
 - `measurement-lab.ndt.recommended`
 - `measurement-lab.ndt.downloads`

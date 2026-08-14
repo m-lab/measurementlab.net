@@ -9,7 +9,7 @@ excerpt: >-
   deployed performance measurement test. In addition to improved stability, the
   updated version of NDT makes it possible to measure network perfo...
 authors: []
-externalAuthors: "Collin Anderson"
+externalAuthors: 'Collin Anderson'
 status: published
 categories:
   - Consumer Internet
@@ -26,7 +26,6 @@ publishedDate: 2015-06-24
 In late April, Internet2, with contributions from M-Lab developers, released an updated version of the Network Diagnostic Tool (NDT), M-Lab’s most widely deployed performance measurement test. In addition to improved stability, the updated version of NDT makes it possible to [measure network performance from a web browser](http://ndt.iupui.mlab1.iad01.measurement-lab.org:7123) without the need for browser plugins. This change removes a layer of complexity and hassle for developers and users. Anyone interested in Internet measurement can now [create their own NDT client](https://github.com/ndt-project/ndt/tree/master/HTML5-frontend) targeted for specific user populations, regions, and research objectives, using only HTML and Javascript.
 
 A number of third parties have already begun this process, from regulators to service providers. Each is building and using their own measurement clients for their own purposes, all while contributing standardized data to M-Lab. More data makes possible more concrete and fine-grained analysis, and a more comprehensive view of international Internet performance patterns. Among those who have taken advantage of this change in NDT is Battle for the Net, a coalition of public interest advocacy organizations. The coalition released and distributed the [Internet Health Test](http://internethealthtest.org/), which resulted in a large spike in tests and a concomitant increase in the amount of data M-Lab collected – on the order of 2.5 million data points from 300,000 Internet users, mostly located in the United States.
-
 
 ![Chart showing M-lab daily number of tests - May 2015](../../assets/images/blog/m-lab-daily-tests-may-2015.png)
 
@@ -56,7 +55,7 @@ M-Lab’s New York sites received the highest number of tests and experienced mo
 **Verizon over GTT in Washington D.C.**
 In Washington D.C., customers of Verizon experienced severely degraded performance when connecting across GTT. Comcast and Time Warner Cable customers also experienced degradation across GTT, but to a lesser extent.
 
-These episodes and much more data are visualized and publicly available in the [Internet Observatory](/src/assets/observatory/), a dynamic data-visualization tool that allows consumers, policymakers, and researchers to better understand the impact of ISP relationships on their own Internet access and performance. As with all of our research, we invite anyone interested to access the original data and draw their own conclusions. It’s [all published in its complete and raw form, in the public domain.](/src/assets/tests/ndt/)
+These episodes and much more data are visualized and publicly available in the [Internet Observatory](/src/assets/observatory/), a dynamic data-visualization tool that allows consumers, policymakers, and researchers to better understand the impact of ISP relationships on their own Internet access and performance. As with all of our research, we invite anyone interested to access the original data and draw their own conclusions. It’s [all published in its complete and raw form, in the public domain.](/tests/ndt/)
 
 Collin Anderson, on behalf of M-Lab researchers
 

@@ -26,7 +26,7 @@ services have annotated measurements with geographic and network information in
 the past and present, and expands on what current work is happening now as
 mentioned in our roadmap post.
 
-[roadmap]: /src/assets/blog/roadmap-update/
+[roadmap]: /blog/roadmap-update/
 [gardener]: https://github.com/m-lab/etl-gardener
 [uuid-annotator]: https://github.com/m-lab/annotation-service
 
@@ -37,7 +37,7 @@ Over our history, the M-Lab platform has changed quite a bit. Our post last year
 service over time, and touched on changes to our server instrumentation.
 Similarly, how we have annotated measurements has evolved over this time as well.
 
-[ndt-evolution]: /src/assets/blog/evolution-of-ndt/
+[ndt-evolution]: /blog/evolution-of-ndt/
 
 When you choose to run one of the tests M-Lab provides, you're first connected
 to one of our available servers nearest to you, through which the measurement is
@@ -55,7 +55,7 @@ measurement service, but as an example, the NDT performance test collects:
 - the measurement values you see at the end of the test
 - the IP address assigned by ISPs to routers, modems, or other on-premises devices
 
-[tests]: /src/assets/tests/
+[tests]: /tests/
 
 The table below describes the historical changes to geographic annotations from
 2009 to the present, as well as changes to the two sources of TCP statistics

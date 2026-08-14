@@ -7,7 +7,7 @@ excerpt: >-
   from [server traffic microbursts][microbursts], we now support the *DIS*card
   *CO*llection (a.k.a. DISCO) dataset as a standard M-Lab BigQuery ...
 authors: []
-externalAuthors: "Stephen Soltesz"
+externalAuthors: 'Stephen Soltesz'
 status: published
 categories:
   - Data
@@ -28,8 +28,8 @@ Originally designed to detect switch discards from
 (a.k.a. DISCO) dataset as a standard M-Lab BigQuery table:
 [`measurement-lab.base_tables.switch`][switch-schema]
 
-[microbursts]: /src/assets/blog/traffic-microbursts-and-their-effect-on-internet-measurement
-[switch-schema]: /src/assets/data/docs/bq/schema/utilization
+[microbursts]: /blog/traffic-microbursts-and-their-effect-on-internet-measurement
+[switch-schema]: /data/docs/bq/schema/utilization
 
 ## DISCO Metrics
 

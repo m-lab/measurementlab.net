@@ -19,7 +19,7 @@ categories:
 publishedDate: 2019-03-28
 ---
 
-Over the past few years, M-Lab has supported an increasing number of local communities, municipalities, regional coalitions, and others who are interested in understanding the state of broadband service in their area. In every case, communities come to M-Lab because of the openness of our data. Combined with M-Lab's open source code and [community examples](/src/assets/data/tools/#community), we've been able to further support communities in [building](https://mi.broadbandtest.us/) and running their own [broadband measurement test sites](https://www.speeduplouisville.com/) and broadband [community surveys](https://ferrycountybroadband.com/), to support local outreach, advocacy, and planning.
+Over the past few years, M-Lab has supported an increasing number of local communities, municipalities, regional coalitions, and others who are interested in understanding the state of broadband service in their area. In every case, communities come to M-Lab because of the openness of our data. Combined with M-Lab's open source code and [community examples](/data/tools/#community), we've been able to further support communities in [building](https://mi.broadbandtest.us/) and running their own [broadband measurement test sites](https://www.speeduplouisville.com/) and broadband [community surveys](https://ferrycountybroadband.com/), to support local outreach, advocacy, and planning.
 
 ![Speedup Louisville screenshot](../../assets/images/blog/speeduplouisville.png)
 

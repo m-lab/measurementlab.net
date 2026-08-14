@@ -22,7 +22,7 @@ As of February 14, 2020, Measurement Lab is unable to host the SamKnows experime
 
 ## Overview of M-Lab Platform Upgrade, 2018 - 2020
 
-From 2008 to 2019, the M-Lab platform used Princeton’s Planet Lab’s vserver technology to manage its infrastructure of off-net servers in Tier 1 data centers around the world. On January 24, 2018 M-Lab published its [plan](/src/assets/blog/modernizing-mlab/) to modernize the platform with several upgrades, including the use of Kubernetes and Docker.
+From 2008 to 2019, the M-Lab platform used Princeton’s Planet Lab’s vserver technology to manage its infrastructure of off-net servers in Tier 1 data centers around the world. On January 24, 2018 M-Lab published its [plan](/blog/modernizing-mlab/) to modernize the platform with several upgrades, including the use of Kubernetes and Docker.
 
 The upgrade implemented a technical enforcement of our longstanding commitment to open source by requiring an open source Docker container to run on the platform. The technical requirement was outlined in an Experiment Developer MoU. All experiments were asked to sign the MoU to formalize their usage of the M-Lab platform’s resources.
 

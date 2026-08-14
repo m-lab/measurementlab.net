@@ -72,7 +72,7 @@ on how it compares and contrasts to other, similar looking datasets, such as the
 FCC’s Form 477 data and median speed measurements from Ookla.
 
 [stats-api]: https://github.com/m-lab/stats-pipeline/#statistics-pipeline-service
-[analysis-recommendations]: /src/assets/blog/mlab-data-policy-advocacy/
+[analysis-recommendations]: /blog/mlab-data-policy-advocacy/
 
 To make the most of all of this data, it is important to consider the nuances of
 each dataset, specifically how they relate to one another, and to the 25/3
@@ -335,7 +335,7 @@ any resulting conclusions.**</span> For this reason, M-Lab has provided a set of
 research recommendations][research-recommendations] for researchers to follow
 when integrating NDT data into an application or citing it in a report or study.
 
-[research-recommendations]: /src/assets/blog/mlab-data-policy-advocacy/
+[research-recommendations]: /blog/mlab-data-policy-advocacy/
 
 With crowdsourced data from Ookla or NDT, it’s possible to add to the picture of
 what broadband service looks like across all communities, but with the caveat

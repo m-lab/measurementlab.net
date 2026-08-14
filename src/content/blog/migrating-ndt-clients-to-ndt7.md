@@ -10,7 +10,7 @@ authors:
   - lai-yi-ohlsen
   - chris-ritzo
   - matt-mathis
-externalAuthors: "Greg Russell, Stephen Soltesz"
+externalAuthors: 'Greg Russell, Stephen Soltesz'
 status: published
 categories:
   - NDT
@@ -120,7 +120,7 @@ Internet. These are generational updates of tools that help us investigate
 and understand networks and a foundation for exciting future work. We look
 forward to exploring it with you.
 
-[ndt7intro]: /src/assets/blog/ndt7-introduction/
-[pastmigration]: /src/assets/blog/global-pilot-entry/
+[ndt7intro]: /blog/ndt7-introduction/
+[pastmigration]: /blog/global-pilot-entry/
 [unified_download]: https://console.cloud.google.com/bigquery?folder=&organizationId=&project=measurement-lab&p=measurement-lab&d=ndt&t=unified_downloads&page=table
 [ndt7-view]: https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=raw_ndt&t=ndt7&page=table

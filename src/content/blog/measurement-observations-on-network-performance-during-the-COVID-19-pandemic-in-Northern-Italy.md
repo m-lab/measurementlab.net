@@ -12,7 +12,7 @@ excerpt: >-
   As part...
 authors:
   - chris-ritzo
-externalAuthors: "Simone Basso, Maria Xynou"
+externalAuthors: 'Simone Basso, Maria Xynou'
 status: published
 categories:
   - Data
@@ -34,9 +34,9 @@ In summary, we observe:
 
 Further details are shared through this report.
 
-- [The NDT speed test](/src/assets/blog/measurement-observations-on-network-performance-during-the-COVID-19-pandemic-in-Northern-Italy/#the-ndt-speed-test)
-- [Data analysis](/src/assets/blog/measurement-observations-on-network-performance-during-the-COVID-19-pandemic-in-Northern-Italy/#data-analysis)
-- [Conclusion](/src/assets/blog/measurement-observations-on-network-performance-during-the-COVID-19-pandemic-in-Northern-Italy/#conclusion)
+- [The NDT speed test](/blog/measurement-observations-on-network-performance-during-the-COVID-19-pandemic-in-Northern-Italy/#the-ndt-speed-test)
+- [Data analysis](/blog/measurement-observations-on-network-performance-during-the-COVID-19-pandemic-in-Northern-Italy/#data-analysis)
+- [Conclusion](/blog/measurement-observations-on-network-performance-during-the-COVID-19-pandemic-in-Northern-Italy/#conclusion)
 
 ## The NDT speed test
 
@@ -60,11 +60,11 @@ Lastly, we should mention that user-initiated measurements possibly have a self-
 
 ## Data analysis
 
-In an attempt to understand whether network performance was impacted by the surge in demand in northern Italy amid the COVID-19 pandemic, we analyzed [all NDT measurements](/src/assets/data/) collected in the provinces in [the Milan metropolitan area](https://en.wikipedia.org/wiki/Milan_metropolitan_area).
+In an attempt to understand whether network performance was impacted by the surge in demand in northern Italy amid the COVID-19 pandemic, we analyzed [all NDT measurements](/data/) collected in the provinces in [the Milan metropolitan area](https://en.wikipedia.org/wiki/Milan_metropolitan_area).
 
 Our data analysis involved NDT measurements collected between **1st January 2020 to 15th June 2020**. This period was selected because it would enable us to examine whether network performance in the region was affected before, during, and after the [peak of the COVID-19 pandemic](http://www.salute.gov.it/portale/nuovocoronavirus/dettaglioContenutiNuovoCoronavirus.jsp?lingua=english&id=5367&area=nuovoCoronavirus&menu=vuoto) in March 2020. The analysis was performed on 7th July 2020.
 
-To fetch and analyze NDT measurements, we used [M-Lab’s public BigQuery tables](/src/assets/data/). We ran the following query to extract information pertaining to the upload speed and a similar query to extract download information.
+To fetch and analyze NDT measurements, we used [M-Lab’s public BigQuery tables](/data/). We ran the following query to extract information pertaining to the upload speed and a similar query to extract download information.
 
 ```sql
 -- pull the names of the italian provinces
@@ -137,7 +137,7 @@ ORDER BY test_date
 
 The `SELECT` clause of the query computes the number of cases in which a test result is lower than a specific threshold. The thresholds were chosen using the [Renard R5 series](https://en.wikipedia.org/wiki/Renard_series), which divides each decade in five buckets. For example, given a 5 Mbit/s result, the above query would count such a result inside the following buckets: slower than 1 Mbit/s, slower than 1.6 Mbit/s, slower than 2.5 Mbit/s, and slower than 4 Mbit/s.
 
-You can perform a similar analysis by following the [instructions to access the M-Lab dataset via BigQuery](/src/assets/data/docs/bq/quickstart/) and by modifying the above query. You can export results to Google drive and then analyse them using Google Sheets to produce plots.
+You can perform a similar analysis by following the [instructions to access the M-Lab dataset via BigQuery](/data/docs/bq/quickstart/) and by modifying the above query. You can export results to Google drive and then analyse them using Google Sheets to produce plots.
 
 ## Number of tests per day
 
@@ -147,7 +147,7 @@ The following chart shows the number of download and upload NDT tests performed 
 
 It is evident that the number of tests per day surges after 23rd February 2020, which is [two days after the announcement of the “red zone”](https://www.dw.com/en/coronavirus-italy-towns-in-lockdown-after-covid-19-deaths/a-52477823) that placed some municipalities in the province of Lodi under lockdown, along with other provinces in Veneto (not covered in this analysis). We also observed a spike in tests run since 10th March 2020, after [the central Government placed under lockdown most provinces in the North of Italy](https://www.nytimes.com/2020/03/07/world/europe/coronavirus-italy.html) and [subsequently extended the lockdown to the whole country](https://www.cnbc.com/2020/03/10/italy-in-national-lockdown-heres-what-it-means.html).
 
-The number of tests per day has doubled during the first week of the lockdown. We can also see that the number of tests run begins to decrease (with obvious weekly patterns) around the same time when [the lockdown measures were progressively softened by the central Government](https://www.repubblica.it/politica/2020/04/26/news/coronavirus_riaperture_cabina_regia_governo_regioni-254928829/?ref=RHPPTP-BH-I254972764-C12-P3-S2.4-T1) (May 4th, 2020). The increase in the number of tests has also been [observed in previous research by M-Lab](/src/assets/blog/covid19-test-rates-increase/), who documented increases in the number of tests per day, both worldwide and in selected areas (New York and São Paulo).
+The number of tests per day has doubled during the first week of the lockdown. We can also see that the number of tests run begins to decrease (with obvious weekly patterns) around the same time when [the lockdown measures were progressively softened by the central Government](https://www.repubblica.it/politica/2020/04/26/news/coronavirus_riaperture_cabina_regia_governo_regioni-254928829/?ref=RHPPTP-BH-I254972764-C12-P3-S2.4-T1) (May 4th, 2020). The increase in the number of tests has also been [observed in previous research by M-Lab](/blog/covid19-test-rates-increase/), who documented increases in the number of tests per day, both worldwide and in selected areas (New York and São Paulo).
 
 We currently do not have a good explanation of why the number of upload tests is lower than the number of download tests. When we asked M-Lab about this, they mentioned that this is a common pattern across M-Lab data, likely due to the fact that some people stop testing after they get the download rate (they are not as interested in the upload rate). This is also enabled by the fact that the download test runs first in their largest integration ([Google’s OneBox](https://support.google.com/websearch/answer/6283840)).
 

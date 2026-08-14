@@ -5,7 +5,7 @@ excerpt: >-
   Performing a measurement with ndt7 on the M-Lab platform now requires an
   access token issued by the Locate API v2.
 authors: []
-externalAuthors: "Stephen Soltesz"
+externalAuthors: 'Stephen Soltesz'
 status: published
 categories:
   - NDT
@@ -22,7 +22,7 @@ The [original plan][ndt7tokens] to require access tokens for ndt7 was
 rescheduled to 2021-02. This was to allow time for existing deployments to
 update their clients.
 
-[ndt7tokens]: /src/assets/blog/ndt7-access-tokens
+[ndt7tokens]: /blog/ndt7-access-tokens
 
 Clients supported by M-Lab already use the Locate API v2 and provide access
 tokens to the ndt7 server automatically.

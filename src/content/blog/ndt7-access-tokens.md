@@ -5,7 +5,7 @@ excerpt: >-
   Starting October 7th, 2020, the ndt7 server on the M-Lab platform will require
   access tokens issued by the Locate API v2 to run a measurement.
 authors: []
-externalAuthors: "Stephen Soltesz"
+externalAuthors: 'Stephen Soltesz'
 status: published
 categories:
   - NDT
@@ -36,7 +36,7 @@ tokens to the ndt7 server automatically.
 Third-party clients should migrate to the Locate API v2 to use access tokens
 too.
 
-[ndt7migration]: /src/assets/blog/migrating-ndt-clients-to-ndt7
+[ndt7migration]: /blog/migrating-ndt-clients-to-ndt7
 [locatev2]: /src/assets/develop/locate-v2
 [rfc7519]: https://tools.ietf.org/html/rfc7519
 

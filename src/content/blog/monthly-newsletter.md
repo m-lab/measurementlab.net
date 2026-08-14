@@ -40,8 +40,8 @@ requirements are relevant to anyone supporting an NDT integration. The latest
 versions of the ndt7-js, ndt7-client-go, and ndt7-client-android already support
 the Locate v2 API natively. Update to the latest version and you’re done!
 
-[blogpost1]: /src/assets/blog/mlab-data-policy-advocacy/
-[blogpost2]: /src/assets/blog/why-access-tokens/
+[blogpost1]: /blog/mlab-data-policy-advocacy/
+[blogpost2]: /blog/why-access-tokens/
 
 **Upcoming updates**
 
@@ -75,5 +75,5 @@ Broadband Planning.
 
 In 2020, we began hosting regular community calls where we discussed topics related to the M-Lab project and its related research topics. Here is the [schedule][community-call-schedule] for this year’s calls and the form to [RSVP][rsvp].
 
-[community-call-schedule]: /src/assets/blog/community-call-schedule/
+[community-call-schedule]: /blog/community-call-schedule/
 [rsvp]: https://docs.google.com/forms/d/e/1FAIpQLSeHKN2MUP1IAReB8KNJM9jIdbazpaUQscdj0zZ5PbbO9K0fTA/viewform?usp=sf_link
