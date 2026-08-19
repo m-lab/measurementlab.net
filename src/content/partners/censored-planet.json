@@ -6,7 +6,7 @@
   "category": [
     "OMG Partners"
   ],
-  "featured": true,
+  "featured": false,
   "order": 999,
   "image": "/src/assets/partners/censored-planet.svg"
 }
