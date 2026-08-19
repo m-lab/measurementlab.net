@@ -128,7 +128,7 @@ sections:
           color: speed-light
           type: full
         buttons:
-          - variant: primary
+          - variant: speed
             size: md
             text: M-Lab Speed Test
             href: https://speed.measurementlab.net/
