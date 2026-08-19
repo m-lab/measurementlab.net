@@ -2,6 +2,10 @@
   "id": "rnp",
   "name": "RNP",
   "status": "published",
-  "category": ["BYOS Partners"],
+  "category": [
+    "BYOS Partners"
+  ],
+  "featured": true,
+  "order": 999,
   "image": "/src/assets/partners/logo-rnp-2026.png"
 }
