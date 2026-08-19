@@ -1,8 +1,13 @@
 {
   "id": "equinix",
   "name": "Equinix",
+  "status": "published",
   "url": "https://www.equinix.com/",
-  "category": ["Supporting Partners", "BYOS Partners"],
-  "image": "/src/assets/partners/equinix.png",
-  "status": "published"
+  "category": [
+    "Supporting Partners",
+    "BYOS Partners"
+  ],
+  "featured": true,
+  "order": 999,
+  "image": "/src/assets/partners/equinix.png"
 }
