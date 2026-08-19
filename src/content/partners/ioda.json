@@ -7,5 +7,7 @@
     "OMG Partners",
     "IMC Hackathon Partners"
   ],
+  "featured": true,
+  "order": 999,
   "image": "/src/assets/partners/ioda.png"
 }
