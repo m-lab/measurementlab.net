@@ -1,8 +1,13 @@
 {
   "id": "isoc",
   "name": "Internet Society",
+  "status": "published",
   "url": "https://www.internetsociety.org/",
-  "category": ["Supporting Partners", "IMC Hackathon Partners"],
-  "image": "/src/assets/partners/isoc_logo.png",
-  "status": "published"
+  "category": [
+    "Supporting Partners",
+    "IMC Hackathon Partners"
+  ],
+  "featured": true,
+  "order": 999,
+  "image": "/src/assets/partners/isoc_logo.png"
 }
