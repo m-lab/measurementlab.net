@@ -1,10 +1,12 @@
 {
   "id": "grnet",
   "name": "Greek Research & Technology Network",
+  "status": "published",
   "url": "https://www.grnet.gr/",
   "category": [
     "Supporting Partners"
   ],
-  "image": "/src/assets/partners/grnet.png",
-  "status": "published"
+  "featured": false,
+  "order": 999,
+  "image": "/src/assets/GRnet.png"
 }
