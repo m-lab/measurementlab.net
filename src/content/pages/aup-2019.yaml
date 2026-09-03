@@ -1,23 +1,26 @@
-title: M-Lab Acceptable Use Policy
+title: M-Lab Acceptable Use Policy (2019-2025)
 permalink: aup-2019
 status: published
 sections:
   - type: richText
     background:
       color: white
+      type: full
     withTOC: true
-    content: |
+    content: |-
       # M-Lab Acceptable Use Policy Summary (was valid from July 1, 2019 to July 14, 2025)
 
-      This Summary was last modified on _July 1, 2019_
+      This Summary was last modified on *July 1, 2019*
 
-      This section provides a summary of the Acceptable Use Policy ("AUP") that governs the _experiments_ and _clients_ that use the Measurement Lab _platform_. Please see the table of definitions below for explanations of italicized terms.
+      This section provides a summary of the Acceptable Use Policy ("AUP") that governs the *experiments* and *clients* that use the Measurement Lab *platform*. Please see the table of definitions below for explanations of italicized terms.
 
-      | Term       | Definition                    |
-      | ---------- | ----------------------------- |
+
+      | Term | Definition |
+      | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
       | experiments | The network measurement tests developed by external researchers, which run on the M-Lab platform infrastructure. Experiments have both a server and a client component. The server part runs on the M-Lab platform. The client part is what people use to test to M-Lab servers. |
       | clients | The code that people use to run network measurement tests. Each experiment publishes one or more reference clients. Third parties may use these reference clients to publish their own "client". |
       | platform | M-Lab's servers and associated infrastructure which enable experiments to be available for clients to test against. |
+
 
       This summary is provided as a resource to the public to introduce how partners are required to comply with the foundational values and privacy rules of M-Lab. These rules apply to both partners with a direct relationship to M-Lab as well as third parties that independently use our open source and open access resources to interact with the platform. This section does not describe the full operational requirements placed on partners, such as rules on how experiments are administered, uniqueness of experiment methods, or where test data is stored. The full requirements that partners must adhere to prior to use of the platform are outlined in the [M-Lab Conceptual & Technical Scope & Policies document](/mlab-scope/).
 
@@ -30,6 +33,7 @@ sections:
       The data produced by the experiment must be released into the public domain (using an [OSI-approved license](https://opensource.org/licenses)). It must also be made available for free in a portable format so that the data may be examined and freely used for other research purposes for the foreseeable future. The data must be released within a short period of collection for the duration of the tool's use of the M-Lab platform. Further information on the licensing of data can be found on [M-Lab's Data page](/data/).
 
       ## Privacy Policies and GDPR Compliant Practices
+
       M-Lab provides measurement services to citizens of the European Union, and as such provides complete details of our compliance with the European Union's General Data Protection Regulation (GDPR) in our Privacy Policy. Further, M-Lab requires that each third-party researcher hosting measurement "experiments" or tests on M-Lab's infrastructure also openly publish a privacy policy demonstrating compliance with GDPR and how data subjects in the EU may express their rights.
 
       In summary with respect to GDPR, M-Lab is primarily a data controller (GDPR Art. 4.7) insofar as we determine the means and purposes of the data collected by a test hosted on our infrastructure and make it public under our the test's methodology. For running tests developed by third-party researchers (further "experimenters"), M-Lab takes the role of joint controller with the experimenter, insofar as the experimenter leverages M-Lab tools to process and host the data resulting from their experiment. Some experimenters may choose to not leverage M-Lab tools for this purpose, in which case they are sole data controllers, with M-Lab simply hosting experiment code and not data. We recommend reading the privacy policy found on the website of each experimenter's website for complete information. Links to experimenters' websites can be found on our pages describing each M-Lab hosted test. All M-Lab hosted tests are listed on our [tests page](/tests/).
