@@ -1,10 +1,12 @@
 {
   "id": "tenet",
   "name": "TENET - Tertiary Education & Research Network of South Africa",
+  "status": "published",
   "url": "https://www.tenet.ac.za/",
   "category": [
     "Supporting Partners"
   ],
-  "image": "/src/assets/partners/tenet.svg",
-  "status": "published"
+  "featured": false,
+  "order": 999,
+  "image": "/src/assets/Tertiary_Education_and_Research_Network_of_South_Africa_Logo.svg.webp"
 }
