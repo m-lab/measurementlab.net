@@ -1,11 +1,13 @@
 {
   "id": "network-diagnostic-tool",
   "name": "Network Diagnostic Tool",
+  "status": "published",
   "affiliation": "Internet2",
   "url": "http://www.internet2.edu/",
   "category": [
     "Supporting Research Projects"
   ],
-  "image": "/src/assets/partners/network-diagnostic-test.jpg",
-  "status": "published"
+  "featured": false,
+  "order": 999,
+  "image": "/src/assets/I2-clr.svg"
 }
