@@ -1,10 +1,12 @@
 {
   "id": "victoria",
-  "name": "Victoria University of Welligton Logo",
+  "name": "Victoria University of Wellington",
+  "status": "published",
   "url": "http://www.victoria.ac.nz/home",
   "category": [
     "Supporting Partners"
   ],
-  "image": "/src/assets/partners/victoria.png",
-  "status": "published"
+  "featured": false,
+  "order": 999,
+  "image": "/src/assets/Victoria_University_of_Wellington_logo.svg.webp"
 }
