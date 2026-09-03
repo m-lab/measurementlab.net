@@ -1,10 +1,12 @@
 {
   "id": "csuc",
   "name": "Consorci de Serveis Universitaris de Catalunya (CSUC)",
+  "status": "published",
   "url": "http://www.csuc.cat/en",
   "category": [
     "Supporting Partners"
   ],
-  "image": "/src/assets/partners/csuc_logo.png",
-  "status": "published"
+  "featured": false,
+  "order": 999,
+  "image": "/src/assets/CSUC_logo_corporatiu_0.png"
 }
