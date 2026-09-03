@@ -1,10 +1,12 @@
 {
   "id": "catnix",
   "name": "CATNIX",
+  "status": "published",
   "url": "http://www.catnix.net/en/",
   "category": [
     "Supporting Partners"
   ],
-  "image": "/src/assets/partners/catnix_logo.png",
-  "status": "published"
+  "featured": false,
+  "order": 999,
+  "image": "/src/assets/CATNIX-logo-cat.jpg"
 }
