@@ -1,11 +1,12 @@
 {
   "id": "google",
   "name": "Google",
+  "status": "published",
   "url": "http://google.com",
   "category": [
     "Supporting Partners"
   ],
-  "image": "/src/assets/partners/google.jpg",
   "featured": true,
-  "status": "published"
+  "order": 999,
+  "image": "/src/assets/Google_2026_logo.svg.webp"
 }
