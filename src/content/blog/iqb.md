@@ -18,8 +18,8 @@ The Internet Quality Barometer (IQB) is an initiative funded by the Internet Soc
 
 **Read more about the IQB framework in our**
 
-- [Detailed report](/src/assets/publications/IQB_report_2025.pdf)
-- [Executive summary](/src/assets/publications/IQB_executive_summary_2025.pdf)
+- [Detailed report](/publications/IQB_report_2025.pdf)
+- [Executive summary](/publications/IQB_executive_summary_2025.pdf)
 - ACM IMC 2025 [poster paper](https://arxiv.org/pdf/2509.19034)
 
   
@@ -45,7 +45,7 @@ To create the IQB framework, M-Lab engaged with more than 60 experts across vari
 
 This is the first phase of the project and we’ll continue iterating on. In future phases, we aim to build an accessible tool for putting the framework to use. The first public report introduces the IQB framework that will be the basis for an IQB tool that will provide stakeholders with actionable insights to support smarter policies and a more equitable Internet.
 
-For more details about the IQB Framework, read the detailed [report](/src/assets/publications/IQB_report_2025.pdf) or the [executive summary](/src/assets/publications/IQB_executive_summary_2025.pdf), and our ACM IMC 2025 [poster paper](https://arxiv.org/pdf/2509.19034)!
+For more details about the IQB Framework, read the detailed [report](/publications/IQB_report_2025.pdf) or the [executive summary](/publications/IQB_executive_summary_2025.pdf), and our ACM IMC 2025 [poster paper](https://arxiv.org/pdf/2509.19034)!
 
 ![Image](<../../assets/images/blog/2025-06-30_iqb/IQB score weights.png>)
 

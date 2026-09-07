@@ -62,4 +62,4 @@ Earlier this year we began working on an [upgrade to data visualizations][vis-up
 [piecewise]: https://github.com/m-lab/piecewise
 [tools]: /data/tools/#community
 [geo-precision]: /blog/exploring-geographic-limits-of-ip-geolocation/
-[policies]: /src/assets/policies/
+[policies]: /policies/

@@ -33,7 +33,7 @@ This document does the following:
 
 A full accounting can be found in our incident report available here:
 
-[Traffic Microbursts and their Effect on Internet Measurement (PDF)](/src/assets/publications/SwitchDiscardNotice-Final-20160525.pdf)
+[Traffic Microbursts and their Effect on Internet Measurement (PDF)](/publications/SwitchDiscardNotice-Final-20160525.pdf)
 
 ## Update, November 2016
 

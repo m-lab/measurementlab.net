@@ -18,7 +18,7 @@ categories:
 publishedDate: 2014-10-31
 ---
 
-Prior to the publication of our recent report, [ISP Interconnection and its Impact on Consumer Internet Performance](/src/assets/publications/isp-interconnection-impact.pdf), we shared review copies with members of the research community, broadening the set of eyes on our methods and challenging our assertions. We received valuable feedback that allowed us to improve what we published, along with a list of research questions that we will be exploring and documenting over the coming months in our Research Updates series of blog posts adding insights to Research Reports.
+Prior to the publication of our recent report, [ISP Interconnection and its Impact on Consumer Internet Performance](/publications/isp-interconnection-impact.pdf), we shared review copies with members of the research community, broadening the set of eyes on our methods and challenging our assertions. We received valuable feedback that allowed us to improve what we published, along with a list of research questions that we will be exploring and documenting over the coming months in our Research Updates series of blog posts adding insights to Research Reports.
 
 One of the most common questions from reviewers was the change in performance in late February 2014 for AT&T, CenturyLink, Comcast, Time Warner Cable, and Verizon traffic across U.S. Cogent sites. As a graph included in the published report demonstrates (Figure 7), the data shows a sharp remediation in performance across all Access ISP networks in February 2014 for Cogent hosted sites. (The graph covers Los Angeles, but this pattern was repeated across all Cogent hosted sites.)
 

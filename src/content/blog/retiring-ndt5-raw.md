@@ -93,7 +93,7 @@ mlab-ns.appspot.com, [please let us know](mailto:support@measurementlab.net).
 [intro]: /blog/ndt7-introduction
 [evolution]: /blog/evolution-of-ndt
 [required]: /blog/ndt7-access-tokens
-[locatev2]: /src/assets/develop/locate-v2/
+[locatev2]: /develop/locate-v2/
 [gcp]: /blog/virtual-sites-gcp/
 [ttc]: /blog/2022-mlab-to-the-cloud/
 [migration]: /blog/the-platform-has-landed/

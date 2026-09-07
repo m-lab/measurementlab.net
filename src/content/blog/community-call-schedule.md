@@ -25,7 +25,7 @@ To receive the Zoom call information, please fill out our [RSVP form](https://do
 The goal of these calls is to get to know our users better and become more
 acquainted with your use cases and questions. We welcome anyone with any level
 of expertise or background to join any session and only ask that you follow our
-[Community Guidelines](/src/assets/community-guidelines) when
+[Community Guidelines](/community-guidelines) when
 participating. Feel free to reach out to Project Director Lai Yi Ohlsen at
 laiyi@meausurementlab.net if you have any questions or feedback.
 

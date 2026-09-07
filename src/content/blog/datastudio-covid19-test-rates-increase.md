@@ -20,7 +20,7 @@ Measurement Lab’s dataset is free, open, and full of data for Internet researc
 - Test volume is increasing
 - Some areas/networks appear to be saturated during peak times
 
-These dashboards use data publically available in BigQuery, which can be accessed directly for free. You can find information about how to access the data [here](/src/assets/quickstart).
+These dashboards use data publically available in BigQuery, which can be accessed directly for free. You can find information about how to access the data [here](/quickstart).
 
 <iframe title="Covid-19 dashboard" src="https://datastudio.google.com/embed/reporting/1C-jD2PVmSikRFig1FC9FUSnDw1G1tWtK/page/fP5KB" frameborder="0" style="width:100%; height:800px; border:0" allowfullscreen></iframe>
 

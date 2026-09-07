@@ -25,7 +25,7 @@ This public virtual event was inspired by the past two OMG convenings (public [r
 
 During the event, OMG groups gathered feedback and answered questions from the Internet freedom community directly.
 
-Detailed summaries of the presentations and Key Community Questions can be found in the OMG3 public [report](/src/assets/publications/OMG3_report_July2025.pdf)
+Detailed summaries of the presentations and Key Community Questions can be found in the OMG3 public [report](/publications/OMG3_report_July2025.pdf)
 
 You can also watch the presentations and listen to the full Q&A for each session. Links to each group’s presentation:
 

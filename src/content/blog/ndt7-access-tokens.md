@@ -37,7 +37,7 @@ Third-party clients should migrate to the Locate API v2 to use access tokens
 too.
 
 [ndt7migration]: /blog/migrating-ndt-clients-to-ndt7
-[locatev2]: /src/assets/develop/locate-v2
+[locatev2]: /develop/locate-v2
 [rfc7519]: https://tools.ietf.org/html/rfc7519
 
 ## Get Access Tokens

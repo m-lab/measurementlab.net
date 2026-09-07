@@ -16,7 +16,7 @@ categories:
 publishedDate: 2019-07-19
 ---
 
-Earlier this month, M-Lab published updates to our [policies](/src/assets/policies/) after completing a comprehensive review to ensure our compliance with the EU General Data Protection Regulation (GDPR) and in preparation for the [M-Lab 2.0 platform modernization update]({{ site. baseurl }}/blog/mlab-20-platform-migration-update/) that will be rolled out this fall. This post outlines the changes and additions to our policies for the general public, for experiment developers hosting tests on the M-Lab platform, and for partners who provide hosting for M-Lab servers. TL;DR: If you're simply interested in what data is collected when you run an M-Lab test, our [pages for each M-Lab test](/tests) provide a schema where available, in addition to our [Privacy](/src/assets/privacy/) and [Acceptable Use](/src/assets/aup/) policies.
+Earlier this month, M-Lab published updates to our [policies](/policies/) after completing a comprehensive review to ensure our compliance with the EU General Data Protection Regulation (GDPR) and in preparation for the [M-Lab 2.0 platform modernization update]({{ site. baseurl }}/blog/mlab-20-platform-migration-update/) that will be rolled out this fall. This post outlines the changes and additions to our policies for the general public, for experiment developers hosting tests on the M-Lab platform, and for partners who provide hosting for M-Lab servers. TL;DR: If you're simply interested in what data is collected when you run an M-Lab test, our [pages for each M-Lab test](/tests) provide a schema where available, in addition to our [Privacy](/privacy/) and [Acceptable Use](/aup/) policies.
 
 ## Why we've updated our policies
 
@@ -37,15 +37,15 @@ When M-Lab [upgrades to our modernized platform later this year](/blog/mlab-20-p
 
 ### Experiment Developers
 
-Experiment developers are typically academic researchers who wish to study the conditions of Internet service by hosting their network measurement experiment code on the M-Lab platform infrastructure. An experiment developer must apply to host with M-Lab, and our [Experiment Review and Design Committee](/src/assets/who/#experiment-review-committee) reviews these applications for approval.
+Experiment developers are typically academic researchers who wish to study the conditions of Internet service by hosting their network measurement experiment code on the M-Lab platform infrastructure. An experiment developer must apply to host with M-Lab, and our [Experiment Review and Design Committee](/who/#experiment-review-committee) reviews these applications for approval.
 
 #### Policy Changes for Experiment Developers - Memorandum of Undestanding (MoU) and Experiment Privacy Policy
 
-To host experiments on the M-Lab platform, historically the only requirement was to receive the approval of our former steering committee. However, to continue hosting on the newly upgraded platform later this year, M-Lab will require experiment developers to sign a Memorandum of Understanding (MoU) which formalizes our relationship, expectations, and responsibilities to one another. Additional technical and policy requirements will be necessary as well, which are described in detail in [Memorandum of Understanding for Experiment Developers](/src/assets/experimenter-mou/) and [Experiment Developer Responsibilities, Requirements, and Guidelines](/src/assets/experimenter-requirements-guidelines/).
+To host experiments on the M-Lab platform, historically the only requirement was to receive the approval of our former steering committee. However, to continue hosting on the newly upgraded platform later this year, M-Lab will require experiment developers to sign a Memorandum of Understanding (MoU) which formalizes our relationship, expectations, and responsibilities to one another. Additional technical and policy requirements will be necessary as well, which are described in detail in [Memorandum of Understanding for Experiment Developers](/experimenter-mou/) and [Experiment Developer Responsibilities, Requirements, and Guidelines](/experimenter-requirements-guidelines/).
 
 In summary, when M-Lab 2.0 launches later this year experiment developers hosting with M-Lab will be required to:
 
-- Complete a [Memorandum of Understanding](/src/assets/experimenter-mou/) with M-Lab and follow our [Experiment Developer Responsibilities, Requirements, and Guidelines](/src/assets/experimenter-requirements-guidelines/)
+- Complete a [Memorandum of Understanding](/experimenter-mou/) with M-Lab and follow our [Experiment Developer Responsibilities, Requirements, and Guidelines](/experimenter-requirements-guidelines/)
 - Remain in compliance with the M-Lab privacy policy and acceptable use policy
 - Complete a data processing and joint data controller agreement with M-Lab if the experiment data is processed and stored by M-Lab
 - Provide a publicly accessible privacy policy for the experiment, outlining compliance with GDPR
@@ -78,8 +78,8 @@ Along with the new policy requirements, M-Lab also will require technical change
 
 ### Core Infrastructure Partners
 
-M-Lab Core Infrastructure Partners (also referred to as site hosts) are organizations and companies who provide some combination of rackspace, transit, IP addresses, and/or remote support for locations where M-Lab hosts our servers. With this policy update, hosting partners in the EU will now have more complete information on M-Lab's policies and procedures covering the rights of EU citizens under the GDPR. M-Lab has always maintained a memorandum of understanding with these partners, and as a part of our organizational transition to Code for Science and Society, we will require an updated MoU noting the organizational change. The current copy of our [Memorandum of Understanding for M-Lab Site Hosts](/src/assets/site-host-mou/) can be found on our [policies page](/src/assets/policies/).
+M-Lab Core Infrastructure Partners (also referred to as site hosts) are organizations and companies who provide some combination of rackspace, transit, IP addresses, and/or remote support for locations where M-Lab hosts our servers. With this policy update, hosting partners in the EU will now have more complete information on M-Lab's policies and procedures covering the rights of EU citizens under the GDPR. M-Lab has always maintained a memorandum of understanding with these partners, and as a part of our organizational transition to Code for Science and Society, we will require an updated MoU noting the organizational change. The current copy of our [Memorandum of Understanding for M-Lab Site Hosts](/site-host-mou/) can be found on our [policies page](/policies/).
 
 ## Update to M-Lab - Conceptual & Technical Scope & Policies
 
-Finally, we have also updated [M-Lab's Conceptual & Technical Scope & Policies](/src/assets/mlab-scope/), which was formerly an outline of our founding vision. This working document outlines the general motivations, organization, and technical specification for the Measurement Lab platform, and has been updated to reflect the current technical state of the project, our updated organizational status, and our recent policy updates.
+Finally, we have also updated [M-Lab's Conceptual & Technical Scope & Policies](/mlab-scope/), which was formerly an outline of our founding vision. This working document outlines the general motivations, organization, and technical specification for the Measurement Lab platform, and has been updated to reflect the current technical state of the project, our updated organizational status, and our recent policy updates.

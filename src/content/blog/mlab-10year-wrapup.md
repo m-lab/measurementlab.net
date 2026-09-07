@@ -28,7 +28,7 @@ In August 2018, members of the Measurement Lab (M-Lab) community gathered to cel
 ![2009 M-Lab Launch Event](../../assets/images/blog/mlab-10yearwrap-2009launch.png)
 (_Photo credit: [https://princeton.edu/news/2009/02/18/princeton-computer-scientists-guide-internet-transparency-project](https://princeton.edu/news/2009/02/18/princeton-computer-scientists-guide-internet-transparency-project)_)
 
-When M-Lab was [launched](https://www.princeton.edu/news/2009/02/18/princeton-computer-scientists-guide-internet-transparency-project) ten years ago, there were only 30 or so servers in 12 locations. These anchors of M-Lab, our site partners, are research and education networks, independent IXs, regulators, and [many others](/src/assets/who/#supporting-partners). M-Lab’s global footprint has grown to over 500 servers in over 130 locations, through the support from groups, such as [EETT](https://www.eett.gr/) (Greece), RTR (Austria), [WIDE](http://www.wide.ad.jp/) (Japan), [TopIX](https://www.top-ix.org/en/home-eng/) (Italy), [PHOpenIX](http://phopenix.net/) (Philippines), [CIRA](https://cira.ca/) (Canada), [KENET](https://www.kenet.or.ke/) (Kenya), and [REANNZ](https://reannz.co.nz/) (New Zealand) to name a few.
+When M-Lab was [launched](https://www.princeton.edu/news/2009/02/18/princeton-computer-scientists-guide-internet-transparency-project) ten years ago, there were only 30 or so servers in 12 locations. These anchors of M-Lab, our site partners, are research and education networks, independent IXs, regulators, and [many others](/who/#supporting-partners). M-Lab’s global footprint has grown to over 500 servers in over 130 locations, through the support from groups, such as [EETT](https://www.eett.gr/) (Greece), RTR (Austria), [WIDE](http://www.wide.ad.jp/) (Japan), [TopIX](https://www.top-ix.org/en/home-eng/) (Italy), [PHOpenIX](http://phopenix.net/) (Philippines), [CIRA](https://cira.ca/) (Canada), [KENET](https://www.kenet.or.ke/) (Kenya), and [REANNZ](https://reannz.co.nz/) (New Zealand) to name a few.
 
 ![10 Years of Community](../../assets/images/blog/10yr_wrap_image3.png)
 
@@ -47,35 +47,35 @@ ICYMI, all of the talks from the mainstage are available [on YouTube](https://ww
 **Tuesday, August 7th, 2018**
 
 - [Welcome & Agenda Setting](https://www.youtube.com/watch?v=xrf0rU8o4e8&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i&index=1)
-- [Keynote: Vint Cerf](https://www.youtube.com/watch?v=54sDgVl0nOU&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i&index=2) ([Slides](/src/assets/static/mlab10year/Cerf-Keynote.pdf))
-- [Context Setting - The Last 10 Years of M-Lab](https://www.youtube.com/watch?v=e8Lhy4TABW4&index=3&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i) ([Slides](/src/assets/static/mlab10year/Boothe, Bullen - 10 Years of M-Lab.pdf))
+- [Keynote: Vint Cerf](https://www.youtube.com/watch?v=54sDgVl0nOU&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i&index=2) ([Slides](/static/mlab10year/Cerf-Keynote.pdf))
+- [Context Setting - The Last 10 Years of M-Lab](https://www.youtube.com/watch?v=e8Lhy4TABW4&index=3&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i) ([Slides](</static/mlab10year/Boothe, Bullen - 10 Years of M-Lab.pdf>))
 - [Lightning Talk Breakout Sessions](https://www.youtube.com/watch?v=e8Lhy4TABW4&index=3&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i)
-  - M-Lab 2.0 for Experimenters: Peter Boothe (M-Lab/Google), Stephen Soltesz (M-Lab/Google), Greg Russell (M-Lab/Google), Nathan Kinkade (M-Lab/OTI) ([Slides](/src/assets/static/mlab10year/Boothe, Soltesz- M-Lab 2.0 Demo at 10th Anniversary Workshop.pdf))
-  - Broadband Mapping: Bob Ballance (The Center for Internet as Infrastructure, LLC) ([Slides](/src/assets/static/mlab10year/Ballance_Mlab_Slides.pdf))
+  - M-Lab 2.0 for Experimenters: Peter Boothe (M-Lab/Google), Stephen Soltesz (M-Lab/Google), Greg Russell (M-Lab/Google), Nathan Kinkade (M-Lab/OTI) ([Slides](</static/mlab10year/Boothe, Soltesz- M-Lab 2.0 Demo at 10th Anniversary Workshop.pdf>))
+  - Broadband Mapping: Bob Ballance (The Center for Internet as Infrastructure, LLC) ([Slides](/static/mlab10year/Ballance_Mlab_Slides.pdf))
   - Net Neutrality Measurement in India: Amba Uttara Kak
 - [Panel, State of Open Internet Issues Around the World: Sarah Morris (OTI), Thomas Lohninger (Mozilla/Epicenter.Works), Shazna Zuhyle (LIRNEAsia), Josiah Chavula (Research ICT Africa), Pablo Viollier (DerechosDigitales)](https://www.youtube.com/watch?v=2UdPVaryk-E&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i&index=4)
 - [Lightning Talk Breakout Sessions](https://www.youtube.com/watch?v=SB7vet4MVVY&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i&index=5)
-  - Working With M-Lab Data: Nick Thieme (M-Lab/OTI), Chris Ritzo (M-Lab/OTI) ([Slides](/src/assets/static/mlab10year/Ritzo, Thieme- Getting Started with M-Lab Data.pdf))
+  - Working With M-Lab Data: Nick Thieme (M-Lab/OTI), Chris Ritzo (M-Lab/OTI) ([Slides](</static/mlab10year/Ritzo, Thieme- Getting Started with M-Lab Data.pdf>))
   - OONI/Censorship Measurement: Simone Basso (MeasurementKit, ICFP Fellow @ M-Lab) ([Slides](/src/assets))
-  - Research from A4AI: Maiko Nakagaki (A4AI) ([Slides](/src/assets/static/mlab10year/Zuhyle- After Access Slides for New America 7 AUG_SZ.pdf))
+  - Research from A4AI: Maiko Nakagaki (A4AI) ([Slides](</static/mlab10year/Zuhyle- After Access Slides for New America 7 AUG_SZ.pdf>))
 - [Keynote, Public Interest Technology: Larry Peterson (Princeton/Open Networking Foundation), Sascha Meinrath (X-Lab/Penn State University) & Afua Bruce (PIT @ NA)](https://www.youtube.com/watch?v=2QvvTHvC6lI&index=6&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i)
 - [Lightning Talks into Breakout Sessions](https://www.youtube.com/watch?v=llKblOmVQjs&index=7&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i)
-  - Research with M-Lab Data: Matt Mathis, (M-Lab/Google) ([Slides](/src/assets/static/mlab10year/Mathis-Research with M-Lab Data Breakout Talk.pdf))
-  - Research from Canada: Reza Rajabiun (Ryerson University) ([Slides](/src/assets/static/mlab10year/RajabiunMLab10thSlides.pptx))
-  - California Public Utility Commission: Ken Biba (CPUC) ([Slides](/src/assets/static/mlab10year/Biba-MeasuringInternetinCalifornia.pdf))
+  - Research with M-Lab Data: Matt Mathis, (M-Lab/Google) ([Slides](</static/mlab10year/Mathis-Research with M-Lab Data Breakout Talk.pdf>))
+  - Research from Canada: Reza Rajabiun (Ryerson University) ([Slides](/static/mlab10year/RajabiunMLab10thSlides.pptx))
+  - California Public Utility Commission: Ken Biba (CPUC) ([Slides](/static/mlab10year/Biba-MeasuringInternetinCalifornia.pdf))
 
 **Wednesday, August 8th, 2018**
 
 - [Lightning Talk Breakout Sessions](https://www.youtube.com/watch?v=oc20zZt2pb4&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i&index=8)
-  - Paris Traceroute Data: Ya Chang (M-Lab/Google) ([Slides](/src/assets/static/mlab10year/Chang-Paris Traceroute-M-Lab 10 year anniversary\_ PT.pdf))
-  - Devices & Measurement: Chris Ritzo (M-Lab/OTI), Ross Schulman (M-Lab/OTI), & Simone Basso (MeasurementKit / ICFP Fellow @ M-Lab) ([Slides](/src/assets/static/mlab10year/Ritzo, Basso, Shulman - Device Based Measurement with Measurement-kit and Murkami.pdf))
+  - Paris Traceroute Data: Ya Chang (M-Lab/Google) ([Slides](</static/mlab10year/Chang-Paris Traceroute-M-Lab 10 year anniversary_ PT.pdf>))
+  - Devices & Measurement: Chris Ritzo (M-Lab/OTI), Ross Schulman (M-Lab/OTI), & Simone Basso (MeasurementKit / ICFP Fellow @ M-Lab) ([Slides](</static/mlab10year/Ritzo, Basso, Shulman - Device Based Measurement with Measurement-kit and Murkami.pdf>))
 - [Lightning Talk Breakout Sessions](https://www.youtube.com/watch?v=MRoXoLvPAJM&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i&index=9)
-  - Canada’s Internet Performance Test (IPT): Don Slaunwhite & Yachen Shen (CIRA) ([Slides](/src/assets/static/mlab10year/CIRA IPT - M-Lab Anniversary - August 2018.pdf))
+  - Canada’s Internet Performance Test (IPT): Don Slaunwhite & Yachen Shen (CIRA) ([Slides](</static/mlab10year/CIRA IPT - M-Lab Anniversary - August 2018.pdf>))
   - KeepItOn: Berhan Taye & Anqi Li (AccessNow) ([Slides](/src/assets))
-  - Research ICT Africa: Josiah Chavula & Sarah Kiden (Research ICT Africa) & LIRNEasia: Shazna Zuhyle (LIRNEAsia) ([Slides](/src/assets/static/mlab10year/Chavula, Kiden - RIA-UCT MLab-10 Presentation .pdf))
+  - Research ICT Africa: Josiah Chavula & Sarah Kiden (Research ICT Africa) & LIRNEasia: Shazna Zuhyle (LIRNEAsia) ([Slides](</static/mlab10year/Chavula, Kiden - RIA-UCT MLab-10 Presentation .pdf>))
 - [Keynote, The Future of the Internet: Malka Older](https://www.youtube.com/watch?v=4swaTiJ-kvA&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i&index=10)
 - [Lightning Talk Breakout Sessions](https://www.youtube.com/watch?v=dS77PuH6hnA&index=12&list=PLNoVefpaPtVPjkE1g_QGvHdxEz5TOXE0i)
-  - Mobile Measurement: Greg Russell (M-Lab/Google) ([Slides](/src/assets/static/mlab10year/Russell-MobileMeasurement.pdf))
+  - Mobile Measurement: Greg Russell (M-Lab/Google) ([Slides](/static/mlab10year/Russell-MobileMeasurement.pdf))
   - Anomaly Detection & Signal Analysis: Peter Boothe (M-Lab/Google), Georgia Bullen (M-Lab/OTI)
 
 As we look to our next 10 years, we circle back to the question that we asked at the start: what makes a healthy, open Internet? While the question may lack a single answer, the community dedicated to Internet health will continue sharing ideas and searching for solutions. We'd love to [hear your ideas](mailto:workshop+10year@measurementlab.net), any [reflections from the workshop](https://docs.google.com/forms/d/e/1FAIpQLSc9UPkJNlaiMuXMFtcIF7HRclf4WEeIfQ342wDJRV5Aq7-LrA/viewform), and [ideas about collaboration](mailto:contact@measurementlab.net).

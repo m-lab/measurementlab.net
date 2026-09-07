@@ -28,7 +28,7 @@ ask participants to keep in mind as you engage here and on any other M-Lab
 hosted forum. If there is anything you’d like to see in these newsletters,
 please do let me know. And without further ado!
 
-[community-guidelines]: /src/assets/community-guidelines/
+[community-guidelines]: /community-guidelines/
 
 **We recently published two new blog posts.**
 
@@ -53,7 +53,7 @@ We currently have two projects that we are looking for a Javascript developer to
 complete. You can read more about them [here][developer-contract]. Please reach
 out to laiyi@measurementlab.net if you are interested.
 
-[developer-contract]: /src/assets/jobs/2021-03/javascript-developer/
+[developer-contract]: /jobs/2021-03/javascript-developer/
 
 **Recent events**
 

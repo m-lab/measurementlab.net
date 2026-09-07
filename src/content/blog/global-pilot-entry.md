@@ -115,10 +115,10 @@ The images below use data from AMS03. We see similar trends from all sites.
 Detailed graphs from all sites are available here: [ams03][ams03],
 [bom02][bom02], [lga03][lga03], [lax02][lax02].
 
-[ams03]: /src/assets/images/blog/2019-07-30-global-pilot-entry/ams03_entry_criteria_2019-07-29.pdf
-[bom02]: /src/assets/images/blog/2019-07-30-global-pilot-entry/bom02_entry_criteria_2019-07-29.pdf
-[lga03]: /src/assets/images/blog/2019-07-30-global-pilot-entry/lga03_entry_criteria_2019-07-29.pdf
-[lax02]: /src/assets/images/blog/2019-07-30-global-pilot-entry/lax02_entry_criteria_2019-07-29.pdf
+[ams03]: /images/blog/2019-07-30-global-pilot-entry/ams03_entry_criteria_2019-07-29.pdf
+[bom02]: /images/blog/2019-07-30-global-pilot-entry/bom02_entry_criteria_2019-07-29.pdf
+[lga03]: /images/blog/2019-07-30-global-pilot-entry/lga03_entry_criteria_2019-07-29.pdf
+[lax02]: /images/blog/2019-07-30-global-pilot-entry/lax02_entry_criteria_2019-07-29.pdf
 
 ![ams03-before](../../assets/images/blog/2019-07-30-global-pilot-entry/ams03-before.png)
 **Test Counts Before Upgrade:** Before upgrading any machine to the new

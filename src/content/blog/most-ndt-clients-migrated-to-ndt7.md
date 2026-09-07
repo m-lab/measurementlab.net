@@ -168,7 +168,7 @@ When using data across significant transitions, please indicate the transition i
 
 ## Final notes
 
-Next, we will continue to develop the NDT7 JavaScript reference client. We will update our blog and mailing list once it is complete. If you are interested in integrating NDT7 using Javascript before the reference client is complete, please feel free to reach out to support@measurementlab.net for support. NDT7 clients must use the [Locate API v2](/src/assets/develop/locate-v2/).
+Next, we will continue to develop the NDT7 JavaScript reference client. We will update our blog and mailing list once it is complete. If you are interested in integrating NDT7 using Javascript before the reference client is complete, please feel free to reach out to support@measurementlab.net for support. NDT7 clients must use the [Locate API v2](/develop/locate-v2/).
 
 We will implement an “early exit” feature, which will allow an ndt7 test to terminate as soon as BBR metrics indicate an optimal rate (e.g. using pacing gain).
 

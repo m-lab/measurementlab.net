@@ -44,7 +44,7 @@ The table below details the effect of the duplication bug on each of the BigQuer
 
 # Impact on M-Lab 2014 Interconnection Study
 
-This bug affected the data that researchers used in last year’s [M-Lab Interconnection Study](/src/assets/publications/M-Lab_Interconnection_Study_US.pdf). However, the effect on the published findings in the study was negligible, save for adjusting down reported sample sizes.
+This bug affected the data that researchers used in last year’s [M-Lab Interconnection Study](/publications/M-Lab_Interconnection_Study_US.pdf). However, the effect on the published findings in the study was negligible, save for adjusting down reported sample sizes.
 
 Why did this bug not impact the study finding? Most of the researchers’ analysis was based on median values of different performance metrics. Given that duplicating every element of a set does not change its median, the values we calculated for per-day medians remained the same. The images below show one of the graphs from the original report and below it the amended version of that graph after removing duplicates. The sample size changes, but the throughput values are identical. (Thank you to Collin Anderson and others for helping perform and verify this analysis.)
 

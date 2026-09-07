@@ -77,6 +77,44 @@ jobs:
             ${{ steps.mode.outputs.flag }}
             'dist/**/*.html'
 
+      # The issue is located before the report is built, so the previous run's
+      # counts are available to compute the delta line in the header.
+      - name: Find existing report issue
+        id: existing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          number=$(gh issue list \
+            --label linkcheck --state open --limit 1 \
+            --json number --jq '.[0].number // empty')
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+
+      # Counts from the previous run, read back out of the marker its report left in
+      # the issue body. Absent on issues written before that marker existed, and on a
+      # freshly opened issue - the delta is simply omitted in those cases.
+      - name: Read previous counts
+        id: prev
+        if: steps.existing.outputs.number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          gh issue view ${{ steps.existing.outputs.number }} \
+            --json body --jq .body > prev-body.md
+
+          line=$(grep -o '<!--counts [^>]*-->' prev-body.md | head -1 || true)
+
+          if [ -z "$line" ]; then
+            echo "No counts marker on issue #${{ steps.existing.outputs.number }} - delta skipped."
+            exit 0
+          fi
+
+          echo "Previous: $line"
+          for kv in $(printf '%s' "$line" | sed -e 's/<!--counts //' -e 's/-->//'); do
+            printf '%s\n' "$kv" >> "$GITHUB_OUTPUT"
+          done
+
       # We add some metadata to Lychee's report, like time of last run,
       # and clean it up a bit
       - name: Build report
@@ -96,6 +134,60 @@ jobs:
 
           internal=$(grep -cE '^\* \[[^]]+\] <(file://|/)' ./lychee/out.md || true)
           external=$(grep -cE '^\* \[[^]]+\] <https?://' ./lychee/out.md || true)
+
+          if [ "${{ steps.mode.outputs.offline }}" = "true" ]; then
+            checked=internal
+          else
+            checked=both
+          fi
+
+          # Delta against the previous run. External is only comparable when *both*
+          # runs actually requested external links - an offline run's external count
+          # is structurally 0, not an improvement - so `checked` gates it on each side.
+          prev_internal="${{ steps.prev.outputs.internal }}"
+          prev_external="${{ steps.prev.outputs.external }}"
+          prev_checked="${{ steps.prev.outputs.checked }}"
+
+          # "**12 fewer**" / "**3 more**" / "**No net change** in"
+          headline() {
+            if [ "$1" -lt 0 ]; then printf '**%d fewer**' "$(( -$1 ))"
+            elif [ "$1" -gt 0 ]; then printf '**%d more**' "$1"
+            else printf '**No net change** in'
+            fi
+          }
+
+          # "12 fewer" / "3 more" / "unchanged"
+          part() {
+            if [ "$1" -lt 0 ]; then printf '%d fewer' "$(( -$1 ))"
+            elif [ "$1" -gt 0 ]; then printf '%d more' "$1"
+            else printf 'unchanged'
+            fi
+          }
+
+          delta=""
+          if [ -n "$prev_internal" ]; then
+            di=$(( internal - prev_internal ))
+            if [ "$checked" = "both" ] && [ "$prev_checked" = "both" ]; then
+              de=$(( external - prev_external ))
+              if [ "$di" -eq 0 ] && [ "$de" -eq 0 ]; then
+                delta="No change since the last run."
+              else
+                delta="$(headline $(( di + de ))) broken links since the last run"
+                delta="${delta} - internal: $(part "$di"), external: $(part "$de")."
+              fi
+            elif [ "$di" -eq 0 ]; then
+              delta="No change in broken internal links since the last run."
+            else
+              delta="$(headline "$di") broken internal links since the last run."
+            fi
+
+            # Only worth saying when *this* run checked external and so a reader would
+            # otherwise expect an external figure. When this run is offline the
+            # [!NOTE] callout below already explains the omission.
+            if [ "$checked" = "both" ] && [ "$prev_checked" != "both" ]; then
+              delta="${delta} _(External not compared - the previous run skipped it.)_"
+            fi
+          fi
 
           notice=""
           if [ "${{ steps.mode.outputs.offline }}" = "true" ]; then
@@ -128,15 +220,29 @@ jobs:
           cp sections.md ./lychee/sections-only.md
 
 
+          # Everything here sits *before* <!--report-start-->, which the archive step
+          # diffs from - so the delta line and the counts marker never register as a
+          # content change and spam archive comments.
+          if [ "$checked" = "both" ]; then
+            marker="<!--counts internal=${internal} external=${external} checked=both-->"
+          else
+            marker="<!--counts internal=${internal} external=na checked=internal-->"
+          fi
+
           {
             echo "${counts} · mode: ${mode}"
             echo
+            if [ -n "$delta" ]; then
+              echo "$delta"
+              echo
+            fi
             echo "_Last run: $(date -u '+%Y-%m-%d %H:%M UTC') · commit \`${GITHUB_SHA:0:7}\` · [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})_"
             echo
             if [ -n "$notice" ]; then
               echo "$notice"
               echo
             fi
+            echo "$marker"
             echo "<!--report-start-->"
             cat sections.md
           } > ./lychee/report.md
@@ -150,16 +256,6 @@ jobs:
 
       # We update the current issue with the new run,
       # and copy the old run in comments
-      - name: Find existing report issue
-        id: existing
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          number=$(gh issue list \
-            --label linkcheck --state open --limit 1 \
-            --json number --jq '.[0].number // empty')
-          echo "number=$number" >> "$GITHUB_OUTPUT"
-
       - name: Archive previous report
         if: steps.lychee.outputs.exit_code != 0 && steps.existing.outputs.number != ''
         env:

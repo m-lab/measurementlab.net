@@ -18,7 +18,7 @@ In December 2021 M-Lab opened a call for M-Lab Fellows to use our data and tools
 
 Topic | Fellow | Video | Report
 Localizing Neutrality Violations | Led by Zeinab Shmeis, supported by Muhammad Abdullah and Pavlos Nikolopoulos | [Video](https://youtu.be/jPO_8BZv_ZQ) | Report to be published soon.
-Control-Plane-Triggered Traffic Performance Degradation Detection and NDTGuide, a Python package for NDT | Mingwei Zhang | [Video](https://youtu.be/jPO_8BZv_ZQ) | [Report](/src/assets/publications/research-fellows/2022/2022-mlab-final-zhang.pdf)
-Inferring QoE from active and passive measurements | Sanjay Chandrasekaran | [Video](https://youtu.be/b9KLQjYjUkc) | [Report](/src/assets/publications/research-fellows/2022/2022-mlab-final-chandrasekaran.pdf)
+Control-Plane-Triggered Traffic Performance Degradation Detection and NDTGuide, a Python package for NDT | Mingwei Zhang | [Video](https://youtu.be/jPO_8BZv_ZQ) | [Report](/publications/research-fellows/2022/2022-mlab-final-zhang.pdf)
+Inferring QoE from active and passive measurements | Sanjay Chandrasekaran | [Video](https://youtu.be/b9KLQjYjUkc) | [Report](/publications/research-fellows/2022/2022-mlab-final-chandrasekaran.pdf)
 
 Thank you to the M-Lab Fellows for their exciting and innovative research and to Internet Society for their generous support. Stay tuned for future opportunities!

@@ -62,7 +62,7 @@ Lab, a fiscally sponsored project of Code for Science & Society.
 
 Our casual conversation will include discussion about the significance of these metrics as well as the challenges their collection presents. We welcome audience questions, answers, challenges, and discussion. The discussion will be technical but no familiarity with M-Lab is required; all we ask is that participants review and respect our [community guidelines][commnuity].
 
-[community]: /src/assets/community-guidelines/
+[community]: /community-guidelines/
 
 If you have previously RSVP’d to our community calls, you should have already
 received a calendar invite with a Zoom link included.
