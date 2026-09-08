@@ -9,32 +9,27 @@ exclude = [
   '/\.netlify/images',
 
   # --- crawler blocking ---------------------------------------------------------
-  # These hosts answer real browsers but refuse automated clients: Cloudflare JS
-  # challenges ("Just a moment..." / "Attention Required"), Akamai "Access Denied",
-  # or JS-only rendering. A 403 from them means the server is up and deliberately
-  # turning us away -- the link works for readers, so counting it as broken is noise.
-  #
   # The entries below 403 (forbid access) or refuse automated clients,
   # so they are removed from the link checker since they aren't giving relevant information
   # If adding new URLS, first confirm that the test returns 403, then ideally check the page
   # manually to make sure it is actually blocked.
-  '^https?://([^/]+\.)?x\.com(/|$)',              # verified in browser; 403s only from CI IPs
-  '^https?://([^/]+\.)?twitter\.com(/|$)',        # same platform, same behaviour
-  '^https?://([^/]+\.)?fcc\.gov(/|$)',            # verified in browser (www, data, apps)
-  '^https?://([^/]+\.)?acm\.org(/|$)',            # verified in browser; Cloudflare on queue.
-  '^https?://([^/]+\.)?ssrn\.com(/|$)',           # Cloudflare JS challenge
-  '^https?://([^/]+\.)?nytimes\.com(/|$)',        # JS / ad-block wall
-  '^https?://([^/]+\.)?medium\.com(/|$)',         # Cloudflare "Attention Required"
-  '^https?://([^/]+\.)?doi\.org(/|$)',            # Cloudflare JS challenge
-  '^https?://([^/]+\.)?tandfonline\.com(/|$)',    # Cloudflare JS challenge
-  '^https?://radar\.cloudflare\.com(/|$)',        # Cloudflare JS challenge
-  '^https?://about\.att\.com(/|$)',               # Akamai "Access Denied"
-  '^https?://([^/]+\.)?rnp\.br(/|$)',             # Cloudflare JS challenge
-  '^https?://([^/]+\.)?ipysvenezuela\.org(/|$)',  # Cloudflare JS challenge
-  '^https?://([^/]+\.)?intgovforum\.org(/|$)',    # Cloudflare JS challenge
-  '^https?://([^/]+\.)?nysenate\.gov(/|$)',       # JS-only rendering; page itself resolves
-  '^https?://([^/]+\.)?ilsr\.org(/|$)',            # Cloudflare JS challenge
-  '^https?://([^/]+\.)?digitalinclusion\.org(/|$)',# Cloudflare "Attention Required"
+  '^https?://([^/]+\.)?x\.com(/|$)',
+  '^https?://([^/]+\.)?twitter\.com(/|$)',
+  '^https?://([^/]+\.)?fcc\.gov(/|$)',
+  '^https?://([^/]+\.)?acm\.org(/|$)',
+  '^https?://([^/]+\.)?ssrn\.com(/|$)',
+  '^https?://([^/]+\.)?nytimes\.com(/|$)',
+  '^https?://([^/]+\.)?medium\.com(/|$)',
+  '^https?://([^/]+\.)?doi\.org(/|$)',
+  '^https?://([^/]+\.)?tandfonline\.com(/|$)',
+  '^https?://radar\.cloudflare\.com(/|$)',
+  '^https?://about\.att\.com(/|$)',
+  '^https?://([^/]+\.)?rnp\.br(/|$)',
+  '^https?://([^/]+\.)?ipysvenezuela\.org(/|$)',
+  '^https?://([^/]+\.)?intgovforum\.org(/|$)',
+  '^https?://([^/]+\.)?nysenate\.gov(/|$)',
+  '^https?://([^/]+\.)?ilsr\.org(/|$)',
+  '^https?://([^/]+\.)?digitalinclusion\.org(/|$)',
 ]
 
 # 429 (rate limited) 429 is accepted because it means the server
