@@ -42,7 +42,7 @@ sections:
       using deep packet inspection to facilitate this throttling.
 
 
-      ![ISP throttling chart](/images/visualizations/isp-throttle.png)
+      ![ISP throttling chart](/src/assets/images/visualizations/isp-throttle.png)
 
 
       For a full description of the study and more results, go to
