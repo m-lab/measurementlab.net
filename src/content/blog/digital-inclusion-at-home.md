@@ -2,10 +2,7 @@
 permalink: digital-inclusion-at-home
 title: Digital Inclusion @ Home Announcement
 excerpt: >-
-  <div class="container" markdown="1">
-
-
-  </div> As COVID-19's impact increases globally, more people are ...
+  As COVID-19’s impact increases globally, more people are working, learning and living online. In partnership with NDIA, X-Lab, ILSR and Marconi Society, Measurement Lab has set up a [speed test portal](http://speed.digitalinclusion.org/) to collect geolocated data with an accompanying survey focused on Digital Inclusion @ Home.
 authors:
   - lai-yi-ohlsen
 status: published
@@ -18,10 +15,10 @@ categories:
 publishedDate: 2020-03-20
 ---
 
+<div class="container">
 
-
-<div class="container" markdown="1">
 [![National Digital Inclusion Alliance](../../assets/images/blog/2020-03-20/NDIA-logo.png)](https://www.digitalinclusion.org/) [![Institute for Local Self-Reliance](../../assets/images/blog/2020-03-20/ilsr_logo-1.png)](https://ilsr.org/) [![X-Lab](../../assets/images/blog/2020-03-20/XLAB-logo.png)](https://thexlab.org/) [![The Marconi Society](../../assets/images/blog/2020-03-20/Marconi-Web-Logo.png)](http://marconisociety.org/)
+
 </div>
 
 As COVID-19’s impact increases globally, more people are working, learning and living online. In partnership with NDIA, X-Lab, ILSR and Marconi Society, Measurement Lab has set up a [speed test portal](http://speed.digitalinclusion.org/) to collect geolocated data with an accompanying survey focused on Digital Inclusion @ Home.

@@ -39,19 +39,19 @@ Patterns of degraded performance occurred across the United States, impacting cu
 
 Notable instances of performance degradation include, but are not limited to:
 
-[![Chart showing Download Speed for AT&T, Comcast on GTT in Atlanta, GA - May 2015](../../assets/images/blog/download-speed-att-may-2015.png)](../../assets/images/blog/download-speed-att-may-2015.png)
+![Chart showing Download Speed for AT&T, Comcast on GTT in Atlanta, GA - May 2015](../../assets/images/blog/download-speed-att-may-2015.png)
 **AT&T over GTT in Atlanta, Chicago, and Los Angeles**
 AT&T users experienced the most consistent patterns of congestion-related degradation across measurement points on a diversity of transit ISPs, most notably on GTT for Atlanta, Chicago and Los Angeles. In Chicago and Atlanta, this degradation was its most extreme with peak hour performance frequently less than 0.1 Mbps. Other access ISPs such as Comcast did not display as substantial of degradation to those same sites during the same period.
 
-[![Chart showing Download Speed for CenturyLink, Comcast on Tata in Pacific Northwest - May 2015](../../assets/images/blog/download-speed-comcast-may-2015.png)](../../assets/images/blog/download-speed-comcast-may-2015.png)
+![Chart showing Download Speed for CenturyLink, Comcast on Tata in Pacific Northwest - May 2015](../../assets/images/blog/download-speed-comcast-may-2015.png)
 **Centurylink over Tata in Seattle**
 In Seattle, Centurylink clients received consistent speeds across the day to Cogent-hosted measurement endpoints, while the peak hour performance to Tata was less than 1 Mbps. While the Tata measurement point is new, this congestion appeared at the start of collection of data, indicating that it pre-dates September 2014. As a point of comparison, Comcast did not experience similar degradation in Seattle for Tata.
 
-[![Chart showing Download Speed for CableVision, TWC, Verizon on Tata in New York - May 2015](../../assets/images/blog/download-speed-cablevision-may-2015.png)](../../assets/images/blog/download-speed-cablevision-may-2015.png)
+![Chart showing Download Speed for CableVision, TWC, Verizon on Tata in New York - May 2015](../../assets/images/blog/download-speed-cablevision-may-2015.png)
 **Comcast, Time Warner Cable, and Verizon over GTT and Tata in New York City**
 M-Lab’s New York sites received the highest number of tests and experienced more congestion incidents than other locations, both likely a product of the population density of the region and the city’s importance for global connectivity. Customers of Comcast, Time Warner Cable, and Verizon all saw degraded performance during peak use hours when connecting across transit ISPs GTT and Tata. These patterns were most dramatic for customers of Comcast and Verizon when connecting to GTT, with a low speed of near 1 Mbps during peak hours in May. None of the three experienced similar problems when connecting with other transit providers, such as Internap and Zayo, and Cablevision did not experience the same extent of problems.
 
-[![Chart showing Download Speed for CenturyLink, Comcast on Tata in Pacific Northwest - May 2015](../../assets/images/blog/download-speed-verizon-may-2015.png)](../../assets/images/blog/download-speed-verizon-may-2015.png)
+![Chart showing Download Speed for CenturyLink, Comcast on Tata in Pacific Northwest - May 2015](../../assets/images/blog/download-speed-verizon-may-2015.png)
 **Verizon over GTT in Washington D.C.**
 In Washington D.C., customers of Verizon experienced severely degraded performance when connecting across GTT. Comcast and Time Warner Cable customers also experienced degradation across GTT, but to a lesser extent.
 

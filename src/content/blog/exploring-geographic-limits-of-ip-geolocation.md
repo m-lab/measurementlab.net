@@ -133,6 +133,7 @@ ORDER BY community
 <div class="table-responsive" markdown="1">
 
 | Community | MIN | Q25 | MEDIAN | AVG | Q75 | MAX |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Allendale/Irvington/S. Hilton|0|5.85|26.99|78.67|94.11|1363.68|
 | Beechfield/Ten Hills/West Hills|0|5.74|26.67|77.9|93.03|1363.68|
 | Belair-Edison|0|5.74|26.67|77.9|93.03|1363.68|
