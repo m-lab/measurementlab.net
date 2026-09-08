@@ -4,7 +4,7 @@ title: "Getting Started: Internet Policymakers"
 chapter: Getting Started
 chapterOrder: 1
 order: 3
-status: draft
+status: published
 description: A guide for policymakers, regulators, and government staff who want to use M-Lab data to understand broadband performance, inform policy decisions, and evaluate connectivity programs.
 tags: [Getting Started, Policy, Internet Quality]
 difficulty: beginner

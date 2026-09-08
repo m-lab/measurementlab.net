@@ -4,7 +4,7 @@ title: "Analyzing M-Lab Data: A Researcher's Guide"
 chapter: Research & Analysis
 chapterOrder: 6
 order: 1
-status: draft
+status: published
 description: Methods, tools, and best practices for using M-Lab's open datasets in academic research, policy analysis, and community broadband advocacy.
 tags: [Research, Data Access]
 difficulty: intermediate

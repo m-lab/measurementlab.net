@@ -12,7 +12,7 @@ order: 13
 
 MSAK is a measurement service hosted by M-Lab that implements two different test protocols:
 
-* **throughput**: A configurable Websocket-based throughput measurement protocol capable of multi-stream tests. Its design is partially based on M-Lab's single-stream measurement protocol, [NDT](ndt/ndt.md). Configurable parameters currently include:
+* **throughput**: A configurable Websocket-based throughput measurement protocol capable of multi-stream tests. Its design is partially based on M-Lab's single-stream measurement protocol, [NDT](/tests/ndt). Configurable parameters currently include:
   * Number of streams
   * Congestion control algorithm
   * Test duration

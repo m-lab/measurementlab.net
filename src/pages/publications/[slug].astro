@@ -22,8 +22,9 @@ export async function getStaticPaths() {
 
 const { pub } = Astro.props;
 
-// Fetch all people for contributor lookups
-const allPeople = await getCollection('people');
+// Fetch all people for contributor lookups. Contributors render as links to
+// /people/<id>, so anyone not visible in this build has to be dropped here.
+const allPeople = (await getCollection('people')).filter((person) => isVisible(person));
 const peopleMap = new Map(allPeople.map((person) => [person.data.id, person.data]));
 
 // Get contributor details
@@ -37,6 +38,7 @@ const contributors = pub.data.contributors
 const allPublications = await getCollection('publications');
 
 const relatedPublications = allPublications
+  .filter((p) => isVisible(p))
   .filter(p =>
     p.id !== pub.id && // Not the current publication
     (p.data.category === pub.data.category || p.data.year === pub.data.year) // Same category or year

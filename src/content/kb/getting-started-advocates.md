@@ -4,7 +4,7 @@ title: "Getting Started: Internet Advocates"
 chapter: Getting Started
 chapterOrder: 1
 order: 4
-status: draft
+status: published
 description: A guide for digital rights advocates, community broadband organizers, and civil society researchers using M-Lab data to document ISP behavior, support communities, and make evidence-based arguments.
 tags: [Getting Started, Advocacy, Internet Quality, Net Neutrality]
 difficulty: beginner

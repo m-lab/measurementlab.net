@@ -4,7 +4,7 @@ title: "Welcome to M-Lab: Open Internet Measurement"
 chapter: Getting Started
 chapterOrder: 1
 order: 1
-status: draft
+status: published
 description: An introduction to what M-Lab is, what it measures, and how its open data can help you understand internet performance.
 tags: [Measurement, Research]
 difficulty: beginner

@@ -4,7 +4,7 @@ title: "Beyond Speed: Understanding Internet Quality Metrics"
 chapter: Understanding Measurement
 chapterOrder: 2
 order: 2
-status: draft
+status: published
 description: Why download speed alone is an incomplete picture of internet performance, and how M-Lab measures latency, packet loss, and working internet quality.
 tags: [Internet Quality, Measurement]
 difficulty: beginner

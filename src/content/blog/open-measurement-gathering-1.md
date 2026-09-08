@@ -17,7 +17,7 @@ categories:
 publishedDate: 2024-08-14
 ---
 
-From June 11th-13th, 2024, Measurement Lab (M-Lab) organized and participated in the first of four convenings that will take place over the course of the Open Measurement Gatherings (OMG) project. The inaugural event was planned in collaboration with the [Internet Outage Detection and Analysis](ioda.inetintel.cc.gatech.edu) (IODA) project at Georgia Tech’s Internet Intelligence Lab, where the event was also hosted.
+From June 11th-13th, 2024, Measurement Lab (M-Lab) organized and participated in the first of four convenings that will take place over the course of the Open Measurement Gatherings (OMG) project. The inaugural event was planned in collaboration with the [Internet Outage Detection and Analysis](https://ioda.inetintel.cc.gatech.edu/) (IODA) project at Georgia Tech’s Internet Intelligence Lab, where the event was also hosted.
 
 ![OMG group photo](../../assets/images/blog/2024-08-omg/group.jpeg)
 

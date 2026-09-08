@@ -32,9 +32,9 @@ export default function Accordion({
 
   return (
     <div className={`grid gap-4 ${gridCols[columns]} ${className}`}>
-      {items.map((item, index) => (
+      {items.map((item) => (
         <Disclosure
-          key={`${item.title}:${index}`}
+          key={`${item.title}`}
           as="div"
           className={
             variant === 'bordered'

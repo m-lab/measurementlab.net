@@ -4,7 +4,7 @@ title: Getting Started with M-Lab Data in BigQuery
 chapter: Accessing Data
 chapterOrder: 5
 order: 1
-status: draft
+status: published
 description: How to get free access to M-Lab's BigQuery datasets, run your first queries, understand the data structure, and work efficiently with large tables.
 tags: [Data Access, BigQuery]
 difficulty: beginner

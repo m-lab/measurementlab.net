@@ -4,7 +4,7 @@ title: "Getting Started: Researchers"
 chapter: Getting Started
 chapterOrder: 1
 order: 2
-status: draft
+status: published
 description: "A curated starting path for academic researchers and data scientists using M-Lab data — covering data access, key datasets, measurement methodology, and common research patterns."
 tags: [Getting Started, Research, Data Access]
 difficulty: beginner

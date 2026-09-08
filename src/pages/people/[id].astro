@@ -26,12 +26,14 @@ const { person } = Astro.props;
 // Get publications this person contributed to
 const allPublications = await getCollection('publications');
 const personPublications = allPublications
+  .filter((pub) => isVisible(pub))
   .filter((pub) => pub.data.contributors?.includes(person.id))
   .sort((a, b) => b.data.year - a.data.year);
 
 // Get blog posts this person authored
 const allBlogPosts = await getCollection('blog');
 const personBlogPosts = allBlogPosts
+  .filter((post) => isVisible(post))
   .filter((post) => post.data.authors?.includes(person.id))
   .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
 

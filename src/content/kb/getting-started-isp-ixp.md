@@ -4,7 +4,7 @@ title: "Getting Started: ISP and IXP Staff"
 chapter: Getting Started
 chapterOrder: 1
 order: 5
-status: draft
+status: published
 description: A guide for ISP engineers, network operators, and IXP staff who want to understand M-Lab data from their networks, host a measurement node, or use M-Lab for network diagnostics and performance benchmarking.
 tags: [Getting Started, Node Operations, Data Access, Network Operations]
 difficulty: intermediate

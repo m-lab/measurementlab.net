@@ -4,7 +4,7 @@ title: "Analyzing TCP INFO Snapshots: Data Characteristics and Research Patterns
 chapter: Research & Analysis
 chapterOrder: 6
 order: 2
-status: draft
+status: published
 description: "A practical guide to M-Lab's TCP INFO snapshot data in BigQuery — how snapshots are collected and thinned, why most rows are noise, how to filter to real tests, and how to use RTT variance data to study latency-sensitive applications like VoIP."
 tags: [Research, Data Access]
 difficulty: intermediate
