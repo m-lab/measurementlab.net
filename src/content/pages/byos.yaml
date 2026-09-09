@@ -56,7 +56,7 @@ sections:
       &nbsp;
   - type: partners
     background:
-      color: primary-medium
+      color: primary-light
       type: full
-    title: BYOS Partners
+    title: "BYOS Partners "
     category: BYOS Partners
