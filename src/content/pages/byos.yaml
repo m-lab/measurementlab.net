@@ -68,16 +68,23 @@ sections:
     sections:
       - type: card
         background:
-          color: primary-medium
+          color: primary-light
           type: full
         title: "BYOS Resources "
         cards:
           - title: " Infrastructure Contribution Form "
             color: secondary
-            icon: mlab-blue
+            icon: community
             button:
               variant: primary
               size: md
               icon: arrowRight
               text: "Sign up to join! "
               href: https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFmN3cW6onvLsCxkd3UnECVd9Q/viewform
+          - title: "BYOS Intro "
+            color: primary
+            button:
+              variant: primary
+              size: md
+              text: "BYOS Requirements "
+              href: https://mlab.draftlab.dev/kb/byos-overview/
