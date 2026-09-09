@@ -1403,7 +1403,7 @@ content:
             - Network Neutrality
             - Network Operations
             - Network Topology
-            - Node Operations
+            - Running a Node
             - PCAP
             - Policy
             - Research
@@ -1415,6 +1415,7 @@ content:
             - Throttling
             - Throughput
             - Troubleshooting
+            - BYOS
           # pages-cms:category-sync end
       - name: difficulty
         label: Difficulty
