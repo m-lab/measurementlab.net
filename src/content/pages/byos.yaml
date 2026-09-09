@@ -79,7 +79,7 @@ sections:
           href: https://mlab.draftlab.dev/kb/byos-overview/
   - type: partners
     background:
-      color: primary-light
+      color: primary-medium
       type: full
     title: "BYOS Partners "
     category: BYOS Partners
