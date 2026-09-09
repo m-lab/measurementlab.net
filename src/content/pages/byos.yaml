@@ -54,17 +54,6 @@ sections:
       &nbsp;
 
       &nbsp;
-  - type: partners
-    background:
-      color: primary-light
-      type: full
-    title: "BYOS Partners "
-    category: BYOS Partners
-  - type: flexi
-    background:
-      color: white
-      type: full
-    title: "BYOS Resources "
   - type: card
     background:
       color: primary-light
@@ -88,3 +77,9 @@ sections:
           size: md
           text: How to Set up a BYOS Node
           href: https://mlab.draftlab.dev/kb/byos-overview/
+  - type: partners
+    background:
+      color: primary-light
+      type: full
+    title: "BYOS Partners "
+    category: BYOS Partners
