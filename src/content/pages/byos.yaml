@@ -81,3 +81,10 @@ sections:
           icon: measurement
           text: Test
           href: https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFmN3cW6onvLsCxkd3UnECVd9Q/viewform
+      - title: "BYOS Instructions "
+        color: primary
+        button:
+          variant: primary
+          size: md
+          text: How to Set up a BYOS Node
+          href: https://mlab.draftlab.dev/kb/byos-overview/
