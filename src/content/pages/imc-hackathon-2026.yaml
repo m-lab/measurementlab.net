@@ -8,48 +8,36 @@ sections:
       color: white
       type: full
     withTOC: false
-    content: >-
-      **You can be a hero - use Internet measurement data to solve real-world
-      challenges!**
+    content: |-
+      **You can be a hero - use Internet measurement data to solve real-world challenges!**
 
+      Internet measurement groups: Measurement Lab, Internet Society, UNICEF Giga, IIJ Research Laboratory, Internet Intelligence Lab; IODA, Cloudflare Radar, Sorbonne University, Internet History Initiative, and OONI will hold a hackathon to examine critical challenges in connectivity and Internet measurement at scale. 
 
-      For the last four years, Measurement Lab has run a hackathon in
-      partnership with other Internet measurement groups on the sidelines of the
-      Internet Measurement Conference. We're coming back again this year to host
-      a hackathon to examine critical challenges in connectivity and Internet
-      measurement at scale.
-
+      Each Internet measurement group will provide a list of challenges as well as a list of open-ended questions to participants to help solve Internet measurement challenges on a global platform. 
 
       **Date:** October 12, 2026  
-
       **Location:** Karlsruhe, Germany   
-
+      **Tentative time**: 9:00 - 17:00  
       *Venue to be confirmed* 
 
+      **Registration link:** ++[https://forms.gle/4SAKTMMKndyqu8nc7](https://forms.gle/4SAKTMMKndyqu8nc7)++ 
 
       **Names and affiliations of organizers**
 
-
       - Pavlos Sermpezis, Director, Technical Lead, Measurement Lab
-
+      - Melissa Newcomb, Director, Programs & Partnerships, Measurement Lab 
       - Maria Antonia Bravo, Technology Programme Manager, UNICEF Giga 
-
       - Loqman Salamatian, Post-doc, *Columbia University*
-
       - Amreesh Phokeer, Internet Measurement and Data Expert, ISOC
-
       - Romain Fontugne, Deputy Director, IIJ Research Laboratory
-
-      - Zachary Bischof, Senior Research Scientist, Georgia Institute of
-      Technology (Internet Intelligence Lab; IODA)
-
+      - Zachary Bischof, Senior Research Scientist, Georgia Institute of Technology (Internet Intelligence Lab; IODA)
       - Lai Yi, Head of Cloudflare Radar, Cloudflare
+      - Jim Cowie, Founder, Internet History Initiative 
+      - Arturo Filastò, Chief Technology Officer, Open Observatory of Network Interference (OONI)
 
+      **More details and agenda coming soon!**  
 
-      **More details, registration, and agenda coming soon!**  
-
-
-      [Questions or want to participate?](mailto:leads@measurementlab.net)
+      [Questions or want to participate?](mailto:hello@measurementlab.net)
   - type: partners
     background:
       color: primary-light
