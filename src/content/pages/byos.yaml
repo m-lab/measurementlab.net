@@ -88,3 +88,19 @@ sections:
               size: md
               text: "BYOS Requirements "
               href: https://mlab.draftlab.dev/kb/byos-overview/
+  - type: card
+    background:
+      color: primary-light
+      type: full
+    title: BYOS Test
+    description: teste
+    cards:
+      - title: test
+        color: neutral
+        icon: community
+        button:
+          variant: primary
+          size: md
+          icon: measurement
+          text: Test
+          href: https://mlab.draftlab.dev/kb/byos-overview/
