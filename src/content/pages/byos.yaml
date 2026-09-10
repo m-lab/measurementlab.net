@@ -82,7 +82,7 @@ sections:
         color: supporting1
         icon: insights
         button:
-          variant: supporting1
+          variant: secondary
           size: md
           text: "Understand What M-Lab Measures "
           href: https://mlab.draftlab.dev/kb/getting-started-isp-ixp/
