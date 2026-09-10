@@ -67,14 +67,13 @@ sections:
         button:
           variant: primary
           size: md
-          icon: measurement
           text: "Sign up here! "
           href: https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFmN3cW6onvLsCxkd3UnECVd9Q/viewform
       - title: "BYOS Instructions "
         color: primary
         icon: mlab-white
         button:
-          variant: secondary
+          variant: supporting2
           size: md
           text: How to Set up a BYOS Node
           href: https://mlab.draftlab.dev/kb/byos-overview/
