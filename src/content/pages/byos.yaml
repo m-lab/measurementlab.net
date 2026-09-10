@@ -71,7 +71,7 @@ sections:
           text: "Sign up here! "
           href: https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFmN3cW6onvLsCxkd3UnECVd9Q/viewform
       - title: "BYOS Instructions "
-        color: primary
+        color: supporting1
         button:
           variant: secondary
           size: md
