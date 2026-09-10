@@ -31,14 +31,15 @@ sections:
       ### Have real world impact
 
       - Enable users measure their Internet connections with a free open source tool
-      - Improve school connectivity through partnership with Giga 
+      - Improve school connectivity through partnership with UNICEF Giga 
       - Advance initiatives like the Internet Quality Barometer to redefine Internet quality and improve the Internet
 
       ## The Benefits of Becoming a BYOS Partner
 
       ### Gain insights about your network!
 
-      - You can access M-Lab data for free to explore the performance that your end-users experience.
+      - You don’t have to do your own monitoring systems; you get M-Lab’s data for free!
+      - Even if you have your own monitoring, M-Lab’s data are on TCP layer (end-to-end connection information). 
 
       ### Gain insights about other (e.g.,  competing) networks
 
@@ -46,8 +47,12 @@ sections:
 
       ### Help your customers & peering ecosystem
 
-      - Deploying an M-Lab server close(r) to a metro, gives higher quality results for users & network operators in this or neighboring metros.
-      - Other networks will be encouraged to peer with you so that performance results for their customers are more representative.
+      - Deploying an M-Lab server close(r) to a metro, gives higher quality results for users & network operators in this or neighboring metros. 
+      - Helps your peering: other networks will be encouraged to peer with you so that performance results for their customers are more representative (aka. “Show better performance”).
+      - More “download” traffic → from your network (i.e., M-Lab server) to other networks (i.e., where users taking speedtests are).
+
+        
+
 
 
 
