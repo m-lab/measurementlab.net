@@ -65,7 +65,7 @@ sections:
         color: secondary
         icon: community
         button:
-          variant: primary
+          variant: secondary
           size: md
           text: "Sign up here! "
           href: https://docs.google.com/forms/d/e/1FAIpQLSejtmZJrW8BPuuhjG4FlGm0fFmN3cW6onvLsCxkd3UnECVd9Q/viewform
@@ -73,7 +73,7 @@ sections:
         color: primary
         icon: mlab-white
         button:
-          variant: supporting2
+          variant: primary
           size: md
           text: How to Set up a BYOS Node
           href: https://mlab.draftlab.dev/kb/byos-overview/
@@ -81,7 +81,7 @@ sections:
         color: supporting1
         icon: insights
         button:
-          variant: secondary
+          variant: supporting2
           size: md
           text: "Understand What M-Lab Measures "
           href: https://mlab.draftlab.dev/kb/getting-started-isp-ixp/
