@@ -73,7 +73,7 @@ sections:
       - title: "BYOS Instructions "
         color: primary
         button:
-          variant: primary
+          variant: secondary
           size: md
           text: How to Set up a BYOS Node
           href: https://mlab.draftlab.dev/kb/byos-overview/
