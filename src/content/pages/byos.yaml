@@ -39,7 +39,7 @@ sections:
       ### Gain insights about your network!
 
       - You don’t have to do your own monitoring systems; you get M-Lab’s data for free!
-      - Even if you have your own monitoring, M-Lab’s data are on TCP layer (end-to-end connection information). 
+      - Even if you have your own monitoring, M-Lab’s data are on TCP layer (end-to-end connection information).
 
       ### Gain insights about other (e.g.,  competing) networks
 
@@ -51,10 +51,9 @@ sections:
       - Helps your peering: other networks will be encouraged to peer with you so that performance results for their customers are more representative (aka. “Show better performance”).
       - More “download” traffic → from your network (i.e., M-Lab server) to other networks (i.e., where users taking speedtests are).
 
-        
 
 
-
+      &nbsp;
 
       &nbsp;
 
