@@ -56,7 +56,7 @@ sections:
       &nbsp;
   - type: card
     background:
-      color: primary-light
+      color: white
       type: full
     title: "BYOS Resources "
     description: "How to get started! "
