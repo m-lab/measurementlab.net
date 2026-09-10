@@ -88,7 +88,7 @@ sections:
           href: https://mlab.draftlab.dev/kb/getting-started-isp-ixp/
   - type: partners
     background:
-      color: primary-medium
+      color: primary-light
       type: full
     title: "BYOS Partners "
     category: BYOS Partners
