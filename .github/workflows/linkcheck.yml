@@ -141,9 +141,7 @@ jobs:
             checked=both
           fi
 
-          # Delta against the previous run. External is only comparable when *both*
-          # runs actually requested external links - an offline run's external count
-          # is structurally 0, not an improvement - so `checked` gates it on each side.
+          # Delta against the previous run
           prev_internal="${{ steps.prev.outputs.internal }}"
           prev_external="${{ steps.prev.outputs.external }}"
           prev_checked="${{ steps.prev.outputs.checked }}"
@@ -181,9 +179,6 @@ jobs:
               delta="$(headline "$di") broken internal links since the last run."
             fi
 
-            # Only worth saying when *this* run checked external and so a reader would
-            # otherwise expect an external figure. When this run is offline the
-            # [!NOTE] callout below already explains the omission.
             if [ "$checked" = "both" ] && [ "$prev_checked" != "both" ]; then
               delta="${delta} _(External not compared - the previous run skipped it.)_"
             fi
@@ -200,29 +195,78 @@ jobs:
             counts="**${internal} internal** · **${external} external**"
           fi
 
-          # Collapse each per-file section, with its issue count in the summary
+          # Regroup Lychee's per-file sections under two top-level headings, so the
+          # team can work one class of breakage at a time. A file with both kinds of
+          # broken link is listed under both headings.
           awk '
-            function flush() {
-              if (!open) return
-              printf "<details><summary><code>%s</code> — %d issue%s</summary>\n\n", title, n, (n==1?"":"s")
-              for (i = 1; i <= c; i++) print body[i]
-              printf "\n</details>\n\n"
-              c = 0; n = 0
+            # http(s) is external; </path> and <file://...> are internal
+            function bucket(line) {
+              if (line ~ /^\* \[[^]]*\] <https?:\/\//) return "ext"
+              return "int"
             }
-            /^### / { flush(); title = substr($0,5); sub(/^Errors in /, "", title); open = 1; next }
-            open && /^\* / { body[++c] = $0; n++; next }
-            open { body[++c] = $0; next }
-            { print }
-            END { flush() }
+
+            function add(b, f, line,   key) {
+              key = b SUBSEP f
+              if (!(key in seen)) { seen[key] = 1; order[b, ++cnt[b]] = f }
+              body[key] = body[key] line "\n"
+              n[key]++
+              tot[b]++
+            }
+
+            # Collapse each per-file section, with its issue count in the summary
+            function emit(b,   i, f, key) {
+              for (i = 1; i <= cnt[b]; i++) {
+                f = order[b, i]
+                key = b SUBSEP f
+                printf "<details><summary><code>%s</code> — %d issue%s</summary>\n\n", f, n[key], (n[key] == 1 ? "" : "s")
+                printf "%s\n", body[key]
+                printf "</details>\n\n"
+              }
+            }
+
+            # Lychees own groupings are dropped in favour of the split below
+            /^## Errors per input/   { phase = 1; kind = "err"; next }
+            /^## Timeouts per input/ { phase = 1; kind = "to";  next }
+
+            phase == 0 { print; next }
+
+            /^### / {
+              file = substr($0, 5)
+              sub(/^Errors in /, "", file)
+              sub(/^Timeouts in /, "", file)
+              insec = 1
+              next
+            }
+
+            insec && /^\* / { add((kind == "to") ? "to" : bucket($0), file, $0); next }
+            insec && /^[ \t]*$/ { next }
+
+            # Once the sections have started, anything else is trailing prose
+            { insec = 0; tail = tail $0 "\n" }
+
+            END {
+              if (cnt["int"]) {
+                printf "## Internal links — %d issue%s\n\n", tot["int"], (tot["int"] == 1 ? "" : "s")
+                emit("int")
+              }
+              ext = tot["ext"] + tot["to"]
+              if (ext) {
+                printf "## External links — %d issue%s\n\n", ext, (ext == 1 ? "" : "s")
+                emit("ext")
+                if (cnt["to"]) {
+                  printf "### Timeouts — %d\n\n", tot["to"]
+                  emit("to")
+                }
+              }
+              sub(/\n+$/, "", tail)
+              if (tail != "") printf "%s\n", tail
+            }
           ' cleaned.md > sections.md
 
           # Kept unheadered for the archive comparison in the next run
           cp sections.md ./lychee/sections-only.md
 
 
-          # Everything here sits *before* <!--report-start-->, which the archive step
-          # diffs from - so the delta line and the counts marker never register as a
-          # content change and spam archive comments.
           if [ "$checked" = "both" ]; then
             marker="<!--counts internal=${internal} external=${external} checked=both-->"
           else
