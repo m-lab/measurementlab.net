@@ -1,11 +1,13 @@
 {
   "id": "wehe",
   "name": "Wehe",
+  "status": "published",
   "affiliation": "Northeastern University",
   "url": "https://dd.meddle.mobi/about_dd.html",
   "category": [
     "Supporting Research Projects"
   ],
-  "image": "/src/assets/partners/wehe.png",
-  "status": "published"
+  "featured": false,
+  "order": 999,
+  "image": "/src/assets/Monogram Wordmark_RGB_186+K.svg"
 }
