@@ -1,10 +1,12 @@
 {
   "id": "top-ix",
-  "name": "TOP-IX Consortium Logo",
+  "name": "TOP-IX Consortium ",
+  "status": "published",
   "url": "http://www.top-ix.org/",
   "category": [
     "Supporting Partners"
   ],
-  "image": "/src/assets/partners/top-ix.png",
-  "status": "published"
+  "featured": false,
+  "order": 999,
+  "image": "/src/assets/partners/top-ix.png"
 }
