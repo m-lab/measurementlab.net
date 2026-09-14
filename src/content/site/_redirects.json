@@ -57,7 +57,12 @@
     },
     {
       "from": "data/gcs",
-      "to": "data/docs/gcs",
+      "to": "data/docs/archival-data",
+      "status": 301
+    },
+    {
+      "from": "data/docs/gcs",
+      "to": "data/docs/archival-data",
       "status": 301
     },
     {

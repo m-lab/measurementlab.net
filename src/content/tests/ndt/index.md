@@ -71,7 +71,7 @@ were derived. Dedicated users can reconstruct our analysis and in principle
 fully replicate our parsers. The raw data also includes TCP packet captures
 (.pcap files) for most NDT tests, however the pcap files are not indexed in
 BigQuery yet. Details on how M-Lab publishes test data in raw form are provided
-on our [Google Cloud Storage documentation page](/data/docs/gcs).
+on our [Google Cloud Storage documentation page](/data/docs/archival-data/).
 
 ## M-Lab-managed vs. "Host-Managed" NDT Data
 
