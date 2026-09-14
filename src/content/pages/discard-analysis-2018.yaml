@@ -27,7 +27,7 @@ sections:
 
       [disco]: https://www.measurementlab.net/blog/disco-dataset/
       [micro]: https://www.measurementlab.net/blog/traffic-microbursts-and-their-effect-on-internet-measurement/
-      [parser]: https://github.com/m-lab/etl/blob/master/parser/disco.go
+      [parser]: https://github.com/m-lab/etl/blob/main/parser/switch.go
 
       # Timeline
 

@@ -92,7 +92,7 @@ deployment models.
 To make NDT data more readily available for research and analysis, M-Lab parses
 all NDT data into BigQuery tables and views, and makes query access available
 for free by subscription to a Google Group. Find out more about how to get
-access on our [BigQuery QuickStart page](/quickstart/).
+access on our [BigQuery QuickStart page](/data/docs/bq/quickstart/).
 
 Note that we sometimes use the terms "table" and "view" interchangeably: they
 reflect different internal implementations, but due to billing and access controls
@@ -447,7 +447,7 @@ Published **tables** and views are:
   * `plx.google:m_lab.ndt.all`
   * `plx.google:m_lab.npad.all`
   * `plx.google:m_lab.paris-traceroute.all`
-* Continued the publication of v1 monthly tables, and published a [migration guide](/data/docs/bq/legacymigration/).
+* Continued the publication of v1 monthly tables, and published a [migration guide](/learn/).
 * Deprecated fields in v2 "fast tables":
   * `type`
   * `project`

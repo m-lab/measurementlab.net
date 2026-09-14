@@ -60,6 +60,6 @@ Earlier this year we began working on an [upgrade to data visualizations][vis-up
 [Piecewise][piecewise] is a web application developed by M-Lab that aggregates user-volunteered Internet performance test results data from Measurement Lab, with survey data. Piecewise is one of several [community tools][tools] that integrate both an NDT test and NDT data. M-Lab’s default geolocation of tests is based on the IP address, which has limits in its geographic precision as [discussed in this blog post][geo-precision]. One of the advantages of this type of integration is the ability to request more accurate location information from testers, using it in the application to present more accurate aggregations, but remaining true to [M-Lab’s policies][policies] by only submitting the measurement itself to our public dataset. The original Piecewise application is being redeveloped to allow easy deployment using Docker, either as a standalone application, or as a SaaS service that can deploy multiple instances of the application.
 
 [piecewise]: https://github.com/m-lab/piecewise
-[tools]: /data/tools/#community
+[tools]: /tools/
 [geo-precision]: /blog/exploring-geographic-limits-of-ip-geolocation/
 [policies]: /policies/

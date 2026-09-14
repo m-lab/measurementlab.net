@@ -92,7 +92,7 @@ allow the calculation of:
 Using these values, we can evaluate all of the criteria above for uploads and
 downloads.
 
-[web100]: /data/docs/bq/schema/ndt/
+[web100]: /tests/ndt/
 
 ## Test Counts
 

@@ -29,7 +29,7 @@ Originally designed to detect switch discards from
 [`measurement-lab.base_tables.switch`][switch-schema]
 
 [microbursts]: /blog/traffic-microbursts-and-their-effect-on-internet-measurement
-[switch-schema]: /data/docs/bq/schema/utilization
+[switch-schema]: /tests/utilization/
 
 ## DISCO Metrics
 

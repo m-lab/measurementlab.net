@@ -53,7 +53,7 @@ We currently have two projects that we are looking for a Javascript developer to
 complete. You can read more about them [here][developer-contract]. Please reach
 out to laiyi@measurementlab.net if you are interested.
 
-[developer-contract]: /jobs/2021-03/javascript-developer/
+[developer-contract]: /jobs/
 
 **Recent events**
 
