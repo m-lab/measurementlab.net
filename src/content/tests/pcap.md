@@ -20,7 +20,7 @@ M-Lab uses TCP INFO to collect statistics about every TCP connection used by eac
 
 ## Citing the M-Lab Packet Header Service Dataset
 
-Please cite this data set as follows: **The M-Lab Packet Header Data Set, &lt;date range used&gt;. https://measurementlab.net/tests/tcp-info/pcap
+Please cite this data set as follows: **The M-Lab Packet Header Data Set, &lt;date range used&gt;. https://measurementlab.net/tests/pcap
 
 ## Packet Header Data in Raw Format
 

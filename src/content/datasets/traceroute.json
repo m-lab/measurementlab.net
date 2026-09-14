@@ -72,11 +72,11 @@
     },
     {
       "label": "scamper1 Schema",
-      "url": "https://measurementlab.net/tests/traceroute/scamper1-schema"
+      "url": "/tests/traceroute/scamper1"
     },
     {
       "label": "Long Term Supported Schemas Using Standardized BigQuery Columns",
-      "url": "https://measurementlab.net/blog/long-term-supported-schemas"
+      "url": "/blog/long-term-schema-support-standard-columns"
     },
     {
       "label": "BigQuery QuickStart",

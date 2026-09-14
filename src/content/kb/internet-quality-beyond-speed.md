@@ -67,7 +67,7 @@ The IQB builds on the "responsiveness" concept from Apple's RPM test and BITAG's
 
 <div class="callout callout--note">
 <span class="callout-icon">ℹ️</span>
-<div class="callout-body"><p>See the M-Lab blog post <a href="https://measurementlab.net/blog/iqb-prototype-v1">Internet Quality Barometer Prototype v1</a> for the current methodology.</p></div>
+<div class="callout-body"><p>See the M-Lab blog post <a href="/blog/iqb">Measurement Lab publishes the Internet Quality Barometer Framework</a> for the framework behind this methodology.</p></div>
 </div>
 
 ## Rate Limits and Test Integrity
