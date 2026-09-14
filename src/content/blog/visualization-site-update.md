@@ -17,7 +17,7 @@ categories:
 publishedDate: 2019-04-01
 ---
 
-If you’ve clicked on the [Visualizations](/src/assets/visualizations) page on our website in the last year or so, and tried to find recent data for any location, you’ve likely been disappointed.
+If you’ve clicked on the Visualizations page on our website in the last year or so, and tried to find recent data for any location, you’ve likely been disappointed.
 
 **TLDR; - Our visualization site is BACK! Continue reading to learn more..**
 
@@ -115,6 +115,6 @@ In February 2019, we contracted to [Aliz](https://aliz.ai), a Google Cloud servi
 - Updating the M-Lab etl-pipeline to call the newly created ASN annotator and add the returned information to a new field in each table row.
 - Simplifying the pipeline that powers the visualization site by using the new ASN and geo annotations available in the tables.
 
-We’re excited about these changes for a number of reasons. Fixing access to the visualization site will allow us to return to better supporting our community in a more readily accessible way. The visualization site is incredibly powerful for M-Lab data users who aren’t as comfortable using tools like BigQuery to pull the subset of data that they are interested in working with for their research or analysis, or for users that want to access aggregates of [data from the API](http://data-api.measurementlab.net/). For many other community members, having the visualization site up to date will restore much needed access to the M-Lab data.
+We’re excited about these changes for a number of reasons. Fixing access to the visualization site will allow us to return to better supporting our community in a more readily accessible way. The visualization site is incredibly powerful for M-Lab data users who aren’t as comfortable using tools like BigQuery to pull the subset of data that they are interested in working with for their research or analysis, or for users that want to access aggregates of data from the API. For many other community members, having the visualization site up to date will restore much needed access to the M-Lab data.
 
 Perhaps more exciting is the addition of the new ASN annotation, leveraging [CAIDA’s historical Route Views dataset](https://www.caida.org/data/routing/routeviews-prefix2as.xml). For the first time, ASN fields will be annotated for each test result, and will be historically accurate-- the IP address from a client test will match the ASN that used that IP address at the time the test was run. Researchers using our BigQuery datasets will no longer need to leverage a third party dataset like Maxmind to get the ASN for an IP collected by NDT. They will be able to get that with a single query to our dataset, powered and supported by the work of CAIDA. For the visualization website, this also will mean richer data aggregations that are more accurate when selecting past data. We’re excited to leverage another great open data set from the community, and extremely thankful for CAIDA’s work to make that available for research and analysis.

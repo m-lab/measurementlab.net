@@ -129,7 +129,7 @@ System Number](https://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29) a
 tests are run. While NTIA doesn’t include this aggregate by ASN in their tools,
 it is [available in our statistics
 pipeline](https://github.com/m-lab/stats-pipeline/blob/master/docs/api-structure.md#available-geographies-and-asn-aggregations),
-and presented on our available [DataStudio reports](https://www.measurementlab.net/visualizations/).
+and presented on our available DataStudio reports.
 
 M-Lab recommends that analyses always include breakdown by ASN for NDT data,
 unless there is a specific reason to not do so, since it more accurately

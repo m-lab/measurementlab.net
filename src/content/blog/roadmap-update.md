@@ -50,10 +50,9 @@ Our newest measurement service, Wehe, has been in the final stages of testing pr
 
 ### Visualization site provides new visualizations for Calibrated SLIs
 
-Earlier this year we began working on an [upgrade to data visualizations][vis-upgrade]. To provide aggregate data in the interim, we published [two interactive DataStudio reports][datastudio]. In addition to aggregate measurements by time and location, the new visualizations will implement a new approach to contextualizing M-Lab measurements by what people could or could not accomplish with their measured speeds. Calibrated SLIs or “Service Level Indicators” will provide the percentage of tests that could or could not perform video streaming or other applications, as well as the percentage of testers whose measured speeds were in various speed tiers.
+Earlier this year we began working on an [upgrade to data visualizations][vis-upgrade]. To provide aggregate data in the interim, we published two interactive DataStudio reports. In addition to aggregate measurements by time and location, the new visualizations will implement a new approach to contextualizing M-Lab measurements by what people could or could not accomplish with their measured speeds. Calibrated SLIs or “Service Level Indicators” will provide the percentage of tests that could or could not perform video streaming or other applications, as well as the percentage of testers whose measured speeds were in various speed tiers.
 
 [vis-upgrade]: /blog/vis-site-upgrade/
-[datastudio]: /src/assets/visualizations/
 
 ### Make Piecewise is available via self-deployment
 

@@ -39,10 +39,9 @@ sections:
               year="(2009-02-11 -- 2015-12-21)",
               howpublished="\url{https://measurementlab.net/tests/ndt}",
 
-              comment="Depending on if you used viz.measurementlab.net, bigquery, or the raw data, please use one of the following notes:",
+              comment="Depending on whether you used BigQuery or the raw data, please use one of the following notes:",
               note="Bigquery table {\tt measurement-lab.ndt.download}",
               note1="Google cloud storage {\tt gs://archive-measurement-lab/ndt}",
-              note2="Data visualization system \url{https://viz.measurementlab.net}",
       }
       ```
 

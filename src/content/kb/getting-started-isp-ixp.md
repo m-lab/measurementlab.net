@@ -97,9 +97,9 @@ WeHe is a **client-initiated** test run by end users, not by network operators. 
 - Distinguish whether legitimate QoS policies (e.g., rate-limiting video at peak hours across all traffic equally) would produce a positive WeHe result (they generally would not, since WeHe compares app traffic vs. bit-inverted traffic of the same size)
 - Understand what customers running WeHe on your network are measuring and how to interpret reported detections
 
-## Visualization
+## Aggregate Data by ISP and Region
 
-- [M-Lab Observatory](https://viz.measurementlab.net) — pre-built dashboards for ISP comparisons, filterable by ASN and region. No SQL required.
+- [Monthly Stats](/kb/monthly-stats-dataset): pre-computed monthly NDT summaries as Parquet files, aggregated by geography and ISP (ASN). No BigQuery required.
 
 ## Contact and Community
 
