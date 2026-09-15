@@ -54,7 +54,7 @@ This work is part of the [Connectivity Community of Practice](https://www.measur
 
 ## Working with M-Lab Data
 
-For no-code exploration, see the Visualization section below — the M-Lab Observatory requires no account or setup.
+If you do not have an analyst on staff, the [Monthly Stats](/kb/monthly-stats-dataset) dataset offers pre-computed summaries by country, region, and ISP; see the section below.
 
 If you have a data analyst on staff, M-Lab data is also freely available in Google BigQuery:
 
@@ -78,9 +78,9 @@ M-Lab data has been used in:
 
 See [M-Lab Publications](https://www.measurementlab.net/publications/#government--regulatory-filings) for government and regulatory filings that have used M-Lab data.
 
-## Visualization and Exploration (No Coding Required)
+## Aggregate Data and Self-Testing
 
-- [M-Lab Observatory](https://viz.measurementlab.net) — interactive dashboards for ISP and geographic comparisons, no SQL required
+- [Monthly Stats](/kb/monthly-stats-dataset): pre-computed monthly NDT summaries by geography and ISP as Parquet files, no BigQuery required
 - [speed.measurementlab.net](https://speed.measurementlab.net) — run an NDT test yourself to understand what users experience
 
 ## Privacy and Data Governance

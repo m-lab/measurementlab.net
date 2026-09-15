@@ -68,6 +68,6 @@ We take problems in data archives very seriously, and we have taken the followin
 
 - Notified M-Lab researchers and consumers of our data via the <discuss@measurementlab.net> mailing list.
 
-- Worked with researchers to update the [M-Lab Observatory](/src/assets/observatory/) with the corrected data.
+- Worked with researchers to update the M-Lab Observatory with the corrected data.
 
 Worked with researchers to publish [amended graphs and raw data](https://console.developers.google.com/storage/m-lab/interconnection-study-2014/) from the M-Lab 2014 Interconnection Study on Google Cloud Storage.

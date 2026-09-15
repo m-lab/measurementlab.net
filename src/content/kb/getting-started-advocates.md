@@ -48,9 +48,9 @@ For characterizing ISP performance in a community, region, or across ISPs:
 - [Setting Up Free BigQuery Access](/kb/getting-started-bigquery) — register for free BigQuery access with your Google account
 - [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery) — run your first query in under 10 minutes
 
-### Visualization (No Coding Required)
+### Aggregate Data Without BigQuery
 
-- [M-Lab Observatory](https://viz.measurementlab.net) — interactive dashboards comparing ISP performance by geography, no SQL needed
+- [Monthly Stats](/kb/monthly-stats-dataset): pre-computed monthly NDT summaries by geography and ISP as Parquet files, no SQL setup needed
 
 ## Understanding What the Data Shows (and Doesn't)
 

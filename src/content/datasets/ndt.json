@@ -32,13 +32,6 @@
       "format": "JSON / raw TCP trace",
       "type": "download",
       "description": "Raw measurement archives in compressed JSON and pcap format"
-    },
-    {
-      "label": "Viz — Throughput Explorer",
-      "url": "https://viz.measurementlab.net/",
-      "format": "Interactive",
-      "type": "viz",
-      "description": "Interactive visualization of NDT download and upload speeds by geography and ISP"
     }
   ],
   "documentationLinks": [

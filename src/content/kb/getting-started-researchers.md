@@ -57,7 +57,7 @@ These datasets are collected automatically alongside every test:
 - [Reverse Traceroute Tutorial](https://www.measurementlab.net/blog/revtr_tutorial/) — hands-on worked example joining RevTr and NDT data in BigQuery
 - [M-Lab Data Schema Repository](https://github.com/m-lab/etl-schema) — authoritative BigQuery schema definitions
 - [NDT Unified Views Example Queries](https://www.measurementlab.net/tests/ndt/views/examples) — official query examples
-- [M-Lab Observatory](https://viz.measurementlab.net) — pre-built visualization dashboards for ISP and geographic comparisons
+- [Monthly Stats](/kb/monthly-stats-dataset): pre-computed monthly NDT summaries as Parquet files, for aggregate analysis without BigQuery
 
 ## Data Citation
 

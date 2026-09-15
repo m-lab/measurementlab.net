@@ -42,9 +42,9 @@ gsutil -m cp -r gs://archive-measurement-lab/ndt/ndt7/2024/01/15/ ./data/
 
 Raw files are in newline-delimited JSON format. Each file contains measurements from a single server for a single hour.
 
-### M-Lab Observatory
+### Monthly Stats
 
-For exploratory analysis and visualization without writing SQL, the [M-Lab Observatory](https://viz.measurementlab.net) provides pre-built dashboards for ISP and geographic comparisons.
+For aggregate analysis without BigQuery, the [Monthly Stats](/kb/monthly-stats-dataset) dataset provides pre-computed monthly summaries of NDT results by geography and ISP as Parquet files. See also the [percentiles](/kb/monthly-stats-percentiles) and [Python](/kb/monthly-stats-python) guides.
 
 ## Common Research Patterns
 
