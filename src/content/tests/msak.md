@@ -42,7 +42,7 @@ their original format and publicly available:
 and PCAPs
 
 Details on how M-Lab publishes test data in raw form are provided on our
-[Google Cloud Storage documentation page](/data/docs/gcs).
+[Google Cloud Storage documentation page](/data/docs/archival-data/).
 
 ## MSAK data in BigQuery
 
