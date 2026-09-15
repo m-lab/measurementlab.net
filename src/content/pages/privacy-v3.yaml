@@ -47,7 +47,7 @@ sections:
 
       M-Lab's datasets are one of the only publicly available data sources on Internet performance, and therefore are unique with respect to our claim of legitimate interest. We release all of the data collected through experiments into the public domain under an [OSI-approved license](https://opensource.org/licenses). M-Lab waives all copyright and related rights in and to the experiment data. Everyone is free to use the open experiment data.
 
-      We encourage third parties to make use of this data for research and other projects, illustrative examples of which are detailed on our [publications page](/publications/) and [data tools page](/data/tools/). Third parties may use the experiment data for any purpose, without needing to seek prior permission from M-Lab. M-Lab cannot assert control over third parties' use of the published data.
+      We encourage third parties to make use of this data for research and other projects, illustrative examples of which are detailed on our [publications page](/publications/) and [data tools page](/tools/). Third parties may use the experiment data for any purpose, without needing to seek prior permission from M-Lab. M-Lab cannot assert control over third parties' use of the published data.
 
       M-Lab uses data directly for the following purposes:
 
@@ -82,7 +82,7 @@ sections:
 
       M-Lab's platform is internationally distributed and uses cloud services to store and process data, which affects how M-Lab collects and stores data. The initial point of collection for experiment data is the server on the M-Lab platform with which an experiment is conducted.
 
-      For a single user, the initial point of collection can differ each time a measurement is made and may or may not be in the user's country of residence. The data is collected by one of our servers, typically [the one nearest to you](/status/) (this could be a server in the EU). After the initial collection, M-Lab aggregates the data from the servers on the platform, enabling the long-term storage and analysis of the data. Data is stored in M-Lab's Google Cloud Storage and in BigQuery datasets. Data hosted on the platform may be distributed across multiple countries, which may have differing privacy rules than those in your jurisdiction. We process the data for the purposes of the above described legitimate interests, and by using the M-Lab platform, you agree to such transfer of your data.
+      For a single user, the initial point of collection can differ each time a measurement is made and may or may not be in the user's country of residence. The data is collected by one of our servers, typically [the one nearest to you](/platform-status/) (this could be a server in the EU). After the initial collection, M-Lab aggregates the data from the servers on the platform, enabling the long-term storage and analysis of the data. Data is stored in M-Lab's Google Cloud Storage and in BigQuery datasets. Data hosted on the platform may be distributed across multiple countries, which may have differing privacy rules than those in your jurisdiction. We process the data for the purposes of the above described legitimate interests, and by using the M-Lab platform, you agree to such transfer of your data.
 
       Google LLC is certified under the EU-US and Swiss-US Privacy Shield allowing for the transfer of personal data from the EU to the US. Read more about the Privacy Shield at the end of this document.
 

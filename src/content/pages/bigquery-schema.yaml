@@ -31,10 +31,10 @@ sections:
 
       ### Current M-Lab Core Services and Platform Data
 
-      * [Switch Utilization](/data/docs/bq/schema/utilization)
+      * [Switch Utilization](/tests/utilization/)
       * [TCP INFO](/tests/tcp-info/)
-      * [Traceroute](/data/docs/bq/schema/traceroute)
+      * [Traceroute](/tests/traceroute/#traceroute-schemas)
 
       ### Retired Core Services and Platform Data for Historical Analysis
 
-      * [Sidestream](/data/docs/bq/schema/sidestream)
+      * [Sidestream](/tests/sidestream/#sidestream-schema)

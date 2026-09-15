@@ -128,12 +128,12 @@ sections:
 
       M-Lab will collect metrics from the various services that are running on your machine, but will **not** alert or notify you when a problem is detected. You should set up monitoring and alerting of your own, possibly collecting some or all of the same metrics that M-Lab collects. The following [Prometheus](https://github.com/prometheus/prometheus) metrics endpoints are exposed:
 
-      - [ndt-server](https://github.com/m-lab/ndt-server): http://hostname/ip:9990/metrics
-      - [jostler](https://github.com/m-lab/jostler): http://hostname/ip:9991/metrics
-      - [uuid-annotator](https://github.com/m-lab/uuid-annotator): http://hostname/ip:9992/metrics
-      - [heartbeat](https://github.com/m-lab/locate/tree/main/cmd/heartbeat): http://hostname/ip:9993/metrics
-      - [traceroute-caller](https://github.com/m-lab/traceroute-caller): http://hostname/ip:9994/metrics
-      - [node_exporter](https://github.com/prometheus/node_exporter): http://hostname/ip:9995/metrics
+      - [ndt-server](https://github.com/m-lab/ndt-server): `http://hostname/ip:9990/metrics`
+      - [jostler](https://github.com/m-lab/jostler): `http://hostname/ip:9991/metrics`
+      - [uuid-annotator](https://github.com/m-lab/uuid-annotator): `http://hostname/ip:9992/metrics`
+      - [heartbeat](https://github.com/m-lab/locate/tree/main/cmd/heartbeat): `http://hostname/ip:9993/metrics`
+      - [traceroute-caller](https://github.com/m-lab/traceroute-caller): `http://hostname/ip:9994/metrics`
+      - [node_exporter](https://github.com/prometheus/node_exporter): `http://hostname/ip:9995/metrics`
 
       Of those metrics, you are probably only interested in those from ndt-server and node_exporter. The main metric from ndt-server that you may be interested in is *ndt7_client_test_results_total*, which allows you to calculate test rates on your server using [PromQL](https://prometheus.io/docs/prometheus/latest/querying/basics/). For example, the following PromQL query would tell you how many tests your machine is serving per minute:
 

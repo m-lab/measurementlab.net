@@ -30,11 +30,19 @@ exclude = [
   '^https?://([^/]+\.)?nysenate\.gov(/|$)',
   '^https?://([^/]+\.)?ilsr\.org(/|$)',
   '^https?://([^/]+\.)?digitalinclusion\.org(/|$)',
+  '^https?://([^/]+\.)?ufsc\.br(/|$)',
+  '^https?://([^/]+\.)?uoguelph\.ca(/|$)',
+  '^https?://([^/]+\.)?samknows\.com(/|$)',
+  # TLS quirks: grnet.gr serves a mismatched cert on www., csuc.cat resets non-browser TLS handshakes
+  '^https?://([^/]+\.)?grnet\.gr(/|$)',
+  '^https?://([^/]+\.)?csuc\.cat(/|$)',
 ]
 
 # 429 (rate limited) 429 is accepted because it means the server
 # answered and asked us to slow down.
-accept = ["200", "206", "429"]
+# 202 is accepted because some publishers (e.g. IEEE Xplore) answer a
+# bot challenge with 202 while the page itself exists.
+accept = ["200", "202", "206", "429"]
 
 user_agent = "Mozilla/5.0 (compatible; lychee)"
 

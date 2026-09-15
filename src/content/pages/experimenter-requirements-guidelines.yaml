@@ -369,7 +369,7 @@ sections:
       [http://github.com/m-lab/etl](http://github.com/m-lab/etl) .
       This will allow M-Lab to provide BigQuery access to your parsed data in
       BigQuery. The simplest example parser is the S[witch DISCO dataset
-      parser](https://github.com/m-lab/etl/blob/master/parser/disco.go)
+      parser](https://github.com/m-lab/etl/blob/main/parser/switch.go)
       because archive files are [JSONL](http://jsonlines.org/).
 
       ### Monitoring support for your experiment

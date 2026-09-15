@@ -67,8 +67,8 @@
     },
     {
       "from": "faq",
-      "to": "https://support.measurementlab.net/help/en-us",
-      "status": 302
+      "to": "frequently-asked-questions",
+      "status": 301
     },
     {
       "from": "infrastructure",

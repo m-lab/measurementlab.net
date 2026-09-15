@@ -10,11 +10,11 @@ showInIndex: false
 # Migrating Queries from Previous to Current NDT Unified Views
 
 In July 2020, M-Lab began publishing new ["Unified Views" for the NDT
-dataset](blog-ndt-unified-views) in BigQuery. These views function just like
+dataset][blog-ndt-unified-views] in BigQuery. These views function just like
 tables, but provide only NDT tests that meet our team's current, best
 understanding of test completeness and research quality. Combined with our
 related work to [standardize the columns provided in our BigQuery
-datasets](blog-std-cols), M-Lab can better enable Long Term Support of stable schemas.
+datasets][blog-std-cols], M-Lab can better enable Long Term Support of stable schemas.
 
 [blog-std-cols]: /blog/long-term-schema-support-standard-columns/
 [blog-ndt-unified-views]: /blog/new-ndt-unified-views/
@@ -26,10 +26,10 @@ document will aide users in migrating queries to the latest NDT Unified Views.
 ## NDT Protocols Reference
 
 The NDT dataset now contains data from three different NDT protocol types:
-[web100](web100), [ndt5](ndt5), & [ndt7](ndt7). Your past queries may contain
+[web100][web100], [ndt5][ndt5], & [ndt7][ndt7]. Your past queries may contain
 field names that were only present in the test results of one of these
 protocols. More information about the [history of the NDT test and
-protocols](ndt-evolution) hosted by M-Lab can be found on our blog. Our standard
+protocols][ndt-evolution] hosted by M-Lab can be found on our blog. Our standard
 columns approach and NDT unified views remove this issue.
 
 [web100]: /tests/ndt/web100/
@@ -165,7 +165,7 @@ The UUID field is a unique ID for each TCP connection to any of our servers, and
 ### Non-equivalent TCP Metrics Across NDT Protocol Types
 
 One result of our change to the TCP Kernel Instrumention discussed in our blog
-post, [The Evolution of NDT](ndt-evolution), is that some fields available in
+post, [The Evolution of NDT][ndt-evolution], is that some fields available in
 the NDT web100 datatype are no longer provided or don't have equivalents from
 TCP_INFO, which replaced web100 in Nov. 2019.
 

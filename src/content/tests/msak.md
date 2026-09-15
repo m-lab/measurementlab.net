@@ -54,7 +54,7 @@ subscription to a Google Group. The MSAK data is available in the following data
 * measurement-lab.msak_raw
 
 Find out more about how to get access on our
-[BigQuery QuickStart page](/quickstart/).
+[BigQuery QuickStart page](/data/docs/bq/quickstart/).
 
 ## Source code
 

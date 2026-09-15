@@ -31,15 +31,15 @@
   "documentationLinks": [
     {
       "label": "M-Lab Monthly Stats: Pre-computed Summaries",
-      "url": "https://kb.measurementlab.net/monthly-stats-dataset/"
+      "url": "/kb/monthly-stats-dataset"
     },
     {
       "label": "Exploring Monthly Stats with Python - Demo notebooks to help you learn how to work with the data",
-      "url": "https://kb.measurementlab.net/monthly-stats-python/"
+      "url": "/kb/monthly-stats-python"
     },
     {
       "label": "Reading Percentiles in Monthly Stats",
-      "url": "https://kb.measurementlab.net/monthly-stats-percentiles/"
+      "url": "/kb/monthly-stats-percentiles"
     }
   ]
 }
