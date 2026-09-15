@@ -28,5 +28,5 @@ More than 360,000 rural homes in Michigan and 27% of K12 students lack access to
 
 Find out more at:
 
-- [https://www.merit.edu/school-districts-chosen-to-pilot-michigan-moonshot-data-collection-project/](https://www.merit.edu/school-districts-chosen-to-pilot-michigan-moonshot-data-collection-project/)
+- [https://www.merit.edu/about/news/school-districts-chosen-to-pilot-michigan-moonshot-data-collection-project/](https://www.merit.edu/about/news/school-districts-chosen-to-pilot-michigan-moonshot-data-collection-project/)
 - [https://mi.broadbandtest.us/](https://mi.broadbandtest.us/)

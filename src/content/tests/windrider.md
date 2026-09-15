@@ -16,4 +16,4 @@ WindRider attempted to detect whether your mobile provider was performing applic
 
 Please cite this data set as follows: **The M-Lab Windrider Data Set, &lt;date range used&gt;. https://measurementlab.net/tests/windrider**
 
-**Source code** is available at [http://code.google.com/p/windrider/](http://code.google.com/p/windrider/).
+**Source code** is available at [https://github.com/AurangZ/windrider](https://github.com/AurangZ/windrider).

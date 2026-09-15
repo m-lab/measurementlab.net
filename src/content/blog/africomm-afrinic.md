@@ -55,7 +55,7 @@ want to talk through how to work with M-Lab data to support your research and
 analysis, join our [discuss list][discuss] or [email the
 team][support].
 
-[african-latency]: https://www.afrinic.net/blog/333-revealing-latency-clusters-in-africa
+[african-latency]: https://afrinic.net/revealing-latency-clusters-in-africa
 [scamper]: https://www.caida.org/tools/measurement/scamper/
 [traceroute]: https://www.measurementlab.net/data/docs/bq/schema/#paris-traceroute---measurement-labbase_tablestraceroute
 [explore]: https://www.measurementlab.net/data/docs/analysis/exploring-african-internet/
