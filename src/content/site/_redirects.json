@@ -47,7 +47,7 @@
     },
     {
       "from": "data/docs/bq/schema/traceroute",
-      "to": "tests/traceroute/#traceroute-schema",
+      "to": "tests/traceroute/#traceroute-schemas",
       "status": 301
     },
     {
@@ -107,7 +107,7 @@
     },
     {
       "from": "observatory",
-      "to": "visualizations",
+      "to": "tools",
       "status": 301
     },
     {
