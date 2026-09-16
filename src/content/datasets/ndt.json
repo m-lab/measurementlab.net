@@ -31,7 +31,7 @@
     },
     {
       "label": "Google Cloud Storage (raw)",
-      "url": "gs://archive.measurementlab.net/ndt/",
+      "url": "https://console.cloud.google.com/storage/browser/archive-measurement-lab/ndt?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))",
       "format": "JSON / raw TCP trace",
       "type": "download",
       "description": "Raw measurement archives in compressed JSON and pcap format"
