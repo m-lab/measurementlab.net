@@ -1579,7 +1579,7 @@ content:
         type: string
         list: true
   # --------------------------------------------------------------------------
-  # Datasets (Data Catalog)
+  # Data (Data Catalog)
   #
   # Fields intentionally OMITTED from this form (pre-populated for all
   # M-Lab datasets at render time):
@@ -1590,10 +1590,10 @@ content:
   #   dc:subject                 → Internet measurement, Network performance,
   #                                 Broadband, Open data
   # --------------------------------------------------------------------------
-  - name: datasets
-    label: Datasets
+  - name: data
+    label: Data
     type: collection
-    path: src/content/datasets
+    path: src/content/data
     format: json
     filename: '{fields.id}.json'
     subfolders: false
@@ -1607,7 +1607,7 @@ content:
         label: ID
         type: string
         required: true
-        description: URL-safe identifier (e.g. ndt, wehe, traceroute). Becomes the page path /datasets/<id>/.
+        description: URL-safe identifier (e.g. ndt, wehe, traceroute). Becomes the page path /data/<id>/.
         pattern:
           message: "Must be a URL-safe string like 'ndt' or 'my-dataset'."
           regex: '^[a-zA-Z0-9_-]+$'
@@ -1650,7 +1650,7 @@ content:
         type: select
         required: false
         options:
-          # pages-cms:category-sync start datasets
+          # pages-cms:category-sync start data
           values:
             - label: Enriched Datasets
               value: enriched
@@ -1676,7 +1676,7 @@ content:
         type: reference
         required: false
         options:
-          collection: datasets
+          collection: data
           multiple: true
           value: '{id}'
           label: '{title}'

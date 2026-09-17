@@ -1,5 +1,5 @@
 /**
- * schema.org JSON-LD builders for the datasets collection.
+ * schema.org JSON-LD builders for the data collection.
  *
  * The catalog page and each dataset detail page describe the same entities, so
  * they share these builders. The Dataset node emitted inside the catalog's `dataset`
@@ -14,7 +14,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { siteConfig } from '@lib/config';
 
-type DatasetEntry = CollectionEntry<'datasets'>;
+type DatasetEntry = CollectionEntry<'data'>;
 
 export const LICENSE_URL = 'https://creativecommons.org/publicdomain/zero/1.0/';
 
@@ -39,9 +39,9 @@ export const keywordsFor = (ds: DatasetEntry['data']): string[] => [
   ...new Set([...DC_SUBJECT, ...(ds.keywords ?? [])]),
 ];
 
-export const CATALOG_URL = `${siteConfig.url}/datasets/`;
+export const CATALOG_URL = `${siteConfig.url}/data/`;
 
-export const datasetUrl = (id: string) => `${siteConfig.url}/datasets/${id}/`;
+export const datasetUrl = (id: string) => `${siteConfig.url}/data/${id}/`;
 
 /** ISO 8601 interval, with an open end for ongoing collection. */
 export const temporalCoverageOf = (

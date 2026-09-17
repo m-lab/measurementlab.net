@@ -2,13 +2,13 @@
 import { getCollection } from 'astro:content';
 import Tag from '@components/atoms/Tag';
 import Card from '@components/molecules/Card.astro';
-import datasetCategories from '@content/categories/datasets.json';
+import datasetCategories from '@content/categories/data.json';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import { isVisible } from '@utils/content';
 
-const datasets = (await getCollection('datasets')).filter((ds) => isVisible(ds));
+const datasets = (await getCollection('data')).filter((ds) => isVisible(ds));
 
-/** Where entries with no `category` land. Must exist in datasets.json. */
+/** Where entries with no `category` land. Must exist in categories/data.json. */
 const FALLBACK_CATEGORY = 'uncategorized';
 
 // Lowest `order` first; empty groups are dropped rather than rendered as headings
@@ -24,14 +24,14 @@ const groups = [...datasetCategories.categories]
 
 // A dataset that matches no group would vanish from the page with no other symptom.
 // The Zod enum makes that impossible for an explicit category, but it becomes
-// reachable the moment someone removes the fallback entry from datasets.json.
+// reachable the moment someone removes the fallback entry from categories/data.json.
 const grouped = new Set(groups.flatMap((g) => g.datasets.map((ds) => ds.id)));
 const orphans = datasets.filter((ds) => !grouped.has(ds.id));
 if (orphans.length > 0) {
 	throw new Error(
-		`DatasetsLanding: ${orphans.length} dataset(s) match no category group: ` +
+		`DataLanding: ${orphans.length} dataset(s) match no category group: ` +
 			`${orphans.map((ds) => ds.id).join(', ')}. ` +
-			`Add the missing category to src/content/categories/datasets.json ` +
+			`Add the missing category to src/content/categories/data.json ` +
 			`(entries with no category need one with id "${FALLBACK_CATEGORY}").`
 	);
 }
@@ -58,7 +58,7 @@ const formatFrequency = (f: string) => f.charAt(0).toUpperCase() + f.slice(1);
 							variant="elevated"
 							padding="lg"
 							class="w-full"
-							href={`/datasets/${ds.id}`}
+							href={`/data/${ds.id}`}
 						>
 							<div class="mb-3 flex flex-wrap gap-2">
 								{ds.data.updateFrequency && (

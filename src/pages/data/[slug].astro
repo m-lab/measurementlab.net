@@ -1,6 +1,6 @@
 ---
 /**
- * /datasets/[slug] — Individual dataset page
+ * /data/[slug] — Individual dataset page
  *
  * Follows the same shape as the other detail pages (publications, tests):
  *   breadcrumbs → hero with metadata tags → single 4xl column
@@ -18,7 +18,8 @@ import Link from '@components/atoms/Link';
 import Tag from '@components/atoms/Tag';
 import Card from '@components/molecules/Card.astro';
 import HeroSection from '@components/sections/HeroSection.astro';
-import datasetCategories from '@content/categories/datasets.json';
+import datasetCategories from '@content/categories/data.json';
+import redirectsData from '@content/site/_redirects.json';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import { isVisible } from '@utils/content';
@@ -37,10 +38,24 @@ import ChevronRightIcon from '~icons/heroicons/chevron-right-20-solid';
 import DocumentTextIcon from '~icons/heroicons/document-text-20-solid';
 
 export async function getStaticPaths() {
-  const datasets = await getCollection('datasets');
-  return datasets
-    .filter((ds) => isVisible(ds))
-    .map((ds) => ({ params: { slug: ds.id }, props: { ds } }));
+  const datasets = (await getCollection('data')).filter((ds) => isVisible(ds));
+
+  // /data/<id> shares its namespace with pages (data/docs) and redirects (data/gcs,
+  // data/tools). A dataset id matching one of those would silently shadow it or be
+  // shadowed, so fail the build instead.
+  const taken = new Set([
+    ...(await getCollection('pages')).map((p) => p.data.permalink),
+    ...redirectsData.redirects.map((r) => r.from),
+  ]);
+  const clashes = datasets.filter((ds) => taken.has(`data/${ds.id}`));
+  if (clashes.length > 0) {
+    throw new Error(
+      `data/[slug]: dataset id(s) ${clashes.map((ds) => `"${ds.id}"`).join(', ')} ` +
+        `collide with an existing page permalink or redirect under /data/. Rename the dataset.`
+    );
+  }
+
+  return datasets.map((ds) => ({ params: { slug: ds.id }, props: { ds } }));
 }
 
 const { ds } = Astro.props;
@@ -80,7 +95,7 @@ const coverageLabel = temporalCoverageStart
 // `@id` — so the two descriptions merge rather than compete.
 const datasetJsonLd = buildDatasetNode(ds, { standalone: true });
 
-const allDatasets = await getCollection('datasets');
+const allDatasets = await getCollection('data');
 const related = (relatedDatasets ?? [])
   .map((id) => allDatasets.find((d) => d.id === id))
   .filter(Boolean);
@@ -151,7 +166,7 @@ const metadata = [
 		<nav class="px-4 py-4 sm:px-6 lg:px-8" aria-label="Breadcrumb">
 			<ol class="flex flex-wrap items-center gap-2 text-base">
 				<li class="flex items-center gap-2">
-					<Link href="/datasets" variant="crumb">Data Catalog</Link>
+					<Link href="/data" variant="crumb">Data Catalog</Link>
 				</li>
 				<li class="flex items-center gap-2">
 					<span class="text-neutral-400">/</span>
@@ -348,7 +363,7 @@ const metadata = [
 											className="h-5 w-5 shrink-0 text-neutral-400"
 											aria-hidden="true"
 										/>
-										<a href={`/datasets/${rel.id}`} class="text-lg">
+										<a href={`/data/${rel.id}`} class="text-lg">
 											{rel.data.title}
 										</a>
 									</li>

@@ -49,7 +49,7 @@ The sidebar is organized into three groups:
 - **Categories** — Tag groups used across the site
 - **Tests** — M-Lab measurement tests and documentation
 - **Publications** — Research papers and reports
-- **Datasets** — The published data catalogue
+- **Data** — The published data catalogue
 - **Knowledge Base** — Long-form guides shown at `/kb`
 
 **Site Administration (middle section)**
@@ -501,17 +501,17 @@ In the list view, parent tests show an expand button (arrow icon) next to their 
 3. Fill in the child test's fields.
 4. Click **Save**.
 
-### 3.9 Datasets
+### 3.9 Data
 
-**Where:** Sidebar > **Datasets**
+**Where:** Sidebar > **Data**
 
-The Datasets collection is the catalogue of M-Lab's published data, shown at `/datasets`. Each entry describes one dataset: what it contains, how far back it goes, and where to get it.
+The Data collection is the catalogue of M-Lab's published data, shown at `/data`. Each entry describes one dataset: what it contains, how far back it goes, and where to get it.
 
 **Fields:**
 
 | Field                   | Required | Description                                                                |
 | ----------------------- | -------- | -------------------------------------------------------------------------- |
-| **ID**                  | Yes      | URL-safe identifier (e.g., `ndt`). Becomes the page path `/datasets/ndt/`  |
+| **ID**                  | Yes      | URL-safe identifier (e.g., `ndt`). Becomes the page path `/data/ndt/`      |
 | **Dataset Name**        | Yes      | Display title                                                              |
 | **Status**              | Yes      | Draft, Published, or Archived                                              |
 | **Description**         | Yes      | Plain-text summary (also used for search engines)                          |
@@ -845,7 +845,7 @@ Every piece of content in the CMS maps to a file in the repository. Here's where
 | Categories       | `src/content/categories/`          | JSON (e.g., `blog.json`)                              |
 | Tests            | `src/content/tests/`               | Markdown with YAML frontmatter (e.g., `ndt/index.md`) |
 | Knowledge Base   | `src/content/kb/`                  | Markdown with YAML frontmatter (e.g., `test-ndt.md`)  |
-| Datasets         | `src/content/datasets/`            | JSON (e.g., `ndt.json`)                               |
+| Data             | `src/content/data/`                | JSON (e.g., `ndt.json`)                               |
 | Navigation Menus | `src/content/navigation/`          | JSON (e.g., `main.json`)                              |
 | Site Settings    | `src/content/site/config.json`     | JSON                                                  |
 | Redirects        | `src/content/site/_redirects.json` | JSON                                                  |
