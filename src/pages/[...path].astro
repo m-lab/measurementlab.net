@@ -3,8 +3,8 @@ import { getEntry } from 'astro:content';
 // Import landing page components
 import Banner from '@components/atoms/Banner.astro';
 import BlogLanding from '@components/landing/BlogLanding.astro';
-import DatasetsCatalogJsonLd from '@components/landing/DatasetsCatalogJsonLd.astro';
-import DatasetsLanding from '@components/landing/DatasetsLanding.astro';
+import DataCatalogJsonLd from '@components/landing/DataCatalogJsonLd.astro';
+import DataLanding from '@components/landing/DataLanding.astro';
 import KnowledgeBaseLanding from '@components/landing/KnowledgeBaseLanding.astro';
 import PeopleLanding from '@components/landing/PeopleLanding.astro';
 import PublicationsLanding from '@components/landing/PublicationsLanding.astro';
@@ -35,7 +35,7 @@ const landingComponents = {
 	publications: PublicationsLanding,
 	people: PeopleLanding,
 	// tests: TestsLanding,
-	datasets: DatasetsLanding,
+	data: DataLanding,
 	kb: KnowledgeBaseLanding
 } as const;
 
@@ -46,7 +46,7 @@ const LandingComponent =
 // Keyed the same way as landingComponents so page-specific markup stays in its own
 // component rather than being special-cased here.
 const landingHeadComponents = {
-	datasets: DatasetsCatalogJsonLd,
+	data: DataCatalogJsonLd,
 } as const;
 
 const LandingHead =

@@ -1,6 +1,6 @@
 {
-  "id": "datasets",
-  "name": "Dataset Categories",
+  "id": "data",
+  "name": "Data Categories",
   "categories": [
     {
       "id": "enriched",

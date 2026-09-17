@@ -5,7 +5,10 @@
   "description": "The NDT dataset contains measurements of TCP throughput and latency collected by the Network Diagnostic Tool (NDT). NDT is a single-stream performance measurement of a connection's capacity for bulk transport. Measurements include download speed, upload speed, round-trip time (RTT), and packet loss between end-user devices and M-Lab servers worldwide.",
   "category": "raw",
   "testRef": "ndt",
-  "relatedDatasets": ["ndt5", "ndt7"],
+  "relatedDatasets": [
+    "ndt5",
+    "ndt7"
+  ],
   "temporalCoverageStart": "2009-01-01",
   "temporalCoverageEnd": "present",
   "spatialCoverage": "Global",
@@ -14,21 +17,21 @@
   "accessPoints": [
     {
       "label": "BigQuery (ndt7)",
-      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=ndt7_summary&page=table",
+      "url": "https://console.cloud.google.com/bigquery?ws=!1m5!1m4!4m3!1smeasurement-lab!2sndt!3sndt7_union",
       "format": "BigQuery",
       "type": "query",
       "description": "Parsed ndt7 summary table — recommended for most analyses"
     },
     {
       "label": "BigQuery (ndt5)",
-      "url": "https://console.cloud.google.com/bigquery?project=measurement-lab&p=measurement-lab&d=ndt&t=ndt5_summary&page=table",
+      "url": "https://console.cloud.google.com/bigquery?ws=!1m5!1m4!4m3!1smeasurement-lab!2sndt!3sndt5",
       "format": "BigQuery",
       "type": "query",
       "description": "Parsed ndt5 summary table — historical data pre-2020"
     },
     {
       "label": "Google Cloud Storage (raw)",
-      "url": "gs://archive.measurementlab.net/ndt/",
+      "url": "https://console.cloud.google.com/storage/browser/archive-measurement-lab/ndt?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))",
       "format": "JSON / raw TCP trace",
       "type": "download",
       "description": "Raw measurement archives in compressed JSON and pcap format"

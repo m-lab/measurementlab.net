@@ -36,6 +36,38 @@ exclude = [
   # TLS quirks: grnet.gr serves a mismatched cert on www., csuc.cat resets non-browser TLS handshakes
   '^https?://([^/]+\.)?grnet\.gr(/|$)',
   '^https?://([^/]+\.)?csuc\.cat(/|$)',
+
+  # --- verified working, reported broken by the checker (issue #83) --------------
+  # Every URL below was opened by hand on 2026-09-14 and loads correctly.
+  # The checker flags them because of bot protection or certificate quirks.
+  # The rule above still applies: confirm the page really loads before adding one.
+  '^https?://([^/]+\.)?pregi\.net(/|$)',
+  '^https?://([^/]+\.)?communityindicators\.net(/|$)',
+  '^https?://([^/]+\.)?measuringbroadband\.org(/|$)',
+  '^https?://([^/]+\.)?webmarketingpros\.com(/|$)',
+  '^https?://([^/]+\.)?simmons\.edu(/|$)',
+  '^https?://([^/]+\.)?chokepointproject\.net(/|$)',
+  '^https?://([^/]+\.)?internetequity\.org(/|$)',
+  '^https?://([^/]+\.)?polito\.it(/|$)',
+  '^https?://([^/]+\.)?naco\.org(/|$)',
+  '^https?://([^/]+\.)?a4ai\.org(/|$)',
+  '^https?://([^/]+\.)?newamerica\.org(/|$)',
+  '^https?://([^/]+\.)?dominichamon\.com(/|$)',
+  '^https?://([^/]+\.)?africadigitalskillsconference\.org(/|$)',
+  '^https?://([^/]+\.)?leading-edge\.io(/|$)',
+  '^https?://([^/]+\.)?top-ix\.org(/|$)',
+  '^https?://([^/]+\.)?speedupamerica\.com(/|$)',
+
+  # These domains also carry links that issue #83 lists as moved or dead, so they
+  # are excluded by exact URL instead of by domain. A whole-domain entry here
+  # would stop the checker reporting the broken ones alongside the working ones.
+  '^https?://bit\.ly/2IJlayR$',
+  '^https?://broadbandusa\.ntia\.doc\.gov/map$',
+  '^https?://broadbandusa\.ntia\.doc\.gov/ntia-event/february-2021-webinar-data-foundation-broadband-planning$',
+  '^https?://(www\.)?merit\.edu/wp-content/uploads/2019/09/Michigan_Moonshot_Broadband_Framework_Executive_Summary\.pdf$',
+  '^https?://(www\.)?bocoup\.com/\?p=4898&preview=1&_ppp=c74ba9af28$',
+  '^https?://(www\.)?bocoup\.com/services/datavis$',
+  '^https?://support\.maxmind\.com/geolite-legacy-discontinuation-notice/$',
 ]
 
 # 429 (rate limited) 429 is accepted because it means the server

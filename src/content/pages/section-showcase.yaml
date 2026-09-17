@@ -154,7 +154,7 @@ sections:
       ## Rich Text — Speed Light Background
 
 
-      This richText section uses `background.color: speed-light`. A [link](/datasets) and
+      This richText section uses `background.color: speed-light`. A [link](/data) and
       some `inline code` are included to check contrast on a tinted background.
 
   - type: richText
@@ -164,7 +164,7 @@ sections:
       ## Rich Text — Speed Dark Background
 
 
-      This richText section uses `background.color: speed-dark`. A [link](/datasets) and
+      This richText section uses `background.color: speed-dark`. A [link](/data) and
       some `inline code` are included to check that content inverts on dark backgrounds.
 
   - type: richText

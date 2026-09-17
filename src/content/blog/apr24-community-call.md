@@ -32,7 +32,7 @@ Join us to learn more about these efforts and consider how they could, if collec
 Want to hear about a metric not listed above? [Let us know](hello@measurementlab.net)!
 
 ## Registration
-M-Lab's Community Calls take place on the first Thursday of every month at 11am Eastern Time. Please [register via Zoom](https://us02web.zoom.us/meeting/register/tZwucuCgqTIiHdd1OVBDlvHVHKGfyGGoMn6U) and reach out to [hello@measurementlab.net](mailto:hello@measurementlab.net) with any questions.
+M-Lab's Community Calls take place on the first Thursday of every month at 11am Eastern Time. Please register via Zoom and reach out to [hello@measurementlab.net](mailto:hello@measurementlab.net) with any questions.
 
 ## Support
 Internet Quality Barometer is generously supported by an [Internet Society Foundation Research Grant](https://www.isocfoundation.org/2024/01/announcing-our-2023-research-grantee-cohort-14-projects-examining-the-future-of-the-internet/).

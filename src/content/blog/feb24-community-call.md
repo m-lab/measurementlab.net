@@ -38,4 +38,4 @@ Can't join the call but want to contribute or give feedback? Feel free to reach 
 
 ## Registration
 
-Please [register](https://us02web.zoom.us/meeting/register/tZwucuCgqTIiHdd1OVBDlvHVHKGfyGGoMn6U) for our community calls and reach out to [hello@measurementlab.net](mailto:hello@measurementlab.net) if you have any questions.
+Please register for our community calls and reach out to [hello@measurementlab.net](mailto:hello@measurementlab.net) if you have any questions.

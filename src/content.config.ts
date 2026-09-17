@@ -4,7 +4,7 @@ import type { ImageMetadata } from 'astro';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import blogCategories from './content/categories/blog.json';
-import datasetCategories from './content/categories/datasets.json';
+import datasetCategories from './content/categories/data.json';
 import kbCategories from './content/categories/kb.json';
 import partnerCategories from './content/categories/partners.json';
 import peopleCategories from './content/categories/people.json';
@@ -475,7 +475,7 @@ const accessPointSchema = z.object({
 });
 
 // ---------------------------------------------------------------------------
-// Datasets collection
+// Data collection (dataset catalog, served at /data)
 //
 // Dublin Core fields with M-Lab constants pre-populated at render time:
 //   dc:creator / dc:publisher  → "Measurement Lab"
@@ -487,8 +487,8 @@ const accessPointSchema = z.object({
 //
 // These are intentionally absent from the CMS form to keep entry simple.
 // ---------------------------------------------------------------------------
-const datasetsCollection = defineCollection({
-  loader: glob({ pattern: '**/*.json', base: './src/content/datasets' }),
+const dataCollection = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/data' }),
   schema: z.object({
     // Identity
     id: z.string(),
@@ -499,7 +499,7 @@ const datasetsCollection = defineCollection({
     description: z.string(), // dc:description (plain text for JSON-LD)
 
     // Data category — used to group datasets on the catalog page
-    // Sourced from src/content/categories/datasets.json — the same file the landing
+    // Sourced from src/content/categories/data.json — the same file the landing
     // page groups by and the CMS dropdown is generated from. Optional: an entry with
     // no category falls back to the "uncategorized" group at render time.
     category: z
@@ -591,6 +591,6 @@ export const collections = {
   homepage: homepageCollection,
   publications: publicationsCollection,
   tests: testsCollection,
-  datasets: datasetsCollection,
+  data: dataCollection,
   kb: kbCollection,
 };

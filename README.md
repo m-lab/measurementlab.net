@@ -69,7 +69,7 @@ All content lives in `src/content/` with type-safe schemas defined in `src/conte
 | `partners/`     | JSON     | Partner organizations                                         |
 | `tests/`        | Markdown | M-Lab test documentation (supports nested sub-tests)          |
 | `kb/`           | Markdown | Knowledge base articles, organised into chapters at `/kb`     |
-| `datasets/`     | JSON     | Dataset catalog with access points and coverage metadata      |
+| `data/`         | JSON     | Dataset catalog with access points and coverage metadata      |
 | `navigation/`   | JSON     | Menu structure (main.json, footer-1.json, footer-2.json)      |
 | `site/`         | JSON     | Global site configuration (config.json, \_redirects.json)     |
 | `homepage/`     | YAML     | Homepage-specific content                                     |
