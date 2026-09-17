@@ -25,4 +25,4 @@ Téo Lohrer is an IT Engineer at [SUMMIT](https://summit.sorbonne-universite.fr/
 
 ## Registration
 
-M-Lab's Community Calls take place on the first Thursday of every month at 11am Eastern Time. Please [register via Zoom](https://us02web.zoom.us/meeting/register/tZwucuCgqTIiHdd1OVBDlvHVHKGfyGGoMn6U) and reach out to [hello@measurementlab.net](mailto:hello@measurementlab.net) with any questions.
+M-Lab's Community Calls take place on the first Thursday of every month at 11am Eastern Time. Please register via Zoom and reach out to [hello@measurementlab.net](mailto:hello@measurementlab.net) with any questions.

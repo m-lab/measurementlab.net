@@ -47,11 +47,11 @@ Slides used during the presentation can be found [here](https://docs.google.com/
 * HTML5 geolocation is flawed. 
 * Regardless of what modifications are made, researchers will want to know how the dataset will be changed. 
 * We should consider how the OONI project handles PII. 
-* Has there been any discussion around browser measurements from Apple devices which use the new [private relay scheme](https://www.apple.com/privacy/docs/)?
+* Has there been any discussion around browser measurements from Apple devices which use the new private relay scheme?
     * Not yet.  
 
 ## Links Shared
 * [What is considered personal data under the EU GDPR?](https://gdpr.eu/eu-gdpr-personal-data/)
-* [Apple’s Private Relay Scheme](https://www.apple.com/privacy/docs/)
+* Apple’s Private Relay Scheme
 * [Small web application to test performance and privacy through proxies](https://speed.leading-edge.io/index.html)
 * [IP Geolocation Database Stability and Implications for Network Research](https://hal.archives-ouvertes.fr/hal-03419874/document)

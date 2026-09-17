@@ -17,7 +17,7 @@ Come learn about the exciting research that the M-Lab Fellows completed during t
 
 In December 2021 we opened a call for M-Lab Fellows to use our data and tools for Internet Research, generously supported by Internet Society. [The fellows were selected](https://www.measurementlab.net/blog/research-fellow-announcement/#m-lab-research-fellows---spring-2022) for the merit, rigor, and feasibility of their proposed project as well as their research’s relevance to improvement for end-user Internet performance. **On Wednesday, July 6, 2022 11-2pm EDT the M-Lab Fellows will present more about their research and development outcomes.** 
 
-Join us to learn from the Fellows and provide feedback for future work! Presentations will be technical, but we welcome all areas of expertise. To RSVP, [please register here](https://us02web.zoom.us/meeting/register/tZcqdu6prTwuGNP4N-qe5zvlq8sM7IyIVAvY). 
+Join us to learn from the Fellows and provide feedback for future work! Presentations will be technical, but we welcome all areas of expertise. To RSVP, please register here. 
 
 ## Schedule 
 Presentations will be 20-30 minutes with time for Q/A after and a 15 minute break between sessions. All times EDT. 

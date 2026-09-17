@@ -61,15 +61,13 @@ Project Director Lai Yi Ohlsen recently presented at NTIA’s February 2021
 Webinar: [Data as the Foundation for Broadband Planning][ntia-event], alongside
 Karen Perry, Senior Policy Analyst for BroadbandUSA and Bryan Darr, Vice
 President of Smart Communities at Ookla. The
-[recording][recording], [presentation
-slides][slides], and [webinar transcript][transcript] are available and are good resources for
+[recording][recording], presentation
+slides, and webinar transcript are available and are good resources for
 folks who want to learn or educate others more about the use of data in
 Broadband Planning.
 
 [ntia-event]: https://broadbandusa.ntia.doc.gov/ntia-event/february-2021-webinar-data-foundation-broadband-planning
 [recording]: https://youtu.be/jbflT9wWGBk
-[slides]: https://broadbandusa.ntia.doc.gov/sites/default/files/resource-files/feb_2021_webinar-_master_slide_deck1.pdf
-[transcript]: https://broadbandusa.ntia.doc.gov/sites/default/files/resource-files/bbusa_february_webinar_transcript-_final.pdf
 
 **Community Call Schedule**
 
