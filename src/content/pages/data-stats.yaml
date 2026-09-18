@@ -1,0 +1,14 @@
+title: Monthly Stats
+permalink: data/stats
+status: published
+description: These data are cached M-Lab summary query results available for download. These data are used to calculate the Internet Quality Barometer (IQB), but are generally useful as aggregate statistics of M-Lab's global measurements.
+zigzag: supporting1-light
+sections:
+  - type: richText
+    background:
+      color: white
+    withTOC: false
+    content: |
+      Each file covers one calendar month of [NDT](/tests/ndt) measurements, summarized at one geographic granularity, with separate files for download and upload tests. Parquet files hold the percentile data. `stats.json` records the query that produced them.
+
+      Choose a granularity below, then download individual months, or copy all the Parquet links in your selection to fetch them with a script. For what each column means, see [Monthly Stats: Pre-computed Summaries](/kb/monthly-stats-dataset). To get started in Python, see [Exploring Monthly Stats with Python](/kb/monthly-stats-python).

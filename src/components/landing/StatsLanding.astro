@@ -1,0 +1,171 @@
+---
+/**
+ * /data/stats: Monthly Stats file list.
+ *
+ * The manifest is loaded at build time and rendered as one table per granularity.
+ * The table for the default granularity is visible and the others are `hidden`, so
+ * the page still works without JavaScript. The StatsFilters island only shows,
+ * hides and reorders the rows that are already on the page.
+ */
+import StatsFilters from '@components/organisms/Stats/StatsFilters';
+import {
+  DEFAULT_SLICE,
+  DIRECTIONS,
+  type Direction,
+  indexStatsManifest,
+  loadStatsManifest,
+  STATS_MANIFEST_URL,
+  sliceLabel,
+} from '@utils/statsManifest';
+
+const { months, slices } = indexStatsManifest(await loadStatsManifest());
+
+const defaultSlice = slices.includes(DEFAULT_SLICE) ? DEFAULT_SLICE : slices[0];
+
+const DIRECTION_LABELS: Record<Direction, string> = {
+  downloads: 'Download tests',
+  uploads: 'Upload tests',
+};
+
+const monthName = (month: string) =>
+  new Date(`${month}-01T00:00:00Z`).toLocaleString('en', {
+    month: 'long',
+    timeZone: 'UTC',
+  });
+
+// Newest first, grouped by year. Each table only lists months that have at least one
+// file at its granularity.
+const tables = slices.map((slice) => {
+  const years = new Map<string, typeof months>();
+  for (const m of [...months].reverse()) {
+    if (!DIRECTIONS.some((d) => m.files[`${d}/${slice}`])) continue;
+    years.set(m.year, [...(years.get(m.year) ?? []), m]);
+  }
+  return { slice, years: [...years] };
+});
+
+const years = [...new Set(months.map((m) => m.year))].sort((a, b) => b.localeCompare(a));
+
+// The month cells, file cells and links repeat ~1,300 times per table, so they are
+// styled from the table with arbitrary variants instead of carrying their own
+// classes.
+const tableClass = [
+  'w-full border-separate border-spacing-0 text-left',
+  '[&_td]:border-b [&_td]:border-neutral-200 [&_td]:p-3',
+  '[&_th[scope=row]]:border-b [&_th[scope=row]]:border-neutral-200 [&_th[scope=row]]:py-3 [&_th[scope=row]]:pr-3 [&_th[scope=row]]:pl-4 [&_th[scope=row]]:font-normal [&_th[scope=row]]:text-neutral-900',
+  // Links stack on phones so three columns fit, and sit side by side from sm up.
+  '[&_td_a]:block [&_td_a]:w-fit [&_td_a]:whitespace-nowrap sm:[&_td_a]:mr-4 sm:[&_td_a]:inline',
+  '[&_[data-parquet]]:font-medium',
+  '[&_[data-json]]:mt-1 [&_[data-json]]:text-base [&_[data-json]]:text-neutral-600 sm:[&_[data-json]]:mt-0',
+  '[&_td_svg]:mr-1.5 [&_td_svg]:inline-block [&_td_svg]:size-4 [&_td_svg]:align-[-0.125em]',
+].join(' ');
+
+
+const headClass =
+  'sticky top-24 z-10 border-b border-neutral-300 bg-neutral-50/90 p-3 text-base leading-5 font-semibold text-neutral-900 backdrop-blur-sm';
+---
+
+<div class="pb-12">
+	<StatsFilters
+		client:load
+		slices={slices.map((id) => ({ id, label: sliceLabel(id) }))}
+		years={years}
+		defaultSlice={defaultSlice}
+		manifestUrl={STATS_MANIFEST_URL}
+	/>
+
+	<!-- heroicons arrow-down-tray-20-solid, defined once and referenced by every download link -->
+	<svg class="absolute size-0 overflow-hidden" aria-hidden="true">
+		<symbol id="stats-download" viewBox="0 0 20 20" fill="currentColor">
+			<path
+				d="M10.75 2.75a.75.75 0 0 0-1.5 0v8.614L6.295 8.235a.75.75 0 1 0-1.09 1.03l4.25 4.5a.75.75 0 0 0 1.09 0l4.25-4.5a.75.75 0 0 0-1.09-1.03l-2.955 3.129z"
+			></path>
+			<path
+				d="M3.5 12.75a.75.75 0 0 0-1.5 0v2.5A2.75 2.75 0 0 0 4.75 18h10.5A2.75 2.75 0 0 0 18 15.25v-2.5a.75.75 0 0 0-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25z"
+			></path>
+		</symbol>
+	</svg>
+
+	<div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+		{
+			tables.map(({ slice, years }) => (
+				<table
+					class={tableClass}
+					data-stats-slice={slice}
+					data-order="newest"
+					hidden={slice !== defaultSlice}
+				>
+					<caption class="sr-only">
+						Monthly Stats files by {sliceLabel(slice)}
+					</caption>
+					<thead>
+						<tr>
+							<th scope="col" class={`${headClass} pl-4`}>
+								Month
+							</th>
+							{DIRECTIONS.map((d) => (
+								<th scope="col" class={headClass}>
+									{DIRECTION_LABELS[d]}
+								</th>
+							))}
+						</tr>
+					</thead>
+					{years.map(([year, yearMonths]) => (
+						<tbody data-year={year}>
+							<tr>
+								<th
+									colspan={DIRECTIONS.length + 1}
+									scope="colgroup"
+									class="sticky top-[calc(6rem+2.75rem+1px)] z-5 border-b border-neutral-200 bg-neutral-100 py-2 pr-3 pl-4 text-base font-semibold text-neutral-900"
+								>
+									{year}
+								</th>
+							</tr>
+							{yearMonths.map((m) => (
+								<tr data-month={m.month}>
+									<th scope="row">
+										<time
+											datetime={m.month}
+											title={`${m.start} to ${m.end} (UTC, end exclusive)`}
+										>
+											{monthName(m.month)}
+										</time>
+									</th>
+									{DIRECTIONS.map((d) => {
+										const files = m.files[`${d}/${slice}`];
+										return (
+											<td>
+												{files ? (
+													<>
+														{files.parquet && (
+															<a href={files.parquet.url} data-parquet>
+																<svg aria-hidden="true">
+																	<use href="#stats-download" />
+																</svg>
+																Parquet
+															</a>
+														)}
+														{files.stats && (
+															<a href={files.stats.url} data-json>
+																stats.json
+															</a>
+														)}
+													</>
+												) : (
+													<span class="text-faint">
+														<span aria-hidden="true">—</span>
+														<span class="sr-only">Not available</span>
+													</span>
+												)}
+											</td>
+										);
+									})}
+								</tr>
+							))}
+						</tbody>
+					))}
+				</table>
+			))
+		}
+	</div>
+</div>
