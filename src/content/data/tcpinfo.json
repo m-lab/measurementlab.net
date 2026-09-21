@@ -43,11 +43,11 @@
       "description": "TCP INFO statistics for WeHe test runs"
     },
     {
-      "label": "Host Server TCP INFO BigQuery",
-      "url": "https://console.cloud.google.com/storage/browser/archive-measurement-lab/host/tcpinfo/",
+      "label": "NDT TCP INFO BigQuery",
+      "url": "https://console.cloud.google.com/bigquery?ws=!1m5!1m4!4m3!1smeasurement-lab!2sndt!3stcpinfo",
       "format": "BigQuery",
       "type": "query",
-      "description": "Coming soon: measurement-lab.host.tcpinfo"
+      "description": "NDT TCP Info "
     }
   ],
   "documentationLinks": [
