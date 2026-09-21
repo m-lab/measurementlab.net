@@ -2,7 +2,7 @@
   "id": "monthly-stats",
   "title": "Monthly Stats",
   "status": "published",
-  "description": "Cached M-Lab summary query results available for download. These data are used to calculate the Internet Quality Barometer (IQB), but are generally useful as aggregate statistics of M-Lab's global measurements. Data are organized by month, direction (download/upload), and geographic granularity.",
+  "description": "Cached M-Lab summary query results available for download. These data are generally useful as aggregate statistics of M-Lab's global measurements, they were generated to help serve the Internet Quality Barometer (IQB) project, but are generally accessible and useful. Data are organized by month, direction (download/upload), and geographic granularity.",
   "category": "enriched",
   "testRef": "ndt",
   "relatedDatasets": [
