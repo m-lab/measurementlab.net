@@ -40,7 +40,7 @@
   "documentationLinks": [
     {
       "label": "NDT Data Documentation",
-      "url": "https://www.measurementlab.net/tests/ndt/"
+      "url": "/tests/ndt/"
     },
     {
       "label": "BigQuery Schema Reference",
