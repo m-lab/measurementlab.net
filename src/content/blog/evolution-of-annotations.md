@@ -99,7 +99,7 @@ update from Maxmind][maxmind-update].
 [fips]: https://en.wikipedia.org/wiki/FIPS_10-4
 [iso3166]: https://en.wikipedia.org/wiki/ISO_3166-2
 [routeviews]: http://www.routeviews.org/routeviews/
-[maxmind-update]: https://dev.maxmind.com/geoip/geoip2/whats-new-in-geoip2/
+[maxmind-update]: https://dev.maxmind.com/geoip/whats-new-in-geoip2/
 
 In 2020-03, the **uuid-annotator** service was launched, providing annotations
 for the **ndt7** datatype, using the Maxmind Geolite2 dataset, and IP address

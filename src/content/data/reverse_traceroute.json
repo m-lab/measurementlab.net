@@ -53,7 +53,7 @@
   "documentationLinks": [
     {
       "label": "RevTr 1.0 Paper (NSDI '10)",
-      "url": "https://www.usenix.org/conference/nsdi-10/reverse-traceroute"
+      "url": "https://www.usenix.org/conference/nsdi10-0/reverse-traceroute"
     },
     {
       "label": "RevTr 2.0 Paper (IMC '22)",

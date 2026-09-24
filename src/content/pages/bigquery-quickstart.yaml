@@ -82,7 +82,7 @@ sections:
       * [BigQuery Schema](/data/docs/bq/schema)
       * [Google's BigQuery documentation](https://cloud.google.com/bigquery/what-is-bigquery)
       * [Querying Date Partitioned Tables](https://cloud.google.com/bigquery/docs/querying-partitioned-tables)
-      * [Google's bq Command-Line Tool Quickstart documentation](https://cloud.google.com/bigquery/bq-command-line-tool-quickstart)
+      * [Google's bq Command-Line Tool Quickstart documentation](https://docs.cloud.google.com/bigquery/docs/quickstarts/load-data-bq)
 
       ## BigQuery API
 

@@ -18,4 +18,4 @@ Please cite this data set as follows: **The M-Lab MobiPerf Data Set, &lt;date ra
 
 **Source code** is available at [https://github.com/Mobiperf/MobiPerf](https://github.com/Mobiperf/MobiPerf).
 
-**Get more information** at [http://www.mobiperf.com/](http://www.mobiperf.com/).
+**Get more information** at [https://mobiperf.com/](https://mobiperf.com/).
