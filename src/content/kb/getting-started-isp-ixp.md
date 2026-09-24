@@ -4,12 +4,17 @@ title: "Getting Started: ISP and IXP Staff"
 chapter: Getting Started
 chapterOrder: 1
 order: 5
-status: published
-description: A guide for ISP engineers, network operators, and IXP staff who want to understand M-Lab data from their networks, host a measurement node, or use M-Lab for network diagnostics and performance benchmarking.
-tags: [Getting Started, Node Operations, Data Access, Network Operations]
+status: draft
+description: A guide for ISP engineers, network operators, and IXP staff who
+  want to understand M-Lab data from their networks, host a measurement node, or
+  use M-Lab for network diagnostics and performance benchmarking.
+tags:
+  - Getting Started
+  - Node Operations
+  - Data Access
+  - Network Operations
 difficulty: intermediate
 ---
-
 M-Lab sits at the intersection of your network and the public internet, running standardized tests from measurement points at internet exchange facilities worldwide. For ISPs and IXPs, M-Lab data offers a window into how your customers experience your network — and hosting a node puts that measurement capacity directly in your infrastructure.
 
 This guide covers the three main ways ISP and IXP staff engage with M-Lab: understanding how tests work, reading M-Lab data about your network, and hosting your own node.
@@ -34,7 +39,8 @@ Every test run against an M-Lab server includes the client's IP address and ASN 
 
 **Sample query — performance summary for your ASN:**
 
-<!-- sqltest -->
+
+
 ```sql
 -- Performance of your ASN 
 SELECT
@@ -72,7 +78,6 @@ The **Bring Your Own Server** program lets ISPs and IXPs host M-Lab measurement 
 - Your network appears in M-Lab's global measurement infrastructure
 - All measurements from your node are published as open data
 - IXPs hosting nodes provide measurement capability to all member ISPs
-
 - [Running Your Own M-Lab Node: The BYOS Program](/kb/byos-overview) — requirements, deployment process, and what hosting entails
 - [FAQ: Required Ports for M-Lab Nodes](/kb/required-ports) — firewall and routing requirements
 - [FAQ: Checking Node Probability and Status](/kb/checking-node-probability) — how to verify your node is registered, active, and receiving traffic via the Locate API
