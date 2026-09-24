@@ -58,6 +58,18 @@
     {
       "label": "RevTr 2.0 Paper (IMC '22)",
       "url": "https://dl.acm.org/doi/10.1145/3517745.3561422"
+    },
+    {
+      "label": "Reverse Traceroute Test ",
+      "url": "https://www.measurementlab.net/tests/reverse_traceroute/ "
+    },
+    {
+      "label": "Tutorial",
+      "url": "https://www.measurementlab.net/blog/revtr_tutorial/ "
+    },
+    {
+      "label": "Interactive Colab (Python Notebook)",
+      "url": "https://colab.research.google.com/drive/12KET9GAtRJU0ZSGGxikxrVNF3wzAUcRL?usp=sharing "
     }
   ]
 }
