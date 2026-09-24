@@ -4,12 +4,16 @@ title: "Getting Started: Internet Policymakers"
 chapter: Getting Started
 chapterOrder: 1
 order: 3
-status: published
-description: A guide for policymakers, regulators, and government staff who want to use M-Lab data to understand broadband performance, inform policy decisions, and evaluate connectivity programs.
-tags: [Getting Started, Policy, Internet Quality]
+status: draft
+description: A guide for policymakers, regulators, and government staff who want
+  to use M-Lab data to understand broadband performance, inform policy
+  decisions, and evaluate connectivity programs.
+tags:
+  - Getting Started
+  - Policy
+  - Internet Quality
 difficulty: beginner
 ---
-
 M-Lab data has informed broadband policy at the national and international level — from FCC proceedings in the United States to regulatory filings across Europe, Latin America, and Asia. This guide points policymakers, regulators, and their research staff toward the resources most relevant to their work.
 
 ## What M-Lab Can Tell You
@@ -44,7 +48,7 @@ M-Lab is working with [Giga](https://giga.global/) to adapt the IQB framework fo
 
 This work is part of the [Connectivity Community of Practice](https://www.measurementlab.net/blog/cop-launch/), a global forum launched in March 2026 bringing together academia, industry, civil society, and international organizations around school connectivity measurement.
 
-<!-- FIXME: Add link to IQB-edu methodology article once published. -->
+
 
 ## Key Measurement Tools for Policy
 
