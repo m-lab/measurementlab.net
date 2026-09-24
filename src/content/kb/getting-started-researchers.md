@@ -4,12 +4,16 @@ title: "Getting Started: Researchers"
 chapter: Getting Started
 chapterOrder: 1
 order: 2
-status: published
-description: "A curated starting path for academic researchers and data scientists using M-Lab data — covering data access, key datasets, measurement methodology, and common research patterns."
-tags: [Getting Started, Research, Data Access]
+status: draft
+description: A curated starting path for academic researchers and data
+  scientists using M-Lab data — covering data access, key datasets, measurement
+  methodology, and common research patterns.
+tags:
+  - Getting Started
+  - Research
+  - Data Access
 difficulty: beginner
 ---
-
 M-Lab's open datasets have been used in hundreds of peer-reviewed publications, government reports, and conference papers. This guide maps out the most useful resources for researchers coming to M-Lab for the first time, or looking to go deeper.
 
 ## Start Here
@@ -63,13 +67,14 @@ These datasets are collected automatically alongside every test:
 
 When publishing work that uses M-Lab data, cite the specific dataset used:
 
-- NDT: *The M-Lab NDT Data Set, \<date range\>. https://measurementlab.net/tests/ndt*
-- Traceroute: *The M-Lab Traceroute Dataset, \<date range\>. https://measurementlab.net/tests/traceroute*
-- WeHe: *A large-scale analysis of deployed traffic differentiation practices. https://dl.acm.org/doi/abs/10.1145/3341302.3342092*
+- NDT: *The M-Lab NDT Data Set, date range. [https://measurementlab.net/tests/ndt](https://measurementlab.net/tests/ndt)*
+- Traceroute: *The M-Lab Traceroute Dataset, date range. [https://measurementlab.net/tests/traceroute](https://measurementlab.net/tests/traceroute)*
+- WeHe: *A large-scale analysis of deployed traffic differentiation practices. [https://dl.acm.org/doi/abs/10.1145/3341302.3342092](https://dl.acm.org/doi/abs/10.1145/3341302.3342092)*
 
 ## Community
 
 M-Lab hosts a [discuss mailing list](https://groups.google.com/a/measurementlab.net/g/discuss) (also required for free BigQuery access), monthly community calls, and an annual hackathon. Email [support@measurementlab.net](mailto:support@measurementlab.net) for research questions or collaborations.
 
-<!-- FIXME: Add link to "Statistical Pitfalls in M-Lab Analysis" article once created (selection bias, test population, temporal sampling). -->
-<!-- FIXME: Add link to "Working with M-Lab GCS Raw Data in Python" article once created. -->
+
+
+&nbsp;
