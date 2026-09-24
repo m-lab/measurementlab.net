@@ -4,12 +4,15 @@ title: Getting Started with M-Lab Data in BigQuery
 chapter: Accessing Data
 chapterOrder: 5
 order: 1
-status: published
-description: How to get free access to M-Lab's BigQuery datasets, run your first queries, understand the data structure, and work efficiently with large tables.
-tags: [Data Access, BigQuery]
+status: draft
+description: How to get free access to M-Lab's BigQuery datasets, run your first
+  queries, understand the data structure, and work efficiently with large
+  tables.
+tags:
+  - Data Access
+  - BigQuery
 difficulty: beginner
 ---
-
 M-Lab publishes all measurement data to [Google BigQuery](https://cloud.google.com/bigquery/what-is-bigquery) as a free, open dataset. Access is sponsored by M-Lab — queries against the `measurement-lab` project don't come out of your own GCP quota — but you must join the M-Lab Discuss group first to activate that sponsorship. **Saving query results to your own BigQuery tables, or running queries billed to your own project, will incur charges to you.**
 
 Questions? Email [support@measurementlab.net](mailto:support@measurementlab.net).
@@ -34,13 +37,13 @@ You can now run queries at no charge. You do **not** need to activate Google's f
 
 1. [Download and install the Google Cloud SDK](https://cloud.google.com/sdk/) for your operating system.
 2. Authenticate with the Gmail account you subscribed to M-Lab Discuss:
-   ```
+  ```
    gcloud auth login
-   ```
+  ```
 3. Set your default project:
-   ```
+  ```
    gcloud config set project measurement-lab
-   ```
+  ```
 
 BigQuery's `bq` command-line tool is now available and queries against `measurement-lab` datasets will not be billed to you.
 
@@ -53,7 +56,8 @@ If you need to query from an application using a service account (`@developer.gs
 For speed test results, you can start with the `measurement-lab.ndt.ndt7_union` table.
 For example, for the average download speed by country for the last 30 days:
 
-<!-- sqltest -->
+
+
 ```sql
 -- Median download speed by country for a day
 SELECT
@@ -73,10 +77,10 @@ LIMIT 20
 
 NDT7 results have a nested structure. The key top-level fields are:
 
-- **`a`** — measurement results (throughput, latency, loss)
-- **`client`** — annotated client information (Geo, Network/ASN)
-- **`server`** — M-Lab server that handled the test
-- **`raw`** — raw TCP statistics from the kernel
+- `**a**` — measurement results (throughput, latency, loss)
+- `**client**` — annotated client information (Geo, Network/ASN)
+- `**server**` — M-Lab server that handled the test
+- `**raw**` — raw TCP statistics from the kernel
 
 ### Commonly Used Fields
 
@@ -115,7 +119,8 @@ Use the **preview** feature in the BigQuery UI to inspect data before running qu
 
 For larger analyses, export to Google Cloud Storage rather than downloading from BigQuery:
 
-<!-- sqltest -->
+
+
 ```sql
 -- Export example
 EXPORT DATA
@@ -137,4 +142,3 @@ AS (
 - [NDT (Network Diagnostic Tool)](/kb/test-ndt) — the primary dataset
 - [Analyzing M-Lab Data: A Researcher's Guide](/kb/research-guide) — ISP comparison patterns and advanced queries
 
-<!-- TODO: Add section on using the BigQuery API from Python (google-cloud-bigquery library). Add worked example of ISP comparison query. Add section on M-Lab's long-term schema support policy (stable column names since 2020). Link to the M-Lab data documentation at measurementlab.net/data. -->
