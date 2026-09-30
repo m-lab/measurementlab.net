@@ -1,10 +1,16 @@
 {
   "id": "annotated-traceroutes",
   "title": "Annotated traceroutes",
-  "status": "published",
+  "status": "draft",
   "description": "To be filled in further",
-  "temporalCoverageStart": "2026-01-01",
+  "category": "enriched",
+  "relatedDatasets": [
+    "ndt",
+    "traceroute",
+    "reverse_traceroute"
+  ],
+  "temporalCoverageStart": "2024-01-01",
   "temporalCoverageEnd": "present",
   "spatialCoverage": "Global",
-  "updateFrequency": "irregular"
+  "updateFrequency": "daily"
 }
