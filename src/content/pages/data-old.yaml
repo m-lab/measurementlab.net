@@ -31,14 +31,12 @@ sections:
 
       Our knowledge base covers how to query the various M-Lab archives and
       datasets. We provide ready-to-use datasets on our [Datasets
-      page](/datasets), and documentation in the [Knowledge
-      Base](/kb/). We also have a [Getting Started Page
-      for
-      Researchers](/kb/getting-started-researchers)
-      in the Knowledge Base that can help you getting started with learning
-      about tests, dataset limitations, and advanced querying of M-Lab data. If
-      you have questions, please [contact
-      us](mailto:support@measurementlab.net).
+      page](/datasets), and documentation in the [Knowledge Base](/kb/). We also
+      have a [Getting Started Page for
+      Researchers](/kb/getting-started-researchers) in the Knowledge Base that
+      can help you getting started with learning about tests, dataset
+      limitations, and advanced querying of M-Lab data. If you have questions,
+      please [contact us](mailto:support@measurementlab.net).
 
 
       ## Data License and Citing M-Lab Data
@@ -52,13 +50,13 @@ sections:
       Please cite M-Lab data sets as follows:
 
 
-      The M-Lab *test name* Data Set, *date range used*. *M-Lab test URL*
+      > The M-Lab *test name* Data Set, *date range used*. *M-Lab test URL*
 
 
       For example:
 
 
-      The M-Lab NDT Data Set 2009-02-11–2015-12-21.
+      > The M-Lab NDT Data Set 2009-02-11–2015-12-21.
       [https://measurementlab.net/tests/ndt](/tests/ndt)
 
 
@@ -79,3 +77,4 @@ sections:
       }
 
       ```
+
