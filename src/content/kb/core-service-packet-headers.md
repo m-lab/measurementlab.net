@@ -24,11 +24,13 @@ The packet-headers service saves **headers only**, not payload content. This mea
 
 Payload bytes are deliberately excluded to protect user privacy and reduce storage volume. The headers alone are sufficient for TCP behavior analysis — retransmits, congestion signals, window scaling, and timing can all be reconstructed from headers.
 
-**IP address anonymization** is supported via a command-line flag and can be enabled on a per-deployment basis.
+For WeHe tests only - **IP address anonymization** is supported via a command-line flag and can be enabled on a per-deployment basis.
 
 ## How It Works
 
 The service runs as a separate binary ([packet-headers](https://github.com/m-lab/packet-headers)) on each M-Lab server. It uses a packet capture library (libpcap) to monitor all incoming TCP flows. When a new flow is established, it opens a new `.pcap` file named after the flow's UUID and writes all subsequent packet headers for that flow into the file until the flow closes.
+
+The headers are not published in BigQuery, but the index (needed to find the right .tgz archive, see above) is: measurement-lab.ndt_raw.pcap and contains id (the UUID), and parser.ArchiveURL of the relevant pcap test data.
 
 Because file naming is UUID-based, you can take any measurement result from BigQuery (e.g., an NDT test), extract its UUID, and look up the corresponding `.pcap` file directly in GCS.
 
@@ -43,14 +45,10 @@ Packet captures are stored in GCS, organized by the measurement service that gen
 | NDT | [gs://archive-measurement-lab/ndt/pcap](https://console.cloud.google.com/storage/browser/archive-measurement-lab/ndt/pcap/) |
 | Neubot/DASH | [gs://archive-measurement-lab/neubot/pcap](https://console.cloud.google.com/storage/browser/archive-measurement-lab/neubot/pcap/) |
 | WeHe | [gs://archive-measurement-lab/wehe/pcap](https://console.cloud.google.com/storage/browser/archive-measurement-lab/wehe/pcap/) |
-| Host server | [gs://archive-measurement-lab/host/pcap](https://console.cloud.google.com/storage/browser/archive-measurement-lab/host/pcap/) |
+| msak | [gs://archive-measurementlab/msak/pcap](https://console.cloud.google.com/storage/browser/archive-measurement-lab/msak/pcap/) |
+| revtr | [gs://archive-measurementlab/revtr/pcap](https://console.cloud.google.com/storage/browser/archive-measurement-lab/revtr/pcap/) |
 
 Files are organized by date. To download a specific PCAP for a known NDT test UUID:
-
-```bash
-gsutil ls gs://archive-measurement-lab/ndt/pcap/2024/06/01/ | grep <UUID>
-gsutil cp gs://archive-measurement-lab/ndt/pcap/2024/06/01/<UUID>.pcap.gz .
-```
 
 Then open with Wireshark, tcpdump, or any tool that reads standard `.pcap` format.
 
@@ -70,8 +68,6 @@ Packet header data is **not published to BigQuery**. Analysis requires working w
 
 **Protocol behavior studies** — researchers studying TCP options (SACK, timestamps, window scaling) or congestion control algorithm behavior use PCAPs to observe these mechanisms in the wild.
 
-<!-- FIXME: Create article on working with M-Lab PCAPs in Python (using scapy or dpkt) with example analysis of retransmit events. -->
-
 ## Source Code
 
 - [packet-headers service](https://github.com/m-lab/packet-headers)
@@ -84,5 +80,4 @@ Packet header data is **not published to BigQuery**. Analysis requires working w
 
 - [TCP INFO — kernel-level TCP statistics (companion dataset)](/kb/core-service-tcp-info)
 - [NDT — speed test whose flows are captured](/kb/test-ndt)
-<!-- FIXME: add link – "Accessing Data in GCS" -->
 - [Traceroute — network path data collected alongside PCAPs](/kb/core-service-traceroute)

@@ -3,8 +3,8 @@ permalink: troubleshooting-tests
 title: Troubleshooting M-Lab Tests
 chapter: Tests
 chapterOrder: 3
-order: 7
-status: published
+order: 8
+status: draft
 description: Steps to take when an M-Lab test takes too long, fails to start, or never completes.
 tags: [Troubleshooting, Tests]
 difficulty: beginner

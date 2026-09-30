@@ -4,7 +4,7 @@ title: "Beyond Speed: Understanding Internet Quality Metrics"
 chapter: Understanding Measurement
 chapterOrder: 2
 order: 2
-status: published
+status: draft
 description: Why download speed alone is an incomplete picture of internet performance, and how M-Lab measures latency, packet loss, and working internet quality.
 tags: [Internet Quality, Measurement]
 difficulty: beginner
@@ -67,7 +67,7 @@ The IQB builds on the "responsiveness" concept from Apple's RPM test and BITAG's
 
 <div class="callout callout--note">
 <span class="callout-icon">ℹ️</span>
-<div class="callout-body"><p>See the M-Lab blog post <a href="/blog/iqb">Measurement Lab publishes the Internet Quality Barometer Framework</a> for the framework behind this methodology.</p></div>
+<div class="callout-body"><p>See the M-Lab blog post <a href="https://measurementlab.net/blog/iqb-prototype-v1">Internet Quality Barometer Prototype v1</a> for the current methodology.</p></div>
 </div>
 
 ## Rate Limits and Test Integrity
@@ -105,5 +105,3 @@ Rough benchmarks for residential broadband:
 These benchmarks vary by use case. The FCC uses 25/3 Mbps as a minimum definition; the BEAD program uses 100/20 Mbps as the funded build-out target.
 
 ---
-
-<!-- TODO: Add section on the BITAG (Broadband Internet Technical Advisory Group) working latency report and its influence on M-Lab's IQB work. Add worked example of comparing loaded vs. unloaded latency using MSAK data. Include a chart showing how packet loss affects video call quality (MOS score vs. loss rate). -->

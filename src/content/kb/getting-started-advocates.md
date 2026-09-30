@@ -5,16 +5,11 @@ chapter: Getting Started
 chapterOrder: 1
 order: 4
 status: draft
-description: A guide for digital rights advocates, community broadband
-  organizers, and civil society researchers using M-Lab data to document ISP
-  behavior, support communities, and make evidence-based arguments.
-tags:
-  - Getting Started
-  - Advocacy
-  - Internet Quality
-  - Net Neutrality
+description: A guide for digital rights advocates, community broadband organizers, and civil society researchers using M-Lab data to document ISP behavior, support communities, and make evidence-based arguments.
+tags: [Getting Started, Advocacy, Internet Quality, Net Neutrality]
 difficulty: beginner
 ---
+
 M-Lab data is a powerful resource for internet advocacy — it's open, independently verifiable, and produced at a scale that individual communities or organizations cannot replicate on their own. This guide is for advocates, organizers, civil society researchers, and journalists who want to use M-Lab data to document ISP behavior, support communities, and build evidence-based arguments.
 
 ## What Makes M-Lab Useful for Advocacy
@@ -52,10 +47,6 @@ For characterizing ISP performance in a community, region, or across ISPs:
 
 - [Setting Up Free BigQuery Access](/kb/getting-started-bigquery) — register for free BigQuery access with your Google account
 - [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery) — run your first query in under 10 minutes
-
-### Aggregate Data Without BigQuery
-
-- [Monthly Stats](/kb/monthly-stats-dataset): pre-computed monthly NDT summaries by geography and ISP as Parquet files, no SQL setup needed
 
 ## Understanding What the Data Shows (and Doesn't)
 
@@ -95,6 +86,5 @@ If you want to organize your community to contribute measurements:
 
 For questions about using M-Lab data in advocacy campaigns, reports, or proceedings, contact [support@measurementlab.net](mailto:support@measurementlab.net). M-Lab staff have supported civil society organizations with data interpretation and expert testimony.
 
-
-
-&nbsp;
+<!-- FIXME: Add link to "Organizing a Community Measurement Campaign with M-Lab" article once created. -->
+<!-- FIXME: Add link to "Using M-Lab Data as Evidence in Regulatory Filings" article once created. -->

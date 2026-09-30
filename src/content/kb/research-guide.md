@@ -4,7 +4,7 @@ title: "Analyzing M-Lab Data: A Researcher's Guide"
 chapter: Research & Analysis
 chapterOrder: 6
 order: 1
-status: published
+status: draft
 description: Methods, tools, and best practices for using M-Lab's open datasets in academic research, policy analysis, and community broadband advocacy.
 tags: [Research, Data Access]
 difficulty: intermediate
@@ -42,9 +42,9 @@ gsutil -m cp -r gs://archive-measurement-lab/ndt/ndt7/2024/01/15/ ./data/
 
 Raw files are in newline-delimited JSON format. Each file contains measurements from a single server for a single hour.
 
-### Monthly Stats
+### M-Lab Observatory
 
-For aggregate analysis without BigQuery, the [Monthly Stats](/kb/monthly-stats-dataset) dataset provides pre-computed monthly summaries of NDT results by geography and ISP as Parquet files. See also the [percentiles](/kb/monthly-stats-percentiles) and [Python](/kb/monthly-stats-python) guides.
+For exploratory analysis and visualization without writing SQL, the [M-Lab Observatory](https://viz.measurementlab.net) provides pre-built dashboards for ISP and geographic comparisons.
 
 ## Common Research Patterns
 

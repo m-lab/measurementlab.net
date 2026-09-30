@@ -5,15 +5,11 @@ chapter: Getting Started
 chapterOrder: 1
 order: 2
 status: draft
-description: A curated starting path for academic researchers and data
-  scientists using M-Lab data — covering data access, key datasets, measurement
-  methodology, and common research patterns.
-tags:
-  - Getting Started
-  - Research
-  - Data Access
+description: "A curated starting path for academic researchers and data scientists using M-Lab data — covering data access, key datasets, measurement methodology, and common research patterns."
+tags: [Getting Started, Research, Data Access]
 difficulty: beginner
 ---
+
 M-Lab's open datasets have been used in hundreds of peer-reviewed publications, government reports, and conference papers. This guide maps out the most useful resources for researchers coming to M-Lab for the first time, or looking to go deeper.
 
 ## Start Here
@@ -61,20 +57,16 @@ These datasets are collected automatically alongside every test:
 - [Reverse Traceroute Tutorial](https://www.measurementlab.net/blog/revtr_tutorial/) — hands-on worked example joining RevTr and NDT data in BigQuery
 - [M-Lab Data Schema Repository](https://github.com/m-lab/etl-schema) — authoritative BigQuery schema definitions
 - [NDT Unified Views Example Queries](https://www.measurementlab.net/tests/ndt/views/examples) — official query examples
-- [Monthly Stats](/kb/monthly-stats-dataset): pre-computed monthly NDT summaries as Parquet files, for aggregate analysis without BigQuery
+
 
 ## Data Citation
 
 When publishing work that uses M-Lab data, cite the specific dataset used:
 
-- NDT: *The M-Lab NDT Data Set, date range. [https://measurementlab.net/tests/ndt](https://measurementlab.net/tests/ndt)*
-- Traceroute: *The M-Lab Traceroute Dataset, date range. [https://measurementlab.net/tests/traceroute](https://measurementlab.net/tests/traceroute)*
-- WeHe: *A large-scale analysis of deployed traffic differentiation practices. [https://dl.acm.org/doi/abs/10.1145/3341302.3342092](https://dl.acm.org/doi/abs/10.1145/3341302.3342092)*
+- NDT: *The M-Lab NDT Data Set, \<date range\>. https://measurementlab.net/tests/ndt*
+- Traceroute: *The M-Lab Traceroute Dataset, \<date range\>. https://measurementlab.net/tests/traceroute*
+- WeHe: *A large-scale analysis of deployed traffic differentiation practices. https://dl.acm.org/doi/abs/10.1145/3341302.3342092*
 
 ## Community
 
 M-Lab hosts a [discuss mailing list](https://groups.google.com/a/measurementlab.net/g/discuss) (also required for free BigQuery access), monthly community calls, and an annual hackathon. Email [support@measurementlab.net](mailto:support@measurementlab.net) for research questions or collaborations.
-
-
-
-&nbsp;

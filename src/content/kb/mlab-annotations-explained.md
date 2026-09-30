@@ -70,15 +70,14 @@ M-Lab uses ISO 3166-2 codes for subdivisions such as states and provinces:
 ```sql
 -- US state-level analysis
 SELECT
-  client.Geo.Region AS state_code,
+  client.Geo.Subdivision1Name AS state,
   COUNT(*) AS tests,
   ROUND(AVG(a.MeanThroughputMbps), 2) AS avg_mbps
-FROM `measurement-lab.ndt.ndt7`
+FROM `measurement-lab.ndt.ndt7_union`
 WHERE client.Geo.CountryCode = 'US'
-  AND date BETWEEN '2024-01-01' AND '2024-12-31'
-GROUP BY state_code
+  AND date BETWEEN '2024-01-01' AND '2024-01-02'
+GROUP BY state
 ORDER BY tests DESC;
-### Improving Spatial Precision
 ```
 
 ## Network Annotations (ASN)
@@ -107,9 +106,9 @@ SELECT
   MAX(client.Network.ASName) AS isp_name,   -- stable within ASN
   COUNT(*) AS test_count,
   ROUND(APPROX_QUANTILES(a.MeanThroughputMbps, 100)[OFFSET(50)], 2) AS median_mbps
-FROM `measurement-lab.ndt.ndt7`
+FROM `measurement-lab.ndt.ndt7_union`
 WHERE client.Geo.CountryCode = 'BR'
-  AND date BETWEEN '2024-01-01' AND '2024-03-31'
+  AND date BETWEEN '2024-01-01' AND '2024-01-01'
 GROUP BY asn
 HAVING test_count > 1000
 ORDER BY test_count DESC

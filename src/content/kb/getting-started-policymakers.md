@@ -5,15 +5,11 @@ chapter: Getting Started
 chapterOrder: 1
 order: 3
 status: draft
-description: A guide for policymakers, regulators, and government staff who want
-  to use M-Lab data to understand broadband performance, inform policy
-  decisions, and evaluate connectivity programs.
-tags:
-  - Getting Started
-  - Policy
-  - Internet Quality
+description: A guide for policymakers, regulators, and government staff who want to use M-Lab data to understand broadband performance, inform policy decisions, and evaluate connectivity programs.
+tags: [Getting Started, Policy, Internet Quality]
 difficulty: beginner
 ---
+
 M-Lab data has informed broadband policy at the national and international level — from FCC proceedings in the United States to regulatory filings across Europe, Latin America, and Asia. This guide points policymakers, regulators, and their research staff toward the resources most relevant to their work.
 
 ## What M-Lab Can Tell You
@@ -49,7 +45,6 @@ M-Lab is working with [Giga](https://giga.global/) to adapt the IQB framework fo
 This work is part of the [Connectivity Community of Practice](https://www.measurementlab.net/blog/cop-launch/), a global forum launched in March 2026 bringing together academia, industry, civil society, and international organizations around school connectivity measurement.
 
 
-
 ## Key Measurement Tools for Policy
 
 - [NDT (Network Diagnostic Tool)](/kb/test-ndt) — the flagship speed test, with data going back to 2009. Measures download speed, upload speed, and latency. The most widely used M-Lab dataset for policy analysis.
@@ -58,7 +53,6 @@ This work is part of the [Connectivity Community of Practice](https://www.measur
 
 ## Working with M-Lab Data
 
-If you do not have an analyst on staff, the [Monthly Stats](/kb/monthly-stats-dataset) dataset offers pre-computed summaries by country, region, and ISP; see the section below.
 
 If you have a data analyst on staff, M-Lab data is also freely available in Google BigQuery:
 
@@ -82,9 +76,9 @@ M-Lab data has been used in:
 
 See [M-Lab Publications](https://www.measurementlab.net/publications/#government--regulatory-filings) for government and regulatory filings that have used M-Lab data.
 
-## Aggregate Data and Self-Testing
+## Visualization and Exploration (No Coding Required)
 
-- [Monthly Stats](/kb/monthly-stats-dataset): pre-computed monthly NDT summaries by geography and ISP as Parquet files, no BigQuery required
+
 - [speed.measurementlab.net](https://speed.measurementlab.net) — run an NDT test yourself to understand what users experience
 
 ## Privacy and Data Governance

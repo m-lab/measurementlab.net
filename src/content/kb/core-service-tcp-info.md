@@ -16,7 +16,7 @@ These statistics are the raw material for many of the metrics you see in NDT res
 
 ## How TCP INFO Works
 
-The Linux kernel exposes a rich set of TCP socket metrics through the `getsockopt(TCP_INFO)` system call. TCP INFO's [`tcp-info`](https://github.com/m-lab/tcp-info) service polls this interface periodically during each connection and saves a time series of snapshots. Each snapshot captures the full state of the TCP socket at that moment.
+The Linux kernel exposes a rich set of TCP socket metrics through the INET_DIAG kernel subsystem. TCP INFO's [`tcp-info`](https://github.com/m-lab/tcp-info) service polls this interface periodically during each connection and saves a time series of snapshots. Each snapshot captures the full state of the TCP socket at that moment.
 
 This polling approach means you can observe how TCP state evolves over the duration of a test — watching the congestion window grow, seeing retransmit events, observing RTT fluctuations — rather than only seeing a summary at the end.
 
@@ -66,7 +66,6 @@ JOIN `measurement-lab.ndt.tcpinfo` AS tcpinfo
 WHERE ndt.date = '2024-06-01' and tcpinfo.date = '2024-06-01'
 ```
 
-<!-- FIXME: Verify exact join key and column names against current schema — the above is illustrative. -->
 
 ### Raw Data in Google Cloud Storage
 
