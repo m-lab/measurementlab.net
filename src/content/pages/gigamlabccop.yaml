@@ -11,7 +11,7 @@ sections:
     content: |-
       # The Connectivity Community of Practice
 
-      In 2026, Measurement Lab (M-Lab) and Giga UNCIEF launched the Connectivity Community of Practice for applied Internet measurement. 
+      In 2026, Measurement Lab (M-Lab) and Giga UNICEF launched the Connectivity Community of Practice for applied Internet measurement. 
 
       As the world’s largest open collection of Ιnternet performance data, M-Lab provides powerful, real-world telemetry that helps illuminate how networks actually perform. Through this collaboration, we’re working with Giga to strengthen how connectivity is measured and understood for public facilities, especially schools, using open measurement approaches that reflect on-the-ground conditions.
 
@@ -33,7 +33,7 @@ sections:
 
       We welcome CCoP members to suggest topics and present updates at sessions, so please reach out with ideas! 
 
-      Past Session Notes: [March](https://docs.google.com/document/d/10LuFzy9Pyz98GcoagzutCZ4nsi9TWl6G3HLO7yNwVbY/edit?usp=sharing), [May](https://docs.google.com/document/d/1FZm2abUnJAgE5uuSB5hbNWWyGxcCFhYuvRb-DwQL0LM/edit?usp=sharing), [July](https://docs.google.com/document/d/1_dEHEtph9VlsixVagELy1ymM1bEbjN9GC2K6dwGNkWc/edit?usp=sharing)  
+      Learn more about the CCoP and explore past session notes and outcomes in the CCoP's [GitHub repository](https://github.com/unicef/giga-mlab-school-connectivity-cop/). 
   - type: flexi
     background:
       color: primary-medium
