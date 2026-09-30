@@ -42,8 +42,7 @@ sections:
 
       The Locate Service and API provides consistent, expected measurement quality for M-Lab clients. The Locate API is a GCP hosted service that "locates" the best M-Lab server for a user request. For different use cases, "best" could mean different things. See [USAGE.md](https://github.com/m-lab/locate/blob/main/USAGE.md) and the documents below for hints on supported queries.
 
-      - Homepage: [https://locate.measurementlab.net/](https://locate.measurementlab.net/)
+      - Github: [https://github.com/m-lab/locate/](https://github.com/m-lab/locate/) 
       - Usage: [USAGE.md](https://github.com/m-lab/locate/blob/main/USAGE.md)
-      - Design doc: [M-Lab Locate v2](https://docs.google.com/document/d/1az-4Fojf_0REQopCyA9WDS54ZNILQDuTc5SnWkbozbE/view)
       - Mailing list: [discuss@measurementlab.net](https://groups.google.com/a/measurementlab.net/forum/#!forum/discuss)
 
