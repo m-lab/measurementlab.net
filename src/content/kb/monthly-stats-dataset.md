@@ -116,19 +116,7 @@ Monthly Stats are available from **January 2009** to within ~2 months of the pre
 
 ## Community Notebooks
 
-These interactive notebooks explore Monthly Stats at each geographic granularity. Click **launch binder** to run them without installing anything:
-
-
-| Notebook | What it shows |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| [Introduction & Catalog](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F00-introduction-and-catalog.ipynb) | Dataset structure, available slices and dates |
-| [Country-level explorer](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F01-country-level.ipynb) | Compare countries, metric distributions |
-| [ASN / ISP explorer](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F02-asn-isp.ipynb) | Provider-level comparison within a country |
-| [Subdivisions (state/province)](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F03-subdivisions.ipynb) | Sub-national breakdown |
-| [Subdivision + ASN drilldown](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F04-subdivision-asn-drilldown.ipynb) | Provider performance within a region |
-| [Cities](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F05-cities.ipynb) | City-level comparison (see geolocation caveats) |
-| [Time series](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F06-time-series.ipynb) | Multi-month trend analysis |
-
+In [GitHub (m-lab/mlab-notebooks)](https://github.com/m-lab/mlab-notebooks/tree/main/monthlystats) we provide a list of interactive notebooks to explore Monthly Stats at each geographic granularity. You can find interactive versions of the notebooks: click **launch binder** to run them without installing anything.
 
 ## Limitations and Caveats
 
