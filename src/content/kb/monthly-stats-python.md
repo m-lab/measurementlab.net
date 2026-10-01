@@ -168,7 +168,7 @@ Download files contain `download_p{N}`, `latency_p{N}`, `loss_p{N}`. Upload file
 
 ## Computing IQB Scores
 
-If you want to compute [Internet Quality Barometer](/kb/internet-quality-beyond-speed) scores from Monthly Stats, use the `mlab-iqb` library:
+If you want to compute [Internet Quality Barometer](/iqb) scores from Monthly Stats, use the `mlab-iqb` library:
 
 ```python
 from iqb import IQBCalculator
