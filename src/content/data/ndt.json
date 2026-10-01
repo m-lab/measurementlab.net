@@ -23,11 +23,11 @@
       "description": "Parsed ndt7 summary table — recommended for most analyses"
     },
     {
-      "label": "BigQuery (ndt5)",
-      "url": "https://console.cloud.google.com/bigquery?ws=!1m5!1m4!4m3!1smeasurement-lab!2sndt!3sndt5",
+      "label": "BigQuery (ndt - all tables)",
+      "url": "https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1smeasurement-lab!2sndt",
       "format": "BigQuery",
       "type": "query",
-      "description": "Parsed ndt5 summary table — historical data pre-2020"
+      "description": "Parsed ndt tables — including ndt7 (2020-now), ndt5 (pre-2020), scamper (traceroutes), tcpinfo tables"
     },
     {
       "label": "Google Cloud Storage (raw)",
