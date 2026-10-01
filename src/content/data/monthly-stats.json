@@ -14,8 +14,8 @@
   "updateFrequency": "monthly",
   "accessPoints": [
     {
-      "label": "Stats Data Portal",
-      "url": "/data/stats/",
+      "label": "Monthly Stats Data Portal",
+      "url": "/data/monthly-stats-portal/",
       "format": "Portal",
       "type": "viz",
       "description": "Browse and download monthly stats files filtered by period, direction, and granularity"
