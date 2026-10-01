@@ -59,7 +59,7 @@ sections:
       - title: IQB Prototype
         content: Explore the data yourself!
         color: supporting1
-        icon: mlab-blue
+        icon: measurement
         button:
           variant: primary
           size: md
