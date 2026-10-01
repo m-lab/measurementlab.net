@@ -762,11 +762,11 @@ content:
       - name: permalink
         label: Permalink
         type: string
-        description: The slug, without slashes or parents, like 'about-us' or 'omg-3'.
+        description: The URL path, like 'about-us' or 'data/docs'. No leading or trailing slash.
         pattern:
           {
-            message: "This must be a web-safe string like 'about-us' or 'omg-3'.",
-            regex: '^[a-zA-Z0-9_-]*$',
+            message: "This must be a web-safe path like 'about-us' or 'data/docs', with no leading or trailing slash.",
+            regex: '^[a-zA-Z0-9_-]+(/[a-zA-Z0-9_-]+)*$',
           }
         required: true
       - name: status
