@@ -5,17 +5,19 @@ chapter: Accessing Data
 chapterOrder: 5
 order: 4
 status: published
-description: What the Monthly Stats dataset is, how it's derived from NDT measurements, what the parquet files contain, and how to access them without BigQuery.
-tags: [Data Access, Research]
+description: What the Monthly Stats dataset is, how it's derived from NDT
+  measurements, what the parquet files contain, and how to access them without
+  BigQuery.
+tags:
+  - Data Access
+  - Research
 difficulty: beginner
 ---
-
 M-Lab publishes a dataset called **Monthly Stats** — pre-computed monthly summaries of NDT speed test results, available as [Parquet](https://parquet.apache.org/) files. Monthly Stats make it possible to explore M-Lab data without writing BigQuery SQL or processing billions of raw test records.
 
-<div class="callout callout--tip">
-<span class="callout-icon">💡</span>
-<div class="callout-body"><p><strong>Explore the data interactively:</strong> <a href="https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F00-introduction-and-catalog.ipynb">Open the Monthly Stats introduction notebook on Binder</a> — no installation required.</p></div>
-</div>
+💡
+
+**Explore the data interactively:** [Open the Monthly Stats introduction notebook on Binder](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F00-introduction-and-catalog.ipynb) — no installation required.
 
 ## What Monthly Stats Are
 
@@ -27,8 +29,9 @@ This design means you can answer questions like "what was the median download sp
 
 Monthly Stats are published at six geographic granularities, called **slices**:
 
+
 | Slice name | Rows grouped by |
-|---|---|
+| ----------------------------- | --------------------------------- |
 | `by_country` | Country only |
 | `by_country_asn` | Country + ASN (internet provider) |
 | `by_country_subdivision1` | Country + state/province |
@@ -36,19 +39,20 @@ Monthly Stats are published at six geographic granularities, called **slices**:
 | `by_country_city` | Country + city |
 | `by_country_city_asn` | Country + city + ASN |
 
+
 Each granularity is split into download and upload files, giving twelve file types per month. The download files contain `download_p{N}`, `latency_p{N}`, and `loss_p{N}` columns; the upload files add `upload_p{N}`.
 
-<div class="callout callout--note">
-<span class="callout-icon">ℹ️</span>
-<div class="callout-body"><p><strong>ASN</strong> stands for Autonomous System Number — a number assigned to each network operator (ISP, university, cloud provider, etc.). ASN-level slices let you compare performance across providers within the same country or region. See <a href="../mlab-annotations-explained">M-Lab Network Annotations</a> for details.</p></div>
-</div>
+ℹ️
+
+**ASN** stands for Autonomous System Number — a number assigned to each network operator (ISP, university, cloud provider, etc.). ASN-level slices let you compare performance across providers within the same country or region. See [M-Lab Network Annotations](../mlab-annotations-explained) for details.
 
 ## Data Schema
 
 Every download parquet file contains:
 
+
 | Column | Description |
-|---|---|
+| --------------- | ------------------------------------------------ |
 | `country_code` | ISO 3166-1 alpha-2 code (e.g. `US`, `DE`) |
 | `asn` | Autonomous System Number *(ASN slices only)* |
 | `subdivision1` | State/province name *(subdivision slices only)* |
@@ -57,6 +61,7 @@ Every download parquet file contains:
 | `latency_p{N}` | Nth percentile minimum RTT in milliseconds |
 | `loss_p{N}` | Nth percentile packet loss rate (0–1) |
 | `sample_count` | Number of NDT tests that contributed to this row |
+
 
 Upload files add `upload_p{N}` columns. Available percentiles: 1, 5, 10, 25, 50, 75, 90, 95, 99.
 
@@ -71,7 +76,7 @@ Monthly Stats are computed from M-Lab's NDT7 dataset using a BigQuery pipeline. 
 3. Percentiles are computed across all tests in each bin
 4. Results are written to Parquet and uploaded to Google Cloud Storage
 
-The pipeline source and configuration live in the [m-lab/iqb](https://github.com/m-lab/iqb) repository, which also contains the [Internet Quality Barometer](/kb/internet-quality-beyond-speed) score library that uses Monthly Stats as its primary input.
+The pipeline source and configuration live in the [m-lab/iqb](https://github.com/m-lab/iqb) repository, which also contains the [Internet Quality Barometer](/iqb) score library that uses Monthly Stats as its primary input.
 
 ## How to Access the Data
 
@@ -113,8 +118,9 @@ Monthly Stats are available from **January 2009** to within ~2 months of the pre
 
 These interactive notebooks explore Monthly Stats at each geographic granularity. Click **launch binder** to run them without installing anything:
 
+
 | Notebook | What it shows |
-|---|---|
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
 | [Introduction & Catalog](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F00-introduction-and-catalog.ipynb) | Dataset structure, available slices and dates |
 | [Country-level explorer](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F01-country-level.ipynb) | Compare countries, metric distributions |
 | [ASN / ISP explorer](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F02-asn-isp.ipynb) | Provider-level comparison within a country |
@@ -122,6 +128,7 @@ These interactive notebooks explore Monthly Stats at each geographic granularity
 | [Subdivision + ASN drilldown](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F04-subdivision-asn-drilldown.ipynb) | Provider performance within a region |
 | [Cities](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F05-cities.ipynb) | City-level comparison (see geolocation caveats) |
 | [Time series](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F06-time-series.ipynb) | Multi-month trend analysis |
+
 
 ## Limitations and Caveats
 
