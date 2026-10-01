@@ -13,7 +13,7 @@
   "temporalCoverageEnd": "present",
   "spatialCoverage": "Global",
   "updateFrequency": "continuous",
-  "dataSize": "~2 TB/year (raw), ~500 GB/year (parsed)",
+  "dataSize": "~4 TB/month",
   "accessPoints": [
     {
       "label": "BigQuery (ndt7)",
