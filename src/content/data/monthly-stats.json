@@ -15,7 +15,7 @@
   "accessPoints": [
     {
       "label": "Monthly Stats Data Portal",
-      "url": "/data/monthly-stats-portal/",
+      "url": "/data/stats/",
       "format": "Portal",
       "type": "viz",
       "description": "Browse and download monthly stats files filtered by period, direction, and granularity"
