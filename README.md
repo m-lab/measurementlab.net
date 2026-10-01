@@ -289,15 +289,22 @@ Your markdown content here...
 
 Create a new `.yaml` file in `src/content/pages/`.
 
-A page's URL is the folders the file sits in, followed by its `permalink`. The file's own name plays no part.
+A page's URL is the folders the file sits in, followed by its `permalink`. A page that has child pages lives inside its folder as `index.yaml`, and its children sit beside it.
 
 | File                                          | `permalink` | URL                    |
 | --------------------------------------------- | ----------- | ---------------------- |
 | `src/content/pages/about.yaml`                | `about`     | `/about`               |
-| `src/content/pages/data/docs.yaml`            | `docs`      | `/data/docs`           |
+| `src/content/pages/data/index.yaml`           | `data`      | `/data`                |
+| `src/content/pages/data/docs/index.yaml`      | `docs`      | `/data/docs`           |
 | `src/content/pages/data/docs/bq/schema.yaml`  | `schema`    | `/data/docs/bq/schema` |
 
-The `permalink` is a single segment with no slashes, and folder names may only use letters, numbers, hyphens and underscores. The build fails if either rule is broken, or if two pages resolve to the same URL.
+Name each file after its permalink. Pages CMS shows this structure as a tree, and its "add child" button turns `<name>.yaml` into `<name>/index.yaml`, so a file named differently from its permalink would put the children under the wrong URL.
+
+The build fails if any of these rules is broken:
+
+- A `permalink` and every folder name is a single segment of lowercase letters, numbers and hyphens (no slashes).
+- An `index.yaml` has the same `permalink` as the name of its folder.
+- No two pages resolve to the same URL.
 
 ```yaml
 title: My New Page

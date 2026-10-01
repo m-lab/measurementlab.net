@@ -373,7 +373,7 @@ Pages are the most flexible content type. Each page is built from a series of **
 | Field                | Required | Description                                                                                                                                     |
 | -------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Page Title**       | Yes      | The title shown in the browser tab and hero section                                                                                             |
-| **Permalink**        | Yes      | The last part of the URL, without slashes (e.g., `about-us` becomes `/about-us`). For a nested URL, see "Nested pages" below                    |
+| **Permalink**        | Yes      | The last part of the URL, in lowercase letters, numbers and hyphens (e.g., `about-us` becomes `/about-us`). See "Nested pages" below            |
 | **Status**           | Yes      | Draft, Published, or Archived                                                                                                                   |
 | **Page Description** | No       | SEO meta description (shown in search results)                                                                                                  |
 | **Hero Image**       | No       | Background image for the page hero area                                                                                                         |
@@ -382,10 +382,16 @@ Pages are the most flexible content type. Each page is built from a series of **
 
 **Nested pages:**
 
-A page's URL is the folder it lives in, followed by its permalink. To publish a page at `/data/docs/schema`, open the `data` folder and then the `docs` folder in the Pages list (create them if they don't exist), add the page there, and enter only `schema` as the permalink.
+The Pages list is a **tree view**, like Tests: a page that has child pages shows an expand button next to its name, and its children appear indented below it. A child's URL is its parent's URL followed by its own permalink, so a page with the permalink `schema` under **Data > Docs** is served at `/data/docs/schema`.
 
-- Folder names become part of the URL, so use only letters, numbers, hyphens and underscores (no spaces).
-- The page for the folder's own URL sits next to the folder: the `/data/docs` page is the entry with the permalink `docs` inside the `data` folder.
+**To create a child page:**
+
+1. In the Pages list, find the parent page.
+2. Click the **+** icon on the right side of the parent row. If the parent has no children yet, the CMS asks to rename its file first; confirm it.
+3. Enter only the last part of the URL as the **Permalink** (e.g., `schema`), fill in the other fields, and click **Save**.
+
+- Don't change the permalink of a page that has child pages. Its children take their URL from the parent, so the site build will fail until the two match again. Ask your admin if a whole section needs a new URL.
+- A few folders have no page of their own (e.g., `bq` under Docs). They appear as plain folders and work the same way: the folder name is part of the URL.
 
 **Available section types:**
 
@@ -807,7 +813,7 @@ This library stores downloadable files attached to publications (typically PDFs)
 
 **The page URL is wrong.**
 
-- The URL is the folder the page is in, followed by its **Permalink** field. Edit the permalink to change the last part of the URL; the rest changes only when the page is moved to another folder.
+- The URL is the parent page's URL followed by the page's **Permalink** field. Edit the permalink to change the last part of the URL (unless the page has child pages); the rest changes only when the page is moved under another parent.
 - If the old URL was already shared, add a redirect (see [Section 4.3](#43-redirects)) from the old path to the new one.
 
 **I see "Required" on a field but can't figure out what to enter.**
@@ -844,7 +850,7 @@ Every piece of content in the CMS maps to a file in the repository. Here's where
 | Content Type     | Path                               | File Format                                           |
 | ---------------- | ---------------------------------- | ----------------------------------------------------- |
 | Homepage         | `src/content/homepage/index.yaml`  | YAML                                                  |
-| Pages            | `src/content/pages/`               | YAML (e.g., `about.yaml`)                             |
+| Pages            | `src/content/pages/`               | YAML (e.g., `about.yaml`, `data/index.yaml`)          |
 | Blog Posts       | `src/content/blog/`                | Markdown with YAML frontmatter (e.g., `my-post.md`)   |
 | People           | `src/content/people/`              | JSON (e.g., `jane-doe.json`)                          |
 | Partners         | `src/content/partners/`            | JSON (e.g., `google.json`)                            |

@@ -222,11 +222,21 @@ const createSchemas = (image: ImageFunction) => {
 // One segment of a page URL. A page is served at its folder path under
 // src/content/pages plus its permalink (see getPagePath in @utils/pages), so the
 // permalink and every folder name must each be a single web-safe segment.
+// Lowercase and hyphens only, because Pages CMS derives file and folder names from the
+// permalink by lowercasing it and dropping underscores; anything else would leave a
+// page's folder named differently from its permalink.
 // Keep in sync with the permalink `pattern` in .pages.yml.
-export const pageUrlSegmentPattern = /^[a-zA-Z0-9_-]+$/;
+export const pageUrlSegmentPattern = /^[a-z0-9-]+$/;
 
 const pagesCollection = defineCollection({
-  loader: glob({ pattern: '**/*.yaml', base: './src/content/pages' }),
+  loader: glob({
+    pattern: '**/*.yaml',
+    base: './src/content/pages',
+    // The id is the file path as-is. The default would give data.yaml and
+    // data/index.yaml the same id and silently keep only one of them, hiding the clash
+    // from the duplicate-URL check in [...path].astro.
+    generateId: ({ entry }) => entry.replace(/\.yaml$/, ''),
+  }),
   schema: ({ image }) => {
     const { sectionsSchema } = createSchemas(image);
 
@@ -238,7 +248,7 @@ const pagesCollection = defineCollection({
         .string()
         .regex(
           pageUrlSegmentPattern,
-          "Must be a web-safe string like 'about-us', without slashes. For a nested URL, put the file in the matching folder."
+          "Use lowercase letters, numbers and hyphens only, like 'about-us'. For a nested URL, put the file in the matching folder."
         ),
       status: statusSchema,
       zigzag: z.enum(zigzagNames).optional(),

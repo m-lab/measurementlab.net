@@ -752,10 +752,21 @@ content:
     filename: '{fields.permalink}.yaml'
     # A page's URL is its folder path plus its permalink: data/docs/schema.yaml with
     # `permalink: schema` is served at /data/docs/schema. Folder names are URL segments.
+    # A page with children lives in its folder as index.yaml (data/docs/index.yaml is the
+    # /data/docs page); the tree view shows it as one expandable row. Adding a child to a
+    # page from the CMS turns <name>.yaml into <name>/index.yaml, which is why file names
+    # and permalinks have to match.
     subfolders: true
     view:
+      layout: tree
+      node:
+        filename: index.yaml
+        hideDirs: nodes
       fields: [title, description, status]
       primary: title
+      # Lists folders that have no page of their own above pages. Undocumented, so the CMS
+      # settings editor warns that the property "will be ignored"; the list does read it.
+      foldersFirst: true
     fields:
       - name: title
         label: Page Title
@@ -765,11 +776,11 @@ content:
       - name: permalink
         label: Permalink
         type: string
-        description: "The last part of the URL, without slashes, like 'about-us' or 'omg-3'. The folder the page is in supplies the rest, so a page in the data/docs folder with the permalink 'schema' is served at /data/docs/schema."
+        description: "The last part of the URL, like 'about-us' or 'omg-3'. The parent page supplies the rest, so a page added under Data > Docs with the permalink 'schema' is served at /data/docs/schema. Don't change the permalink of a page that has child pages."
         pattern:
           {
-            message: "This must be a web-safe string like 'about-us' or 'omg-3', without slashes. For a nested URL, create the page inside the matching folder.",
-            regex: '^[a-zA-Z0-9_-]+$',
+            message: "Use lowercase letters, numbers and hyphens only, like 'about-us' or 'omg-3'. For a nested URL, add the page under its parent page instead of typing slashes.",
+            regex: '^[a-z0-9-]+$',
           }
         required: true
       - name: status
