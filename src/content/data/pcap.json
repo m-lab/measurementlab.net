@@ -35,7 +35,7 @@
     },
     {
       "label": "Wehe Packet Captures",
-      "url": "Raw packet capture from NDT test runs (.pcap) tgzd",
+      "url": "https://console.cloud.google.com/storage/browser/archive-measurement-lab/wehe/pcap",
       "format": "tgz",
       "type": "download",
       "description": "Gziped .pcap files "
