@@ -750,6 +750,9 @@ content:
     path: src/content/pages
     format: yaml
     filename: '{fields.permalink}.yaml'
+    # A page's URL is its folder path plus its permalink: data/docs/schema.yaml with
+    # `permalink: schema` is served at /data/docs/schema. Folder names are URL segments.
+    subfolders: true
     view:
       fields: [title, description, status]
       primary: title
@@ -762,11 +765,11 @@ content:
       - name: permalink
         label: Permalink
         type: string
-        description: The URL path, like 'about-us' or 'data/docs'. No leading or trailing slash.
+        description: "The last part of the URL, without slashes, like 'about-us' or 'omg-3'. The folder the page is in supplies the rest, so a page in the data/docs folder with the permalink 'schema' is served at /data/docs/schema."
         pattern:
           {
-            message: "This must be a web-safe path like 'about-us' or 'data/docs', with no leading or trailing slash.",
-            regex: '^[a-zA-Z0-9_-]+(/[a-zA-Z0-9_-]+)*$',
+            message: "This must be a web-safe string like 'about-us' or 'omg-3', without slashes. For a nested URL, create the page inside the matching folder.",
+            regex: '^[a-zA-Z0-9_-]+$',
           }
         required: true
       - name: status

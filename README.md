@@ -154,7 +154,7 @@ Navigation items can be:
 - **Single links** - Direct link to a page or external URL
 - **Dropdowns** - Menu with multiple links
 
-Links can reference internal pages by `pageRef` (using the page's permalink) or external URLs.
+Links can reference internal pages by `pageRef` (the page's URL path without the leading slash, which for a top-level page is its permalink) or external URLs.
 
 ## Categories
 
@@ -287,7 +287,17 @@ Your markdown content here...
 
 ### Pages
 
-Create a new `.yaml` file in `src/content/pages/`:
+Create a new `.yaml` file in `src/content/pages/`.
+
+A page's URL is the folders the file sits in, followed by its `permalink`. The file's own name plays no part.
+
+| File                                          | `permalink` | URL                    |
+| --------------------------------------------- | ----------- | ---------------------- |
+| `src/content/pages/about.yaml`                | `about`     | `/about`               |
+| `src/content/pages/data/docs.yaml`            | `docs`      | `/data/docs`           |
+| `src/content/pages/data/docs/bq/schema.yaml`  | `schema`    | `/data/docs/bq/schema` |
+
+The `permalink` is a single segment with no slashes, and folder names may only use letters, numbers, hyphens and underscores. The build fails if either rule is broken, or if two pages resolve to the same URL.
 
 ```yaml
 title: My New Page

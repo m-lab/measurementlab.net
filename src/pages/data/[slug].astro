@@ -32,6 +32,7 @@ import {
   MLAB_CREATOR,
   temporalCoverageOf,
 } from '@utils/datasetSchema';
+import { getPagePath } from '@utils/pages';
 import { Code } from 'astro-expressive-code/components';
 import ArrowTopRightOnSquareIcon from '~icons/heroicons/arrow-top-right-on-square-20-solid';
 import ChevronRightIcon from '~icons/heroicons/chevron-right-20-solid';
@@ -44,7 +45,7 @@ export async function getStaticPaths() {
   // data/tools). A dataset id matching one of those would silently shadow it or be
   // shadowed, so fail the build instead.
   const taken = new Set([
-    ...(await getCollection('pages')).map((p) => p.data.permalink),
+    ...(await getCollection('pages')).map(getPagePath),
     ...redirectsData.redirects.map((r) => r.from),
   ]);
   const clashes = datasets.filter((ds) => taken.has(`data/${ds.id}`));

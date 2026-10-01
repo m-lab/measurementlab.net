@@ -1,5 +1,5 @@
 title: Monthly Stats
-permalink: data/stats
+permalink: stats
 status: published
 description: These data are cached M-Lab summary query results available for download. These data are used to calculate the Internet Quality Barometer (IQB), but are generally useful as aggregate statistics of M-Lab's global measurements.
 zigzag: supporting1-light

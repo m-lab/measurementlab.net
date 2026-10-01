@@ -373,12 +373,19 @@ Pages are the most flexible content type. Each page is built from a series of **
 | Field                | Required | Description                                                                                                                                     |
 | -------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Page Title**       | Yes      | The title shown in the browser tab and hero section                                                                                             |
-| **Permalink**        | Yes      | URL slug (e.g., `about-us` becomes `/about-us`). You can add slashes in the name, for example `jobs/data-scientist` or `tests/ndt/data/example` |
+| **Permalink**        | Yes      | The last part of the URL, without slashes (e.g., `about-us` becomes `/about-us`). For a nested URL, see "Nested pages" below                    |
 | **Status**           | Yes      | Draft, Published, or Archived                                                                                                                   |
 | **Page Description** | No       | SEO meta description (shown in search results)                                                                                                  |
 | **Hero Image**       | No       | Background image for the page hero area                                                                                                         |
 | **Zigzag Pattern**   | No       | Decorative pattern (only shown when there is no hero image)                                                                                     |
 | **Page Sections**    | No       | The main content blocks of the page                                                                                                             |
+
+**Nested pages:**
+
+A page's URL is the folder it lives in, followed by its permalink. To publish a page at `/data/docs/schema`, open the `data` folder and then the `docs` folder in the Pages list (create them if they don't exist), add the page there, and enter only `schema` as the permalink.
+
+- Folder names become part of the URL, so use only letters, numbers, hyphens and underscores (no spaces).
+- The page for the folder's own URL sits next to the folder: the `/data/docs` page is the entry with the permalink `docs` inside the `data` folder.
 
 **Available section types:**
 
@@ -800,7 +807,7 @@ This library stores downloadable files attached to publications (typically PDFs)
 
 **The page URL is wrong.**
 
-- The URL is determined by the **Permalink** field. Edit it to change the URL.
+- The URL is the folder the page is in, followed by its **Permalink** field. Edit the permalink to change the last part of the URL; the rest changes only when the page is moved to another folder.
 - If the old URL was already shared, add a redirect (see [Section 4.3](#43-redirects)) from the old path to the new one.
 
 **I see "Required" on a field but can't figure out what to enter.**

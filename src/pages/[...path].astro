@@ -14,16 +14,33 @@ import HeroSection from '@components/sections/HeroSection.astro';
 import Sections from '@components/sections/Sections.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
-import { getPages } from '@utils/pages';
+import { getPagePath, getPages } from '@utils/pages';
 
 import type { GetStaticPaths } from 'astro';
 
 // Generate static paths from pages collection
 // In production, only published pages are built
 export const getStaticPaths = (async () => {
+  // A page's URL is its folder path plus its permalink, not its file name, so two files
+  // in one folder can resolve to the same URL. One would silently shadow the other, so
+  // fail the build instead. Drafts are checked too, so the clash surfaces before the
+  // draft is published.
+  const fileByPath = new Map<string, string>();
+  for (const page of await getPages({ filterByStatus: false })) {
+    const path = getPagePath(page);
+    const existing = fileByPath.get(path);
+    if (existing) {
+      throw new Error(
+        `pages: "${existing}" and "${page.filePath}" both resolve to the URL /${path}. ` +
+          `Change one page's permalink or move it to another folder.`
+      );
+    }
+    fileByPath.set(path, page.filePath ?? page.id);
+  }
+
   const pages = await getPages();
   return pages.map((page) => ({
-    params: { path: page.data.permalink },
+    params: { path: getPagePath(page) },
     props: { page },
   }));
 }) satisfies GetStaticPaths;
@@ -37,7 +54,7 @@ const landingComponents = {
 	people: PeopleLanding,
 	// tests: TestsLanding,
 	data: DataLanding,
-	'data-stats': StatsLanding,
+	'data/stats': StatsLanding,
 	kb: KnowledgeBaseLanding
 } as const;
 

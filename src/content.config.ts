@@ -219,6 +219,12 @@ const createSchemas = (image: ImageFunction) => {
   };
 };
 
+// One segment of a page URL. A page is served at its folder path under
+// src/content/pages plus its permalink (see getPagePath in @utils/pages), so the
+// permalink and every folder name must each be a single web-safe segment.
+// Keep in sync with the permalink `pattern` in .pages.yml.
+export const pageUrlSegmentPattern = /^[a-zA-Z0-9_-]+$/;
+
 const pagesCollection = defineCollection({
   loader: glob({ pattern: '**/*.yaml', base: './src/content/pages' }),
   schema: ({ image }) => {
@@ -228,7 +234,12 @@ const pagesCollection = defineCollection({
       title: z.string(),
       description: z.string().optional(),
       heroImage: image().optional(),
-      permalink: z.string(),
+      permalink: z
+        .string()
+        .regex(
+          pageUrlSegmentPattern,
+          "Must be a web-safe string like 'about-us', without slashes. For a nested URL, put the file in the matching folder."
+        ),
       status: statusSchema,
       zigzag: z.enum(zigzagNames).optional(),
       sections: sectionsSchema.optional(),
