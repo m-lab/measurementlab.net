@@ -15,19 +15,7 @@ difficulty: intermediate
 ---
 Monthly Stats parquet files are designed to be easy to work with in Python. You need only `pandas`, `pyarrow`, and `requests` — all freely available via pip or uv. No Google Cloud account required.
 
-The fastest way to start is to run the community notebooks directly in your browser:
-
-
-| Notebook | Binder link |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Introduction & data catalog | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F00-introduction-and-catalog.ipynb) |
-| Country-level explorer | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F01-country-level.ipynb) |
-| ASN / ISP explorer | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F02-asn-isp.ipynb) |
-| Subdivisions (state/province) | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F03-subdivisions.ipynb) |
-| Cities | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F05-cities.ipynb) |
-| Time series | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F06-time-series.ipynb) |
-| IQB score calculator | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F02-iqb-scores.ipynb) |
-
+The fastest way to start is to run the [community notebooks](https://github.com/m-lab/mlab-notebooks/tree/main/monthlystats) directly in your browser.
 
 ## Running the Notebooks Locally
 
