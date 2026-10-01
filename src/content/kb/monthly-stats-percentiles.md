@@ -5,17 +5,20 @@ chapter: Accessing Data
 chapterOrder: 5
 order: 5
 status: published
-description: How to interpret percentile columns in M-Lab Monthly Stats data, including the counterintuitive polarity of latency and loss, and what p50 vs p95 tells you.
-tags: [Data Access, Internet Quality, Research]
+description: How to interpret percentile columns in M-Lab Monthly Stats data,
+  including the counterintuitive polarity of latency and loss, and what p50 vs
+  p95 tells you.
+tags:
+  - Data Access
+  - Internet Quality
+  - Research
 difficulty: intermediate
 ---
-
 Monthly Stats files store the full **percentile distribution** of each metric across all NDT tests in a given geography and month. Understanding what percentiles mean — and a critical quirk in how latency and loss are stored — is essential for correct analysis.
 
-<div class="callout callout--tip">
-<span class="callout-icon">💡</span>
-<div class="callout-body"><p><strong>Try it yourself:</strong> <a href="https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F01-country-level.ipynb">Open the country-level explorer on Binder</a></p></div>
-</div>
+💡
+
+**Try it yourself:** [Open the country-level explorer on Binder](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F01-country-level.ipynb)
 
 ## What a Percentile Means Here
 
@@ -27,12 +30,14 @@ Available percentiles in Monthly Stats: **1, 5, 10, 25, 50, 75, 90, 95, 99**.
 
 ### The distribution tells a richer story than a single number
 
+
 | Percentile | What it represents |
-|---|---|
+| ------------- | ------------------------------------------------- |
 | `p50` | Typical experience — the median user |
 | `p25`–`p75` | The "middle 50%" — the interquartile range |
 | `p95` / `p99` | Near-best performance — the top 5% or 1% of tests |
 | `p5` / `p1` | Near-worst performance — the bottom 5% or 1% |
+
 
 A wide gap between `p25` and `p75` signals high variability — some users have very fast connections while others are very slow. A narrow band means more uniform service.
 
@@ -46,11 +51,13 @@ This is the most important thing to understand about Monthly Stats percentiles.
 
 In summary:
 
+
 | Metric | `p5` means | `p95` means |
-|---|---|---|
+| ----------------- | --------------------------------- | ----------------------------------- |
 | Download / Upload | Near-worst speed | Near-best speed |
 | Latency | Near-best latency (lowest values) | Near-worst latency (highest values) |
 | Loss | Near-best loss (lowest values) | Near-worst loss (highest values) |
+
 
 ### Why does this matter?
 
@@ -93,6 +100,7 @@ df_reliable = df[df["sample_count"] >= 100]
 ```
 
 As a rough guide:
+
 - **< 30 tests**: very unreliable — avoid using percentile estimates
 - **30–100 tests**: usable with caution, especially for p50
 - **> 100 tests**: generally reliable for p25–p75
@@ -103,5 +111,4 @@ Finer-grained slices (city, city+ASN) will have far more low-count rows than cou
 ## Further Reading
 
 - [M-Lab Monthly Stats Dataset](/kb/monthly-stats-dataset) — dataset overview, access, and structure
-- [Beyond Speed: Understanding Internet Quality Metrics](/kb/internet-quality-beyond-speed) — why latency and loss matter as much as speed
-- [NDT (Network Diagnostic Tool)](/kb/test-ndt) — how the underlying measurements are made
+
