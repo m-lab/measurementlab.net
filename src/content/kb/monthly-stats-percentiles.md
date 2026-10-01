@@ -18,7 +18,7 @@ Monthly Stats files store the full **percentile distribution** of each metric ac
 
 💡
 
-**Try it yourself:** [Open the country-level explorer on Binder](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F01-country-level.ipynb)
+**Try it yourself:** [Open the country-level explorer on Binder](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F01-country-explorer.ipynb)
 
 ## What a Percentile Means Here
 
