@@ -26,6 +26,13 @@
       "format": "GitHub",
       "type": "download",
       "description": "Processing Pipeline that creates monthly stats data (formerly called \"IQB data pipeline\")"
+    },
+    {
+      "label": "Monthly Stats Tutorial Notebooks",
+      "url": "https://github.com/m-lab/mlab-notebooks/tree/main/monthlystats",
+      "format": "GitHub",
+      "type": "download",
+      "description": "A tutorial with a list of python notebooks on the M-Lab Monthly Stats datasets. "
     }
   ],
   "documentationLinks": [
