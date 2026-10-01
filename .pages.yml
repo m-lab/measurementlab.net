@@ -116,7 +116,7 @@ components:
         label: Image
         type: image
         description: Card image
-      
+
       - name: color
         label: Color
         type: select
@@ -764,9 +764,6 @@ content:
         hideDirs: nodes
       fields: [title, description, status]
       primary: title
-      # Lists folders that have no page of their own above pages. Undocumented, so the CMS
-      # settings editor warns that the property "will be ignored"; the list does read it.
-      foldersFirst: true
     fields:
       - name: title
         label: Page Title
@@ -1651,7 +1648,7 @@ content:
         label: Description
         type: text
         required: true
-        description: "Plain-text description of what this dataset contains and how it was collected. Used in search results and as dc:description / schema.org description. (Tip: 2–4 sentences works well.)"
+        description: 'Plain-text description of what this dataset contains and how it was collected. Used in search results and as dc:description / schema.org description. (Tip: 2–4 sentences works well.)'
 
       - name: keywords
         label: Keywords
@@ -1673,7 +1670,7 @@ content:
             - label: Other Datasets
               value: uncategorized
           # pages-cms:category-sync end
-        description: "Raw = unprocessed archives on GCS. Enriched = parsed, annotated, queryable via BigQuery. Leave empty to group the dataset under Other Datasets."
+        description: 'Raw = unprocessed archives on GCS. Enriched = parsed, annotated, queryable via BigQuery. Leave empty to group the dataset under Other Datasets.'
 
       - name: testRef
         label: Related Test
@@ -1700,9 +1697,9 @@ content:
         label: Coverage Start Date
         type: string
         required: false
-        description: "ISO 8601 date when data collection began (e.g. 2009-01-01)"
+        description: 'ISO 8601 date when data collection began (e.g. 2009-01-01)'
         pattern:
-          message: "Must be an ISO date like 2009-01-01"
+          message: 'Must be an ISO date like 2009-01-01'
           regex: '^\d{4}-\d{2}-\d{2}$'
 
       - name: temporalCoverageEnd
@@ -1716,7 +1713,7 @@ content:
         type: string
         required: false
         default: Global
-        description: "Geographic scope of the data (default: Global)"
+        description: 'Geographic scope of the data (default: Global)'
 
       - name: updateFrequency
         label: Update Frequency
@@ -1759,12 +1756,12 @@ content:
             label: URL or Path
             type: string
             required: true
-            description: "Full URL (https://…) or GCS path (gs://…)"
+            description: 'Full URL (https://…) or GCS path (gs://…)'
           - name: format
             label: Format
             type: string
             required: true
-            description: "Data format (e.g. BigQuery, Parquet, CSV, JSON)"
+            description: 'Data format (e.g. BigQuery, Parquet, CSV, JSON)'
           - name: type
             label: Type
             type: select
@@ -1911,7 +1908,7 @@ content:
           - name: googleAnalyticsId
             label: Google Analytics Measurement ID
             type: string
-            description: "GA4 Measurement ID (e.g. G-XXXXXXXXXX). Leave empty to disable analytics."
+            description: 'GA4 Measurement ID (e.g. G-XXXXXXXXXX). Leave empty to disable analytics.'
       - name: footer
         label: Footer
         type: object
