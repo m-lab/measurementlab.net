@@ -762,7 +762,7 @@ content:
       node:
         filename: index.yaml
         hideDirs: nodes
-      fields: [title, description, status]
+      fields: [title, permalink, description, status]
       primary: title
     fields:
       - name: title
