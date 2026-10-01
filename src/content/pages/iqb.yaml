@@ -36,25 +36,18 @@ sections:
       - IQB is a comprehensive framework for collecting data and calculating a composite score, the “IQB Score”, which reflects the quality of Internet experience. IQB takes a more holistic approach than “speed tests” and evaluates Internet performance across various use cases (web browsing, video streaming, online gaming, etc.), each with its own specific network requirements (latency, throughput, etc.).
       - To create the IQB framework, M-Lab engaged with more than 60 experts across various fields, including academic network research, public policy, digital inclusion advocacy, Internet service provision, speed test data analysis, content provision, and other related domains from November 2023 to March 2025.
       - Check out the [executive summary](https://www.measurementlab.net/publications/IQB_executive_summary_2025.pdf), [full report](/publications/IQB_report_2025.pdf), or [IMC 2025 poster paper](https://arxiv.org/pdf/2509.19034) for more details  
-
         ![](</src/assets/images/iqb/Audio Streaming weights.png>)
-
-        
         # IQB Prototype
         - Following the completion of the framework, the M-Lab team created [a prototype of the IQB tool to calculate the single metric.](https://iqb.mlab-staging.measurementlab.net/)
         - The IQB web app prototype consists of two main interfaces designed to explore and visualize IQB scores.
         - The first interface allows users to test the IQB score using their own measurement values or to experiment with hypothetical values to observe how scores change. Users can adjust parameters such as dataset weights, network requirements per use case, use case weights, and thresholds per dataset or use case.
         - The second interface provides global visualizations of precomputed IQB scores for all countries and their subdivisions color-coded based on their IQB score.  
-        
           ![](</src/assets/images/iqb/iqb drc.jpeg>)
-        
-          
         # IQB Going Forward
         - M-Lab hope to continue refining the IQB framework and prototype, as well as establish sustainable governance.
         - IQB is built to be adaptable and iterative and we are interested in tailoring IQB to specific use cases such as in schools and rural areas.
         - If you're interested in working together, [let us know](mailto:hello@measurementlab.net)!
           ### *Acknowledgments*
-        
           The IQB project was made possible through funding from the [Internet Society Foundation](https://www.isocfoundation.org/).
 
   - type: card
@@ -82,6 +75,15 @@ sections:
           size: md
           text: A preliminary data-driven evaluation of the IQB framework
           href: https://drive.google.com/file/d/1eeGng8Cn7vsY9VdynxnoDEtPlp5PFb5i/view?usp=sharing
+      - title: "Poster: The IQB Framework"
+        content: Poster paper (ACM IMC 2025) presenting the IQB Framework
+        color: supporting1
+        icon: insights
+        button:
+          variant: primary
+          size: md
+          text: "Poster: The IQB Framework"
+          href: https://dl.acm.org/doi/pdf/10.1145/3730567.3768593
       - title: "IQB Framework Report "
         content: Learn how M-Lab created the formula for the IQB prototype.
         color: supporting1
@@ -100,15 +102,6 @@ sections:
           size: md
           text: IQB Framework - Executive Summary
           href: /publications/IQB_executive_summary_2025.pdf
-      - title: "Poster: The IQB Framework"
-        content: Poster paper (ACM IMC 2025) presenting the IQB Framework
-        color: supporting1
-        icon: insights
-        button:
-          variant: primary
-          size: md
-          text: "Poster: The IQB Framework"
-          href: https://dl.acm.org/doi/pdf/10.1145/3730567.3768593
   - type: related_posts
     background:
       color: white
