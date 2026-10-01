@@ -5,17 +5,21 @@ chapter: Accessing Data
 chapterOrder: 5
 order: 6
 status: published
-description: A practical guide to loading, filtering, and visualising M-Lab Monthly Stats parquet files in Python using pandas, without needing BigQuery or a Google Cloud account.
-tags: [Data Access, Research]
+description: A practical guide to loading, filtering, and visualising M-Lab
+  Monthly Stats parquet files in Python using pandas, without needing BigQuery
+  or a Google Cloud account.
+tags:
+  - Data Access
+  - Research
 difficulty: intermediate
 ---
-
 Monthly Stats parquet files are designed to be easy to work with in Python. You need only `pandas`, `pyarrow`, and `requests` — all freely available via pip or uv. No Google Cloud account required.
 
 The fastest way to start is to run the community notebooks directly in your browser:
 
+
 | Notebook | Binder link |
-|---|---|
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | Introduction & data catalog | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F00-introduction-and-catalog.ipynb) |
 | Country-level explorer | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F01-country-level.ipynb) |
 | ASN / ISP explorer | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F02-asn-isp.ipynb) |
@@ -23,6 +27,7 @@ The fastest way to start is to run the community notebooks directly in your brow
 | Cities | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F05-cities.ipynb) |
 | Time series | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F06-time-series.ipynb) |
 | IQB score calculator | [Launch ↗](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F02-iqb-scores.ipynb) |
+
 
 ## Running the Notebooks Locally
 
@@ -145,8 +150,9 @@ print(us_isps)
 
 ## Available Slices
 
+
 | Slice name | Key columns |
-|---|---|
+| --------------------------------------- | ------------------------------------- |
 | `downloads_by_country` | `country_code` |
 | `uploads_by_country` | `country_code` |
 | `downloads_by_country_asn` | `country_code`, `asn` |
@@ -156,6 +162,7 @@ print(us_isps)
 | `downloads_by_country_subdivision1_asn` | `country_code`, `subdivision1`, `asn` |
 | `downloads_by_country_city` | `country_code`, `city` |
 | `downloads_by_country_city_asn` | `country_code`, `city`, `asn` |
+
 
 Download files contain `download_p{N}`, `latency_p{N}`, `loss_p{N}`. Upload files add `upload_p{N}`.
 
@@ -189,4 +196,4 @@ See the [IQB scores notebook](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HE
 - [M-Lab Monthly Stats Dataset](/kb/monthly-stats-dataset) — dataset overview and structure
 - [Reading Percentiles in Monthly Stats](/kb/monthly-stats-percentiles) — percentile interpretation and polarity
 - [M-Lab Network Annotations](/kb/mlab-annotations-explained) — understanding ASN and geolocation fields
-- [NDT (Network Diagnostic Tool)](/kb/test-ndt) — how the underlying measurements are collected
+
