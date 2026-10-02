@@ -15,7 +15,7 @@ sections:
 
       To support these measurements, M-Lab operates a distributed network of servers placed in diverse locations around the world. These servers allow Internet users to run performance tests and contribute anonymized data that helps researchers study broadband quality, network congestion, and other aspects of Internet infrastructure.
 
-      Since 2008, M-Lab has focused on hosting its infrastructure in well-connected data centers where Internet service providers interconnect, allowing the platform to reach large numbers of users with high performance from relatively few locations.
+      Since 2009, M-Lab has focused on hosting its infrastructure in well-connected data centers where Internet service providers interconnect, allowing the platform to reach large numbers of users with high performance from relatively few locations.
 
       In 2022, M-Lab expanded the platform to include virtual servers in cloud environments, beginning with Google Cloud. In 2025, the we began piloting the Bring Your Own Server program, a host-managed deployment model that allows network providers to run M-Lab’s software on their own infrastructure and join the global measurement platform. In these cases, M-Lab does not manage or control the servers directly.
 
