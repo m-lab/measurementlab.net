@@ -23,7 +23,7 @@ sections:
 
       M-Lab is a not-for-profit project and is fiscally sponsored by Superbloom
       Design. [Learn how to get
-      involved.](https://mlab.draftlab.dev/contribute/)
+      involved.](/contribute/)
   - type: richText
     background:
       color: white

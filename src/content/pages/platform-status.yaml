@@ -21,7 +21,7 @@ sections:
 
       [Bring Your Own Server](/byos) deployments may include physical or virtual machines located across a variety of networks, including transit providers, research and education networks, and last-mile Internet service providers.
 
-      Network providers interested in hosting an M-Lab measurement site, please [review our requirements](https://mlab.draftlab.dev/contribute/host-managed/) and fill out our [Infrastructure Contribution Form](https://docs.google.com/forms/d/e/1FAIpQLSe1wXKfQ0VIt_hZFatCwCaoOeeDpRv3JZDM_eAmIaksMuwB4g/viewform?usp=sf_link). 
+      Network providers interested in hosting an M-Lab measurement site, please [review our requirements](/contribute/host-managed/) and fill out our [Infrastructure Contribution Form](https://docs.google.com/forms/d/e/1FAIpQLSe1wXKfQ0VIt_hZFatCwCaoOeeDpRv3JZDM_eAmIaksMuwB4g/viewform?usp=sf_link). 
 
   - type: infrastructureMap
     background:
