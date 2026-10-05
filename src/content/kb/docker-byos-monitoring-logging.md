@@ -5,11 +5,12 @@ chapter: Running a Node
 chapterOrder: 7
 order: 4
 status: published
-description: Recommended Prometheus metrics endpoints and Docker logging configuration to prevent disk exhaustion on M-Lab BYOS nodes.
-tags: [Node Operations]
+description: Recommended Prometheus metrics endpoints and Docker logging
+  configuration to prevent disk exhaustion on M-Lab BYOS nodes.
+tags:
+  - Node Operations
 difficulty: intermediate
 ---
-
 **Q: How should I monitor my Docker BYOS M-Lab node, and what logging configuration is recommended?**
 
 **A:** Since M-Lab does not provide alerts or notifications for BYOS nodes, you must set up your own monitoring system.
@@ -18,14 +19,16 @@ difficulty: intermediate
 
 Deploy a Prometheus instance to scrape metrics from these endpoints in your Docker Compose stack:
 
+
 | Service | Port | Key Metric |
-|---|---|---|
+| ----------------- | ------------ | -------------------------------- |
 | ndt-server | 9990/metrics | `ndt7_client_test_results_total` |
 | jostler | 9991/metrics | — |
 | uuid-annotator | 9992/metrics | — |
 | heartbeat | 9993/metrics | — |
 | traceroute-caller | 9994/metrics | — |
 | node_exporter | 9995/metrics | CPU, memory, disk usage |
+
 
 ## Critical Logging Configuration
 
