@@ -44,8 +44,8 @@ sections:
 
       Before reaching out, please review the following documentation:
 
-      -[M-Lab Conceptual & Technical Scope and Related Policies](https://www.measurementlab.net/mlab-scope/)
-      -[Experiment Developer Responsibilities, Requirements, and Guidelines](https://www.measurementlab.net/experimenter-requirements-guidelines/)
+      - [M-Lab Conceptual & Technical Scope and Related Policies](https://www.measurementlab.net/mlab-scope/)
+      - [Experiment Developer Responsibilities, Requirements, and Guidelines](https://www.measurementlab.net/experimenter-requirements-guidelines/)
 
       These resources explain the expectations, responsibilities, and technical requirements for researchers who want to run experiments on the M-Lab platform.
 
@@ -76,5 +76,5 @@ sections:
 
       ## Give Financial Support
 
-      M-Lab welcomes the direct financial contributions of organizations that find our work beneficial. You can [donate directly through GitHub](https://github.com/sponsors/m-lab) or if you can [sponsor the M-Lab platform](/support).  
+      M-Lab welcomes the direct financial contributions of organizations that find our work beneficial. You can [donate directly through GitHub](https://github.com/sponsors/m-lab) or [sponsor the M-Lab platform](/support).  
 
