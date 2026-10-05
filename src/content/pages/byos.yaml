@@ -81,14 +81,14 @@ sections:
           size: md
           text: How to Set up a BYOS Node
           href: /kb/byos-overview/
-      - title: Guide for ISP and IXP Staff
+      - title: Guide for Docker Compose
         color: supporting1
         icon: insights
         button:
           variant: supporting2
           size: md
-          text: "Understand What M-Lab Measures "
-          href: /kb/getting-started-isp-ixp/
+          text: FAQ For Docker Compose Troubleshooting
+          href: docker-byos-monitoring-logging
   - type: partners
     background:
       color: primary-light
