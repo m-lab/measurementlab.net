@@ -64,7 +64,7 @@ sections:
           variant: primary
           size: md
           text: "IQB Prototype "
-          href: " https://iqb.mlab-staging.measurementlab.net/ "
+          href: https://iqb.mlab-staging.measurementlab.net/
       - title: A preliminary data-driven evaluation of the IQB framework
         content: Research report with an initial analysis of IQB scores and parameters.
         color: supporting1

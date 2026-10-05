@@ -31,8 +31,8 @@ sections:
       To work with M-Lab data:
 
       - [Review the data documentation](https://www.measurementlab.net/data)
-      - [Join the public mailing list for updates and announcements](https://groups.google.com/a/measurementlab.net/forum/?fromgroups#!forum/discuss))
-      - [Contact the team if you have questions about research or analysis](hello@measurementlab.net)
+      - [Join the public mailing list for updates and announcements](https://groups.google.com/a/measurementlab.net/forum/?fromgroups#!forum/discuss)
+      - [Contact the team if you have questions about research or analysis](mailto:hello@measurementlab.net)
       - Developers with experience in data analysis, visualization, or application development may also contribute by building tools that work with M-Lab’s tests and datasets. All of these resources are open source and openly licensed. Check out the following resources:
         - [M-Lab's conceptual and technical scope and policies](https://www.measurementlab.net/publications/mlab-founding-vision.pdf)
         - [M-Lab's Roles & Responsibilities for new researchers](https://www.measurementlab.net/publications/mlab-roles-responsibilities.pdf)
@@ -40,7 +40,7 @@ sections:
 
       ## Develop a Measurement Test
 
-      Researchers who are developing open-source Internet measurement tests can apply to host their tools on the M-Lab platform. If your project aligns with M-Lab’s technical standards, research goals, and open data principles, we welcome you to [contact us to discuss hosting your test.](hello@measurementlab.net)
+      Researchers who are developing open-source Internet measurement tests can apply to host their tools on the M-Lab platform. If your project aligns with M-Lab’s technical standards, research goals, and open data principles, we welcome you to [contact us to discuss hosting your test.](mailto:hello@measurementlab.net)
 
       Before reaching out, please review the following documentation:
 
@@ -72,7 +72,7 @@ sections:
       - Provide hardware
       - Or let us know other ways you'd like to contribute!
 
-      There are many ways to get involved with the platform, so [please reach out if you’re interested.](hello@measurementlab.net)
+      There are many ways to get involved with the platform, so [please reach out if you’re interested.](mailto:hello@measurementlab.net)
 
       ## Give Financial Support
 

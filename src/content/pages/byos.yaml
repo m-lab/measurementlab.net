@@ -80,7 +80,7 @@ sections:
           variant: primary
           size: md
           text: How to Set up a BYOS Node
-          href: https://mlab.draftlab.dev/kb/byos-overview/
+          href: /kb/byos-overview/
       - title: Guide for ISP and IXP Staff
         color: supporting1
         icon: insights
@@ -88,7 +88,7 @@ sections:
           variant: supporting2
           size: md
           text: "Understand What M-Lab Measures "
-          href: https://mlab.draftlab.dev/kb/getting-started-isp-ixp/
+          href: /kb/getting-started-isp-ixp/
   - type: partners
     background:
       color: primary-light
