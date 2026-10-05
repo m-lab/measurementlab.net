@@ -87,8 +87,8 @@ sections:
         button:
           variant: supporting2
           size: md
-          text: FAQ For Docker Compose Troubleshooting
-          href: docker-byos-monitoring-logging
+          text: "Instructions for Docker Compose "
+          href: /docker-byos-monitoring-logging/
   - type: partners
     background:
       color: primary-light
