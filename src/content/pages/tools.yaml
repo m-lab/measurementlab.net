@@ -19,7 +19,7 @@ sections:
 
       These tools are developed and maintained by the M-Lab team. They enable users to run Internet performance tests using M-Lab’s infrastructure and contribute data to the platform.
 
-      [speed.measurementlab.net](http://speed.measurementlab.net) - A public website that allows anyone to run a quick Internet speed test using M-Lab’s NDT tool. Available in multiple languages, it provides a simple and accessible way to test connectivity. 
+      [speed.measurementlab.net](https://speed.measurementlab.net) - A public website that allows anyone to run a quick Internet speed test using M-Lab’s NDT tool. Available in multiple languages, it provides a simple and accessible way to test connectivity. 
 
       ![](/src/assets/images/tests/ndt.png)
 
@@ -39,7 +39,7 @@ sections:
 
       ![](/src/assets/partners/Giga.svg)
 
-      [OONI](https://explorer.ooni.org/chart/mat?test_name=web_connectivity&axis_x=measurement_start_day&since=2026-06-23&until=2026-07-23&time_grain=day)  - The Open Observatory of Network Interference is internet censorship measurement project that runs ndt7 and neubot/dash. While it is no longer an experiment hosted by the M-Lab platform, it still integrates M-Lab tools. 
+      [OONI](https://explorer.ooni.org/)  - The Open Observatory of Network Interference is an Internet censorship measurement project that runs ndt7 and neubot/dash. While it is no longer an experiment hosted by the M-Lab platform, it still integrates M-Lab tools. 
 
       ![](</src/assets/images/tools/OONI Probe .webp>)
 
@@ -97,7 +97,6 @@ sections:
       - [BroadbandNow.com](http://BroadbandNow.com)
       - Canadian Internet Registration Authority – Internet Performance Test
       - Google OneBox Search Results Widget
-      - Google Stadia
       - [HighSpeedInternet.com](http://HighSpeedInternet.com)
       - Minnesota Office of Broadband Development
       - West London Business

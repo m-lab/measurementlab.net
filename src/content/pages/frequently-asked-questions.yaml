@@ -75,7 +75,7 @@ sections:
 
       ### Where is data stored and how can I access it?
 
-      Raw test data is stored in Google Cloud Storage, and NDT data is also queryable via Google BigQuery at no charge to users.
+      Raw test data is stored in Google Cloud Storage, and parsed data is queryable via Google BigQuery. Join the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/forum/#!forum/discuss) to query M-Lab data at no charge.
 
       → [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery)  
       → [Accessing M-Lab Data Buckets](/kb/accessing-data-buckets)
