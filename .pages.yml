@@ -1300,6 +1300,8 @@ content:
               value: retired
             - label: Retired Core Service
               value: retired-core-service
+            - label: Analysis System
+              value: analysis-system
         description: The operational status of this test on the M-Lab platform
       - name: status
         label: Status

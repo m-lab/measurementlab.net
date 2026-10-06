@@ -31,6 +31,12 @@ const statusGroups: Record<StatusKey, { title: string; description: string; test
     description: 'Core services that have been superseded by newer implementations.',
     tests: [],
   },
+  'analysis-system': {
+    title: 'Analysis Systems',
+    description:
+      'Systems M-Lab operates that analyze the measurements collected on the platform, rather than collecting new measurements of their own.',
+    tests: [],
+  },
 };
 
 // Sort tests into groups
@@ -42,7 +48,13 @@ tests.forEach((test) => {
 });
 
 // Filter out empty groups and maintain order
-const orderedStatuses: StatusKey[] = ['current', 'core-service', 'retired', 'retired-core-service'];
+const orderedStatuses: StatusKey[] = [
+  'current',
+  'core-service',
+  'analysis-system',
+  'retired',
+  'retired-core-service',
+];
 const activeGroups = orderedStatuses
   .filter((status) => statusGroups[status].tests.length > 0)
   .map((status) => ({ status, ...statusGroups[status] }));
