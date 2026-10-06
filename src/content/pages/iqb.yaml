@@ -72,8 +72,8 @@ sections:
         button:
           variant: primary
           size: md
-          text: A preliminary data-driven evaluation of the IQB framework
-          href: https://drive.google.com/file/d/1eeGng8Cn7vsY9VdynxnoDEtPlp5PFb5i/view?usp=sharing
+          text: Preliminary evaluation of IQB
+          href: https://arxiv.org/pdf/2606.11040
       - title: "Poster: The IQB Framework"
         content: Poster paper (ACM IMC 2025) presenting the IQB Framework
         color: supporting1
