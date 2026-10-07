@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!scripts", "!**/*.svg", "!public/data/manifest.json"]
+    "includes": ["**", "!scripts", "!**/*.svg", "!public/data/stats/manifest.json"]
   },
   "formatter": {
     "enabled": false
