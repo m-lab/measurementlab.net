@@ -20,24 +20,24 @@ When a client connects to an M-Lab server, the [`traceroute-caller`](https://git
 
 To reduce load, `traceroute-caller` caches results for 10 minutes: if two connections arrive from the same IP within that window, the second connection gets the cached result rather than a fresh traceroute.
 
-Each traceroute generates two files saved to GCS:
+Traceroutes generate two kinds of files saved to GCS:
 
 - **`scamper1`** — the full MDA traceroute output in JSONL format
-- **`hopannotation1`** — geolocation and ASN annotations for each hop discovered in the traceroute
+- **`hopannotation2`** — geolocation and ASN annotations for each hop discovered in the traceroute (older data: `hopannotation1`)
 
-Both files are named after the UUID of the TCP flow, linking them to the corresponding measurement.
+The `scamper1` file is named after the UUID of the TCP flow, linking it to the corresponding measurement. Hop annotation files are named after the hop IP address and written at most once per day per server, so they are joined by hop IP and date.
 
 ## Evolution of the Traceroute Format
 
 | Period | Tool | Format | Notes |
 |--------|------|--------|-------|
-| 2009–2019 | Paris Traceroute | Unstructured `.paris` text files in GCS | Uses per-flow load balancing avoidance |
+| 2013–2019 | Paris Traceroute | Unstructured `.paris` text files in GCS | Uses per-flow load balancing avoidance |
 | 2019–Sept 2021 | Scamper (`traceroute` datatype) | JSONL | Structured output, richer probe types |
 | Sept 2021–present | Scamper (`scamper1` datatype) | JSONL + `hopannotation1` | Real-time hop annotation added; historical data retroactively migrated |
 
 Scamper supports ICMP, UDP, and TCP probes plus MDA multipath detection — a significant capability expansion over Paris Traceroute.
 
-For current work, use `scamper1` and `hopannotation1`. The `paris1_legacy` table in BigQuery covers the earlier Paris Traceroute era.
+For current work, use `scamper1` and `hopannotation2`. The `paris1_legacy` table in BigQuery covers the earlier Paris Traceroute era.
 
 ## What a Traceroute Record Contains
 
@@ -46,7 +46,7 @@ Each traceroute record captures:
 - The sequence of **hops** (routers) between the M-Lab server and the client
 - The **RTT** at each hop
 - The **IP address** of each hop (where ICMP responses are returned)
-- The **AS path** — which autonomous systems the traffic traverses
+- The **AS path** — which autonomous systems the traffic traverses (derived by combining hop IP addresses with the hop annotation data)
 - The **branching structure** of multiple paths through load balancers (MDA)
 - Probe metadata (type, TTL, timestamp)
 
@@ -55,9 +55,9 @@ Not all hops respond to probes; gaps in the hop sequence are common and don't in
 **To read a raw file:**
 
 ```bash
-gsutil cp gs://archive-measurement-lab/ndt/scamper1/2024/06/01/20240601T003000Z-scamper1-mlab1-jfk06-ndt.tgz .
-tar xzf 20240601T003000Z-scamper1-mlab1-jfk06-ndt.tgz
-jq . < 2024/06/01/<UUID>.jsonl | more
+CLOUDSDK_AUTH_DISABLE_CREDENTIALS=true gcloud storage cp gs://archive-measurement-lab/ndt/scamper1/2024/06/01/20240601T003005.479655Z-scamper1-mlab2-lga06-ndt.tgz .
+tar xzf 20240601T003005.479655Z-scamper1-mlab2-lga06-ndt.tgz
+jq . < 2024/06/01/<timestamp>_<UUID>.jsonl | more
 ```
 
 ## Accessing Traceroute Data
@@ -69,9 +69,9 @@ Traceroute data is parsed into BigQuery and available for free. See [Getting Sta
 | Table | Contents |
 |-------|----------|
 | `measurement-lab.ndt_raw.scamper1` | Current scamper-based traceroute data (2019–present) |
-| `measurement-lab.ndt_raw.paris1_legacy` | Historical Paris Traceroute data (2009–2019) |
+| `measurement-lab.ndt_raw.paris1_legacy` | Historical Paris Traceroute data (2013–2019) |
 
-Both use the `id` field (the flow UUID) to join with corresponding measurement tables like `measurement-lab.ndt.ndt7_union`.
+`scamper1` uses the `id` field (the flow UUID) to join with corresponding measurement tables like `measurement-lab.ndt.ndt7_union`. `paris1_legacy` cannot be joined this way.
 
 **Join NDT result with its forward traceroute:**
 
@@ -142,9 +142,9 @@ Traceroute archives are organized by the measurement service that triggered the 
 
 ## Data Volume Considerations
 
-The Scamper dataset is hundreds of terabytes. Strategies for efficient BigQuery analysis:
+The Scamper dataset is over a hundred terabytes. Strategies for efficient BigQuery analysis:
 
-- Filter by `DATE(a.StartTime)` to use partition pruning
+- Filter on the `date` column to use partition pruning
 - Sample by UUID rather than loading all records
 - Use approximate aggregate functions (`APPROX_QUANTILES`, `APPROX_COUNT_DISTINCT`)
 - Pre-aggregate into smaller derived tables for iterative analysis
