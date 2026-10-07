@@ -12,7 +12,7 @@ difficulty: intermediate
 
 MSAK (Measurement Swiss-Army Knife) is a measurement service hosted by M-Lab that implements two measurement protocols: a configurable WebSocket-based throughput protocol and a UDP-based latency protocol. Where [NDT](/kb/test-ndt) is a standardized single-stream bulk transport test, MSAK is designed for cases where researchers need to tune measurement parameters.
 
-MSAK is also the engine behind M-Lab's official speed test at [speed.measurementlab.net](https://speed.measurementlab.net).
+From 2024 to June 2026, M-Lab's official speed test at [speed.measurementlab.net](https://speed.measurementlab.net) also ran an MSAK test alongside NDT, for calibration.
 
 ## How MSAK Works
 
@@ -31,7 +31,7 @@ For most users, the defaults are appropriate. The configurability is intended fo
 
 ### UDP Latency Protocol
 
-MSAK also implements a UDP-based latency measurement protocol, distinct from the RTT measurements derived from TCP in NDT. UDP latency can reveal queuing and delay characteristics that TCP-based measurements may mask (since TCP's flow control adapts to congestion).
+MSAK also implements a UDP-based latency measurement protocol, distinct from the RTT measurements derived from TCP in NDT. UDP latency can reveal queuing and delay characteristics that TCP-based measurements may mask (since TCP's congestion control adapts to congestion).
 
 ## What MSAK Measures
 
@@ -75,7 +75,7 @@ See Accessing Data in GCS<!-- FIXME: add link for "Accessing Data in GCS" --> fo
 
 ## Running an MSAK Test
 
-- **Browser:** Visit [speed.measurementlab.net](https://speed.measurementlab.net) — it uses MSAK under the hood.
+- **Browser:** The [msak-js](https://github.com/m-lab/msak-js) library implements the throughput protocol in JavaScript.
 - **Command line:** A standalone Go client is available in the [MSAK GitHub repository](https://github.com/m-lab/msak/).
 
 ## How People Use MSAK Data
@@ -86,7 +86,7 @@ See Accessing Data in GCS<!-- FIXME: add link for "Accessing Data in GCS" --> fo
 
 **Latency under load** — combining MSAK's throughput test with UDP latency measurements allows researchers to characterize bufferbloat and latency degradation under load.
 
-**Platform development** — because MSAK is the test powering M-Lab's official speed test, its data represents the current operational measurement load on the platform.
+**Platform development** — MSAK is a platform to experiment with and shape the next generation of NDT versions, for example by measuring the effect of multiple streams on throughput (see [Introducing MSAK](/blog/introducing-msak/)).
 
 ## Source Code
 
