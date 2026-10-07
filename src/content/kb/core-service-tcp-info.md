@@ -43,7 +43,7 @@ Because snapshots are saved whenever the connection's state or counters change, 
 
 ### BigQuery
 
-TCP INFO data is parsed into BigQuery and available for free. See [Setting Up Free BigQuery Access](/kb/getting-started-bigquery).
+TCP INFO data is parsed into BigQuery and available for free.
 
 The primary location is `measurement-lab.ndt.tcpinfo` — TCP INFO data associated with NDT tests. Additional locations may exist for other services.
 
@@ -96,8 +96,6 @@ NDT's metrics come from the same kernel `tcp_info` data, but the NDT server most
 
 ## Further Reading
 
-- [NDT — the test whose TCP connections TCP INFO instruments](/kb/test-ndt)
 - [Packet Headers — complementary packet-level data](/kb/core-service-packet-headers)
 - [MSAK — configurable throughput test also instrumented by TCP INFO](/kb/test-msak)
-- [Setting Up Free BigQuery Access](/kb/getting-started-bigquery)
 - [Long Term Supported Schemas blog post](https://www.measurementlab.net/blog/long-term-schema-support-standard-columns/)

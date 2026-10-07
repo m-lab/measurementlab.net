@@ -79,5 +79,4 @@ Packet header data is **not published to BigQuery**. Analysis requires working w
 ## Further Reading
 
 - [TCP INFO — kernel-level TCP statistics (companion dataset)](/kb/core-service-tcp-info)
-- [NDT — speed test whose flows are captured](/kb/test-ndt)
 - [Traceroute — network path data collected alongside PCAPs](/kb/core-service-traceroute)

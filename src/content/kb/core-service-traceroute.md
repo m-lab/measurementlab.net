@@ -64,7 +64,7 @@ jq . < 2024/06/01/<timestamp>_<UUID>.jsonl | more
 
 ### BigQuery
 
-Traceroute data is parsed into BigQuery and available for free. See [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery).
+Traceroute data is parsed into BigQuery and available for free.
 
 | Table | Contents |
 |-------|----------|
@@ -166,8 +166,6 @@ The Scamper dataset is over a hundred terabytes. Strategies for efficient BigQue
 ## Further Reading
 
 - [Reverse Traceroute — the return path](/kb/test-reverse-traceroute)
-- [NDT — the speed test paired with each traceroute](/kb/test-ndt)
-- [Getting Started with M-Lab Data in BigQuery](/kb/getting-started-bigquery)
 - [Long Term Supported Schemas blog post](https://www.measurementlab.net/blog/long-term-schema-support-standard-columns/)
 
 <!-- TODO: Add section on extracting single traceroutes using the M-Lab traceroute extraction tool (blog post: 2022-extracting-single-traceroute). Add worked example of AS path analysis using the CAIDA AS relationship dataset for enrichment. Add section on known limitations (MPLS tunnels hiding intermediate hops, load balancers causing inconsistent paths). -->

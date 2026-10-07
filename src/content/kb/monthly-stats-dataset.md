@@ -21,7 +21,7 @@ M-Lab publishes a dataset called **Monthly Stats** — pre-computed monthly summ
 
 ## What Monthly Stats Are
 
-Each Monthly Stats file covers one calendar month of [NDT](/kb/test-ndt) measurements, pre-aggregated at a chosen geographic granularity. Instead of one row per test, each row summarises all tests in that geography/ISP for that month — recording the full **percentile distribution** of download speed, upload speed, latency, and packet loss.
+Each Monthly Stats file covers one calendar month of NDT measurements, pre-aggregated at a chosen geographic granularity. Instead of one row per test, each row summarises all tests in that geography/ISP for that month — recording the full **percentile distribution** of download speed, upload speed, latency, and packet loss.
 
 This design means you can answer questions like "what was the median download speed in Germany in October 2024?" with a single parquet read rather than scanning hundreds of millions of raw test rows.
 

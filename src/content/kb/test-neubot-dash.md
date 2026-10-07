@@ -72,4 +72,3 @@ DASH data is **not currently published to BigQuery**. Analysis requires working 
 - [Neubot project website](http://www.neubot.org/)
 - [Dynamic Adaptive Streaming over HTTP (Wikipedia)](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP)
 - [WeHe — traffic differentiation testing](/kb/test-wehe)
-- [NDT — throughput and speed testing](/kb/test-ndt)
