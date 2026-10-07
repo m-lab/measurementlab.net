@@ -22,9 +22,9 @@ CIRS applies to integrators, organizations embedding M-Lab tests into an applica
 
 ## Why Now
 
-M-Lab was founded in 2009, and internet usage patterns have changed substantially since then. In 2024, M-Lab introduced a platform-wide limit of 40 tests per day per IP address to improve security and sustainability (see [FAQ: Test Rate Limits](/kb/test-rate-limits)). That limit applies uniformly to every user, and without a registration system there was no way to grant exceptions or offer usage tiers to integrators with legitimate higher-volume needs.
+M-Lab was founded in 2009, and internet usage patterns have changed substantially since then. In 2025, M-Lab started enforcing per-IP test rate limits to improve security and sustainability (see [FAQ: Test Rate Limits](/kb/test-rate-limits)). These limits apply to all traffic on the standard Locate endpoint, and without a registration system there was no way to grant exceptions or offer usage tiers to integrators with legitimate higher-volume needs.
 
-CIRS makes it possible to distinguish integrator traffic from general public traffic and set appropriate limits for each, without weakening the protections the 2024 rate limit put in place.
+CIRS makes it possible to distinguish integrator traffic from general public traffic and set appropriate limits for each, without weakening the protections the rate limits put in place.
 
 ## Usage Tiers and Costs
 
