@@ -20,7 +20,7 @@ WeHe's methodology is based on a carefully controlled comparison:
 
 2. **Bit-inverted replay:** WeHe then replays the same traffic with the payload bytes inverted. The traffic has the same volume and timing as the original, but the content is randomized — ISPs cannot classify it as belonging to any specific app.
 
-3. **Statistical comparison:** WeHe runs each replay multiple times and compares the throughput distributions using a Kolmogorov-Smirnov (KS) test. If the original app traffic consistently gets different throughput than the bit-inverted control traffic, and the difference is statistically significant, WeHe concludes that differentiation is occurring.
+3. **Statistical comparison:** WeHe runs each replay multiple times and compares the throughput distributions using a Kolmogorov-Smirnov (KS) test. If the original app traffic consistently gets lower throughput than the bit-inverted control traffic, and the difference is statistically significant, WeHe concludes that differentiation is occurring.
 
 **Differentiation is reported when all three conditions are true:**
 - KS acceptance ratio > 0.95
@@ -51,7 +51,7 @@ WeHe data is organized into three tables, all keyed by `userID` + `historyCount`
 |-------|----------|
 | `measurement-lab.wehe_raw.replayInfo1` | Test metadata: timestamp, carrier, device, location, network type |
 | `measurement-lab.wehe_raw.clientXputs1` | Per-replay throughput samples over time (two rows per test: original + inverted) |
-| `measurement-lab.wehe_raw.decisions1` | Statistical test results: KS values, throughput difference, differentiation verdict |
+| `measurement-lab.wehe_raw.decisions1` | Statistical test results: KS values and throughput difference, from which the differentiation verdict is computed (see the thresholds above) |
 
 ### Raw Data in Google Cloud Storage
 
@@ -120,7 +120,7 @@ LIMIT 100
 
 ## How People Use WeHe Data
 
-**Net neutrality research and monitoring** — WeHe is one of the few tools capable of detecting app-specific throttling at scale. Researchers have used it to document and analyze ISP differentiation practices in multiple countries.
+**Net neutrality research and monitoring** — WeHe has been used to detect app-specific throttling at scale (see [Key Research](#key-research) below). Researchers have used it to document and analyze ISP differentiation practices in multiple countries.
 
 **Regulatory evidence** — WeHe data has been used in regulatory proceedings to demonstrate whether specific ISPs were applying traffic differentiation practices.
 
