@@ -194,7 +194,7 @@ A **rich** group (`data.json`, `test-kind.json`, `test-status.json`) is a list o
 }
 ```
 
-In Pages CMS the plain groups are edited under **Categories**; `data.json` and `test-kind.json` have their own sidebar entries (**Data Categories**, **Test Kinds**) because the generic collection only understands string lists. `test-status.json` is developer-managed and has no CMS entry. All three files are excluded from the generic collection so they cannot be flattened by accident.
+In Pages CMS everything sits under one **Categories** sidebar group: the plain groups are edited under **Category Lists**; `data.json` and `test-kind.json` have their own entries (**Data Categories**, **Test Kinds**) because the generic collection only understands string lists. `test-status.json` is developer-managed and has no CMS entry. All three files are excluded from the generic collection so they cannot be flattened by accident.
 
 ### How categories reach the code and the CMS
 

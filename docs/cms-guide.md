@@ -330,7 +330,7 @@ To attach a downloadable file (like a PDF):
 
 ### 3.5 Categories
 
-**Where:** Sidebar > **Categories**
+**Where:** Sidebar > **Categories** > **Category Lists**
 
 Categories are tag groups shared across the site. Different collections (Blog, People, Partners, Publications, Knowledge Base) each have their own set of categories.
 
@@ -346,7 +346,7 @@ Two groups are richer than a plain list and have their own sidebar entries inste
 
 **To add a new category to a group:**
 
-1. Open the category group (e.g., "Blog Categories").
+1. Open **Categories** > **Category Lists** and pick the group (e.g., "Blog Categories").
 2. In the **Categories** list, click **Add an item**.
 3. Type the new category name.
 4. Click **Save**.
@@ -366,7 +366,7 @@ Two groups are richer than a plain list and have their own sidebar entries inste
 
 **Rich groups: Data Categories, Test Kinds**
 
-**Where:** Sidebar > **Data Categories** or **Test Kinds**
+**Where:** Sidebar > **Categories** > **Data Categories** or **Test Kinds**
 
 Each item in these groups has more than a name:
 

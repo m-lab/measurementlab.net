@@ -1245,86 +1245,94 @@ content:
   # --------------------------------------------------------------------------
   # Categories
   # --------------------------------------------------------------------------
-  - name: categories
+  # Sidebar group: the generic string-list collection plus the object-shaped
+  # groups that have their own file entries. Navigation only; the entries
+  # inside are unchanged.
+  - name: taxonomy
     label: Categories
-    type: collection
-    path: src/content/categories
-    format: json
-    filename: '{fields.id}.json'
-    subfolders: false
-    # Object lists the string-list editor would flatten. data.json and test-kind.json
-    # have their own entries below; test-status.json is developer-managed only.
-    exclude: [data.json, test-kind.json, test-status.json]
-    view:
-      fields: [name, id]
-      primary: name
-    fields:
-      - name: id
-        label: ID
-        type: string
-        required: true
-        description: Unique identifier (e.g. people, partners, blog)
-      - name: name
-        label: Name
-        type: string
-        required: true
-        description: Display name for this category group
+    type: group
+    items:
       - name: categories
-        label: Categories
-        type: string
-        list: true
-        required: true
-        description: One value per line. The value is also what editors see in dropdowns.
+        label: Category Lists
+        type: collection
+        path: src/content/categories
+        format: json
+        filename: '{fields.id}.json'
+        subfolders: false
+        # Object lists the string-list editor would flatten. data.json and test-kind.json
+        # have their own entries below; test-status.json is developer-managed only.
+        exclude: [data.json, test-kind.json, test-status.json]
+        view:
+          fields: [name, id]
+          primary: name
+        fields:
+          - name: id
+            label: ID
+            type: string
+            required: true
+            description: Unique identifier (e.g. people, partners, blog)
+          - name: name
+            label: Name
+            type: string
+            required: true
+            description: Display name for this category group
+          - name: categories
+            label: Categories
+            type: string
+            list: true
+            required: true
+            description: One value per line. The value is also what editors see in dropdowns.
 
-  # Rich category groups: each file has its own entry because the generic
-  # Categories collection above only understands plain string lists. The
-  # sync action regenerates the matching dropdowns in this file after a save.
-  # test-status.json is deliberately not exposed: statuses are fixed.
-  - name: data-categories
-    label: Data Categories
-    type: file
-    path: src/content/categories/data.json
-    fields:
-      - name: id
-        label: ID
-        type: string
-        required: true
-        readonly: true
-        description: Set by developers. Identifies the group to the site build.
-      - name: name
-        label: Name
-        type: string
-        required: true
-        description: Display name for the group
-      - name: categories
-        label: Categories
-        component: category_item
-        list: true
-        required: true
-        description: Groups on the Data catalog page. Keep 'uncategorized'; entries with no category land there.
+      # Rich category groups: each file has its own entry because the generic
+      # Categories collection above only understands plain string lists. The
+      # sync action regenerates the matching dropdowns in this file after a save.
+      # test-status.json is deliberately not exposed: statuses are fixed.
+      - name: data-categories
+        label: Data Categories
+        type: file
+        path: src/content/categories/data.json
+        fields:
+          - name: id
+            label: ID
+            type: string
+            required: true
+            readonly: true
+            description: Set by developers. Identifies the group to the site build.
+          - name: name
+            label: Name
+            type: string
+            required: true
+            description: Display name for the group
+          - name: categories
+            label: Categories
+            component: category_item
+            list: true
+            required: true
+            description: Groups on the Data catalog page. Keep 'uncategorized'; entries with no category land there.
 
-  - name: test-kinds
-    label: Test Kinds
-    type: file
-    path: src/content/categories/test-kind.json
-    fields:
-      - name: id
-        label: ID
-        type: string
-        required: true
-        readonly: true
-        description: Set by developers. Identifies the group to the site build.
-      - name: name
-        label: Name
-        type: string
-        required: true
-        description: Display name for the group
-      - name: categories
-        label: Kinds
-        component: category_item
-        list: true
-        required: true
-        description: What a Tests entry can be (Test, Core Service, Analysis System, ...). The Name is shown as the first badge on the test page. Keep 'test'; it is the default for new entries.
+      - name: test-kinds
+        label: Test Kinds
+        type: file
+        path: src/content/categories/test-kind.json
+        fields:
+          - name: id
+            label: ID
+            type: string
+            required: true
+            readonly: true
+            description: Set by developers. Identifies the group to the site build.
+          - name: name
+            label: Name
+            type: string
+            required: true
+            description: Display name for the group
+          - name: categories
+            label: Kinds
+            component: category_item
+            list: true
+            required: true
+            description: What a Tests entry can be (Test, Core Service, Analysis System, ...). The Name is shown as the first badge on the test page. Keep 'test'; it is the default for new entries.
+
 
   # --------------------------------------------------------------------------
   # Tests
