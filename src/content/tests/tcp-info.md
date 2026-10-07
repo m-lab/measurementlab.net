@@ -3,7 +3,8 @@ permalink: /tests/tcp-info/
 title: "TCP INFO"
 status: published
 description: "Collects statistics about the TCP connections running on the M-Lab platform using tcp-info."
-testStatus: core-service
+kind: core-service
+testStatus: current
 icon: /src/assets/images/tests/tcpinfo.png
 order: 15
 ---

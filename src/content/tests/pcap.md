@@ -3,7 +3,8 @@ permalink: /tests/pcap/
 title: "Packet Header Service (PCAP)"
 status: published
 description: "Collects packet headers for all incoming TCP flows and saves each stream of packet captures into a per-stream .pcap file."
-testStatus: core-service
+kind: core-service
+testStatus: current
 icon: /src/assets/images/tests/pcap.png
 order: 14
 ---

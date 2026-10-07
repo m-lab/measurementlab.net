@@ -3,7 +3,8 @@ permalink: /tests/utilization/
 title: "Utilization Dataset"
 status: published
 description: "High resolution switch telemetry for each M-Lab server and site uplink."
-testStatus: core-service
+kind: core-service
+testStatus: current
 icon: /src/assets/images/tests/tcpinfo.png
 order: 4
 showInIndex: false

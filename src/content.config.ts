@@ -9,6 +9,8 @@ import kbCategories from './content/categories/kb.json';
 import partnerCategories from './content/categories/partners.json';
 import peopleCategories from './content/categories/people.json';
 import publicationsCategories from './content/categories/publications.json';
+import testKinds from './content/categories/test-kind.json';
+import testStatuses from './content/categories/test-status.json';
 
 // Shared status field for content visibility across all collections
 const statusSchema = z
@@ -418,8 +420,16 @@ const testsCollection = defineCollection({
       title: z.string(),
       description: z.string().optional(),
       parentTest: z.string().optional(), // For nested tests (e.g., /tests/ndt/ for ndt5)
+      // What the entry is (test, core service, analysis system) and whether it still
+      // runs. Two axes, each sourced from src/content/categories/test-*.json — the
+      // same files the CMS dropdowns are generated from and the detail page's badge
+      // reads its labels from. A retired core service is kind: core-service +
+      // testStatus: retired, so no compound values are needed.
+      kind: z
+        .enum(testKinds.categories.map((c) => c.id) as [string, ...string[]])
+        .default('test'),
       testStatus: z
-        .enum(['current', 'retired', 'core-service', 'retired-core-service', 'analysis-system'])
+        .enum(testStatuses.categories.map((c) => c.id) as [string, ...string[]])
         .optional(),
       status: statusSchema,
       icon: image().optional(), // Icon image for tests index page

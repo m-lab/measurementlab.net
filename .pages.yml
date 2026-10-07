@@ -28,6 +28,35 @@ media:
 # collections via `component: <name>`.
 # ============================================================================
 components:
+  # One entry of a "rich" category group (data.json, test-kind.json). The plain groups (blog, people, ...) are string lists and
+  # use the generic Categories collection instead.
+  category_item:
+    type: object
+    fields:
+      - name: id
+        label: ID
+        type: string
+        required: true
+        description: The value stored in content and used in URLs. Lowercase letters, numbers and hyphens, like 'core-service'. Changing it breaks every entry that uses it.
+        pattern:
+          message: Use lowercase letters, numbers and hyphens only, like 'core-service'.
+          regex: '^[a-z0-9-]+$'
+      - name: name
+        label: Name
+        type: string
+        required: true
+        description: What editors and visitors see, like 'Core Service'.
+      - name: description
+        label: Description
+        type: text
+        description: Optional. Shown where the site lists the group (the Data catalog) and as help text for editors.
+      - name: order
+        label: Sort Order
+        type: number
+        required: true
+        default: 100
+        description: Lower numbers come first.
+
   # --------------------------------------------------------------------------
   # Primitives (button, card, background, link)
   # --------------------------------------------------------------------------
@@ -1223,6 +1252,9 @@ content:
     format: json
     filename: '{fields.id}.json'
     subfolders: false
+    # Object lists the string-list editor would flatten. data.json and test-kind.json
+    # have their own entries below; test-status.json is developer-managed only.
+    exclude: [data.json, test-kind.json, test-status.json]
     view:
       fields: [name, id]
       primary: name
@@ -1242,6 +1274,57 @@ content:
         type: string
         list: true
         required: true
+        description: One value per line. The value is also what editors see in dropdowns.
+
+  # Rich category groups: each file has its own entry because the generic
+  # Categories collection above only understands plain string lists. The
+  # sync action regenerates the matching dropdowns in this file after a save.
+  # test-status.json is deliberately not exposed: statuses are fixed.
+  - name: data-categories
+    label: Data Categories
+    type: file
+    path: src/content/categories/data.json
+    fields:
+      - name: id
+        label: ID
+        type: string
+        required: true
+        readonly: true
+        description: Set by developers. Identifies the group to the site build.
+      - name: name
+        label: Name
+        type: string
+        required: true
+        description: Display name for the group
+      - name: categories
+        label: Categories
+        component: category_item
+        list: true
+        required: true
+        description: Groups on the Data catalog page. Keep 'uncategorized'; entries with no category land there.
+
+  - name: test-kinds
+    label: Test Kinds
+    type: file
+    path: src/content/categories/test-kind.json
+    fields:
+      - name: id
+        label: ID
+        type: string
+        required: true
+        readonly: true
+        description: Set by developers. Identifies the group to the site build.
+      - name: name
+        label: Name
+        type: string
+        required: true
+        description: Display name for the group
+      - name: categories
+        label: Kinds
+        component: category_item
+        list: true
+        required: true
+        description: What a Tests entry can be (Test, Core Service, Analysis System, ...). The Name is shown as the first badge on the test page. Keep 'test'; it is the default for new entries.
 
   # --------------------------------------------------------------------------
   # Tests
@@ -1258,7 +1341,7 @@ content:
       node:
         filename: index.md
         hideDirs: nodes
-      fields: [icon, title, testStatus, status, order]
+      fields: [icon, title, kind, testStatus, status, order]
       sort: [order, title]
       primary: title
     fields:
@@ -1286,23 +1369,34 @@ content:
         label: Description
         type: text
         description: Brief description of what the test measures
+      - name: kind
+        label: Kind
+        type: select
+        default: test
+        options:
+          # pages-cms:category-sync start test-kind
+          values:
+            - label: Test
+              value: test
+            - label: Core Service
+              value: core-service
+            - label: Analysis System
+              value: analysis-system
+          # pages-cms:category-sync end
+        description: What this entry is. Test for a measurement test that collects data from clients, Core Service for a platform service that supports every test, Analysis System for a system that analyzes data already collected.
       - name: testStatus
         label: Test Status
         type: select
         default: current
         options:
+          # pages-cms:category-sync start test-status
           values:
             - label: Current
               value: current
-            - label: Core Service
-              value: core-service
             - label: Retired
               value: retired
-            - label: Retired Core Service
-              value: retired-core-service
-            - label: Analysis System
-              value: analysis-system
-        description: The operational status of this test on the M-Lab platform
+          # pages-cms:category-sync end
+        description: Whether this entry still runs on the M-Lab platform. Retired entries keep their documentation. Shown as its own badge next to the Kind badge.
       - name: status
         label: Status
         type: select

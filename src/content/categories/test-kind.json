@@ -1,0 +1,24 @@
+{
+  "id": "test-kind",
+  "name": "Test Kinds",
+  "categories": [
+    {
+      "id": "test",
+      "name": "Test",
+      "description": "A measurement test that collects data from clients.",
+      "order": 10
+    },
+    {
+      "id": "core-service",
+      "name": "Core Service",
+      "description": "A platform service that runs alongside every test and supports it.",
+      "order": 20
+    },
+    {
+      "id": "analysis-system",
+      "name": "Analysis System",
+      "description": "A system that analyzes data already collected on the platform rather than collecting measurements of its own.",
+      "order": 30
+    }
+  ]
+}

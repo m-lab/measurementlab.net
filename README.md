@@ -87,7 +87,7 @@ Every content collection above shares a `status` field: `draft`, `published`, or
 
 Visibility is centralised in `isVisible()` (`src/utils/content.ts`) — use it rather than checking `status` directly. Run the preview build locally with `PUBLIC_PREVIEW=true npm run dev`.
 
-The `tests/` collection additionally has `testStatus` (`current`, `retired`, `core-service`, `retired-core-service`, `analysis-system`) for operational state — that is separate from `status`, which controls visibility.
+The `tests/` collection additionally has two operational fields, separate from `status` (which controls visibility): `kind` (`test`, `core-service`, `analysis-system`, default `test`) says what the entry is, and `testStatus` (`current`, `retired`) says whether it still runs. Both value lists live in `src/content/categories/test-kind.json` and `test-status.json`, which also generate the CMS dropdowns. The detail page shows two badges, kind then status, so a retired core service is `kind: core-service` + `testStatus: retired`.
 
 ## Page Sections
 
@@ -168,8 +168,11 @@ Categories control filtering and grouping. Each file in `src/content/categories/
 | `publications.json` | Publication types    | 4     | paper, regulatory-filing, presentation, documentation        |
 | `tests.json`        | Test groupings       | 1     | Current Tests                                                |
 | `kb.json`           | Knowledge base tags  | 25    | Core Services, Data Access, BigQuery, NDT, PCAP, Research    |
+| `data.json`         | Data catalog groups  | 3     | enriched, raw, uncategorized                                 |
+| `test-kind.json`    | Test kinds           | 3     | test, core-service, analysis-system                          |
+| `test-status.json`  | Test statuses        | 2     | current, retired                                             |
 
-Each file looks like this:
+There are two shapes. A **plain** group is a list of strings, and the string is both the stored value and the label:
 
 ```json
 {
@@ -178,6 +181,20 @@ Each file looks like this:
   "categories": ["Supporting Research Projects", "Supporting Partners"]
 }
 ```
+
+A **rich** group (`data.json`, `test-kind.json`, `test-status.json`) is a list of objects with a slug `id` that content stores, a display `name`, an optional `description`, and an `order`:
+
+```json
+{
+  "id": "test-kind",
+  "name": "Test Kinds",
+  "categories": [
+    { "id": "core-service", "name": "Core Service", "description": "...", "order": 20 }
+  ]
+}
+```
+
+In Pages CMS the plain groups are edited under **Categories**; `data.json` and `test-kind.json` have their own sidebar entries (**Data Categories**, **Test Kinds**) because the generic collection only understands string lists. `test-status.json` is developer-managed and has no CMS entry. All three files are excluded from the generic collection so they cannot be flattened by accident.
 
 ### How categories reach the code and the CMS
 
@@ -455,6 +472,7 @@ Create a new `.md` file in `src/content/tests/`:
 permalink: /tests/my-test/
 title: 'My Test'
 description: 'Brief description of the test'
+kind: test
 testStatus: current
 status: published
 icon: /src/assets/images/tests/my-test.png
@@ -477,7 +495,8 @@ Tests can be nested: a test with sub-tests becomes a folder containing `index.md
 **Optional fields:**
 
 - `description` - Brief description
-- `testStatus` - Operational status: current, retired, core-service, retired-core-service, analysis-system
+- `kind` - What the entry is: `test` (default), `core-service`, `analysis-system`
+- `testStatus` - Whether it still runs: `current`, `retired`
 - `status` - Visibility: `draft`, `published`, or `archived` (default: `draft`)
 - `icon` - Path to icon image for tests index
 - `order` - Sort order (default 999)

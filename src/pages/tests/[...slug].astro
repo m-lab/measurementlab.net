@@ -11,6 +11,7 @@ import Hero from '@components/organisms/Hero.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import { isVisible } from '@utils/content';
+import { getTestBadges } from '@utils/tests';
 
 type TestEntry = CollectionEntry<'tests'>;
 
@@ -66,22 +67,8 @@ breadcrumbs.push({
   href: test.data.permalink,
 });
 
-// Test status badge styling
-const testStatusStyles = {
-  current: 'bg-neutral-600 text-white',
-  'core-service': 'bg-blue-100 text-blue-800',
-  retired: 'bg-neutral-100 text-neutral-800',
-  'retired-core-service': 'bg-neutral-100 text-neutral-800',
-  'analysis-system': 'bg-supporting1-100 text-supporting1-800',
-};
-
-const testStatusLabels = {
-  current: 'Current',
-  'core-service': 'Core Service',
-  retired: 'Retired',
-  'retired-core-service': 'Retired Core Service',
-  'analysis-system': 'Analysis System',
-};
+// Kind and status badges, labelled from the categories JSON via @utils/tests
+const badges = getTestBadges(test.data);
 
 const siteConfig = await getEntry('site', 'config');
 const archivedBanner = siteConfig?.data.archivedBanner;
@@ -113,15 +100,13 @@ const archivedBanner = siteConfig?.data.archivedBanner;
 	<!-- Hero Section -->
 	<SectionLayout maxWidth="4xl" zigzag="supporting1-light">
 		<Hero title={test.data.title} align="left">
-			{
-				test.data.testStatus && (
-					<span
-						class={`inline-block rounded-md px-3 py-1 text-sm font-medium uppercase ${testStatusStyles[test.data.testStatus]}`}
-					>
-						{testStatusLabels[test.data.testStatus]}
+			<div class="flex flex-wrap gap-2">
+				{badges.map((badge) => (
+					<span class={`inline-block rounded-md px-3 py-1 text-sm font-medium uppercase ${badge.className}`}>
+						{badge.label}
 					</span>
-				)
-			}
+				))}
+			</div>
 			{
 				test.data.description && (
 					<p class="text-neutral-600 mt-4">{test.data.description}</p>

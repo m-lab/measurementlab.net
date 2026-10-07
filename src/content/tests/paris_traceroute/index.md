@@ -2,7 +2,8 @@
 permalink: /tests/paris_traceroute/
 title: "Paris Traceroute"
 status: published
-testStatus: retired-core-service
+kind: core-service
+testStatus: retired
 description: "Collected network path information for every connection to the M-Lab 1.0 platform."
 icon: /src/assets/images/tests/arrow-swoop.png
 ---

@@ -1,0 +1,18 @@
+{
+  "id": "test-status",
+  "name": "Test Statuses",
+  "categories": [
+    {
+      "id": "current",
+      "name": "Current",
+      "description": "Running on the M-Lab platform today.",
+      "order": 10
+    },
+    {
+      "id": "retired",
+      "name": "Retired",
+      "description": "No longer running on the platform. Its documentation stays published.",
+      "order": 20
+    }
+  ]
+}
