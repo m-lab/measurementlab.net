@@ -419,7 +419,7 @@ const testsCollection = defineCollection({
       description: z.string().optional(),
       parentTest: z.string().optional(), // For nested tests (e.g., /tests/ndt/ for ndt5)
       testStatus: z
-        .enum(['current', 'retired', 'core-service', 'retired-core-service'])
+        .enum(['current', 'retired', 'core-service', 'retired-core-service', 'analysis-system'])
         .optional(),
       status: statusSchema,
       icon: image().optional(), // Icon image for tests index page

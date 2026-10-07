@@ -499,7 +499,7 @@ In the list view, parent tests show an expand button (arrow icon) next to their 
 | **Permalink**     | Yes      | Full URL path (e.g., `/tests/ndt/`)                                         |
 | **Title**         | Yes      | Display name of the test                                                    |
 | **Description**   | No       | Brief summary of what the test measures                                     |
-| **Test Status**   | No       | Operational status: Current, Core Service, Retired, or Retired Core Service |
+| **Test Status**   | No       | Operational status: Current, Core Service, Retired, Retired Core Service, or Analysis System |
 | **Status**        | Yes      | Content visibility: Draft, Published, or Archived                           |
 | **Icon**          | No       | Test icon image                                                             |
 | **Display Order** | No       | Position in listings (lower numbers appear first)                           |

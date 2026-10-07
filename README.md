@@ -87,7 +87,7 @@ Every content collection above shares a `status` field: `draft`, `published`, or
 
 Visibility is centralised in `isVisible()` (`src/utils/content.ts`) — use it rather than checking `status` directly. Run the preview build locally with `PUBLIC_PREVIEW=true npm run dev`.
 
-The `tests/` collection additionally has `testStatus` (`current`, `retired`, `core-service`, `retired-core-service`) for operational state — that is separate from `status`, which controls visibility.
+The `tests/` collection additionally has `testStatus` (`current`, `retired`, `core-service`, `retired-core-service`, `analysis-system`) for operational state — that is separate from `status`, which controls visibility.
 
 ## Page Sections
 
@@ -477,7 +477,7 @@ Tests can be nested: a test with sub-tests becomes a folder containing `index.md
 **Optional fields:**
 
 - `description` - Brief description
-- `testStatus` - Operational status: current, retired, core-service, retired-core-service
+- `testStatus` - Operational status: current, retired, core-service, retired-core-service, analysis-system
 - `status` - Visibility: `draft`, `published`, or `archived` (default: `draft`)
 - `icon` - Path to icon image for tests index
 - `order` - Sort order (default 999)
