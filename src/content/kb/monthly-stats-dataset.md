@@ -40,7 +40,7 @@ Monthly Stats are published at six geographic granularities, called **slices**:
 | `by_country_city_asn` | Country + city + ASN |
 
 
-Each granularity is split into download and upload files, giving twelve file types per month. The download files contain `download_p{N}`, `latency_p{N}`, and `loss_p{N}` columns; the upload files add `upload_p{N}`.
+Each granularity is split into download and upload files, giving twelve file types per month. The download files contain `download_p{N}`, `latency_p{N}`, and `loss_p{N}` columns; the upload files contain only `upload_p{N}` columns.
 
 ℹ️
 
@@ -55,23 +55,25 @@ Every download parquet file contains:
 | --------------- | ------------------------------------------------ |
 | `country_code` | ISO 3166-1 alpha-2 code (e.g. `US`, `DE`) |
 | `asn` | Autonomous System Number *(ASN slices only)* |
-| `subdivision1` | State/province name *(subdivision slices only)* |
+| `as_name` | AS (provider) name *(ASN slices only)* |
+| `subdivision1_iso_code` | ISO 3166-2 subdivision code, without the country prefix *(subdivision and city slices)* |
+| `subdivision1_name` | State/province name *(subdivision and city slices)* |
 | `city` | City name *(city slices only)* |
 | `download_p{N}` | Nth percentile download speed in Mbit/s |
-| `latency_p{N}` | Nth percentile minimum RTT in milliseconds |
-| `loss_p{N}` | Nth percentile packet loss rate (0–1) |
+| `latency_p{N}` | Minimum RTT in milliseconds, with inverted labels: `latency_p{N}` is the (100−N)th percentile, so higher N means lower (better) latency |
+| `loss_p{N}` | Packet loss rate (0–1), with inverted labels like `latency_p{N}` |
 | `sample_count` | Number of NDT tests that contributed to this row |
 
 
-Upload files add `upload_p{N}` columns. Available percentiles: 1, 5, 10, 25, 50, 75, 90, 95, 99.
+Upload files contain `upload_p{N}` columns instead of the download, latency, and loss columns. Available percentiles: 1, 5, 10, 25, 50, 75, 90, 95, 99.
 
 For guidance on interpreting percentiles — including the counterintuitive polarity of latency and loss — see [Reading Percentiles in Monthly Stats](/kb/monthly-stats-percentiles).
 
 ## How Monthly Stats Are Derived
 
-Monthly Stats are computed from M-Lab's NDT7 dataset using a BigQuery pipeline. For each (geography, month) combination:
+Monthly Stats are computed from M-Lab's unified NDT views (`unified_downloads` and `unified_uploads`), which combine all NDT versions since 2009, using a BigQuery pipeline. For each (geography, month) combination:
 
-1. Raw NDT tests are filtered by standard quality criteria (valid test, above minimum sample thresholds)
+1. Raw NDT tests are filtered by standard quality criteria (the checks applied by the unified views, for example excluding tests that are too short). No minimum number of tests per row is applied
 2. Test results are binned by geographic and network annotations
 3. Percentiles are computed across all tests in each bin
 4. Results are written to Parquet and uploaded to Google Cloud Storage
@@ -85,7 +87,7 @@ The pipeline source and configuration live in the [m-lab/iqb](https://github.com
 A public manifest lists every available file:
 
 ```
-https://measurementlab.net/data/iqb/manifest.json
+https://www.measurementlab.net/data/stats/manifest.json
 ```
 
 Each entry maps a cache path (`cache/v1/{start}/{end}/{slice}/data.parquet`) to a public GCS download URL. You can download individual files with any HTTP client.
@@ -97,7 +99,7 @@ import pandas as pd
 import requests
 
 # Fetch the manifest
-manifest = requests.get("https://measurementlab.net/data/iqb/manifest.json").json()
+manifest = requests.get("https://www.measurementlab.net/data/stats/manifest.json").json()
 
 # Find the URL for a specific file
 path = "cache/v1/20241001T000000Z/20241101T000000Z/downloads_by_country/data.parquet"
@@ -120,7 +122,7 @@ In [GitHub (m-lab/mlab-notebooks)](https://github.com/m-lab/mlab-notebooks/tree/
 
 ## Limitations and Caveats
 
-**Sample count matters.** Rows with fewer than ~100 tests produce unreliable percentile estimates. The `sample_count` column lets you filter out low-confidence rows. The notebooks default to a 100–500 test minimum depending on the granularity.
+**Sample count matters.** Rows with fewer than ~100 tests produce unreliable percentile estimates. The `sample_count` column lets you filter out low-confidence rows. The notebooks default to a 500–2000 test minimum depending on the granularity.
 
 **City-level data has significant geolocation uncertainty.** See [M-Lab Network Annotations](/kb/mlab-annotations-explained) for a full discussion of what city-level geolocation means in practice.
 
