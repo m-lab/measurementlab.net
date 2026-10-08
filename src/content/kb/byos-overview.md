@@ -168,12 +168,10 @@ sudo systemctl restart docker
 | `PROBABILITY` | Probability (0.0–1.0) that the Locate Service considers your server as a candidate for each request. Use this to regulate traffic load — see [Test Volume and Probability](#test-volume-and-probability). | `0.5` |
 | `INTERFACE_NAME` | Name of the primary network interface | `eth0`, `enp114s0` |
 | `UPLINK` | Internet connection speed in Gb/s (integer + "g") | `1g`, `10g` |
-| `INTERFACE_MAXRATE` | Bitrate threshold (bits/second) above which the NDT server refuses new connections, preventing uplink saturation and inaccurate measurements. Recommended: 70% of uplink capacity. If set lower, also reduce `PROBABILITY` to avoid unnecessary user errors. | `7000000000` *(for 10 Gb/s × 70%)* |
+| `INTERFACE_MAXRATE` | Bitrate threshold (bits/second) above which the NDT server refuses new connections, preventing uplink saturation and inaccurate measurements. Recommended: 70% of uplink capacity with `UPLINK=10g`; 40% with `UPLINK=1g`. If set lower than the recommended value, also reduce `PROBABILITY` to avoid unnecessary user errors. | `7000000000` *(for 10 Gb/s × 70%)* |
 | `IPV4` | Public IPv4 address of the primary network interface | `203.0.113.10` |
 | `IPV6` | Public IPv6 address of the primary network interface | `2001:db8::1` |
 | `TYPE` | Machine type | `physical` or `virtual` |
-
-<!-- TODO(robertodauria,bassosimone): the INTERFACE_MAXRATE guidance above says 70% of uplink capacity, but m-lab/autonode `env` recommends 150000000 (15%) for 1G and 7000000000 (70%) for 10G. Which one is right? -->
 
 ---
 
