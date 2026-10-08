@@ -4,12 +4,14 @@ title: "Welcome to M-Lab: Open Internet Measurement"
 chapter: Getting Started
 chapterOrder: 1
 order: 1
-status: draft
-description: An introduction to what M-Lab is, what it measures, and how its open data can help you understand internet performance.
-tags: [Measurement, Research]
+status: published
+description: An introduction to what M-Lab is, what it measures, and how its
+  open data can help you understand internet performance.
+tags:
+  - Measurement
+  - Research
 difficulty: beginner
 ---
-
 Measurement Lab (M-Lab) is the world's largest open internet measurement platform. Since 2009, M-Lab has collected billions of measurements from users around the globe, all published as open data under a Creative Commons license.
 
 ## What M-Lab Measures
@@ -36,12 +38,14 @@ This makes M-Lab data suitable for longitudinal studies, regulatory filings, aca
 
 ## Key Datasets
 
+
 | Dataset | What it contains | Access |
-|---------|-----------------|--------|
+| -------------------- | --------------------------------------- | ------------- |
 | NDT7 | Speed + latency from user tests | BigQuery, GCS |
 | Traceroute (Scamper) | Network paths between M-Lab and clients | BigQuery, GCS |
 | MSAK | Multi-stream throughput measurements | BigQuery |
 | Wehe | App-specific network differentiation | BigQuery |
+
 
 ## Where to Go Next
 
@@ -57,4 +61,3 @@ M-Lab runs monthly community calls, a research fellowship program, and annual ha
 
 ---
 
-<!-- TODO: Add overview diagram of the M-Lab platform architecture (measurement points → pipeline → BigQuery). Link to the current list of M-Lab measurement points. Add a brief history timeline (2009 founding → NDT7 → M-Lab 2.0 cloud migration → IQB framework). -->
