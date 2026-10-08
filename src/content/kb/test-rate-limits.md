@@ -14,8 +14,6 @@ difficulty: beginner
 
 **A:** As a first approximation, plan for no more than 40 tests per day, which is the limit the [Acceptable Use Policy](/aup/) sets for interactive users. The limits M-Lab actually enforces are more complex: currently, 20 requests in a 30 minute sliding window based on both IP address and user-agent, and a 40 request limit in a 12 hour sliding window based on IP address alone.
 
-<!-- TODO(robertodauria,bassosimone): confirm the production rate-limit values above; they are Cloud Build substitutions, not in m-lab/locate. -->
-
 For software or hardware integrations M-Lab recommends testing no more than 4 times per day for any one device / internet connection.
 
 ## Key Points
