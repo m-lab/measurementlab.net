@@ -37,13 +37,13 @@ The `tcp_info` kernel structure exposes dozens of fields. Key metrics include:
 - **Pacing rate** — the rate at which the kernel is sending data
 - **Delivery rate** — estimated bandwidth delivery rate
 
-Because snapshots are taken at regular intervals, you can reconstruct the time series of any of these metrics for the full duration of a test.
+Because snapshots are saved whenever the connection's state or counters change, you can reconstruct the time series of any of these metrics for the full duration of a test.
 
 ## Accessing TCP INFO Data
 
 ### BigQuery
 
-TCP INFO data is parsed into BigQuery and available for free. See [Setting Up Free BigQuery Access](/kb/getting-started-bigquery).
+TCP INFO data is parsed into BigQuery and available for free.
 
 The primary location is `measurement-lab.ndt.tcpinfo` — TCP INFO data associated with NDT tests. Additional locations may exist for other services.
 
@@ -88,7 +88,7 @@ Data is stored in JSONL format. Each line is one snapshot of the tcp_info struct
 
 ## Relationship to NDT and Other Tests
 
-TCP INFO underlies the metrics reported by NDT's ndt5 and ndt7 protocols. When NDT reports minimum RTT or loss rate, those values are derived from the tcp_info kernel data that TCP INFO collects. The raw TCP INFO tables provide access to all snapshots, not just the summary values reported in NDT results.
+NDT's metrics come from the same kernel `tcp_info` data, but the NDT server mostly reads it directly: for example, ndt7 minimum RTT and loss rate come from the server's own measurements. For ndt5, M-Lab's unified views compute loss rate from the TCP INFO service's final snapshot. The BigQuery TCP INFO table (`raw.Snapshots`) keeps the first snapshot, every 10th one after it, and the final one. The raw files in GCS contain all snapshots.
 
 ## Source Code
 
@@ -96,8 +96,6 @@ TCP INFO underlies the metrics reported by NDT's ndt5 and ndt7 protocols. When N
 
 ## Further Reading
 
-- [NDT — the test whose TCP connections TCP INFO instruments](/kb/test-ndt)
 - [Packet Headers — complementary packet-level data](/kb/core-service-packet-headers)
 - [MSAK — configurable throughput test also instrumented by TCP INFO](/kb/test-msak)
-- [Setting Up Free BigQuery Access](/kb/getting-started-bigquery)
 - [Long Term Supported Schemas blog post](https://www.measurementlab.net/blog/long-term-schema-support-standard-columns/)

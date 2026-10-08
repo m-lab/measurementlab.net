@@ -14,21 +14,23 @@ The DASH test (Dynamic Adaptive Streaming over HTTP) is a measurement tool that 
 
 ## How DASH Works
 
-When you run the DASH test, it emulates streaming a thirty-second video from an M-Lab server. The video is divided into fifteen two-second segments. Before requesting each segment, the client specifies a video quality level (e.g., SD, HD, Super HD). Higher quality means a larger download for that segment.
+When you run the DASH test, it emulates streaming a thirty-second video from an M-Lab server. The video is divided into fifteen two-second segments. Before requesting each segment, the client chooses a video bitrate (e.g., SD, HD, Super HD). A higher bitrate means a larger download for that segment.
 
-The player follows a simple adaptive bitrate strategy: it tries to use the highest quality level that will not cause the network to queue (i.e., not exceed the available bandwidth). By keeping the strategy simple — unlike the sophisticated algorithms used by YouTube or Netflix — the test isolates the network's contribution to streaming quality. A real video player will often hide network impairment behind buffering and quality adaptation; the DASH test makes those impairments visible.
+The player follows a simple adaptive bitrate strategy: it tries to use the highest bitrate that will not cause the network to queue (i.e., not exceed the available bandwidth). By keeping the strategy simple — unlike the sophisticated algorithms used by YouTube or Netflix — the test isolates the network's contribution to streaming quality. A real video player will often hide network impairment behind buffering and quality adaptation; the DASH test makes those impairments visible.
 
 Key measurements collected per segment include:
 
 - **Throughput** (Mbps) — actual download rate for each segment
-- **Quality level** — which quality tier the client requested
+- **Bitrate** — which bitrate the client requested
 - **Latency and timing** — per-segment timing data
 
 Because the test deliberately avoids the optimizations real players use, results will often show lower "quality ceilings" than commercial video services. That gap is intentional and informative: it reflects the raw network capability rather than a platform's ability to smooth over problems.
 
+Whereas DASH measures the streaming quality, the [WeHe test](/kb/test-wehe) addresses app-specific throttling.
+
 ## A Note on Throttling at Interconnects
 
-A known limitation of the DASH test (shared with most measurement tools) is that if video throttling is caused by congestion at interconnection points between ISPs, results depend heavily on which network path the test takes. If the M-Lab server is reached via a different interconnect than the one where throttling occurs, the test may not detect the throttling. The [WeHe test](/kb/test-wehe) addresses app-specific throttling more directly.
+A known limitation of the DASH test (shared with most measurement tools) is that if video throttling is caused by congestion at interconnection points between ISPs, results depend heavily on which network path the test takes. If the M-Lab server is reached via a different interconnect than the one where throttling occurs, the test may not detect the throttling.
 
 ## Privacy and Data Collection
 
@@ -40,7 +42,7 @@ When you run the DASH test, your IP address is collected along with measurement 
 
 DASH data is available in raw format in GCS:
 
-- **DASH test results:** [gs://archive-measurement-lab/dash](https://console.cloud.google.com/storage/browser/archive-measurement-lab/neubot/dash)
+- **DASH test results:** [gs://archive-measurement-lab/neubot/dash](https://console.cloud.google.com/storage/browser/archive-measurement-lab/neubot/dash)
 - **Historical Neubot data (pre-retirement):** [gs://archive-measurement-lab/neubot](https://console.cloud.google.com/storage/browser/archive-measurement-lab/neubot)
 
 See the Accessing Data in GCS<!-- FIXME: add link for "Accessing Data in GCS" --> article for guidance on downloading and parsing raw archives.
@@ -52,8 +54,6 @@ DASH data is **not currently published to BigQuery**. Analysis requires working 
 <!-- FIXME: Create article on parsing Neubot/DASH raw data from GCS once format documentation is available. -->
 
 ## How People Use DASH Data
-
-**Network neutrality research** — DASH data has been used to study whether ISPs differentiate video streaming traffic differently from other traffic, particularly in combination with tools like WeHe.
 
 **Baseline streaming quality characterization** — researchers use DASH to establish a network-quality baseline for streaming that is independent of any specific video platform.
 
@@ -72,4 +72,3 @@ DASH data is **not currently published to BigQuery**. Analysis requires working 
 - [Neubot project website](http://www.neubot.org/)
 - [Dynamic Adaptive Streaming over HTTP (Wikipedia)](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP)
 - [WeHe — traffic differentiation testing](/kb/test-wehe)
-- [NDT — throughput and speed testing](/kb/test-ndt)

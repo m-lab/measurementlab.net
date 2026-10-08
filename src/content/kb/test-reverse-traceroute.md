@@ -5,12 +5,12 @@ chapter: Tests
 chapterOrder: 3
 order: 5
 status: published
-description: "Reverse Traceroute reconstructs the network path from an M-Lab server back to a client — the direction that standard traceroute cannot see — using a distributed system of vantage points and spoofed probes."
+description: "Reverse Traceroute reconstructs the network path from a client back to an M-Lab server — the direction that standard traceroute cannot see — using a distributed system of vantage points and spoofed probes."
 tags: [Tests, Data Access, BigQuery, Routing, Network Topology]
 difficulty: advanced
 ---
 
-Reverse Traceroute (RevTr) measures the network path from an M-Lab server back to a user — the reverse direction of a standard traceroute. Because Internet paths are almost always asymmetric (the route from A to B is rarely the same as B to A), understanding only the forward path often isn't enough to diagnose performance problems or study routing behavior. RevTr fills this gap.
+Reverse Traceroute (RevTr) measures the network path from a user back to an M-Lab server — the reverse direction of a standard traceroute. Because Internet paths are almost always asymmetric (the route from A to B is rarely the same as B to A), understanding only the forward path often isn't enough to diagnose performance problems or study routing behavior. RevTr fills this gap.
 
 As of now, roughly **25% of NDT speed tests** on M-Lab are paired with a reverse traceroute, creating a large-scale dataset linking speed measurements to bidirectional path information.
 
@@ -18,7 +18,7 @@ RevTr is developed by a research group led by Ethan Katz-Bassett (Columbia Unive
 
 ## Why Reverse Traceroute Is Hard
 
-Standard traceroute works by sending packets with increasing TTL values and listening for ICMP "time exceeded" messages from routers along the path. This only works because the sender controls the probe packets. M-Lab's speed tests are browser-based and cannot send traceroute probes from the user's device — and even in cases where they could, most networks block or rate-limit ICMP in ways that make reverse-direction measurement unreliable.
+Standard traceroute works by sending packets with increasing TTL values and listening for ICMP "time exceeded" messages from routers along the path. This only works because the sender controls the probe packets. M-Lab's speed tests most often run in a browser, which cannot send traceroute probes from the user's device.
 
 RevTr solves this by reconstructing the reverse path from the server side, using several complementary techniques.
 
@@ -63,7 +63,7 @@ When a target client is behind a NAT or firewall and drops all probes, RevTr loo
 
 ### BigQuery
 
-Reverse traceroute data is available in BigQuery. First, set up free access following the [BigQuery access setup guide](/kb/getting-started-bigquery).
+Reverse traceroute data is available in BigQuery.
 
 The primary table is `measurement-lab.revtr_raw.revtr1`. Additional supporting tables:
 
@@ -73,7 +73,7 @@ The primary table is `measurement-lab.revtr_raw.revtr1`. Additional supporting t
 | `revtr_raw.trace1` | Forward traceroutes from M-Lab servers to clients |
 | `revtr_raw.traceatlas1` | Atlas of traceroutes from RIPE probes to M-Lab servers |
 | `revtr_raw.ping1` | Standard and Record-Route pings |
-| `revtr_raw.rankedspoofers1` | Vantage points ranked by proximity to measurement targets |
+| `revtr_raw.ranked_spoofers1` | Vantage points ranked by proximity to measurement targets |
 
 **Important:** always filter by `DATE(date)` in every query — the `date` field is required as a partition filter.
 
@@ -86,7 +86,7 @@ The primary table is `measurement-lab.revtr_raw.revtr1`. Additional supporting t
 -- High quality reverse paths only
 SELECT date, raw
 FROM `measurement-lab.revtr_raw.revtr1`
-WHERE DATE(date) = '2024-06-01'
+WHERE DATE(date) = '2025-06-01'
   AND raw.stop_reason = 'REACHES'
   AND raw.is_try_from_destination_AS = FALSE
   AND NOT EXISTS (
@@ -99,6 +99,14 @@ WHERE DATE(date) = '2024-06-01'
       SELECT 1 FROM UNNEST(raw.revtr_hops) AS inner_hop
       WHERE outer_hop.geolocation_ipinfo.city = inner_hop.geolocation_ipinfo.city
         AND outer_hop.hop_number < inner_hop.hop_number - 1
+        AND (
+          SELECT COUNT(DISTINCT mid.geolocation_ipinfo.city)
+          FROM UNNEST(raw.revtr_hops) AS mid
+          WHERE mid.hop_number > outer_hop.hop_number
+            AND mid.hop_number < inner_hop.hop_number
+            AND mid.geolocation_ipinfo.city IS NOT NULL
+            AND mid.geolocation_ipinfo.city != outer_hop.geolocation_ipinfo.city
+        ) > 0
         AND (outer_hop.hop_type = 4 OR inner_hop.hop_type = 4)
     )
   )
@@ -141,7 +149,7 @@ Each reverse traceroute row contains `raw.uuid`, which is the M-Lab NDT test UUI
 
 **ISP performance diagnosis** — combining NDT performance results with bidirectional path information can help attribute poor performance to specific network segments or interconnects.
 
-**Topology and atlas studies** — the atlas tables (traceatlas1, rankedspoofers1) are useful for researchers studying Internet topology and the structure of available measurement vantage points.
+**Topology and atlas studies** — the atlas tables (traceatlas1, ranked_spoofers1) are useful for researchers studying Internet topology and the structure of available measurement vantage points.
 
 **Validation of forward-path measurements** — pairing forward traceroutes with reverse traceroutes allows researchers to assess how often measurements taken from one direction are representative of the full path.
 
@@ -153,6 +161,4 @@ Each reverse traceroute row contains `raw.uuid`, which is the M-Lab NDT test UUI
 
 - [RevTr 1.0 paper (NSDI '10)](https://www.measurementlab.net/publications/reverse-traceroute.pdf)
 - [RevTr 2.0 paper (IMC '22)](https://dl.acm.org/doi/10.1145/3517745.3561422)
-- [Setting Up Free BigQuery Access](/kb/getting-started-bigquery)
 - [Traceroute (forward path)](/kb/core-service-traceroute)
-- [NDT — the speed test paired with RevTr](/kb/test-ndt)

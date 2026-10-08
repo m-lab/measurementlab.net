@@ -26,18 +26,15 @@ To run the notebooks on your own machine:
 git clone https://github.com/m-lab/mlab-notebooks.git
 cd mlab-notebooks/monthlystats
 
-# Install dependencies (with uv, recommended)
-uv add 'git+https://github.com/m-lab/iqb.git#subdirectory=library' \
-       matplotlib seaborn ipywidgets
+# With uv (recommended): installs the dependencies and starts Jupyter
+uv run jupyter notebook
 
 # Or with pip
-pip install -r requirements.txt
-
-# Start Jupyter
+pip install -r requirements.txt jupyter
 jupyter notebook
 ```
 
-The first time you load data, the notebook downloads the relevant parquet files from M-Lab's public storage and caches them locally in `./cache/`. Subsequent runs read from the local cache and start instantly.
+The notebooks read the manifest, find the URL of the file they need, and open the parquet file directly from M-Lab's public storage. Nothing is cached locally.
 
 ## Loading a Single File Manually
 
@@ -50,7 +47,7 @@ from io import BytesIO
 
 # Step 1: fetch the manifest to find download URLs
 manifest = requests.get(
-    "https://measurementlab.net/data/iqb/manifest.json",
+    "https://www.measurementlab.net/data/stats/manifest.json",
     timeout=30,
 ).json()
 
@@ -145,31 +142,36 @@ print(us_isps)
 | `uploads_by_country` | `country_code` |
 | `downloads_by_country_asn` | `country_code`, `asn` |
 | `uploads_by_country_asn` | `country_code`, `asn` |
-| `downloads_by_country_subdivision1` | `country_code`, `subdivision1` |
-| `uploads_by_country_subdivision1` | `country_code`, `subdivision1` |
-| `downloads_by_country_subdivision1_asn` | `country_code`, `subdivision1`, `asn` |
-| `downloads_by_country_city` | `country_code`, `city` |
-| `downloads_by_country_city_asn` | `country_code`, `city`, `asn` |
+| `downloads_by_country_subdivision1` | `country_code`, `subdivision1_iso_code` |
+| `uploads_by_country_subdivision1` | `country_code`, `subdivision1_iso_code` |
+| `downloads_by_country_subdivision1_asn` | `country_code`, `subdivision1_iso_code`, `asn` |
+| `uploads_by_country_subdivision1_asn` | `country_code`, `subdivision1_iso_code`, `asn` |
+| `downloads_by_country_city` | `country_code`, `subdivision1_iso_code`, `city` |
+| `uploads_by_country_city` | `country_code`, `subdivision1_iso_code`, `city` |
+| `downloads_by_country_city_asn` | `country_code`, `subdivision1_iso_code`, `city`, `asn` |
+| `uploads_by_country_city_asn` | `country_code`, `subdivision1_iso_code`, `city`, `asn` |
 
 
-Download files contain `download_p{N}`, `latency_p{N}`, `loss_p{N}`. Upload files add `upload_p{N}`.
+Download files contain `download_p{N}`, `latency_p{N}`, `loss_p{N}`. Upload files contain only `upload_p{N}`.
 
 ## Computing IQB Scores
 
 If you want to compute [Internet Quality Barometer](/iqb) scores from Monthly Stats, use the `mlab-iqb` library:
 
 ```python
+# Install: pip install 'git+https://github.com/m-lab/iqb.git#subdirectory=library'
 from iqb import IQBCalculator
 
 calculator = IQBCalculator()
 
-# Data dict expected by the calculator
+# Data dict expected by the calculator (`row` and `up_row` are the same
+# country in the download and upload files of the same month)
 data = {
     "m-lab": {
         "download_throughput_mbps": float(row["download_p95"]),
-        "upload_throughput_mbps":   float(row["upload_p95"]),
-        "latency_ms":               float(row["latency_p5"]),   # note: p5 = near-best latency
-        "packet_loss":              float(row["loss_p5"]),       # note: p5 = near-best loss
+        "upload_throughput_mbps":   float(up_row["upload_p95"]),
+        "latency_ms":               float(row["latency_p95"]),  # note: p95 = near-best latency (labels are flipped)
+        "packet_loss":              float(row["loss_p95"]),     # note: p95 = near-best loss (labels are flipped)
     }
 }
 
@@ -177,7 +179,7 @@ score = calculator.calculate_iqb_score(data=data)
 print(f"IQB score: {score:.3f}")
 ```
 
-See the [IQB scores notebook](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F02-iqb-scores.ipynb) for a full walkthrough with country comparisons, use-case breakdowns, and time series.
+See the [IQB library README](https://github.com/m-lab/iqb/blob/main/library/README.md) for installation and a complete example.
 
 ## Further Reading
 

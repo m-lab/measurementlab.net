@@ -22,7 +22,7 @@ Monthly Stats files store the full **percentile distribution** of each metric ac
 
 ## What a Percentile Means Here
 
-A percentile column `metric_pN` answers: *"What was the metric value at or below which N% of tests fell?"*
+A percentile column `metric_pN` answers: *"What was the metric value at or below which N% of tests fell?"* For latency and loss, the labels are flipped (see below).
 
 For example, `download_p50` is the **median download speed** — half of all NDT tests in that geography/month were slower, half were faster.
 
@@ -47,7 +47,7 @@ This is the most important thing to understand about Monthly Stats percentiles.
 
 **For download and upload speed, higher is better.** `download_p95` is the 95th percentile of speed — only 5% of tests were faster. It represents near-best performance.
 
-**For latency and loss, lower is better.** But the percentile numbering still follows the same convention — `latency_p95` is the 95th percentile of latency values, meaning 95% of tests had *lower* latency. It therefore represents **near-worst** latency (only 5% of tests had higher latency).
+**For latency and loss, lower is better.** Monthly Stats flips the labels for these metrics, so that a higher label always means better performance: `latency_p95` is the 5th percentile of latency values, meaning only 5% of tests had *lower* latency. It therefore represents **near-best** latency, like `download_p95` represents near-best speed.
 
 In summary:
 
@@ -55,15 +55,15 @@ In summary:
 | Metric | `p5` means | `p95` means |
 | ----------------- | --------------------------------- | ----------------------------------- |
 | Download / Upload | Near-worst speed | Near-best speed |
-| Latency | Near-best latency (lowest values) | Near-worst latency (highest values) |
-| Loss | Near-best loss (lowest values) | Near-worst loss (highest values) |
+| Latency | Near-worst latency (highest values) | Near-best latency (lowest values) |
+| Loss | Near-worst loss (highest values) | Near-best loss (lowest values) |
 
 
 ### Why does this matter?
 
-If you naively plot `latency_p95` alongside `download_p95` expecting both to represent "good" performance, you will draw the wrong conclusions. Geographies with high `latency_p95` have *worse* latency, not better.
+If you read `latency_p95` as a standard 95th percentile (near-worst latency), you will draw the wrong conclusions: it is near-best latency. Geographies with high `latency_p95` have *worse* latency, not better.
 
-The Internet Quality Barometer (IQB) handles this by applying the polarity correctly when computing scores: it uses `download_p95` (high = good) but `latency_p5` or `latency_p50` (low = good) as inputs.
+The Internet Quality Barometer (IQB) handles this by applying the polarity correctly when computing scores: it uses the same label for every metric, by default `download_p95`, `upload_p95`, `latency_p95`, and `loss_p95`, all of which represent near-best performance.
 
 ### Code example
 
@@ -86,7 +86,7 @@ The right choice depends on your question:
 
 **Use `p95`** for download/upload when you want near-peak performance — useful for understanding what fast connections look like in an area. The IQB framework uses `p95` download/upload as an optimistic baseline for its quality thresholds.
 
-**Use `p5`** for latency/loss when you want near-best latency — the lowest latency achieved by 95% of users. This is the IQB convention.
+**Use `p95`** for latency/loss too when you want near-best values, because the labels are flipped. This is the IQB convention.
 
 **Use `p25`–`p75`** to understand variability and equity. A location where `download_p75 / download_p25` is very large has high inequality between its fast and slow users.
 
