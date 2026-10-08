@@ -11,7 +11,7 @@ sections:
     content: |-
       # Bring Your Own Server
 
-      M-Lab is committed to evolving with the Internet and now welcomes servers in cloud, edge, access networks. 
+      M-Lab is committed to evolving with the Internet and now welcomes servers in cloud, edge and access networks. 
 
       The **Bring Your Own Server** (BYOS) project is a host-managed deployment model that allows network providers to run M-Lab’s software on their own infrastructure and join an open source global measurement platform. 
 
@@ -23,8 +23,7 @@ sections:
 
       ### When you become a BYOS partner you…
 
-      Join the largest open Internet measurement platform 
-
+      - Join the largest open Internet measurement platform 
       - Contribute to 15 years of measuring the Internet at scale
       - Support Internet openness, transparency and equity
 
