@@ -1,12 +1,13 @@
 title: Host-Managed Documentation
 permalink: host-managed
-status: published
+status: draft
 sections:
   - type: richText
     background:
       color: white
+      type: full
     withTOC: true
-    content: |
+    content: |+
       # Setting up a host-managed server
 
       ## Register with M-Lab
@@ -38,7 +39,7 @@ sections:
       In order to assure the ongoing data quality we require all host organizations to:
 
       - Keep their contact information at M-Lab up-to-date.
-      - Monitor email from host-managed@measurementlab.net, the host management list.
+      - Monitor email from [host-managed@measurementlab.net](mailto:host-managed@measurementlab.net), the host management list.
       - Respond to email requests from the M-Lab team.
       - Keep the operating system up-to-date by applying system updates as needed.
       - Keep M-Lab software up-to-date by reinstalling it as requested. (We are planning to further automate this process).
@@ -60,7 +61,7 @@ sections:
 
       - **ORGANIZATION**: the organization name assigned to you by M-Lab after you register.
       - **API_KEY**: the API key that M-Lab provides you after you register.
-      - **IATA**: the 3-character [IATA code](https://www.iata.org/en/publications/directories/code-search/) of the nearest airport. If the nearest airport doesn't have an IATA code, then find the nearest one that does. If needed, M-Lab can work with you on the proper value for this variable. The IATA code must exist in this database: https://github.com/ip2location/ip2location-iata-icao/
+      - **IATA**: the 3-character [IATA code](https://www.iata.org/en/publications/directories/code-search/) of the nearest airport. If the nearest airport doesn't have an IATA code, then find the nearest one that does. If needed, M-Lab can work with you on the proper value for this variable. The IATA code must exist in this database: [https://github.com/ip2location/ip2location-iata-icao/](https://github.com/ip2location/ip2location-iata-icao/)
       - **PROBABILITY**: this is the probability that M-Lab's load balancing service ([Locate Service](https://github.com/m-lab/locate)) will send a test to your server. The M-Lab platform gets many millions of tests per day. Depending on where your server is located, its resources, and the speed of the machine's uplink, the test volume could possibly overwhelm the machine and/or your network. You can modify this to suit your needs, either increasing or decreasing the traffic load as necessary. This is the preferred mechanism for regulating server load. The value is a percentage expressed as a floating number between 0.0 and 1.0.
       - **INTERFACE_NAME**: the NDT server needs to know the name of the primary network interface on the machine (e.g., eth0, enp114s0, etc.)
       - **UPLINK**: the speed of the machine's connection to the Internet in gigabits/second, expressed as an integer value followed by "g" e.g., 1g, 5g, 10g, etc.
@@ -159,3 +160,4 @@ sections:
       4. Clients run [NDT tests](https://github.com/m-lab/ndt-server) targeting this node
       5. NDT measurements are archived
       6. NDT measurements are published to BigQuery
+
