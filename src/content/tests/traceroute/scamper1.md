@@ -1,13 +1,10 @@
 ---
+slug: scamper1
 permalink: /tests/traceroute/scamper1/
-title: "scamper1 Schema"
-status: published
+title: scamper1 Schema
 kind: core-service
 testStatus: current
-parentTest: /tests/traceroute/
-showInIndex: false
+status: draft
 ---
-
 # scamper1 Schema
 
-<!-- TODO: inline schema_scamper1row.md -->
