@@ -98,14 +98,15 @@ sections:
 
       M-Lab is committed to preserving user privacy, and publishes an extensive [Privacy Policy.](/privacy)  
 
-
       #### 2.2.2 General Data Protection Regulation (GDPR) Compliance Policy
 
       M-Lab provides complete details of our compliance with the European Union's General Data Protection Regulation (GDPR) in our Privacy Policy. In summary, with respect to GDPR, M-Lab is primarily a data controller (GDPR Art. 4.7) insofar as we determine the means and purposes of the data collected by a test hosted on our infrastructure and make it public under our the test's methodology. For running tests developed by third-party researchers (further "experimenters"), M-Lab takes the role of joint controller with the experimenter, insofar as the experimenter leverages M-Lab tools to process and host the data resulting from their experiment. Some experimenters may choose to not leverage M-Lab tools for this purpose, in which case they are sole data controllers, with M-Lab simply hosting experiment code and not data. We recommend reading the privacy policy found on the website of each experimenter's website for complete information. Links to experimenters' websites can be found on our pages describing each M-Lab hosted test. All M-Lab hosted tests are listed on our [tests page](/tests).
 
       #### 2.2.3 Acceptable Use Policy
 
-      Accompanying the M-Lab Privacy Policy, M-Lab publishes an Acceptable Use Policy on our website: [https://measurementlab.net/aup/](/aup)
+      Accompanying the M-Lab Privacy Policy, M-Lab publishes an [Acceptable Use Policy.](/aup)
+
+
 
       #### 2.2.4 Open Access Policy
 
