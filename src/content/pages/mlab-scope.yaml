@@ -5,8 +5,9 @@ sections:
   - type: richText
     background:
       color: white
+      type: full
     withTOC: true
-    content: |
+    content: |-
       # M-Lab - Conceptual & Technical Scope & Policies
 
       Measurement Lab (M-Lab) is an open, distributed server platform on which researchers can deploy Internet measurement tools. The goal of M-Lab to advance research and empower the public with useful information about the characteristics of their broadband connections. By enhancing Internet transparency, we aim to help sustain a healthy, innovative Internet.
@@ -15,8 +16,9 @@ sections:
 
       **Document history**
 
-      * Version 2.0 2019-07-01 (this document)
-      * [Version 1.0 2009-01-28](/publications/mlab-founding-vision.pdf) (archived)
+      - Version 3.0 2026-05-03 (this document, operating at Superbloom)
+      - Version 2.0 2019-07-01 (Operating at Code for Science and Society)
+      - [Version 1.0 2009-01-28](/publications/mlab-founding-vision.pdf) (archived)
 
       ## 1. Measurement Lab Defined
 
@@ -40,9 +42,9 @@ sections:
 
       M-Lab is intended as an open platform, defined by the following objectives:
 
-      * Support as wide an array of Internet measurement tools as possible.
-      * Make all data collected through M-Lab publicly available and licensed in the public domain.
-      * All researchers' server-side and client side source code and tools are required to be published under an [OSI-approved license](https://opensource.org/licenses), and operated in a way that allows third-parties to develop client-side integrations of their software.
+      - Support as wide an array of Internet measurement tools as possible.
+      - Make all data collected through M-Lab publicly available and licensed in the public domain.
+      - All researchers' server-side and client side source code and tools are required to be published under an [OSI-approved license](https://opensource.org/licenses), and operated in a way that allows third-parties to develop client-side integrations of their software.
 
       M-Lab operates as a community-based effort. In order for M-Lab to achieve its objectives, it relies on the support and participation of additional companies, institutions, and researchers. M-Lab welcomes the support of other companies and researchers who would like to help expand the platform and ensure its growth and success.
 
@@ -50,19 +52,19 @@ sections:
 
       Measurement Lab is jointly developed by staff teams at Code for Science & Society, Google Inc., and external open source contributors. M-Lab's operations, administration, and maintenance (OA&M) framework is a managed Kubernetes cluster, with each experiment running as a daemonset. These daemonsets are deployed to physical servers using Docker containers. M-Lab's platform is designed to:
 
-      * Provide passive server-side resources for client-initiated active network measurement of Internet users' broadband connections.
-      * Provide resource allocation on each server that will ensure sufficient bandwidth and machine resources.
+      - Provide passive server-side resources for client-initiated active network measurement of Internet users' broadband connections.
+      - Provide resource allocation on each server that will ensure sufficient bandwidth and machine resources.
 
       We limit oversubscription of server infrastructure and network resources using a default server resource allocation to each experiment. See section 2.3.1 of this document for more information.
 
       Each measurement site location is referred to as a "pod", consisting of a switch and four servers. Pods are connected to between 1Gbps and 10Gbps direct transit. Each server currently in use has the following resources:
 
-      * ModelName : Intel(R) Xeon(R) CPU E5-2640 v3 @ 2.60GHz
-      * Sockets : 2
-      * Cores/Socket : 8
-      * Threads/Core : 2
-      * TotalCores : 16
-      * TotalThreads : 32
+      - ModelName : Intel(R) Xeon(R) CPU E5-2640 v3 @ 2.60GHz
+      - Sockets : 2
+      - Cores/Socket : 8
+      - Threads/Core : 2
+      - TotalCores : 16
+      - TotalThreads : 32
 
       Three of the four servers will serve production traffic, and the fourth server will be reserved for testing.
 
@@ -72,26 +74,28 @@ sections:
 
       Participants in M-Lab serve a number of roles.
 
-      * **Core Infrastructure Partners**: Companies, academic institutions, and other organizations provide and host servers ("sites"), and provide them with connectivity.
-      * **Software Environment, OA&M**: M-Lab staff manage the entire OA&M infrastructure and lifecycle:
-        * Management and maintenance of the OS/VM software on all servers.
-        * Packaging and distribution of experiments to Docker containers on all servers
-        * Responding to patches, need for reboots, etc.
-        * Acting as point of first contact for parties having questions about the activities of M-Lab.
-      * **Measurement Experiment Developers**: Individual researchers create active Internet measurement experiments that run on the servers (instrumented versions of application protocols). Researchers whose experiments are approved and meet M-Lab's open access goals (described below, section 2) then coordinate with M-Lab staff to package, test, and deploy their experiment container to M-Lab infrastructure.
-      * **Data Hosting, Analysis, and Other Resources**: Organizations and institutions can contribute to M-Lab by providing data aggregation and publishing resources and by collecting and archiving data from M-Lab's servers ("repository"). They might also provide other technical resources, such as computing resources for data analysis. Other contributions might include the integration of experiments' client side code into web properties, software, or hardware products, using M-Lab as a platform-as-a-service.
-      * **Management & Organization**: Measurement Lab is sponsored project of [Code for Science & Society](https://codeforsociety.org/) (CS&S), a US-based 501(c)(3) nonprofit supporting open collaboration in public interest technology through fiscal sponsorship and other programs supporting sustainable open source. M-Lab is overseen by an advisory board at CS&S, who, define and implement the platform's policies and processes in light of the project's objectives in consultation with M-Lab management staff. Operationally, M-Lab is led by teams working for CS&S; Google, Inc.; Princeton University's PlanetLab; and is supported by partners around the world. Together, these organizations comprise the "Measurement Lab Consortium" or MLC. Organizationally, M-Lab maintains several committees that advise on various aspects of M-Lab operations, notably, the [Experiment Review Committee](/who/#experiment-review-committee), who review applications for new measurement experiments.
-      * **User and researcher outreach**: M-Lab directs users to the various experiments running on the platform, through a public facing website, mailing list, and other means. M-Labalso seeks to actively engage the research community in order to extend the platform and its usefulness to a wide variety of audiences.
+      - **Core Infrastructure Partners**: Companies, academic institutions, and other organizations provide and host servers ("sites"), and provide them with connectivity.
+      - **Software Environment, OA&M**: M-Lab staff manage the entire OA&M infrastructure and lifecycle:
+        - Management and maintenance of the OS/VM software on all servers.
+        - Packaging and distribution of experiments to Docker containers on all servers
+        - Responding to patches, need for reboots, etc.
+        - Acting as point of first contact for parties having questions about the activities of M-Lab.
+      - **Measurement Experiment Developers**: Individual researchers create active Internet measurement experiments that run on the servers (instrumented versions of application protocols). Researchers whose experiments are approved and meet M-Lab's open access goals (described below, section 2) then coordinate with M-Lab staff to package, test, and deploy their experiment container to M-Lab infrastructure.
+      - **Data Hosting, Analysis, and Other Resources**: Organizations and institutions can contribute to M-Lab by providing data aggregation and publishing resources and by collecting and archiving data from M-Lab's servers ("repository"). They might also provide other technical resources, such as computing resources for data analysis. Other contributions might include the integration of experiments' client side code into web properties, software, or hardware products, using M-Lab as a platform-as-a-service.
+      - **Management & Organization**: Measurement Lab is sponsored project of [Superbloom](https://superbloom.design/), a US-based 501(c)(3) nonprofit supporting open collaboration in public interest technology through fiscal sponsorship and other programs supporting sustainable open source. M-Lab is overseen by an advisory board at Superbloom, who, define and implement the platform’s policies and processes in light of the project’s objectives in consultation with M-Lab management staff. Operationally, M-Lab is led by teams working for Superbloom; Google, Inc.; Princeton University’s PlanetLab; and is supported by partners around the world. Together, these organizations comprise the “Measurement Lab Consortium” or MLC. Organizationally, M-Lab maintains several committees that advise on various aspects of M-Lab operations, notably, the [Experiment Review Committee](https://www.measurementlab.net/who/#experiment-review-committee), who review applications for new measurement experiments.
+      - **User and researcher outreach**: M-Lab directs users to the various experiments running on the platform, through a public facing website, mailing list, and other means. M-Labalso seeks to actively engage the research community in order to extend the platform and its usefulness to a wide variety of audiences.
+      - **User and researcher outreach**: M-Lab directs users to the various experiments running on the platform, through a public facing website, mailing list, and other means. M-Labalso seeks to actively engage the research community in order to extend the platform and its usefulness to a wide variety of audiences.
 
       ## 2. Organization, Policies and Processes
 
       ### 2.1 Organization
 
-      Measurement Lab is sponsored project of [Code for Science & Society](https://codeforsociety.org/) (CS&S), a US-based 501(c)(3) nonprofit supporting open collaboration in public interest technology through fiscal sponsorship and other programs supporting sustainable open source. M-Lab is overseen by an advisory board at CS&S, who, define and implement the platform's policies and processes in light of the project's objectives in consultation with M-Lab management staff. Operationally, M-Lab is led by teams working for CS&S; Google, Inc.; Princeton University's PlanetLab; and is supported by partners around the world. Together, these organizations comprise the "Measurement Lab Consortium" or MLC.
+      Measurement Lab is sponsored project of [Superbloom](https://superbloom.design/), a US-based 501(c)(3) nonprofit supporting open collaboration in public interest technology through fiscal sponsorship and other programs supporting sustainable open source. M-Lab is overseen by an advisory board at Superbloom, who, define and implement the platform’s policies and processes in light of the project’s objectives in consultation with M-Lab management staff. Operationally, M-Lab is led by teams working for Superbloom; Google, Inc.; Princeton University’s PlanetLab; and is supported by partners around the world. Together, these organizations comprise the “Measurement Lab Consortium” or MLC.
 
       ### 2.2 Policies
 
       #### 2.2.1 Privacy Policy
+
       M-Lab is committed to preserving user privacy, and publishes an extensive Privacy Policy on our website: [https://measurementlab.net/privacy/](/privacy/).
 
       #### 2.2.2 General Data Protection Regulation (GDPR) Compliance Policy
@@ -141,11 +145,11 @@ sections:
 
       Default Resource Allocations:
 
-      * CPU: 1 core
-      * RAM: 1GB
-      * Disk space: 20GB
-      * Disk I/O: 10%
-      * Network bandwidth: 100 Mbps Avg over 5 min
+      - CPU: 1 core
+      - RAM: 1GB
+      - Disk space: 20GB
+      - Disk I/O: 10%
+      - Network bandwidth: 100 Mbps Avg over 5 min
 
       Limited CPU and Network bandwidth are the most likely to interfere with measurements. Therefore care must be taken to pace clients in such a way to respect resource utilization limits. Based on the available capacity and experiment requirements, default allocations may be adjusted. If you need more, let us know. We are always interested in expanding available platform resources for all experiments through third-party donations.
 
@@ -159,14 +163,14 @@ sections:
 
       In the interests of managing the use of resources and steering the mission of the project, any experiment running on M-Lab must adhere to the following underlying principles, unless waived by the Experiment Design and Review Committee due to unusual circumstances:
 
-      * The experiment being used must be open-source.
-      * The experiment must produce server-side data.
-      * The data must be released into the public domain.
-      * The measurement must be client-initiated.
-      * Experiments must only perform "active measurements".
-      * Experiments must not collect personally identifying information on M-Lab infrastructure.
-      * Experiments are subject to operational auditing and tracing.
-      * Experimenters must document compliance as Data Controllers under GDPR, and publish a privacy policy publicly on the Internet.
+      - The experiment being used must be open-source.
+      - The experiment must produce server-side data.
+      - The data must be released into the public domain.
+      - The measurement must be client-initiated.
+      - Experiments must only perform "active measurements".
+      - Experiments must not collect personally identifying information on M-Lab infrastructure.
+      - Experiments are subject to operational auditing and tracing.
+      - Experimenters must document compliance as Data Controllers under GDPR, and publish a privacy policy publicly on the Internet.
 
       Complete details on M-Lab's policies, procedures, and requirements for reviewing and approving new experiments applying for hosting on the M-Lab platform may be found in the [M-Lab Experiment Developer Responsibilities, Requirements, and Guidelines](/experimenter-requirements-guidelines/).
 
@@ -184,11 +188,11 @@ sections:
 
       Each new M-Lab server pod requires:
 
-      * 5U rack space and power for four servers and a switch
-      * one /26 IPv4 block, and optionally a /64 IPv6 block.
-      * upstream connectivity of 1 Gbps, preferably burstable to 10 Gbps, but flexible depending on the average regional consumer speed
-      * remote hands support for the deployment lifecycle
-      * commitment of 3 years via [Memorandum of Understanding (MoU)](/site-host-mou/), renewable at the time of expiry
+      - 5U rack space and power for four servers and a switch
+      - one /26 IPv4 block, and optionally a /64 IPv6 block.
+      - upstream connectivity of 1 Gbps, preferably burstable to 10 Gbps, but flexible depending on the average regional consumer speed
+      - remote hands support for the deployment lifecycle
+      - commitment of 3 years via [Memorandum of Understanding (MoU)](/site-host-mou/), renewable at the time of expiry
 
       #### 2.3.5 Decommissioning M-Lab Servers
 
@@ -204,17 +208,19 @@ sections:
 
       Table 1 gives the bill of materials required to build a site.
 
-      | Item  | Qty. | Rack Space | Description         |
-      | ----- | ---- | ---------- | ------------------- |
-      | 1     | 4    | 4 x 1U     | Server hardware (with rack-mount kit), dual-processor, octo-core |
-      | 2     | 1    | 1U         | Rack switch |
-      | 3     | 2    |            | Rack mountable PDU |
-      | 4     | 6    |            | Ethernet cables, Cat5e or better: (4 used between servers & switch), (2 used between switch & PDUs) |
-      | 5     | 4    |            | Fiber patch cables (servers to switch) |
-      | 5     | 8    |            | Power cords (server to PDU) |
-      | 6     | 2    |            | Power cord (switch to PDU) |
 
-      _Table 1_
+      | Item | Qty. | Rack Space | Description |
+      | ---- | ---- | ---------- | --------------------------------------------------------------------------------------------------- |
+      | 1 | 4 | 4 x 1U | Server hardware (with rack-mount kit), dual-processor, octo-core |
+      | 2 | 1 | 1U | Rack switch |
+      | 3 | 2 |  | Rack mountable PDU |
+      | 4 | 6 |  | Ethernet cables, Cat5e or better: (4 used between servers & switch), (2 used between switch & PDUs) |
+      | 5 | 4 |  | Fiber patch cables (servers to switch) |
+      | 5 | 8 |  | Power cords (server to PDU) |
+      | 6 | 2 |  | Power cord (switch to PDU) |
+
+
+      *Table 1*
 
       ### 3.2 Site Requirements
 
