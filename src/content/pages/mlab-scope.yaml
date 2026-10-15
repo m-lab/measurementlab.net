@@ -50,7 +50,7 @@ sections:
 
       ### 1.3 Scope
 
-      Measurement Lab is jointly developed by staff teams at Code for Science & Society, Google Inc., and external open source contributors. M-Lab's operations, administration, and maintenance (OA&M) framework is a managed Kubernetes cluster, with each experiment running as a daemonset. These daemonsets are deployed to physical servers using Docker containers. M-Lab's platform is designed to:
+      Measurement Lab is jointly developed by staff teams at Superbloom, Google Inc., and external open source contributors. M-Lab’s operations, administration, and maintenance (OA&M) framework is a managed Kubernetes cluster, with each experiment running as a daemonset. These daemonsets are deployed to physical servers using Docker containers. M-Lab’s platform is designed to: 
 
       - Provide passive server-side resources for client-initiated active network measurement of Internet users' broadband connections.
       - Provide resource allocation on each server that will ensure sufficient bandwidth and machine resources.
