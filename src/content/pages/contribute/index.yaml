@@ -34,8 +34,8 @@ sections:
       - [Join the public mailing list for updates and announcements](https://groups.google.com/a/measurementlab.net/forum/?fromgroups#!forum/discuss)
       - [Contact the team if you have questions about research or analysis](mailto:hello@measurementlab.net)
       - Developers with experience in data analysis, visualization, or application development may also contribute by building tools that work with M-Lab’s tests and datasets. All of these resources are open source and openly licensed. Check out the following resources:
-        - [M-Lab's conceptual and technical scope and policies](/mlab-scope)
-        - [M-Lab experiment developer responsibilities, requirements, and guidelines](/experimenter-requirements-guidelines)
+        - [M-Lab's Conceptual and Technical Scope and Policies](/mlab-scope)
+        - [M-Lab Experiment Developer Responsibilities, Requirements, and Guidelines](/experimenter-requirements-guidelines)
 
       ## Develop a Measurement Test
 
@@ -43,8 +43,8 @@ sections:
 
       Before reaching out, please review the following documentation:
 
-      - [M-Lab Conceptual & Technical Scope and Related Policies](https://www.measurementlab.net/mlab-scope/)
-      - [Experiment Developer Responsibilities, Requirements, and Guidelines](https://www.measurementlab.net/experimenter-requirements-guidelines/)
+      - [M-Lab Conceptual & Technical Scope and Related Policies](/mlab-scope)
+      - [Experiment Developer Responsibilities, Requirements, and Guidelines](/experimenter-requirements-guidelines)
 
       These resources explain the expectations, responsibilities, and technical requirements for researchers who want to run experiments on the M-Lab platform.
 
