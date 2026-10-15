@@ -35,8 +35,7 @@ sections:
       - [Contact the team if you have questions about research or analysis](mailto:hello@measurementlab.net)
       - Developers with experience in data analysis, visualization, or application development may also contribute by building tools that work with M-Lab’s tests and datasets. All of these resources are open source and openly licensed. Check out the following resources:
         - [M-Lab's conceptual and technical scope and policies](/mlab-scope)
-        - [M-Lab's Roles & Responsibilities for new researchers](/experimenter-requirements-guidelines)
-        - [M-Lab's requirements and procedures for accepting new tools](https://www.measurementlab.net/publications/mlab-procedures-new-tools.pdf)
+        - [M-Lab experiment developer responsibilities, requirements, and guidelines](/experimenter-requirements-guidelines)
 
       ## Develop a Measurement Test
 
