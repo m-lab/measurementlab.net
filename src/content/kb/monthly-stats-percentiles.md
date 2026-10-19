@@ -14,7 +14,7 @@ tags:
   - Research
 difficulty: intermediate
 ---
-Monthly Stats files store the full **percentile distribution** of each metric across all NDT tests in a given geography and month. Understanding what percentiles mean — and a critical quirk in how latency and loss are stored — is essential for correct analysis.
+Monthly Stats files store the full **percentile distribution** of each metric across all NDT tests in a given geography and month. Understanding what the percentiles mean is essential for correct analysis.
 
 💡
 
@@ -53,7 +53,7 @@ In summary:
 
 
 | Metric | `p5` means | `p95` means |
-| ----------------- | --------------------------------- | ----------------------------------- |
+| ----------------- | ----------------------------------- | --------------------------------- |
 | Download / Upload | Near-worst speed | Near-best speed |
 | Latency | Near-worst latency (highest values) | Near-best latency (lowest values) |
 | Loss | Near-worst loss (highest values) | Near-best loss (lowest values) |
@@ -61,7 +61,7 @@ In summary:
 
 ### Why does this matter?
 
-If you read `latency_p95` as a standard 95th percentile (near-worst latency), you will draw the wrong conclusions: it is near-best latency. Geographies with high `latency_p95` have *worse* latency, not better.
+If you read `latency_p95` as a standard 95th percentile (near-worst latency), you will draw the wrong conclusions: it actually represents near-best latency. Remember that for latency, lower values are always better—a `latency_p95` of 10ms indicates better network quality than 50ms.
 
 The Internet Quality Barometer (IQB) handles this by applying the polarity correctly when computing scores: it uses the same label for every metric, by default `download_p95`, `upload_p95`, `latency_p95`, and `loss_p95`, all of which represent near-best performance.
 
@@ -69,13 +69,12 @@ The Internet Quality Barometer (IQB) handles this by applying the polarity corre
 
 ```python
 # Correct: for latency, LOWER values are better, so nsmallest finds best
-best_latency = df.nsmallest(10, "latency_p50")[["country_code", "latency_p50"]]
+best_latency = df.nsmallest(10, "latency_p95")[["country_code", "latency_p50"]]
 
 # Correct: for download, HIGHER values are better
-best_download = df.nlargest(10, "download_p50")[["country_code", "download_p50"]]
+best_download = df.nlargest(10, "download_p95")[["country_code", "download_p50"]]
 
-# Wrong: this finds countries with worst latency, not best
-worst_approach = df.nlargest(10, "latency_p50")  # ← these are the SLOWEST countries
+
 ```
 
 ## Which Percentile Should I Use?
@@ -86,7 +85,7 @@ The right choice depends on your question:
 
 **Use `p95`** for download/upload when you want near-peak performance — useful for understanding what fast connections look like in an area. The IQB framework uses `p95` download/upload as an optimistic baseline for its quality thresholds.
 
-**Use `p95`** for latency/loss too when you want near-best values, because the labels are flipped. This is the IQB convention.
+**Use `p95`** for latency/loss too when you want near-best values, **because the labels are flipped**. This is the IQB convention.
 
 **Use `p25`–`p75`** to understand variability and equity. A location where `download_p75 / download_p25` is very large has high inequality between its fast and slow users.
 
