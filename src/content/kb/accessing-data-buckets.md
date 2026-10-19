@@ -10,15 +10,26 @@ tags: [Data Access]
 difficulty: beginner
 ---
 
-**Q: How do I access M-Lab's raw NDT7 data buckets? I can browse them in a web browser but get permission errors with gcloud.**
+**Q: How do I access M-Lab's raw NDT7 data buckets? I get permission errors with gcloud.**
 
-**A:** The M-Lab data buckets are publicly accessible and don't require special permissions. However, `gcloud storage ls` requires authentication by default. If you are not logged in, you need to add the `CLOUDSDK_AUTH_DISABLE_CREDENTIALS=true` override:
+**A:** Read access to the M-Lab data buckets is granted to Google accounts that are members of the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/g/discuss). Anonymous requests are denied. To access the data:
+
+1. Subscribe the Google account you want to use to the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/g/discuss).
+2. Log in to gcloud with that same account:
 
 ```bash
-CLOUDSDK_AUTH_DISABLE_CREDENTIALS=true gcloud storage ls gs://archive-measurement-lab/ndt/ndt7/
+gcloud auth login
 ```
 
-Also, listing all buckets in the project fails, because it is a restricted operation. Instead, access the data directly by specifying the bucket path, as shown above.
+3. Access the data by specifying the bucket path:
+
+```bash
+gcloud storage ls gs://archive-measurement-lab/ndt/ndt7/
+```
+
+Listing all buckets in the project fails even for members, because it is a restricted operation. Always access the data directly by specifying the bucket path, as shown above.
+
+For non-interactive access with a service account, see [Archival Data](/data/docs/archival-data/).
 
 ## Data Organization
 
@@ -31,7 +42,7 @@ gs://archive-measurement-lab/ndt/ndt7/YYYY/MM/DD/
 For example, to access data from a specific date:
 
 ```bash
-CLOUDSDK_AUTH_DISABLE_CREDENTIALS=true gcloud storage ls gs://archive-measurement-lab/ndt/ndt7/2024/04/05/
+gcloud storage ls gs://archive-measurement-lab/ndt/ndt7/2024/04/05/
 ```
 
-Reading the public data requires no special permissions. If you are not logged in to gcloud, `CLOUDSDK_AUTH_DISABLE_CREDENTIALS=true` tells it to send anonymous requests instead of looking for an account.
+If you get a `401` or `403` error, check that `gcloud config get-value account` shows the account you subscribed to the Discuss group.

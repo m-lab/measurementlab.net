@@ -87,7 +87,7 @@ Each bucket contains thousands of compressed files in `tar` format organized by 
 
 It is worth noting that the idea of a cycle is somewhat outdated. The original idea around 2003 was that `scamper` would do cycles across the same set of addresses over time. A list was a unique set of addresses, and a cycle was a pass over it. This might be an artifact of [`skitter`](https://catalog.caida.org/details/software/skitter), or [`arts++`](https://catalog.caida.org/details/software/arts). So the cycle id probably starts at zero, and increments by one each pass through a list.
 
-The commands below show how an individual traceroute file can be viewed in a human-readable format using the `jq` tool.  When printed in human-readable format, the JSONL files can be anywhere in size from around 100 lines to more than 4,000 lines. In the example below, "..." denotes output lines that were removed for brevity:
+The commands below show how an individual traceroute file can be viewed in a human-readable format using the `jq` tool.  When printed in human-readable format, the JSONL files can be anywhere in size from around 100 lines to more than 4,000 lines. In the example below, "..." denotes output lines that were removed for brevity. Downloading the archive requires a Google account that is a member of the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/g/discuss), logged in with `gcloud auth login` (see [Archival Data](/data/docs/archival-data/)):
 
 
 ```

@@ -52,10 +52,11 @@ Each traceroute record captures:
 
 Not all hops respond to probes; gaps in the hop sequence are common and don't indicate a problem.
 
-**To read a raw file:**
+**To read a raw file** (requires a Google account in the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/g/discuss); see [Accessing M-Lab Data Buckets](/kb/accessing-data-buckets)):
 
 ```bash
-CLOUDSDK_AUTH_DISABLE_CREDENTIALS=true gcloud storage cp gs://archive-measurement-lab/ndt/scamper1/2024/06/01/20240601T003005.479655Z-scamper1-mlab2-lga06-ndt.tgz .
+gcloud auth login
+gcloud storage cp gs://archive-measurement-lab/ndt/scamper1/2024/06/01/20240601T003005.479655Z-scamper1-mlab2-lga06-ndt.tgz .
 tar xzf 20240601T003005.479655Z-scamper1-mlab2-lga06-ndt.tgz
 jq . < 2024/06/01/<timestamp>_<UUID>.jsonl | more
 ```
