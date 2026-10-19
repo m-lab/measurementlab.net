@@ -13,15 +13,15 @@ tags:
   - Research
 difficulty: beginner
 ---
-M-Lab publishes a dataset called **Monthly Stats** — pre-computed monthly summaries of NDT speed test results, available as [Parquet](https://parquet.apache.org/) files. Monthly Stats make it possible to explore M-Lab data without writing BigQuery SQL or processing billions of raw test records.
+M-Lab publishes a dataset called **[Monthly Stats](/data/stats)** — pre-computed monthly summaries of NDT speed test results, available as [Parquet](https://parquet.apache.org/) files. Monthly Stats make it possible to explore M-Lab data without writing BigQuery SQL or processing billions of raw test records.
 
 💡
 
-**Explore the data interactively:** [Open the Monthly Stats introduction notebook on Binder](https://mybinder.org/v2/gh/m-lab/mlab-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2Fmonthlystats%2F00-introduction-and-catalog.ipynb) — no installation required.
+**Explore the data interactively:** [Open the Monthly Stats introduction notebooks on Binder](https://github.com/m-lab/mlab-notebooks/tree/main/monthlystats) — no installation required.
 
 ## What Monthly Stats Are
 
-Each Monthly Stats file covers one calendar month of NDT measurements, pre-aggregated at a chosen geographic granularity. Instead of one row per test, each row summarises all tests in that geography/ISP for that month — recording the full **percentile distribution** of download speed, upload speed, latency, and packet loss.
+Each Monthly Stats file covers one calendar month of NDT measurements, pre-aggregated at a chosen geographic granularity. Instead of one row per test, each row summarises all tests in that geography/ISP for that month — recording the full **percentile distribution** of download speed, upload speed, latency, and packet loss. Contained in the Monthly Stats data is a manifest.json which lists all of the files in the dataset. This small JSON metadata file can be used to monitor changes and updates to the data. 
 
 This design means you can answer questions like "what was the median download speed in Germany in October 2024?" with a single parquet read rather than scanning hundreds of millions of raw test rows.
 
@@ -52,7 +52,7 @@ Every download parquet file contains:
 
 
 | Column | Description |
-| --------------- | ------------------------------------------------ |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `country_code` | ISO 3166-1 alpha-2 code (e.g. `US`, `DE`) |
 | `asn` | Autonomous System Number *(ASN slices only)* |
 | `as_name` | AS (provider) name *(ASN slices only)* |
