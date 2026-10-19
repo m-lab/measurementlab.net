@@ -70,7 +70,7 @@ WHERE ndt.date = '2024-06-01' and tcpinfo.date = '2024-06-01'
 ### Raw Data in Google Cloud Storage
 
 Raw TCP INFO snapshots are archived in GCS as part of each test's sidecar data. For NDT:  
-[gs://archive-measurement-lab/ndt/tcpinfo](https://console.cloud.google.com/storage/browser/archive-measurement-lab/ndt/)
+[gs://archive-measurement-lab/ndt/tcpinfo](https://console.cloud.google.com/storage/browser/archive-measurement-lab/ndt/tcpinfo/)
 
 Data is stored in JSONL format. Each line is one snapshot of the tcp_info struct, timestamped to the microsecond.
 

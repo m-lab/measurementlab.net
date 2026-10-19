@@ -41,7 +41,7 @@ Please cite this data set as follows: **The M-Lab Neubot - Dash Data Set, &lt;da
 
 ## Data Collected by DASH in Raw Format
 
-Data collected by Neubot's DASH test while hosted on M-Lab is available in raw format at [https://console.cloud.google.com/storage/browser/archive-measurement-lab/neubot/dash](https://console.cloud.google.com/storage/browser/archive-measurement-lab/dash).
+Data collected by Neubot's DASH test while hosted on M-Lab is available in raw format at [https://console.cloud.google.com/storage/browser/archive-measurement-lab/neubot/dash](https://console.cloud.google.com/storage/browser/archive-measurement-lab/neubot/dash).
 
 ## Data Collected by Neubot in Raw Format
 

@@ -14,7 +14,9 @@ sections:
 
       ## Acceptable Use Policy
 
-      Access to the M-Lab raw data archives requires accepting the [Acceptable Use Agreement](https://docs.google.com/forms/d/e/1FAIpQLSfDGsEqfE3Lh3qtRSMy621O_bzBMZtnrw5sDgR42tGWpymJ2w/viewform). Accepting this agreement helps the M-Lab team ensure responsible use of our data resources and better understand data usage needs and patterns. If you have any questions or need support accessing the data, contact M-Lab for support: [support@measurementlab.net](mailto:support@measurementlab.net).
+      Read access to the M-Lab raw data archives is granted to Google accounts that are members of the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/g/discuss). Anonymous requests are denied.
+
+      Access to the M-Lab raw data archives also requires accepting the [Acceptable Use Agreement](https://docs.google.com/forms/d/e/1FAIpQLSfDGsEqfE3Lh3qtRSMy621O_bzBMZtnrw5sDgR42tGWpymJ2w/viewform). Accepting this agreement helps the M-Lab team ensure responsible use of our data resources and better understand data usage needs and patterns. If you have any questions or need support accessing the data, contact M-Lab for support: [support@measurementlab.net](mailto:support@measurementlab.net).
 
       User Responsibilities:
 
@@ -46,9 +48,9 @@ sections:
 
       Authorization is required to run `gsutil` commands.
 
-      Users who have accepted the [Acceptable Use Agreement](https://docs.google.com/forms/d/e/1FAIpQLSfDGsEqfE3Lh3qtRSMy621O_bzBMZtnrw5sDgR42tGWpymJ2w/viewform) can run the `gcloud auth login $ACCOUNT` command to obtain access through an interactive workflow.
+      Users whose Google account is a member of the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/g/discuss) and who have accepted the [Acceptable Use Agreement](https://docs.google.com/forms/d/e/1FAIpQLSfDGsEqfE3Lh3qtRSMy621O_bzBMZtnrw5sDgR42tGWpymJ2w/viewform) can run the `gcloud auth login $ACCOUNT` command to obtain access through an interactive workflow.
 
-      Fully programmatic (non-interactive) access requires a service account. Contact [support@measurementlab.net](mailto:support@measurementlab.net) if you need to request one. Please include a justification and a contact email in your message. M-Lab staff will provide you with an account ID and a credentials key file. The file will be needed for authorization.
+      Fully programmatic (non-interactive) access requires a service account. Contact [support@measurementlab.net](mailto:support@measurementlab.net) if you need to request one. Please include a justification and a contact email in your message. M-Lab staff will provide you with an account ID and a credentials key file. The file will be needed for authorization. M-Lab staff will also add the service account to the M-Lab Discuss group, which grants it read access to the archives.
 
       ~~~ shell
       # Authorize access.
@@ -85,4 +87,4 @@ sections:
 
       [https://storage.googleapis.com/archive-measurement-lab/list/all_mlab_tarfiles.txt.gz](https://storage.googleapis.com/archive-measurement-lab/list/all_mlab_tarfiles.txt.gz)
 
-      This file provides gs:// URLs to M-Lab data.
+      This file provides gs:// URLs to M-Lab data. Like the archives themselves, it requires authenticated access; download it with `gcloud storage cp gs://archive-measurement-lab/list/all_mlab_tarfiles.txt.gz .` or with the `curl` command shown above.

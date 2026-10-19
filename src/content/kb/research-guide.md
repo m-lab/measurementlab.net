@@ -30,9 +30,12 @@ The `measurement-lab.ndt.ndt7` unified view is the recommended starting point â€
 
 ### Google Cloud Storage (Raw Data)
 
-For access to raw measurement files (JSON + tcpinfo):
+For access to raw measurement files (JSON + tcpinfo). Read access requires a Google account that is a member of the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/g/discuss); see [Accessing M-Lab Data Buckets](/kb/accessing-data-buckets) for details.
 
 ```bash
+# Log in with the account subscribed to the M-Lab Discuss group
+gcloud auth login
+
 # List available dates
 gsutil ls gs://archive-measurement-lab/ndt/ndt7/2024/01/
 

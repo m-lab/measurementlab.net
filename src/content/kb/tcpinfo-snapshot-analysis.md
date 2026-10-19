@@ -202,7 +202,7 @@ If you need to identify which sites are in the slow-hardware batch, you can comp
 
 ## Raw Data on GCS
 
-For analyses requiring the full 10 ms resolution, the complete unthinned snapshot archives are available in Google Cloud Storage:
+For analyses requiring the full 10 ms resolution, the complete unthinned snapshot archives are available in Google Cloud Storage. Read access requires a Google account that is a member of the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/g/discuss); see [Accessing M-Lab Data Buckets](/kb/accessing-data-buckets).
 
 ```
 gs://archive-measurement-lab/ndt/tcpinfo/YYYY/MM/DD/
