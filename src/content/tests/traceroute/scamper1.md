@@ -29,7 +29,7 @@ status: draft
 | raw.**CycleStart** | RECORD |  |
 | raw.CycleStart.**Type** | STRING | The string “cycle-start”. |
 | raw.CycleStart.**list_name** | STRING | The name of the IP list file (“/tmp/scamperctl:" for daemon mode, "default" for CLI). |
-| [raw.CycleStart.**ID**](http://raw.CycleStart.ID) | FLOAT | Some ID assigned to identify the list by a person (deprecated). |
+| raw.CycleStart.**ID** | FLOAT | Some ID assigned to identify the list by a person (deprecated). |
 | raw.CycleStart.**Hostname** | STRING | The hostname of the machine running the traceroute. |
 | raw.CycleStart.**start_time** | FLOAT | When traceroute started in Unix epoch. |
 | raw.**Tracelb** | RECORD |  |
@@ -57,7 +57,7 @@ status: draft
 | raw.Tracelb.**nodes** | RECORD |  |
 | raw.Tracelb.nodes.**hop_id** | STRING |  |
 | raw.Tracelb.nodes.**addr** | STRING | The IP address of the node. |
-| [raw.Tracelb.nodes.**name**](http://raw.Tracelb.nodes.name) | STRING | The hostname for the IP address. |
+| raw.Tracelb.nodes.**name** | STRING | The hostname for the IP address. |
 | raw.Tracelb.nodes.**q_ttl** | INTEGER | The TTL value of the quoted traceroute probe. |
 | raw.Tracelb.nodes.**linkc** | INTEGER | The number of links for this node. |
 | raw.Tracelb.nodes.**links** | RECORD |  |
@@ -84,7 +84,7 @@ status: draft
 | raw.**CycleStop** | RECORD |  |
 | raw.CycleStop.**Type** | STRING | The string “cycle-stop”. |
 | raw.CycleStop.**list_name** | STRING | The name of the IP list file (“/tmp/scamperctl:" for daemon mode, "default" for CLI). |
-| [raw.CycleStop.**ID**](http://raw.CycleStop.ID) | FLOAT | Some ID assigned to identify the list by a person (deprecated). |
+| raw.CycleStop.**ID** | FLOAT | Some ID assigned to identify the list by a person (deprecated). |
 | raw.CycleStop.**Hostname** | STRING | The hostname of the system that this traceroute was collected on. |
 | raw.CycleStop.**stop_time** | FLOAT | When traceroute finished in Unix epoch. |
 
