@@ -25,11 +25,6 @@
           "type": "internal",
           "label": "Policies",
           "pageRef": "policies"
-        },
-        {
-          "type": "internal",
-          "label": "Section Showcase",
-          "pageRef": "section-showcase"
         }
       ]
     },
