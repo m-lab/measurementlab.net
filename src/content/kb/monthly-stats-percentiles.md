@@ -73,8 +73,6 @@ best_latency = df.nsmallest(10, "latency_p95")[["country_code", "latency_p50"]]
 
 # Correct: for download, HIGHER values are better
 best_download = df.nlargest(10, "download_p95")[["country_code", "download_p50"]]
-
-
 ```
 
 ## Which Percentile Should I Use?
@@ -97,13 +95,6 @@ The `sample_count` column records how many NDT tests contributed to each row. Ro
 # Filter out low-confidence rows before analysis
 df_reliable = df[df["sample_count"] >= 100]
 ```
-
-As a rough guide:
-
-- **< 30 tests**: very unreliable — avoid using percentile estimates
-- **30–100 tests**: usable with caution, especially for p50
-- **> 100 tests**: generally reliable for p25–p75
-- **> 500 tests**: reliable for extreme percentiles (p5, p95)
 
 Finer-grained slices (city, city+ASN) will have far more low-count rows than country-level data, especially for smaller cities or minority ISPs.
 
