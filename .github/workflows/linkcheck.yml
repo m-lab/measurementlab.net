@@ -1,14 +1,17 @@
 # .github/workflows/linkcheck.yml
 
-# Github Action that checks all links on the site build,
-# and updates a GH issue with the current state of link quality
-# has two options: [linkcheck] for internal-only (skips network, very fast)
-# and [linkcheck-full] that includes all links, and is quite slower
-# Can be triggered with a commit, by adding
-# [linkcheck]
-# or [linkcheck-full]
-# to the commit message.
-# It can also be triggered manually from Github Actions.
+# Checks every link in the built site with Lychee (config: lychee.toml) and keeps
+# a single rolling GitHub issue (label: linkcheck) up to date with the results.
+#
+# Two modes:
+#   [linkcheck]       internal links only (no network, fast)
+#   [linkcheck-full]  internal + external links (slower)
+# Trigger by putting either tag in a commit message pushed to main, or run it
+# manually from the Actions tab.
+#
+# Absolute links to the site's own domain (site URL read from
+# src/content/site/config.json) are checked against the local build, so they
+# work in internal-only mode and catch pages that aren't deployed yet.
 name: Link check
 
 on:
@@ -37,10 +40,15 @@ jobs:
 
       - name: Determine mode
         id: mode
+        env:
+          # Passed via env, never interpolated into the script, so a commit
+          # message can't inject shell commands
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          OFFLINE_INPUT: ${{ inputs.offline }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            offline="${{ inputs.offline }}"
-          elif [[ "${{ github.event.head_commit.message }}" == *"[linkcheck-full]"* ]]; then
+            [ "$OFFLINE_INPUT" = "false" ] && offline=false || offline=true
+          elif [[ "$COMMIT_MESSAGE" == *"[linkcheck-full]"* ]]; then
             offline=false
           else
             offline=true
@@ -55,6 +63,19 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+
+      # Map https://<site-domain>/... onto the local build so the site's own
+      # absolute URLs (canonical, og:url, hardcoded links) are checked as files
+      - name: Resolve site domain
+        id: site
+        run: |
+          host=$(node -p "new URL(require('./src/content/site/config.json').url).host.replace(/^www\\./, '')" 2>/dev/null || true)
+          if [ -n "$host" ]; then
+            pattern="^https?://(www\\.)?$(printf '%s' "$host" | sed 's/\./\\./g')"
+            echo "remap=--remap '${pattern} file://${GITHUB_WORKSPACE}/dist'" >> "$GITHUB_OUTPUT"
+          else
+            echo "remap=" >> "$GITHUB_OUTPUT"
+          fi
 
       # We use Lychee for link checking
       - name: Restore lychee cache
@@ -75,6 +96,7 @@ jobs:
             --no-progress
             --root-dir ${{ github.workspace }}/dist
             ${{ steps.mode.outputs.flag }}
+            ${{ steps.site.outputs.remap }}
             'dist/**/*.html'
 
       # The issue is located before the report is built, so the previous run's
@@ -111,17 +133,28 @@ jobs:
           fi
 
           echo "Previous: $line"
+          # The issue body is editable by anyone with triage access, so only
+          # accept the known keys with plain values
           for kv in $(printf '%s' "$line" | sed -e 's/<!--counts //' -e 's/-->//'); do
-            printf '%s\n' "$kv" >> "$GITHUB_OUTPUT"
+            if printf '%s' "$kv" | grep -qE '^internal=[0-9]+$|^external=([0-9]+|na)$|^checked=(internal|both)$'; then
+              printf '%s\n' "$kv" >> "$GITHUB_OUTPUT"
+            else
+              echo "Ignoring unexpected counts entry: $kv"
+            fi
           done
 
       # We add some metadata to Lychee's report, like time of last run,
       # and clean it up a bit
       - name: Build report
+        env:
+          OFFLINE: ${{ steps.mode.outputs.offline }}
+          PREV_INTERNAL: ${{ steps.prev.outputs.internal }}
+          PREV_EXTERNAL: ${{ steps.prev.outputs.external }}
+          PREV_CHECKED: ${{ steps.prev.outputs.checked }}
         run: |
           set -euo pipefail
 
-          if [ "${{ steps.mode.outputs.offline }}" = "true" ]; then
+          if [ "$OFFLINE" = "true" ]; then
             mode="internal only"
           else
             mode="internal + external"
@@ -135,16 +168,16 @@ jobs:
           internal=$(grep -cE '^\* \[[^]]+\] <(file://|/)' ./lychee/out.md || true)
           external=$(grep -cE '^\* \[[^]]+\] <https?://' ./lychee/out.md || true)
 
-          if [ "${{ steps.mode.outputs.offline }}" = "true" ]; then
+          if [ "$OFFLINE" = "true" ]; then
             checked=internal
           else
             checked=both
           fi
 
           # Delta against the previous run
-          prev_internal="${{ steps.prev.outputs.internal }}"
-          prev_external="${{ steps.prev.outputs.external }}"
-          prev_checked="${{ steps.prev.outputs.checked }}"
+          prev_internal="$PREV_INTERNAL"
+          prev_external="$PREV_EXTERNAL"
+          prev_checked="$PREV_CHECKED"
 
           # "**12 fewer**" / "**3 more**" / "**No net change** in"
           headline() {
@@ -185,7 +218,7 @@ jobs:
           fi
 
           notice=""
-          if [ "${{ steps.mode.outputs.offline }}" = "true" ]; then
+          if [ "$OFFLINE" = "true" ]; then
             counts="**${internal} internal** · external: not checked"
             notice=$(printf '%s\n' \
               '> [!NOTE]' \

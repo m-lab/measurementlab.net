@@ -1,6 +1,6 @@
 import Tag from '@components/atoms/Tag';
 import type { BlogPostCardData } from '@utils/blog';
-import { isDev } from '@utils/dev';
+import { showDraftLabels } from '@utils/dev';
 
 interface BlogItemProps {
   item: BlogPostCardData;
@@ -23,7 +23,7 @@ export default function BlogItem({ item }: BlogItemProps) {
             height={heroImage.height}
             loading="lazy"
             decoding="async"
-            alt={post.data.title}
+            alt=""
             className="w-full object-cover object-center"
           />
         </div>
@@ -42,8 +42,8 @@ export default function BlogItem({ item }: BlogItemProps) {
 
         {/* Content Slot Area */}
         <div className="flex flex-col">
-          {/* Draft badge (only visible in dev) */}
-          {isDev && post.data.status === 'draft' && (
+          {/* Draft badge (dev and preview builds only) */}
+          {showDraftLabels && post.data.status === 'draft' && (
             <div className="mb-3">
               <Tag variant="neutral" className="font-bold">
                 DRAFT

@@ -7,6 +7,9 @@ import HeroSection from '@components/sections/HeroSection.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import { isVisible } from '@utils/content';
+import { showDraftLabels } from '@utils/dev';
+import { creativeWorkNode } from '@utils/jsonld';
+import { absoluteUrl } from '@utils/seo';
 import {Vimeo, YouTube } from 'astro-embed'
 import { marked } from 'marked';
 import IconPlay from '~icons/heroicons/play-circle'
@@ -71,18 +74,41 @@ const formatCategory = (category: string) => {
 // Parse markdown in description
 const descriptionHtml = pub.data.description ? marked.parse(pub.data.description) : '';
 
-const { title, year, category, authors, venue, tags } = pub.data;
+const { title, year, category, authors, venue, tags, status } = pub.data;
+
+// SEO: description and schema.org CreativeWork node
+const seoDescription =
+	pub.data.description ||
+	`${formatCategory(category)} from ${year}${authors ? ` by ${authors}` : ''}`;
+const publicationJsonLd = creativeWorkNode({
+	url: absoluteUrl(`/publications/${pub.id}`),
+	title,
+	description: seoDescription,
+	year,
+	authors: [
+		...(authors ? [{ name: authors }] : []),
+		...contributors.flatMap((p) =>
+			p ? [{ name: p.name, url: absoluteUrl(`/people/${p.id}`) }] : []
+		),
+	],
+	keywords: tags,
+	genre: formatCategory(category),
+});
 ---
 
-<PageLayout
-	title={title}
-	description={`${formatCategory(category)} from ${year}${authors ? ` by ${authors}` : ''}`}
->
+<PageLayout title={title} description={seoDescription} jsonLd={publicationJsonLd}>
 	<!-- Publication Header -->
 	<SectionLayout sectionLabel="hero" zigzag="supporting1-light" maxWidth="4xl">
 		<HeroSection title={title}>
 			{/* Category, Year, and Tags */}
 			<div class="mb-4 flex flex-wrap gap-2">
+				{
+					showDraftLabels && status === 'draft' && (
+						<Tag variant="neutral" size="md" className="font-bold">
+							DRAFT
+						</Tag>
+					)
+				}
 				<Tag variant="primary" size="md">
 					{formatCategory(category)}
 				</Tag>

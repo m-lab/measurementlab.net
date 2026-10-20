@@ -2,6 +2,14 @@
 import { Font } from 'astro:assets';
 import { getEntry } from 'astro:content';
 import { ClientRouter } from 'astro:transitions';
+import JsonLd from '@components/atoms/JsonLd.astro';
+import { isPreview } from '@utils/dev';
+import {
+  type JsonLd as JsonLdNode,
+  organizationNode,
+  websiteNode,
+} from '@utils/jsonld';
+import { metaDescription, ogLocale, pageTitle } from '@utils/seo';
 
 // Fetch site config from content collection
 const siteConfigEntry = await getEntry('site', 'config');
@@ -12,25 +20,64 @@ if (!siteConfigEntry) {
 
 const siteConfig = siteConfigEntry.data;
 
+export interface ArticleMeta {
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  /** Absolute URLs of the authors' profile pages. */
+  authors?: string[];
+  section?: string;
+  tags?: string[];
+}
 
 export interface Props {
   title: string;
   description?: string;
   image?: ImageMetadata;
   canonicalURL?: URL;
+  lang?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  /** Keep the page out of search indexes (also forced on preview builds). */
+  noindex?: boolean;
+  /** Page-specific schema.org nodes, merged into the site graph. */
+  jsonLd?: JsonLdNode | JsonLdNode[];
+  article?: ArticleMeta;
 }
 
 const {
   title,
-  description = siteConfig.description,
+  description,
   image,
   canonicalURL,
+  lang = 'en',
+  ogType = 'website',
+  noindex = false,
+  jsonLd = [],
+  article,
 } = Astro.props;
 
-// Use the default OG image from content collection if no image provided
-const ogImage = image || siteConfig.defaultOgImage as ImageMetadata;
-const imageURL = ogImage ? new URL(ogImage.src, Astro.url).href : undefined;
+const fullTitle = pageTitle(title, siteConfig.title);
+const metaDesc = metaDescription(description, siteConfig.description);
+const locale = ogLocale(lang);
+// Absolute on the configured site URL, not the request URL, so previews and
+// local builds never leak their own host into shared links
+const siteBase = Astro.site ?? Astro.url;
 
+// og:image — the page's own image, otherwise the default site OG image
+const ogImage = image ?? (siteConfig.defaultOgImage as ImageMetadata | undefined);
+const imageURL = ogImage ? new URL(ogImage.src, siteBase).href : undefined;
+const imageType = ogImage?.format
+  ? `image/${ogImage.format === 'jpg' ? 'jpeg' : ogImage.format}`
+  : undefined;
+const imageWidth = ogImage?.width;
+const imageHeight = ogImage?.height;
+
+const robots = noindex || isPreview ? 'noindex, nofollow' : undefined;
+
+const graph: JsonLdNode[] = [
+  organizationNode(siteConfig),
+  websiteNode(siteConfig),
+  ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd]),
+];
 ---
 
 <meta charset="utf-8" />
@@ -39,24 +86,41 @@ const imageURL = ogImage ? new URL(ogImage.src, Astro.url).href : undefined;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={metaDesc} />
+{robots && <meta name="robots" content={robots} />}
 <link rel="canonical" href={canonicalURL} />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title={siteConfig.title} href="/rss.xml" />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content={siteConfig.title} />
+{locale && <meta property="og:locale" content={locale} />}
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={imageURL} />
+<meta property="og:description" content={metaDesc} />
+{imageURL && <meta property="og:image" content={imageURL} />}
+{imageURL && imageType && <meta property="og:image:type" content={imageType} />}
+{imageURL && imageWidth && <meta property="og:image:width" content={String(imageWidth)} />}
+{imageURL && imageHeight && <meta property="og:image:height" content={String(imageHeight)} />}
+{imageURL && <meta property="og:image:alt" content={title} />}
+{article?.publishedTime && <meta property="article:published_time" content={article.publishedTime.toISOString()} />}
+{article?.modifiedTime && <meta property="article:modified_time" content={article.modifiedTime.toISOString()} />}
+{article?.authors?.map((url) => <meta property="article:author" content={url} />)}
+{article?.section && <meta property="article:section" content={article.section} />}
+{article?.tags?.map((tag) => <meta property="article:tag" content={tag} />)}
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={imageURL} />
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={metaDesc} />
+{imageURL && <meta name="twitter:image" content={imageURL} />}
+{imageURL && <meta name="twitter:image:alt" content={title} />}
+
+<!-- Structured data: Organization + WebSite, plus any page nodes (production only) -->
+<JsonLd data={graph} />
 
 <!-- Local Font Declaration -->
 <Font cssVariable="--font-ibm-plex-mono" />

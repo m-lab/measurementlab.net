@@ -16,9 +16,12 @@ export default function NavItemDropdown({
   return (
     <Menu as="div" className={`relative inline-block text-left ${className}`}>
       {/* `hover:decoration-gray-100` was dropped rather than renamed — see NavItem.astro. */}
-      <MenuButton className="transition-300 inline-flex cursor-pointer items-center gap-1 px-3 py-2 text-xl no-underline underline-offset-20 transition hover:underline focus:outline-none">
+      <MenuButton className="group transition-300 inline-flex cursor-pointer items-center gap-1 px-3 py-2 text-xl no-underline underline-offset-20 transition hover:underline focus:outline-none">
         {label}
-        <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
+        <ChevronDownIcon
+          className="h-5 w-5 transition-transform duration-150 group-data-open:rotate-180"
+          aria-hidden="true"
+        />
       </MenuButton>
 
       <MenuItems

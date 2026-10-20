@@ -7,6 +7,8 @@ import HouseCard from '@components/molecules/HouseCard.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import { isVisible } from '@utils/content';
+import { personNode } from '@utils/jsonld';
+import { absoluteUrl } from '@utils/seo';
 import type { GetStaticPaths } from 'astro';
 
 // Generate static paths for all people
@@ -20,7 +22,16 @@ export const getStaticPaths = (async () => {
 
 const { person } = Astro.props;
 
-//  Get Site data
+// SEO: schema.org Person node (rendered on production builds only)
+const personUrl = absoluteUrl(`/people/${person.id}`);
+const personJsonLd = personNode({
+	url: personUrl,
+	name: person.name,
+	jobTitle: person.title,
+	affiliation: person.affiliation,
+	image: person.headshot ? absoluteUrl(person.headshot.src) : undefined,
+	sameAs: person.url && /^https?:\/\//i.test(person.url) ? [person.url] : undefined,
+});
 
 
 // Get publications this person contributed to
@@ -60,9 +71,11 @@ const formatDate = (date: Date) => {
 ---
 
 <PageLayout
-	title={`${person.name}`}
-	description={`${person.name}, ${person.title}`}
+	title={person.name}
+	description={[person.name, person.title, person.affiliation].filter(Boolean).join(', ')}
 	image={person.headshot}
+	ogType="profile"
+	jsonLd={personJsonLd}
 >
 	<!-- Hero Section -->
 	<SectionLayout zigzag="primary-light" maxWidth="2xl">

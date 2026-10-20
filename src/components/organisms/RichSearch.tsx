@@ -64,6 +64,9 @@ function stripMarkdown(text: string): string {
     .trim();
 }
 
+// Per category, so a large collection can't bury the others below it
+const RESULT_LIMIT = 10;
+
 // Configuration for search categories
 const SEARCH_CATEGORIES: CategoryConfig[] = [
   {
@@ -370,7 +373,7 @@ export default function RichSearch() {
         return;
       }
 
-      const fuseResults = fuse.search(query);
+      const fuseResults = fuse.search(query, { limit: RESULT_LIMIT });
       filtered[category.name] = fuseResults.map((r) => r.item);
 
       // Extract snippets for content matches
@@ -432,7 +435,7 @@ export default function RichSearch() {
               />
             </div>
 
-            {loading && query === '' && (
+            {loading && rawQuery !== '' && rawQuery !== '?' && (
               <div className="space-y-4 p-4">
                 {[1, 2, 3].map((i) => (
                   <div key={i} className="space-y-2">

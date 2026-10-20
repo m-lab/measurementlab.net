@@ -100,10 +100,14 @@ const descColor = background === 'blue' || background === 'gradient' ? 'text-blu
 				<slot name="actions" />
 			</div>
 
-			<!-- Additional Content -->
-			<div class="mt-12">
-				<slot />
-			</div>
+			<!-- Additional Content (wrapper only when the slot is used) -->
+			{
+				Astro.slots.has('default') && (
+					<div class="mt-12">
+						<slot />
+					</div>
+				)
+			}
 		</div>
 	</div>
 </section>

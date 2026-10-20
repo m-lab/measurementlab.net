@@ -1,20 +1,24 @@
 ---
 /**
- * Renders a schema.org JSON-LD block — production builds only.
- *
+ * Emits a schema.org JSON-LD block — production builds only (see
+ * `isProduction`: the site URL must be the live domain). Pass either a full
+ * document (with `@context`) or a list of nodes, which are wrapped in a
+ * `@graph`. Rendered inline so the view-transitions router swaps it per route.
  */
 import { isProduction } from '@utils/dev';
+import { type JsonLd, serializeGraph } from '@utils/jsonld';
 
 export interface Props {
-	/** Any JSON-serialisable schema.org node. */
-	data: unknown;
+  data: JsonLd | JsonLd[] | unknown;
 }
 
 const { data } = Astro.props;
 
 // Escape `<` so a stray "</script>" in CMS-authored text cannot terminate the block
 // early. JSON-LD parsers decode < transparently, so the payload is unchanged.
-const json = JSON.stringify(data, null, 2).replace(/</g, '\\u003c');
+const json = Array.isArray(data)
+  ? serializeGraph(data as JsonLd[])
+  : JSON.stringify(data).replace(/</g, '\\u003c');
 ---
 
 {

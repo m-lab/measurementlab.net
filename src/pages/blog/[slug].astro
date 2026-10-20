@@ -12,12 +12,14 @@ import {
   getRelatedPosts,
 } from '@utils/blog';
 import { isVisible } from '@utils/content';
-import { isDev } from '@utils/dev';
+import { showDraftLabels } from '@utils/dev';
+import { articleNode } from '@utils/jsonld';
 import {
   getAllAuthorNames,
   getPeopleMap,
   resolvePeople
 } from '@utils/people';
+import { absoluteUrl } from '@utils/seo';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -51,12 +53,40 @@ const {title, publishedDate, heroImage, categories, status } = post.data
 const siteConfig = await getEntry('site', 'config');
 const archivedBanner = siteConfig?.data.archivedBanner;
 
+// SEO: description, Open Graph article meta and schema.org Article node
+const seoDescription =
+	post.data.excerpt || (allAuthorNames ? `Blog post by ${allAuthorNames}` : undefined);
+const postUrl = absoluteUrl(`/blog/${post.id}`);
+const authorEntities: { name: string; url?: string }[] = [
+	...authors.map((a) => ({ name: a.name, url: absoluteUrl(`/people/${a.id}`) })),
+	...(post.data.externalAuthors
+		? post.data.externalAuthors.split(',').map((name) => ({ name: name.trim() }))
+		: []),
+].filter((a) => a.name);
+const articleMeta = {
+	publishedTime: publishedDate,
+	authors: authorEntities.flatMap((a) => (a.url ? [a.url] : [])),
+	section: categories[0],
+	tags: categories,
+};
+const articleJsonLd = articleNode({
+	url: postUrl,
+	title,
+	description: seoDescription,
+	image: heroImage ? absoluteUrl(heroImage.src) : undefined,
+	datePublished: publishedDate,
+	authors: authorEntities,
+	categories,
+});
 ---
 
 <PageLayout
 	title={post.data.title}
-	description={`Blog post by ${allAuthorNames}`}
+	description={seoDescription}
 	image={heroImage}
+	ogType="article"
+	article={articleMeta}
+	jsonLd={articleJsonLd}
 >
 	<!-- Post Header -->
 	<SectionLayout
@@ -66,9 +96,9 @@ const archivedBanner = siteConfig?.data.archivedBanner;
 		sectionLabel="hero"
 	>
 		<Hero title={title} align="left">
-			{/* Draft badge (only visible in dev) */}
+			{/* Draft badge (dev and preview builds only) */}
 			{
-				isDev && status === 'draft' && (
+				showDraftLabels && status === 'draft' && (
 					<div class="mb-4">
 						<Tag variant="neutral" size="md" className="font-bold">
 							DRAFT

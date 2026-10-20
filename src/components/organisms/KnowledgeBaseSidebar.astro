@@ -1,6 +1,6 @@
 ---
 import { isDev, isPreview } from '@utils/dev';
-import type { KbChapter } from '@utils/kb';
+import { getKbUrl, type KbChapter } from '@utils/kb';
 
 export interface Props {
   chapters: KbChapter[];
@@ -39,7 +39,7 @@ const markDrafts = isDev || isPreview;
 						return (
 							<li>
 								<a
-									href={`/kb/${page.data.permalink}`}
+									href={getKbUrl(page)}
 									aria-current={isCurrent ? 'page' : undefined}
 									class={`block border-l-2 px-2 py-1.5 leading-snug no-underline transition-colors ${
 										isCurrent
