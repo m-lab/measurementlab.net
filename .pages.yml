@@ -4,6 +4,21 @@
 # ============================================================================
 
 # ============================================================================
+# SETTINGS
+# ============================================================================
+settings:
+  content:
+    # Keep keys the CMS does not manage (hand-edited fields, future schema
+    # additions) instead of dropping them on save
+    merge: true
+  commit:
+    # Stamped commit messages let tooling tell editorial commits from code
+    templates:
+      create: 'Create {path} (via Pages CMS)'
+      update: 'Update {path} (via Pages CMS)'
+      delete: 'Delete {path} (via Pages CMS)'
+
+# ============================================================================
 # MEDIA
 # ============================================================================
 media:
@@ -290,10 +305,6 @@ components:
         required: true
       - name: affiliation
         label: Affiliation
-        type: string
-        required: false
-      - name: extraInfo
-        label: Other/Previous Affiliations
         type: string
         required: false
       - name: url
@@ -925,7 +936,7 @@ content:
         pattern:
           {
             message: "Must be a web-safe string like 'my-blog-post-title'.",
-            regex: '^[a-zA-Z0-9_-]*$',
+            regex: '^[a-z0-9_-]+$',
           }
       - name: title
         label: Title
@@ -1145,10 +1156,6 @@ content:
         label: Affiliation
         type: string
         required: false
-      - name: extraInfo
-        label: Other/Previous Affiliations
-        type: string
-        required: false
       - name: url
         label: Link
         type: string
@@ -1364,7 +1371,7 @@ content:
         pattern:
           {
             message: "Must be a web-safe string like 'ndt' or 'reverse_traceroute'.",
-            regex: '^[a-zA-Z0-9_-]*$',
+            regex: '^[a-z0-9_-]+$',
           }
       - name: permalink
         label: Permalink
@@ -1461,7 +1468,7 @@ content:
         pattern:
           {
             message: "Must be a web-safe string like 'getting-started-bigquery'.",
-            regex: '^[a-zA-Z0-9_-]*$',
+            regex: '^[a-z0-9_-]+$',
           }
       - name: title
         label: Title
@@ -1728,7 +1735,7 @@ content:
         description: URL-safe identifier (e.g. ndt, wehe, traceroute). Becomes the page path /data/<id>/.
         pattern:
           message: "Must be a URL-safe string like 'ndt' or 'my-dataset'."
-          regex: '^[a-zA-Z0-9_-]+$'
+          regex: '^[a-z0-9_-]+$'
 
       - name: title
         label: Dataset Name
@@ -2087,7 +2094,7 @@ content:
         pattern:
           {
             message: "Must be a web-safe string like 'main' or 'footer-1'.",
-            regex: '^[a-zA-Z0-9_-]*$',
+            regex: '^[a-z0-9_-]+$',
           }
       - name: title
         label: Menu Title

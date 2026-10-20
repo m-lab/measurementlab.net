@@ -1,5 +1,5 @@
 ---
-import type { KbEntry } from '@utils/kb';
+import { getKbUrl, type KbEntry } from '@utils/kb';
 
 export interface Props {
   prev: KbEntry | null;
@@ -27,7 +27,7 @@ const titleClass =
       aria-label="Documentation pages"
     >
       {prev ? (
-        <a href={`/kb/${prev.data.permalink}`} class={cardClass} rel="prev">
+        <a href={getKbUrl(prev)} class={cardClass} rel="prev">
           <span class={labelClass}>&larr; Previous</span>
           <span class={titleClass}>{prev.data.title}</span>
         </a>
@@ -37,7 +37,7 @@ const titleClass =
 
       {next && (
         <a
-          href={`/kb/${next.data.permalink}`}
+          href={getKbUrl(next)}
           class={`${cardClass} sm:items-end sm:text-right`}
           rel="next"
         >

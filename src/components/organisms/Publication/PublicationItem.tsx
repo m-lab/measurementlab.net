@@ -1,4 +1,5 @@
 import Tag from '@components/atoms/Tag';
+import { showDraftLabels } from '@utils/dev';
 import type { PublicationCardData } from '@utils/publications';
 // import { formatCategory } from '@utils/publications';
 import IconDownload from '~icons/heroicons/document-arrow-down-solid';
@@ -27,6 +28,12 @@ export default function PublicationItem({ item }: PublicationItemProps) {
       <div className="flex h-full flex-col gap-6 bg-neutral-100 px-16 py-12">
         {/* Category, Year, and Tags */}
         <div className="flex flex-wrap items-center gap-2">
+          {/* Draft badge (dev and preview builds only) */}
+          {showDraftLabels && post.data.status === 'draft' && (
+            <Tag variant="neutral" className="font-bold">
+              DRAFT
+            </Tag>
+          )}
           <Tag variant="primary">{formatCategory(post.data.category)}</Tag>
           <Tag variant="secondary">{post.data.year}</Tag>
 

@@ -8,7 +8,7 @@ import TOC from '@components/organisms/TOC.tsx';
 import PageLayout from '@layouts/PageLayout.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import type { TocEntry } from '@stefanprobst/rehype-extract-toc';
-import { isDev, isPreview } from '@utils/dev';
+import { showDraftLabels } from '@utils/dev';
 import type { KbChapter, KbEntry } from '@utils/kb';
 
 export interface Props {
@@ -53,15 +53,14 @@ const difficultyLabel = {
 const siteConfig = await getEntry('site', 'config');
 const archivedBanner = siteConfig?.data.archivedBanner;
 
-// Badge a draft wherever a draft is visible at all — dev and preview both, unlike
-// the blog's dev-only badge, so preview reviewers can tell unfinished pages from
-// finished ones. isVisible() already keeps drafts out of production entirely.
-const showDraftBadge = status === 'draft' && (isDev || isPreview);
+// Badge a draft wherever a draft is visible at all (dev and preview builds).
+// isVisible() already keeps drafts out of production entirely.
+const showDraftBadge = status === 'draft' && showDraftLabels;
 
 const hasToc = Boolean(toc && toc.length > 0);
 ---
 
-<PageLayout title={title} description={description}>
+<PageLayout title={title} description={description} ogType="article">
 	{
 		status === 'archived' && archivedBanner && (
 			<Banner message={archivedBanner.message} color={archivedBanner.color} />

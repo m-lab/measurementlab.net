@@ -174,6 +174,11 @@
       "from": "tools/windrider",
       "to": "tests/windrider",
       "status": 301
+    },
+    {
+      "from": "blog/SIGCOMM2022",
+      "to": "blog/sigcomm2022",
+      "status": 301
     }
   ]
 }

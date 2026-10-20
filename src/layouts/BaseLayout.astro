@@ -1,6 +1,7 @@
 ---
 import '@styles/global.css';
-import Head from '@components/organisms/Head.astro';
+import Head, { type ArticleMeta } from '@components/organisms/Head.astro';
+import type { JsonLd } from '@utils/jsonld';
 
 export interface Props {
   title: string;
@@ -8,6 +9,13 @@ export interface Props {
   image?: ImageMetadata;
   lang?: string;
   class?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  /** Keep the page out of search indexes (preview builds are always noindex). */
+  noindex?: boolean;
+  /** Page-specific schema.org nodes, merged into the site graph. */
+  jsonLd?: JsonLd | JsonLd[];
+  /** Open Graph `article:*` meta for blog posts. */
+  article?: ArticleMeta;
 }
 
 const {
@@ -16,6 +24,10 @@ const {
   image,
   lang = 'en',
   class: className = '',
+  ogType,
+  noindex,
+  jsonLd,
+  article,
 } = Astro.props;
 
 const canonicalURL = Astro.site
@@ -42,6 +54,11 @@ const canonicalURL = Astro.site
 			description={description}
 			canonicalURL={canonicalURL}
 			image={image}
+			lang={lang}
+			ogType={ogType}
+			noindex={noindex}
+			jsonLd={jsonLd}
+			article={article}
 		>
 			<slot name="head" />
 		</Head>

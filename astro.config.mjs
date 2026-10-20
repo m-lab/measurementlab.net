@@ -1,5 +1,7 @@
 // @ts-check
 
+import fs from 'node:fs';
+import path from 'node:path';
 import { rehypeHeadingIds, unified } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
 import netlify from '@astrojs/netlify';
@@ -19,6 +21,28 @@ import {
   externalLinksOptions,
 } from './src/lib/markdown-plugins.ts';
 import { rehypeTableAlign } from './src/lib/rehype-table-align.ts';
+
+// Sitemap <lastmod> for blog posts. Posts carry a single `publishedDate`
+// (there is no updated date in the schema), so that is the last modification.
+// Read straight from the markdown frontmatter because the content layer isn't
+// available in the config; a missing or unparseable date means no <lastmod>.
+const blogLastmod = (() => {
+  const dir = path.resolve('src/content/blog');
+  const byId = new Map();
+  if (!fs.existsSync(dir)) return byId;
+  for (const file of fs.readdirSync(dir, { recursive: true, encoding: 'utf8' })) {
+    if (!file.endsWith('.md')) continue;
+    const source = fs.readFileSync(path.join(dir, file), 'utf8');
+    const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
+    const raw = frontmatter.match(/^publishedDate:\s*["']?([^"'\n]+?)["']?\s*$/m)?.[1];
+    const date = raw ? new Date(raw) : undefined;
+    if (date && !Number.isNaN(date.getTime())) {
+      // Route ids are the file path without extension, lowercased by the glob loader
+      byId.set(file.replace(/\.md$/, '').toLowerCase(), date);
+    }
+  }
+  return byId;
+})();
 
 // Transform redirects array to Astro's format
 // Internal paths get leading slash added, external URLs stay as-is
@@ -117,7 +141,25 @@ export default defineConfig({
   },
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      // Endpoints (JSON API, feeds, text files) are not pages
+      filter: (page) => {
+        const { pathname } = new URL(page);
+        return (
+          !/^\/api\//.test(pathname) &&
+          !/\.(json|png|xml|txt)$/.test(pathname)
+        );
+      },
+      serialize(item) {
+        const { pathname } = new URL(item.url);
+        const match = pathname.match(/^\/blog\/(.+?)\/?$/);
+        const lastmod = match
+          ? blogLastmod.get(decodeURIComponent(match[1]).toLowerCase())
+          : undefined;
+        if (lastmod) item.lastmod = lastmod.toISOString();
+        return item;
+      },
+    }),
     // TODO: #1 make sure our mono font works with expressiveCode
     expressiveCode({
       themes: ['catppuccin-frappe'],

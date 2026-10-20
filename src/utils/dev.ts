@@ -19,6 +19,12 @@ export const isPreview = !!import.meta.env.PUBLIC_PREVIEW;
 export const isDevOnly = isDev && !isPreview;
 
 /**
+ * Draft content is rendered in dev and on preview builds; label it in both
+ * so editors can tell drafts apart from published content.
+ */
+export const showDraftLabels = isDev || isPreview;
+
+/**
  * Hostnames that count as the live site.
  */
 const PRODUCTION_HOSTNAMES = ['measurementlab.net', 'www.measurementlab.net'];

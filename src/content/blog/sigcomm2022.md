@@ -1,5 +1,5 @@
 ---
-permalink: SIGCOMM2022
+permalink: sigcomm2022
 title: M-Lab at SIGCOMM 2022
 excerpt: >-
   Measurement-Lab was excited to be represented at this year’s SIGCOMM
