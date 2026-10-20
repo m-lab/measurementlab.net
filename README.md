@@ -618,6 +618,16 @@ Edit `src/content/site/config.json`:
 
 ## Development Notes
 
+### SEO, feeds and crawler files
+
+`Head.astro` (with `src/utils/seo.ts`) appends ` | Measurement Lab` to page titles, emits
+Open Graph / `article:*` / Twitter meta, and includes a schema.org graph via
+`src/utils/jsonld.ts` (rendered on production builds only). Three text routes are
+generated from content at build time: `/robots.txt`, `/rss.xml` (blog posts) and
+`/llms.txt`. Never add static copies under `public/` — they would shadow the routes.
+Preview builds (`PUBLIC_PREVIEW=true`) are `noindex` and `robots.txt` disallows all.
+
+
 > **Keep `src/content/config.ts` and `.pages.yml` in sync.** The Zod schema and the Pages CMS config describe the same content from two directions. If they drift, the CMS writes content the build then rejects.
 
 ### Adding New Content Types
