@@ -200,7 +200,7 @@ const archivedBanner = siteConfig?.data.archivedBanner;
 
 	<!-- Authors Section -->
 	{
-		authors && (
+		authors.length > 0 && (
 			<SectionLayout bgColor="bg-neutral-50">
 				<div class="mx-auto max-w-4xl py-12">
 					<h2 class="mb-8 text-2xl font-bold">
