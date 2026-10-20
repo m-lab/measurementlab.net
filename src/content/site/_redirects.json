@@ -2,12 +2,12 @@
   "redirects": [
     {
       "from": "data/bq/examples",
-      "to": "data/docs/bq/examples",
+      "to": "learn",
       "status": 301
     },
     {
       "from": "data/bq/legacymigration",
-      "to": "data/docs/bq/legacymigration",
+      "to": "learn",
       "status": 301
     },
     {
@@ -178,6 +178,16 @@
     {
       "from": "blog/SIGCOMM2022",
       "to": "blog/sigcomm2022",
+      "status": 301
+    },
+    {
+      "from": "blog/measurement-observations-on-network-performance-during-the-COVID-19-pandemic-in-Northern-Italy",
+      "to": "blog/measurement-observations-on-network-performance-during-the-covid-19-pandemic-in-northern-italy",
+      "status": 301
+    },
+    {
+      "from": "policies/cookies-notice",
+      "to": "cookies-notice",
       "status": 301
     }
   ]

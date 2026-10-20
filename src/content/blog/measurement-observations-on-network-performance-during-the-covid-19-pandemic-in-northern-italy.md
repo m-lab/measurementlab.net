@@ -1,6 +1,5 @@
 ---
-permalink: >-
-  measurement-observations-on-network-performance-during-the-COVID-19-pandemic-in-Northern-Italy
+permalink: measurement-observations-on-network-performance-during-the-covid-19-pandemic-in-northern-italy
 title: >-
   Measurement Observations on Network Performance During the COVID-19 Pandemic
   in Northern Italy
