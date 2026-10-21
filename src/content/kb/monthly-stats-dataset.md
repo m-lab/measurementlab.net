@@ -87,7 +87,7 @@ The pipeline source and configuration live in the [m-lab/iqb](https://github.com
 A public manifest lists every available file:
 
 ```
-https://www.measurementlab.net/data/stats/manifest.json
+https://storage.googleapis.com/mlab-sandbox-iqb-us-central1/manifest/v0/manifest.json
 ```
 
 Each entry maps a cache path (`cache/v1/{start}/{end}/{slice}/data.parquet`) to a public GCS download URL. You can download individual files with any HTTP client.
@@ -99,7 +99,7 @@ import pandas as pd
 import requests
 
 # Fetch the manifest
-manifest = requests.get("https://www.measurementlab.net/data/stats/manifest.json").json()
+manifest = requests.get("https://storage.googleapis.com/mlab-sandbox-iqb-us-central1/manifest/v0/manifest.json").json()
 
 # Find the URL for a specific file
 path = "cache/v1/20241001T000000Z/20241101T000000Z/downloads_by_country/data.parquet"

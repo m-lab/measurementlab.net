@@ -15,8 +15,7 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-// TODO(bassosimone): replace vendoring when there is automation
-export const STATS_MANIFEST_URL = '/data/stats/manifest.json';
+export const STATS_MANIFEST_URL = 'https://storage.googleapis.com/mlab-sandbox-iqb-us-central1/manifest/v0/manifest.json'
 
 export interface ManifestFile {
   sha256: string;

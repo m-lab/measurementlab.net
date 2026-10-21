@@ -47,7 +47,7 @@ from io import BytesIO
 
 # Step 1: fetch the manifest to find download URLs
 manifest = requests.get(
-    "https://www.measurementlab.net/data/stats/manifest.json",
+    "https://storage.googleapis.com/mlab-sandbox-iqb-us-central1/manifest/v0/manifest.json",
     timeout=30,
 ).json()
 
