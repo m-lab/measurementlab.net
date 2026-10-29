@@ -15,7 +15,8 @@
     "color": "secondary"
   },
   "cookieConsent": {
-    "message": "This website uses cookies to help us understand how it is used. [Learn more](/cookies-notice)."
+    "message": "This website uses cookies to help us understand how it is used. [Learn more](/cookies-notice).",
+    "googleAnalyticsId": "G-GPGKR8WBC6"
   },
   "footer": {
     "description": "Measurement Lab(M-Lab) is a fiscally sponsored project of [Superbloom Design.](https://superbloom.design/)",
