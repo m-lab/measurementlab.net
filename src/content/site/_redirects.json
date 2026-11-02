@@ -189,6 +189,11 @@
       "from": "policies/cookies-notice",
       "to": "cookies-notice",
       "status": 301
+    },
+    {
+      "from": "feed.xml",
+      "to": "rss.xml",
+      "status": 301
     }
   ]
 }

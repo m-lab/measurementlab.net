@@ -1,6 +1,7 @@
 import { getCollection } from 'astro:content';
 import { collections } from '@content-config';
 import { isVisible } from '@utils/content';
+import { getPagePath, type Page } from '@utils/pages';
 import type { APIRoute } from 'astro';
 
 // Get collection names from the config - single source of truth
@@ -46,6 +47,16 @@ export const GET: APIRoute = async ({ params }) => {
       }
 
       // For data collections (like pages, people), just return data with id
+      if (collection === 'pages') {
+        // A page's URL is its folder path plus its permalink (see `getPagePath`), which
+        // the raw data can't tell a client. Resolve it here so consumers such as the
+        // site search don't have to re-derive the routing rule.
+        return {
+          id: entry.id,
+          path: getPagePath(entry as Page),
+          ...entry.data,
+        };
+      }
       return {
         id: entry.id,
         ...entry.data,

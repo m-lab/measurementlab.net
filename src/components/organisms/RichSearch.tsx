@@ -10,8 +10,10 @@ import {
 import Fuse, { type FuseResult } from 'fuse.js';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AcademicCapIcon from '~icons/heroicons/academic-cap';
+import BeakerIcon from '~icons/heroicons/beaker';
 import BookOpenIcon from '~icons/heroicons/book-open';
 import ChevronRightIcon from '~icons/heroicons/chevron-right-16-solid';
+import CircleStackIcon from '~icons/heroicons/circle-stack';
 import DocumentIcon from '~icons/heroicons/document-text';
 import ExclamationTriangleIcon from '~icons/heroicons/exclamation-triangle';
 import FolderIcon from '~icons/heroicons/folder';
@@ -39,6 +41,9 @@ type CategoryConfig = {
   urlPrefix: string;
   icon: IconComponent;
   modifier: string;
+  // Rows without an image of their own get the site's default image, unless this is
+  // set: then they show the category icon instead.
+  noImageFallback?: boolean;
   transform: (item: any) => Omit<SearchResult, 'category'>;
 };
 
@@ -88,8 +93,64 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
       return {
         id: page.id,
         name: page.title,
-        url: `/${page.permalink}`,
+        // `path` is the served route (folder + permalink), resolved by the pages API
+        url: `/${page.path}`,
         imageUrl: page.heroImage?.src,
+        content:
+          parts.length > 0
+            ? stripMarkdown(parts.join(' ')).slice(0, 2000)
+            : undefined,
+      };
+    },
+  },
+  {
+    name: 'Tests',
+    apiEndpoint: '/api/tests.json',
+    urlPrefix: '/tests/',
+    icon: BeakerIcon,
+    noImageFallback: true,
+    modifier: '*',
+    transform: (test: any) => {
+      const parts: string[] = [];
+      if (test.data.description) parts.push(test.data.description);
+      if (test.body) parts.push(test.body);
+      return {
+        id: `test-${test.id}`,
+        name: test.data.title,
+        // The route is the permalink itself (`/tests/ndt/ndt7/`), see tests/[...slug]
+        url: test.data.permalink,
+        imageUrl: undefined,
+        content:
+          parts.length > 0
+            ? stripMarkdown(parts.join(' ')).slice(0, 2000)
+            : undefined,
+      };
+    },
+  },
+  {
+    name: 'Data',
+    apiEndpoint: '/api/data.json',
+    urlPrefix: '/data/',
+    icon: CircleStackIcon,
+    noImageFallback: true,
+    modifier: '%',
+    transform: (dataset: any) => {
+      const parts: string[] = [];
+      if (dataset.description) parts.push(dataset.description);
+      if (dataset.keywords?.length) parts.push(dataset.keywords.join(' '));
+      if (dataset.accessPoints?.length) {
+        parts.push(
+          dataset.accessPoints
+            .map((ap: any) => [ap.label, ap.description].filter(Boolean).join(' '))
+            .join(' ')
+        );
+      }
+      return {
+        id: `data-${dataset.id}`,
+        name: dataset.title,
+        // The route is keyed on the dataset id, see data/[slug]
+        url: `/data/${dataset.id}`,
+        imageUrl: undefined,
         content:
           parts.length > 0
             ? stripMarkdown(parts.join(' ')).slice(0, 2000)
@@ -275,8 +336,10 @@ export default function RichSearch() {
             )
             .map((item: any) => {
               const transformed = category.transform(item);
-              // Use hero image if available, otherwise use default
-              const imageUrl = transformed.imageUrl || defaultImageUrl;
+              // Use hero image if available, otherwise the default (where the category wants it)
+              const imageUrl =
+                transformed.imageUrl ||
+                (category.noImageFallback ? undefined : defaultImageUrl);
               return {
                 ...transformed,
                 imageUrl,
