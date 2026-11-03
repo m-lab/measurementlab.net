@@ -87,7 +87,7 @@ sections:
           variant: supporting2
           size: md
           text: "Instructions for Docker Compose "
-          href: /kb/docker-byos-monitoring-logging
+          href: /kb/byos-overview/#software-deployment
   - type: partners
     background:
       color: primary-light
