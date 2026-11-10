@@ -64,7 +64,7 @@ sections:
       - /tests/traceroute/
   - type: tests
     background:
-      color: speed-light
+      color: gray
       type: contained
     title: Analysis Systems
     description: Systems that analyze data collected on the M-Lab platform, rather
