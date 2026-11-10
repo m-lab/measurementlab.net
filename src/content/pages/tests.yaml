@@ -54,6 +54,14 @@ sections:
       - /tests/wehe/
   - type: tests
     background:
+      color: gray
+      type: contained
+    title: Analysis Systems
+    description: Systems that analyze data collected on the M-Lab platform, rather than collecting measurements of their own
+    tests:
+      - /tests/hermes/
+  - type: tests
+    background:
       color: white
       type: contained
     title: Core Services

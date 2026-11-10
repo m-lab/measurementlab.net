@@ -1,7 +1,9 @@
 ---
 permalink: /tests/hermes/quickstart/
 title: "HERMES Access and QuickStart"
-status: draft
+status: published
+kind: analysis-system
+testStatus: current
 parentTest: /tests/hermes/
 showInIndex: false
 order: 1

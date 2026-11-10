@@ -1,7 +1,9 @@
 ---
 permalink: /tests/hermes/
 title: "HERMES"
-status: draft
+status: published
+kind: analysis-system
+testStatus: current
 description: "Detects performance degradations affecting groups of Internet users, and the network segments associated with them."
 icon: /src/assets/images/tests/hermes.png
 ---
