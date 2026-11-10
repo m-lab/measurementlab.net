@@ -107,4 +107,4 @@ https://doi.org/10.1145/3789240.3829129
 
 ## Improving what HERMES can see
 
-HERMES can only observe where M-Lab measurements exist. Hosting an M-Lab server increases measurement coverage in a region and exposes paths and interconnections that would otherwise be sparsely observed. ISPs, network operators, universities, and other eligible organizations can contribute infrastructure through M-Lab's [host-managed server program](/contribute/host-managed/).
+HERMES can only observe where M-Lab measurements exist. Hosting an M-Lab server increases measurement coverage in a region and exposes paths and interconnections that would otherwise be sparsely observed. ISPs, network operators, universities, and other eligible organizations can contribute infrastructure through M-Lab's [Bring Your Own Server (BYOS)](/byos/).
