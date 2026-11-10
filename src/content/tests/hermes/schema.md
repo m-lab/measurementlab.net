@@ -1,7 +1,9 @@
 ---
 permalink: /tests/hermes/schema/
 title: "HERMES Table Schema"
-status: draft
+status: published
+kind: analysis-system
+testStatus: current
 parentTest: /tests/hermes/
 showInIndex: false
 order: 2

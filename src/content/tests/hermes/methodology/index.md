@@ -1,7 +1,9 @@
 ---
 permalink: /tests/hermes/methodology/
 title: "HERMES Methodology"
-status: draft
+status: published
+kind: analysis-system
+testStatus: current
 parentTest: /tests/hermes/
 showInIndex: false
 order: 4

@@ -4,7 +4,7 @@ title: "Introduction to Traceroutes"
 chapter: Understanding Measurement
 chapterOrder: 2
 order: 4
-status: draft
+status: published
 description: How a traceroute reveals the routers between you and a server, how to read its output, why paths are not symmetric, and where to find M-Lab's traceroute data.
 tags: [Measurement, Routing, Network Topology]
 difficulty: beginner

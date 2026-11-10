@@ -1,7 +1,9 @@
 ---
 permalink: /tests/hermes/methodology/path-enrichment/
 title: "Traceroute Enrichment"
-status: draft
+status: published
+kind: analysis-system
+testStatus: current
 parentTest: /tests/hermes/methodology/
 showInIndex: false
 order: 1

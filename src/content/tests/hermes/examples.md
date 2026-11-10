@@ -1,7 +1,9 @@
 ---
 permalink: /tests/hermes/examples/
 title: "HERMES Example Queries and Tutorials"
-status: draft
+status: published
+kind: analysis-system
+testStatus: current
 parentTest: /tests/hermes/
 showInIndex: false
 order: 3
