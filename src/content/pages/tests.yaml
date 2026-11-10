@@ -54,14 +54,6 @@ sections:
       - /tests/wehe/
   - type: tests
     background:
-      color: gray
-      type: contained
-    title: Analysis Systems
-    description: Systems that analyze data collected on the M-Lab platform, rather than collecting measurements of their own
-    tests:
-      - /tests/hermes/
-  - type: tests
-    background:
       color: white
       type: contained
     title: Core Services
@@ -70,6 +62,15 @@ sections:
       - /tests/pcap/
       - /tests/tcp-info/
       - /tests/traceroute/
+  - type: tests
+    background:
+      color: speed-light
+      type: contained
+    title: Analysis Systems
+    description: Systems that analyze data collected on the M-Lab platform, rather
+      than collecting measurements of their own
+    tests:
+      - /tests/hermes/
   - type: richText
     background:
       color: speed-light
@@ -98,9 +99,8 @@ sections:
       Policy](/privacy) to understand how data is handled.
 
 
-      Have questions? If you have questions about privacy or how your
-      data is used, you can [contact the
-      team](mailto:privacy@measurementlab.net).
+      Have questions? If you have questions about privacy or how your data is
+      used, you can [contact the team](mailto:privacy@measurementlab.net).
 
 
       ## Help and troubleshooting
