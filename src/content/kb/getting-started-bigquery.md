@@ -4,13 +4,13 @@ title: Getting Started with M-Lab Data in BigQuery
 chapter: Accessing Data
 chapterOrder: 5
 order: 1
-status: draft
+status: published
 description: How to get free access to M-Lab's BigQuery datasets, run your first queries, understand the data structure, and work efficiently with large tables.
 tags: [Data Access, BigQuery]
 difficulty: beginner
 ---
 
-M-Lab publishes all measurement data to [Google BigQuery](https://cloud.google.com/bigquery/what-is-bigquery) as a free, open dataset. Access is sponsored by M-Lab — queries against the `measurement-lab` project don't come out of your own GCP quota — but you must join the M-Lab Discuss group first to activate that sponsorship. **Saving query results to your own BigQuery tables, or running queries billed to your own project, will incur charges to you.**
+M-Lab publishes all measurement data to [Google BigQuery](https://cloud.google.com/bigquery/docs/introduction) as a free, open dataset. Access is sponsored by M-Lab: queries you run in the `measurement-lab` project are paid for by M-Lab, but you must join the M-Lab Discuss group first to activate that sponsorship. **Running queries in your own project, even against M-Lab tables, or saving results to your own BigQuery tables will incur charges to you.**
 
 Questions? Email [support@measurementlab.net](mailto:support@measurementlab.net).
 
@@ -30,15 +30,15 @@ The list also carries announcements about data format changes, platform updates,
 
 You can now run queries at no charge. You do **not** need to activate Google's free credit offer.
 
-### Option B — Google Cloud SDK (command line)
+### Option B — Google Cloud CLI (command line)
 
-1. [Download and install the Google Cloud SDK](https://cloud.google.com/sdk/) for your operating system.
-2. Authenticate with the Gmail account you subscribed to M-Lab Discuss:
-   ```
+1. [Download and install the Google Cloud CLI](https://cloud.google.com/sdk/docs/install) for your operating system.
+2. Authenticate with the Google account you subscribed to M-Lab Discuss:
+   ```bash
    gcloud auth login
    ```
 3. Set your default project:
-   ```
+   ```bash
    gcloud config set project measurement-lab
    ```
 
@@ -46,25 +46,25 @@ BigQuery's `bq` command-line tool is now available and queries against `measurem
 
 ### Service Accounts
 
-If you need to query from an application using a service account (`@developer.gserviceaccount.com`), email [support@measurementlab.net](mailto:support@measurementlab.net) so M-Lab can add it to M-Lab Discuss manually. 
+If you need to query from an application using a service account (`@developer.gserviceaccount.com`), email [support@measurementlab.net](mailto:support@measurementlab.net) so M-Lab can add it to M-Lab Discuss manually.
 
 ## Your First Query
 
 For speed test results, you can start with the `measurement-lab.ndt.ndt7_union` table.
-For example, for the average download speed by country for a day:
+For example, for the median download speed by country for a day:
 
 <!-- sqltest -->
 ```sql
 -- Median download speed by country for a day
 SELECT
-  client.Geo.CountryCode                     AS country,
-  ROUND(APPROX_QUANTILES(a.MeanThroughputMbps, 2)[OFFSET(1)], 2)       AS median_download_mbps,
-  COUNT(*)                                   AS test_count
+  client.Geo.CountryCode                                          AS country,
+  ROUND(APPROX_QUANTILES(a.MeanThroughputMbps, 2)[OFFSET(1)], 2)  AS median_download_mbps,
+  COUNT(*)                                                        AS test_count
 FROM `measurement-lab.ndt.ndt7_union`
 WHERE date = '2024-06-01'
   AND a.MeanThroughputMbps > 0
   AND a.MeanThroughputMbps < 10000   -- exclude outliers
-  AND raw.Download.UUID IS NOT NULL  -- include only tests with populated Download field
+  AND raw.Download.UUID IS NOT NULL  -- download tests only (the table also has uploads)
 GROUP BY country
 ORDER BY median_download_mbps DESC
 LIMIT 20
@@ -82,19 +82,19 @@ NDT7 results have a nested structure. The key top-level fields are:
 ### Commonly Used Fields
 
 ```
-a.TestTime              — when the test ran (TIMESTAMP)
-a.MeanThroughputMbps    — download speed in Mbps
-a.MinRTT                — minimum RTT in milliseconds
-a.LossRate              — packet loss fraction (0.0–1.0)
+a.TestTime                     — when the test ran (TIMESTAMP)
+a.MeanThroughputMbps           — throughput in Mbps, for the test's direction (download or upload)
+a.MinRTT                       — minimum RTT in milliseconds
+a.LossRate                     — packet loss fraction (0.0–1.0)
 
-client.Geo.CountryCode  — ISO 3166-1 alpha-2 country code
-client.Geo.Subdivision1ISOCode       — ISO 3166-2 region/subdivision code
-client.Geo.City         — city name (MaxMind, coarse precision)
+client.Geo.CountryCode         — ISO 3166-1 alpha-2 country code
+client.Geo.Subdivision1ISOCode — region code
+client.Geo.City                — city name (MaxMind, coarse precision)
 
-client.Network.ASNumber — client's Autonomous System Number
-client.Network.ASName   — client's ISP/network name
+client.Network.ASNumber        — client's Autonomous System Number
+client.Network.ASName          — client's ISP/network name
 
-server.Site             — M-Lab site ID (e.g., "lga01")
+server.Site                    — M-Lab site ID (e.g., "lga01")
 ```
 
 ## Query Costs and Partition Pruning
@@ -106,14 +106,12 @@ The NDT7 table is large (more than 100GB/day of new data). **Always** filter by 
 WHERE date = '2024-06-01'
 
 -- Inefficient: scans all partitions (very expensive)
-WHERE a.TestTime > '2024-06-01'
+WHERE date > 'yyyy-mm-dd'
 ```
 
-Use the **preview** feature in the BigQuery UI to inspect data before running queries. The daily query limit per user per day is currently set to 10TiB.
+Most of a query's cost comes from how many days it covers. The example query above reads about 35 GB for one day in 2026, and `SELECT *` reads more than 100 GB per day. Before running a query, check how much data it will read: the *BigQuery console shows an estimate at the editor*, and `bq query --dry_run` prints one without running anything. `LIMIT` doesn't reduce the data read. Each user can query up to 10 TiB per day.
 
 ## Further Reading
 
 - [M-Lab BigQuery Schema](https://www.measurementlab.net/data/docs/bq/schema) — full schema documentation
-- [NDT (Network Diagnostic Tool)](/kb/test-ndt) — the primary dataset
-- [Analyzing M-Lab Data: A Researcher's Guide](/kb/research-guide) — ISP comparison patterns and advanced queries
 
