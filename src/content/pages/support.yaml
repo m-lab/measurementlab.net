@@ -57,11 +57,32 @@ sections:
 
       M-Lab offers tiered sponsorship opportunities to align with your
       organization's goals and the level of impact you wish to achieve.
-
-
-      ![](</src/assets/images/sponsorship/M-Lab Sponsorship Tiers 2026.png>)
-
-
+  - type: tiers
+    background:
+      color: primary-light
+      type: full
+    tiers:
+      - name: Resiliency Circle
+        value: $500k+
+      - name: Quality Circle
+        value: $250k - $500k
+      - name: Transit Circle
+        value: $100k - $250k
+      - name: Latency Circle
+        value: $50k - $100k
+      - name: Speed Circle
+        value: Up to $50k
+    supportTitle: Types of Support
+    supportTypes:
+      - Direct funding
+      - Allocated staff time to contribute to M-Lab projects
+      - Donated infrastructure (e.g. cloud credits, servers, transit)
+  - type: richText
+    background:
+      color: primary-light
+      type: full
+    withTOC: false
+    content: >-
       If your organization is interested in supporting the M-Lab platform,
       please [contact us](mailto:hello@measurementlab.net).
 

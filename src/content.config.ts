@@ -191,6 +191,25 @@ const createSchemas = (image: ImageFunction) => {
       description: z.string().optional(),
       tests: z.array(z.string()).default([]), // Test permalinks (e.g. "/tests/ndt/")
     }),
+    // Tiered ladder (e.g. sponsorship levels) with an optional shared side panel
+    SectionCommonSchema.extend({
+      type: z.literal('tiers'),
+      title: z.string().optional(),
+      description: z.string().optional(),
+      // Highest tier first; each one is drawn a step narrower than the one above.
+      tiers: z
+        .array(
+          z.object({
+            name: z.string(),
+            value: z.string(),
+            // Unset keeps the default blue ramp, darkest at the top.
+            color: colorPaletteSchema.optional(),
+          })
+        )
+        .default([]),
+      supportTitle: z.string().optional(),
+      supportTypes: z.array(z.string()).default([]),
+    }),
     // status map section for /status page
     SectionCommonSchema.extend({
       type: z.literal('infrastructureMap'),

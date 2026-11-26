@@ -108,6 +108,7 @@ Pages use a flexible section-based system. Each page YAML file contains a `secti
 | `tests`             | TestsSection            | Hand-picked tests, same card as the /tests page  |
 | `speed_test`        | SpeedTestSection        | M-Lab speed test widget                          |
 | `featured_partners` | FeaturedPartnersSection | Partner spotlight                                |
+| `tiers`             | TiersSection            | Stepped tier ladder with optional side panel     |
 | `infrastructureMap` | InfrastructureMapSection | Mapbox infrastructure map (used on /status)     |
 | `flexi`             | FlexiSection            | Nested section container                         |
 

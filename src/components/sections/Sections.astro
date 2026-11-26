@@ -12,6 +12,7 @@ import RelatedPostsSection from '@components/sections/RelatedPostsSection.astro'
 import RichTextSection from '@components/sections/RichTextSection.astro';
 import SpeedTestSection from '@components/sections/SpeedTestSection.astro';
 import TestsSection from '@components/sections/TestsSection.astro';
+import TiersSection from '@components/sections/TiersSection.astro';
 import SectionLayout from '@layouts/SectionLayout.astro';
 
 // `inheritedBackground` is the background colour of an enclosing section (set by
@@ -118,6 +119,17 @@ let richTextCounter = 0;
 							title={section.title}
 							description={section.description}
 							tests={section.tests}
+						/>
+					);
+				case 'tiers':
+					return (
+						<TiersSection
+							title={section.title}
+							description={section.description}
+							tiers={section.tiers}
+							supportTitle={section.supportTitle}
+							supportTypes={section.supportTypes}
+							background={{ color: effectiveBackground }}
 						/>
 					);
 				case 'infrastructureMap':

@@ -1,0 +1,180 @@
+---
+import Heading from '@components/atoms/Heading.astro';
+import type { ColorPaletteType } from '@content-config';
+import { isDarkBackground } from '@utils/backgrounds';
+import { renderMarkdown } from '@utils/renderMarkdown';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  /** Highest tier first. Each step down the list is drawn one step narrower. */
+  tiers?: { name: string; value: string; color?: ColorPaletteType }[];
+  supportTitle?: string;
+  supportTypes?: string[];
+  background?: { color?: string };
+}
+
+const {
+  title,
+  description,
+  tiers = [],
+  supportTitle,
+  supportTypes = [],
+  background,
+} = Astro.props;
+
+// Bars must stand out from the surface they sit on, so the ramp flips with it.
+const isDark = isDarkBackground(background?.color);
+
+const descriptionHtml = description
+  ? (await renderMarkdown(description)).html
+  : undefined;
+
+// 0 for the top tier, 1 for the bottom one. Drives the colour ramp, so it works
+// for any number of tiers.
+const depth = (index: number) =>
+  tiers.length > 1 ? index / (tiers.length - 1) : 0;
+
+// A tier with its own colour takes that palette's 300 fill and 950 text, which reads on
+// light and dark sections alike. Without one it falls back to the blue ramp.
+// Full class names, so Tailwind sees them and emits the colours.
+const tierColors: Record<ColorPaletteType, string> = {
+  primary: 'bg-primary-300 text-primary-950',
+  secondary: 'bg-secondary-300 text-secondary-950',
+  supporting1: 'bg-supporting1-300 text-supporting1-950',
+  supporting2: 'bg-supporting2-300 text-supporting2-950',
+  speed: 'bg-speed-300 text-speed-950',
+  neutral: 'bg-neutral-300 text-neutral-950',
+};
+
+const hasSupport = supportTypes.length > 0;
+---
+
+<div class="mx-auto max-w-3xl">
+	{
+		title && (
+			<Heading level={3} as="h2" class="mb-4">
+				{title}
+			</Heading>
+		)
+	}
+	{
+		descriptionHtml && (
+			<div
+				class={`prose mb-6 max-w-none ${isDark ? 'prose-invert' : ''}`}
+				set:html={descriptionHtml}
+			/>
+		)
+	}
+
+	<div
+		class={`grid items-stretch gap-6 ${hasSupport ? 'md:grid-cols-[minmax(0,1fr)_16rem]' : ''}`}
+	>
+		<ol class={`tiers ${isDark ? 'tiers-on-dark' : ''}`} role="list">
+			{
+				tiers.map((tier, index) => (
+					<li
+						class={`tier ${tier.color ? tierColors[tier.color] : 'tier-ramp'}`}
+						style={`--tier-index: ${index}; --tier-depth: ${depth(index)}`}
+					>
+						<span class="tier-name">{tier.name}</span>
+						<span class="tier-value">{tier.value}</span>
+					</li>
+				))
+			}
+		</ol>
+
+		{
+			hasSupport && (
+				<aside
+					class={`rounded-md border-b-4 p-5 ${
+						isDark
+							? 'border-primary-300 bg-white/10'
+							: 'border-primary-400 bg-white'
+					}`}
+				>
+					{supportTitle && (
+						<h3 class="mb-3 text-sm font-semibold tracking-wide uppercase">
+							{supportTitle}
+						</h3>
+					)}
+					<ul class="space-y-3" role="list">
+						{supportTypes.map((item) => (
+							<li class="flex gap-3 leading-snug">
+								<span
+									class={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${isDark ? 'bg-primary-300' : 'bg-primary-600'}`}
+									aria-hidden="true"
+								/>
+								<span>{item}</span>
+							</li>
+						))}
+					</ul>
+				</aside>
+			)
+		}
+	</div>
+</div>
+
+<style>
+	.tiers {
+		--tier-step: 4%;
+		--tier-from: var(--color-primary-950);
+		--tier-to: var(--color-primary-600);
+		--tier-text: var(--color-white);
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	/* On a dark section the dark ramp would disappear, so use the light end. */
+	.tiers-on-dark {
+		--tier-from: var(--color-white);
+		--tier-to: var(--color-primary-300);
+		--tier-text: var(--color-primary-950);
+	}
+
+	.tier {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		width: calc(100% - var(--tier-index) * var(--tier-step));
+		padding: 0.875rem 1.25rem;
+		border-radius: 0.375rem;
+	}
+
+	/* Default colouring, for tiers with no colour of their own. */
+	.tier-ramp {
+		color: var(--tier-text);
+		background-color: color-mix(
+			in oklab,
+			var(--tier-from),
+			var(--tier-to) calc(var(--tier-depth) * 100%)
+		);
+	}
+
+	.tier-name {
+		font-size: 1.125rem;
+		font-weight: 600;
+		line-height: 1.25;
+	}
+
+	.tier-value {
+		font-size: 1.125rem;
+		font-weight: 700;
+		font-variant-numeric: tabular-nums;
+		line-height: 1.25;
+		text-align: right;
+		white-space: nowrap;
+	}
+
+	@media (min-width: 40rem) {
+		.tiers {
+			--tier-step: 8%;
+		}
+	}
+</style>
