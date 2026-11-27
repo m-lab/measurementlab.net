@@ -653,6 +653,65 @@ components:
           image: '{fields.icon}'
 
   # -- Infrastructure Map --
+  tiers_section:
+    type: object
+    fields:
+      - name: background
+        label: Section Background
+        component: background_select
+      - name: title
+        label: Title (Optional)
+        type: string
+        required: false
+      - name: description
+        label: Description
+        type: rich-text
+        required: false
+        description: Optional text displayed above the tiers
+      - name: tiers
+        label: Tiers
+        type: object
+        list: true
+        description: List the highest tier first. Each tier is drawn a step narrower than the one above it.
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: value
+            label: Value
+            type: string
+            required: true
+            description: Shown on the right of the tier, e.g. "$50k - $100k"
+          - name: color
+            label: Color (Optional)
+            type: select
+            required: false
+            options:
+              values:
+                - label: Neutral
+                  value: neutral
+                - label: Primary (Blue)
+                  value: primary
+                - label: Secondary (Yellow)
+                  value: secondary
+                - label: Supporting 1 (Green)
+                  value: supporting1
+                - label: Supporting 2 (Sap Green)
+                  value: supporting2
+                - label: Speed (Purple)
+                  value: speed
+            description: Leave every tier empty for the default blue ramp, darkest at the top
+      - name: supportTitle
+        label: Side Panel Title (Optional)
+        type: string
+        required: false
+      - name: supportTypes
+        label: Side Panel Items
+        type: string
+        list: true
+        description: Short points that apply to every tier, shown in a panel beside the tiers
+
   infrastructure_map_section:
     type: object
     fields:
@@ -771,6 +830,9 @@ content:
           - name: tests
             label: Tests Section
             component: tests_section
+          - name: tiers
+            label: Tiers Section
+            component: tiers_section
           - name: speed_test
             label: Speed Test Section
             component: speed_test_section
@@ -905,6 +967,9 @@ content:
           - name: tests
             label: Tests Section
             component: tests_section
+          - name: tiers
+            label: Tiers Section
+            component: tiers_section
           - name: infrastructureMap
             label: Infrastructure Map Section
             component: infrastructure_map_section

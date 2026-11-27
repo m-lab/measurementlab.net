@@ -594,6 +594,43 @@ sections:
       highlight key partnerships.
 
   # ============================================================
+  # TIERS SECTION
+  # ============================================================
+  - type: hero
+    title: Tiers Section
+    subtitle: A stepped ladder of tiers with an optional side panel of shared points
+    zigzag: primary-light
+
+  - type: tiers
+    title: Tiers on a light background
+    description: >-
+      List the highest tier first. Each tier is drawn a step narrower than the
+      one above it. The side panel is optional.
+    tiers:
+      - name: Gold
+        value: $100k+
+      - name: Silver
+        value: $50k - $100k
+      - name: Bronze
+        value: Up to $50k
+    supportTitle: Every tier includes
+    supportTypes:
+      - A point that applies to all tiers
+      - Another shared point
+
+  - type: tiers
+    background:
+      color: primary-dark
+    title: Tiers on a dark background, no side panel
+    tiers:
+      - name: Gold
+        value: $100k+
+      - name: Silver
+        value: $50k - $100k
+      - name: Bronze
+        value: Up to $50k
+
+  # ============================================================
   # INFRASTRUCTURE MAP SECTION
   # ============================================================
   - type: hero
