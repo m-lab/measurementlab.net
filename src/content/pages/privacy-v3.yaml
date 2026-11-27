@@ -5,17 +5,18 @@ sections:
   - type: richText
     background:
       color: white
+      type: full
     withTOC: true
-    content: |
+    content: |-
       # Measurement Lab Privacy Policy
 
       ## Active and previous versions
 
-      * Current version (this document): [v3] July 14, 2020.
-        * 2020-12-04 : Updated address for Code for Science, LLC.
-      * Previous versions:
-        * [[v1] July 12, 2018](/privacy-v1/)
-        * [[v2] July 1, 2019](/privacy-v2/)
+      - Current version (this document): [v3] July 14, 2020.
+        - 2020-12-04 : Updated address for Code for Science, LLC.
+      - Previous versions:
+        - [[v1] July 12, 2018](/privacy-v1/)
+        - [[v2] July 1, 2019](/privacy-v2/)
 
       ## Measurement Lab Data Collection Overview
 
@@ -35,7 +36,7 @@ sections:
 
       ## Who we are and why we do what we do.
 
-      Measurement Lab (further "**M-Lab**") is a fiscally sponsored project of [Code for Science & Society](https://codeforsociety.org) (CS&S) operating at 3439 SE Hawthorne Blvd. #247, Portland, Oregon 97214-5048.
+      Measurement Lab (further "**M-Lab**") is a fiscally sponsored project of [Superbloom Design](https://superbloom.design/) (Superbloom), a registered 501(c)3 nonprofit organization based in the United States of America.
 
       ### Purpose of the processing of personal data
 
@@ -51,12 +52,12 @@ sections:
 
       M-Lab uses data directly for the following purposes:
 
-      * **Research**: M-Lab may directly use aggregated experiment data to conduct research related to Internet performance.
-      * **Aggregation of data**: We aggregate experiment data to support analysis internally and by third parties. To improve the transparency and usability of data we may also produce visualizations that display experiment data patterns for a particular region or ISP.
-      * **Maintenance and improvement of the M-Lab Platform**: We may also use the information we collect to maintain and support our platform and presence, including troubleshooting issues, optimizing our website, or making decisions about how to expand our server network.
-      * **Operation of the M-Lab Platform**: We may use the information we collect to operate experiments associated with the M-Lab platform, including directing a client to an appropriate server on the platform.
-      * **Abuse Detection and Troubleshooting**: We may use information we collect to detect, prevent, or otherwise addressing abuse, security, or technical issues with the M-Lab Platform.
-      * **Legal Purposes**: We may use data we collect to enforce legal claims, including investigation of potential violations of applicable Acceptable Use Policies or other legal terms governing your use of the M-Lab platform.
+      - **Research**: M-Lab may directly use aggregated experiment data to conduct research related to Internet performance.
+      - **Aggregation of data**: We aggregate experiment data to support analysis internally and by third parties. To improve the transparency and usability of data we may also produce visualizations that display experiment data patterns for a particular region or ISP.
+      - **Maintenance and improvement of the M-Lab Platform**: We may also use the information we collect to maintain and support our platform and presence, including troubleshooting issues, optimizing our website, or making decisions about how to expand our server network.
+      - **Operation of the M-Lab Platform**: We may use the information we collect to operate experiments associated with the M-Lab platform, including directing a client to an appropriate server on the platform.
+      - **Abuse Detection and Troubleshooting**: We may use information we collect to detect, prevent, or otherwise addressing abuse, security, or technical issues with the M-Lab Platform.
+      - **Legal Purposes**: We may use data we collect to enforce legal claims, including investigation of potential violations of applicable Acceptable Use Policies or other legal terms governing your use of the M-Lab platform.
 
       **Important**: Please note that because our platform's purpose is to engage in longitudinal data studies, we maintain the data we collect for infinite periods of time. If you are not comfortable with data being retained for an indefinite amount of time, please abstain from using our tests. Read on to find out what data is collected.
 
@@ -64,19 +65,17 @@ sections:
 
       As outlined in our [Acceptable Use Policy](/aup/), the following types of data may be collected from you:
 
-      * **Data Collected When You Run Tests**
-        * **Measurement Data**: Performance variables describing the state of connection during the test, such as average download and upload speed; latency and topology of the path between the client and server; and whether the application or protocol is manipulated or discriminated against in transit.
-        * **Connection Data**: Information necessary to characterize performance data, including the Internet Protocol (IP) address of the client that conducted the measurement and the date and time of the test.
-        * **Metadata**: Descriptive data about the user's environment to support analysis of measurement data. Metadata varies by experiment and client but may include the name and version of the web browser software, software application, or operating system used to conduct the test.
-
-      * **Data Collected for the Performance of M-Lab Operations**
-        * M-Lab interfaces with a number of third parties in the operation of its platform, including for the purposes of contracting and operations for server infrastructure and transit and maintaining measurement experiments. M-Lab may collect contact data from these parties including name, email, address, and telephone number and retain and use this contact data for as long as is necessary to provide the platform and for legal purposes. This data will not be published and will be accessible only to members of the M-Lab team.
-        * We refer to this type of data hereafter as "Non-test related data"
-
-      * **Information Collected Through the Use Of Our Website**
-        * We may collect data about how you interact with M-Lab, like when you visit our website, hereafter referred to as "Website related data". This data may be collected, processed and analyzed using Google Analytics:
-          * **Log data**: When you use M-Lab services or view M-Lab content, we may automatically collect and store certain data in server logs (records of the page requests made when you visit our sites). This may include: details of how you used our platform; Internet protocol address; device event data such as crashes, system activity, hardware settings, browser type, standard HTTP request headers, including but not limited to user agent, referral URL, language preference, date and time; and cookies that may uniquely identify your browser.
-          * **Cookies and Local Storage**: We may use various technologies to collect and store data when you visit the website, and this may include sending one or more cookies or randomly generated identifiers to your device. A cookie is a small file containing a string of characters that is sent to your computer when you visit a website. Cookies may store user preferences and other data. The "help" portion of the toolbar on the majority of browsers will direct you on how to prevent your browser from accepting new cookies, how to command the browser to tell you when you receive a new cookie, or how to fully disable cookies. We may also collect and store data using mechanisms such as browser web storage (including HTML5) and application data caches. For more information about cookies, please see our [Cookies Notice](/cookies-notice/).
+      - **Data Collected When You Run Tests**
+        - **Measurement Data**: Performance variables describing the state of connection during the test, such as average download and upload speed; latency and topology of the path between the client and server; and whether the application or protocol is manipulated or discriminated against in transit.
+        - **Connection Data**: Information necessary to characterize performance data, including the Internet Protocol (IP) address of the client that conducted the measurement and the date and time of the test.
+        - **Metadata**: Descriptive data about the user's environment to support analysis of measurement data. Metadata varies by experiment and client but may include the name and version of the web browser software, software application, or operating system used to conduct the test.
+      - **Data Collected for the Performance of M-Lab Operations**
+        - M-Lab interfaces with a number of third parties in the operation of its platform, including for the purposes of contracting and operations for server infrastructure and transit and maintaining measurement experiments. M-Lab may collect contact data from these parties including name, email, address, and telephone number and retain and use this contact data for as long as is necessary to provide the platform and for legal purposes. This data will not be published and will be accessible only to members of the M-Lab team.
+        - We refer to this type of data hereafter as "Non-test related data"
+      - **Information Collected Through the Use Of Our Website**
+        - We may collect data about how you interact with M-Lab, like when you visit our website, hereafter referred to as "Website related data". This data may be collected, processed and analyzed using Google Analytics:
+          - **Log data**: When you use M-Lab services or view M-Lab content, we may automatically collect and store certain data in server logs (records of the page requests made when you visit our sites). This may include: details of how you used our platform; Internet protocol address; device event data such as crashes, system activity, hardware settings, browser type, standard HTTP request headers, including but not limited to user agent, referral URL, language preference, date and time; and cookies that may uniquely identify your browser.
+          - **Cookies and Local Storage**: We may use various technologies to collect and store data when you visit the website, and this may include sending one or more cookies or randomly generated identifiers to your device. A cookie is a small file containing a string of characters that is sent to your computer when you visit a website. Cookies may store user preferences and other data. The "help" portion of the toolbar on the majority of browsers will direct you on how to prevent your browser from accepting new cookies, how to command the browser to tell you when you receive a new cookie, or how to fully disable cookies. We may also collect and store data using mechanisms such as browser web storage (including HTML5) and application data caches. For more information about cookies, please see our [Cookies Notice](/cookies-notice/).
 
       ### Test-related data (measurement data)
 
@@ -138,11 +137,11 @@ sections:
 
       ### How to exercise your rights under the GDPR
 
-      For data processed in the scope of this policy where M-Lab assumes the role of data controller (GDPR Art. 4.7), please write to us at privacy@measurementlab.net or by post at Measurement Lab, 3439 SE Hawthorne Blvd. #247, Portland, Oregon 97214-5048; please explain which right you wish to exercise and in which capacity. For instance you may be a website visitor wishing to exercise your right to erasure.
+      For data processed in the scope of this policy where M-Lab assumes the role of data controller (GDPR Art. 4.7), please write to us at [privacy@measurementlab.net](mailto:privacy@measurementlab.net) or by post at Measurement Lab, 3439 SE Hawthorne Blvd. #247, Portland, Oregon 97214-5048; please explain which right you wish to exercise and in which capacity. For instance you may be a website visitor wishing to exercise your right to erasure.
 
       ### Right to lodge a complaint
 
-      We encourage you to contact us at privacy@measurementlab.net if you have a privacy related concern. However, you have the right to lodge a complaint to a data protection authority of your choice if you suspect us of improperly processing your personal data. You may choose to do so with the data protection authority of the European member state you live or work in but are free to turn to a data protection authority of the member state of your choices. A complete list of data protection authorities and their contact details in the EU can be found on the website of the [European data protection board](https://www.edpb.europa.eu/about-edpb/our-members_en).
+      We encourage you to contact us at [privacy@measurementlab.net](mailto:privacy@measurementlab.net) if you have a privacy related concern. However, you have the right to lodge a complaint to a data protection authority of your choice if you suspect us of improperly processing your personal data. You may choose to do so with the data protection authority of the European member state you live or work in but are free to turn to a data protection authority of the member state of your choices. A complete list of data protection authorities and their contact details in the EU can be found on the website of the [European data protection board](https://www.edpb.europa.eu/about-edpb/our-members_en).
 
       ## Compliance and Cooperation with Regulators
 
@@ -162,4 +161,4 @@ sections:
 
       ## Contact Us
 
-      If you have any questions, comments, or requests regarding M-Lab's Privacy Policy, please contact us at privacy@measurementlab.net.
+      If you have any questions, comments, or requests regarding M-Lab's Privacy Policy, please contact us at [privacy@measurementlab.net](mailto:privacy@measurementlab.net).
