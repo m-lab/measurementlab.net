@@ -27,18 +27,18 @@ sections:
 
       All M-Lab files are packaged and compressed in [.tar format](https://en.wikipedia.org/wiki/Tar_%28computing%29). They are placed in folders and named according to the following schema:
 
-      `[tool]/[YYYY]/[MM]/[DD]/[YYYYMMDD]T[HHMMSS]-[server]-[tool]-[file index].tgz`
+      `[experiment]/[datatype]/[YYYY]/[MM]/[DD]/[YYYYMMDD]T[HHMMSS.ffffff]Z-[datatype]-[machine]-[site]-[experiment].tgz`
 
-      * `tool`: The measurement tool that generated the data
-      * `YYYYMMDDTHHMMSS`: Start of the time window in which the data were collected
-      * `server`: M-Lab server that collected the data
-      * `file index`: Index of the file
+      * `experiment`: The measurement service that generated the data (for example `ndt`, `msak`, `wehe`)
+      * `datatype`: The kind of data within that experiment (for example `ndt7` for NDT7 results, `scamper1` for traceroutes, `pcap` for packet captures, `tcpinfo` for TCP statistics)
+      * `YYYYMMDDTHHMMSS.ffffffZ`: UTC timestamp of the archive
+      * `machine` and `site`: The M-Lab server that collected the data (for example `mlab1-lax11`)
 
-      This means that each compressed .tgz file contains all the data collected during a single day, by a single tool running on a single M-Lab server.
+      Each server uploads data in small batches throughout the day, so a single day's folder contains many archives per server.
 
-      If the data collected during one day by one tool on one server are more than 1 GB (uncompressed), the files are split into multiple compressed .tgz files of up to 1 GB in size.
+      For example, the compressed .tgz file `ndt/ndt7/2026/11/26/20261126T003000.068387Z-ndt7-mlab1-lax11-ndt.tgz` contains NDT7 results collected by the M-Lab server mlab1-lax11 on Nov 26, 2026.
 
-      For example, the compressed .tgz file `20090218T000000Z-mlab1-lga01-ndt-0000.tgz` contains the first 1 GB of data collected by all the NDT tests that were served by the M-Lab server mlab1-lga01 on Feb 18, 2009.
+      Older data uses a different layout without the datatype level, such as `ndt/2009/02/18/20090218T000000Z-mlab1-lga01-ndt-0000.tgz`. In that layout, each archive contains up to 1 GB (uncompressed) of the data collected during a single day by one tool on one server, and the trailing number is the file index.
 
       ## Accessing Data Programmatically
 
@@ -50,33 +50,44 @@ sections:
 
       Users whose Google account is a member of the [M-Lab Discuss group](https://groups.google.com/a/measurementlab.net/g/discuss) and who have accepted the [Acceptable Use Agreement](https://docs.google.com/forms/d/e/1FAIpQLSfDGsEqfE3Lh3qtRSMy621O_bzBMZtnrw5sDgR42tGWpymJ2w/viewform) can run the `gcloud auth login $ACCOUNT` command to obtain access through an interactive workflow.
 
-      Fully programmatic (non-interactive) access requires a service account. Contact [support@measurementlab.net](mailto:support@measurementlab.net) if you need to request one. Please include a justification and a contact email in your message. M-Lab staff will provide you with an account ID and a credentials key file. The file will be needed for authorization. M-Lab staff will also add the service account to the M-Lab Discuss group, which grants it read access to the archives.
+      Fully programmatic (non-interactive) access, such as a scheduled job, requires a service account:
+
+      1. Create a [service account](https://cloud.google.com/iam/docs/service-accounts-create) in your own Google Cloud project.
+      2. Send the service account's email address (for example `name@your-project.iam.gserviceaccount.com`) to [support@measurementlab.net](mailto:support@measurementlab.net). Please include a justification and a contact email in your message. M-Lab staff will add the service account to the M-Lab Discuss group, which grants it read access to the archives.
+      3. Create and download a [key file](https://cloud.google.com/iam/docs/keys-create-delete) for the service account. The file will be needed for authorization.
 
       ~~~ shell
-      # Authorize access.
+      # Authorize access as the service account.
       $ gcloud auth login --cred-file=$CREDENTIALS_FILE
 
-      # List the contents of the M-Lab NDT data in GCS.
-      $ gsutil ls -l gs://archive-measurement-lab/
+      # List the NDT7 archives collected on a given day.
+      $ gsutil ls -l gs://archive-measurement-lab/ndt/ndt7/2026/11/26/
 
       # Copy a file from GCS locally.
-      $ gsutil cp gs://archive-measurement-lab/ndt/2009/02/18/20090218T000000Z-mlab1-lga01-ndt-0000.tgz .
+      $ gsutil cp gs://archive-measurement-lab/ndt/ndt7/2026/11/26/20261126T003000.068387Z-ndt7-mlab1-lax11-ndt.tgz .
       ~~~
+
+      The key file (or your interactive login) is the long-lived credential. `gcloud` and `gsutil` use it to obtain short-lived access tokens and renew them automatically, so long-running and recurring jobs need no further action.
+
+      Note that `gcloud auth login --cred-file` makes the service account the active `gcloud` account on that machine. Run `gcloud auth list` to see the available accounts and `gcloud config set account $ACCOUNT` to switch back.
 
       ### Accessing Data With Common HTTP Tools
 
       The URLs shown in [M-Lab's GCS web interface](https://console.developers.google.com/storage/browser/archive-measurement-lab/) require the user to be logged in, which can present challenges when attempting to access the data with common HTTP utilities like `curl` or `wget`.
 
-      To access M-Lab files programatically, you will need to generate an OAuth 2.0 [access token](https://cloud.google.com/iam/docs/create-short-lived-credentials-direct#gcloud_2). The access token and the project will need to be passed in the request headers.
+      To access M-Lab files with these tools, you will need to pass an OAuth 2.0 [access token](https://cloud.google.com/docs/authentication/token-types#access-tokens) in the request headers. After authorizing with `gcloud auth login` as described above, the `gcloud auth print-access-token` command prints a token for the active account.
+
+      Access tokens expire after one hour. This limit is set by Google and cannot be extended by M-Lab. Scripts should request a new token at the start of each run instead of storing one.
 
       Additionally, you will need to replace `storage.cloud.google.com` with `storage.googleapis.com` in GCS URLs.
 
       For example, if the URL of a raw NDT archive on the GCS web application is:
 
-      [https://storage.cloud.google.com/archive-measurement-lab/ndt/2018/11/01/20181101T000001Z-mlab3-lga07-ndt-0000.tgz](https://storage.cloud.google.com/archive-measurement-lab/ndt/2018/11/01/20181101T000001Z-mlab3-lga07-ndt-0000.tgz)
+      [https://storage.cloud.google.com/archive-measurement-lab/ndt/ndt7/2026/11/26/20261126T003000.068387Z-ndt7-mlab1-lax11-ndt.tgz](https://storage.cloud.google.com/archive-measurement-lab/ndt/ndt7/2026/11/26/20261126T003000.068387Z-ndt7-mlab1-lax11-ndt.tgz)
 
       The request will be:
 
       ~~~ shell
-       curl -H "X-Goog-User-Project: measurement-lab" -H "Authorization: Bearer $TOKEN" https://storage.googleapis.com/archive-measurement-lab/ndt/2018/11/01/20181101T000001Z-mlab3-lga07-ndt-0000.tgz
+      $ TOKEN=$(gcloud auth print-access-token)
+      $ curl -O -H "Authorization: Bearer $TOKEN" https://storage.googleapis.com/archive-measurement-lab/ndt/ndt7/2026/11/26/20261126T003000.068387Z-ndt7-mlab1-lax11-ndt.tgz
       ~~~
